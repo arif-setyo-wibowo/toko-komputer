@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('identitas', function (Blueprint $table) {
             $table->uuid('idIdentitas')->primary();
+            $table->uuid('idSosmed');
             $table->string('nama_identitas',255);
             $table->string('alamat',255);
             $table->string('telepon',32);

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('power_supplies', function (Blueprint $table) {
             $table->uuid('idPower')->primary();
+            $table->uuid('idMerk');
             $table->string('nama_power',255);
             $table->string('power',255);
             $table->string('certification',255);

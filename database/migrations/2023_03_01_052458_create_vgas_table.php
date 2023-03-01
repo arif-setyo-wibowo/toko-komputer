@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('vgas', function (Blueprint $table) {
             $table->uuid('idVga')->primary();
+            $table->uuid('idMerk');
             $table->string('nama_vga',255);
             $table->string('interface',255);
             $table->string('baseClock',255);
