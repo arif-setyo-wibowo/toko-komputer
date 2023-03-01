@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('processors', function (Blueprint $table) {
             $table->uuid('idProcessors')->primary();
-            $table->uuid('idMerk');
+            $table->foreignUuid('idSP')->references('idSP')->on('socket_processors');
+            $table->foreignUuid('idMereks')->references('idMereks')->on('mereks');
             $table->uuid('idSocket');
             $table->string('nama_proce',255);
             $table->string('generation',255);

@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('identitas', function (Blueprint $table) {
-            $table->foreignUuid('idSosmed')->after('idIdentitas')->references('idSosmed')->on('sosmeds');
+        Schema::table('socket_processors', function (Blueprint $table) {
+            $table->foreignUuid('idMereks')->after('idSP')->references('idMereks')->on('mereks');
         });
     }
 
@@ -21,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('identitas', function (Blueprint $table) {
-            $table->dropColumn('idSosmed');
+        Schema::table('socket_processors', function (Blueprint $table) {
+            $table->dropColumn('idMereks');
         });
     }
 };

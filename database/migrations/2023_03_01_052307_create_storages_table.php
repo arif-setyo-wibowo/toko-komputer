@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('storages', function (Blueprint $table) {
             $table->uuid('idStorage')->primary();
-            $table->uuid('idMerk');
+            $table->foreignUuid('idMereks')->references('idMereks')->on('mereks');
             $table->string('nama_storage',255);
             $table->string('tipe',255);
             $table->string('size',255);
