@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('mobos', function (Blueprint $table) {
             $table->uuid('idMobo')->primary();
+            $table->uuid('idSocket');
+            $table->uuid('idMerk');
             $table->string('nama_mobo',255);
             $table->string('chipset',255);
             $table->string('port',255);

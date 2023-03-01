@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('casings', function (Blueprint $table) {
             $table->uuid('idCasing',255)->primary();
+            $table->uuid('idMerk');
             $table->string('nama_casing',255);
             $table->string('tipe',255);
             $table->string('slotFan',255);
