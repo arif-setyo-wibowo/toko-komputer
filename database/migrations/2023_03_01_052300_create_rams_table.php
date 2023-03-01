@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('rams', function (Blueprint $table) {
             $table->uuid('idRam')->primary();
-            $table->uuid('idMerk');
+            $table->foreignUuid('idMerk');
+            $table->foreign('idMerk')->references('idMereks')->on('mereks');
             $table->string('nama_ram',255);
             $table->string('tipe',255);
             $table->string('speed',255);
