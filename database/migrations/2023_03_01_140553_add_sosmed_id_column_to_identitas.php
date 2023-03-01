@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('identitas', function (Blueprint $table) {
-            $table->char('sosmed_id')->after('gambar');
-            $table->foreignUuid('idSosmed')->foreign('idSosmed')->references('idSosmed')->on('sosmeds');
+            
+            $table->foreignUuid('sosmed_id')->after('gambar')->references('idSosmed')->on('sosmeds');
         });
     }
 
