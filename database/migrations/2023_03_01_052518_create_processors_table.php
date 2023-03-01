@@ -12,7 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('processors', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('idProcessors')->primary();
+            $table->string('nama_proce',255);
+            $table->string('generation',255);
+            $table->string('core',255);
+            $table->string('thread',255);
+            $table->string('baseSpeed',255);
+            $table->string('boostSpeed',255);
+            $table->string('cache',255);
+            $table->string('arsitektur',255);
+            $table->string('igpu',255);
+            $table->string('power',255);
+            $table->string('heatsink',255);
+            $table->string('garansi',255);
             $table->timestamps();
         });
     }

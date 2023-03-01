@@ -12,7 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('rams', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('idRam')->primary();
+            $table->string('nama_ram',255);
+            $table->string('tipe',255);
+            $table->string('speed',255);
+            $table->string('capacity',255);
+            $table->string('casLatency',255);
+            $table->string('voltage',255);
+            $table->string('garansi',255);
             $table->timestamps();
         });
     }

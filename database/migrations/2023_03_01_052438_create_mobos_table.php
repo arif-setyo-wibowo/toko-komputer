@@ -12,7 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('mobos', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('idMobo')->primary();
+            $table->string('nama_mobo',255);
+            $table->string('chipset',255);
+            $table->string('port',255);
+            $table->string('storage',255);
+            $table->string('formFactor',255);
+            $table->string('tipeMemory',255);
+            $table->string('maxMemory',255);
+            $table->string('deskripsi',255);
+            $table->string('garansi',255);
             $table->timestamps();
         });
     }

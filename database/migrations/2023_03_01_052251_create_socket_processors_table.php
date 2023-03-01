@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('socket_processors', function (Blueprint $table) {
-            $table->id();
+            $table->Uuid('idSP')->primary();
+            $table->string('nama_SP', 255);
             $table->timestamps();
         });
     }

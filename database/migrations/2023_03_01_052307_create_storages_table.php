@@ -12,7 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('storages', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('idStorage')->primary();
+            $table->string('nama_storage',255);
+            $table->string('tipe',255);
+            $table->string('size',255);
+            $table->string('read',255);
+            $table->string('write',255);
+            $table->string('rpm',255);
+            $table->string('ukuran',255);
+            $table->string('garansi',255);
             $table->timestamps();
         });
     }

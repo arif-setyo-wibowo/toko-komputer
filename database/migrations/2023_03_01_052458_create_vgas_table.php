@@ -12,8 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('vgas', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('idVga')->primary();
+            $table->string('nama_vga',255);
+            $table->string('interface',255);
+            $table->string('baseClock',255);
+            $table->string('boostClock',255);
+            $table->string('memoryClockSpeed',255);
+            $table->string('memoryInterface',255);
+            $table->string('memoryType',255);
+            $table->string('fitur',255);
+            $table->string('powerReq',255);
+            $table->string('caseSupp',255);
+            $table->string('garansi',255);
             $table->timestamps();
+            
         });
     }
 

@@ -12,7 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('power_supplies', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('idPower')->primary();
+            $table->string('nama_power',255);
+            $table->string('power',255);
+            $table->string('certification',255);
+            $table->string('efficiency',255);
+            $table->string('cooling',255);
+            $table->string('modular',255);
+            $table->string('connector',255);
+            $table->string('garansi',255);
             $table->timestamps();
         });
     }
