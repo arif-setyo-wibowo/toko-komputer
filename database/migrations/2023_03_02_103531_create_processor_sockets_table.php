@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('media', function (Blueprint $table) {
-            $table->uuid('mediaId')->primary();
-            $table->string('mediaName',64);
-            $table->string('medialink',64);
+        Schema::create('processor_sockets', function (Blueprint $table) {
+            $table->Uuid('processorSocketId')->primary();
+            $table->string('processorSocketName', 255);
             $table->timestamps();
         });
     }
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('media');
+        Schema::dropIfExists('processor_sockets');
     }
 };
