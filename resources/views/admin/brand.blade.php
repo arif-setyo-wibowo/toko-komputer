@@ -14,7 +14,6 @@
     <section class="section">
         <div class="row">
             <div class="col-lg-12">
-
           <!-- Recent Sales -->
           <div class="col-12">
             <div class="card recent-sales overflow-auto">
