@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('rams', function (Blueprint $table) {
             $table->uuid('idRam')->primary();
-            $table->foreignUuid('idMereks')->references('idMereks')->on('mereks');
+            $table->foreignUuid('idMerks')->references('idMerks')->on('merks');
             $table->string('nama_ram',255);
             $table->string('tipe',255);
             $table->string('speed',255);
@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('casLatency',255);
             $table->string('voltage',255);
             $table->string('garansi',255);
+            $table->string('harga',255);
+            $table->string('stok',255);
+            $table->string('gambar',255);
             $table->timestamps();
         });
     }
