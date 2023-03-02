@@ -15,7 +15,6 @@ return new class extends Migration
             $table->uuid('idProcessors')->primary();
             $table->foreignUuid('idSP')->references('idSP')->on('socket_processors');
             $table->foreignUuid('idMereks')->references('idMereks')->on('mereks');
-            $table->uuid('idSocket');
             $table->string('nama_proce',255);
             $table->string('generation',255);
             $table->string('core',255);
