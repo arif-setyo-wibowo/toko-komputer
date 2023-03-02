@@ -22,6 +22,9 @@ return new class extends Migration
             $table->string('modular',255);
             $table->string('connector',255);
             $table->string('garansi',255);
+            $table->string('harga', 255);
+            $table->string('stok', 255);
+            $table->string('gambar', 255);
             $table->timestamps();
         });
     }

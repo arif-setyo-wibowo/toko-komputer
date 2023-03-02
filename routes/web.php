@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PelangganController;
+use App\Http\Controllers\Admin\SosmedController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
 Route::get('/', function () {
     return view('admin/dashboard');
 });
@@ -31,3 +36,8 @@ Route::get('/brand', function () {
     return view('admin/brand');
     
 });
+=======
+Route::get('/', [DashboardController::class, 'index']);
+Route::get('/pelanggan', [PelangganController::class, 'index']);
+Route::get('/sosmed', [SosmedController::class, 'index']);
+>>>>>>> b2084f0a21a9636d7a66f1a81609dd9e93739caa

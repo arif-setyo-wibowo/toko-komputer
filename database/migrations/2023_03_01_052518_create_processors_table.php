@@ -27,6 +27,9 @@ return new class extends Migration
             $table->string('power',255);
             $table->string('heatsink',255);
             $table->string('garansi',255);
+            $table->string('harga', 255);
+            $table->string('stok', 255);
+            $table->string('gambar', 255);
             $table->timestamps();
         });
     }
