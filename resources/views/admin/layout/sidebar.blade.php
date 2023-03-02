@@ -253,7 +253,7 @@
     </a>
   </li><!-- End Sosmed Page Nav -->
   <li class="nav-item">
-    <a class="nav-link collapsed" href="users-profile.html">
+    <a class="nav-link collapsed" href="/brand">
       <i class="ri-building-3-line"></i>
       <span>Brand</span>
     </a>

@@ -3,11 +3,11 @@
 @section('content')
 
     <div class="pagetitle">
-            <h1>Sosial Media</h1>
+            <h1>Brand</h1>
             <nav>
                 <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">admin</a></li>
-                <li class="breadcrumb-item active">sosmed</li>
+                <li class="breadcrumb-item active">brand</li>
                 </ol>
             </nav>
     </div><!-- End Page Title -->
@@ -17,11 +17,10 @@
 
           <!-- Recent Sales -->
           <div class="col-12">
-            <div class="card recent-sales overflow-auto p-3">
+            <div class="card recent-sales overflow-auto">
 
-
-              <!-- Bordered Tabs -->
-              <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
+            <!-- Bordered Tabs -->
+            <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
                 <li class="nav-item" role="presentation">
                   <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#bordered-home" type="button" role="tab" aria-controls="home" aria-selected="true">Daftar</button>
                 </li>
@@ -30,25 +29,69 @@
                 </li>
               </ul>
               <!-- ISI -->
-              <div class="tab-content pt-2" id="borderedTabContent">
+              <div class="tab-content p-2" id="borderedTabContent">
                 <div class="tab-pane fade show active" id="bordered-home" role="tabpanel" aria-labelledby="home-tab">
-                <h5 class="card-title">List Sosial Media</h5>
+                <h5 class="card-title">List Brand</h5>
                 <table class="table table-hover datatable">
                   <thead>
                     <tr>
-                      <th scope="col">Sosial Media</th>
-                      <th scope="col">Link</th>
+                      <th scope="col">ID</th>
+                      <th scope="col">Gambar</th>
+                      <th scope="col">Nama</th>
+                      <th scope="col">Kategori</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">Facebook</th>
-                      <td>http//:www.facebook.com/haha</td>
+                      <th scope="row"><a href="#">#2457</a></th>
+                      <td>Intel.png</td>
+                      <td>Intel</td>
+                      <td>Processor</td>
                       <td>
-                        <button type="button" class="btn col btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateSosmed"><i class="bi bi-pen"></i></button>
-                        <button type="button" class="btn col btn-outline-danger"><i class="bi  bi-trash"></i></button>
-                    </td>
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateBrand"><i class="bi bi-pen"></i></button>
+                        <button type="button" class="btn btn-outline-danger"><i class="bi  bi-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><a href="#">#2457</a></th>
+                      <td>Intel.png</td>
+                      <td>Intel</td>
+                      <td>Processor</td>
+                      <td>
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateBrand"><i class="bi bi-pen"></i></button>
+                        <button type="button" class="btn btn-outline-danger"><i class="bi  bi-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><a href="#">#2457</a></th>
+                      <td>Intel.png</td>
+                      <td>Intel</td>
+                      <td>Processor</td>
+                      <td>
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateBrand"><i class="bi bi-pen"></i></button>
+                        <button type="button" class="btn btn-outline-danger"><i class="bi  bi-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><a href="#">#2457</a></th>
+                      <td>Intel.png</td>
+                      <td>Intel</td>
+                      <td>Processor</td>
+                      <td>
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateBrand"><i class="bi bi-pen"></i></button>
+                        <button type="button" class="btn btn-outline-danger"><i class="bi  bi-trash"></i></button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><a href="#">#2457</a></th>
+                      <td>Intel.png</td>
+                      <td>Intel</td>
+                      <td>Processor</td>
+                      <td>
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateBrand"><i class="bi bi-pen"></i></button>
+                        <button type="button" class="btn btn-outline-danger"><i class="bi  bi-trash"></i></button>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -58,7 +101,7 @@
               <!-- Tambah Sosmed -->
                 </div>
                 <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
-                <h5 class="card-title">Tambah Sosial Media</h5>
+                <h5 class="card-title">Tambah Brand </h5>
                 <form action="">
                     <div class="row mb-3">
                         <label for="inputText" class="col-sm-2 col-form-label">Nama Platform</label>
@@ -84,17 +127,10 @@
                   Saepe animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.
                 </div>
               </div><!-- End Bordered Tabs -->
-              </div>
 
-            </div>
-          </div><!-- End Recent Sales -->
-              <!-- End Default Table Example -->
-            </div>
-          </div>
-
-          <!-- Modal -->
+                <!-- Modal -->
                   <!-- Vertically centered Modal -->
-                  <div class="modal fade modal-lg" id="updateSosmed" tabindex="-1">
+                  <div class="modal fade modal-lg" id="updateBrand" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -122,7 +158,13 @@
                           <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                       </div>
-                    <!-- End Vertically centered Modal-->
+                    <!-- End Vertically centered Modal-->     
+
+            </div>
+          </div><!-- End Recent Sales -->
+              <!-- End Default Table Example -->
+            </div>
+          </div>
 
         </div>
       </div>

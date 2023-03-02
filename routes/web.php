@@ -26,3 +26,8 @@ Route::get('/sosmed', function () {
     return view('admin/sosmed');
     
 });
+
+Route::get('/brand', function () {
+    return view('admin/brand');
+    
+});
