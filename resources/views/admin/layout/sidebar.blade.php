@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Dashboard - NiceAdmin Bootstrap Template</title>
+    <title>{{$title}} - NiceAdmin Bootstrap Template</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -235,19 +235,19 @@
 <aside id="sidebar" class="sidebar">
 <ul class="sidebar-nav" id="sidebar-nav">
   <li class="nav-item">
-    <a class="nav-link " href="/">
+    <a class="nav-link {{$title != 'Dashboard' ? 'collapsed' : ''}}" href="/">
       <i class="bi bi-grid"></i>
       <span>Dashboard</span>
     </a>
   </li><!-- End Dashboard Nav -->
   <li class="nav-item">
-    <a class="nav-link collapsed" href="/pelanggan">
+    <a class="nav-link {{$title != 'Pelanggan' ? 'collapsed' : ''}}" href="/pelanggan">
       <i class="bi bi-person"></i>
       <span>Pelanggan</span>
     </a>
   </li><!-- End Profile Page Nav -->
   <li class="nav-item">
-    <a class="nav-link collapsed" href="/sosmed">
+    <a class="nav-link {{$title != 'Sosial Media' ? 'collapsed' : ''}}" href="/sosmed">
       <i class="ri-facebook-box-fill"></i>
       <span>Social Media</span>
     </a>

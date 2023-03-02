@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PelangganController;
+use App\Http\Controllers\Admin\SosmedController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,16 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin/dashboard');
-});
-
-Route::get('/pelanggan', function () {
-    return view('admin/pelanggan');
-    
-});
-
-Route::get('/sosmed', function () {
-    return view('admin/sosmed');
-    
-});
+Route::get('/', [DashboardController::class, 'index']);
+Route::get('/pelanggan', [PelangganController::class, 'index']);
+Route::get('/sosmed', [SosmedController::class, 'index']);
