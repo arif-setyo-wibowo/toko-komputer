@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Customer;
 
 class PelangganController extends Controller
 {
@@ -12,11 +13,15 @@ class PelangganController extends Controller
      */
     public function index()
     {
+        $customer = new Customer;
+
         $data=[
-            'title' => "Pelanggan"
+            'title' => "Pelanggan",
+            'pelanggan' => $customer->getData()
         ];
 
         return view('admin/pelanggan',$data);
+    
     }
 
     /**
