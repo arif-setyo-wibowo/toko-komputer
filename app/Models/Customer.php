@@ -4,8 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Customer extends Model
 {
     use HasFactory;
+
+    public function getData()
+    {
+        $data = DB::table('customers')->get();
+        return $data;
+    }
 }
