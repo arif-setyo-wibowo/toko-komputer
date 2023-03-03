@@ -32,7 +32,7 @@
                       <th scope="col">Nama</th>
                       <th scope="col">Email</th>
                       <th scope="col">Tanggal</th>
-                      <th scope="col">Status</th>
+                      <th scope="col">Status Pesanan</th>
                     </tr>
                   </thead>
                   <tbody>

@@ -241,6 +241,12 @@
     </a>
   </li><!-- End Dashboard Nav -->
   <li class="nav-item">
+    <a class="nav-link {{$title != 'Identitas' ? 'collapsed' : ''}}" href="/identitas">
+      <i class="bi bi-shop"></i>
+      <span>Identitas</span>
+    </a>
+  </li><!-- End Identitas Nav -->
+  <li class="nav-item">
     <a class="nav-link {{$title != 'Pelanggan' ? 'collapsed' : ''}}" href="/pelanggan">
       <i class="bi bi-person"></i>
       <span>Pelanggan</span>
