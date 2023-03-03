@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PelangganController;
 use App\Http\Controllers\Admin\SosmedController;
-
+use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,6 @@ use App\Http\Controllers\Admin\SosmedController;
 Route::get('/', [DashboardController::class, 'index']);
 Route::get('/pelanggan', [PelangganController::class, 'index']);
 Route::get('/sosmed', [SosmedController::class, 'index']);
+Route::get('/brand', [BrandController::class, 'index']);
+Route::get('/order', [OrderController::class, 'index']);
 

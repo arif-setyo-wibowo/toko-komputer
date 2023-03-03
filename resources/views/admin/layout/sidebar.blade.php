@@ -253,7 +253,7 @@
     </a>
   </li><!-- End Sosmed Page Nav -->
   <li class="nav-item">
-    <a class="nav-link collapsed" href="/brand">
+    <a class="nav-link {{$title != 'Brand' ? 'collapsed' : ''}}" href="/brand">
       <i class="ri-building-3-line"></i>
       <span>Brand</span>
     </a>
@@ -301,7 +301,7 @@
     </ul>
   </li><!-- End Components Nav -->
   <li class="nav-item">
-    <a class="nav-link collapsed" href="users-profile.html">
+    <a class="nav-link collapsed {{$title != 'Order' ? 'collapsed' : ''}}" href="/order">
       <i class="bi-cash-coin" style="font-size: 18px;"></i>
       <span>Transaksi</span>
     </a>

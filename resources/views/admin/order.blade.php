@@ -3,11 +3,11 @@
 @section('content')
 
     <div class="pagetitle">
-            <h1>Brand</h1>
+            <h1>Order</h1>
             <nav>
                 <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">admin</a></li>
-                <li class="breadcrumb-item active">brand</li>
+                <li class="breadcrumb-item active">order</li>
                 </ol>
             </nav>
     </div><!-- End Page Title -->
@@ -20,77 +20,53 @@
             <div class="card recent-sales overflow-auto">
 
             <!-- Bordered Tabs -->
-            <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#bordered-home" type="button" role="tab" aria-controls="home" aria-selected="true">Daftar</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#bordered-profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Tambah Data</button>
-                </li>
-              </ul>
+            
               <!-- ISI -->
               <div class="tab-content p-2" id="borderedTabContent">
                 <div class="tab-pane fade show active" id="bordered-home" role="tabpanel" aria-labelledby="home-tab">
-                <h5 class="card-title">List Brand</h5>
-                <table class="table table-hover datatable">
+                <h5 class="card-title">List Order</h5>
+                <table class="table table-hovered datatable">
                   <thead>
-                    <tr>
-                      <th scope="col">ID</th>
-                      <th scope="col">Gambar</th>
+                    <tr >
+                      <th scope="col">ID Order</th>
                       <th scope="col">Nama</th>
-                      <th scope="col">Kategori</th>
-                      <th scope="col">Action</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Tanggal</th>
+                      <th scope="col">Status</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                  <tr>
                       <th scope="row"><a href="#">#2457</a></th>
-                      <td>Intel.png</td>
-                      <td>Intel</td>
-                      <td>Processor</td>
-                      <td>
-                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateBrand"><i class="bi bi-pen"></i></button>
-                        <button type="button" class="btn btn-outline-danger"><i class="bi  bi-trash"></i></button>
+                      <td><i class="bi bi-person-fill " ></i> Burhan Adi J</td>
+                      <td><i class="bi  bi-envelope-fill " style="color:#4154f1;"></i> Burhan@gmail.com</td>
+                      <td><i class="bi  bi-calendar-week-fill" style="color:#198754;"></i> 12-12-2023</td>
+                      <td >
+                        <button style="font-size :12px; width:100px; background-color:#CDF5E9; border:none ; " type="button" class="btn  btn-primary  rounded-pill" >
+                            <div style="color:#038E86;"> Selesai
+                        </button>
                       </td>
                     </tr>
                     <tr>
                       <th scope="row"><a href="#">#2457</a></th>
-                      <td>Intel.png</td>
-                      <td>Intel</td>
-                      <td>Processor</td>
-                      <td>
-                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateBrand"><i class="bi bi-pen"></i></button>
-                        <button type="button" class="btn btn-outline-danger"><i class="bi  bi-trash"></i></button>
+                      <td><i class="bi bi-person-fill " ></i> Burhan Adi J</td>
+                      <td><i class="bi  bi-envelope-fill " style="color:#4154f1;"></i> Burhan@gmail.com</td>
+                      <td><i class="bi  bi-calendar-week-fill" style="color:#198754;"></i> 12-12-2023</td>
+                      <td >
+                        <button style="font-size :12px; width:100px; background-color:#CAC9FB; border:none ; " type="button" class="btn  btn-primary  rounded-pill" >
+                            <div style="color:#3A36DB;"> Pending
+                        </button>
                       </td>
                     </tr>
                     <tr>
                       <th scope="row"><a href="#">#2457</a></th>
-                      <td>Intel.png</td>
-                      <td>Intel</td>
-                      <td>Processor</td>
-                      <td>
-                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateBrand"><i class="bi bi-pen"></i></button>
-                        <button type="button" class="btn btn-outline-danger"><i class="bi  bi-trash"></i></button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="#">#2457</a></th>
-                      <td>Intel.png</td>
-                      <td>Intel</td>
-                      <td>Processor</td>
-                      <td>
-                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateBrand"><i class="bi bi-pen"></i></button>
-                        <button type="button" class="btn btn-outline-danger"><i class="bi  bi-trash"></i></button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="#">#2457</a></th>
-                      <td>Intel.png</td>
-                      <td>Intel</td>
-                      <td>Processor</td>
-                      <td>
-                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateBrand"><i class="bi bi-pen"></i></button>
-                        <button type="button" class="btn btn-outline-danger"><i class="bi  bi-trash"></i></button>
+                      <td><i class="bi bi-person-fill " ></i> Burhan Adi J</td>
+                      <td><i class="bi  bi-envelope-fill " style="color:#4154f1;"></i> Burhan@gmail.com</td>
+                      <td><i class="bi  bi-calendar-week-fill" style="color:#198754;"></i> 12-12-2023</td>
+                      <td >
+                        <button style="font-size :12px; width:100px; background-color:#F5CDD9; border:none ; " type="button" class="btn  btn-primary  rounded-pill" >
+                            <div style="color:#FF5368;"> Batal
+                        </button>
                       </td>
                     </tr>
                   </tbody>
