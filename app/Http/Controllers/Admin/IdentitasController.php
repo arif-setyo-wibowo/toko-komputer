@@ -67,7 +67,6 @@ class IdentitasController extends Controller
         $request->validate([
             'shopLogo' => 'image|mimes:png,jpg'
         ]); 
-
         $identitas = Identity::first();
         if ($request->file('shopLogo')) {
             File::delete('uploads/gambar/identitas/'.$identitas->shopLogo);
