@@ -24,5 +24,7 @@ Route::get('/pelanggan', [PelangganController::class, 'index']);
 Route::get('/sosmed', [SosmedController::class, 'index']);
 Route::get('/brand', [BrandController::class, 'index']);
 Route::get('/order', [OrderController::class, 'index']);
-Route::get('/identitas', [IdentitasController::class, 'index']);
+
+Route::get('/identitas', [IdentitasController::class, 'index'])->name('admin.identitas');
+Route::put('/identitas', [IdentitasController::class, 'update']);
 
