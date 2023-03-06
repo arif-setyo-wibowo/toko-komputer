@@ -29,11 +29,9 @@ use App\Http\Controllers\PowerSupplyController;
 
 Route::get('/', [DashboardController::class, 'index']);
 Route::get('/pelanggan', [PelangganController::class, 'index']);
-Route::get('/sosmed', [SosmedController::class, 'index']);
 Route::get('/brand', [BrandController::class, 'index']);
 Route::get('/order', [OrderController::class, 'index']);
 Route::get('/order/invoice', [OrderController::class, 'detail']);
-Route::get('/identitas', [IdentitasController::class, 'index']);
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/socket', [SocketController::class, 'index']);
 Route::get('/motherboard', [MotherboardController::class, 'index']);
@@ -46,3 +44,11 @@ Route::get('/powersuplly', [PowerSupplyController::class, 'index']);
 
 
 
+Route::get('/identitas', [IdentitasController::class, 'index'])->name('admin.identitas');
+Route::put('/identitas', [IdentitasController::class, 'update']);
+ 
+Route::controller(SosmedController::class)->group(function () {
+    Route::get('/sosmed', 'index')->name('admin.sosmed');
+    Route::post('/sosmed', 'store');
+    Route::get('/sosmed/delete/{id}', 'destroy');
+});

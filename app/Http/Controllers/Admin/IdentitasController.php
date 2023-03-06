@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Identity;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class IdentitasController extends Controller
 {
@@ -13,7 +16,8 @@ class IdentitasController extends Controller
     public function index()
     {
         $data=[
-            'title' => "Identitas"
+            'title' => "Identitas",
+            'identitas' => Identity::all()
         ];
 
         return view('admin/identitas',$data);
@@ -54,9 +58,30 @@ class IdentitasController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $data=[
+            'title' => "Identitas",
+            'identitas' => Identity::all()
+        ];
+        $request->validate([
+            'shopLogo' => 'image|mimes:png,jpg'
+        ]); 
+        $identitas = Identity::first();
+        if ($request->file('shopLogo')) {
+            File::delete('uploads/gambar/identitas/'.$identitas->shopLogo);
+            $logo = $request->file('shopLogo');
+            $shopLogoName = Str::random(20) . '.' . $logo->getClientOriginalExtension();
+            $logo->move(public_path('uploads/gambar/identitas'), $shopLogoName);
+            $identitas->shopLogo = $shopLogoName;
+        }
+        $identitas->shopName = $request->shopName;
+        $identitas->shopAddress = $request->shopAddress;
+        $identitas->shopPhoneNumber = $request->shopPhoneNumber;
+        $identitas->shopEmail = $request->shopEmail;
+        $identitas->save();
+
+        return redirect()->route('admin.identitas',$data);
     }
 
     /**

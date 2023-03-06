@@ -18,10 +18,12 @@ return new class extends Migration
             $table->string('moboName',255);
             $table->string('moboChipset',255);
             $table->string('moboPort',255);
-            $table->string('moboStorage',255);
+            $table->string('moboStorageSata',255);
+            $table->string('moboStorageM2',255);
             $table->string('moboFormFactor',255);
             $table->string('moboMemoryType',255);
             $table->string('moboMemoryCap',255);
+            $table->string('moboMemorySlot',255);
             $table->string('moboDescription',255);
             $table->string('moboWarranty',255);
             $table->string('moboPrice', 255);
