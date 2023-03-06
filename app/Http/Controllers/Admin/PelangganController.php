@@ -13,11 +13,9 @@ class PelangganController extends Controller
      */
     public function index()
     {
-        $customer = new Customer;
-
         $data=[
             'title' => "Pelanggan",
-            'pelanggan' => $customer->getData()
+            'pelanggan' => Customer::all()
         ];
 
         return view('admin/pelanggan',$data);

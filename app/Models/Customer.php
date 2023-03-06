@@ -9,10 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Customer extends Model
 {
     use HasFactory;
+    protected $table = 'customers';
 
-    public function getData()
-    {
-        $data = DB::table('customers')->get();
-        return $data;
-    }
+    
 }
