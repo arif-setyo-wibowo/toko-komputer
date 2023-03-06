@@ -14,6 +14,9 @@ use App\Http\Controllers\ProcessorController;
 use App\Http\Controllers\GraphicCardController;
 use App\Http\Controllers\MemoryController;
 use App\Http\Controllers\PowerSupplyController;
+use App\Http\Controllers\StorageController;
+
+
 
 
 /*
@@ -39,6 +42,7 @@ Route::get('/processor', [ProcessorController::class, 'index']);
 Route::get('/graphic', [GraphicCardController::class, 'index']);
 Route::get('/memory', [MemoryController::class, 'index']);
 Route::get('/powersuplly', [PowerSupplyController::class, 'index']);
+Route::get('/storage', [StorageController::class, 'index']);
 
 
 

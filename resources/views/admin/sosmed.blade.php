@@ -42,16 +42,39 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <tr>
+                      <th scope="row">Facebook</th>
+                      <td>http//:www.facebook.com/haha</td>
+                      <td>
+                      <li class="nav-item dropdown" style="list-style-type: none;">
+                        <a style="font-size:150%; color:#4154f1;" class="text-center col-sm-3 nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                          <i class="bi bi-gear"></i>
+                        </a><!-- End Notification Icon -->
+                        <ul class="p-2 dropdown-menu dropdown-menu-end dropdown-menu-arrow ">
+                          <li style="font-size:20px; padding-left: 25px;" class="row">
+                              <button type="button" class="m-1 col-4 btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateSosmed"><i class="bi bi-pen"></i></button>
+                              <button type="button" class="m-1 col-4 btn btn-outline-danger"><i class="bi  bi-trash"></i></button>
+                          </li>
+                        </ul><!-- End Notification Dropdown Items -->
+                      </li><!-- End Notification Nav -->
+                    </td>
+                    </tr>
                     @foreach ($sosmed as $data)
                       <tr>
                         <th scope="row">{{ $data->mediaName }}</th>
                         <td>{{ $data->medialink }}</td>
                         <td>
-
-                          <button type="button" class="btn col btn-outline-primary" data-bs-toggle="modal"
-                            data-bs-target="#updateSosmed"><i class="bi bi-pen"></i></button>
-                          <a href="/sosmed/delete/{{ $data->mediaId }}" class="btn col btn-outline-danger"><i
-                              class="bi bi-trash"></i></a>
+                            <li class="nav-item dropdown" style="list-style-type: none;">
+                            <a style="font-size:150%; color:#4154f1;" class="text-center col-sm-3 nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                              <i class="bi bi-gear"></i>
+                            </a><!-- End Notification Icon -->
+                            <ul class="p-2 dropdown-menu dropdown-menu-end dropdown-menu-arrow ">
+                              <li style="font-size:20px; padding-left: 25px;" class="row">
+                                  <button type="button" class="m-1 col-4 btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateSosmed"><i class="bi bi-pen"></i></button>
+                                  <button type="button" class="m-1 col-4 btn btn-outline-danger"><a class="text-danger" href="/sosmed/delete/{{ $data->mediaId }}"><i class="bi  bi-trash"></i></a></button>
+                              </li>
+                            </ul><!-- End Notification Dropdown Items -->
+                          </li><!-- End Notification Nav -->
                         </td>
                       </tr>
                     @endforeach
