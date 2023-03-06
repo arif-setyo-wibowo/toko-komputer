@@ -45,9 +45,6 @@ Route::get('/powersuplly', [PowerSupplyController::class, 'index']);
 Route::get('/storage', [StorageController::class, 'index']);
 
 
-
-
-
 Route::get('/identitas', [IdentitasController::class, 'index'])->name('admin.identitas');
 Route::put('/identitas', [IdentitasController::class, 'update']);
  
