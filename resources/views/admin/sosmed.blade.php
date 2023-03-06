@@ -42,36 +42,22 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">Facebook</th>
-                      <td>http//:www.facebook.com/haha</td>
-                      <td>
-                      <li class="nav-item dropdown" style="list-style-type: none;">
-                        <a style="font-size:150%; color:#4154f1;" class="text-center col-sm-3 nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                          <i class="bi bi-gear"></i>
-                        </a><!-- End Notification Icon -->
-                        <ul class="p-2 dropdown-menu dropdown-menu-end dropdown-menu-arrow ">
-                          <li style="font-size:20px; padding-left: 25px;" class="row">
-                              <button type="button" class="m-1 col-4 btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateSosmed"><i class="bi bi-pen"></i></button>
-                              <button type="button" class="m-1 col-4 btn btn-outline-danger"><i class="bi  bi-trash"></i></button>
-                          </li>
-                        </ul><!-- End Notification Dropdown Items -->
-                      </li><!-- End Notification Nav -->
-                    </td>
-                    </tr>
                     @foreach ($sosmed as $data)
                       <tr>
                         <th scope="row">{{ $data->mediaName }}</th>
                         <td>{{ $data->medialink }}</td>
                         <td>
-                            <li class="nav-item dropdown" style="list-style-type: none;">
-                            <a style="font-size:150%; color:#4154f1;" class="text-center col-sm-3 nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                          <li class="nav-item dropdown" style="list-style-type: none;">
+                            <a style="font-size:150%; color:#4154f1;" class="text-center col-sm-3 nav-link nav-icon"
+                              href="#" data-bs-toggle="dropdown">
                               <i class="bi bi-gear"></i>
                             </a><!-- End Notification Icon -->
                             <ul class="p-2 dropdown-menu dropdown-menu-end dropdown-menu-arrow ">
                               <li style="font-size:20px; padding-left: 25px;" class="row">
-                                  <button type="button" class="m-1 col-4 btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateSosmed"><i class="bi bi-pen"></i></button>
-                                  <button type="button" class="m-1 col-4 btn btn-outline-danger"><a class="text-danger" href="/sosmed/delete/{{ $data->mediaId }}"><i class="bi  bi-trash"></i></a></button>
+                                <button type="button" class="m-1 col-4 btn btn-outline-primary buttonupdate"
+                                  id="{{ $data->mediaId }}"><i class="bi bi-pen"></i></button>
+                                <a class="m-1 col-4 btn btn-outline-danger text-danger"
+                                  href="/sosmed/delete/{{ $data->mediaId }}"><i class="bi bi-trash"></i></a>
                               </li>
                             </ul><!-- End Notification Dropdown Items -->
                           </li><!-- End Notification Nav -->
@@ -131,17 +117,19 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body p-3">
-            <form action="">
+            <form action="/sosmed/update" method="POST">
+              @csrf
               <div class="row mb-6 mb-3">
                 <label for="inputText" class="col-sm-3 col-form-label">Nama Platform</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" placeholder="Masukkan Nama Platform" id="mediaName">
                 </div>
               </div>
               <div class="row mb-6 mb-3">
                 <label for="inputText" class="col-sm-3 col-form-label">Link Platform</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control ">
+                  <input type="text" class="form-control" placeholder="Masukkan Link Platform" id="medialink">
+                  <input type="hidden" class="form-control" id="mediaId" name="mediaId">
                 </div>
               </div>
             </form>
@@ -155,4 +143,8 @@
       </div>
     </div>
   </section>
+@endsection
+
+@section('javascript')
+  <script src="{{ asset('admin/') }}/js/custom/sosmed.js"></script>
 @endsection

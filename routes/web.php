@@ -51,5 +51,7 @@ Route::put('/identitas', [IdentitasController::class, 'update']);
 Route::controller(SosmedController::class)->group(function () {
     Route::get('/sosmed', 'index')->name('admin.sosmed');
     Route::post('/sosmed', 'store');
+    Route::get('/sosmed/find/{id}', 'edit');
+    Route::post('/sosmed/update', 'update');
     Route::get('/sosmed/delete/{id}', 'destroy');
 });

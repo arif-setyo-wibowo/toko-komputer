@@ -61,7 +61,8 @@ class SosmedController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Media::where('mediaId', $id)->get();
+        return $data->toJson();
     }
 
     /**
@@ -69,7 +70,17 @@ class SosmedController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->validate($request, [
+            'mediaName'   => 'required|min:5',
+            'medialink'   => 'required|min:10'
+        ]);
+
+        $media = Media::where('mediaId', $request->mediaId);
+        $media->mediaName = $request->mediaName;
+        $media->medialink = $request->medialink;
+        $media->save();
+
+        return redirect()->route('admin.sosmed');
     }
 
     /**
