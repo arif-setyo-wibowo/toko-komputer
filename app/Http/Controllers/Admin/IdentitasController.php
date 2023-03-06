@@ -60,13 +60,16 @@ class IdentitasController extends Controller
      */
     public function update(Request $request)
     {
+
         $data=[
             'title' => "Identitas",
             'identitas' => Identity::all()
         ];
+        
         $request->validate([
             'shopLogo' => 'image|mimes:png,jpg'
         ]); 
+
         $identitas = Identity::first();
         if ($request->file('shopLogo')) {
             File::delete('uploads/gambar/identitas/'.$identitas->shopLogo);
@@ -75,6 +78,7 @@ class IdentitasController extends Controller
             $logo->move(public_path('uploads/gambar/identitas'), $shopLogoName);
             $identitas->shopLogo = $shopLogoName;
         }
+
         $identitas->shopName = $request->shopName;
         $identitas->shopAddress = $request->shopAddress;
         $identitas->shopPhoneNumber = $request->shopPhoneNumber;
