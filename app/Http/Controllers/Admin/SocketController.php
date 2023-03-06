@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Motherboard;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class MotherboardController extends Controller
+class SocketController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +13,10 @@ class MotherboardController extends Controller
     public function index()
     {
         $data=[
-            'title' => "Modtherboard"
+            'title' => "Socket"
         ];
 
-        return view('admin/motherboard',$data);
+        return view('admin/socket',$data);
     }
 
     /**
@@ -38,7 +38,7 @@ class MotherboardController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Motherboard $motherboard)
+    public function show(string $id)
     {
         //
     }
@@ -46,7 +46,7 @@ class MotherboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Motherboard $motherboard)
+    public function edit(string $id)
     {
         //
     }
@@ -54,7 +54,7 @@ class MotherboardController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Motherboard $motherboard)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -62,7 +62,7 @@ class MotherboardController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Motherboard $motherboard)
+    public function destroy(string $id)
     {
         //
     }

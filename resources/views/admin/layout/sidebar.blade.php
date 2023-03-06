@@ -270,12 +270,12 @@
     </a>
     <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
-        <a href="components-alerts.html">
-          <i class="bi bi-circle"></i><span>Socet</span>
+        <a  href="/socket">
+          <i class="bi bi-circle"></i><span>Socket</span>
         </a>
       </li>
       <li>
-        <a href="components-accordion.html">
+        <a href="/motherboard">
           <i class="bi bi-circle"></i><span>Motherboard</span>
         </a>
       </li>
@@ -313,7 +313,7 @@
     </a>
   </li><!-- End Transaksi Page Nav -->
   <li class="nav-item">
-    <a class="nav-link collapsed" href="/pelanggan">
+    <a class="nav-link collapsed" href="/user">
       <i class="bi bi-person"></i>
       <span>Users</span>
     </a>

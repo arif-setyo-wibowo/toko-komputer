@@ -7,6 +7,9 @@ use App\Http\Controllers\Admin\SosmedController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\IdentitasController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\SocketController;
+use App\Http\Controllers\MotherboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,5 +27,11 @@ Route::get('/pelanggan', [PelangganController::class, 'index']);
 Route::get('/sosmed', [SosmedController::class, 'index']);
 Route::get('/brand', [BrandController::class, 'index']);
 Route::get('/order', [OrderController::class, 'index']);
+Route::get('/order/invoice', [OrderController::class, 'detail']);
 Route::get('/identitas', [IdentitasController::class, 'index']);
+Route::get('/user', [UserController::class, 'index']);
+Route::get('/socket', [SocketController::class, 'index']);
+Route::get('/motherboard', [MotherboardController::class, 'index']);
+
+
 

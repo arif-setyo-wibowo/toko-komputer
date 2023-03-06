@@ -3,11 +3,11 @@
 @section('content')
 
     <div class="pagetitle">
-            <h1>Brand</h1>
+            <h1>Socket</h1>
             <nav>
                 <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">admin</a></li>
-                <li class="breadcrumb-item active">brand</li>
+                <li class="breadcrumb-item active">socket</li>
                 </ol>
             </nav>
     </div><!-- End Page Title -->
@@ -31,25 +31,23 @@
               <!-- ISI -->
               <div class="tab-content p-2" id="borderedTabContent">
                 <div class="tab-pane fade show active" id="bordered-home" role="tabpanel" aria-labelledby="home-tab">
-                <h5 class="card-title">List Brand</h5>
+                <h5 class="card-title">List Socket</h5>
                 <table class="table table-hover datatable">
                   <thead>
                     <tr>
                       <th scope="col">ID</th>
-                      <th scope="col">Gambar</th>
-                      <th scope="col">Nama</th>
-                      <th scope="col">Kategori</th>
-                      <th scope="col">Action</th>
+                      <th scope="col">Nama Socket</th>
+                      <th scope="col">Merk</th>
+                      <th class="" scope="col ">Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <th scope="row"><a href="#">#2457</a></th>
-                      <td>Intel.png</td>
+                      <td>LGA144</td>
                       <td>Intel</td>
-                      <td>Processor</td>
-                      <td>
-                      <li class="nav-item dropdown" style="list-style-type: none;">
+                      <td class="text-center">
+                        <li class="nav-item dropdown" style="list-style-type: none;">
                         <a style="font-size:150%; color:#4154f1;" class="text-center col-sm-3 nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                           <i class="bi bi-gear"></i>
                         </a><!-- End Notification Icon -->
@@ -73,21 +71,20 @@
                 <h5 class="card-title">Tambah Brand </h5>
                 <form action="">
                     <div class="row mb-3">
-                        <label for="inputText" class="col-sm-2 col-form-label">Nama Brand</label>
+                        <label for="inputText" class="col-sm-2 col-form-label">Nama Socket</label>
                         <div class="col-sm-6">
                             <input type="text" class="form-control">
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="inputText" class="col-sm-2 col-form-label">Kategori Brand</label>
+                        <label class="col-sm-2 col-form-label">Merk</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control ">
+                            <select class="form-select" aria-label="Default select example">
+                            <option selected>Pilih Merk</option>
+                            <option value="1">AMD</option>
+                            <option value="2">Intel</option>
+                            </select>
                         </div>
-                    </div>
-                    <div class="row mb-3">
-                      <label for="inputNumber" class="col-sm-2 col-form-label">Logo Brand</label>
-                      <div class="col-sm-6">
-                        <input class="mb-3 form-control" type="file" id="formFile">
                     </div>
                     <div class="row ">
                         <label class="col-sm-2 col-form-label"></label>
@@ -112,24 +109,23 @@
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body p-3">
-                        <form action="">   
-                          <div class="row mb-3">
-                          <label for="inputText" class="col-sm-2 col-form-label">Nama Brand</label>
-                          <div class="col-sm-6">
-                              <input type="text" class="form-control">
-                          </div>
-                          </div>
-                          <div class="row mb-3">
-                              <label for="inputText" class="col-sm-2 col-form-label">Kategori Brand</label>
-                              <div class="col-sm-6">
-                                  <input type="text" class="form-control ">
-                              </div>
-                          </div>
-                          <div class="row mb-3">
-                            <label for="inputNumber" class="col-sm-2 col-form-label">Logo Brand</label>
-                            <div class="col-sm-6">
-                              <input class="mb-3 form-control" type="file" id="formFile">
-                          </div>
+                        <form action="">
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label">Nama Socket</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-2 col-form-label">Merk</label>
+                                <div class="col-sm-6">
+                                    <select class="form-select" aria-label="Default select example">
+                                    <option selected>Pilih Merk</option>
+                                    <option value="1">AMD</option>
+                                    <option value="2">Intel</option>
+                                    </select>
+                                </div>
+                            </div>
                         </form>
                         </div>
                         <div class="modal-footer">

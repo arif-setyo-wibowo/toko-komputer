@@ -19,6 +19,15 @@ class OrderController extends Controller
         return view('admin/order',$data);
     }
 
+    public function detail()
+    {
+        $data=[
+            'title' => "invoice"
+        ];
+
+        return view('admin/orderInvoice',$data);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

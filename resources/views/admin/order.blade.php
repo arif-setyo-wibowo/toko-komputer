@@ -33,6 +33,7 @@
                       <th scope="col">Email</th>
                       <th scope="col">Tanggal</th>
                       <th scope="col">Status Pesanan</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -46,6 +47,9 @@
                             <div style="color:#038E86;"> Selesai
                         </button>
                       </td>
+                      <td>
+                        <a href="/order/invoice">lihat invoice</a>
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row"><a href="#">#2457</a></th>
@@ -57,6 +61,9 @@
                             <div style="color:#3A36DB;"> Pending
                         </button>
                       </td>
+                      <td>
+                        <a href="/order/invoice">lihat invoice</a>
+                      </td>
                     </tr>
                     <tr>
                       <th scope="row"><a href="#">#2457</a></th>
@@ -67,6 +74,9 @@
                         <button style="font-size :12px; width:100px; background-color:#F5CDD9; border:none ; " type="button" class="btn  btn-primary  rounded-pill" >
                             <div style="color:#FF5368;"> Batal
                         </button>
+                      </td>
+                      <td>
+                        <a href="/order/invoice">lihat invoice</a>
                       </td>
                     </tr>
                   </tbody>
