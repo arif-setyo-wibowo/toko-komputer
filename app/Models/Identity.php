@@ -9,4 +9,5 @@ class Identity extends Model
 {
     use HasFactory;
     protected $table = 'identities';
+    protected $primaryKey = null;
 }
