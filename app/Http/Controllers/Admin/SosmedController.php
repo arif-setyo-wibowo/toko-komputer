@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Media;
 
 class SosmedController extends Controller
 {
@@ -13,7 +14,8 @@ class SosmedController extends Controller
     public function index()
     {
         $data=[
-            'title' => "Sosial Media"
+            'title' => "Sosial Media",
+            'sosmed' => Media::all()
         ];
 
         return view('admin/sosmed',$data);
@@ -24,7 +26,7 @@ class SosmedController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -32,7 +34,18 @@ class SosmedController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nama'   => 'required|min:5',
+            'link'   => 'required|min:10'
+        ]);
+
+        Media::create([
+            'mediaId'   => "media".rand(),
+            'mediaName' => $request->nama,
+            'medialink' => $request->link
+        ]);
+
+        return redirect()->route('admin.sosmed');
     }
 
     /**
@@ -64,6 +77,7 @@ class SosmedController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Media::where('mediaId', $id)->delete();
+        return redirect()->route('admin.sosmed');
     }
 }
