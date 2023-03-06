@@ -12,7 +12,11 @@ class ProcessorController extends Controller
      */
     public function index()
     {
-        //
+        $data=[
+            'title' => "Processor"
+        ];
+
+        return view('admin/processor',$data);
     }
 
     /**

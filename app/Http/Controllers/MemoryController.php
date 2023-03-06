@@ -12,7 +12,11 @@ class MemoryController extends Controller
      */
     public function index()
     {
-        //
+        $data=[
+            'title' => "Memory"
+        ];
+
+        return view('admin/memory',$data);
     }
 
     /**

@@ -10,6 +10,11 @@ use App\Http\Controllers\Admin\IdentitasController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\SocketController;
 use App\Http\Controllers\MotherboardController;
+use App\Http\Controllers\ProcessorController;
+use App\Http\Controllers\GraphicCardController;
+use App\Http\Controllers\MemoryController;
+use App\Http\Controllers\PowerSupplyController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +37,12 @@ Route::get('/identitas', [IdentitasController::class, 'index']);
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/socket', [SocketController::class, 'index']);
 Route::get('/motherboard', [MotherboardController::class, 'index']);
+Route::get('/processor', [ProcessorController::class, 'index']);
+Route::get('/graphic', [GraphicCardController::class, 'index']);
+Route::get('/memory', [MemoryController::class, 'index']);
+Route::get('/powersuplly', [PowerSupplyController::class, 'index']);
+
+
 
 
 

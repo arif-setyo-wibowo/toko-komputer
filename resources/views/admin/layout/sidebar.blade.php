@@ -280,27 +280,27 @@
         </a>
       </li>
       <li>
-        <a href="components-badges.html">
+        <a href="processor">
           <i class="bi bi-circle"></i><span>Processor</span>
         </a>
       </li>
       <li>
-        <a href="components-breadcrumbs.html">
+        <a href="/graphic">
           <i class="bi bi-circle"></i><span>VGA</span>
         </a>
       </li>
       <li>
-        <a href="components-buttons.html">
+        <a href="/memory">
           <i class="bi bi-circle"></i><span>RAM</span>
         </a>
       </li>
       <li>
-        <a href="components-cards.html">
+        <a href="/storage">
           <i class="bi bi-circle"></i><span>Storage</span>
         </a>
       </li>
       <li>
-        <a href="components-carousel.html">
+        <a href="/powersuplly">
           <i class="bi bi-circle"></i><span>Power Supplay</span>
         </a>
       </li>

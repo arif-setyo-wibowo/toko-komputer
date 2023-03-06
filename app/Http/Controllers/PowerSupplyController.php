@@ -12,7 +12,11 @@ class PowerSupplyController extends Controller
      */
     public function index()
     {
-        //
+        $data=[
+            'title' => "Power Supplay"
+        ];
+
+        return view('admin/powersuplly',$data);
     }
 
     /**

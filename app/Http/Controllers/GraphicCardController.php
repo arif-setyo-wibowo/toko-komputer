@@ -12,7 +12,11 @@ class GraphicCardController extends Controller
      */
     public function index()
     {
-        //
+        $data=[
+            'title' => "Graphic Card"
+        ];
+
+        return view('admin/graphic',$data);
     }
 
     /**
