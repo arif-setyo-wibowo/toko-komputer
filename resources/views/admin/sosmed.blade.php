@@ -45,7 +45,7 @@
                     @foreach ($sosmed as $data)
                       <tr>
                         <th scope="row">{{ $data->mediaName }}</th>
-                        <td>{{ $data->medialink }}</td>
+                        <td><a href="{{ $data->medialink }}">{{ $data->medialink }}</a></td>
                         <td>
                           <li class="nav-item dropdown" style="list-style-type: none;">
                             <a style="font-size:150%; color:#4154f1;" class="text-center col-sm-3 nav-link nav-icon"
@@ -71,18 +71,18 @@
               </div>
               <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
                 <h5 class="card-title">Tambah Sosial Media</h5>
-                <form action="/sosmed" method="POST">
+                <form action="{{ url()->current() }}" method="POST">
                   @csrf
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">Nama Platform</label>
                     <div class="col-sm-6">
-                      <input type="text" class="form-control" name="nama">
+                      <input type="text" class="form-control" name="nama" required>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">Link Platform</label>
                     <div class="col-sm-6">
-                      <input type="text" class="form-control" name="link">
+                      <input type="text" class="form-control" name="link" required>
                     </div>
                   </div>
                   <div class="row mb-3">
@@ -93,14 +93,8 @@
                   </div>
                 </form>
               </div>
-              <div class="tab-pane fade" id="bordered-contact" role="tabpanel" aria-labelledby="contact-tab">
-                Saepe animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam
-                perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum
-                iure. Dignissimos fuga tempore dolor.
-              </div>
             </div><!-- End Bordered Tabs -->
           </div>
-
         </div>
       </div><!-- End Recent Sales -->
       <!-- End Default Table Example -->
@@ -112,32 +106,34 @@
     <div class="modal fade modal-lg" id="updateSosmed" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Update Sosial Media</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body p-3">
-            <form action="/sosmed/update" method="POST">
-              @csrf
+          <form action="{{ url()->current() }}/update" method="post">
+            @csrf
+            <div class="modal-header">
+              <h5 class="modal-title">Update Sosial Media</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-3">
               <div class="row mb-6 mb-3">
                 <label for="inputText" class="col-sm-3 col-form-label">Nama Platform</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" placeholder="Masukkan Nama Platform" id="mediaName">
+                  <input type="text" class="form-control" placeholder="Masukkan Nama Platform" id="mediaName"
+                    name="mediaName">
                 </div>
               </div>
               <div class="row mb-6 mb-3">
                 <label for="inputText" class="col-sm-3 col-form-label">Link Platform</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" placeholder="Masukkan Link Platform" id="medialink">
+                  <input type="text" class="form-control" placeholder="Masukkan Link Platform" id="medialink"
+                    name="medialink">
                   <input type="hidden" class="form-control" id="mediaId" name="mediaId">
                 </div>
               </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" id="buttonupdate">Save changes</button>
+            </div>
+          </form>
         </div>
         <!-- End Vertically centered Modal-->
       </div>

@@ -34,11 +34,6 @@ class SosmedController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'nama'   => 'required|min:5',
-            'link'   => 'required|min:10'
-        ]);
-
         Media::create([
             'mediaId'   => "media".rand(),
             'mediaName' => $request->nama,
@@ -68,17 +63,13 @@ class SosmedController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        $this->validate($request, [
-            'mediaName'   => 'required|min:5',
-            'medialink'   => 'required|min:10'
+        Media::where('mediaId', $request->mediaId)
+        ->update([
+            'mediaName' => $request->mediaName,
+            'medialink' => $request->medialink,
         ]);
-
-        $media = Media::where('mediaId', $request->mediaId);
-        $media->mediaName = $request->mediaName;
-        $media->medialink = $request->medialink;
-        $media->save();
 
         return redirect()->route('admin.sosmed');
     }

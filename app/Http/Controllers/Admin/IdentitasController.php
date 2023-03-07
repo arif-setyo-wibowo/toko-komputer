@@ -60,7 +60,6 @@ class IdentitasController extends Controller
      */
     public function update(Request $request)
     {
-
         $data=[
             'title' => "Identitas",
             'identitas' => Identity::all()
