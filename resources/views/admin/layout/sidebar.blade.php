@@ -363,6 +363,11 @@
 
   <!-- Template Main JS File -->
   <script src="{{ asset('admin/') }}/js/main.js"></script>
+  <script type="text/javascript">
+    $(".alert").delay(1000).slideUp(200, function() {
+      $(this).alert('close');
+    });
+  </script>
   @yield('javascript')
 
 </body>

@@ -34,13 +34,12 @@ class SosmedController extends Controller
      */
     public function store(Request $request)
     {
-        Media::create([
-            'mediaId'   => "media".rand(),
-            'mediaName' => $request->nama,
-            'medialink' => $request->link
-        ]);
+        $media = new Media;
+        $media->mediaName = $request->nama;
+        $media->medialink = $request->link;
+        $media->save();
 
-        return redirect()->route('admin.sosmed');
+        return redirect()->route('admin.sosmed')->with(['success' => 'Tambah Data Berhasil']);
     }
 
     /**
@@ -56,7 +55,7 @@ class SosmedController extends Controller
      */
     public function edit(string $id)
     {
-        $data = Media::where('mediaId', $id)->get();
+        $data = Media::find($id)->get();
         return $data->toJson();
     }
 
@@ -65,13 +64,12 @@ class SosmedController extends Controller
      */
     public function update(Request $request)
     {
-        Media::where('mediaId', $request->mediaId)
-        ->update([
-            'mediaName' => $request->mediaName,
-            'medialink' => $request->medialink,
-        ]);
+        $media = Media::find($request->mediaId);
+        $media->mediaName = $request->mediaName;
+        $media->medialink = $request->medialink;
+        $media->save();
 
-        return redirect()->route('admin.sosmed');
+        return redirect()->route('admin.sosmed')->with(['success' => 'Edit Data Berhasil']);
     }
 
     /**
@@ -79,7 +77,7 @@ class SosmedController extends Controller
      */
     public function destroy(string $id)
     {
-        Media::where('mediaId', $id)->delete();
-        return redirect()->route('admin.sosmed');
+        Media::destroy($id);
+        return redirect()->route('admin.sosmed')->with(['success' => 'Hapus Data Berhasil']);
     }
 }

@@ -16,6 +16,12 @@
 
         <!-- Recent Sales -->
         <div class="col-12">
+          @if ($message = Session::get('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <i class="bi bi-check-circle me-1"></i>
+              {{ $message }}
+            </div>
+          @endif
           <div class="card recent-sales overflow-auto p-3">
 
             <!-- Bordered Tabs -->
