@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Customer;
 
 class DashboardController extends Controller
 {
@@ -13,7 +14,8 @@ class DashboardController extends Controller
     public function index()
     {
         $data=[
-            'title' => "Dashboard"
+            'title' => "Dashboard",
+            'pelanggan' => Customer::all()->count()
         ];
 
         return view('admin/dashboard',$data);
