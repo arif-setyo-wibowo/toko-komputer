@@ -13,7 +13,7 @@ class OrderController extends Controller
     public function index()
     {
         $data=[
-            'title' => "order"
+            'title' => "Order"
         ];
 
         return view('admin/order',$data);

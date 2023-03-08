@@ -310,15 +310,15 @@
         </ul>
       </li><!-- End Components Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed {{ $title != 'Order' ? 'collapsed' : '' }}" href="/order">
+        <a class="nav-link {{ $title != 'Order' ? 'collapsed' : '' }}" href="/order">
           <i class="bi-cash-coin" style="font-size: 18px;"></i>
           <span>Transaksi</span>
         </a>
       </li><!-- End Transaksi Page Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="/user">
+        <a class="nav-link {{ $title != 'Karyawan' ? 'collapsed' : '' }}" href="/karyawan">
           <i class="bi bi-person"></i>
-          <span>Users</span>
+          <span>Karyawan</span>
         </a>
       </li><!-- End Profile Page Nav -->
     </ul>

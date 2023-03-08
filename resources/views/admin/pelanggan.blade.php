@@ -32,10 +32,10 @@
 
                   @foreach ($pelanggan as $data)
                     <tr>
-                      <th scope="row"><a href="#">#{{ $data->customerId }}</a></th>
+                      <th scope="row">{{ $data->customerId }}</th>
                       <td>{{ $data->customerName }}</td>
                       <td class="text-primary">{{ $data->customerEmail }}</td>
-                      <td>-</td>
+                      <td>{{ $data->customerPhoneNumber }}</td>
                     </tr>
                   @endforeach
                 </tbody>

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->uuid('customerId')->primary();
             $table->string('customerName',255);
             $table->string('customerEmail',255)->unique();
+            $table->string('customerPhoneNumber',32);
             $table->string('customerPassword',255);
             $table->timestamps();
         });

@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Employee;
 
-class UserController extends Controller
+class KaryawanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +14,11 @@ class UserController extends Controller
     public function index()
     {
         $data=[
-            'title' => "User"
+            'title' => "Karyawan",
+            'karyawan' => Employee::all()
         ];
 
-        return view('admin/user',$data);
+        return view('admin/employee',$data);
     }
 
     /**
