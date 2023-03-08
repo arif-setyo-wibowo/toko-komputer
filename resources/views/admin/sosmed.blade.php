@@ -62,8 +62,10 @@
                               <li style="font-size:20px; padding-left: 25px;" class="row">
                                 <button type="button" class="m-1 col-4 btn btn-outline-primary buttonupdate"
                                   id="{{ $data->mediaId }}"><i class="bi bi-pen"></i></button>
-                                <a class="m-1 col-4 btn btn-outline-danger text-danger"
-                                  href="/sosmed/delete/{{ $data->mediaId }}"><i class="bi bi-trash"></i></a>
+                                {{-- <a class="m-1 col-4 btn btn-outline-danger text-danger"
+                                  href="/sosmed/delete/{{ $data->mediaId }}"><i class="bi bi-trash"></i></a> --}}
+                                <button type="button" class="m-1 col-4 btn btn-outline-danger buttonHapus"
+                                  id="{{ $data->mediaId }}"><i class="bi bi-trash"></i></button>
                               </li>
                             </ul><!-- End Notification Dropdown Items -->
                           </li><!-- End Notification Nav -->
@@ -144,6 +146,22 @@
         <!-- End Vertically centered Modal-->
       </div>
     </div>
+
+    {{-- Modal Hapus --}}
+    <div class="modal fade" id="hapusData" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            Apakah Yakin Menghapus Data ?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+            <button type="button" class="btn btn-primary buttonAksiHapus">Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Vertically centered Modal-->
+    {{-- End Modal Hapus --}}
   </section>
 @endsection
 
