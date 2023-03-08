@@ -76,24 +76,279 @@
                 <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
                 <h5 class="card-title">Tambah Brand </h5>
                 <form action="">
-                    <div class="row mb-3">
-                        <label for="inputText" class="col-sm-2 col-form-label">Nama Socket</label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Merk</label>
-                        <div class="col-sm-6">
-                            <select class="form-select" aria-label="Default select example">
-                            <option selected>Pilih Merk</option>
-                            <option value="1">AMD</option>
-                            <option value="2">Intel</option>
+                  <div class="row">
+                    <div class="row col" >
+                        <label for="inputText" class="col-md-3 col-form-label">Nama Socket</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" aria-label="Default select example">
+                              <option selected>Pilih Socket</option>
+                              <option value="1">AMD</option>
+                              <option value="2">Intel</option>
                             </select>
                         </div>
                     </div>
-                    <div class="row ">
-                        <label class="col-sm-2 col-form-label"></label>
+                    <div class="row col">
+                        <label for="inputText" class="col-md-3 col-form-label">Nama</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="row col" >
+                        <label for="inputText" class="col-md-3 col-form-label">Brand</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" aria-label="Default select example">
+                              <option selected>Pilih Brand</option>
+                              <option value="1">AMD</option>
+                              <option value="2">Intel</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row col">
+                        <label for="inputText" class="col-md-3 col-form-label">Chipset</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                     
+                    <!-- Accordion without outline borders -->
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                      <div class="accordion-item" style="background-color:#f8f9fa; border-radius:5px;">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button style="background-color:#dee2e6; padding:20px; border-radius:5px;" class=" accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Rear Panel Parts
+                          </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body row mt-3" style="padding-left:30px;" >
+                          <!-- rear port -->
+                          <div class="row mt-2">
+                              <div class="row col-md-4 ">
+                                <div class="col-sm-8 form-check" style="padding-left:10px;">
+                                  <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
+                                  <input type="text" class=" form-control" value="USB C" disabled>
+                                </div>
+                                <div class="col-sm-3 ">
+                                  <input type="number" class=" form-control " value="1">
+                                </div>                             
+                              </div>
+                              <div class="row col-md-4 ">
+                                <div class="col-sm-8 form-check" style="padding-left:10px;">
+                                  <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
+                                  <input type="text" class=" form-control" value="USB 2.0" disabled>
+                                </div>
+                                <div class="col-sm-3">
+                                  <input type="number" class="form-control " value="1">
+                                </div>                             
+                              </div>
+                              <div class="row col-md-4 ">
+                                <div class="col-sm-8 form-check" style="padding-left:10px;">
+                                  <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
+                                  <input type="text" class=" form-control" value="USB 3.2" disabled>
+                                </div>
+                                <div class="col-sm-3">
+                                  <input type="number" class="form-control " value="1">
+                                </div>                             
+                              </div>           
+                          </div>
+                          <div class="row mt-2">
+                              <div class="row col-md-4 ">
+                                <div class="col-sm-8 form-check" style="padding-left:10px;">
+                                  <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
+                                  <input type="text" class=" form-control" value="AT/PS2" disabled>
+                                </div>
+                                <div class="col-sm-3">
+                                  <input type="number" class="form-control " value="1">
+                                </div>                             
+                              </div>
+                              <div class="row col-md-4 ">
+                                <div class="col-sm-8 form-check" style="padding-left:10px;">
+                                  <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
+                                  <input type="text" class=" form-control" value="D-sub" disabled>
+                                </div>
+                                <div class="col-sm-3">
+                                  <input type="number" class="form-control " value="1">
+                                </div>                             
+                              </div>
+                              <div class="row col-md-4 ">
+                                <div class="col-sm-8 form-check" style="padding-left:10px;">
+                                  <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
+                                  <input type="text" class=" form-control" value="S/PDIF" disabled>
+                                </div>
+                                <div class="col-sm-3">
+                                  <input type="number" class="form-control " value="1">
+                                </div>                             
+                              </div>           
+                          </div>
+                          <div class="row mt-2">
+                              <div class="row col-md-4 ">
+                                <div class="col-sm-8 form-check" style="padding-left:10px;">
+                                  <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
+                                  <input type="text" class=" form-control" value="Ethernet" disabled>
+                                </div>
+                                <div class="col-sm-3">
+                                  <input type="number" class="form-control " value="1">
+                                </div>                             
+                              </div>
+                              <div class="row col-md-4 ">
+                                <div class="col-sm-8 form-check" style="padding-left:10px;">
+                                  <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
+                                  <input type="text" class=" form-control" value="Firewire" disabled>
+                                </div>
+                                <div class="col-sm-3">
+                                  <input type="number" class="form-control " value="1">
+                                </div>                             
+                              </div>
+                              <div class="row col-md-4 ">
+                                <div class="col-sm-8 form-check" style="padding-left:10px;">
+                                  <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
+                                  <input type="text" class=" form-control" value="Paralel" disabled>
+                                </div>
+                                <div class="col-sm-3">
+                                  <input type="number" class="form-control " value="1">
+                                </div>                             
+                              </div>           
+                          </div>
+                          <div class="row mt-2">
+                              <div class="row col-md-4 ">
+                                <div class="col-sm-8 form-check" style="padding-left:10px;">
+                                  <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
+                                  <input type="text" class=" form-control" value="Serial" disabled>
+                                </div>
+                                <div class="col-sm-3">
+                                  <input type="number" class="form-control " value="1">
+                                </div>                             
+                              </div>
+                              <div class="row col-md-4 ">
+                                <div class="col-sm-8 form-check" style="padding-left:10px;">
+                                  <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
+                                  <input type="text" class=" form-control" value="Audio" disabled>
+                                </div>
+                                <div class="col-sm-3">
+                                  <input type="number" class="form-control " value="1">
+                                </div>                             
+                              </div>
+                              <div class="row col-md-4 ">
+                                <div class="col-sm-8 form-check" style="padding-left:10px;">
+                                  <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
+                                  <input type="text" class=" form-control" value="HDMI" disabled>
+                                </div>
+                                <div class="col-sm-3">
+                                  <input type="number" class="form-control " value="1">
+                                </div>                             
+                              </div>           
+                          </div>
+                          <div class="row mt-2">
+                              <div class="row col-md-4 ">
+                                <div class="col-sm-8 form-check" style="padding-left:10px;">
+                                  <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
+                                  <input type="text" class=" form-control" value="DP" disabled>
+                                </div>
+                                <div class="col-sm-3">
+                                  <input type="number" class="form-control " value="1">
+                                </div>                             
+                              </div>
+                              <div class="row col-md-4 ">
+                                <div class="col-sm-8 form-check" style="padding-left:10px;">
+                                  <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
+                                  <input type="text" class=" form-control" value="eSATA" disabled>
+                                </div>
+                                <div class="col-sm-3">
+                                  <input type="number" class="form-control " value="1">
+                                </div>                             
+                              </div>
+                              <div class="row col-md-4 ">
+                                <div class="col-sm-8 form-check" style="padding-left:10px;">
+                                  <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
+                                  <input type="text" class=" form-control" value="DVI" disabled>
+                                </div>
+                                <div class="col-sm-3">
+                                  <input type="number" class="form-control " value="1">
+                                </div>                             
+                              </div>           
+                          </div>
+                          <!-- end rear port -->
+                        </div>
+                      </div> 
+                    </div><!-- End Accordion without outline borders -->
+
+                    <div class="row mt-4">
+                      <h4>Storage</h4>
+                    <div class="row col"style="padding-left:50px;" >
+                          <div class="row col-md-4 ">
+                                <div class="col-sm-8 form-check" style="padding-left:10px;">
+                                  <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
+                                  <input type="text" class=" form-control" value="SATA" disabled>
+                                </div>
+                                <div class="col-sm-3">
+                                  <input type="number" class="form-control " value="1">
+                                </div>                             
+                              </div>
+                              <div class="row col-md-4 ">
+                                <div class="col-sm-8 form-check" style="padding-left:10px;">
+                                  <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
+                                  <input type="text" class=" form-control" value="M.2" disabled>
+                                </div>
+                                <div class="col-sm-3">
+                                  <input type="number" class="form-control " value="1">
+                                </div>                             
+                            </div>
+                    </div>
+                    <div class="row mt-4">
+                    <div class="row col" >
+                        <label for="inputText" class="col-md-3 col-form-label">Memory Type</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" aria-label="Default select example">
+                              <option ></option>
+                              <option value="1">DDR3</option>
+                              <option value="2">DDR4</option>
+                              <option value="2">DDR5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row col">
+                        <label for="inputText" class="col-md-3 col-form-label">Max Memory</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                  <div class="row col">
+                        <label for="inputText" class="col-md-3 col-form-label">Form Factor</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col">
+                        <label for="inputText" class="col-md-3 col-form-label">Warranty</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="row col">
+                      <label for="inputPassword" class="col-sm-3 col-form-label">Description</label>
+                      <div class="col-sm-10">
+                        <textarea class="form-control" style="height: 100px"></textarea>
+                      </div>
+                    </div>
+                    <div class="row col">
+                        <label for="number" class="col-md-3 col-form-label">Harga</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+
+
+
+                    <div class="row mt-4">
+                        <label class="col-sm-3 col-form-label"></label>
                         <div class="col-sm-10">
                             <button type="submit" class="btn btn-primary">Tambah Data</button>
                         </div>
