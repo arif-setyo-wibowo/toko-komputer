@@ -22,6 +22,14 @@
               {{ $message }}
             </div>
           @endif
+          @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+
+              @foreach ($errors->all() as $error)
+                <i class="bi bi-exclamation-octagon me-1"> {{ $error }} </i><br>
+              @endforeach
+            </div>
+          @endif
           <div class="card recent-sales overflow-auto p-3">
 
             <!-- Bordered Tabs -->
@@ -125,14 +133,14 @@
                 <label for="inputText" class="col-sm-3 col-form-label">Nama Platform</label>
                 <div class="col-sm-8">
                   <input type="text" class="form-control" placeholder="Masukkan Nama Platform" id="mediaName"
-                    name="mediaName">
+                    name="mediaName" required>
                 </div>
               </div>
               <div class="row mb-6 mb-3">
                 <label for="inputText" class="col-sm-3 col-form-label">Link Platform</label>
                 <div class="col-sm-8">
                   <input type="text" class="form-control" placeholder="Masukkan Link Platform" id="medialink"
-                    name="medialink">
+                    name="medialink" required>
                   <input type="hidden" class="form-control" id="mediaId" name="mediaId">
                 </div>
               </div>
