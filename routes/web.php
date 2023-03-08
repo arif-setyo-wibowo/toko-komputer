@@ -55,3 +55,9 @@ Route::controller(SosmedController::class)->group(function () {
     Route::post('/sosmed/update', 'update');
     Route::get('/sosmed/delete/{id}', 'destroy');
 });
+
+Route::controller(BrandController::class)->group(function () {
+    Route::get('/brand', 'index')->name('admin.brand');
+    Route::post('/brand', 'store');
+    Route::get('/brand/find/{id}', 'edit');
+});

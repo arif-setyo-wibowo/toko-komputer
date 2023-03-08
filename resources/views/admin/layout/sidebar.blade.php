@@ -335,7 +335,7 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer" style="position:fixed;bottom:0px;right:0px;left:0px">
+  <footer id="footer" class="footer" style="bottom:0px;right:0px;left:0px">
     <div class="copyright">
       &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
     </div>

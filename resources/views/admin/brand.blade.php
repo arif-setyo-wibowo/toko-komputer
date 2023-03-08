@@ -14,6 +14,20 @@
   <section class="section">
     <div class="row">
       <div class="col-lg-12">
+        @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <i class="bi bi-check-circle me-1"></i>
+          {{ $message }}
+        </div>
+      @endif
+      @if ($errors->any())
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+
+          @foreach ($errors->all() as $error)
+            <i class="bi bi-exclamation-octagon me-1"> {{ $error }} </i><br>
+          @endforeach
+        </div>
+      @endif
         <!-- Recent Sales -->
         <div class="col-12">
           <div class="card recent-sales overflow-auto p-3 ">
@@ -44,11 +58,13 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <?php $count = 1 ?>
+                    @foreach ($brand as $data)
                     <tr>
-                      <th scope="row"><a href="#">#2457</a></th>
-                      <td>Intel.png</td>
-                      <td>Intel</td>
-                      <td>Processor</td>
+                      <th scope="row">{{$count++}}</th>
+                      <td><img src="{{ asset('uploads/gambar/brand/' . $data->brandLogo)}}" style="height:120px;"></td>
+                      <td>{{$data->brandName}}</td>
+                      <td>{{$data->brandCategory}}</td>
                       <td>
                         <li class="nav-item dropdown" style="list-style-type: none;">
                           <a style="font-size:150%; color:#4154f1;" class="text-center col-sm-3 nav-link nav-icon"
@@ -66,6 +82,7 @@
                         </li><!-- End Notification Nav -->
                       </td>
                     </tr>
+                    @endforeach
                   </tbody>
                 </table>
 
@@ -73,23 +90,28 @@
               </div>
               <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
                 <h5 class="card-title">Tambah Brand </h5>
-                <form action="">
+                <form action="/brand" method="POST" enctype="multipart/form-data">
+                  @csrf
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">Nama Brand</label>
                     <div class="col-sm-6">
-                      <input type="text" class="form-control">
+                      <input type="text" class="form-control" name="brandName" id="brandName">
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">Kategori Brand</label>
                     <div class="col-sm-6">
-                      <input type="text" class="form-control ">
+                      <select name="brandCategory" id="brandCategory">
+                          <option value="Ram">Ram</option>
+                          <option value="Ssd">Ssd</option>
+                          <option value="Hardisk">Hardisk</option>
+                      </select>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="inputNumber" class="col-sm-2 col-form-label">Logo Brand</label>
                     <div class="col-sm-6">
-                      <input class="mb-3 form-control" type="file" id="formFile">
+                      <input class="mb-3 form-control" type="file" id="brandLogo" name="brandLogo">
                     </div>
                     <div class="row ">
                       <label class="col-sm-2 col-form-label"></label>
@@ -98,11 +120,6 @@
                       </div>
                     </div>
                 </form>
-              </div>
-              <div class="tab-pane fade" id="bordered-contact" role="tabpanel" aria-labelledby="contact-tab">
-                Saepe animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam
-                perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum
-                iure. Dignissimos fuga tempore dolor.
               </div>
             </div><!-- End Bordered Tabs -->
 
