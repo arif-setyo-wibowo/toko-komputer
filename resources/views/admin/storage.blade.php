@@ -180,6 +180,20 @@
                         </div>
                     </div>
                   </div>
+                  <div class="row mt-4">
+                    <div class="row col" >
+                      <label for="inputText" class="col-md-3 col-form-label">Harga</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col" >
+                      <label for="inputText" class="col-md-3 col-form-label"></label>
+                        <div class="col-sm-8">
+                        </div>
+                    </div>
+                  </div>
+
                     <div class="row mt-4">
                         <label class="col-sm-3 col-form-label"></label>
                         <div class="col-sm-10">
@@ -302,6 +316,19 @@
                                 <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
                                   <div class="col-sm-8">
                                       <input type="text" class="form-control">
+                                  </div>
+                              </div>
+                            </div>
+
+                            <div class="row mt-4">
+                              <div class="row col" >
+                                <label for="inputText" class="col-md-3 col-form-label">Harga</label>
+                                  <div class="col-sm-8">
+                                      <input type="text" class="form-control">
+                                  </div>
+                              </div>
+                              <div class="row col" >
+                                  <div class="col-sm-8">
                                   </div>
                               </div>
                             </div>

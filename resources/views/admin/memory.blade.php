@@ -154,6 +154,21 @@
                         </div>
                     </div>
                   </div>
+
+                  <div class="row mt-4">
+                    <div class="row col" >
+                      <label for="inputText" class="col-md-3 col-form-label">Harga</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col" >
+                      <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
               
     
                     <div class="row mt-4">
@@ -163,9 +178,6 @@
                         </div>
                     </div>
                 </form>
-                </div>
-                <div class="tab-pane fade" id="bordered-contact" role="tabpanel" aria-labelledby="contact-tab">
-                  Saepe animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.
                 </div>
               </div><!-- End Bordered Tabs -->
 
@@ -254,6 +266,21 @@
                     </div>
                     <div class="row col" >
                       <label for="inputText" class="col-md-3 col-form-label">Cas Latency</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt-4">
+                    <div class="row col" >
+                      <label for="inputText" class="col-md-3 col-form-label">Harga</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col" >
+                      <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control">
                         </div>
