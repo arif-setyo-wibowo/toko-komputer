@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\IdentitasController;
 use App\Http\Controllers\Admin\KaryawanController;
 use App\Http\Controllers\Admin\SocketController;
+use App\Http\Controllers\Admin\MemoriController;
 use App\Http\Controllers\MotherboardController;
 use App\Http\Controllers\ProcessorController;
 use App\Http\Controllers\GraphicCardController;
@@ -40,7 +41,6 @@ Route::get('/socket', [SocketController::class, 'index']);
 Route::get('/motherboard', [MotherboardController::class, 'index']);
 Route::get('/processor', [ProcessorController::class, 'index']);
 Route::get('/graphic', [GraphicCardController::class, 'index']);
-Route::get('/memory', [MemoryController::class, 'index']);
 Route::get('/powersuplly', [PowerSupplyController::class, 'index']);
 Route::get('/storage', [StorageController::class, 'index']);
 
@@ -60,4 +60,11 @@ Route::controller(BrandController::class)->group(function () {
     Route::get('/brand', 'index')->name('admin.brand');
     Route::post('/brand', 'store');
     Route::get('/brand/find/{id}', 'edit');
+});
+
+Route::controller(MemoriController::class)->prefix('/memory')->group(function () {
+    Route::get('/', 'index')->name('admin.memory');
+    Route::post('/', 'store');
+    Route::get('/find/{id}', 'edit');
+    Route::get('/delete/{id}', 'destroy');
 });

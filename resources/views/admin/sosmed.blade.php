@@ -70,8 +70,6 @@
                               <li style="font-size:20px; padding-left: 25px;" class="row">
                                 <button type="button" class="m-1 col-4 btn btn-outline-primary buttonupdate"
                                   id="{{ $data->mediaId }}"><i class="bi bi-pen"></i></button>
-                                {{-- <a class="m-1 col-4 btn btn-outline-danger text-danger"
-                                  href="/sosmed/delete/{{ $data->mediaId }}"><i class="bi bi-trash"></i></a> --}}
                                 <button type="button" class="m-1 col-4 btn btn-outline-danger buttonHapus"
                                   id="{{ $data->mediaId }}"><i class="bi bi-trash"></i></button>
                               </li>
@@ -168,7 +166,7 @@
           </div>
         </div>
       </div>
-    </div><!-- End Vertically centered Modal-->
+    </div>
     {{-- End Modal Hapus --}}
   </section>
 @endsection

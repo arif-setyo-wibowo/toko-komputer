@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             CustomerSeeder::class,
             MediaSeeder::class,
             EmployeeSeeder::class,
+            BrandSeeder::class,
+            MemorySeeder::class,
         ]);
     }
 }

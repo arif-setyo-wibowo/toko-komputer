@@ -18,7 +18,7 @@ class IdentitiesSeeder extends Seeder
             'shopAddress' => 'Jln. Toko Komputer',
             'shopPhoneNumber' => '081245782932',
             'shopEmail' => 'tokokomputer@gmail.com',
-            'shopLogo' => 'XZ8C85604vv9fdG5JhPE.png',
+            'shopLogo' => 'tFkR0bGGp3URK6z5YMeP.png',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),    
         ]);
