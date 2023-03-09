@@ -74,37 +74,121 @@
               
 
               <!-- Tambah Brand -->
-                </div>
+              </div>
                 <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
-                <h5 class="card-title">Tambah Brand </h5>
+                <h5 class="card-title">Tambah Storage </h5>
                 <form action="">
+                  <div class="row">
                     <div class="row mb-3">
-                        <label for="inputText" class="col-sm-2 col-form-label">Nama Socket</label>
-                        <div class="col-sm-6">
+                      <div class="col-md-8 col-lg-9">
+                        <img src="{{asset('admin/')}}/img/card.jpg" style="height: 220px;"
+                          alt="">
+                        <div class="pt-2 col-md-4 text-center">
+                          <label style="width:100px;">
+                            <input type="file" name="shopLogo" id="shopLogo" style="display:none;">
+                            <a class="btn btn-primary " style="width: 100px;"><i class="bi bi-upload"></i></a>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                  <div class="row col">
+                        <label for="inputText" class="col-md-3 col-form-label">Nama</label>
+                        <div class="col-sm-8">
                             <input type="text" class="form-control">
                         </div>
                     </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Merk</label>
-                        <div class="col-sm-6">
-                            <select class="form-select" aria-label="Default select example">
-                            <option selected>Pilih Merk</option>
-                            <option value="1">AMD</option>
-                            <option value="2">Intel</option>
+                    <div class="row col" >
+                        <label for="inputText" class="col-md-3 col-form-label">Nama Brand</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" aria-label="Default select example">
+                              <option selected>Pilih Brand</option>
+                              <option value="1">AMD</option>
+                              <option value="2">Intel</option>
                             </select>
                         </div>
                     </div>
-                    <div class="row ">
-                        <label class="col-sm-2 col-form-label"></label>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="row col" >
+                        <label for="inputText" class="col-md-3 col-form-label">Tipe</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" aria-label="Default select example">
+                              <option selected>Pilih Type</option>
+                              <option value="1">SSD</option>
+                              <option value="2">Harddisk</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row col" >
+                        <label for="inputText" class="col-md-3 col-form-label">Size</label>
+                        <div class="col-sm-8">
+                          <div class="input-group mb-3">
+                            <input type="number" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <span class="input-group-text" id="basic-addon2"> 
+                              <select class="form-select" >
+                                    <option selected>TB</option>
+                                    <option value="1">GB </option>
+                                    <option value="1">MB </option>
+                              </select>
+                            </span>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="row col-md-4" >
+                      <label for="inputText" class="col-md-2 col-form-label">Read</label>
+                        <div class="input-group col-sm-3">
+                        <input type="text" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <span class="input-group-text" id="basic-addon2"> 
+                              MB/s
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row col-md-4" >
+                      <label for="inputText" class="col-md-2 col-form-label">Write</label>
+                        <div class="input-group col-sm-3">
+                        <input type="text" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <span class="input-group-text" id="basic-addon2"> 
+                              MB/s
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row col-md-4" >
+                      <label for="inputText" class="col-md-2 col-form-label">RPM</label>
+                        <div class="input-group col-sm-3">
+                        <input type="text" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <span class="input-group-text" id="basic-addon2"> 
+                              RPM
+                            </span>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row mt-5">
+                  <div class="row col mt-3">
+                        <label for="inputText" class="col-md-3 col-form-label">Ukuran</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col mt-3" >
+                      <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+                    <div class="row mt-4">
+                        <label class="col-sm-3 col-form-label"></label>
                         <div class="col-sm-10">
                             <button type="submit" class="btn btn-primary">Tambah Data</button>
                         </div>
                     </div>
                 </form>
                 </div>
-                <div class="tab-pane fade" id="bordered-contact" role="tabpanel" aria-labelledby="contact-tab">
-                  Saepe animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.
-                </div>
+                
               </div><!-- End Bordered Tabs -->
 
                 <!-- Modal -->
@@ -119,23 +203,110 @@
                         </div>
                         <div class="modal-body p-3">
                         <form action="">
-                            <div class="row mb-3">
-                                <label for="inputText" class="col-sm-2 col-form-label">Nama Socket</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control">
+                            <div class="row">
+                              <div class="row mb-3">
+                                <div class="col-md-8 col-lg-9">
+                                  <img src="{{asset('admin/')}}/img/card.jpg" style="height: 220px;"
+                                    alt="">
+                                  <div class="pt-2 col-md-4 text-center">
+                                    <label style="width:100px;">
+                                      <input type="file" name="shopLogo" id="shopLogo" style="display:none;">
+                                      <a class="btn btn-primary " style="width: 100px;"><i class="bi bi-upload"></i></a>
+                                    </label>
+                                  </div>
                                 </div>
+                              </div>
                             </div>
-                            <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label">Merk</label>
-                                <div class="col-sm-6">
+                            <div class="row mt-4">
+                            <div class="row col">
+                                  <label for="inputText" class="col-md-3 col-form-label">Nama</label>
+                                  <div class="col-sm-8">
+                                      <input type="text" class="form-control">
+                                  </div>
+                              </div>
+                              <div class="row col" >
+                                  <label for="inputText" class="col-md-3 col-form-label">Nama Brand</label>
+                                  <div class="col-sm-8">
                                     <select class="form-select" aria-label="Default select example">
-                                    <option selected>Pilih Merk</option>
-                                    <option value="1">AMD</option>
-                                    <option value="2">Intel</option>
-                                    </select>
-                                </div>
+                                        <option selected>Pilih Brand</option>
+                                        <option value="1">AMD</option>
+                                        <option value="2">Intel</option>
+                                      </select>
+                                  </div>
+                              </div>
                             </div>
-                        </form>
+                            <div class="row mt-4">
+                              <div class="row col" >
+                                  <label for="inputText" class="col-md-3 col-form-label">Tipe</label>
+                                  <div class="col-sm-8">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>Pilih Type</option>
+                                        <option value="1">SSD</option>
+                                        <option value="2">Harddisk</option>
+                                      </select>
+                                  </div>
+                              </div>
+                              <div class="row col" >
+                                  <label for="inputText" class="col-md-3 col-form-label">Size</label>
+                                  <div class="col-sm-8">
+                                    <div class="input-group mb-3">
+                                      <input type="number" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                      <span class="input-group-text" id="basic-addon2"> 
+                                        <select class="form-select" >
+                                              <option selected>TB</option>
+                                              <option value="1">GB </option>
+                                              <option value="1">MB </option>
+                                        </select>
+                                      </span>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="row mt-4">
+                              <div class="row col-md-4" >
+                                <label for="inputText" class="col-md-3 col-form-label">Read</label>
+                                  <div class="input-group col-sm-4">
+                                  <input type="text" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                      <span class="input-group-text" id="basic-addon2"> 
+                                        MB/s
+                                      </span>
+                                  </div>
+                              </div>
+                              <div class="row col-md-4" >
+                                <label for="inputText" class="col-md-3 col-form-label">Write</label>
+                                  <div class="input-group col-sm-4">
+                                  <input type="text" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                      <span class="input-group-text" id="basic-addon2"> 
+                                        MB/s
+                                      </span>
+                                  </div>
+                              </div>
+                              <div class="row col-md-4" >
+                                <label for="inputText" class="col-md-3 col-form-label">RPM</label>
+                                  <div class="input-group col-sm-4">
+                                  <input type="text" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                      <span class="input-group-text" id="basic-addon2"> 
+                                        RPM
+                                      </span>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="row mt-5">
+                            <div class="row col mt-3">
+                                  <label for="inputText" class="col-md-3 col-form-label">Ukuran</label>
+                                  <div class="col-sm-8">
+                                      <input type="text" class="form-control">
+                                  </div>
+                              </div>
+                              <div class="row col mt-3" >
+                                <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
+                                  <div class="col-sm-8">
+                                      <input type="text" class="form-control">
+                                  </div>
+                              </div>
+                            </div>
+                            
+                          </form>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

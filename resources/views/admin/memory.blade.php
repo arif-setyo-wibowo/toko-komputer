@@ -74,26 +74,90 @@
               <!-- Tambah Brand -->
                 </div>
                 <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
-                <h5 class="card-title">Tambah Brand </h5>
+                <h5 class="card-title">Tambah Memory </h5>
                 <form action="">
+                  <div class="row">
                     <div class="row mb-3">
-                        <label for="inputText" class="col-sm-2 col-form-label">Nama Socket</label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control">
+                      <div class="col-md-8 col-lg-9">
+                        <img src="{{asset('admin/')}}/img/card.jpg" style="height: 220px;"
+                          alt="">
+                        <div class="pt-2 col-md-4 text-center">
+                          <label style="width:100px;">
+                            <input type="file" name="shopLogo" id="shopLogo" style="display:none;">
+                            <a class="btn btn-primary " style="width: 100px;"><i class="bi bi-upload"></i></a>
+                          </label>
                         </div>
+                      </div>
                     </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Merk</label>
-                        <div class="col-sm-6">
-                            <select class="form-select" aria-label="Default select example">
-                            <option selected>Pilih Merk</option>
-                            <option value="1">AMD</option>
-                            <option value="2">Intel</option>
+                  </div>
+                  <div class="row mt-4">
+                      <div class="row col">
+                            <label for="inputText" class="col-md-3 col-form-label">Nama</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control">
+                            </div>
+                      </div>
+                      <div class="row col" >
+                            <label for="inputText" class="col-md-3 col-form-label">Nama Brand</label>
+                            <div class="col-sm-8">
+                              <select class="form-select" aria-label="Default select example">
+                                  <option selected>Pilih Brand</option>
+                                  <option value="1">AMD</option>
+                                  <option value="2">Intel</option>
+                                </select>
+                            </div>
+                      </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="row col" >
+                        <label for="inputText" class="col-md-3 col-form-label">Type</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" aria-label="Default select example">
+                              <option selected>Pilih Type</option>
+                              <option value="1">DDR3</option>
+                              <option value="2">DDR4</option>
+                              <option value="2">DDR5</option>
                             </select>
                         </div>
                     </div>
-                    <div class="row ">
-                        <label class="col-sm-2 col-form-label"></label>
+                    <div class="row col" >
+                        <label for="inputText" class="col-md-3 col-form-label">Capacity</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" aria-label="Default select example">
+                              <option selected>Pilih Capacity</option>
+                              <option value="1">2GB </option>
+                              <option value="2">4GB </option>
+                              <option value="2">4GB (2X2GB)</option>
+                              <option value="2">8GB </option>
+                              <option value="2">8GB (2X4GB)</option>
+                              <option value="2">16GB </option>
+                              <option value="2">16GB (2X8GB)</option>
+                              <option value="2">32GB </option>
+                              <option value="2">32GB (2X16GB)</option>
+                              <option value="2">64GB </option>
+                              <option value="2">64GB (2X32GB)</option>
+                            </select>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="row col" >
+                      <label for="inputText" class="col-md-3 col-form-label">Speed</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col" >
+                      <label for="inputText" class="col-md-3 col-form-label">Cas Latency</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+              
+    
+                    <div class="row mt-4">
+                        <label class="col-sm-3 col-form-label"></label>
                         <div class="col-sm-10">
                             <button type="submit" class="btn btn-primary">Tambah Data</button>
                         </div>
@@ -117,23 +181,85 @@
                         </div>
                         <div class="modal-body p-3">
                         <form action="">
-                            <div class="row mb-3">
-                                <label for="inputText" class="col-sm-2 col-form-label">Nama Socket</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control">
-                                </div>
+                  <div class="row">
+                    <div class="row mb-3">
+                      <div class="col-md-8 col-lg-9">
+                        <img src="{{asset('admin/')}}/img/card.jpg" style="height: 220px;"
+                          alt="">
+                        <div class="pt-2 col-md-4 text-center">
+                          <label style="width:100px;">
+                            <input type="file" name="shopLogo" id="shopLogo" style="display:none;">
+                            <a class="btn btn-primary " style="width: 100px;"><i class="bi bi-upload"></i></a>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                      <div class="row col">
+                            <label for="inputText" class="col-md-3 col-form-label">Nama</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control">
                             </div>
-                            <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label">Merk</label>
-                                <div class="col-sm-6">
-                                    <select class="form-select" aria-label="Default select example">
-                                    <option selected>Pilih Merk</option>
-                                    <option value="1">AMD</option>
-                                    <option value="2">Intel</option>
-                                    </select>
-                                </div>
+                      </div>
+                      <div class="row col" >
+                            <label for="inputText" class="col-md-3 col-form-label">Nama Brand</label>
+                            <div class="col-sm-8">
+                              <select class="form-select" aria-label="Default select example">
+                                  <option selected>Pilih Brand</option>
+                                  <option value="1">AMD</option>
+                                  <option value="2">Intel</option>
+                                </select>
                             </div>
-                        </form>
+                      </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="row col" >
+                        <label for="inputText" class="col-md-3 col-form-label">Type</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" aria-label="Default select example">
+                              <option selected>Pilih Type</option>
+                              <option value="1">DDR3</option>
+                              <option value="2">DDR4</option>
+                              <option value="2">DDR5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row col" >
+                        <label for="inputText" class="col-md-3 col-form-label">Capacity</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" aria-label="Default select example">
+                              <option selected>Pilih Capacity</option>
+                              <option value="1">2GB </option>
+                              <option value="2">4GB </option>
+                              <option value="2">4GB (2X2GB)</option>
+                              <option value="2">8GB </option>
+                              <option value="2">8GB (2X4GB)</option>
+                              <option value="2">16GB </option>
+                              <option value="2">16GB (2X8GB)</option>
+                              <option value="2">32GB </option>
+                              <option value="2">32GB (2X16GB)</option>
+                              <option value="2">64GB </option>
+                              <option value="2">64GB (2X32GB)</option>
+                            </select>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="row col" >
+                      <label for="inputText" class="col-md-3 col-form-label">Speed</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col" >
+                      <label for="inputText" class="col-md-3 col-form-label">Cas Latency</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+                </form>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
