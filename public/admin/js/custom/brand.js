@@ -1,19 +1,18 @@
 const base_url = document.URL;
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     //edit Brand
-    $(document).on('click', '.buttonupdate', function() {
+    $(document).on('click', '.buttonupdate', function () {
         var id = $(this).attr("id");
 
         $.ajax({
             type: "GET",
             url: base_url + "/find/" + id,
             dataType: "json",
-            success: function(response) {
+            success: function (response) {
                 $("#brandIdUpdate").val(response[0]['brandId']);
                 $('#brandNameUpdate').val(response[0]['brandName']);
-                $('#brandCategoryUpdate').val(response[0]['brandCategory']);
                 $('#imageAwal').val(response[0]['brandLogo']);
                 $("#updateBrand").modal("show");
             }
@@ -21,11 +20,11 @@ $(document).ready(function() {
     });
 
     //delete Brand
-    $(document).on('click', '.buttondelete', function() {
+    $(document).on('click', '.buttondelete', function () {
         var id = $(this).attr("id");
         $("#hapusData").modal("show");
 
-        $(document).on('click', '.buttonAksiHapus', function() {
+        $(document).on('click', '.buttonAksiHapus', function () {
             window.location.replace(base_url + "/delete/" + id);
         })
     });

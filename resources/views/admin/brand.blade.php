@@ -15,19 +15,19 @@
     <div class="row">
       <div class="col-lg-12">
         @if ($message = Session::get('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <i class="bi bi-check-circle me-1"></i>
-          {{ $message }}
-        </div>
-      @endif
-      @if ($errors->any())
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle me-1"></i>
+            {{ $message }}
+          </div>
+        @endif
+        @if ($errors->any())
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
 
-          @foreach ($errors->all() as $error)
-            <i class="bi bi-exclamation-octagon me-1"> {{ $error }} </i><br>
-          @endforeach
-        </div>
-      @endif
+            @foreach ($errors->all() as $error)
+              <i class="bi bi-exclamation-octagon me-1"> {{ $error }} </i><br>
+            @endforeach
+          </div>
+        @endif
         <!-- Recent Sales -->
         <div class="col-12">
           <div class="card recent-sales overflow-auto p-3 ">
@@ -52,35 +52,34 @@
                       <th scope="col">ID</th>
                       <th scope="col">Gambar</th>
                       <th scope="col">Nama</th>
-                      <th scope="col">Kategori</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <?php $count = 1 ?>
+                    <?php $count = 1; ?>
                     @foreach ($brand as $data)
-                    <tr>
-                      <th scope="row">{{$count++}}</th>
-                      <td><img src="{{ asset('uploads/gambar/brand/' . $data->brandLogo)}}" style="height:120px;"></td>
-                      <td>{{$data->brandName}}</td>
-                      <td>{{$data->brandCategory}}</td>
-                      <td>
-                        <li class="nav-item dropdown" style="list-style-type: none;">
-                          <a style="font-size:150%; color:#4154f1;" class="text-center col-sm-3 nav-link nav-icon"
-                            href="#" data-bs-toggle="dropdown">
-                            <i class="bi bi-gear"></i>
-                          </a><!-- End Notification Icon -->
-                          <ul class="p-2 dropdown-menu dropdown-menu-end dropdown-menu-arrow ">
-                            <li style="font-size:20px; padding-left: 25px;" class="row">
-                              <button type="button" class="m-1 col-4 btn btn-outline-primary buttonupdate" 
-                              id="{{ $data->brandId }}"><i class="bi bi-pen"></i></button>
-                              <button type="button" class="m-1 col-4 btn btn-outline-danger buttondelete" id="{{ $data->brandId }}"><i
-                                  class="bi  bi-trash"></i></button>
-                            </li>
-                          </ul><!-- End Notification Dropdown Items -->
-                        </li><!-- End Notification Nav -->
-                      </td>
-                    </tr>
+                      <tr>
+                        <th scope="row">{{ $count++ }}</th>
+                        <td><img src="{{ asset('uploads/gambar/brand/' . $data->brandLogo) }}"
+                            style="height:120px; width:200px;"></td>
+                        <td>{{ $data->brandName }}</td>
+                        <td>
+                          <li class="nav-item dropdown" style="list-style-type: none;">
+                            <a style="font-size:150%; color:#4154f1;" class="text-center col-sm-3 nav-link nav-icon"
+                              href="#" data-bs-toggle="dropdown">
+                              <i class="bi bi-gear"></i>
+                            </a><!-- End Notification Icon -->
+                            <ul class="p-2 dropdown-menu dropdown-menu-end dropdown-menu-arrow ">
+                              <li style="font-size:20px; padding-left: 25px;" class="row">
+                                <button type="button" class="m-1 col-4 btn btn-outline-primary buttonupdate"
+                                  id="{{ $data->brandId }}"><i class="bi bi-pen"></i></button>
+                                <button type="button" class="m-1 col-4 btn btn-outline-danger buttondelete"
+                                  id="{{ $data->brandId }}"><i class="bi  bi-trash"></i></button>
+                              </li>
+                            </ul><!-- End Notification Dropdown Items -->
+                          </li><!-- End Notification Nav -->
+                        </td>
+                      </tr>
                     @endforeach
                   </tbody>
                 </table>
@@ -95,16 +94,6 @@
                     <label for="inputText" class="col-sm-2 col-form-label">Nama Brand</label>
                     <div class="col-sm-6">
                       <input type="text" class="form-control" name="brandName" id="brandName" required>
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <label for="inputText" class="col-sm-2 col-form-label">Kategori Brand</label>
-                    <div class="col-sm-6">
-                      <select name="brandCategory" id="brandCategory" required>
-                          <option value="Ram">Ram</option>
-                          <option value="Ssd">Ssd</option>
-                          <option value="Hardisk">Hardisk</option>
-                      </select>
                     </div>
                   </div>
                   <div class="row mb-3">
@@ -138,17 +127,8 @@
                         <input type="hidden" name="brandIdUpdate" id="brandIdUpdate">
                         <label for="inputText" class="col-sm-2 col-form-label">Nama Brand</label>
                         <div class="col-sm-6">
-                          <input type="text" class="form-control" name="brandNameUpdate" id="brandNameUpdate" required>
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <label for="inputText" class="col-sm-2 col-form-label">Kategori Brand</label>
-                        <div class="col-sm-6">
-                          <select class="form-select" name="brandCategoryUpdate" id="brandCategoryUpdate" required>
-                             <option value="Ram">Ram</option>
-                             <option value="Ssd">Ssd</option>
-                             <option value="Hardisk">Hardisk</option>
-                          </select>
+                          <input type="text" class="form-control" name="brandNameUpdate" id="brandNameUpdate"
+                            required>
                         </div>
                       </div>
                       <div class="row mb-3">
@@ -157,37 +137,37 @@
                           <input class="mb-3 form-control" type="file" name="brandLogoUpdate" id="brandLogoUpdate">
                         </div>
                         <input type="hidden" name="imageAwal" id="imageAwal" required>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- End Vertically centered Modal-->
+
+                </div>
+              </div><!-- End Modal -->
+            </div>
+            {{-- Modal Hapus --}}
+            <div class="modal fade" id="hapusData" tabindex="-1">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    Apakah Yakin Menghapus Data ?
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-primary buttonAksiHapus">Hapus</button>
                   </div>
-                </form>
-                </div>
-                <!-- End Vertically centered Modal-->
-
-              </div>
-            </div><!-- End Modal -->
-          </div>
-          {{-- Modal Hapus --}}
-          <div class="modal fade" id="hapusData" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-body">
-                  Apakah Yakin Menghapus Data ?
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                  <button type="button" class="btn btn-primary buttonAksiHapus">Hapus</button>
                 </div>
               </div>
             </div>
+            {{-- End Modal Hapus --}}
+            <!-- End Default Table Example -->
           </div>
-          {{-- End Modal Hapus --}}
-          <!-- End Default Table Example -->
         </div>
       </div>
-    </div>
   </section>
 @endsection
 
