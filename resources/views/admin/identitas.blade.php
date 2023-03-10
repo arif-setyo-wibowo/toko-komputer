@@ -13,10 +13,17 @@
   </div><!-- End Page Title -->
   <section class="section profile">
     <div class="row">
+      @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <i class="bi bi-check-circle me-1"></i>
+          {{ $message }}
+        </div>
+      @endif
       @if ($errors->any())
-        <div class="alert alert-danger">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+
           @foreach ($errors->all() as $error)
-            {{ $error }}
+            <i class="bi bi-exclamation-octagon me-1"> {{ $error }} </i><br>
           @endforeach
         </div>
       @endif
@@ -94,7 +101,7 @@
               <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
                 @if ($totalData === 0)
                   {{-- Insert Data --}}
-                  <form action="/identitas/post" method="post" enctype="multipart/form-data">
+                  <form action="{{ url()->current() }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row mb-3">
                       <label for="shopLogo" class="col-md-4 col-lg-3 col-form-label">Logo Toko</label>
@@ -139,7 +146,7 @@
                 @else
                   {{-- Update Data --}}
                   @foreach ($identitas as $data)
-                    <form action="/identitas" method="post" enctype="multipart/form-data">
+                    <form action="{{ url()->current() }}" method="post" enctype="multipart/form-data">
                       @csrf
                       @method('put')
                       <div class="row mb-3">

@@ -44,12 +44,14 @@ Route::get('/processor', [ProcessorController::class, 'index']);
 Route::get('/graphic', [GraphicCardController::class, 'index']);
 Route::get('/powersuplly', [PowerSupplyController::class, 'index']);
 Route::get('/storage', [StorageController::class, 'index']);
-
 Route::get('/case', [ComputerCaseController::class, 'index']);
 
 
-Route::get('/identitas', [IdentitasController::class, 'index'])->name('admin.identitas');
-Route::put('/identitas', [IdentitasController::class, 'update']);
+Route::controller(IdentitasController::class)->prefix('/identitas')->group(function () {
+    Route::get('/', 'index')->name('admin.identitas');
+    Route::put('/', 'update');
+    Route::post('/', 'store');
+});
  
 Route::controller(SosmedController::class)->group(function () {
     Route::get('/sosmed', 'index')->name('admin.sosmed');

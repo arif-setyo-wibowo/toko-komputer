@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,4 +12,5 @@ class Identity extends Model
     protected $table = 'identities';
     protected $fillable = ['shopName','shopAddress', 'shopPhoneNumber', 'shopEmail', 'shopLogo'];
     protected $primaryKey = null;
+    public $incrementing = false;
 }
