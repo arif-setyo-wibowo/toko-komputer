@@ -17,7 +17,8 @@ class IdentitasController extends Controller
     {
         $data=[
             'title' => "Identitas",
-            'identitas' => Identity::all()
+            'identitas' => Identity::all(),
+            'totalData' => Identity::all()->count()
         ];
 
         return view('admin/identitas',$data);
@@ -35,8 +36,26 @@ class IdentitasController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        $request->validate([
+            'shopLogo' => 'image|mimes:png,jpg'
+        ]); 
+
+        $identitas = new Identity;
+        if ($request->file('shopLogo')) {
+            $logo = $request->file('shopLogo');
+            $shopLogoName = Str::random(20) . '.' . $logo->getClientOriginalExtension();
+            $logo->move(public_path('uploads/gambar/identitas'), $shopLogoName);
+            $identitas->shopLogo = $shopLogoName;
+        }
+
+        $identitas->shopName = $request->shopName;
+        $identitas->shopAddress = $request->shopAddress;
+        $identitas->shopPhoneNumber = $request->shopPhoneNumber;
+        $identitas->shopEmail = $request->shopEmail;
+        $identitas->save();
+
+        return redirect()->route('admin.identitas');
     }
 
     /**
@@ -60,11 +79,6 @@ class IdentitasController extends Controller
      */
     public function update(Request $request)
     {
-        $data=[
-            'title' => "Identitas",
-            'identitas' => Identity::all()
-        ];
-        
         $request->validate([
             'shopLogo' => 'image|mimes:png,jpg'
         ]); 
@@ -84,7 +98,7 @@ class IdentitasController extends Controller
         $identitas->shopEmail = $request->shopEmail;
         $identitas->save();
 
-        return redirect()->route('admin.identitas',$data);
+        return redirect()->route('admin.identitas');
     }
 
     /**

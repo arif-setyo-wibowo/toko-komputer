@@ -9,5 +9,6 @@ class Identity extends Model
 {
     use HasFactory;
     protected $table = 'identities';
+    protected $fillable = ['shopName','shopAddress', 'shopPhoneNumber', 'shopEmail', 'shopLogo'];
     protected $primaryKey = null;
 }
