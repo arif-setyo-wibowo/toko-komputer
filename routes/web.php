@@ -63,6 +63,8 @@ Route::controller(BrandController::class)->group(function () {
     Route::get('/brand', 'index')->name('admin.brand');
     Route::post('/brand', 'store');
     Route::get('/brand/find/{id}', 'edit');
+    Route::post('/brand/update', 'update');
+    Route::get('/brand/delete/{id}', 'destroy');
 });
 
 Route::controller(MemoriController::class)->prefix('/memory')->group(function () {

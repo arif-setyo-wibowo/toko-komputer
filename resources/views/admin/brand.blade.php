@@ -31,7 +31,6 @@
         <!-- Recent Sales -->
         <div class="col-12">
           <div class="card recent-sales overflow-auto p-3 ">
-
             <!-- Bordered Tabs -->
             <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
               <li class="nav-item" role="presentation">
@@ -73,9 +72,9 @@
                           </a><!-- End Notification Icon -->
                           <ul class="p-2 dropdown-menu dropdown-menu-end dropdown-menu-arrow ">
                             <li style="font-size:20px; padding-left: 25px;" class="row">
-                              <button type="button" class="m-1 col-4 btn btn-outline-primary" data-bs-toggle="modal"
-                                data-bs-target="#updateSosmed"><i class="bi bi-pen"></i></button>
-                              <button type="button" class="m-1 col-4 btn btn-outline-danger"><i
+                              <button type="button" class="m-1 col-4 btn btn-outline-primary buttonupdate" 
+                              id="{{ $data->brandId }}"><i class="bi bi-pen"></i></button>
+                              <button type="button" class="m-1 col-4 btn btn-outline-danger buttondelete" id="{{ $data->brandId }}"><i
                                   class="bi  bi-trash"></i></button>
                             </li>
                           </ul><!-- End Notification Dropdown Items -->
@@ -95,13 +94,13 @@
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">Nama Brand</label>
                     <div class="col-sm-6">
-                      <input type="text" class="form-control" name="brandName" id="brandName">
+                      <input type="text" class="form-control" name="brandName" id="brandName" required>
                     </div>
                   </div>
                   <div class="row mb-3">
                     <label for="inputText" class="col-sm-2 col-form-label">Kategori Brand</label>
                     <div class="col-sm-6">
-                      <select name="brandCategory" id="brandCategory">
+                      <select name="brandCategory" id="brandCategory" required>
                           <option value="Ram">Ram</option>
                           <option value="Ssd">Ssd</option>
                           <option value="Hardisk">Hardisk</option>
@@ -111,7 +110,7 @@
                   <div class="row mb-3">
                     <label for="inputNumber" class="col-sm-2 col-form-label">Logo Brand</label>
                     <div class="col-sm-6">
-                      <input class="mb-3 form-control" type="file" id="brandLogo" name="brandLogo">
+                      <input class="mb-3 form-control" type="file" id="brandLogo" name="brandLogo" required>
                     </div>
                     <div class="row ">
                       <label class="col-sm-2 col-form-label"></label>
@@ -123,7 +122,7 @@
               </div>
             </div><!-- End Bordered Tabs -->
 
-            <!-- Modal -->
+            <!-- Modal Update-->
             <!-- Vertically centered Modal -->
             <div class="modal fade modal-lg" id="updateBrand" tabindex="-1">
               <div class="modal-dialog modal-dialog-centered">
@@ -133,40 +132,65 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body p-3">
-                    <form action="">
+                    <form action="/brand/update" enctype="multipart/form-data" method="POST">
+                      @csrf
                       <div class="row mb-3">
+                        <input type="hidden" name="brandIdUpdate" id="brandIdUpdate">
                         <label for="inputText" class="col-sm-2 col-form-label">Nama Brand</label>
                         <div class="col-sm-6">
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" name="brandNameUpdate" id="brandNameUpdate" required>
                         </div>
                       </div>
                       <div class="row mb-3">
                         <label for="inputText" class="col-sm-2 col-form-label">Kategori Brand</label>
                         <div class="col-sm-6">
-                          <input type="text" class="form-control ">
+                          <select class="form-select" name="brandCategoryUpdate" id="brandCategoryUpdate" required>
+                             <option value="Ram">Ram</option>
+                             <option value="Ssd">Ssd</option>
+                             <option value="Hardisk">Hardisk</option>
+                          </select>
                         </div>
                       </div>
                       <div class="row mb-3">
                         <label for="inputNumber" class="col-sm-2 col-form-label">Logo Brand</label>
                         <div class="col-sm-6">
-                          <input class="mb-3 form-control" type="file" id="formFile">
+                          <input class="mb-3 form-control" type="file" name="brandLogoUpdate" id="brandLogoUpdate">
                         </div>
-                    </form>
+                        <input type="hidden" name="imageAwal" id="imageAwal" required>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                   </div>
+                </form>
                 </div>
                 <!-- End Vertically centered Modal-->
 
               </div>
-            </div><!-- End Recent Sales -->
-            <!-- End Default Table Example -->
+            </div><!-- End Modal -->
           </div>
+          {{-- Modal Hapus --}}
+          <div class="modal fade" id="hapusData" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  Apakah Yakin Menghapus Data ?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                  <button type="button" class="btn btn-primary buttonAksiHapus">Hapus</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{-- End Modal Hapus --}}
+          <!-- End Default Table Example -->
         </div>
-
       </div>
     </div>
   </section>
+@endsection
+
+@section('javascript')
+  <script src="{{ asset('admin/') }}/js/custom/brand.js"></script>
 @endsection
