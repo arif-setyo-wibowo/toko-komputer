@@ -340,7 +340,12 @@
                   <div class="row col">
                         <label for="inputText" class="col-md-3 col-form-label">Form Factor</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control">
+                            <select class="form-select">
+                              <option value="mITX">Mini-ITX</option>
+                              <option value="mATX">Micro-ATX</option>
+                              <option value="ATX">ATX</option>
+                              <option value="eATX">Extended ATX</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row col">
