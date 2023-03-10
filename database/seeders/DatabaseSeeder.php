@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             EmployeeSeeder::class,
             BrandSeeder::class,
             MemorySeeder::class,
+            SocketSeeder::class,
         ]);
     }
 }

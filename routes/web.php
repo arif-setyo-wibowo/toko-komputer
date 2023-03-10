@@ -38,7 +38,6 @@ Route::get('/brand', [BrandController::class, 'index']);
 Route::get('/order', [OrderController::class, 'index']);
 Route::get('/order/invoice', [OrderController::class, 'detail']);
 Route::get('/karyawan', [KaryawanController::class, 'index']);
-Route::get('/socket', [SocketController::class, 'index']);
 Route::get('/motherboard', [MotherboardController::class, 'index']);
 Route::get('/processor', [ProcessorController::class, 'index']);
 Route::get('/graphic', [GraphicCardController::class, 'index']);
@@ -71,6 +70,14 @@ Route::controller(BrandController::class)->group(function () {
 
 Route::controller(MemoriController::class)->prefix('/memory')->group(function () {
     Route::get('/', 'index')->name('admin.memory');
+    Route::post('/', 'store');
+    Route::get('/find/{id}', 'edit');
+    Route::post('/update', 'update');
+    Route::get('/delete/{id}', 'destroy');
+});
+
+Route::controller(SocketController::class)->prefix('/socket')->group(function () {
+    Route::get('/', 'index')->name('admin.socket');
     Route::post('/', 'store');
     Route::get('/find/{id}', 'edit');
     Route::post('/update', 'update');
