@@ -74,26 +74,151 @@
               <!-- Tambah Brand -->
                 </div>
                 <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
-                <h5 class="card-title">Tambah Brand </h5>
+                <h5 class="card-title">Tambah Processors </h5>
                 <form action="">
+                  <div class="row">
                     <div class="row mb-3">
-                        <label for="inputText" class="col-sm-2 col-form-label">Nama Socket</label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control">
+                      <div class="col-md-8 col-lg-9">
+                        <img src="{{asset('admin/')}}/img/card.jpg" style="height: 220px;"
+                          alt="">
+                        <div class="pt-2 col-md-4 text-center">
+                          <label style="width:100px;">
+                            <input type="file" name="shopLogo" id="shopLogo" style="display:none;">
+                            <a class="btn btn-primary " style="width: 100px;"><i class="bi bi-upload"></i></a>
+                          </label>
                         </div>
+                      </div>
                     </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Merk</label>
-                        <div class="col-sm-6">
-                            <select class="form-select" aria-label="Default select example">
-                            <option selected>Pilih Merk</option>
-                            <option value="1">AMD</option>
-                            <option value="2">Intel</option>
+                  </div>
+                  <div class="row mt-4">
+                  <div class="row col">
+                        <label for="inputText" class="col-md-3 col-form-label">Socket</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" aria-label="Default select example">
+                              <option selected>Pilih Socket</option>
+                              <option value="1">LGA1200</option>
+                              <option value="2">LGAA400</option>
                             </select>
                         </div>
                     </div>
-                    <div class="row ">
-                        <label class="col-sm-2 col-form-label"></label>
+                    <div class="row col" >
+                        <label for="inputText" class="col-md-3 col-form-label">Nama Brand</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" aria-label="Default select example">
+                              <option selected>Pilih Brand</option>
+                              <option value="1">AMD</option>
+                              <option value="2">Intel</option>
+                            </select>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt-4">
+                  <div class="row col ">
+                        <label for="inputText" class="col-md-3 col-form-label">Processors</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col " >
+                      <label for="inputText" class="col-md-3 col-form-label">Generation</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt-4">
+                  <div class="row col ">
+                        <label for="inputText" class="col-md-3 col-form-label">Core</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col " >
+                      <label for="inputText" class="col-md-3 col-form-label">Threads</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt-4">
+                  <div class="row col ">
+                        <label for="inputText" class="col-md-3 col-form-label">Base Speed</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col " >
+                      <label for="inputText" class="col-md-3 col-form-label">Boost Speed</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt-4">
+                  <div class="row col ">
+                        <label for="inputText" class="col-md-3 col-form-label">Cache</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col " >
+                      <label for="inputText" class="col-md-3 col-form-label">Arsitektur</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row mt-4">
+                  <div class="row col ">
+                        <label for="inputText" class="col-md-3 col-form-label">Integrated Graphics</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col " >
+                      <label for="inputText" class="col-md-3 col-form-label">Power</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt-4">
+                  <div class="row col ">
+                        <label for="inputText" class="col-md-3 col-form-label">Heatsink</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col " >
+                      <label for="inputText" class="col-md-3 col-form-label">Harga</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt-4">
+                    <div class="row col" >
+                      <label for="inputText" class="col-md-3 col-form-label">garansi</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col" >
+                    <label for="inputText" class="col-md-3 col-form-label" disable></label>
+                        <div class="col-sm-8">
+                        </div>
+                    </div>
+                  </div>
+
+                    <div class="row mt-4">
+                        <label class="col-sm-3 col-form-label"></label>
                         <div class="col-sm-10">
                             <button type="submit" class="btn btn-primary">Tambah Data</button>
                         </div>
@@ -117,23 +242,147 @@
                         </div>
                         <div class="modal-body p-3">
                         <form action="">
-                            <div class="row mb-3">
-                                <label for="inputText" class="col-sm-2 col-form-label">Nama Socket</label>
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label">Merk</label>
-                                <div class="col-sm-6">
-                                    <select class="form-select" aria-label="Default select example">
-                                    <option selected>Pilih Merk</option>
-                                    <option value="1">AMD</option>
-                                    <option value="2">Intel</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </form>
+                  <div class="row">
+                    <div class="row mb-3">
+                      <div class="col-md-8 col-lg-9">
+                        <img src="{{asset('admin/')}}/img/card.jpg" style="height: 220px;"
+                          alt="">
+                        <div class="pt-2 col-md-4 text-center">
+                          <label style="width:100px;">
+                            <input type="file" name="shopLogo" id="shopLogo" style="display:none;">
+                            <a class="btn btn-primary " style="width: 100px;"><i class="bi bi-upload"></i></a>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                  <div class="row col">
+                        <label for="inputText" class="col-md-3 col-form-label">Socket</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" aria-label="Default select example">
+                              <option selected>Pilih Socket</option>
+                              <option value="1">LGA1200</option>
+                              <option value="2">LGAA400</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row col" >
+                        <label for="inputText" class="col-md-3 col-form-label">Nama Brand</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" aria-label="Default select example">
+                              <option selected>Pilih Brand</option>
+                              <option value="1">AMD</option>
+                              <option value="2">Intel</option>
+                            </select>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt-4">
+                  <div class="row col ">
+                        <label for="inputText" class="col-md-3 col-form-label">Processors</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col " >
+                      <label for="inputText" class="col-md-3 col-form-label">Generation</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt-4">
+                  <div class="row col ">
+                        <label for="inputText" class="col-md-3 col-form-label">Core</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col " >
+                      <label for="inputText" class="col-md-3 col-form-label">Threads</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt-4">
+                  <div class="row col ">
+                        <label for="inputText" class="col-md-3 col-form-label">Base Speed</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col " >
+                      <label for="inputText" class="col-md-3 col-form-label">Boost Speed</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt-4">
+                  <div class="row col ">
+                        <label for="inputText" class="col-md-3 col-form-label">Cache</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col " >
+                      <label for="inputText" class="col-md-3 col-form-label">Arsitektur</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row mt-4">
+                  <div class="row col ">
+                        <label for="inputText" class="col-md-3 col-form-label">Integrated Graphics</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col " >
+                      <label for="inputText" class="col-md-3 col-form-label">Power</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt-4">
+                  <div class="row col ">
+                        <label for="inputText" class="col-md-3 col-form-label">Heatsink</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col " >
+                      <label for="inputText" class="col-md-3 col-form-label">Harga</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="row mt-4">
+                    <div class="row col" >
+                      <label for="inputText" class="col-md-3 col-form-label">garansi</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col" >
+                    <label for="inputText" class="col-md-3 col-form-label" disable></label>
+                        <div class="col-sm-8">
+                        </div>
+                    </div>
+                  </div>
+                </form>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

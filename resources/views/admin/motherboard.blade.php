@@ -145,7 +145,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="USB C" disabled>
+                                    <input type="text" class=" form-control" value="USB C" >
                                   </div>
                                   <div class="col-sm-4 ">
                                     <input type="number" class=" form-control " value="1">
@@ -154,7 +154,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="USB 2.0" disabled>
+                                    <input type="text" class=" form-control" value="USB 2.0" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -163,7 +163,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="USB 3.2" disabled>
+                                    <input type="text" class=" form-control" value="USB 3.2" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -174,7 +174,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="AT/PS2" disabled>
+                                    <input type="text" class=" form-control" value="AT/PS2" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -183,7 +183,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="D-sub" disabled>
+                                    <input type="text" class=" form-control" value="D-sub" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -192,7 +192,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="S/PDIF" disabled>
+                                    <input type="text" class=" form-control" value="S/PDIF" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -203,7 +203,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="Ethernet" disabled>
+                                    <input type="text" class=" form-control" value="Ethernet" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -212,7 +212,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="Firewire" disabled>
+                                    <input type="text" class=" form-control" value="Firewire" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -221,7 +221,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="Paralel" disabled>
+                                    <input type="text" class=" form-control" value="Paralel" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -232,7 +232,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="Serial" disabled>
+                                    <input type="text" class=" form-control" value="Serial" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -241,7 +241,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="Audio" disabled>
+                                    <input type="text" class=" form-control" value="Audio" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -250,7 +250,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="HDMI" disabled>
+                                    <input type="text" class=" form-control" value="HDMI" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -261,7 +261,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="DP" disabled>
+                                    <input type="text" class=" form-control" value="DP" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -270,7 +270,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="eSATA" disabled>
+                                    <input type="text" class=" form-control" value="eSATA" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -279,7 +279,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="DVI" disabled>
+                                    <input type="text" class=" form-control" value="DVI" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -457,7 +457,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="USB C" disabled>
+                                    <input type="text" class=" form-control" value="USB C" >
                                   </div>
                                   <div class="col-sm-4 ">
                                     <input type="number" class=" form-control " value="1">
@@ -466,7 +466,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="USB 2.0" disabled>
+                                    <input type="text" class=" form-control" value="USB 2.0" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -475,7 +475,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="USB 3.2" disabled>
+                                    <input type="text" class=" form-control" value="USB 3.2" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -486,7 +486,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="AT/PS2" disabled>
+                                    <input type="text" class=" form-control" value="AT/PS2" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -495,7 +495,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="D-sub" disabled>
+                                    <input type="text" class=" form-control" value="D-sub" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -504,7 +504,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="S/PDIF" disabled>
+                                    <input type="text" class=" form-control" value="S/PDIF" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -515,7 +515,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="Ethernet" disabled>
+                                    <input type="text" class=" form-control" value="Ethernet" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -524,7 +524,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="Firewire" disabled>
+                                    <input type="text" class=" form-control" value="Firewire" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -533,7 +533,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="Paralel" disabled>
+                                    <input type="text" class=" form-control" value="Paralel" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -544,7 +544,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="Serial" disabled>
+                                    <input type="text" class=" form-control" value="Serial" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -553,7 +553,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="Audio" disabled>
+                                    <input type="text" class=" form-control" value="Audio" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -562,7 +562,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="HDMI" disabled>
+                                    <input type="text" class=" form-control" value="HDMI" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -573,7 +573,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="DP" disabled>
+                                    <input type="text" class=" form-control" value="DP" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -582,7 +582,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="eSATA" disabled>
+                                    <input type="text" class=" form-control" value="eSATA" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -591,7 +591,7 @@
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
                                     <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="DVI" disabled>
+                                    <input type="text" class=" form-control" value="DVI" >
                                   </div>
                                   <div class="col-sm-4">
                                     <input type="number" class="form-control " value="1">
@@ -599,6 +599,7 @@
                                 </div>           
                             </div>
                             <!-- end rear port -->
+                            </div>
                           </div>
                         </div> 
                       </div>
@@ -652,7 +653,12 @@
                   <div class="row col">
                         <label for="inputText" class="col-md-3 col-form-label">Form Factor</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control">
+                            <select class="form-select">
+                              <option value="mITX">Mini-ITX</option>
+                              <option value="mATX">Micro-ATX</option>
+                              <option value="ATX">ATX</option>
+                              <option value="eATX">Extended ATX</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row col">
@@ -698,7 +704,7 @@
                             </div>
                             <div class="modal-body center">
                                 <div class="col-xl-12">
-                    
+
                                     <div class="col-xl-12">
                                     <div class="">
                                         <div class="">
@@ -709,9 +715,9 @@
                                         </div>
 
                                         <div class="col-md-7 tab-pane fade show active profile-overview modal-dialog-scrollable" id="profile-overview">
-                                            
 
-                                            <h5 class="card-title">KLEVV SSD CRAS C920</h5>
+
+                                            <h5 class="card-title">Asus PRIME H510M-E (LGA1200, H510, DDR4, USB3.2, SATA3)</h5>
                                             <table class="table table-hover">
                                             <thead>
                                             <tr>
@@ -721,32 +727,35 @@
                                             </thead>
                                             <tbody>
                                             <tr>
-                                                <td>Merk</td>
-                                                <td>KLEVV</td>
+                                                <td>Chipset</td>
+                                                <td>Intel® H510</td>
+                                            </tr><tr>
+                                                <td>Socket</td>
+                                                <td>Socket LGA1200 for 11th Gen Intel® Core™ Processors & 10th Gen Intel® Core™, Pentium® Gold and Celeron® Processors</td>
+                                            </tr><tr>
+                                                <td>Port</td>
+                                                <td>2 x USB 3.2 Gen 1 ports (2 x Type-A),2 x USB 2.0 ports (2 x Type-A),1 x DisplayPort, 1 x D-Sub port, 1 x HDMI™ port, 1 x Intel® I219-V 1Gb Ethernet port, 3 x Audio jacks , 1 x PS/2 Keyboard (purple) port, 1 x PS/2 Mouse (green) port</td>
+                                            </tr>
                                             </tr>
                                             <tr>
-                                              <td>Tipe</td>
-                                              <td>SSD</td>
+                                                <td>Storage</td>
+                                                <td>4 x SATA 6Gb/s, 1 x M.2</td>
                                             </tr>
                                             <tr>
-                                                <td>Size</td>
-                                                <td>2TB</td>
+                                                <td>Form Factor</td>
+                                                <td>Micro ATX</td>
                                             </tr>
                                             <tr>
-                                                <td>Max. Sequential Read	</td>
-                                                <td>7,000MB/s</td>
+                                                <td>Tipe Memory</td>
+                                                <td>4	2 x DDR4 DIMM Slots</td>
                                             </tr>
                                             <tr>
-                                                <td>Max. Sequential Write	</td>
-                                                <td>6,850MB/s</td>
+                                                <td>Max Memory</td>
+                                                <td>Up to 64 GB</td>
                                             </tr>
                                             <tr>
-                                                <td>Form Factor	</td>
-                                                <td>M.2 2280</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Garansi</td>
-                                              <td>3 Tahun</td>
+                                                <td>Garansi</td>
+                                                <td>3 Year(s)</td>
                                             </tr>
                                             </tbody>
                                         </table>

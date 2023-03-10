@@ -3,12 +3,12 @@
 @section('content')
 
     <div class="pagetitle">
-            <h1>Power Supply
+            <h1>Casing
             </h1>
             <nav>
                 <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">admin</a></li>
-                <li class="breadcrumb-item active">Power Supply</li>
+                <li class="breadcrumb-item active">casing</li>
                 </ol>
             </nav>
     </div><!-- End Page Title -->
@@ -32,25 +32,23 @@
               <!-- ISI -->
               <div class="tab-content p-2" id="borderedTabContent">
                 <div class="tab-pane fade show active" id="bordered-home" role="tabpanel" aria-labelledby="home-tab">
-                <h5 class="card-title">List VGA</h5>
+                <h5 class="card-title">List Storage</h5>
                 <table class="table table-hover datatable">
                   <thead>
                     <tr>
                       <th scope="col">ID</th>
-                      <th scope="col">Psu</th>
                       <th scope="col">Merk</th>
-                      <th scope="col">Power</th>
-                      <th scope="col">PLUS Certification</th>
+                      <th scope="col">Nama</th>
+                      <th scope="col"> Tipe Size</th>
                       <th class="text-center" scope="col ">Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <th scope="row"><a href="#">#2457</a></th>
-                      <td>1STPLAYER Gaming PSU DK5.0 500W Full Modular</td>
-                      <td>1STPLAYER Gaming</td>
-                      <td>500w</td>
-                      <td>80 Plus Bronze</td>
+                      <td>LIAN LI </td>
+                      <td>LIAN LI TU150WA</td>
+                      <td>MINI-ITX</td>
                       <td class="text-center">
                       <li class="nav-item dropdown" style="list-style-type: none;">
                         <a style="font-size:150%; color:#4154f1;" class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
@@ -73,10 +71,10 @@
 
               
 
-              <!-- Tambah PSU -->
-                </div>
+              <!-- Tambah Brand -->
+              </div>
                 <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
-                <h5 class="card-title">Tambah Power Supply </h5>
+                <h5 class="card-title">Tambah Storage </h5>
                 <form action="">
                   <div class="row">
                     <div class="row mb-3">
@@ -100,88 +98,50 @@
                         </div>
                     </div>
                     <div class="row col" >
-                        <label for="inputText" class="col-md-3 col-form-label">Nama Brand</label>
+                        <label for="inputText" class="col-md-3 col-form-label">Type Size</label>
                         <div class="col-sm-8">
-                          <select class="form-select" aria-label="Default select example">
-                              <option selected>Pilih Brand</option>
-                              <option value="1">AMD</option>
-                              <option value="2">Intel</option>
+                            <select class="form-select">
+                              <option value="mITX">Mini-ITX</option>
+                              <option value="mATX">Micro-ATX</option>
+                              <option value="ATX">ATX</option>
+                              <option value="eATX">Extended ATX</option>
                             </select>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="row mt-4">
+                  <div class="row col mt-3">
+                        <label for="inputText" class="col-md-3 col-form-label">Fan Slot</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col mt-3" >
+                      <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
                         </div>
                     </div>
                   </div>
                   <div class="row mt-4">
                     <div class="row col" >
-                        <label for="inputText" class="col-md-3 col-form-label">80 PLUS Certification</label>
-                        <div class="col-sm-8">
-                          <select class="form-select" aria-label="Default select example">
-                              <option selected>Pilih Certification</option>
-                              <option value="1">80 PLUS Bronze</option>
-                              <option value="2">80 PLUS Silver</option>
-                              <option value="2">80 PLUS Gold</option>
-                              <option value="2">80 PLUS Platinum</option>
-                            </select>
-                        </div>
+                    <label for="inputPassword" class="col-sm-4 col-form-label">Description</label>
+                      <div class="col-sm-10">
+                        <textarea class="form-control" style="height: 100px"></textarea>
+                      </div>
                     </div>
-                    <div class="row col" >
-                        <label for="inputText" class="col-md-3 col-form-label">Power</label>
-                        <div class="col-sm-8">
-                          <div class="input-group ">
-                            <input type="number" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
-                            <span class="input-group-text" id="basic-addon2"> 
-                              Watt
-                              </select>
-                            </span>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-
-                  <div class="row mt-4">
-                  <div class="row col ">
-                        <label for="inputText" class="col-md-3 col-form-label">Efficiency</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row col " >
-                      <label for="inputText" class="col-md-3 col-form-label">Cooling</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                  </div>
-
-                  <div class="row mt-4">
-                  <div class="row col ">
-                        <label for="inputText" class="col-md-3 col-form-label">Modular</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row col " >
-                      <label for="inputText" class="col-md-3 col-form-label">Connector</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                  </div>
-
-                  <div class="row mt-4">
+                      
                     <div class="row col" >
                       <label for="inputText" class="col-md-3 col-form-label">Harga</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control">
                         </div>
                     </div>
-                    <div class="row col" >
-                    <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
                   </div>
 
+          
                     <div class="row mt-4">
                         <label class="col-sm-3 col-form-label"></label>
                         <div class="col-sm-10">
@@ -190,9 +150,7 @@
                     </div>
                 </form>
                 </div>
-                <div class="tab-pane fade" id="bordered-contact" role="tabpanel" aria-labelledby="contact-tab">
-                  Saepe animi et soluta ad odit soluta sunt. Nihil quos omnis animi debitis cumque. Accusantium quibusdam perspiciatis qui qui omnis magnam. Officiis accusamus impedit molestias nostrum veniam. Qui amet ipsum iure. Dignissimos fuga tempore dolor.
-                </div>
+                
               </div><!-- End Bordered Tabs -->
 
                 <!-- Modal -->
@@ -229,89 +187,49 @@
                         </div>
                     </div>
                     <div class="row col" >
-                        <label for="inputText" class="col-md-3 col-form-label">Nama Brand</label>
+                        <label for="inputText" class="col-md-3 col-form-label">Type Size</label>
                         <div class="col-sm-8">
-                          <select class="form-select" aria-label="Default select example">
-                              <option selected>Pilih Brand</option>
-                              <option value="1">AMD</option>
-                              <option value="2">Intel</option>
+                            <select class="form-select">
+                              <option value="mITX">Mini-ITX</option>
+                              <option value="mATX">Micro-ATX</option>
+                              <option value="ATX">ATX</option>
+                              <option value="eATX">Extended ATX</option>
                             </select>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="row mt-4">
+                  <div class="row col mt-3">
+                        <label for="inputText" class="col-md-3 col-form-label">Fan Slot</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row col mt-3" >
+                      <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control">
                         </div>
                     </div>
                   </div>
                   <div class="row mt-4">
                     <div class="row col" >
-                        <label for="inputText" class="col-md-4 col-form-label">80 PLUS Certification</label>
-                        <div class="col-sm-8">
-                          <select class="form-select" aria-label="Default select example">
-                              <option selected>Pilih Certification</option>
-                              <option value="1">80 PLUS Bronze</option>
-                              <option value="2">80 PLUS Silver</option>
-                              <option value="2">80 PLUS Gold</option>
-                              <option value="2">80 PLUS Platinum</option>
-                            </select>
-                        </div>
+                    <label for="inputPassword" class="col-sm-4 col-form-label">Description</label>
+                      <div class="col-sm-10">
+                        <textarea class="form-control" style="height: 100px"></textarea>
+                      </div>
                     </div>
-                    <div class="row col" >
-                        <label for="inputText" class="col-md-3 col-form-label">Power</label>
-                        <div class="col-sm-8">
-                          <div class="input-group ">
-                            <input type="number" class="form-control"  aria-label="Recipient's username" aria-describedby="basic-addon2">
-                            <span class="input-group-text" id="basic-addon2"> 
-                              Watt
-                              </select>
-                            </span>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-
-                  <div class="row mt-4">
-                  <div class="row col ">
-                        <label for="inputText" class="col-md-3 col-form-label">Efficiency</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row col " >
-                      <label for="inputText" class="col-md-3 col-form-label">Cooling</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                  </div>
-
-                  <div class="row mt-4">
-                  <div class="row col ">
-                        <label for="inputText" class="col-md-3 col-form-label">Modular</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row col " >
-                      <label for="inputText" class="col-md-3 col-form-label">Connector</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                  </div>
-
-                  <div class="row mt-4">
+                      
                     <div class="row col" >
                       <label for="inputText" class="col-md-3 col-form-label">Harga</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control">
                         </div>
                     </div>
-                    <div class="row col" >
-                    <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
                   </div>
 
-                    
                 </form>
                         </div>
                         <div class="modal-footer">
@@ -345,7 +263,7 @@
                                         <div class="col-md-7 tab-pane fade show active profile-overview modal-dialog-scrollable" id="profile-overview">
                                             
 
-                                            <h5 class="card-title">1STPLAYER Gaming PSU DK5.0 500W Full Modular</h5>
+                                            <h5 class="card-title">LIAN LI TU150WA</h5>
                                             <table class="table table-hover">
                                             <thead>
                                             <tr>
@@ -355,40 +273,16 @@
                                             </thead>
                                             <tbody>
                                             <tr>
-                                                <td>Merk</td>
-                                                <td>1STPLAYER Gaming</td>
+                                                <td>Tipe Size</td>
+                                                <td>MINI ATX</td>
                                             </tr>
                                             <tr>
-                                              <td>Wattage</td>
-                                              <td>500 W</td>
-                                            </tr>
-                                            <tr>
-                                                <td>80 PLUS Certification	</td>
-                                                <td>80 Plus Bronze</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Max. Efficiency		</td>
-                                                <td>Up to 90%</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Cooling	</td>
-                                                <td>Fan</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Modularity	</td>
-                                                <td>Full Modular</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Connector</td>
-                                              <td>20+4-Pin 2x (8/(4+4)) pin CPU +12V 3x 4Pin Molex 4x (8/6 pins) PCI-E Power 6x SATA Power</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Form Factor	</td>
-                                              <td>ATX</td>
+                                              <td>Fan Slot</td>
+                                              <td>4</td>
                                             </tr>
                                             <tr>
                                               <td>Garansi</td>
-                                              <td>3 Tahun</td>
+                                              <td>6 bulan</td>
                                             </tr>
                                             </tbody>
                                         </table>

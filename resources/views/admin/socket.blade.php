@@ -53,7 +53,7 @@
                         </a><!-- End Notification Icon -->
                         <ul class="p-2 dropdown-menu dropdown-menu-end dropdown-menu-arrow ">
                           <li style="font-size:20px; padding-left: 25px;" class="row">
-                              <button type="button" class="m-1 col-4 btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateSosmed"><i class="bi bi-pen"></i></button>
+                              <button type="button" class="m-1 col-4 btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateSocket"><i class="bi bi-pen"></i></button>
                               <button type="button" class="m-1 col-4 btn btn-outline-danger"><i class="bi  bi-trash"></i></button>
                           </li>
                         </ul><!-- End Notification Dropdown Items -->
@@ -76,16 +76,6 @@
                             <input type="text" class="form-control">
                         </div>
                     </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Merk</label>
-                        <div class="col-sm-6">
-                            <select class="form-select" aria-label="Default select example">
-                            <option selected>Pilih Merk</option>
-                            <option value="1">AMD</option>
-                            <option value="2">Intel</option>
-                            </select>
-                        </div>
-                    </div>
                     <div class="row ">
                         <label class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
@@ -101,7 +91,7 @@
 
                 <!-- Modal -->
                   <!-- Vertically centered Modal -->
-                  <div class="modal fade modal-lg" id="updateBrand" tabindex="-1">
+                  <div class="modal fade modal-lg" id="updateSocket" tabindex="-1">
                     <div class="modal-dialog modal-dialog-centered">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -116,16 +106,7 @@
                                     <input type="text" class="form-control">
                                 </div>
                             </div>
-                            <div class="row mb-3">
-                                <label class="col-sm-2 col-form-label">Merk</label>
-                                <div class="col-sm-6">
-                                    <select class="form-select" aria-label="Default select example">
-                                    <option selected>Pilih Merk</option>
-                                    <option value="1">AMD</option>
-                                    <option value="2">Intel</option>
-                                    </select>
-                                </div>
-                            </div>
+                            
                         </form>
                         </div>
                         <div class="modal-footer">

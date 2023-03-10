@@ -16,6 +16,7 @@ use App\Http\Controllers\GraphicCardController;
 use App\Http\Controllers\MemoryController;
 use App\Http\Controllers\PowerSupplyController;
 use App\Http\Controllers\StorageController;
+use App\Http\Controllers\ComputerCaseController;
 
 
 
@@ -43,6 +44,8 @@ Route::get('/processor', [ProcessorController::class, 'index']);
 Route::get('/graphic', [GraphicCardController::class, 'index']);
 Route::get('/powersuplly', [PowerSupplyController::class, 'index']);
 Route::get('/storage', [StorageController::class, 'index']);
+
+Route::get('/case', [ComputerCaseController::class, 'index']);
 
 
 Route::get('/identitas', [IdentitasController::class, 'index'])->name('admin.identitas');

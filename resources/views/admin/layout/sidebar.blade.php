@@ -307,6 +307,11 @@
               <i class="bi bi-circle"></i><span>Power Supplay</span>
             </a>
           </li>
+          <li>
+            <a href="/case">
+              <i class="bi bi-circle"></i><span>Casing</span>
+            </a>
+          </li>
         </ul>
       </li><!-- End Components Nav -->
       <li class="nav-item">
