@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             BrandSeeder::class,
             MemorySeeder::class,
             SocketSeeder::class,
+            CaseSeeder::class,
         ]);
     }
 }

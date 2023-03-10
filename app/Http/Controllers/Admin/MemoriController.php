@@ -8,6 +8,7 @@ use App\Models\Brand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 
 class MemoriController extends Controller
@@ -96,6 +97,7 @@ class MemoriController extends Controller
         $memory = Memory::find($request->idUpdate);
 
         if ($request->file('imageUpdate')) {
+            File::delete('uploads/gambar/ram/'.$memory->memoryImage);
             $gambar = $request->file('imageUpdate');
             $RamGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
             $gambar->move(public_path('uploads/gambar/ram'), $RamGambarName);
@@ -125,6 +127,8 @@ class MemoriController extends Controller
      */
     public function destroy(string $id)
     {
+        $memory = Memory::find($id);
+        File::delete('uploads/gambar/ram/'.$memory->memoryImage);
         Memory::destroy($id);
         return redirect()->route('admin.memory')->with(['success' => 'Hapus Data Berhasil']);
     }

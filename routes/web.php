@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\IdentitasController;
 use App\Http\Controllers\Admin\KaryawanController;
 use App\Http\Controllers\Admin\SocketController;
 use App\Http\Controllers\Admin\MemoriController;
+use App\Http\Controllers\Admin\CasingController;
 use App\Http\Controllers\MotherboardController;
 use App\Http\Controllers\ProcessorController;
 use App\Http\Controllers\GraphicCardController;
@@ -43,7 +44,6 @@ Route::get('/processor', [ProcessorController::class, 'index']);
 Route::get('/graphic', [GraphicCardController::class, 'index']);
 Route::get('/powersuplly', [PowerSupplyController::class, 'index']);
 Route::get('/storage', [StorageController::class, 'index']);
-Route::get('/case', [ComputerCaseController::class, 'index']);
 
 
 Route::controller(IdentitasController::class)->prefix('/identitas')->group(function () {
@@ -78,6 +78,14 @@ Route::controller(MemoriController::class)->prefix('/memory')->group(function ()
 
 Route::controller(SocketController::class)->prefix('/socket')->group(function () {
     Route::get('/', 'index')->name('admin.socket');
+    Route::post('/', 'store');
+    Route::get('/find/{id}', 'edit');
+    Route::post('/update', 'update');
+    Route::get('/delete/{id}', 'destroy');
+});
+
+Route::controller(CasingController::class)->prefix('/casing')->group(function () {
+    Route::get('/', 'index')->name('admin.case');
     Route::post('/', 'store');
     Route::get('/find/{id}', 'edit');
     Route::post('/update', 'update');

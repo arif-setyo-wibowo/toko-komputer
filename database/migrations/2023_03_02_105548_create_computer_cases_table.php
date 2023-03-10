@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('caseName',255);
             $table->string('caseType',255);
             $table->string('caseFanSlot',255);
-            $table->string('caseDescription',255);
+            $table->string('caseDescription',10000);
             $table->string('caseWarranty',255);
             $table->string('casePrice', 255);
             $table->string('caseStock', 255);

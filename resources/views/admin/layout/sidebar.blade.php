@@ -308,7 +308,7 @@
             </a>
           </li>
           <li>
-            <a href="/case">
+            <a href="/casing">
               <i class="bi bi-circle"></i><span>Casing</span>
             </a>
           </li>

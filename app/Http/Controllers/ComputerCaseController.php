@@ -12,11 +12,7 @@ class ComputerCaseController extends Controller
      */
     public function index()
     {
-        $data=[
-            'title' => "Case"
-        ];
-
-        return view('admin/case',$data);
+        
     }
 
     /**
