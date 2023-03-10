@@ -69,5 +69,6 @@ Route::controller(MemoriController::class)->prefix('/memory')->group(function ()
     Route::get('/', 'index')->name('admin.memory');
     Route::post('/', 'store');
     Route::get('/find/{id}', 'edit');
+    Route::post('/update', 'update');
     Route::get('/delete/{id}', 'destroy');
 });

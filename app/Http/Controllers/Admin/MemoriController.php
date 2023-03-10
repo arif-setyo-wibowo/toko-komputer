@@ -18,7 +18,7 @@ class MemoriController extends Controller
     public function index()
     {
         $data=[
-            'title' => "Memori",
+            'title' => "Memory",
             'memori' => Memory::with("brand")->get(),
             'merk' => Brand::all()
             
@@ -46,10 +46,10 @@ class MemoriController extends Controller
 
         $memory = new Memory;
         if ($request->file('memoryImage')) {
-            $logo = $request->file('memoryImage');
-            $RamLogoName = Str::random(20) . '.' . $logo->getClientOriginalExtension();
-            $logo->move(public_path('uploads/gambar/ram'), $RamLogoName);
-            $memory->memoryImage = $RamLogoName;
+            $gambar = $request->file('memoryImage');
+            $RamGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
+            $gambar->move(public_path('uploads/gambar/ram'), $RamGambarName);
+            $memory->memoryImage = $RamGambarName;
         }
 
         $memory->brandId = $request->brand;
@@ -87,9 +87,37 @@ class MemoriController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+             'memoryImage' => 'image|mimes:png,jpg,jpeg',
+        ]);
+        
+        $memory = Memory::find($request->idUpdate);
+
+        if ($request->file('imageUpdate')) {
+            $gambar = $request->file('imageUpdate');
+            $RamGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
+            $gambar->move(public_path('uploads/gambar/ram'), $RamGambarName);
+            $memory->memoryImage = $RamGambarName;
+        }else{
+            $memory->memoryImage = $request->imageAwal;
+        }
+
+        $memory->brandId = $request->brand;
+        $memory->memoryName = $request->nama;
+        $memory->memoryType = $request->type;
+        $memory->memorySpeed = $request->speed;
+        $memory->memoryCapacity = $request->capacity;
+        $memory->memoryCasLatency = $request->latency;
+        $memory->memoryVoltage = $request->volt;
+        $memory->memoryWarranty = $request->garansi;
+        $memory->memoryPrice = $request->harga;
+        $memory->memoryStock = $request->stok;
+
+        $memory->save();
+
+        return redirect()->route('admin.memory')->with(['success' => 'Edit Data Berhasil']);
     }
 
     /**

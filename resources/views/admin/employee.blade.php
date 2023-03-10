@@ -24,16 +24,17 @@
               <table class="table table-hover datatable">
                 <thead>
                   <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">#</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Email</th>
                     <th scope="col">Role</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <?php $count = 1; ?>
                   @foreach ($karyawan as $data)
                     <tr>
-                      <th scope="row">{{ $data->employeeId }}</th>
+                      <th scope="row">{{ $count++ }}</th>
                       <td>{{ $data->employeeName }}</td>
                       <td>{{ $data->employeeEmail }}</td>
                       <td>

@@ -51,7 +51,7 @@
                 <table class="table table-hover datatable">
                   <thead>
                     <tr>
-                      <th scope="col">ID</th>
+                      <th scope="col">#</th>
                       <th scope="col">Nama Memory</th>
                       <th scope="col">Memory Size</th>
                       <th scope="col">Merk</th>
@@ -59,9 +59,10 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <?php $count = 1; ?>
                     @foreach ($memori as $data)
                       <tr>
-                        <th scope="row">{{ $data->memoryId }}</th>
+                        <th scope="row">{{ $count++ }}</th>
                         <td>{{ $data->memoryName }}</td>
                         <td>{{ $data->memoryCapacity }}</td>
                         <td>{{ $data->brand->brandName }}</td>
@@ -73,8 +74,8 @@
                             </a><!-- End Notification Icon -->
                             <ul class="p-2 dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
                               <li style="font-size:20px;">
-                                <button type="button" class=" btn btn-outline-primary" data-bs-toggle="modal"
-                                  data-bs-target="#updateBrand"><i class="bi bi-pen"></i></button>
+                                <button type="button" class=" btn btn-outline-primary buttonupdate"
+                                  id="{{ $data->memoryId }}"><i class="bi bi-pen"></i></button>
                                 <button type="button" class="btn btn-outline-danger buttonHapus"
                                   id="{{ $data->memoryId }}"><i class="bi  bi-trash"></i></button>
                                 <button type="button" class="btn btn-outline-success button-detail"
@@ -217,22 +218,23 @@
 
             <!-- Modal -->
             <!-- update -->
-            <div class="modal fade modal-lg" id="updateBrand" tabindex="-1">
+            <div class="modal fade modal-lg" id="updateMemory" tabindex="-1">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title">Update Item</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body p-3">
-                    <form action="">
+                  <form action="{{ url()->current() }}/update" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-header">
+                      <h5 class="modal-title">Update Memory</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-3">
                       <div class="row">
                         <div class="row mb-3">
                           <div class="col-md-8 col-lg-9">
-                            <img src="{{ asset('admin/') }}/img/card.jpg" style="height: 220px;" alt="">
+                            <img src="" style="height: 220px;" id="UpdateGambar">
                             <div class="pt-2 col-md-4 text-center">
                               <label style="width:100px;">
-                                <input type="file" name="shopLogo" id="shopLogo" style="display:none;">
+                                <input type="file" name="imageUpdate" id="imageUpdate" style="display:none;">
                                 <a class="btn btn-primary " style="width: 100px;"><i class="bi bi-upload"></i></a>
                               </label>
                             </div>
@@ -241,18 +243,20 @@
                       </div>
                       <div class="row mt-4">
                         <div class="row col">
-                          <label for="inputText" class="col-md-3 col-form-label">Nama</label>
+                          <label for="inputText" class="col-md-3 col-form-label">Nama Memory</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="nama" id="namaUpdate" required>
                           </div>
                         </div>
                         <div class="row col">
                           <label for="inputText" class="col-md-3 col-form-label">Nama Brand</label>
                           <div class="col-sm-8">
-                            <select class="form-select" aria-label="Default select example">
-                              <option selected>Pilih Brand</option>
-                              <option value="1">AMD</option>
-                              <option value="2">Intel</option>
+                            <select class="form-select" aria-label="Default select example" name="brand"
+                              id="brandUpdate" required>
+                              <option disabled selected value="">Pilih Brand</option>
+                              @foreach ($merk as $item)
+                                <option value="{{ $item->brandId }}">{{ $item->brandName }}</option>
+                              @endforeach
                             </select>
                           </div>
                         </div>
@@ -261,30 +265,32 @@
                         <div class="row col">
                           <label for="inputText" class="col-md-3 col-form-label">Type</label>
                           <div class="col-sm-8">
-                            <select class="form-select" aria-label="Default select example">
-                              <option selected>Pilih Type</option>
-                              <option value="1">DDR3</option>
-                              <option value="2">DDR4</option>
-                              <option value="2">DDR5</option>
+                            <select class="form-select" aria-label="Default select example" name="type"
+                              id="typeUpdate" required>
+                              <option selected disabled value="">Pilih Type</option>
+                              <option value="DDR3">DDR3</option>
+                              <option value="DDR4">DDR4</option>
+                              <option value="DDR5">DDR5</option>
                             </select>
                           </div>
                         </div>
                         <div class="row col">
                           <label for="inputText" class="col-md-3 col-form-label">Capacity</label>
                           <div class="col-sm-8">
-                            <select class="form-select" aria-label="Default select example">
-                              <option selected>Pilih Capacity</option>
-                              <option value="1">2GB </option>
-                              <option value="2">4GB </option>
-                              <option value="2">4GB (2X2GB)</option>
-                              <option value="2">8GB </option>
-                              <option value="2">8GB (2X4GB)</option>
-                              <option value="2">16GB </option>
-                              <option value="2">16GB (2X8GB)</option>
-                              <option value="2">32GB </option>
-                              <option value="2">32GB (2X16GB)</option>
-                              <option value="2">64GB </option>
-                              <option value="2">64GB (2X32GB)</option>
+                            <select class="form-select" aria-label="Default select example" name="capacity"
+                              id="capacityUpdate" required>
+                              <option selected disabled value="">Pilih Capacity</option>
+                              <option value="2GB">2GB </option>
+                              <option value="4GB">4GB </option>
+                              <option value="4GB (2X2GB)">4GB (2X2GB)</option>
+                              <option value="8GB">8GB </option>
+                              <option value="8GB (2X4GB)">8GB (2X4GB)</option>
+                              <option value="16GB">16GB </option>
+                              <option value="16GB (2X8GB)">16GB (2X8GB)</option>
+                              <option value="32GB">32GB </option>
+                              <option value="32GB (2X16GB)">32GB (2X16GB)</option>
+                              <option value="64GB">64GB </option>
+                              <option value="64GB (2X32GB)">64GB (2X32GB)</option>
                             </select>
                           </div>
                         </div>
@@ -293,37 +299,52 @@
                         <div class="row col">
                           <label for="inputText" class="col-md-3 col-form-label">Speed</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="speed" id="speedUpdate" required>
                           </div>
                         </div>
                         <div class="row col">
                           <label for="inputText" class="col-md-3 col-form-label">Cas Latency</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="latency" id="latencyUpdate" required>
                           </div>
                         </div>
                       </div>
-
+                      <div class="row mt-4">
+                        <div class="row col">
+                          <label for="inputText" class="col-md-3 col-form-label">Voltage</label>
+                          <div class="col-sm-8">
+                            <input type="text" class="form-control" name="volt" id="voltUpdate" required>
+                          </div>
+                        </div>
+                        <div class="row col">
+                          <label for="inputText" class="col-md-3 col-form-label">Stok</label>
+                          <div class="col-sm-8">
+                            <input type="number" class="form-control" name="stok" id="stokUpdate" required>
+                          </div>
+                        </div>
+                      </div>
                       <div class="row mt-4">
                         <div class="row col">
                           <label for="inputText" class="col-md-3 col-form-label">Harga</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control">
+                            <input type="number" class="form-control" name="harga" id="hargaUpdate" required>
                           </div>
                         </div>
                         <div class="row col">
                           <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="garansi" id="garansiUpdate" required>
                           </div>
                         </div>
+                        <input type="hidden" name="idUpdate" id="idUpdate" required>
+                        <input type="hidden" name="imageAwal" id="imageAwal" required>
                       </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary" id="buttonupdate">Update</button>
+                    </div>
+                  </form>
                 </div>
                 <!-- End Vertically centered Modal-->
               </div>
@@ -345,7 +366,7 @@
                             <!-- Bordered Tabs -->
                             <div class="tab-content row ">
                               <div class="card-body col-md-5 pt-4 d-flex flex-column align-items-center">
-                                <img id="memoriGambar" src="default.jpeg" class="rounded mb-3 img-fluid">
+                                <img id="memoriGambar" src="" class="rounded mb-3 img-fluid">
                               </div>
                               <div class="col-md-7 tab-pane fade show active profile-overview modal-dialog-scrollable"
                                 id="profile-overview">
@@ -383,8 +404,16 @@
                                       <td id="volt"></td>
                                     </tr>
                                     <tr>
+                                      <td>Stok</td>
+                                      <td id="stok"></td>
+                                    </tr>
+                                    <tr>
                                       <td>Garansi</td>
                                       <td id="garansi"></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Harga</td>
+                                      <td id="harga"></td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -394,10 +423,6 @@
                                   quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
                               </div>
                             </div>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
                           </div>
                         </div>
                       </div>

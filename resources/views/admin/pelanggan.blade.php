@@ -22,17 +22,17 @@
               <table class="table table-hover datatable">
                 <thead>
                   <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">#</th>
                     <th scope="col">Pelanggan</th>
                     <th scope="col">Email</th>
                     <th scope="col">Telp</th>
                   </tr>
                 </thead>
                 <tbody>
-
+                  <?php $count = 1; ?>
                   @foreach ($pelanggan as $data)
                     <tr>
-                      <th scope="row">{{ $data->customerId }}</th>
+                      <th scope="row">{{ $count++ }}</th>
                       <td>{{ $data->customerName }}</td>
                       <td class="text-primary">{{ $data->customerEmail }}</td>
                       <td>{{ $data->customerPhoneNumber }}</td>

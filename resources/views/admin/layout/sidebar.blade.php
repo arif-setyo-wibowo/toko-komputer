@@ -294,7 +294,7 @@
           </li>
           <li>
             <a href="/memory">
-              <i class="bi bi-circle"></i><span>RAM</span>
+              <i class="bi bi-circle"></i><span>Memory</span>
             </a>
           </li>
           <li>
