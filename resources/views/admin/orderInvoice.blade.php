@@ -127,10 +127,30 @@ table .tt{
 @media print {
     .invoice {
         font-size: 11px!important;
-        overflow: hidden!important
+        overflow: hidden!important;
     }
-
-   
+    table .total{
+      font-size:15px!important;
+    }
+    .section {
+      position: fixed;
+      top: 0;
+    }
+    .footer {
+      display: none!important;
+    }
+    .header {
+      display: none!important;
+    }
+    .sidebar {
+      display: none!important;
+    }
+    .hidden-print {
+      display: none!important;
+    }
+    .pagetitle {
+      display: none!important;
+    }
 }
 </style>
 
