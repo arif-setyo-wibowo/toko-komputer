@@ -76,7 +76,7 @@
                                 <button type="button" class=" btn btn-outline-primary buttonupdate"
                                   id="{{ $data->caseId }}"><i class="bi bi-pen"></i></button>
                                 <button type="button" class="btn btn-outline-danger buttonHapus"
-                                  id="{{ $data->caseId }}"><i class="bi  bi-trash"></i></button>
+                                  id="{{ $data->caseId }}"><i class="bi bi-trash"></i></button>
                                 <button type="button" class="btn btn-outline-success button-detail"
                                   id="{{ $data->caseId }}"><i class="bi bi-info"></i></button>
                               </li>
@@ -96,14 +96,16 @@
               </div>
               <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
                 <h5 class="card-title">Tambah Casing </h5>
-                <form action="">
+                <form action="{{ url()->current() }}" method="POST" enctype="multipart/form-data">
+                  @csrf
                   <div class="row">
                     <div class="row mb-3">
                       <div class="col-md-8 col-lg-9">
-                        <img src="{{ asset('admin/') }}/img/card.jpg" style="height: 220px;" alt="">
+                        <img src="{{ asset('admin/') }}/img/card.jpg" id="gambarTambah" style="height: 220px;"
+                          alt="">
                         <div class="pt-2 col-md-4 text-center">
                           <label style="width:100px;">
-                            <input type="file" name="shopLogo" id="shopLogo" style="display:none;">
+                            <input type="file" name="caseImage" id="caseImage" style="display:none;" required>
                             <a class="btn btn-primary " style="width: 100px;"><i class="bi bi-upload"></i></a>
                           </label>
                         </div>
@@ -114,48 +116,66 @@
                     <div class="row col">
                       <label for="inputText" class="col-md-3 col-form-label">Nama</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="nama" required>
                       </div>
                     </div>
                     <div class="row col">
                       <label for="inputText" class="col-md-3 col-form-label">Type Size</label>
                       <div class="col-sm-8">
-                        <select class="form-select">
-                          <option value="mITX">Mini-ITX</option>
-                          <option value="mATX">Micro-ATX</option>
+                        <select class="form-select" name="type" required>
+                          <option value="" selected disabled>Pilih Type</option>
+                          <option value="Mini-ITX">Mini-ITX</option>
+                          <option value="Micro-ATX">Micro-ATX</option>
                           <option value="ATX">ATX</option>
-                          <option value="eATX">Extended ATX</option>
+                          <option value="Extended ATX">Extended ATX</option>
                         </select>
                       </div>
                     </div>
                   </div>
-
                   <div class="row mt-4">
                     <div class="row col mt-3">
                       <label for="inputText" class="col-md-3 col-form-label">Fan Slot</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control">
+                        <input type="number" class="form-control" name="fanSlot" required>
                       </div>
                     </div>
                     <div class="row col mt-3">
                       <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="garansi" requireds>
                       </div>
                     </div>
                   </div>
                   <div class="row mt-4">
                     <div class="row col">
-                      <label for="inputPassword" class="col-sm-4 col-form-label">Description</label>
-                      <div class="col-sm-10">
-                        <textarea class="form-control" style="height: 100px"></textarea>
+                      <label for="inputText" class="col-md-3 col-form-label">Stok</label>
+                      <div class="col-sm-8">
+                        <input type="number" class="form-control" name="stok" required>
                       </div>
                     </div>
-
                     <div class="row col">
                       <label for="inputText" class="col-md-3 col-form-label">Harga</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control">
+                        <input type="number" class="form-control" name="harga" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="row col">
+                      <label for="inputText" class="col-md-3 col-form-label">Nama Brand</label>
+                      <div class="col-sm-8">
+                        <select class="form-select" aria-label="Default select example" name="brand" required>
+                          <option disabled selected value="">Pilih Brand</option>
+                          @foreach ($merk as $item)
+                            <option value="{{ $item->brandId }}">{{ $item->brandName }}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row col">
+                      <label for="inputPassword" class="col-sm-4 col-form-label">Description</label>
+                      <div class="col-sm-12">
+                        <textarea class="form-control" style="height: 100px" name="deskripsi" required></textarea>
                       </div>
                     </div>
                   </div>
@@ -174,22 +194,23 @@
             <!-- Modal -->
 
             <!-- update -->
-            <div class="modal fade modal-lg" id="updateBrand" tabindex="-1">
+            <div class="modal fade modal-lg" id="updateCase" tabindex="-1">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title">Update Casing</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body p-3">
-                    <form action="">
+                  <form action="{{ url()->current() }}/update" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-header">
+                      <h5 class="modal-title">Update Casing</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-3">
                       <div class="row">
                         <div class="row mb-3">
                           <div class="col-md-8 col-lg-9">
-                            <img src="{{ asset('admin/') }}/img/card.jpg" style="height: 220px;" alt="">
+                            <img src="" id="UpdateGambar" style="height: 220px;">
                             <div class="pt-2 col-md-4 text-center">
                               <label style="width:100px;">
-                                <input type="file" name="shopLogo" id="shopLogo" style="display:none;">
+                                <input type="file" name="caseImage" id="imageUpdate" style="display:none;">
                                 <a class="btn btn-primary " style="width: 100px;"><i class="bi bi-upload"></i></a>
                               </label>
                             </div>
@@ -200,62 +221,83 @@
                         <div class="row col">
                           <label for="inputText" class="col-md-3 col-form-label">Nama</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="nama" id="namaUpdate" required>
                           </div>
                         </div>
                         <div class="row col">
                           <label for="inputText" class="col-md-3 col-form-label">Type Size</label>
                           <div class="col-sm-8">
-                            <select class="form-select">
-                              <option value="mITX">Mini-ITX</option>
-                              <option value="mATX">Micro-ATX</option>
+                            <select class="form-select" name="type" required id="typeUpdate">
+                              <option value="" selected disabled>Pilih Type</option>
+                              <option value="Mini-ITX">Mini-ITX</option>
+                              <option value="Micro-ATX">Micro-ATX</option>
                               <option value="ATX">ATX</option>
-                              <option value="eATX">Extended ATX</option>
+                              <option value="Extended ATX">Extended ATX</option>
                             </select>
                           </div>
                         </div>
                       </div>
-
                       <div class="row mt-4">
                         <div class="row col mt-3">
                           <label for="inputText" class="col-md-3 col-form-label">Fan Slot</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control">
+                            <input type="number" class="form-control" name="fanSlot" id="fanUpdate" required>
                           </div>
                         </div>
                         <div class="row col mt-3">
                           <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="garansi" id="garansiUpdate" requireds>
                           </div>
                         </div>
                       </div>
                       <div class="row mt-4">
                         <div class="row col">
-                          <label for="inputPassword" class="col-sm-4 col-form-label">Description</label>
-                          <div class="col-sm-10">
-                            <textarea class="form-control" style="height: 100px"></textarea>
+                          <label for="inputText" class="col-md-3 col-form-label">Stok</label>
+                          <div class="col-sm-8">
+                            <input type="number" class="form-control" name="stok" id="stokUpdate" required>
                           </div>
                         </div>
-
                         <div class="row col">
                           <label for="inputText" class="col-md-3 col-form-label">Harga</label>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control">
+                            <input type="number" class="form-control" name="harga" id="hargaUpdate" required>
                           </div>
                         </div>
                       </div>
-
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div>
+                      <div class="row mt-4">
+                        <div class="row col">
+                          <label for="inputText" class="col-md-3 col-form-label">Nama Brand</label>
+                          <div class="col-sm-8">
+                            <select class="form-select" aria-label="Default select example" id="brandUpdate"
+                              name="brand" required>
+                              <option disabled selected value="">Pilih Brand</option>
+                              @foreach ($merk as $item)
+                                <option value="{{ $item->brandId }}">{{ $item->brandName }}</option>
+                              @endforeach
+                            </select>
+                          </div>
+                        </div>
+                        <div class="row col">
+                          <label for="inputPassword" class="col-sm-4 col-form-label">Description</label>
+                          <div class="col-sm-12">
+                            <textarea class="form-control" style="height: 100px" name="deskripsi" id="deskripsiUpdate" required></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <input type="hidden" name="idUpdate" id="idUpdate" required>
+                      <input type="hidden" name="imageAwal" id="imageAwal" required>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary" id="buttonupdate">Update</button>
+                    </div>
+                  </form>
                 </div>
                 <!-- End Vertically centered Modal-->
               </div>
             </div>
+
             <!-- detail Modal-->
             <div class="modal fade" id="detail" tabindex="-1">
               <div class="modal-dialog modal-lg modal-dialog-scrollable">
@@ -277,7 +319,7 @@
                               </div>
                               <div class="col-md-7 tab-pane fade show active profile-overview modal-dialog-scrollable"
                                 id="profile-overview">
-                                <h5 class="card-title" id="caseName">LIAN LI TU150WA</h5>
+                                <h5 class="card-title" id="caseName"></h5>
                                 <table class="table table-hover">
                                   <thead>
                                     <tr>
@@ -325,6 +367,26 @@
 
               </div>
             </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    {{-- Modal Hapus --}}
+    <div class="modal fade" id="hapusData" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            Apakah Yakin Menghapus Data ?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Batal</button>
+            <button type="button" class="btn btn-sm btn-primary buttonAksiHapus">Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{-- End Modal Hapus --}}
   </section>
 @endsection
 @section('javascript')

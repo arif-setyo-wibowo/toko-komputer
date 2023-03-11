@@ -91,7 +91,7 @@ class MemoriController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-             'memoryImage' => 'image|mimes:png,jpg,jpeg',
+             'imageUpdate' => 'image|mimes:png,jpg,jpeg',
         ]);
         
         $memory = Memory::find($request->idUpdate);

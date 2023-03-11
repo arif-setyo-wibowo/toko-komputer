@@ -432,26 +432,25 @@
                 </div>
               </div>
             </div>
-
-            {{-- Modal Hapus --}}
-            <div class="modal fade" id="hapusData" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-body">
-                    Apakah Yakin Menghapus Data ?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                    <button type="button" class="btn btn-primary buttonAksiHapus">Hapus</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {{-- End Modal Hapus --}}
           </div>
         </div>
       </div>
     </div>
+    {{-- Modal Hapus --}}
+    <div class="modal fade" id="hapusData" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            Apakah Yakin Menghapus Data ?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Batal</button>
+            <button type="button" class="btn btn-sm btn-primary buttonAksiHapus">Hapus</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{-- End Modal Hapus --}}
   </section>
 @endsection
 @section('javascript')

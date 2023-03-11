@@ -4,7 +4,7 @@ const asset_url = window.location.origin + "/uploads/gambar/casing/";
 $(document).ready(function () {
 
     // Auto Load Image Insert
-    $("#memoryImage").change(function () {
+    $("#caseImage").change(function () {
         if (this.files && this.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
@@ -64,29 +64,26 @@ $(document).ready(function () {
     $(document).on('click', '.buttonupdate', function () {
         var id = $(this).attr("id");
         var UpdateGambar = document.getElementById('UpdateGambar');
+        $("#updateCase").modal("show");
 
         $.ajax({
             method: "GET",
             url: base_url + "/find/" + id,
             dataType: "json",
             success: function (response) {
-                UpdateGambar.src = asset_url + response[0]['memoryImage'];
-                $('#idUpdate').val(response[0]['memoryId']);
-                $('#imageAwal').val(response[0]['memoryImage']);
-                $('#namaUpdate').val(response[0]['memoryName']);
-                $('#typeUpdate').val(response[0]['memoryType']);
-                $('#speedUpdate').val(response[0]['memorySpeed']);
-                $('#latencyUpdate').val(response[0]['memoryCasLatency']);
-                $('#voltUpdate').val(response[0]['memoryVoltage']);
-                $('#stokUpdate').val(response[0]['memoryStock']);
-                $('#hargaUpdate').val(response[0]['memoryPrice']);
-                $('#garansiUpdate').val(response[0]['memoryWarranty']);
-                $('#mediaId').val(response[0]['mediaId']);
+                UpdateGambar.src = asset_url + response[0]['caseImage'];
+                $('#idUpdate').val(response[0]['caseId']);
+                $('#imageAwal').val(response[0]['caseImage']);
+                $('#namaUpdate').val(response[0]['caseName']);
+                $('#typeUpdate').val(response[0]['caseType']);
+                $('#fanUpdate').val(response[0]['caseFanSlot']);
+                $('#stokUpdate').val(response[0]['caseStock']);
+                $('#hargaUpdate').val(response[0]['casePrice']);
+                $('#garansiUpdate').val(response[0]['caseWarranty']);
+                $('#deskripsiUpdate').val(response[0]['caseDescription']);
                 $('#brandUpdate').val(response[0]['brand']['brandId']);
-                $('#capacityUpdate').val(response[0]['memoryCapacity']);
-                $('#typeUpdate').val(response[0]['memoryType']);
 
-                $("#updateMemory").modal("show");
+
 
             }
         });

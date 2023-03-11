@@ -161,8 +161,8 @@
             Apakah Yakin Menghapus Data ?
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-            <button type="button" class="btn btn-primary buttonAksiHapus">Hapus</button>
+            <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Batal</button>
+            <button type="button" class="btn btn-sm btn-primary buttonAksiHapus">Hapus</button>
           </div>
         </div>
       </div>
