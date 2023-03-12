@@ -18,8 +18,20 @@
             <div class="col-lg-12">
           <!-- Recent Sales -->
           <div class="col-12">
+            @if ($message = Session::get('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <i class="bi bi-check-circle me-1"></i>
+              {{ $message }}
+            </div>
+            @endif
+            @if ($errors->any())
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                @foreach ($errors->all() as $error)
+                  <i class="bi bi-exclamation-octagon me-1"> {{ $error }} </i><br>
+                @endforeach
+              </div>
+            @endif
             <div class="card recent-sales overflow-auto p-3 ">
-
             <!-- Bordered Tabs -->
             <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -44,11 +56,13 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <?php $count = 1; ?>
+                    @foreach ($mobo as $data)
                     <tr>
-                      <th scope="row"><a href="#">#2457</a></th>
-                      <td>Asus PRIME H510M-E (LGA1200, H510, DDR4, USB3.2, SATA3)</td>
-                      <td>Socket LGA1200 for 11th Gen Intel® Core™ Processors & 10th Gen Intel® Core™, Pentium® Gold and Celeron® Processors</td>
-                      <td>Intel</td>
+                      <th scope="row">{{$count++}}</th>
+                      <td>{{$data->moboName}}</td>
+                      <td>{{$data->socket->processorSocketName}}</td>
+                      <td>{{$data->brand->brandName}}</td>
                       <td class="text-center">
                       <li class="nav-item dropdown" style="list-style-type: none;">
                         <a style="font-size:150%; color:#4154f1;" class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
@@ -66,6 +80,7 @@
                       </li><!-- End Notification Nav -->
                       </td>
                     </tr>
+                    @endforeach
                   </tbody>
                 </table>
 
@@ -75,15 +90,15 @@
               </div>
                 <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
                 <h5 class="card-title">Tambah Storage </h5>
-                  <form action="">
-
+                <form action="{{ url()->current() }}" method="post" enctype="multipart/form-data">
+                  @csrf
                   <div class="row">
                     <div class="row mb-3">
                        <div class="col-md-8 col-lg-9">
                           <img src="{{asset('admin/')}}/img/card.jpg" style="height: 220px;"alt="">
                             <div class="pt-2 col-md-4 text-center">
                               <label style="width:100px;">
-                                 <input type="file" name="shopLogo" id="shopLogo" style="display:none;">
+                                 <input type="file" name="moboImage" id="moboImage" style="display:none;">
                                   <a class="btn btn-primary " style="width: 100px;"><i class="bi bi-upload"></i></a>
                               </label>
                              </div>
@@ -95,17 +110,18 @@
                       <div class="row col" >
                           <label for="inputText" class="col-md-3 col-form-label">Nama Socket</label>
                           <div class="col-sm-8">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Pilih Socket</option>
-                                <option value="1">AMD</option>
-                                <option value="2">Intel</option>
+                            <select class="form-select" aria-label="Default select example" name="processorSocketId" required>
+                                <option>Pilih Socket</option>
+                                @foreach ($processor as $data)
+                                <option value="{{$data->processorSocketId}}">{{$data->processorSocketName}}</option>
+                                @endforeach
                               </select>
                           </div>
                       </div>
                       <div class="row col">
                           <label for="inputText" class="col-md-3 col-form-label">Nama</label>
                           <div class="col-sm-8">
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="moboName" required>
                           </div>
                       </div>
                     </div>
@@ -114,17 +130,18 @@
                       <div class="row col" >
                           <label for="inputText" class="col-md-3 col-form-label">Brand</label>
                           <div class="col-sm-8">
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" name="brandId" required>
                                 <option selected>Pilih Brand</option>
-                                <option value="1">AMD</option>
-                                <option value="2">Intel</option>
+                                @foreach ($merk as $data)
+                                  <option value="{{$data->brandId}}">{{$data->brandName}}</option>
+                                @endforeach
                               </select>
                           </div>
                       </div>
                       <div class="row col">
                           <label for="inputText" class="col-md-3 col-form-label">Chipset</label>
                           <div class="col-sm-8">
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="moboChipset" required>
                           </div>
                       </div>
                     </div>
@@ -144,146 +161,101 @@
                             <div class="row mt-2">
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
-                                    <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="USB C" >
-                                  </div>
-                                  <div class="col-sm-4 ">
-                                    <input type="number" class=" form-control " value="1">
-                                  </div>                             
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="USB C x 1" checked><p>USB C X 1</p>
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="USB C x 2" checked><p>USB C X 2</p>
+                                  </div>                            
                                 </div>
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
-                                    <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="USB 2.0" >
-                                  </div>
-                                  <div class="col-sm-4">
-                                    <input type="number" class="form-control " value="1">
-                                  </div>                             
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="USB 2.0 x 1" checked><p>USB 2.0 X 1</p>
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="USB 2.0 x 2" checked><p>USB 2.0 X 2</p>
+                                  </div>                            
                                 </div>
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
-                                    <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="USB 3.2" >
-                                  </div>
-                                  <div class="col-sm-4">
-                                    <input type="number" class="form-control " value="1">
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="USB 3.2 x 1" checked><p>USB 3.2 X 1</p>
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="USB 3.2 x 2" checked><p>USB 3.2 X 2</p>
                                   </div>                             
                                 </div>           
                             </div>
                             <div class="row mt-2">
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
-                                    <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="AT/PS2" >
-                                  </div>
-                                  <div class="col-sm-4">
-                                    <input type="number" class="form-control " value="1">
-                                  </div>                             
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="AT/PS2 x 1" checked><p>AT/PS2 X 1</p>
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="AT/PS2 x 2" checked><p>AT/PS2 X 2</p>
+                                  </div>                            
                                 </div>
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
-                                    <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="D-sub" >
-                                  </div>
-                                  <div class="col-sm-4">
-                                    <input type="number" class="form-control " value="1">
-                                  </div>                             
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="D-sub x 1" checked><p>D-sub X 1</p>
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="D-sub x 2" checked><p>D-sub X 2</p>
+                                  </div>                            
                                 </div>
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
-                                    <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="S/PDIF" >
-                                  </div>
-                                  <div class="col-sm-4">
-                                    <input type="number" class="form-control " value="1">
-                                  </div>                             
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="S/PDIF x 1" checked><p>S/PDIF X 1</p>
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="S/PDIF x 2" checked><p>S/PDIF x 2</p>
+                                  </div>                          
                                 </div>           
                             </div>
                             <div class="row mt-2">
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
-                                    <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="Ethernet" >
-                                  </div>
-                                  <div class="col-sm-4">
-                                    <input type="number" class="form-control " value="1">
-                                  </div>                             
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="Ethernet x 1" checked><p>Ethernet X 1</p>
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="Ethernet x 2" checked><p>Ethernet X 2</p>
+                                  </div>                            
                                 </div>
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
-                                    <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="Firewire" >
-                                  </div>
-                                  <div class="col-sm-4">
-                                    <input type="number" class="form-control " value="1">
-                                  </div>                             
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="Firewire x 1" checked><p>Firewire X 1</p>
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="Firewire x 2" checked><p>Firewire X 2</p>
+                                  </div>                           
                                 </div>
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
-                                    <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="Paralel" >
-                                  </div>
-                                  <div class="col-sm-4">
-                                    <input type="number" class="form-control " value="1">
-                                  </div>                             
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="Paralel x 1" checked><p>Paralel X 1</p>
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="Paralel x 2" checked><p>Paralel X 2</p>
+                                  </div>                         
                                 </div>           
                             </div>
                             <div class="row mt-2">
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
-                                    <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="Serial" >
-                                  </div>
-                                  <div class="col-sm-4">
-                                    <input type="number" class="form-control " value="1">
-                                  </div>                             
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="Serial x 1" checked><p>Serial X 1</p>
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="Serial x 2" checked><p>Serial X 2</p>
+                                  </div>                           
                                 </div>
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
-                                    <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="Audio" >
-                                  </div>
-                                  <div class="col-sm-4">
-                                    <input type="number" class="form-control " value="1">
-                                  </div>                             
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="Audio x 1" checked><p>Audio X 1</p>
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="Audio x 2" checked><p>Audio X 2</p>
+                                  </div>                           
                                 </div>
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
-                                    <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="HDMI" >
-                                  </div>
-                                  <div class="col-sm-4">
-                                    <input type="number" class="form-control " value="1">
-                                  </div>                             
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="HDMI x 1" checked><p>HDMI X 1</p>
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="HDMI x 2" checked><p>HDMI X 2</p>
+                                  </div>                         
                                 </div>           
                             </div>
                             <div class="row mt-2">
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
-                                    <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="DP" >
-                                  </div>
-                                  <div class="col-sm-4">
-                                    <input type="number" class="form-control " value="1">
-                                  </div>                             
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="DP x 1" checked><p>DP X 1</p>
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="DP x 2" checked><p>DP X 2</p>
+                                  </div>                      
                                 </div>
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
-                                    <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="eSATA" >
-                                  </div>
-                                  <div class="col-sm-4">
-                                    <input type="number" class="form-control " value="1">
-                                  </div>                             
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="eSata x 1" checked><p>eSata X 1</p>
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="eSata x 2" checked><p>eSata X 2</p>
+                                  </div>                          
                                 </div>
                                 <div class="row col-md-4 ">
                                   <div class="col-sm-6 form-check" style="padding-left:10px;">
-                                    <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                                    <input type="text" class=" form-control" value="DVI" >
-                                  </div>
-                                  <div class="col-sm-4">
-                                    <input type="number" class="form-control " value="1">
-                                  </div>                             
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="DVI x 1" checked><p>DVI X 1</p>
+                                    <input class="mt-2 form-check-input" type="checkbox" name="moboPort[]" id="gridCheck2" value="DVI x 2" checked><p>DVI X 2</p>
+                                  </div>                        
                                 </div>           
                             </div>
                             <!-- end rear port -->
@@ -297,21 +269,33 @@
                       <div class="row col" style="padding-left:50px;">
                         <div class="row col-md-4 ">
                           <div class="col-sm-6 form-check" style="padding-left:10px;">
-                             <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                              <input type="text" class=" form-control" value="SATA" disabled>
+                             <input type="text" class=" form-control" value="SATA" disabled>
                           </div>
-                          <div class="col-sm-4">
-                              <input type="number" class="form-control " value="1">
-                          </div>                                   
+                          <div class="col-md-4">
+                            <select class="form-select" aria-label="Default select example" name="moboStorageSata">
+                              <option></option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                            </select> 
+                          </div>                            
                         </div>
                         <div class="row col-md-4 ">
                           <div class="col-sm-6 form-check" style="padding-left:10px;">
-                             <input class="mt-2 form-check-input" type="checkbox" id="gridCheck2" checked>
-                              <input type="text" class=" form-control" value="M.2" disabled>
+                            <input type="text" class=" form-control" value="M.2"  disabled>
                           </div>
-                          <div class="col-sm-4">
-                              <input type="number" class="form-control " value="1">
-                          </div>                                   
+                            <div class="col-md-4">
+                              <select class="form-select" aria-label="Default select example" name="moboStorageM2">
+                                <option></option>
+                                <option value="M.2 x 1">1</option>
+                                <option value="M.2 x 2">2</option>
+                                <option value="M.2 x 3">3</option>
+                                <option value="M.2 x 4">4</option>
+                                <option value="M.2 x 5">5</option>
+                              </select>
+                            </div>
                         </div>
                       </div>
                     </div>
@@ -320,27 +304,38 @@
                     <div class="row col" >
                         <label for="inputText" class="col-md-3 col-form-label">Memory Type</label>
                         <div class="col-sm-8">
-                          <select class="form-select" aria-label="Default select example">
+                          <select class="form-select" aria-label="Default select example" name="moboMemoryType" required>
                               <option ></option>
-                              <option value="1">DDR3</option>
-                              <option value="2">DDR4</option>
-                              <option value="2">DDR5</option>
+                              <option value="DDR3">DDR3</option>
+                              <option value="DDR4">DDR4</option>
+                              <option value="DDR5">DDR5</option>
+                            </select>
+                        </div>
+                        <label for="inputText" class="col-md-3 mt-3 col-form-label">Memory Slot</label>
+                        <div class="col-sm-8 mt-3">
+                          <select class="form-select" aria-label="Default select example" name="moboMemorySlot" required>
+                              <option ></option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
                             </select>
                         </div>
                     </div>
                     <div class="row col">
                         <label for="inputText" class="col-md-3 col-form-label">Max Memory</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="moboMemoryCap" required>
                         </div>
                     </div>
                   </div>
 
                   <div class="row mt-4">
                   <div class="row col">
-                        <label for="inputText" class="col-md-3 col-form-label">Form Factor</label>
+                        <label for="inputText" class="col-md-3 col-form-label" >Form Factor</label>
                         <div class="col-sm-8">
-                            <select class="form-select">
+                            <select class="form-select" name="moboFormFactor" required>
                               <option value="mITX">Mini-ITX</option>
                               <option value="mATX">Micro-ATX</option>
                               <option value="ATX">ATX</option>
@@ -349,9 +344,9 @@
                         </div>
                     </div>
                     <div class="row col">
-                        <label for="inputText" class="col-md-3 col-form-label">Warranty</label>
+                        <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="moboWarranty" required>
                         </div>
                     </div>
                   </div>
@@ -360,18 +355,28 @@
                     <div class="row col">
                       <label for="inputPassword" class="col-sm-4 col-form-label">Description</label>
                       <div class="col-sm-10">
-                        <textarea class="form-control" style="height: 100px"></textarea>
+                        <textarea class="form-control" style="height: 100px" name="moboDescription" ></textarea>
                       </div>
                     </div>
                     <div class="row col">
                         <label for="number" class="col-md-3 col-form-label">Harga</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control">
+                            <input type="number" class="form-control" name="moboPrice" required>
                         </div>
+                        
+                        <label for="number" class="col-md-3 mt-3 col-form-label">Stok</label>
+                        <div class="col-sm-8 mt-3" >
+                          <input type="number" class="form-control" name="moboStock" required>
+                      </div>
                     </div>
+                    
                   </div>
 
-                  
+                  <div class="row col">
+                    <div class="col-12 mt-5" style="text-align:right;" >
+                        <button type="sumbit" class="btn btn-primary" >Simpan</button>
+                    </div>
+                  </div>
 
                   </form>
                 </div>
@@ -409,8 +414,9 @@
                           <div class="col-sm-8">
                             <select class="form-select" aria-label="Default select example">
                                 <option selected>Pilih Socket</option>
-                                <option value="1">AMD</option>
-                                <option value="2">Intel</option>
+                                @foreach ($processor as $data)
+                                <option value="{{$data->processorSocketId}}">{{$data->processorSocketName}}</option>
+                                @endforeach
                               </select>
                           </div>
                       </div>
@@ -436,7 +442,7 @@
                       <div class="row col">
                           <label for="inputText" class="col-md-3 col-form-label">Chipset</label>
                           <div class="col-sm-8">
-                              <input type="text" class="form-control">
+                              <input type="text" class="form-control" name="moboChipset">
                           </div>
                       </div>
                     </div>

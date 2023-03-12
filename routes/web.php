@@ -18,9 +18,7 @@ use App\Http\Controllers\MemoryController;
 use App\Http\Controllers\PowerSupplyController;
 use App\Http\Controllers\StorageController;
 use App\Http\Controllers\ComputerCaseController;
-
-
-
+use App\Http\Controllers\Admin\MoboController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +37,6 @@ Route::get('/brand', [BrandController::class, 'index']);
 Route::get('/order', [OrderController::class, 'index']);
 Route::get('/order/invoice', [OrderController::class, 'detail']);
 Route::get('/karyawan', [KaryawanController::class, 'index']);
-Route::get('/motherboard', [MotherboardController::class, 'index']);
 Route::get('/processor', [ProcessorController::class, 'index']);
 Route::get('/graphic', [GraphicCardController::class, 'index']);
 Route::get('/powersuplly', [PowerSupplyController::class, 'index']);
@@ -86,6 +83,14 @@ Route::controller(SocketController::class)->prefix('/socket')->group(function ()
 
 Route::controller(CasingController::class)->prefix('/casing')->group(function () {
     Route::get('/', 'index')->name('admin.case');
+    Route::post('/', 'store');
+    Route::get('/find/{id}', 'edit');
+    Route::post('/update', 'update');
+    Route::get('/delete/{id}', 'destroy');
+});
+
+Route::controller(MoboController::class)->prefix('/motherboard')->group(function () {
+    Route::get('/', 'index')->name('admin.mobo');
     Route::post('/', 'store');
     Route::get('/find/{id}', 'edit');
     Route::post('/update', 'update');
