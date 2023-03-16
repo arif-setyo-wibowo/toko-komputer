@@ -53,9 +53,9 @@ class MoboController extends Controller
         }
 
         if (!empty($request->moboPort)) {
-                $moboPort = join(', ',$request->moboPort);
+            $moboPort = join(', ',$request->moboPort);
         }else{
-            $moboPort = '';
+            $moboPort = ',';
         }
         $mobo->moboPort = $moboPort;
         $mobo->processorSocketId = $request->processorSocketId;

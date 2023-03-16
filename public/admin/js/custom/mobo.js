@@ -1,13 +1,13 @@
 const base_url = document.URL;
 const asset_url = window.location.origin + "/uploads/gambar/mobo/";
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     // Auto Load Image Insert
-    $("#moboImage").change(function() {
+    $("#moboImage").change(function () {
         if (this.files && this.files[0]) {
             var reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 $('#gambarTambah').attr('src', e.target.result);
                 console.log(e.target.result);
             }
@@ -16,10 +16,10 @@ $(document).ready(function() {
     });
 
     // Auto Load Image Update
-    $("#imageUpdate").change(function() {
+    $("#imageUpdate").change(function () {
         if (this.files && this.files[0]) {
             var reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 $('#updateGambar').attr('src', e.target.result);
                 console.log(e.target.result);
             }
@@ -28,7 +28,7 @@ $(document).ready(function() {
     });
 
     // Detail Data
-    $(document).on('click', '.button-detail', function() {
+    $(document).on('click', '.button-detail', function () {
         var id = $(this).attr("id");
         var moboGambar = document.getElementById('moboGambar');
         var nama = document.getElementById('nama');
@@ -50,13 +50,12 @@ $(document).ready(function() {
             method: "GET",
             url: base_url + "/find/" + id,
             dataType: "json",
-            success: function(response) {
+            success: function (response) {
                 moboGambar.src = asset_url + response[0]['moboImage'];
                 nama.textContent = response[0]['moboName'];
                 merk.textContent = response[0]['brand']['brandName'];
                 chipset.textContent = response[0]['moboChipset'];
                 socket.textContent = response[0]['socket']['processorSocketName'];
-                port.textContent = response[0]['moboPort'];
                 storageSata.textContent = response[0]['moboStorageSata'];
                 storageM2.textContent = response[0]['moboStorageM2'];
                 formFactor.textContent = response[0]['moboFormFactor'];
@@ -66,13 +65,26 @@ $(document).ready(function() {
                 stok.textContent = response[0]['moboStock'];
                 deskripsi.textContent = response[0]['moboDescription'];
                 harga.textContent = "Rp. " + response[0]['moboPrice'];
+
+                // moboPort
+                var portdetail = response[0]['moboPort'].split(', ');
+                var arrPort = [];
+                for (let i = 0; i < portdetail.length; i++) {
+                    if (portdetail[i] != "0") {
+                        arrPort.push(" " + portdetail[i]);
+                    }
+                }
+
+                port.textContent = arrPort;
                 $("#detail").modal("show");
+
+
             }
         });
     });
 
     // Update Data
-    $(document).on('click', '.button-update', function() {
+    $(document).on('click', '.button-update', function () {
         var id = $(this).attr("id");
         var updateGambar = document.getElementById('updateGambar');
 
@@ -80,7 +92,7 @@ $(document).ready(function() {
             method: "GET",
             url: base_url + "/find/" + id,
             dataType: "json",
-            success: function(response) {
+            success: function (response) {
                 updateGambar.src = asset_url + response[0]['moboImage'];
                 $('#idUpdate').val(response[0]['moboId']);
                 $('#imageAwal').val(response[0]['moboImage']);
@@ -88,7 +100,6 @@ $(document).ready(function() {
                 $('#typeUpdate').val(response[0]['moboMemoryType']);
                 $('#socketUpdate').val(response[0]['socket']['processorSocketId']);
                 $('#chipsetUpdate').val(response[0]['moboChipset']);
-                //$('#portUpdate').val(response[0]['moboPort']);
                 $('#sataUpdate').val(response[0]['moboStorageSata']);
                 $('#M2Update').val(response[0]['moboStorageM2']);
                 $('#slotUpdate').val(response[0]['moboMemorySlot']);
@@ -99,7 +110,12 @@ $(document).ready(function() {
                 $('#garansiUpdate').val(response[0]['moboWarranty']);
                 $('#hargaUpdate').val(response[0]['moboPrice']);
                 $('#stokUpdate').val(response[0]['moboStock']);
-                console.log(response[0]);
+
+                // Real Panel Parts
+                var parts = (response[0]['moboPort'].split(', '));
+                console.log(parts);
+                $('#usbcUpdate').val(parts[0]);
+                $('#usb2.0Update').val(parts[1]);
 
                 $("#updateMobo").modal("show");
 
@@ -108,11 +124,11 @@ $(document).ready(function() {
     });
 
     // Modal Hapus
-    $(document).on('click', '.button-hapus', function() {
+    $(document).on('click', '.button-hapus', function () {
         var id = $(this).attr("id");
         $("#hapusData").modal("show");
 
-        $(document).on('click', '.buttonAksiHapus', function() {
+        $(document).on('click', '.buttonAksiHapus', function () {
             window.location.replace(base_url + "/delete/" + id);
         })
     });
