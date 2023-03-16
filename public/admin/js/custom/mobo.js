@@ -1,0 +1,120 @@
+const base_url = document.URL;
+const asset_url = window.location.origin + "/uploads/gambar/mobo/";
+
+$(document).ready(function() {
+
+    // Auto Load Image Insert
+    $("#moboImage").change(function() {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#gambarTambah').attr('src', e.target.result);
+                console.log(e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+
+    // Auto Load Image Update
+    $("#imageUpdate").change(function() {
+        if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#updateGambar').attr('src', e.target.result);
+                console.log(e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+
+    // Detail Data
+    $(document).on('click', '.button-detail', function() {
+        var id = $(this).attr("id");
+        var moboGambar = document.getElementById('moboGambar');
+        var nama = document.getElementById('nama');
+        var merk = document.getElementById('merk');
+        var chipset = document.getElementById('chipset');
+        var socket = document.getElementById('socket');
+        var port = document.getElementById('port');
+        var storageSata = document.getElementById('storageSata');
+        var storageM2 = document.getElementById('storageM2');
+        var formFactor = document.getElementById('formFactor');
+        var typeMemory = document.getElementById('typeMemory');
+        var maxMemory = document.getElementById('maxMemory');
+        var garansi = document.getElementById('garansi');
+        var stok = document.getElementById('stok');
+        var harga = document.getElementById('harga');
+        var deskripsi = document.getElementById('deskripsi');
+
+        $.ajax({
+            method: "GET",
+            url: base_url + "/find/" + id,
+            dataType: "json",
+            success: function(response) {
+                moboGambar.src = asset_url + response[0]['moboImage'];
+                nama.textContent = response[0]['moboName'];
+                merk.textContent = response[0]['brand']['brandName'];
+                chipset.textContent = response[0]['moboChipset'];
+                socket.textContent = response[0]['socket']['processorSocketName'];
+                port.textContent = response[0]['moboPort'];
+                storageSata.textContent = response[0]['moboStorageSata'];
+                storageM2.textContent = response[0]['moboStorageM2'];
+                formFactor.textContent = response[0]['moboFormFactor'];
+                typeMemory.textContent = response[0]['moboMemorySlot'] + " x " + response[0]['moboMemoryType'];
+                maxMemory.textContent = response[0]['moboMemoryCap'];
+                garansi.textContent = response[0]['moboWarranty'];
+                stok.textContent = response[0]['moboStock'];
+                deskripsi.textContent = response[0]['moboDescription'];
+                harga.textContent = "Rp. " + response[0]['moboPrice'];
+                $("#detail").modal("show");
+            }
+        });
+    });
+
+    // Update Data
+    $(document).on('click', '.button-update', function() {
+        var id = $(this).attr("id");
+        var updateGambar = document.getElementById('updateGambar');
+
+        $.ajax({
+            method: "GET",
+            url: base_url + "/find/" + id,
+            dataType: "json",
+            success: function(response) {
+                updateGambar.src = asset_url + response[0]['moboImage'];
+                $('#idUpdate').val(response[0]['moboId']);
+                $('#imageAwal').val(response[0]['moboImage']);
+                $('#namaUpdate').val(response[0]['moboName']);
+                $('#typeUpdate').val(response[0]['moboMemoryType']);
+                $('#socketUpdate').val(response[0]['socket']['processorSocketId']);
+                $('#chipsetUpdate').val(response[0]['moboChipset']);
+                //$('#portUpdate').val(response[0]['moboPort']);
+                $('#sataUpdate').val(response[0]['moboStorageSata']);
+                $('#M2Update').val(response[0]['moboStorageM2']);
+                $('#slotUpdate').val(response[0]['moboMemorySlot']);
+                $('#capUpdate').val(response[0]['moboMemoryCap']);
+                $('#ffUpdate').val(response[0]['moboFormFactor']);
+                $('#descUpdate').val(response[0]['moboDescription']);
+                $('#brandUpdate').val(response[0]['brand']['brandId']);
+                $('#garansiUpdate').val(response[0]['moboWarranty']);
+                $('#hargaUpdate').val(response[0]['moboPrice']);
+                $('#stokUpdate').val(response[0]['moboStock']);
+                console.log(response[0]);
+
+                $("#updateMobo").modal("show");
+
+            }
+        });
+    });
+
+    // Modal Hapus
+    $(document).on('click', '.button-hapus', function() {
+        var id = $(this).attr("id");
+        $("#hapusData").modal("show");
+
+        $(document).on('click', '.buttonAksiHapus', function() {
+            window.location.replace(base_url + "/delete/" + id);
+        })
+    });
+
+});

@@ -41,9 +41,7 @@ class MoboController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'moboImage' => 'image|mimes:png,jpg,jpeg',
-            'moboStorageSata' => 'nullable',
-            'moboStorageM2' => 'nullable'
+            'moboImage' => 'image|mimes:png,jpg,jpeg'
         ]);
 
         $mobo = new Motherboard;
@@ -53,12 +51,13 @@ class MoboController extends Controller
             $image->move(public_path('uploads/gambar/mobo'), $moboLogoName);
             $mobo->moboImage = $moboLogoName;
         }
+
         if (!empty($request->moboPort)) {
-            $moboPort = join(',',$request->moboPort);
-            $mobo->moboPort = $moboPort;
+                $moboPort = join(', ',$request->moboPort);
         }else{
             $moboPort = '';
         }
+        $mobo->moboPort = $moboPort;
         $mobo->processorSocketId = $request->processorSocketId;
         $mobo->brandId = $request->brandId;
         $mobo->moboName = $request->moboName;
@@ -72,11 +71,11 @@ class MoboController extends Controller
         $mobo->moboDescription = $request->moboDescription;
         $mobo->moboWarranty = $request->moboWarranty;
         $mobo->moboPrice = $request->moboPrice;
-        $mobo->moboStock = $request->moboPrice;
+        $mobo->moboStock = $request->moboStock;
         $mobo->save();
 
 
-        return redirect()->route('admin.mobo')->with(['succes','Tambah Data Berhasil']);
+        return redirect()->route('admin.mobo')->with(['success' => 'Tambah Data Berhasil']);
     }
 
     /**
@@ -92,15 +91,54 @@ class MoboController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Motherboard::with("brand")->with('socket')->where('moboId', $id)->get();
+        return $data->toJson();
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'imageUpdate' => 'image|mimes:png,jpg,jpeg'
+        ]);
+
+        $mobo = Motherboard::find($request->idUpdate);
+        if ($request->file('imageUpdate')) {
+            File::delete('uploads/gambar/mobo/'.$mobo->moboImage);
+            $image = $request->file('imageUpdate');
+            $moboLogoName = Str::random(20) . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('uploads/gambar/mobo'), $moboLogoName);
+            $mobo->moboImage = $moboLogoName;
+        }else{
+            $mobo->moboImage = $request->imageAwal;
+        }
+
+        if (!empty($request->moboPortUpdate)) {
+                $moboPort = join(', ',$request->moboPortUpdate);
+        }else{
+            $moboPort = '';
+        }
+        //$mobo->moboPort = $moboPort;
+        $mobo->processorSocketId = $request->socketUpdate;
+        $mobo->brandId = $request->brandUpdate;
+        $mobo->moboName = $request->namaUpdate;
+        $mobo->moboChipset = $request->chipsetUpdate;
+        $mobo->moboStorageSata = $request->sataUpdate;
+        $mobo->moboStorageM2 = $request->M2Update;
+        $mobo->moboFormFactor = $request->ffUpdate;
+        $mobo->moboMemoryType = $request->typeUpdate;
+        $mobo->moboMemoryCap = $request->capUpdate;
+        $mobo->moboMemorySlot = $request->slotUpdate;
+        $mobo->moboDescription = $request->descUpdate;
+        $mobo->moboWarranty = $request->garansiUpdate;
+        $mobo->moboPrice = $request->hargaUpdate;
+        $mobo->moboStock = $request->stokUpdate;
+        $mobo->save();
+
+
+        return redirect()->route('admin.mobo')->with(['success' => 'Edit Data Berhasil']);
     }
 
     /**
@@ -108,6 +146,9 @@ class MoboController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $mobo = Motherboard::find($id);
+        File::delete('uploads/gambar/mobo/'.$mobo->moboImage);
+        Motherboard::destroy($id);
+        return redirect()->route('admin.mobo')->with(['success' => 'Hapus Data Berhasil']);
     }
 }
