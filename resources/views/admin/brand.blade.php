@@ -56,10 +56,9 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <?php $count = 1; ?>
                     @foreach ($brand as $data)
                       <tr>
-                        <th scope="row">{{ $count++ }}</th>
+                        <th scope="row">{{ $loop->iteration }}</th>
                         <td><img src="{{ asset('uploads/gambar/brand/' . $data->brandLogo) }}"
                             style="height:120px; width:200px;"></td>
                         <td>{{ $data->brandName }}</td>

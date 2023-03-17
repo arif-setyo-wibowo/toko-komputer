@@ -58,10 +58,9 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <?php $count = 1; ?>
                     @foreach ($casing as $data)
                       <tr>
-                        <th scope="row">{{ $count++ }}</th>
+                        <th scope="row">{{ $loop->iteration }}</th>
                         <td>{{ $data->brand->brandName }}</td>
                         <td>{{ $data->caseName }}</td>
                         <td>{{ $data->caseType }}</td>

@@ -29,10 +29,9 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <?php $count = 1; ?>
                   @foreach ($pelanggan as $data)
                     <tr>
-                      <th scope="row">{{ $count++ }}</th>
+                      <th scope="row">{{ $loop->iteration }}</th>
                       <td>{{ $data->customerName }}</td>
                       <td class="text-primary">{{ $data->customerEmail }}</td>
                       <td>{{ $data->customerPhoneNumber }}</td>

@@ -57,10 +57,9 @@
 
                   </thead>
                   <tbody>
-                    <?php $count = 1; ?>
                     @foreach ($socket as $item)
                       <tr>
-                        <th scope="row">{{ $count++ }}</th>
+                        <th scope="row">{{ $loop->iteration }}</th>
                         <td>{{ $item->processorSocketName }}</td>
                         <td class="text-center">
                           <li class="nav-item dropdown" style="list-style-type: none;">

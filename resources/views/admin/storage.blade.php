@@ -61,10 +61,9 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <?php $count = 1; ?>
                     @foreach ($storage as $data)
                       <tr>
-                        <th scope="row">{{ $count++ }}</th>
+                        <th scope="row">{{ $loop->iteration }}</th>
                         <td>{{ $data->brand->brandName }}</td>
                         <td>{{ $data->storageName }}</td>
                         <td>{{ $data->storageSize }}</td>

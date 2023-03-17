@@ -31,10 +31,9 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <?php $count = 1; ?>
                   @foreach ($karyawan as $data)
                     <tr>
-                      <th scope="row">{{ $count++ }}</th>
+                      <th scope="row">{{ $loop->iteration }}</th>
                       <td>{{ $data->employeeName }}</td>
                       <td>{{ $data->employeeEmail }}</td>
                       <td>

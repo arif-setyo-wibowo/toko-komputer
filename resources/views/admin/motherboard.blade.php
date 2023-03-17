@@ -55,9 +55,9 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <?php $count = 1; ?> @foreach ($mobo as $data)
+                      @foreach ($mobo as $data)
                         <tr>
-                          <th scope="row">{{ $count++ }}</th>
+                          <th scope="row">{{ $loop->iteration }}</th>
                           <td>{{ $data->moboName }}</td>
                           <td>{{ $data->socket->processorSocketName }}</td>
                           <td>{{ $data->brand->brandName }}</td>
