@@ -12,11 +12,7 @@ class StorageController extends Controller
      */
     public function index()
     {
-        $data=[
-            'title' => "Storage"
-        ];
-
-        return view('admin/storage',$data);
+        
     }
 
     /**

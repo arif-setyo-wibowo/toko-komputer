@@ -16,7 +16,7 @@ use App\Http\Controllers\ProcessorController;
 use App\Http\Controllers\GraphicCardController;
 use App\Http\Controllers\MemoryController;
 use App\Http\Controllers\PowerSupplyController;
-use App\Http\Controllers\StorageController;
+use App\Http\Controllers\Admin\StorageController;
 use App\Http\Controllers\ComputerCaseController;
 use App\Http\Controllers\Admin\MoboController;
 
@@ -40,8 +40,6 @@ Route::get('/karyawan', [KaryawanController::class, 'index']);
 Route::get('/processor', [ProcessorController::class, 'index']);
 Route::get('/graphic', [GraphicCardController::class, 'index']);
 Route::get('/powersuplly', [PowerSupplyController::class, 'index']);
-Route::get('/storage', [StorageController::class, 'index']);
-
 
 Route::controller(IdentitasController::class)->prefix('/identitas')->group(function () {
     Route::get('/', 'index')->name('admin.identitas');
@@ -96,3 +94,13 @@ Route::controller(MoboController::class)->prefix('/motherboard')->group(function
     Route::post('/update', 'update');
     Route::get('/delete/{id}', 'destroy');
 });
+
+Route::controller(StorageController::class)->prefix('/storage')->group(function () {
+    Route::get('/', 'index')->name('admin.storage');
+    Route::post('/', 'store');
+    Route::get('/find/{id}', 'edit');
+    Route::post('/update', 'update');
+    Route::get('/delete/{id}', 'destroy');
+});
+
+
