@@ -2,23 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\IdentitasController;
 use App\Http\Controllers\Admin\PelangganController;
 use App\Http\Controllers\Admin\SosmedController;
 use App\Http\Controllers\Admin\BrandController;
-use App\Http\Controllers\Admin\OrderController;
-use App\Http\Controllers\Admin\IdentitasController;
-use App\Http\Controllers\Admin\KaryawanController;
 use App\Http\Controllers\Admin\SocketController;
-use App\Http\Controllers\Admin\MemoriController;
-use App\Http\Controllers\Admin\CasingController;
-use App\Http\Controllers\MotherboardController;
-use App\Http\Controllers\ProcessorController;
-use App\Http\Controllers\GraphicCardController;
-use App\Http\Controllers\MemoryController;
-use App\Http\Controllers\PowerSupplyController;
-use App\Http\Controllers\Admin\StorageController;
-use App\Http\Controllers\ComputerCaseController;
 use App\Http\Controllers\Admin\MoboController;
+use App\Http\Controllers\Admin\ProsesorController;
+use App\Http\Controllers\Admin\MemoriController;
+use App\Http\Controllers\Admin\StorageController;
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\CasingController;
+use App\Http\Controllers\Admin\KaryawanController;
+use App\Http\Controllers\MotherboardController;
+use App\Http\Controllers\GraphicCardController;
+use App\Http\Controllers\PowerSupplyController;
+use App\Http\Controllers\ComputerCaseController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -63,24 +63,8 @@ Route::controller(BrandController::class)->group(function () {
     Route::get('/brand/delete/{id}', 'destroy');
 });
 
-Route::controller(MemoriController::class)->prefix('/memory')->group(function () {
-    Route::get('/', 'index')->name('admin.memory');
-    Route::post('/', 'store');
-    Route::get('/find/{id}', 'edit');
-    Route::post('/update', 'update');
-    Route::get('/delete/{id}', 'destroy');
-});
-
 Route::controller(SocketController::class)->prefix('/socket')->group(function () {
     Route::get('/', 'index')->name('admin.socket');
-    Route::post('/', 'store');
-    Route::get('/find/{id}', 'edit');
-    Route::post('/update', 'update');
-    Route::get('/delete/{id}', 'destroy');
-});
-
-Route::controller(CasingController::class)->prefix('/casing')->group(function () {
-    Route::get('/', 'index')->name('admin.case');
     Route::post('/', 'store');
     Route::get('/find/{id}', 'edit');
     Route::post('/update', 'update');
@@ -95,6 +79,14 @@ Route::controller(MoboController::class)->prefix('/motherboard')->group(function
     Route::get('/delete/{id}', 'destroy');
 });
 
+Route::controller(MemoriController::class)->prefix('/memory')->group(function () {
+    Route::get('/', 'index')->name('admin.memory');
+    Route::post('/', 'store');
+    Route::get('/find/{id}', 'edit');
+    Route::post('/update', 'update');
+    Route::get('/delete/{id}', 'destroy');
+});
+
 Route::controller(StorageController::class)->prefix('/storage')->group(function () {
     Route::get('/', 'index')->name('admin.storage');
     Route::post('/', 'store');
@@ -103,4 +95,10 @@ Route::controller(StorageController::class)->prefix('/storage')->group(function 
     Route::get('/delete/{id}', 'destroy');
 });
 
-
+Route::controller(CasingController::class)->prefix('/casing')->group(function () {
+    Route::get('/', 'index')->name('admin.case');
+    Route::post('/', 'store');
+    Route::get('/find/{id}', 'edit');
+    Route::post('/update', 'update');
+    Route::get('/delete/{id}', 'destroy');
+});
