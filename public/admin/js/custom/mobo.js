@@ -1,13 +1,13 @@
 const base_url = document.URL;
 const asset_url = window.location.origin + "/uploads/gambar/mobo/";
 
-$(document).ready(function () {
+$(document).ready(function() {
 
     // Auto Load Image Insert
-    $("#moboImage").change(function () {
+    $("#moboImage").change(function() {
         if (this.files && this.files[0]) {
             var reader = new FileReader();
-            reader.onload = function (e) {
+            reader.onload = function(e) {
                 $('#gambarTambah').attr('src', e.target.result);
                 console.log(e.target.result);
             }
@@ -16,10 +16,10 @@ $(document).ready(function () {
     });
 
     // Auto Load Image Update
-    $("#imageUpdate").change(function () {
+    $("#imageUpdate").change(function() {
         if (this.files && this.files[0]) {
             var reader = new FileReader();
-            reader.onload = function (e) {
+            reader.onload = function(e) {
                 $('#updateGambar').attr('src', e.target.result);
                 console.log(e.target.result);
             }
@@ -28,7 +28,7 @@ $(document).ready(function () {
     });
 
     // Detail Data
-    $(document).on('click', '.button-detail', function () {
+    $(document).on('click', '.button-detail', function() {
         var id = $(this).attr("id");
         var moboGambar = document.getElementById('moboGambar');
         var nama = document.getElementById('nama');
@@ -50,7 +50,7 @@ $(document).ready(function () {
             method: "GET",
             url: base_url + "/find/" + id,
             dataType: "json",
-            success: function (response) {
+            success: function(response) {
                 moboGambar.src = asset_url + response[0]['moboImage'];
                 nama.textContent = response[0]['moboName'];
                 merk.textContent = response[0]['brand']['brandName'];
@@ -84,7 +84,7 @@ $(document).ready(function () {
     });
 
     // Update Data
-    $(document).on('click', '.button-update', function () {
+    $(document).on('click', '.button-update', function() {
         var id = $(this).attr("id");
         var updateGambar = document.getElementById('updateGambar');
 
@@ -92,7 +92,7 @@ $(document).ready(function () {
             method: "GET",
             url: base_url + "/find/" + id,
             dataType: "json",
-            success: function (response) {
+            success: function(response) {
                 updateGambar.src = asset_url + response[0]['moboImage'];
                 $('#idUpdate').val(response[0]['moboId']);
                 $('#imageAwal').val(response[0]['moboImage']);
@@ -113,10 +113,23 @@ $(document).ready(function () {
 
                 // Real Panel Parts
                 var parts = (response[0]['moboPort'].split(', '));
-                console.log(parts);
-                $('#usbcUpdate').val(parts[0]);
-                $('#usb2.0Update').val(parts[1]);
 
+                $('#usbcUpdate').val(parts[0]);
+                $('#usb20Update').val(parts[1]);
+                $('#usb32Update').val(parts[2]);
+                $('#psUpdate').val(parts[3]);
+                $('#dsubUpdate').val(parts[4]);
+                $('#pdifUpdate').val(parts[5]);
+                $('#ethernetUpdate').val(parts[6]);
+                $('#firewireUpdate').val(parts[7]);
+                $('#paralelUpdate').val(parts[8]);
+                $('#serialUpdate').val(parts[9]);
+                $('#audioUpdate').val(parts[10]);
+                $('#hdmiUpdate').val(parts[11]);
+                $('#dpUpdate').val(parts[12]);
+                $('#eSataUpdate').val(parts[13]);
+                $('#dviUpdate').val(parts[14]);
+                console.log(parts);
                 $("#updateMobo").modal("show");
 
             }
@@ -124,11 +137,11 @@ $(document).ready(function () {
     });
 
     // Modal Hapus
-    $(document).on('click', '.button-hapus', function () {
+    $(document).on('click', '.button-hapus', function() {
         var id = $(this).attr("id");
         $("#hapusData").modal("show");
 
-        $(document).on('click', '.buttonAksiHapus', function () {
+        $(document).on('click', '.buttonAksiHapus', function() {
             window.location.replace(base_url + "/delete/" + id);
         })
     });

@@ -115,12 +115,12 @@ class MoboController extends Controller
             $mobo->moboImage = $request->imageAwal;
         }
 
-        if (!empty($request->moboPortUpdate)) {
-                $moboPort = join(', ',$request->moboPortUpdate);
+        if (!empty($request->portUpdate)) {
+            $moboPort = join(', ',$request->portUpdate);
         }else{
-            $moboPort = '';
+            $moboPort = ',';
         }
-        //$mobo->moboPort = $moboPort;
+        $mobo->moboPort = $moboPort;
         $mobo->processorSocketId = $request->socketUpdate;
         $mobo->brandId = $request->brandUpdate;
         $mobo->moboName = $request->namaUpdate;

@@ -215,16 +215,16 @@
                                   <div class="col-sm-4">
                                     <select class="form-select" aria-label="Default select example" name="moboPort[]">
                                       <option value="0" selected></option>
-                                      <option value="3.2 x 1">1</option>
-                                      <option value="3.2 x 2">2</option>
-                                      <option value="3.2 x 3">3</option>
-                                      <option value="3.2 x 4">4</option>
-                                      <option value="3.2 x 5">5</option>
-                                      <option value="3.2 x 6">6</option>
-                                      <option value="3.2 x 7">7</option>
-                                      <option value="3.2 x 8">8</option>
-                                      <option value="3.2 x 9">9</option>
-                                      <option value="3.2 x 10">10</option>
+                                      <option value="USB 3.2 x 1">1</option>
+                                      <option value="USB 3.2 x 2">2</option>
+                                      <option value="USB 3.2 x 3">3</option>
+                                      <option value="USB 3.2 x 4">4</option>
+                                      <option value="USB 3.2 x 5">5</option>
+                                      <option value="USB 3.2 x 6">6</option>
+                                      <option value="USB 3.2 x 7">7</option>
+                                      <option value="USB 3.2 x 8">8</option>
+                                      <option value="USB 3.2 x 9">9</option>
+                                      <option value="USB 3.2 x 10">10</option>
                                     </select>
                                   </div>
                                 </div>
@@ -638,8 +638,7 @@
                               <img src="" id="updateGambar" style="height: 220px;" alt="">
                               <div class="pt-2 col-md-4 text-center">
                                 <label style="width:100px;">
-                                  <input type="file" name="imageUpdate" id="imageUpdate" style="display:none;"
-                                    required>
+                                  <input type="file" name="imageUpdate" id="imageUpdate" style="display:none;">
                                   <a class="btn btn-primary " style="width: 100px;"><i class="bi bi-upload"></i></a>
                                 </label>
                               </div>
@@ -713,7 +712,7 @@
                                       </div>
                                       <div class="col-sm-6">
                                         <select class="form-select" aria-label="Default select example"
-                                          name="moboPort[]" id="usbcUpdate">
+                                          name="portUpdate[]" id="usbcUpdate">
                                           <option value="0" selected></option>
                                           <option value="USB C x 1">1</option>
                                           <option value="USB C x 2">2</option>
@@ -734,7 +733,7 @@
                                       </div>
                                       <div class="col-sm-6">
                                         <select class="form-select" aria-label="Default select example"
-                                          name="moboPort[]" id="usb2.0Update">
+                                          name="portUpdate[]" id="usb20Update">
                                           <option value="0" selected></option>
                                           <option value="USB 2.0 x 1">1</option>
                                           <option value="USB 2.0 x 2">2</option>
@@ -753,20 +752,20 @@
                                       <div class="col-sm-6 form-check" style="padding-left:10px;">
                                         <input type="text" class=" form-control" value="USB 3.2" disabled>
                                       </div>
-                                      <div class="col-sm-4">
+                                      <div class="col-sm-6">
                                         <select class="form-select" aria-label="Default select example"
-                                          name="moboPort[]">
+                                          name="portUpdate[]" id="usb32Update">
                                           <option value="0" selected></option>
-                                          <option value="3.2 x 1">1</option>
-                                          <option value="3.2 x 2">2</option>
-                                          <option value="3.2 x 3">3</option>
-                                          <option value="3.2 x 4">4</option>
-                                          <option value="3.2 x 5">5</option>
-                                          <option value="3.2 x 6">6</option>
-                                          <option value="3.2 x 7">7</option>
-                                          <option value="3.2 x 8">8</option>
-                                          <option value="3.2 x 9">9</option>
-                                          <option value="3.2 x 10">10</option>
+                                          <option value="USB 3.2 x 1">1</option>
+                                          <option value="USB 3.2 x 2">2</option>
+                                          <option value="USB 3.2 x 3">3</option>
+                                          <option value="USB 3.2 x 4">4</option>
+                                          <option value="USB 3.2 x 5">5</option>
+                                          <option value="USB 3.2 x 6">6</option>
+                                          <option value="USB 3.2 x 7">7</option>
+                                          <option value="USB 3.2 x 8">8</option>
+                                          <option value="USB 3.2 x 9">9</option>
+                                          <option value="USB 3.2 x 10">10</option>
                                         </select>
                                       </div>
                                     </div>
@@ -776,9 +775,9 @@
                                       <div class="col-sm-6 form-check" style="padding-left:10px;">
                                         <input type="text" class=" form-control" value="AT/PS 2" disabled>
                                       </div>
-                                      <div class="col-sm-4">
+                                      <div class="col-sm-6">
                                         <select class="form-select" aria-label="Default select example"
-                                          name="moboPort[]">
+                                          name="portUpdate[]" id="psUpdate">
                                           <option value="0" selected></option>
                                           <option value="AT/PS 2 x 1">1</option>
                                           <option value="AT/PS 2 x 2">2</option>
@@ -797,9 +796,9 @@
                                       <div class="col-sm-6 form-check" style="padding-left:10px;">
                                         <input type="text" class=" form-control" value="D-sub" disabled>
                                       </div>
-                                      <div class="col-sm-4">
+                                      <div class="col-sm-6">
                                         <select class="form-select" aria-label="Default select example"
-                                          name="moboPort[]">
+                                          name="portUpdate[]" id="dsubUpdate">
                                           <option value="0" selected></option>
                                           <option value="D-sub x 1">1</option>
                                           <option value="D-sub x 2">2</option>
@@ -818,9 +817,9 @@
                                       <div class="col-sm-6 form-check" style="padding-left:10px;">
                                         <input type="text" class=" form-control" value="S/PDIF" disabled>
                                       </div>
-                                      <div class="col-sm-4">
+                                      <div class="col-sm-6">
                                         <select class="form-select" aria-label="Default select example"
-                                          name="moboPort[]">
+                                          name="portUpdate[]" id="pdifUpdate">
                                           <option value="0" selected></option>
                                           <option value="S/PDIF x 1">1</option>
                                           <option value="S/PDIF x 2">2</option>
@@ -841,9 +840,9 @@
                                       <div class="col-sm-6 form-check" style="padding-left:10px;">
                                         <input type="text" class=" form-control" value="Ethernet" disabled>
                                       </div>
-                                      <div class="col-sm-4">
+                                      <div class="col-sm-6">
                                         <select class="form-select" aria-label="Default select example"
-                                          name="moboPort[]">
+                                          name="portUpdate[]" id="ethernetUpdate">
                                           <option value="0" selected></option>
                                           <option value="Ethernet x 1">1</option>
                                           <option value="Ethernet x 2">2</option>
@@ -862,9 +861,9 @@
                                       <div class="col-sm-6 form-check" style="padding-left:10px;">
                                         <input type="text" class=" form-control" value="Firewire" disabled>
                                       </div>
-                                      <div class="col-sm-4">
+                                      <div class="col-sm-6">
                                         <select class="form-select" aria-label="Default select example"
-                                          name="moboPort[]">
+                                          name="portUpdate[]" id="firewireUpdate">
                                           <option value="0" selected></option>
                                           <option value="Firewire x 1">1</option>
                                           <option value="Firewire x 2">2</option>
@@ -883,9 +882,9 @@
                                       <div class="col-sm-6 form-check" style="padding-left:10px;">
                                         <input type="text" class=" form-control" value="Paralel" disabled>
                                       </div>
-                                      <div class="col-sm-4">
+                                      <div class="col-sm-6">
                                         <select class="form-select" aria-label="Default select example"
-                                          name="moboPort[]">
+                                          name="portUpdate[]" id="paralelUpdate">
                                           <option value="0" selected></option>
                                           <option value="Paralel x 1">1</option>
                                           <option value="Paralel x 2">2</option>
@@ -906,9 +905,9 @@
                                       <div class="col-sm-6 form-check" style="padding-left:10px;">
                                         <input type="text" class=" form-control" value="Serial" disabled>
                                       </div>
-                                      <div class="col-sm-4">
+                                      <div class="col-sm-6">
                                         <select class="form-select" aria-label="Default select example"
-                                          name="moboPort[]">
+                                          name="portUpdate[]" id="serialUpdate">
                                           <option value="0" selected></option>
                                           <option value="Serial x 1">1</option>
                                           <option value="Serial x 2">2</option>
@@ -927,9 +926,9 @@
                                       <div class="col-sm-6 form-check" style="padding-left:10px;">
                                         <input type="text" class=" form-control" value="Audio" disabled>
                                       </div>
-                                      <div class="col-sm-4">
+                                      <div class="col-sm-6">
                                         <select class="form-select" aria-label="Default select example"
-                                          name="moboPort[]">
+                                          name="portUpdate[]" id="audioUpdate">
                                           <option value="0" selected></option>
                                           <option value="Audio x 1">1</option>
                                           <option value="Audio x 2">2</option>
@@ -948,9 +947,9 @@
                                       <div class="col-sm-6 form-check" style="padding-left:10px;">
                                         <input type="text" class=" form-control" value="Hdmi" disabled>
                                       </div>
-                                      <div class="col-sm-4">
+                                      <div class="col-sm-6">
                                         <select class="form-select" aria-label="Default select example"
-                                          name="moboPort[]">
+                                          name="portUpdate[]" id="hdmiUpdate">
                                           <option value="0" selected></option>
                                           <option value="Hdmi x 1">1</option>
                                           <option value="Hdmi x 2">2</option>
@@ -971,9 +970,9 @@
                                       <div class="col-sm-6 form-check" style="padding-left:10px;">
                                         <input type="text" class=" form-control" value="Display Port" disabled>
                                       </div>
-                                      <div class="col-sm-4">
+                                      <div class="col-sm-6">
                                         <select class="form-select" aria-label="Default select example"
-                                          name="moboPort[]">
+                                          name="portUpdate[]" id="dpUpdate">
                                           <option value="0" selected></option>
                                           <option value="Display Port x 1">1</option>
                                           <option value="Display Port x 2">2</option>
@@ -992,9 +991,9 @@
                                       <div class="col-sm-6 form-check" style="padding-left:10px;">
                                         <input type="text" class=" form-control" value="eSata" disabled>
                                       </div>
-                                      <div class="col-sm-4">
+                                      <div class="col-sm-6">
                                         <select class="form-select" aria-label="Default select example"
-                                          name="moboPort[]">
+                                          name="portUpdate[]" id="eSataUpdate">
                                           <option value="0" selected></option>
                                           <option value="eSata x 1">1</option>
                                           <option value="eSata x 2">2</option>
@@ -1013,9 +1012,9 @@
                                       <div class="col-sm-6 form-check" style="padding-left:10px;">
                                         <input type="text" class=" form-control" value="DVI" disabled>
                                       </div>
-                                      <div class="col-sm-4">
+                                      <div class="col-sm-6">
                                         <select class="form-select" aria-label="Default select example"
-                                          name="moboPort[]">
+                                          name="portUpdate[]" id="dviUpdate">
                                           <option value="0" selected></option>
                                           <option value="DVI x 1">1</option>
                                           <option value="DVI x 2">2</option>
