@@ -303,7 +303,7 @@
             </a>
           </li>
           <li>
-            <a href="/powersuplly">
+            <a href="/powersupply">
               <i class="bi bi-circle"></i><span>Power Supplay</span>
             </a>
           </li>

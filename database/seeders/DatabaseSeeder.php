@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
             SocketSeeder::class,
             CaseSeeder::class,
             MotherboardSeeder::class,
-            StorageSeeder::class
+            StorageSeeder::class,
+            PowerSupplySeeder::class
         ]);
     }
 }

@@ -14,9 +14,8 @@ use App\Http\Controllers\Admin\StorageController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\CasingController;
 use App\Http\Controllers\Admin\KaryawanController;
-use App\Http\Controllers\MotherboardController;
+use App\Http\Controllers\Admin\PowerSupplyController;
 use App\Http\Controllers\GraphicCardController;
-use App\Http\Controllers\PowerSupplyController;
 use App\Http\Controllers\ComputerCaseController;
 
 
@@ -39,7 +38,6 @@ Route::get('/order/invoice', [OrderController::class, 'detail']);
 Route::get('/karyawan', [KaryawanController::class, 'index']);
 Route::get('/processor', [ProcessorController::class, 'index']);
 Route::get('/graphic', [GraphicCardController::class, 'index']);
-Route::get('/powersuplly', [PowerSupplyController::class, 'index']);
 
 Route::controller(IdentitasController::class)->prefix('/identitas')->group(function () {
     Route::get('/', 'index')->name('admin.identitas');
@@ -97,6 +95,14 @@ Route::controller(StorageController::class)->prefix('/storage')->group(function 
 
 Route::controller(CasingController::class)->prefix('/casing')->group(function () {
     Route::get('/', 'index')->name('admin.case');
+    Route::post('/', 'store');
+    Route::get('/find/{id}', 'edit');
+    Route::post('/update', 'update');
+    Route::get('/delete/{id}', 'destroy');
+});
+
+Route::controller(PowerSupplyController::class)->prefix('/powersupply')->group(function () {
+    Route::get('/', 'index')->name('admin.powersupply');
     Route::post('/', 'store');
     Route::get('/find/{id}', 'edit');
     Route::post('/update', 'update');
