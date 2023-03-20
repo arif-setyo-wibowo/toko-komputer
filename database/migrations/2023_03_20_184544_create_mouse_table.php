@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mice', function (Blueprint $table) {
+        Schema::create('mouse', function (Blueprint $table) {
             $table->uuid('mouseId')->primary();
             $table->foreignUuid('brandId')->references('brandId')->on('brands');
             $table->string('mouseName',255);

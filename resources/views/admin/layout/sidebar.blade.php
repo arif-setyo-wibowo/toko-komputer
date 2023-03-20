@@ -288,8 +288,8 @@
             </a>
           </li>
           <li>
-            <a href="/graphic">
-              <i class="bi bi-circle"></i><span>VGA</span>
+            <a href="/gpu">
+              <i class="bi bi-circle"></i><span>Graphic Card</span>
             </a>
           </li>
           <li>

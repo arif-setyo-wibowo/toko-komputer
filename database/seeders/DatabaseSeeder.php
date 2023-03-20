@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
             CaseSeeder::class,
             MotherboardSeeder::class,
             StorageSeeder::class,
-            PowerSupplySeeder::class
+            PowerSupplySeeder::class,
+            GraphicCardSeeder::class
         ]);
     }
 }

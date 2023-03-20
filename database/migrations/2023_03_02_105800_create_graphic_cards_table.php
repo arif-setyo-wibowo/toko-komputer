@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('gpuBaseClock',255);
             $table->string('gpuBoostClock',255);
             $table->string('gpuMemoryClockSpeed',255);
+            $table->string('gpuMemorySize',255);
             $table->string('gpuMemoryInterface',255);
             $table->string('gpuMemoryType',255);
             $table->string('gpuFeature',255);

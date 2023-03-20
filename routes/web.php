@@ -15,9 +15,10 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\CasingController;
 use App\Http\Controllers\Admin\KaryawanController;
 use App\Http\Controllers\Admin\PowerSupplyController;
+use App\Http\Controllers\Admin\GpuController;
 use App\Http\Controllers\GraphicCardController;
 use App\Http\Controllers\ComputerCaseController;
-
+use App\Http\Controllers\ProcessorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,6 @@ Route::get('/order', [OrderController::class, 'index']);
 Route::get('/order/invoice', [OrderController::class, 'detail']);
 Route::get('/karyawan', [KaryawanController::class, 'index']);
 Route::get('/processor', [ProcessorController::class, 'index']);
-Route::get('/graphic', [GraphicCardController::class, 'index']);
 
 Route::controller(IdentitasController::class)->prefix('/identitas')->group(function () {
     Route::get('/', 'index')->name('admin.identitas');
@@ -108,3 +108,12 @@ Route::controller(PowerSupplyController::class)->prefix('/powersupply')->group(f
     Route::post('/update', 'update');
     Route::get('/delete/{id}', 'destroy');
 });
+
+Route::controller(GpuController::class)->prefix('/gpu')->group(function () {
+    Route::get('/', 'index')->name('admin.gpu');
+    Route::post('/', 'store');
+    Route::get('/find/{id}', 'edit');
+    Route::post('/update', 'update');
+    Route::get('/delete/{id}', 'destroy');
+});
+
