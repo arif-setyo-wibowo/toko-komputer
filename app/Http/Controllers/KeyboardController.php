@@ -12,7 +12,11 @@ class KeyboardController extends Controller
      */
     public function index()
     {
-        //
+       $data=[
+            'title' => "Keyboard"
+        ];
+
+        return view('admin/keyboard',$data);
     }
 
     /**

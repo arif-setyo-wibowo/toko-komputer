@@ -12,7 +12,11 @@ class EarphoneController extends Controller
      */
     public function index()
     {
-        //
+        $data=[
+            'title' => "Earphone"
+        ];
+
+        return view('admin/earphone',$data);
     }
 
     /**

@@ -312,6 +312,21 @@
               <i class="bi bi-circle"></i><span>Casing</span>
             </a>
           </li>
+          <li>
+            <a href="/earphone">
+              <i class="bi bi-circle"></i><span>Earphone</span>
+            </a>
+          </li>
+          <li>
+            <a href="/keyboard">
+              <i class="bi bi-circle"></i><span>Keyboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="/monitor">
+              <i class="bi bi-circle"></i><span>Monitor</span>
+            </a>
+          </li>
         </ul>
       </li><!-- End Components Nav -->
       <li class="nav-item">

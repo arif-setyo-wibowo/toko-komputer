@@ -19,6 +19,9 @@ use App\Http\Controllers\Admin\GpuController;
 use App\Http\Controllers\GraphicCardController;
 use App\Http\Controllers\ComputerCaseController;
 use App\Http\Controllers\ProcessorController;
+use App\Http\Controllers\EarphoneController;
+use App\Http\Controllers\KeyboardController;
+use App\Http\Controllers\MonitorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +41,9 @@ Route::get('/order', [OrderController::class, 'index']);
 Route::get('/order/invoice', [OrderController::class, 'detail']);
 Route::get('/karyawan', [KaryawanController::class, 'index']);
 Route::get('/processor', [ProcessorController::class, 'index']);
+Route::get('/earphone', [EarphoneController::class, 'index']);
+Route::get('/keyboard', [KeyboardController::class, 'index']);
+Route::get('/monitor', [MonitorController::class, 'index']);
 
 Route::controller(IdentitasController::class)->prefix('/identitas')->group(function () {
     Route::get('/', 'index')->name('admin.identitas');

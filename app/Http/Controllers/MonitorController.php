@@ -12,7 +12,11 @@ class MonitorController extends Controller
      */
     public function index()
     {
-        //
+        $data=[
+            'title' => "Monitor"
+        ];
+
+        return view('admin/monitor',$data);
     }
 
     /**
