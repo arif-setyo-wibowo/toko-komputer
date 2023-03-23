@@ -16,9 +16,9 @@ use App\Http\Controllers\Admin\CasingController;
 use App\Http\Controllers\Admin\KaryawanController;
 use App\Http\Controllers\Admin\PowerSupplyController;
 use App\Http\Controllers\Admin\GpuController;
+use App\Http\Controllers\Admin\ProcessorController;
 use App\Http\Controllers\GraphicCardController;
 use App\Http\Controllers\ComputerCaseController;
-use App\Http\Controllers\ProcessorController;
 use App\Http\Controllers\EarphoneController;
 use App\Http\Controllers\KeyboardController;
 use App\Http\Controllers\MonitorController;
@@ -42,7 +42,6 @@ Route::get('/brand', [BrandController::class, 'index']);
 Route::get('/order', [OrderController::class, 'index']);
 Route::get('/order/invoice', [OrderController::class, 'detail']);
 Route::get('/karyawan', [KaryawanController::class, 'index']);
-Route::get('/processor', [ProcessorController::class, 'index']);
 Route::get('/earphone', [EarphoneController::class, 'index']);
 Route::get('/keyboard', [KeyboardController::class, 'index']);
 Route::get('/monitor', [MonitorController::class, 'index']);
@@ -129,4 +128,13 @@ Route::controller(GpuController::class)->prefix('/gpu')->group(function () {
     Route::post('/update', 'update');
     Route::get('/delete/{id}', 'destroy');
 });
+
+Route::controller(ProcessorController::class)->prefix('/processor')->group(function () {
+    Route::get('/', 'index')->name('admin.processor');
+    Route::post('/', 'store');
+    Route::get('/find/{id}', 'edit');
+    Route::post('/update', 'update');
+    Route::get('/delete/{id}', 'destroy');
+});
+
 
