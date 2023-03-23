@@ -22,6 +22,8 @@ use App\Http\Controllers\ProcessorController;
 use App\Http\Controllers\EarphoneController;
 use App\Http\Controllers\KeyboardController;
 use App\Http\Controllers\MonitorController;
+// 
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +46,11 @@ Route::get('/processor', [ProcessorController::class, 'index']);
 Route::get('/earphone', [EarphoneController::class, 'index']);
 Route::get('/keyboard', [KeyboardController::class, 'index']);
 Route::get('/monitor', [MonitorController::class, 'index']);
+
+// TEST
+Route::get('/paymentgateway', [TestController::class, 'index']);
+Route::post('/paymentgateway/bayar', [TestController::class, 'store']);
+Route::get('/paymentgateway/detail/{refesensi}', [TestController::class, 'show'])->name('paymentgateway.detail');
 
 Route::controller(IdentitasController::class)->prefix('/identitas')->group(function () {
     Route::get('/', 'index')->name('admin.identitas');

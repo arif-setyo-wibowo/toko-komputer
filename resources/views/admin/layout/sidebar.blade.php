@@ -340,7 +340,13 @@
           <i class="bi bi-person"></i>
           <span>Karyawan</span>
         </a>
-      </li><!-- End Profile Page Nav -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{ $title != 'Payment Gateway' ? 'collapsed' : '' }}" href="/paymentgateway">
+          <i class="bi bi-person"></i>
+          <span>TEST</span>
+        </a>
+      </li>
     </ul>
   </aside><!-- End Sidebar-->
 
