@@ -33,31 +33,32 @@ class TripayController extends Controller
         return $response ?: $error;
     }
 
-    public function requestTransaksi($method)
+    public function requestTransaksi($values)
     {
         $apiKey       = config('tripay.api_key');
         $privateKey   = config('tripay.private_key');
         $merchantCode = config('tripay.merchant_code');
         $merchantRef  = 'TRX-'.time();
-        $amount       = 500000;
+        $amount = 0;
+
+        //dd($values['order'][0]);
+        for ($i=0; $i < count($values['order']) ; $i++) { 
+            $amount += $values['order'][$i]['subtotal'];
+        }
 
         $data = [
-            'method'         => $method,
+            'method'         => $values['method'],
             'merchant_ref'   => $merchantRef,
             'amount'         => $amount,
-            'customer_name'  => 'Okky Firmansyah',
-            'customer_email' => 'okky@domain.com',
-            'customer_phone' => '081234567890',
-            'order_items'    => [
-                [
-                    'name'        => 'Keyboard',
-                    'price'       => 500000,
-                    'quantity'    => 1,
-                ]
-            ],
+            'customer_name'  => $values['nama'],
+            'customer_email' => $values['email'],
+            'customer_phone' => $values['telp'],
+            'order_items'    => $values['order'],
             'expired_time' => (time() + (24 * 60 * 60)), // 24 jam
             'signature'    => hash_hmac('sha256', $merchantCode.$merchantRef.$amount, $privateKey)
         ];
+
+        //dd($data);
 
         $curl = curl_init();
 

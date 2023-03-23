@@ -2,11 +2,11 @@
 
 @section('content')
   <div class="pagetitle">
-    <h1>Payment Gateway</h1>
+    <h1>Testing Payment Gateway</h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">admin</a></li>
-        <li class="breadcrumb-item active">sosmed</li>
+        <li class="breadcrumb-item"><a href="index.html">Admin</a></li>
+        <li class="breadcrumb-item active">Testing Payment Gateway</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -15,26 +15,93 @@
       <div class="col-lg-12">
 
         <div class="col-12">
-          <div class="card recent-sales overflow-auto p-3">
+          <div class="card recent-sales overflow-auto p-3 pt-0">
             <!-- ISI -->
             <div class="tab-content " id="borderedTabContent">
               <div class="tab-pane fade show active" id="bordered-home" role="tabpanel" aria-labelledby="home-tab">
-                <h5 class="card-title mb-5">List Bank</h5>
+                <h5 class="card-title text-center">TESTING PAYMENT GATEWAY</h5>
                 <div class="row">
-                  @foreach ($listbank as $bank)
-                    <div class="col-lg-3 mb-4">
-                      <form action="{{ url()->current() }}/bayar" method="post">
-                        @csrf
-                        <input type="hidden" name="method" value="{{ $bank->code }}">
-                        <button type="submit" class="btn btn-light w-100">
-                          <p><img src="{{ $bank->icon_url }}" width="100" height="50"></p>
-                          <p>{{ $bank->name }}</p>
-                        </button>
-                      </form>
+                  <form action="{{ url()->current() }}/bayar" method="post">
+                    @csrf
+                    <div class="row col">
+                      <label for="inputText" class="col-md-2 col-form-label">Nama Pelanggan</label>
+                      <div class="col-sm-10">
+                        <select class="form-select" aria-label="Default select example" name="pelanggan" required>
+                          <option selected disabled value="">Pilih Pelanggan</option>
+                          @foreach ($pelanggan as $pelanggans)
+                            <option value="{{ $pelanggans->customerId }}">{{ $pelanggans->customerName }}</option>
+                          @endforeach
+                        </select>
+                      </div>
                     </div>
-                  @endforeach
+                    <div class="row col mt-2">
+                      <label for="inputText" class="col-md-2 col-form-label">Barang (Memories)</label>
+                      <div class="col-sm-8">
+                        <select class="form-select" aria-label="Default select example" name="barang1" required>
+                          <option selected disabled value="">Pilih Memori</option>
+                          @foreach ($memori as $memories)
+                            <option value="{{ $memories->memoryId }}">{{ $memories->memoryName }}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                      <div class="col-sm-2">
+                        <select class="form-select" aria-label="Default select example" name="jumlah1" required>
+                          <option selected value=1>1</option>
+                          <option value=2>2</option>
+                          <option value=3>3</option>
+                          <option value=4>4</option>
+                          <option value=5>5</option>
+                          <option value=6>6</option>
+                          <option value=7>7</option>
+                          <option value=8>8</option>
+                          <option value=9>9</option>
+                          <option value=10>10</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row col mt-2">
+                      <label for="inputText" class="col-md-2 col-form-label">Barang (Casing)</label>
+                      <div class="col-sm-8">
+                        <select class="form-select" aria-label="Default select example" name="barang2" required>
+                          <option selected disabled value="">Pilih Casing</option>
+                          @foreach ($casing as $casings)
+                            <option value="{{ $casings->caseId }}">{{ $casings->caseName }}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                      <div class="col-sm-2">
+                        <select class="form-select" aria-label="Default select example" name="jumlah2" required>
+                          <option selected value=1>1</option>
+                          <option value=2>2</option>
+                          <option value=3>3</option>
+                          <option value=4>4</option>
+                          <option value=5>5</option>
+                          <option value=6>6</option>
+                          <option value=7>7</option>
+                          <option value=8>8</option>
+                          <option value=9>9</option>
+                          <option value=10>10</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row col mt-2">
+                      <label for="inputText" class="col-md-2 col-form-label">Metode Pembayaran</label>
+                      <div class="col-sm-10">
+                        <select class="form-select" aria-label="Default select example" name="metode" required>
+                          <option selected disabled value="">Pilih Metode Pembayaran</option>
+                          @foreach ($listbank as $bank)
+                            <option value="{{ $bank->code }}">{{ $bank->name }}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row mt-4">
+                      <div class="col-sm-12" align="right">
+                        <button type="submit" class="btn btn-primary">Bayar</button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
-                <!-- Tambah Sosmed -->
               </div>
             </div><!-- End Bordered Tabs -->
           </div>
