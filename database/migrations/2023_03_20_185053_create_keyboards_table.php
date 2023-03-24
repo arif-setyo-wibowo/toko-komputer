@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('keyboardLayout',255);
             $table->string('keyboardConnection', 255);
             $table->string('keyboardFeature',255);
+            $table->string('keyboardWarranty',255);
+            $table->string('keyboardPrice', 255);
+            $table->string('keyboardStock',255);
             $table->timestamps();
         });
     }

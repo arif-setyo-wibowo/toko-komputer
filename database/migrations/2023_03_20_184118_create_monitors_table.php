@@ -23,6 +23,9 @@ return new class extends Migration
             $table->string('monitorGamut',255);
             $table->string('monitorPort',255);
             $table->string('monitorFeature', 255);
+            $table->string('monitorWarranty',255);
+            $table->string('monitorPrice', 255);
+            $table->string('monitorStock',255);
             $table->timestamps();
         });
     }
