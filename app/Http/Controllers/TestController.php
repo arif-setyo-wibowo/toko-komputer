@@ -7,6 +7,7 @@ use App\Models\Memory;
 use App\Models\Customer;
 use App\Models\ComputerCase;
 use App\Http\Controllers\Api\TripayController;
+use App\Http\Controllers\Api\MidtransControllers;
 
 class TestController extends Controller
 {
@@ -76,9 +77,74 @@ class TestController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function midtrans(Request $request)
     {
-        //
+        $midtrans = new MidtransControllers();
+
+        $pelanggan = json_decode(Customer::where('customerId', $request->pelanggan)->get());
+        $memory = json_decode(Memory::where('memoryId', $request->barang1)->get());
+        $casing = json_decode(ComputerCase::where('caseId', $request->barang2)->get());
+
+        $billing_address = array(
+            'first_name'       => $pelanggan[0]->customerName,
+            'last_name'        => " ",
+            'address'      => "Karet Belakang 15A, Setiabudi.",
+            'city'         => "Jakarta",
+            'postal_code'  => "51161",
+            'phone'        => $pelanggan[0]->customerPhoneNumber,
+            'country_code' => 'IDN'
+        );
+
+        $shipping_address = array(
+           'first_name'       => $pelanggan[0]->customerName,
+            'last_name'        => " ",
+            'address'      => "Bakerstreet 221B.",
+            'city'         => "Jakarta",
+            'postal_code'  => "51162",
+            'phone'        => $pelanggan[0]->customerPhoneNumber,
+            'country_code' => 'IDN'
+        );
+
+        $customer_details = array(
+            'first_name'       => $pelanggan[0]->customerName,
+            'last_name'        => " ",
+            'email'            => $pelanggan[0]->customerEmail,
+            'phone'            => $pelanggan[0]->customerPhoneNumber,
+            'billing_address'  => $billing_address,
+            'shipping_address' => $shipping_address,
+        );
+
+        $items = array(
+            array(
+                'id'       => $memory[0]->memoryId,
+                'price'    => $memory[0]->memoryPrice,
+                'quantity' => $request->jumlah1,
+                'name'     => $memory[0]->memoryName
+            ),
+            array(
+                'id'       => $casing[0]->caseId,
+                'price'    => $casing[0]->casePrice,
+                'quantity' => $request->jumlah2,
+                'name'     => $casing[0]->caseName
+            )
+        );
+
+        $amount = 0;
+        for ($i=0; $i < count($items) ; $i++) { 
+            $amount += ($items[$i]['price']*$items[$i]['quantity']);
+        }
+        
+        $transaction_details = array(
+            'order_id'    => "ORDER-".time(),
+            'gross_amount'  => $amount
+        );
+
+        $callbacks = array(
+            'finish' => "http://127.0.0.1:8000/paymentgateway"
+        );
+
+        $transaksi = $midtrans->CreatePayment($customer_details,$items,$transaction_details,$callbacks);
+        return redirect()->to('https://app.sandbox.midtrans.com/snap/v3/redirection/'.$transaksi);
     }
 
     /**

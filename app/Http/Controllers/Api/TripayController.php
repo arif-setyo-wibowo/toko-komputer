@@ -41,7 +41,6 @@ class TripayController extends Controller
         $merchantRef  = 'TRX-'.time();
         $amount = 0;
 
-        //dd($values['order'][0]);
         for ($i=0; $i < count($values['order']) ; $i++) { 
             $amount += $values['order'][$i]['subtotal'];
         }

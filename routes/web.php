@@ -49,6 +49,7 @@ Route::get('/monitor', [MonitorController::class, 'index']);
 // TEST
 Route::get('/paymentgateway', [TestController::class, 'index']);
 Route::post('/paymentgateway/bayar', [TestController::class, 'store']);
+Route::post('/paymentgateway/bayarmidtrans', [TestController::class, 'midtrans']);
 Route::get('/paymentgateway/detail/{refesensi}', [TestController::class, 'show'])->name('paymentgateway.detail');
 
 Route::controller(IdentitasController::class)->prefix('/identitas')->group(function () {
