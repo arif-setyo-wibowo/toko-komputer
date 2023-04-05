@@ -22,6 +22,9 @@ use App\Http\Controllers\ComputerCaseController;
 use App\Http\Controllers\EarphoneController;
 use App\Http\Controllers\KeyboardController;
 use App\Http\Controllers\MonitorController;
+//FRONT
+use App\Http\Controllers\Front\HomeController;
+
 // 
 use App\Http\Controllers\TestController;
 
@@ -45,6 +48,9 @@ Route::get('/karyawan', [KaryawanController::class, 'index']);
 Route::get('/earphone', [EarphoneController::class, 'index']);
 Route::get('/keyboard', [KeyboardController::class, 'index']);
 Route::get('/monitor', [MonitorController::class, 'index']);
+
+// FRONT
+Route::get('/home', [HomeController::class, 'index']);
 
 // TEST
 Route::get('/paymentgateway', [TestController::class, 'index']);
