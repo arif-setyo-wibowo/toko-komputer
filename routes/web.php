@@ -86,6 +86,7 @@ Route::controller(SocketController::class)->prefix('/socket')->group(function ()
     Route::get('/find/{id}', 'edit');
     Route::post('/update', 'update');
     Route::get('/delete/{id}', 'destroy');
+    Route::get('/export','export')->name('socket.export');
 });
 
 Route::controller(MoboController::class)->prefix('/motherboard')->group(function () {

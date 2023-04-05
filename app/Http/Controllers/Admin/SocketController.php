@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Exports\SocketExport;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Models\ProcessorSocket;
+use Maatwebsite\Excel\Facades\Excel;
 
 class SocketController extends Controller
 {
@@ -14,13 +16,13 @@ class SocketController extends Controller
      */
     public function index()
     {
-        $data=[
+        $data = [
             'title' => "Socket",
             'socket' => ProcessorSocket::all()
 
         ];
 
-        return view('admin/socket',$data);
+        return view('admin/socket', $data);
     }
 
     /**
@@ -38,7 +40,7 @@ class SocketController extends Controller
     {
         $request->validate([
             'nama'  => 'unique:processor_sockets,processorSocketName',
-        ],[
+        ], [
             'nama.unique'  => 'Nama Socket Sudah Digunakan !!',
         ]);
 
@@ -72,11 +74,11 @@ class SocketController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'nama'  => Rule::unique('processor_sockets','processorSocketName')->ignore($request->processorSocketId, 'processorSocketId'),
-        ],[
+            'nama'  => Rule::unique('processor_sockets', 'processorSocketName')->ignore($request->processorSocketId, 'processorSocketId'),
+        ], [
             'nama.unique'  => 'Nama Socket Sudah Digunakan !!',
         ]);
-        
+
 
         $socket = ProcessorSocket::find($request->processorSocketId);
         $socket->processorSocketName = $request->nama;
@@ -92,5 +94,10 @@ class SocketController extends Controller
     {
         ProcessorSocket::destroy($id);
         return redirect()->route('admin.socket')->with(['success' => 'Hapus Data Berhasil']);
+    }
+
+    // Contoh export excel
+    public function export(){
+        return Excel::download(new SocketExport, 'socket.xlsx');
     }
 }

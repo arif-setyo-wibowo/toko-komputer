@@ -47,6 +47,7 @@
             <div class="tab-content p-2" id="borderedTabContent">
               <div class="tab-pane fade show active" id="bordered-home" role="tabpanel" aria-labelledby="home-tab">
                 <h5 class="card-title">List Socket</h5>
+                <a href="{{ route('socket.export') }}"><button class="btn btn-success btn-sm mb-4">Export</button></a>
                 <table class="table table-hover datatable">
                   <thead>
                     <tr>
