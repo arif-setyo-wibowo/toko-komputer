@@ -16,9 +16,11 @@ use App\Http\Controllers\Admin\CasingController;
 use App\Http\Controllers\Admin\KaryawanController;
 use App\Http\Controllers\Admin\PowerSupplyController;
 use App\Http\Controllers\Admin\GpuController;
+use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\ProcessorController;
 use App\Http\Controllers\GraphicCardController;
 use App\Http\Controllers\ComputerCaseController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EarphoneController;
 use App\Http\Controllers\KeyboardController;
 use App\Http\Controllers\MonitorController;
@@ -57,6 +59,9 @@ Route::get('/paymentgateway', [TestController::class, 'index']);
 Route::post('/paymentgateway/bayar', [TestController::class, 'store']);
 Route::post('/paymentgateway/bayarmidtrans', [TestController::class, 'midtrans']);
 Route::get('/paymentgateway/detail/{refesensi}', [TestController::class, 'show'])->name('paymentgateway.detail');
+
+Route::get('/logintest', [CustomerController::class, 'login']);
+Route::get('/registertest', [CustomerController::class, 'signup']);
 
 Route::controller(IdentitasController::class)->prefix('/identitas')->group(function () {
     Route::get('/', 'index')->name('admin.identitas');

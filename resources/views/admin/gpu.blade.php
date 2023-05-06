@@ -1,4 +1,5 @@
-@extends('admin.layout.sidebar') @section('content')
+@extends('admin.layout.sidebar') 
+@section('content')
 
 <div class="pagetitle">
     <h1>Graphic Card

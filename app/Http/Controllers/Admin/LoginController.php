@@ -1,41 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Customer;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CustomerController extends Controller
+class LoginController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
-    }
-    public function login()
-    {
-        $data =[
-            'title' => 'login'
+        $data=[
+            'title' => "Login"
         ];
         return view('admin/logintest',$data);
-    }
-
-    public function signup()
-    {
-        $data =[
-            'title' => 'register'
-        ];
-        return view('admin/registertest',$data);
-    }
-    public function signup_data(Request $request)
-    {
-        $request->validate([
-            'customerEmail' => 'required|email|unique:users',
-
-        ]);
-        return ;
     }
 
     /**
@@ -57,7 +37,7 @@ class CustomerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Customer $customer)
+    public function show(string $id)
     {
         //
     }
@@ -65,7 +45,7 @@ class CustomerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Customer $customer)
+    public function edit(string $id)
     {
         //
     }
@@ -73,7 +53,7 @@ class CustomerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Customer $customer)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -81,7 +61,7 @@ class CustomerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Customer $customer)
+    public function destroy(string $id)
     {
         //
     }

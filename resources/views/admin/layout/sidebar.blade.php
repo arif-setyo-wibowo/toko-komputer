@@ -347,6 +347,12 @@
           <span>TEST</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link {{ $title != 'Test Login' ? 'collapsed' : '' }}" href="/logintest">
+          <i class="bi bi-person"></i>
+          <span>Login</span>
+        </a>
+      </li>
     </ul>
   </aside><!-- End Sidebar-->
 
