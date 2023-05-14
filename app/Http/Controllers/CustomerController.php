@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class CustomerController extends Controller
 {
@@ -32,10 +33,16 @@ class CustomerController extends Controller
     public function signup_data(Request $request)
     {
         $request->validate([
-            'customerEmail' => 'required|email|unique:users',
-
+            'customerEmail' => 'required|email|unique:users'
         ]);
-        return ;
+        $customer = new Customer();
+        $customer->customerName = $request->customerName;
+        $customer->customerEmail = $request->customerEmail;
+        $customer->customerPhoneNumber = $request->customerPhoneNumber;
+        $customer->customerPassword = Hash::make($request->customerPassword);
+        $customer->save();
+        
+        return redirect()->route('admin.login');
     }
 
     /**

@@ -38,24 +38,23 @@
                         <div class="row mb-3">
                           <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                           <div class="col-sm-6">
-                            <input type="email" class="form-control" name="customerName" required>
+                            <input type="text" class="form-control" name="customerName" required>
                           </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="inputText" class="col-sm-2 col-form-label">Phone Socket</label>
+                            <label for="inputText" class="col-sm-2 col-form-label">Phone</label>
                             <div class="col-sm-6">
-                              <input type="email" class="form-control" name="customerPhoneNumber" required>
+                              <input type="number" class="form-control" name="customerPhoneNumber" required>
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="inputText" class="col-sm-2 col-form-label">Email Socket</label>
+                            <label for="inputText" class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm-6">
                               <input type="email" class="form-control" name="customerEmail" required>
                             </div>
-                            
                         </div>
                         <div class="row mb-3">
-                            <label for="inputText" class="col-sm-2 col-form-label">Password Socket</label>
+                            <label for="inputText" class="col-sm-2 col-form-label">Password</label>
                             <div class="col-sm-6">
                               <input type="password" class="form-control" name="customerPassword" required>
                             </div>

@@ -8,10 +8,12 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('customers', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->uuid('customerId')->primary();
             $table->string('customerName',255);
             $table->string('customerEmail',255)->unique();
@@ -21,12 +23,14 @@ return new class extends Migration
             $table->timestamps();
         });
     }
-    
+
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('customers');
+        Schema::dropIfExists('users');
     }
 };
