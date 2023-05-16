@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('customerEmail',255)->unique();
             $table->string('customerPhoneNumber',32);
             $table->string('customerPassword',255);
-            $table->timestamp('customerVerifyAt')->nullable();;
+            $table->string('customerVerifyKey',255);
+            $table->timestamp('customerVerifyAt')->nullable();
             $table->timestamps();
         });
     }

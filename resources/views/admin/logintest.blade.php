@@ -17,7 +17,7 @@
       <div class="col-lg-12">
         <!-- Recent Sales -->
         <div class="col-12">
-          @if ($message = Session::get('success'))
+          @if ($message = session('message'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
               <i class="bi bi-check-circle me-1"></i>
               {{ $message }}

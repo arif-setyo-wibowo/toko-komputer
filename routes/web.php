@@ -62,8 +62,10 @@ Route::post('/paymentgateway/bayarmidtrans', [TestController::class, 'midtrans']
 Route::get('/paymentgateway/detail/{refesensi}', [TestController::class, 'show'])->name('paymentgateway.detail');
 
 Route::get('/logintest', [CustomerController::class, 'login'])->name('admin.login');
+Route::post('/logintest', [CustomerController::class, 'login_data']);
 Route::get('/registertest', [CustomerController::class, 'signup']);
 Route::post('/registertest', [CustomerController::class, 'signup_data']);
+Route::post('/registertest/verify/{$verify_key}', [CustomerController::class, 'verify']);
 
 Route::controller(IdentitasController::class)->prefix('/identitas')->group(function () {
     Route::get('/', 'index')->name('admin.identitas');

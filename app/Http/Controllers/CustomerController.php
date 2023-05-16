@@ -2,25 +2,42 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
+use App\Mail\MailSend;
 
 class CustomerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
+    
     public function login()
     {
         $data =[
             'title' => 'login'
         ];
-        return view('admin/logintest',$data);
+        if (Auth::check()) {
+            return redirect('/home');
+        }else{
+            return view('admin/logintest',$data);
+        }
+    }
+
+    public function login_data(Request $request)
+    {
+        $data =[
+            'customerEmail' => $request->customerEmail,
+            'customerPassword' => $request->customerPassword
+        ];
+
+        if (Auth::attempt($data)) {
+            return redirect('/home');
+        }else{
+            Session::flash('error','Email atau Password Salah');
+        }
     }
 
     public function signup()
@@ -35,61 +52,40 @@ class CustomerController extends Controller
         $request->validate([
             'customerEmail' => 'required|email|unique:users'
         ]);
-        $customer = new Customer();
+        $str = Str::random(100);
+        $customer = new User;
         $customer->customerName = $request->customerName;
         $customer->customerEmail = $request->customerEmail;
         $customer->customerPhoneNumber = $request->customerPhoneNumber;
         $customer->customerPassword = Hash::make($request->customerPassword);
+        $customer->customerVerifyKey = $str;
         $customer->save();
         
-        return redirect()->route('admin.login');
+        $data=[
+            'customerName' => $request->customerName,
+            'url' => request()->getHttpHost(). '/registertest/verify/'.$str
+        ];
+
+        Mail::to($request->customerEmail)->send(new MailSend($data));
+
+        return redirect()->route('admin.login')->with('succes','Silahkan login');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+    public function verify($verify_key)
+    {       
+        $keycheck = User::select('customerVerifyKey')
+                        ->where('customerVerifyKey',$verify_key)
+                        ->exists();
+                    if ($keycheck) {
+                        $user = User::where('customerVerifyKey',$verify_key)
+                        ->update([
+                            'customerVerifyAt' => date('Y-m-d H:i:s')
+                        ]);
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+                        return view('/home');
+                    }else{
+                        return "Verifikasi Gagal";
+                    }
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Customer $customer)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Customer $customer)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Customer $customer)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Customer $customer)
-    {
-        //
-    }
+    
 }
