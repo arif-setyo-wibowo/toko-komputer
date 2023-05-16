@@ -33,6 +33,9 @@
     <!-- Main -->
     <link rel="stylesheet" href="{{ asset('front/') }}/css/bundle.css">
 
+    <link rel="stylesheet" href="{{ asset('front/') }}/css/select2.min.css">
+    <link rel="stylesheet" href="{{ asset('front/') }}/css/select2-bootstrap4.min.css">
+    <link rel="stylesheet" href="{{ asset('front/') }}/css/adminlte.css">
     
 </head>
 
@@ -125,7 +128,7 @@
                 <div class="row clearfix align-items-center">
                     <div class="col-lg-3 col-md-9 col-sm-6">
                         <div class="brand-logo text-lg-center">
-                            <a href="home.html">
+                            <a href="/home">
                                 <img src="{{ asset('front/') }}/images/main-logo/groover-branding-1.png" alt="Groover Brand Logo" class="app-brand-logo">
                             </a>
                         </div>
@@ -166,13 +169,13 @@
                         <nav>
                             <ul class="mid-nav g-nav">
                                 <li class="u-d-none-lg">
-                                    <a href="home.html">
+                                    <a href="/home">
                                         <i class="ion ion-md-home u-c-brand"></i>
                                     </a>
                                 </li>
-                                <li class="u-d-none-lg">
-                                    <a href="wishlist.html">
-                                        <i class="far fa-heart"></i>
+                                <li class="" id="mini-cart">
+                                    <a href="/rakitpc">
+                                        <span class="item-price">Rakit Pc</span>
                                     </a>
                                 </li>
                                 <li>
@@ -211,7 +214,7 @@
                 </div>
                 <ul class="mini-cart-list">
                     <li class="clearfix">
-                        <a href="single-product.html">
+                        <a href="/detailproduk">
                             <img src="{{ asset('front/') }}/images/product/product@1x.jpg" alt="Product">
                             <span class="mini-item-name">Casual Hoodie Full Cotton</span>
                             <span class="mini-item-price">$55.00</span>
@@ -717,7 +720,7 @@
                                     <ul>
                                         <li class="menu-title">Home & Static Pages</li>
                                         <li>
-                                            <a href="home.html" class="u-c-brand">Home</a>
+                                            <a href="/home" class="u-c-brand">Home</a>
                                         </li>
                                         <li>
                                             <a href="about.html">About</a>
@@ -840,20 +843,7 @@
         <div class="container">
             <!-- Outer-Footer -->
             <div class="outer-footer-wrapper u-s-p-y-80">
-                <h6>
-                    For special offers and other discount information
-                </h6>
-                <h1>
-                    Subscribe to our Newsletter
-                </h1>
-                <p>
-                    Subscribe to the mailing list to receive updates on promotions, new arrivals, discount and coupons.
-                </p>
-                <form class="newsletter-form">
-                    <label class="sr-only" for="newsletter-field">Enter your Email</label>
-                    <input type="text" id="newsletter-field" placeholder="Your Email Address">
-                    <button type="submit" class="button">SUBMIT</button>
-                </form>
+                
             </div>
             <!-- Outer-Footer /- -->
             <!-- Mid-Footer -->
@@ -1005,7 +995,7 @@
     </div>
     <!-- Responsive-Search /- -->
     <!-- Newsletter-Modal -->
-    <div id="newsletter-modal" class="modal fade">
+    <!-- <div id="newsletter-modal" class="modal fade">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <button type="button" class="button dismiss-button ion ion-ios-close" data-dismiss="modal"></button>
@@ -1039,7 +1029,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Newsletter-Modal /- -->
     <!-- Quick-view-Modal -->
     <div id="quick-view" class="modal fade">
@@ -1299,5 +1289,16 @@ ga('send', 'pageview')
 <script type="text/javascript" src="{{ asset('front/') }}/js/owl.carousel.min.js"></script>
 <!-- Main -->
 <script type="text/javascript" src="{{ asset('front/') }}/js/app.js"></script>
+
+<script type="text/javascript" src="{{ asset('front/') }}/js/select2.full.min.js"></script>
+
+<script>
+    $(function () {
+        $('.select2').select2()
+        $('.select2bs4').select2({
+        theme: 'bootstrap4'
+        })
+    })
+</script>
 </body>
 </html>
