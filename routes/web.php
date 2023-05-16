@@ -27,6 +27,7 @@ use App\Http\Controllers\KeyboardController;
 use App\Http\Controllers\MonitorController;
 //FRONT
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\RakitPcController;
 
 // 
 use App\Http\Controllers\TestController;
@@ -54,6 +55,7 @@ Route::get('/monitor', [MonitorController::class, 'index']);
 
 // FRONT
 Route::get('/home', [HomeController::class, 'index']);
+Route::get('/rakitpc', [RakitPcController::class, 'index']);
 
 // TEST
 Route::get('/paymentgateway', [TestController::class, 'index']);
