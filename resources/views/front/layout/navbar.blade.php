@@ -214,7 +214,7 @@
                 </div>
                 <ul class="mini-cart-list">
                     <li class="clearfix">
-                        <a href="single-product.html">
+                        <a href="/detailproduk">
                             <img src="{{ asset('front/') }}/images/product/product@1x.jpg" alt="Product">
                             <span class="mini-item-name">Casual Hoodie Full Cotton</span>
                             <span class="mini-item-price">$55.00</span>
