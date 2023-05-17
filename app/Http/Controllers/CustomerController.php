@@ -76,16 +76,12 @@ class CustomerController extends Controller
         $keycheck = User::select('customerVerifyKey')
                         ->where('customerVerifyKey',$verify_key)
                         ->exists();
-                    if ($keycheck) {
-                        $user = User::where('customerVerifyKey',$verify_key)
-                        ->update([
-                            'customerVerifyAt' => date('Y-m-d H:i:s')
-                        ]);
-
-                        return view('/home');
-                    }else{
-                        return "Verifikasi Gagal";
-                    }
+        if ($keycheck) {
+            $user = User::where('customerVerifyKey',$verify_key)->update(['customerVerifyAt' => date('Y-m-d H:i:s')]);
+                return "Verifikasi berhasil";
+            }else{
+                return "Verifikasi Gagal";
+            }
     }
     
 }

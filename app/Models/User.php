@@ -11,9 +11,16 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends AuthUser implements MustVerifyEmail
 {
-    use HasFactory, HasUuids;
+    use HasFactory, HasUuids, Notifiable;
     public $table = 'users';
     public $primaryKey = 'customerId';
-    protected $fillable = ['customerName','customerEmail','customerPhoneNumber','customerPassword','customerVerifyKey','customerVerifyAt'];
+    protected $fillable = [
+        'customerName',
+        'customerEmail',
+        'customerPhoneNumber',
+        'customerPassword',
+        'customerVerifyKey',
+        'customerVerifyAt'
+    ];
     
 }
