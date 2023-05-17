@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Memory;
-use App\Models\Customer;
+use App\Models\User;
 use App\Models\ComputerCase;
 use App\Http\Controllers\Api\TripayController;
 use App\Http\Controllers\Api\MidtransControllers;
@@ -22,7 +22,7 @@ class TestController extends Controller
         $data=[
             'title' => "Payment Gateway",
             'listbank' => $tripay->getBank(),
-            'pelanggan' => Customer::all(),
+            'pelanggan' => User::all(),
             'casing' => ComputerCase::with("brand")->get(),
             'memori' => Memory::with("brand")->get(),
         ];
@@ -44,7 +44,7 @@ class TestController extends Controller
     public function store(Request $request)
     {
         $tripay = new TripayController();
-        $pelanggan = json_decode(Customer::where('customerId', $request->pelanggan)->get());
+        $pelanggan = json_decode(User::where('customerId', $request->pelanggan)->get());
         $memory = json_decode(Memory::where('memoryId', $request->barang1)->get());
         $casing = json_decode(ComputerCase::where('caseId', $request->barang2)->get());
 
@@ -81,7 +81,7 @@ class TestController extends Controller
     {
         $midtrans = new MidtransControllers();
 
-        $pelanggan = json_decode(Customer::where('customerId', $request->pelanggan)->get());
+        $pelanggan = json_decode(User::where('customerId', $request->pelanggan)->get());
         $memory = json_decode(Memory::where('memoryId', $request->barang1)->get());
         $casing = json_decode(ComputerCase::where('caseId', $request->barang2)->get());
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Customer;
+use App\Models\User;
 
 class DashboardController extends Controller
 {
@@ -15,7 +15,7 @@ class DashboardController extends Controller
     {
         $data=[
             'title' => "Dashboard",
-            'pelanggan' => Customer::all()->count()
+            'pelanggan' => User::all()->count()
         ];
 
         return view('admin/dashboard',$data);

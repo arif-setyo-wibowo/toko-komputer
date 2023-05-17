@@ -50,7 +50,8 @@ class CustomerController extends Controller
     public function signup_data(Request $request)
     {
         $request->validate([
-            'customerEmail' => 'required|email|unique:users'
+            'customerEmail' => 'required|email|unique:users',
+            'customerPassword' => 'required|min:6'
         ]);
         $str = Str::random(100);
         $customer = new User;
