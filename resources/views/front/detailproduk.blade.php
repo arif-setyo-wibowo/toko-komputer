@@ -73,22 +73,23 @@
                                         <a class="minus-a" data-min="1">&#45;</a>
                                     </div> -->
                                 </div>
-                                <div>
-                                    <button class="ml-5 btn-success button button-outline-secondary" type="submit">Add to cart</button>
-                                </div>
                               </form>
+                            <div>
+                                <a href="/cart"><button class="ml-5 btn-success button button-outline-secondary">Add to cart</button></a>
+                            </div>
                             </div>
                             <div class="price">
                                 <h4>RP 2.000.000</h4>
                             </div>
                         </div>
+                        
                         <!-- <div class="section-4-sku-information u-s-p-y-14">
                         </div> -->
                         <div class="section-6-social-media-quantity-actions u-s-p-y-14">
                             <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12">
                                       <div class="detail-tabs-wrapper ">
-                                          <div class="detail-nav-wrapper u-s-m-b-">
+                                          <div class="detail-nav-wrapper ">
                                               <ul class="nav single-product-nav justify-content-center">
                                                 <li class="nav-item">
                                                       <a class="nav-link active" data-toggle="tab"  href="#specification">Specifications</a>

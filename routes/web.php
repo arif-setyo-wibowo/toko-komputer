@@ -29,6 +29,8 @@ use App\Http\Controllers\MonitorController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\RakitPcController;
 use App\Http\Controllers\Front\DetailProdukController;
+use App\Http\Controllers\Front\CartController;
+use App\Http\Controllers\Front\ShopController;
 
 // 
 use App\Http\Controllers\TestController;
@@ -58,6 +60,8 @@ Route::get('/monitor', [MonitorController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/rakitpc', [RakitPcController::class, 'index']);
 Route::get('/detailproduk', [DetailProdukController::class, 'index']);
+Route::get('/cart', [CartController::class, 'index']);
+Route::get('/shop', [ShopController::class, 'index']);
 
 // TEST
 Route::get('/paymentgateway', [TestController::class, 'index'])->middleware('customer');

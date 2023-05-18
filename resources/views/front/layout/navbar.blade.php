@@ -92,31 +92,6 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <a>USD
-                                <i class="fas fa-chevron-down u-s-m-l-9"></i>
-                            </a>
-                            <ul class="g-dropdown" style="width:90px">
-                                <li>
-                                    <a href="#" class="u-c-brand">($) USD</a>
-                                </li>
-                                <li>
-                                    <a href="#">(£) GBP</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a>ENG
-                                <i class="fas fa-chevron-down u-s-m-l-9"></i>
-                            </a>
-                            <ul class="g-dropdown" style="width:70px">
-                                <li>
-                                    <a href="#" class="u-c-brand">ENG</a>
-                                </li>
-                                <li>
-                                    <a href="#">ARB</a>
-                                </li>
-                            </ul>
                     </ul>
                 </nav>
             </div>
@@ -213,6 +188,38 @@
                     <button type="button" class="button ion ion-md-close" id="mini-cart-close"></button>
                 </div>
                 <ul class="mini-cart-list">
+                    <li class="clearfix">
+                        <a href="/detailproduk">
+                            <img src="{{ asset('front/') }}/images/product/product@1x.jpg" alt="Product">
+                            <span class="mini-item-name">Casual Hoodie Full Cotton</span>
+                            <span class="mini-item-price">$55.00</span>
+                            <span class="mini-item-quantity"> x 1 </span>
+                        </a>
+                    </li>
+                    <li class="clearfix">
+                        <a href="/detailproduk">
+                            <img src="{{ asset('front/') }}/images/product/product@1x.jpg" alt="Product">
+                            <span class="mini-item-name">Casual Hoodie Full Cotton</span>
+                            <span class="mini-item-price">$55.00</span>
+                            <span class="mini-item-quantity"> x 1 </span>
+                        </a>
+                    </li>
+                    <li class="clearfix">
+                        <a href="/detailproduk">
+                            <img src="{{ asset('front/') }}/images/product/product@1x.jpg" alt="Product">
+                            <span class="mini-item-name">Casual Hoodie Full Cotton</span>
+                            <span class="mini-item-price">$55.00</span>
+                            <span class="mini-item-quantity"> x 1 </span>
+                        </a>
+                    </li>
+                    <li class="clearfix">
+                        <a href="/detailproduk">
+                            <img src="{{ asset('front/') }}/images/product/product@1x.jpg" alt="Product">
+                            <span class="mini-item-name">Casual Hoodie Full Cotton</span>
+                            <span class="mini-item-price">$55.00</span>
+                            <span class="mini-item-quantity"> x 1 </span>
+                        </a>
+                    </li>
                     <li class="clearfix">
                         <a href="/detailproduk">
                             <img src="{{ asset('front/') }}/images/product/product@1x.jpg" alt="Product">

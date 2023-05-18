@@ -7,8 +7,8 @@
         <div class="slider-main owl-carousel">
             <div class="bg-image one">
                 <div class="slide-content slide-animation">
-                    <h1>Casual Clothing</h1>
-                    <h2>lifestyle / clothing / hype</h2>
+                    <h1>Toko Komputer</h1>
+                    <h2>Gaming / Office / Server</h2>
                 </div>
             </div>
             <div class="bg-image two">
@@ -29,6 +29,7 @@
         </div>
     </div>
     <!-- Main-Slider /- -->
+    
     <!-- Banner-Layer -->
     <div class="banner-layer">
         <div class="container">
@@ -40,16 +41,59 @@
         </div>
     </div>
     <!-- Banner-Layer /- -->
+
+    <!-- Brand-Slider -->
+    <div class="brand-slider u-s-p-b-80">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h3 class="sec-maker-h3">Kategori</h3>
+            </div>
+            <div class="brand-slider-content owl-carousel" data-item="5">
+                <div class="brand-pic">
+                    <a href="/shop">
+                        <img src="{{ asset('front/') }}/images/brand-logos/logo.png" alt="Brand Logo 1">
+                    </a>
+                </div>
+                <div class="brand-pic">
+                    <a href="#">
+                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 2">
+                    </a>
+                </div>
+                <div class="brand-pic">
+                    <a href="#">
+                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 3">
+                    </a>
+                </div>
+                <div class="brand-pic">
+                    <a href="#">
+                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 5">
+                    </a>
+                </div>
+                <div class="brand-pic">
+                    <a href="#">
+                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 6">
+                    </a>
+                </div>
+                <div class="brand-pic">
+                    <a href="#">
+                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 7">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Brand-Slider /- -->
+
     <!-- Men-Clothing -->
     <section class="section-maker">
         <div class="container">
             <div class="sec-maker-header text-center">
-                <h3 class="sec-maker-h3">MEN'S CLOTHING</h3>
+                <h3 class="sec-maker-h3">Gaming Gear</h3>
                 <ul class="nav tab-nav-style-1-a justify-content-center">
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#men-latest-products">Latest Products</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#men-best-selling-products">Best Selling</a>
                     </li>
                     <li class="nav-item">
@@ -57,7 +101,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#men-featured-products">Featured Products</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <div class="wrapper-content">
@@ -68,16 +112,10 @@
                                 <div class="products-slider owl-carousel" data-item="4">
                                     <div class="item">
                                         <div class="image-container">
-                                            <a class="item-img-wrapper-link" href="single-product.html">
+                                            <a class="item-img-wrapper-link" href="/detailproduk">
                                                 <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
                                             </a>
-                                            <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
-                                                </a>
-                                                <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                            </div>
+                                           
                                         </div>
                                         <div class="item-content">
                                             <div class="what-product-is">
@@ -92,22 +130,13 @@
                                                         <a href="shop-v3-sub-sub-category.html">Hoodies</a>
                                                     </li>
                                                 </ul>
-                                                <h6 class="item-title">
-                                                    <a href="single-product.html">Casual Hoodie Full Cotton</a>
-                                                </h6>
-                                                <div class="item-stars">
-                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
-                                                        <span style='width:0'></span>
-                                                    </div>
-                                                    <span>(0)</span>
-                                                </div>
+                                                <h4 class="item-title">
+                                                    <a href="/detailproduk">iGame GeForce RTX 4090 24GB GDDR6X Vulcan</a>
+                                                </h4>
                                             </div>
                                             <div class="price-template">
                                                 <div class="item-new-price">
-                                                    $55.00
-                                                </div>
-                                                <div class="item-old-price">
-                                                    $60.00
+                                                    Rp.2.000.000
                                                 </div>
                                             </div>
                                         </div>
@@ -3521,44 +3550,6 @@
         </a>
     </div>
     <!-- Continue-Link /- -->
-    <!-- Brand-Slider -->
-    <div class="brand-slider u-s-p-b-80">
-        <div class="container">
-            <div class="brand-slider-content owl-carousel" data-item="5">
-                <div class="brand-pic">
-                    <a href="#">
-                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 1">
-                    </a>
-                </div>
-                <div class="brand-pic">
-                    <a href="#">
-                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 2">
-                    </a>
-                </div>
-                <div class="brand-pic">
-                    <a href="#">
-                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 3">
-                    </a>
-                </div>
-                <div class="brand-pic">
-                    <a href="#">
-                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 5">
-                    </a>
-                </div>
-                <div class="brand-pic">
-                    <a href="#">
-                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 6">
-                    </a>
-                </div>
-                <div class="brand-pic">
-                    <a href="#">
-                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 7">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Brand-Slider /- -->
     <!-- Site-Priorities -->
     <section class="app-priority">
         <div class="container">
