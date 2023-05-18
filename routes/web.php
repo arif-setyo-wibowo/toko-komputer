@@ -55,18 +55,19 @@ Route::get('/keyboard', [KeyboardController::class, 'index']);
 Route::get('/monitor', [MonitorController::class, 'index']);
 
 // FRONT
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/rakitpc', [RakitPcController::class, 'index']);
 Route::get('/detailproduk', [DetailProdukController::class, 'index']);
 
 // TEST
-Route::get('/paymentgateway', [TestController::class, 'index']);
+Route::get('/paymentgateway', [TestController::class, 'index'])->middleware('customer');
 Route::post('/paymentgateway/bayar', [TestController::class, 'store']);
 Route::post('/paymentgateway/bayarmidtrans', [TestController::class, 'midtrans']);
 Route::get('/paymentgateway/detail/{refesensi}', [TestController::class, 'show'])->name('paymentgateway.detail');
 
 Route::get('/logintest', [CustomerController::class, 'login'])->name('admin.login');
 Route::post('/logintest', [CustomerController::class, 'login_data']);
+Route::get('/logout', [CustomerController::class, 'logout'])->middleware('customer');
 Route::get('/registertest', [CustomerController::class, 'signup']);
 Route::post('/registertest', [CustomerController::class, 'signup_data']);
 Route::get('/registertest/verify/{verify_key}', [CustomerController::class, 'verify']);

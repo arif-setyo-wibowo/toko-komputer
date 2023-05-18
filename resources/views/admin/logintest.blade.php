@@ -35,12 +35,22 @@
             <!-- Bordered Tabs -->
                     <form action="{{ url()->current() }}" method="POST">
                         @csrf
+                        @error('email')
+                        <small class="text-danger mt-2">
+                            {{ $message }}
+                        </small>
+                        @enderror
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Email Socket</label>
                             <div class="col-sm-6">
                               <input type="email" class="form-control" name="customerEmail" required>
                             </div>
                         </div>
+                        @error('password')
+                        <small class="text-danger mt-2">
+                            {{ $message }}
+                        </small>
+                        @enderror                        
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Password Socket</label>
                             <div class="col-sm-6">

@@ -47,6 +47,7 @@
             <div class="tab-content pt-2" id="borderedTabContent">
               <div class="tab-pane fade show active" id="bordered-home" role="tabpanel" aria-labelledby="home-tab">
                 <h5 class="card-title">TESTING TRIPAY</h5>
+                <a href="/logout">logout</a>
                 <form action="{{ url()->current() }}/bayar" method="post">
                   @csrf
                   <div class="row col">

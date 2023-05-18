@@ -20,7 +20,7 @@ class CustomerController extends Controller
             'title' => 'login'
         ];
         if (Auth::check()) {
-            return redirect('/home');
+            return redirect('front/home');
         }else{
             return view('admin/logintest',$data);
         }
@@ -28,16 +28,37 @@ class CustomerController extends Controller
 
     public function login_data(Request $request)
     {
-        $data =[
-            'customerEmail' => $request->customerEmail,
-            'customerPassword' => $request->customerPassword
-        ];
+        $request->validate([
+            'customerEmail' => 'required|email',
+            'customerPassword' => 'required|min:6',
+        ]);
 
-        if (Auth::attempt($data)) {
-            return redirect('/home');
-        }else{
-            Session::flash('error','Email atau Password Salah');
+        $user = User::where('customerEmail', $request->customerEmail)->first();
+
+        if ($user) {
+            if (password_verify($request->customerPassword, $user->customerPassword)) {
+                if (!empty($user->customerVerifyAt)) { 
+                    session(['login.customer' => true]);
+                    session(['email.customer' => $user->customerEmail]);
+                    session(['nama.customer' => $user->customerName]);                    
+                    return redirect('/paymentgateway');
+                } else {
+                    return redirect()->route('admin.login')->withErrors(['email' => 'Akun belum diverifikasi'])->withInput();
+                }
+            } else {
+                return redirect()->route('admin.login')->withErrors(['password' => 'Password salah'])->withInput();
+            }
+        } else {
+            return redirect()->route('admin.login')->withErrors(['email' => 'Email tidak ditemukan'])->withInput();
         }
+    }
+
+    public function logout()
+    {
+        session()->forget('login.customer');
+        session()->forget('email.customer');
+        session()->forget('nama.customer'); 
+        return redirect()->route('admin.login');
     }
 
     public function signup()
@@ -61,6 +82,9 @@ class CustomerController extends Controller
         $customer->customerPassword = Hash::make($request->customerPassword);
         $customer->customerVerifyKey = $str;
         $customer->save();
+        session(['login.customer' => true]);
+        session(['email.customer' => $customer->customerEmail]);
+        session(['nama.customer' => $customer->customerName]);
         
         $data=[
             'customerName' => $request->customerName,
