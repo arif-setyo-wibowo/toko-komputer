@@ -12,9 +12,6 @@ use Illuminate\Support\Facades\File;
 
 class ProcessorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $data = [
@@ -27,17 +24,6 @@ class ProcessorController extends Controller
         return view('admin/processor',$data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -71,26 +57,12 @@ class ProcessorController extends Controller
         return redirect()->route('admin.processor')->with(['success'=>'Tambah data berhasil']);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         $data = Processor::with('brand')->with('socket')->where('processorId', $id)->get();
         return $data->toJson();
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request)
     {
        $request->validate([
@@ -127,9 +99,6 @@ class ProcessorController extends Controller
         return redirect()->route('admin.processor')->with(['success'=>'Edit data berhasil']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         $cpu = Processor::find($id);

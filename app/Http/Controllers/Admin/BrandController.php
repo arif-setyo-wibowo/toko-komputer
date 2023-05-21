@@ -10,9 +10,6 @@ use Illuminate\Support\Facades\File;
 
 class BrandController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $data=[
@@ -23,17 +20,6 @@ class BrandController extends Controller
         return view('admin/brand',$data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -53,26 +39,12 @@ class BrandController extends Controller
         return redirect()->route('admin.brand')->with('succes','Berhasil Tambah Data');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         $data = Brand::where('brandId', $id)->get();
         return $data->toJson();
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request)
     {
         $request->validate([
@@ -97,9 +69,6 @@ class BrandController extends Controller
         return redirect()->route('admin.brand')->with(['success' => 'Edit Data Berhasil']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         $brand = Brand::find($id);

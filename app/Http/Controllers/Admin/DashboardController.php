@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -13,9 +14,12 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $product = 
+    
         $data=[
             'title' => "Dashboard",
-            'pelanggan' => User::all()->count()
+            'pelanggan' => User::all()->count(),
+            'barang' => DB::table('products')->count()
         ];
 
         return view('admin/dashboard',$data);

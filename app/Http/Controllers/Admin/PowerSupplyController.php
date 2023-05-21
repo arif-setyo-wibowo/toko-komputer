@@ -11,9 +11,6 @@ use Illuminate\Support\Facades\File;
 
 class PowerSupplyController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $data=[
@@ -25,17 +22,6 @@ class PowerSupplyController extends Controller
         return view('admin/powersupply',$data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -64,26 +50,12 @@ class PowerSupplyController extends Controller
         return redirect()->route('admin.powersupply')->with(['success'=>'Tambah data berhasil']);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         $data = PowerSupply::with("brand")->where('psuId', $id)->get();
         return $data->toJson();
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request)
     {
         $request->validate([
@@ -118,9 +90,6 @@ class PowerSupplyController extends Controller
        return redirect()->route('admin.powersupply')->with(['success' => 'Edit Data Berhasil']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         $psu = PowerSupply::find($id);

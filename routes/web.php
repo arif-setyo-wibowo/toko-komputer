@@ -64,10 +64,12 @@ Route::get('/cart', [CartController::class, 'index']);
 Route::get('/shop', [ShopController::class, 'index']);
 
 // TEST
-Route::get('/paymentgateway', [TestController::class, 'index'])->middleware('customer');
+//Route::get('/paymentgateway', [TestController::class, 'index'])->middleware('customer');
+Route::get('/paymentgateway', [TestController::class, 'index'])->name('paymentgateway.index');
 Route::post('/paymentgateway/bayar', [TestController::class, 'store']);
 Route::post('/paymentgateway/bayarmidtrans', [TestController::class, 'midtrans']);
 Route::get('/paymentgateway/detail/{refesensi}', [TestController::class, 'show'])->name('paymentgateway.detail');
+Route::post('/cart/add', [TestController::class, 'addToCart'])->name('cart.add');
 
 Route::get('/logintest', [CustomerController::class, 'login'])->name('admin.login');
 Route::post('/logintest', [CustomerController::class, 'login_data']);
@@ -162,5 +164,3 @@ Route::controller(ProcessorController::class)->prefix('/processor')->group(funct
     Route::post('/update', 'update');
     Route::get('/delete/{id}', 'destroy');
 });
-
-
