@@ -64,8 +64,9 @@
                           </div>
                         </div>
                       </form>
-              </div> 
-              <p>Belum Punya Akun? <a href="registertest"><button class="btn btn-primary">Register</button></a></p>
+              </div>
+              <a href="{{ route('login.google',['provider'=>'google']) }}">Login Google</a>
+              <p>Belum Punya Akun? <a href="/registertest"><button class="btn btn-primary">Register</button></a></p>
           </div>
         </div>
       </div>

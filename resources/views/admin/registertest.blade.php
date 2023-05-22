@@ -38,7 +38,7 @@
                         <div class="row mb-3">
                           <label for="inputText" class="col-sm-2 col-form-label">Nama</label>
                           <div class="col-sm-6">
-                            <input type="text" class="form-control" name="customerName" required>
+                            <input type="text"  value="{{$customerName}}"  class="form-control" name="customerName" required>
                           </div>
                         </div>
                         <div class="row mb-3">
@@ -50,7 +50,7 @@
                         <div class="row mb-3">
                             <label for="inputText" class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm-6">
-                              <input type="email" class="form-control" name="customerEmail" required>
+                              <input type="email" value="{{$customerEmail}}" class="form-control" name="customerEmail" required>
                             </div>
                         </div>
                         <div class="row mb-3">

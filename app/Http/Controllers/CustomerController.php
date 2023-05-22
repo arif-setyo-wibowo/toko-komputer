@@ -66,7 +66,19 @@ class CustomerController extends Controller
         $data =[
             'title' => 'register'
         ];
-        return view('admin/registertest',$data);
+
+        $nama = session()->get('nama.auth');
+        $email = session()->get('email.auth');
+
+        if ($nama && $email) {
+            return view('admin/registertest', [
+                'customerEmail' => $nama,
+                'customerPassword' => $email,
+                $data
+            ]);
+        } else {
+            return redirect()->route('admin.login');
+        }
     }
     public function signup_data(Request $request)
     {

@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\PowerSupplyController;
 use App\Http\Controllers\Admin\GpuController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\ProcessorController;
+use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\GraphicCardController;
 use App\Http\Controllers\ComputerCaseController;
 use App\Http\Controllers\CustomerController;
@@ -204,4 +205,9 @@ Route::prefix('administrator')->group(function () {
     Route::get('/registertest', [CustomerController::class, 'signup']);
     Route::post('/registertest', [CustomerController::class, 'signup_data']);
     Route::get('/registertest/verify/{verify_key}', [CustomerController::class, 'verify']);
+
+     //Socialite
+    Route::get('/auth/login/{provider}', [SocialiteController::class, 'redirectToProvider'])->name('login.google');
+    Route::get('/auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback']);
+ 
 });
