@@ -116,7 +116,7 @@
                         <div class="col-sm-8">
                           <select class="form-select" aria-label="Default select example" name="processorSocketId"
                             required>
-                            <option>Pilih Socket</option>
+                            <option selected value disabled>Pilih Socket</option>
                             @foreach ($processor as $data)
                               <option value="{{ $data->processorSocketId }}">{{ $data->processorSocketName }}</option>
                             @endforeach
@@ -136,7 +136,7 @@
                         <label for="inputText" class="col-md-3 col-form-label">Brand</label>
                         <div class="col-sm-8">
                           <select class="form-select" aria-label="Default select example" name="brandId" required>
-                            <option selected>Pilih Brand</option>
+                            <option selected value disabled>Pilih Brand</option>
                             @foreach ($merk as $data)
                               <option value="{{ $data->brandId }}">{{ $data->brandName }}</option>
                             @endforeach
@@ -651,7 +651,7 @@
                             <div class="col-sm-8">
                               <select class="form-select" aria-label="Default select example" name="socketUpdate"
                                 id="socketUpdate" required>
-                                <option selected>Pilih Socket</option>
+                                <option selected value disabled>Pilih Socket</option>
                                 @foreach ($processor as $data)
                                   <option value="{{ $data->processorSocketId }}">{{ $data->processorSocketName }}
                                   </option>
@@ -673,7 +673,7 @@
                             <div class="col-sm-8">
                               <select class="form-select" aria-label="Default select example" name="brandUpdate"
                                 id="brandUpdate" required>
-                                <option selected>Pilih Brand</option>
+                                <option selected value disabled>Pilih Brand</option>
                                 @foreach ($merk as $data)
                                   <option value="{{ $data->brandId }}">{{ $data->brandName }}</option>
                                 @endforeach

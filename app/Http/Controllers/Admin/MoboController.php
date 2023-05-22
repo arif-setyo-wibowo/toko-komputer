@@ -75,7 +75,7 @@ class MoboController extends Controller
         $mobo->save();
 
 
-        return redirect()->route('admin.mobo')->with(['success' => 'Tambah Data Berhasil']);
+        return redirect()->route('administrator.mobo')->with(['success' => 'Tambah Data Berhasil']);
     }
 
     /**
@@ -138,7 +138,7 @@ class MoboController extends Controller
         $mobo->save();
 
 
-        return redirect()->route('admin.mobo')->with(['success' => 'Edit Data Berhasil']);
+        return redirect()->route('administrator.mobo')->with(['success' => 'Edit Data Berhasil']);
     }
 
     /**
@@ -149,6 +149,6 @@ class MoboController extends Controller
         $mobo = Motherboard::find($id);
         File::delete('uploads/gambar/mobo/'.$mobo->moboImage);
         Motherboard::destroy($id);
-        return redirect()->route('admin.mobo')->with(['success' => 'Hapus Data Berhasil']);
+        return redirect()->route('administrator.mobo')->with(['success' => 'Hapus Data Berhasil']);
     }
 }

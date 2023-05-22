@@ -117,7 +117,7 @@
                                         <label for="inputText" class="col-md-3 col-form-label">Nama Brand</label>
                                         <div class="col-sm-8">
                                             <select class="form-select" aria-label="Default select example" name="brandGpu" required>
-                                              <option selected>Pilih Brand</option>
+                                              <option selected value disabled>Pilih Brand</option>
                                               @foreach ($merk as $data)
                                                   <option value="{{ $data->brandId }}">{{ $data->brandName }}</option>
                                               @endforeach
@@ -285,7 +285,7 @@
                                                 <label for="inputText" class="col-md-3 col-form-label">Nama Brand</label>
                                                 <div class="col-sm-8">
                                                     <select class="form-select" aria-label="Default select example" name="gpuBrandUpdate" id="gpuBrandUpdate" required>
-                                                      <option selected>Pilih Brand</option>
+                                                      <option selected value disabled>Pilih Brand</option>
                                                       @foreach ($merk as $data)
                                                           <option value="{{ $data->brandId }}">{{ $data->brandName }}</option>
                                                       @endforeach

@@ -47,7 +47,7 @@ class PowerSupplyController extends Controller
         $psu->psuStock = $request->psuStock;
         $psu->save();
         
-        return redirect()->route('admin.powersupply')->with(['success'=>'Tambah data berhasil']);
+        return redirect()->route('administrator.powersupply')->with(['success'=>'Tambah data berhasil']);
     }
 
     public function edit(string $id)
@@ -87,7 +87,7 @@ class PowerSupplyController extends Controller
        $psu->psuStock = $request->stokUpdate;
        $psu->save();
 
-       return redirect()->route('admin.powersupply')->with(['success' => 'Edit Data Berhasil']);
+       return redirect()->route('administrator.powersupply')->with(['success' => 'Edit Data Berhasil']);
     }
 
     public function destroy(string $id)
@@ -95,6 +95,6 @@ class PowerSupplyController extends Controller
         $psu = PowerSupply::find($id);
         File::delete('uploads/gambar/psu/'.$psu->psuImage);
         PowerSupply::destroy($id);
-        return redirect()->route('admin.powersupply')->with(['success' => 'Hapus Data Berhasil']);
+        return redirect()->route('administrator.powersupply')->with(['success' => 'Hapus Data Berhasil']);
     }
 }

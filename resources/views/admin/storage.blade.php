@@ -457,8 +457,6 @@
                                     </tr>
                                   </tbody>
                                 </table>
-                                <h4 class="card-title">Deskripsi</h4>
-                                <p class="small" id="deskripsi"></p>
                               </div>
                             </div>
                           </div>

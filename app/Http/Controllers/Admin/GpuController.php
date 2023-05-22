@@ -67,7 +67,7 @@ class GpuController extends Controller
         $gpu->gpuStock = $request->gpuStock;
         $gpu->save();
 
-        return redirect()->route('admin.gpu')->with(['success' => 'Tambah Data Berhasil']);
+        return redirect()->route('administrator.gpu')->with(['success' => 'Tambah Data Berhasil']);
         
 
     }
@@ -126,7 +126,7 @@ class GpuController extends Controller
         $gpu->gpuStock = $request->stokUpdate;
         $gpu->save();
 
-        return redirect()->route('admin.gpu')->with(['success' => 'Edit Data Berhasil']);
+        return redirect()->route('administrator.gpu')->with(['success' => 'Edit Data Berhasil']);
 
     }
 
@@ -138,6 +138,6 @@ class GpuController extends Controller
         $gpu = GraphicCard::find($id);
         File::delete('uploads/gambar/gpu/'.$gpu->gpuImage);
         GraphicCard::destroy($id);
-        return redirect()->route('admin.gpu')->with(['success' => 'Hapus Data Berhasil']);
+        return redirect()->route('administrator.gpu')->with(['success' => 'Hapus Data Berhasil']);
     }
 }

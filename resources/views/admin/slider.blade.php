@@ -2,11 +2,11 @@
 
 @section('content')
   <div class="pagetitle">
-    <h1>Brand</h1>
+    <h1>Slider</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">admin</a></li>
-        <li class="breadcrumb-item active">brand</li>
+        <li class="breadcrumb-item active">slider</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -45,23 +45,28 @@
             <!-- ISI -->
             <div class="tab-content p-2" id="borderedTabContent">
               <div class="tab-pane fade show active" id="bordered-home" role="tabpanel" aria-labelledby="home-tab">
-                <h5 class="card-title">List Brand</h5>
+                <h5 class="card-title">List Slider</h5>
                 <table class="table table-hover datatable">
                   <thead>
                     <tr>
                       <th scope="col">ID</th>
                       <th scope="col">Gambar</th>
                       <th scope="col">Nama</th>
+                      <th scope="col">Tgl Awal</th>
+                      <th scope="col">Tgl Akhir</th>
+                      <th scope="col">Deskripsi</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($brand as $data)
                       <tr>
-                        <th scope="row">{{ $loop->iteration }}</th>
-                        <td><img src="{{ asset('uploads/gambar/brand/' . $data->brandLogo) }}"
+                        <th scope="row">1</th>
+                        <td><img src="{{ asset('uploads/gambar/brand') }}/wQoLTFTuqNsni2mAlnaa.png"
                             style="width:150px;"></td>
-                        <td>{{ $data->brandName }}</td>
+                        <td>Banner Asus</td>
+                        <td>19-10-2023</td>
+                        <td>25-10-2023</td>
+                        <td>LAH DESKRIPSI</td>
                         <td>
                           <li class="nav-item dropdown" style="list-style-type: none;">
                             <a style="font-size:150%; color:#4154f1;" class="text-center col-sm-3 nav-link nav-icon"
@@ -71,37 +76,48 @@
                             <ul class="p-2 dropdown-menu dropdown-menu-end dropdown-menu-arrow ">
                               <li style="font-size:20px; padding-left: 25px;" class="row">
                                 <button type="button" class="m-1 col-4 btn btn-outline-primary buttonupdate"
-                                  id="{{ $data->brandId }}"><i class="bi bi-pen"></i></button>
+                                  id=""><i class="bi bi-pen"></i></button>
                                 <button type="button" class="m-1 col-4 btn btn-outline-danger buttondelete"
-                                  id="{{ $data->brandId }}"><i class="bi  bi-trash"></i></button>
+                                  id=""><i class="bi  bi-trash"></i></button>
                               </li>
                             </ul><!-- End Notification Dropdown Items -->
                           </li><!-- End Notification Nav -->
                         </td>
                       </tr>
-                    @endforeach
                   </tbody>
                 </table>
 
                 <!-- Tambah Brand -->
               </div>
               <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
-                <h5 class="card-title">Tambah Brand </h5>
+                <h5 class="card-title">Tambah Slider </h5>
                 <form action="{{ url()->current() }}" method="POST" enctype="multipart/form-data">
                   @csrf
                   <div class="row mb-3">
-                    <label for="inputText" class="col-sm-2 col-form-label">Nama Brand</label>
+                    <label for="inputText" class="col-sm-2 col-form-label">Nama Slider</label>
                     <div class="col-sm-6">
-                      <input type="text" class="form-control" name="brandName" id="brandName" required>
+                      <input type="text" class="form-control" name="sliderName" id="sliderName" required>
                     </div>
                   </div>
                   <div class="row mb-3">
-                    <label for="inputNumber" class="col-sm-2 col-form-label">Logo Brand</label>
+                    <label for="inputText" class="col-sm-2 col-form-label">Tgl Awal</label>
                     <div class="col-sm-6">
-                      <input class="mb-3 form-control" type="file" id="brandLogo" name="brandLogo" required>
+                      <input type="date" class="form-control" name="sliderName" id="sliderName" required>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">Tgl Akhir</label>
+                    <div class="col-sm-6">
+                      <input type="date" class="form-control" name="sliderName" id="sliderName" required>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputNumber" class="col-sm-2 col-form-label">Gambar Slider</label>
+                    <div class="col-sm-6">
+                      <input class="mb-3 form-control" type="file" id="sliderImage" name="sliderImage" required>
                     </div>
                     <div class="row ">
-                      <label class="col-sm-2 col-form-label"></label>
+                      <label class="col-sm-12 col-form-label"></label>
                       <div class="col-sm-10">
                         <button type="submit" class="btn btn-primary">Tambah Data</button>
                       </div>
@@ -116,7 +132,7 @@
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title">Update Brand</h5>
+                    <h5 class="modal-title">Update Slider</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body p-3">
@@ -124,16 +140,28 @@
                       @csrf
                       <div class="row mb-3">
                         <input type="hidden" name="brandIdUpdate" id="brandIdUpdate">
-                        <label for="inputText" class="col-sm-2 col-form-label">Nama Brand</label>
+                        <label for="inputText" class="col-sm-2 col-form-label">Nama Slider</label>
                         <div class="col-sm-6">
-                          <input type="text" class="form-control" name="brandNameUpdate" id="brandNameUpdate"
+                          <input type="text" class="form-control" name="sliderImage" id="sliderImage"
                             required>
                         </div>
                       </div>
                       <div class="row mb-3">
-                        <label for="inputNumber" class="col-sm-2 col-form-label">Logo Brand</label>
+                        <label for="inputText" class="col-sm-2 col-form-label">Tgl Awal</label>
                         <div class="col-sm-6">
-                          <input class="mb-3 form-control" type="file" name="brandLogoUpdate" id="brandLogoUpdate">
+                          <input type="date" class="form-control" name="sliderName" id="sliderName" required>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="inputText" class="col-sm-2 col-form-label">Tgl Akhir</label>
+                        <div class="col-sm-6">
+                          <input type="date" class="form-control" name="sliderName" id="sliderName" required>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="inputNumber" class="col-sm-2 col-form-label">Gambar Slider</label>
+                        <div class="col-sm-6">
+                          <input class="mb-3 form-control" type="file" name="sliderImageUpdate" id="sliderImageUpdate">
                         </div>
                         <input type="hidden" name="imageAwal" id="imageAwal" required>
                       </div>

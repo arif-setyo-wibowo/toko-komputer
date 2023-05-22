@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('moboMemoryType',255);
             $table->string('moboMemoryCap',255);
             $table->string('moboMemorySlot',255);
-            $table->string('moboDescription',255);
+            $table->text('moboDescription');
             $table->string('moboWarranty',255);
             $table->string('moboPrice', 255);
             $table->string('moboStock', 255);

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('sliderName',255);
             $table->string('sliderDateStart',255);
             $table->string('sliderDateEnd',255);
-            $table->string('sliderDescription',255);
+            $table->text('sliderDescription');
             $table->timestamps();
         });
     }
@@ -29,4 +29,3 @@ return new class extends Migration
         Schema::dropIfExists('sliders');
     }
 };
-

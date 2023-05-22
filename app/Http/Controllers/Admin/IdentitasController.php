@@ -55,7 +55,7 @@ class IdentitasController extends Controller
         $identitas->shopEmail = $request->shopEmail;
         $identitas->save();
 
-        return redirect()->route('admin.identitas')->with(['success' => 'Berhasil Mengubah Data']);
+        return redirect()->route('administrator.identitas')->with(['success' => 'Berhasil Mengubah Data']);
     }
 
     /**
@@ -98,7 +98,7 @@ class IdentitasController extends Controller
         $identitas->shopEmail = $request->shopEmail;
         $identitas->save();
 
-        return redirect()->route('admin.identitas')->with(['success' => 'Berhasil Mengubah Data']);
+        return redirect()->route('administrator.identitas')->with(['success' => 'Berhasil Mengubah Data']);
     }
 
     /**

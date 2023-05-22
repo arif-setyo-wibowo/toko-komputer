@@ -65,7 +65,7 @@ class MemoriController extends Controller
         $memory->memoryStock = $request->stok;
         $memory->save();
         
-        return redirect()->route('admin.memory')->with(['success' => 'Tambah Data Berhasil']);
+        return redirect()->route('administrator.memory')->with(['success' => 'Tambah Data Berhasil']);
     }
 
     /**
@@ -119,7 +119,7 @@ class MemoriController extends Controller
 
         $memory->save();
 
-        return redirect()->route('admin.memory')->with(['success' => 'Edit Data Berhasil']);
+        return redirect()->route('administrator.memory')->with(['success' => 'Edit Data Berhasil']);
     }
 
     /**
@@ -130,6 +130,6 @@ class MemoriController extends Controller
         $memory = Memory::find($id);
         File::delete('uploads/gambar/ram/'.$memory->memoryImage);
         Memory::destroy($id);
-        return redirect()->route('admin.memory')->with(['success' => 'Hapus Data Berhasil']);
+        return redirect()->route('administrator.memory')->with(['success' => 'Hapus Data Berhasil']);
     }
 }

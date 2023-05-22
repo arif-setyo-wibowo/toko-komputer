@@ -36,7 +36,7 @@ class BrandController extends Controller
         $brand->brandName = $request->brandName;
         $brand->save();
         
-        return redirect()->route('admin.brand')->with('succes','Berhasil Tambah Data');
+        return redirect()->route('administrator.brand')->with('success','Berhasil Tambah Data');
     }
 
     public function edit(string $id)
@@ -66,7 +66,7 @@ class BrandController extends Controller
         $brand->brandName = $request->brandNameUpdate;
         $brand->save();
 
-        return redirect()->route('admin.brand')->with(['success' => 'Edit Data Berhasil']);
+        return redirect()->route('administrator.brand')->with(['success' => 'Edit Data Berhasil']);
     }
 
     public function destroy(string $id)
@@ -74,6 +74,6 @@ class BrandController extends Controller
         $brand = Brand::find($id);
         File::delete('uploads/gambar/brand/'.$brand->brandLogo);
         Brand::destroy($id);
-        return redirect()->route('admin.brand')->with(['success' => 'Hapus Data Berhasil']);
+        return redirect()->route('administrator.brand')->with(['success' => 'Hapus Data Berhasil']);
     }
 }

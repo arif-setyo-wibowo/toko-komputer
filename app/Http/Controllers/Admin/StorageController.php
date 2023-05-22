@@ -63,7 +63,7 @@ class StorageController extends Controller
         $storage->storageStock = $request->storageStock;
         $storage->save();
         
-        return redirect()->route('admin.storage')->with(['success' => 'Tambah Data Berhasil']);
+        return redirect()->route('administrator.storage')->with(['success' => 'Tambah Data Berhasil']);
     }
 
     /**
@@ -117,7 +117,7 @@ class StorageController extends Controller
         $storage->storageStock = $request->storageStock;
         $storage->save();
         
-        return redirect()->route('admin.storage')->with(['success' => 'Tambah Data Berhasil']);
+        return redirect()->route('administrator.storage')->with(['success' => 'Tambah Data Berhasil']);
     }
 
     /**
@@ -128,6 +128,6 @@ class StorageController extends Controller
         $storage = Storage::find($id);
         File::delete('uploads/gambar/storage/'.$storage->storageImage);
         Storage::destroy($id);
-        return redirect()->route('admin.storage')->with(['success' => 'Hapus Data Berhasil']);
+        return redirect()->route('administrator.storage')->with(['success' => 'Hapus Data Berhasil']);
     }
 }

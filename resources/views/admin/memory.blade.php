@@ -416,10 +416,6 @@
                                     </tr>
                                   </tbody>
                                 </table>
-                                <h4 class="card-title">Deskripsi</h4>
-                                <p class="small ">Sunt est soluta temporibus accusantium neque nam maiores cumque
-                                  temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae
-                                  quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
                               </div>
                             </div>
                           </div>

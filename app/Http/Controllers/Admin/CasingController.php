@@ -47,7 +47,7 @@ class CasingController extends Controller
         $casing->caseStock = $request->stok;
         $casing->save();
         
-        return redirect()->route('admin.case')->with(['success' => 'Tambah Data Berhasil']);
+        return redirect()->route('administrator.case')->with(['success' => 'Tambah Data Berhasil']);
     }
 
     public function edit(string $id)
@@ -84,7 +84,7 @@ class CasingController extends Controller
         $casing->caseStock = $request->stok;
         $casing->save();
 
-        return redirect()->route('admin.case')->with(['success' => 'Edit Data Berhasil']);
+        return redirect()->route('administrator.case')->with(['success' => 'Edit Data Berhasil']);
     }
 
     public function destroy(string $id)
@@ -92,6 +92,6 @@ class CasingController extends Controller
         $ComputerCase = ComputerCase::find($id);
         File::delete('uploads/gambar/casing/'.$ComputerCase->caseImage);
         ComputerCase::destroy($id);
-        return redirect()->route('admin.case')->with(['success' => 'Hapus Data Berhasil']);
+        return redirect()->route('administrator.case')->with(['success' => 'Hapus Data Berhasil']);
     }
 }

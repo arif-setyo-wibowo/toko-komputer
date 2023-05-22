@@ -54,7 +54,7 @@ class ProcessorController extends Controller
         $cpu->processorStock = $request->processorStock;
         $cpu->save();
 
-        return redirect()->route('admin.processor')->with(['success'=>'Tambah data berhasil']);
+        return redirect()->route('administrator.processor')->with(['success'=>'Tambah data berhasil']);
     }
 
     public function edit(string $id)
@@ -96,7 +96,7 @@ class ProcessorController extends Controller
         $cpu->processorStock = $request->processorStockUpdate;
         $cpu->save();
 
-        return redirect()->route('admin.processor')->with(['success'=>'Edit data berhasil']);
+        return redirect()->route('administrator.processor')->with(['success'=>'Edit data berhasil']);
     }
 
     public function destroy(string $id)
@@ -104,6 +104,6 @@ class ProcessorController extends Controller
         $cpu = Processor::find($id);
         File::delete('uploads/gambar/cpu/'.$cpu->processorImage);
         Processor::destroy($id);
-        return redirect()->route('admin.processor')->with(['success' => 'Hapus Data Berhasil']);
+        return redirect()->route('administrator.processor')->with(['success' => 'Hapus Data Berhasil']);
     }
 }

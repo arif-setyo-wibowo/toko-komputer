@@ -41,7 +41,7 @@
                     <!-- ISI -->
                     <div class="tab-content p-2" id="borderedTabContent">
                         <div class="tab-pane fade show active" id="bordered-home" role="tabpanel" aria-labelledby="home-tab">
-                            <h5 class="card-title">List VGA</h5>
+                            <h5 class="card-title">List Power Supply</h5>
                             <table class="table table-hover datatable">
                                 <thead>
                                     <tr>
@@ -117,7 +117,7 @@
                                         <label for="inputText" class="col-md-3 col-form-label">Nama Brand</label>
                                         <div class="col-sm-8">
                                             <select class="form-select" aria-label="Default select example" name="brandPsu" required>
-                                                <option selected>Pilih Brand</option>
+                                                <option selected value disabled>Pilih Brand</option>
                                                 @foreach ($merk as $data)
                                                     <option value="{{ $data->brandId }}">{{ $data->brandName }}</option>
                                                 @endforeach
@@ -130,7 +130,7 @@
                                         <label for="inputText" class="col-md-3 col-form-label">80 PLUS Certification</label>
                                         <div class="col-sm-8">
                                             <select class="form-select" aria-label="Default select example" name="psuCertification" required>
-                                                <option selected>Pilih Certification</option>
+                                                <option selected value disabled>Pilih Certification</option>
                                                 <option value="80 PLUS Bronze">80 PLUS Bronze</option>
                                                 <option value="80 PLUS Silver">80 PLUS Silver</option>
                                                 <option value="80 PLUS Gold">80 PLUS Gold</option>
@@ -252,7 +252,7 @@
                                                 <label for="inputText" class="col-md-3 col-form-label">Nama Brand</label>
                                                 <div class="col-sm-8">
                                                     <select class="form-select" aria-label="Default select example" name="brandUpdate" id="brandUpdate" required>
-                                                        <option selected>Pilih Brand</option>
+                                                        <option selected value disabled>Pilih Brand</option>
                                                         @foreach ($merk as $data)
                                                             <option value="{{ $data->brandId}}">{{ $data->brandName}}</option>
                                                         @endforeach
@@ -265,7 +265,7 @@
                                                 <label for="inputText" class="col-md-4 col-form-label">80 PLUS Certification</label>
                                                 <div class="col-sm-8">
                                                     <select class="form-select" aria-label="Default select example" name="certificationUpdate" id="certificationUpdate" required>
-                                                        <option selected>Pilih Certification</option>
+                                                        <option selected value disabled>Pilih Certification</option>
                                                         <option value="80 PLUS Bronze">80 PLUS Bronze</option>
                                                         <option value="80 PLUS Silver">80 PLUS Silver</option>
                                                         <option value="80 PLUS Gold">80 PLUS Gold</option>

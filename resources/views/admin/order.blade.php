@@ -48,7 +48,7 @@
                         </button>
                       </td>
                       <td>
-                        <a href="/order/invoice">lihat invoice</a>
+                        <a href="{{ url()->current() }}/invoice">lihat invoice</a>
                       </td>
                     </tr>
                     <tr>
@@ -63,7 +63,7 @@
                         </button>
                       </td>
                       <td>
-                        <a href="/order/invoice">lihat invoice</a>
+                        <a href="{{ url()->current() }}/invoice">lihat invoice</a>
                       </td>
                     </tr>
                     <tr>
@@ -78,7 +78,7 @@
                         </button>
                       </td>
                       <td>
-                        <a href="/order/invoice">lihat invoice</a>
+                        <a href="{{ url()->current() }}/invoice">lihat invoice</a>
                       </td>
                     </tr>
                   </tbody>

@@ -34,7 +34,7 @@ class SocketController extends Controller
         $socket->processorSocketName = $request->nama;
         $socket->save();
 
-        return redirect()->route('admin.socket')->with(['success' => 'Tambah Data Berhasil']);
+        return redirect()->route('administrator.socket')->with(['success' => 'Tambah Data Berhasil']);
     }
 
     public function edit(string $id)
@@ -56,13 +56,13 @@ class SocketController extends Controller
         $socket->processorSocketName = $request->nama;
         $socket->save();
 
-        return redirect()->route('admin.socket')->with(['success' => 'Edit Data Berhasil']);
+        return redirect()->route('administrator.socket')->with(['success' => 'Edit Data Berhasil']);
     }
 
     public function destroy(string $id)
     {
         ProcessorSocket::destroy($id);
-        return redirect()->route('admin.socket')->with(['success' => 'Hapus Data Berhasil']);
+        return redirect()->route('administrator.socket')->with(['success' => 'Hapus Data Berhasil']);
     }
 
     // Contoh export excel

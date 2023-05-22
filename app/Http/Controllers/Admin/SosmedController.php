@@ -34,7 +34,7 @@ class SosmedController extends Controller
         $media->medialink = $request->link;
         $media->save();
 
-        return redirect()->route('admin.sosmed')->with(['success' => 'Tambah Data Berhasil']);
+        return redirect()->route('administrator.sosmed')->with(['success' => 'Tambah Data Berhasil']);
     }
 
     public function edit(string $id)
@@ -59,12 +59,12 @@ class SosmedController extends Controller
         $media->medialink = $request->medialink;
         $media->save();
 
-        return redirect()->route('admin.sosmed')->with(['success' => 'Edit Data Berhasil']);
+        return redirect()->route('administrator.sosmed')->with(['success' => 'Edit Data Berhasil']);
     }
 
     public function destroy(string $id)
     {
         Media::destroy($id);
-        return redirect()->route('admin.sosmed')->with(['success' => 'Hapus Data Berhasil']);
+        return redirect()->route('administrator.sosmed')->with(['success' => 'Hapus Data Berhasil']);
     }
 }

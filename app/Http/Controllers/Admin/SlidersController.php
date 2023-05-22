@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class SlidersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,19 +13,10 @@ class OrderController extends Controller
     public function index()
     {
         $data=[
-            'title' => "Order"
+            'title' => "Slider",
         ];
 
-        return view('admin/order',$data);
-    }
-
-    public function detail()
-    {
-        $data=[
-            'title' => "invoice"
-        ];
-
-        return view('admin/orderInvoice',$data);
+        return view('admin/slider',$data);
     }
 
     /**
