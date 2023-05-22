@@ -10,19 +10,21 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use App\Mail\MailSend;
+use App\Models\Identity;
 
 class CustomerController extends Controller
 {
     
     public function login()
     {
-        $data =[
-            'title' => 'login'
+        $data=[
+            'title' => "Login",
+            'identitas' => Identity::all()
         ];
         if (Auth::check()) {
             return redirect('front/home');
         }else{
-            return view('admin/logintest',$data);
+            return view('/Auth/login',$data);
         }
     }
 
@@ -43,13 +45,13 @@ class CustomerController extends Controller
                     session(['nama.customer' => $user->customerName]);                    
                     return redirect('/paymentgateway');
                 } else {
-                    return redirect()->route('admin.login')->withErrors(['email' => 'Akun belum diverifikasi'])->withInput();
+                    return redirect()->route('login')->withErrors(['email' => 'Akun belum diverifikasi'])->withInput();
                 }
             } else {
-                return redirect()->route('admin.login')->withErrors(['password' => 'Password salah'])->withInput();
+                return redirect()->route('login')->withErrors(['password' => 'Password salah'])->withInput();
             }
         } else {
-            return redirect()->route('admin.login')->withErrors(['email' => 'Email tidak ditemukan'])->withInput();
+            return redirect()->route('login')->withErrors(['email' => 'Email tidak ditemukan'])->withInput();
         }
     }
 
@@ -58,26 +60,28 @@ class CustomerController extends Controller
         session()->forget('login.customer');
         session()->forget('email.customer');
         session()->forget('nama.customer'); 
-        return redirect()->route('admin.login');
+        return redirect()->route('login');
     }
 
     public function signup()
     {
         $data =[
-            'title' => 'register'
+            'title' => 'register',
+            'identitas' => Identity::all()
         ];
 
         $nama = session()->get('nama.auth');
         $email = session()->get('email.auth');
 
         if ($nama && $email) {
-            return view('admin/registertest', [
+            return view('Auth/register', [
                 'customerEmail' => $nama,
                 'customerPassword' => $email,
                 $data
             ]);
         } else {
-            return redirect()->route('admin.login');
+            //return redirect()->route('register');
+            return view('Auth/register',$data);
         }
     }
     public function signup_data(Request $request)
@@ -100,12 +104,12 @@ class CustomerController extends Controller
         
         $data=[
             'customerName' => $request->customerName,
-            'url' => request()->getHttpHost(). '/registertest/verify/'.$str
+            'url' => request()->getHttpHost(). '/register/verify/'.$str
         ];
 
         Mail::to($request->customerEmail)->send(new MailSend($data));
 
-        return redirect()->route('admin.login')->with('succes','Silahkan login');
+        return redirect()->route('login')->with('succes','Silahkan login');
     }
 
     public function verify($verify_key)

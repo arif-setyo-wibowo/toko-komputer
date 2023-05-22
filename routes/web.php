@@ -56,6 +56,18 @@ Route::get('/detailproduk', [DetailProdukController::class, 'index']);
 Route::get('/cart', [CartController::class, 'index']);
 Route::get('/shop', [ShopController::class, 'index']);
 
+// Login
+Route::get('/login', [CustomerController::class, 'login'])->name('login');
+Route::post('/login', [CustomerController::class, 'login_data']);
+Route::get('/logout', [CustomerController::class, 'logout'])->middleware('customer');
+Route::get('/register', [CustomerController::class, 'signup'])->name('register');
+Route::post('/register', [CustomerController::class, 'signup_data']);
+Route::get('/register/verify/{verify_key}', [CustomerController::class, 'verify']);
+
+ //Socialite
+Route::get('/auth/login/{provider}', [SocialiteController::class, 'redirectToProvider'])->name('login.google');
+Route::get('/auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback']);
+
 
 // ADMIN
 
@@ -198,16 +210,6 @@ Route::prefix('administrator')->group(function () {
     });
     Route::post('/cart/add', [TestController::class, 'addToCart'])->name('cart.add');
 
-    // Test Login
-    Route::get('/logintest', [CustomerController::class, 'login'])->name('admin.login');
-    Route::post('/logintest', [CustomerController::class, 'login_data']);
-    Route::get('/logout', [CustomerController::class, 'logout'])->middleware('customer');
-    Route::get('/registertest', [CustomerController::class, 'signup']);
-    Route::post('/registertest', [CustomerController::class, 'signup_data']);
-    Route::get('/registertest/verify/{verify_key}', [CustomerController::class, 'verify']);
-
-     //Socialite
-    Route::get('/auth/login/{provider}', [SocialiteController::class, 'redirectToProvider'])->name('login.google');
-    Route::get('/auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback']);
+    
  
 });

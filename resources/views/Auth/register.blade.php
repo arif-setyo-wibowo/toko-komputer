@@ -1,0 +1,87 @@
+@extends('./front.layout.navbar')
+
+@section('content')
+<div class="page-style-a">
+    <div class="container">
+        <div class="page-intro">
+            <h2>Account</h2>
+            <ul class="bread-crumb">
+                <li class="has-separator">
+                    <i class="ion ion-md-home"></i>
+                    <a href="home.html">Home</a>
+                </li>
+                <li class="is-marked">
+                    <a href="account.html">Register</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Page Introduction Wrapper /- -->
+<!-- Account-Page -->
+<div class="page-account u-s-p-t-80">
+    <div class="container">
+        <div class="row">
+            <!-- Register -->
+            
+            <div class="col-lg-12">
+                @if ($message = session('message'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <i class="bi bi-check-circle me-1"></i>
+                {{ $message }}
+                </div>
+                @endif
+                @if ($errors->any())
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @foreach ($errors->all() as $error)
+                        <i class="bi bi-exclamation-octagon me-1"> {{ $error }} </i><br>
+                    @endforeach
+                    </div>
+                @endif
+                <div class="reg-wrapper">
+                    <h2 class="account-h2 u-s-m-b-20">Register</h2>
+                    <h6 class="account-h6 u-s-m-b-30">Registering for this site allows you to access your order status and history.</h6>
+                    <form action="{{ url()->current() }}" method="POST">
+                        @csrf
+                        @error('email')
+                        <small class="text-danger mt-2">
+                            {{ $message }}
+                        </small>
+                        @enderror
+                        <div class="u-s-m-b-30">
+                            <label for="user-name">Nama
+                                <span class="astk">*</span>
+                            </label>
+                            <input type="text" id="user-name" class="text-field" name="customerName" placeholder="Name" required>
+                        </div>
+                        <div class="u-s-m-b-30">
+                            <label for="telp">Telp
+                                <span class="astk">*</span>
+                            </label>
+                            <input type="number" id="email" class="text-field"  name="customerPhoneNumber" placeholder="Email" required>
+                        </div>
+                        <div class="u-s-m-b-30">
+                            <label for="email">Email
+                                <span class="astk">*</span>
+                            </label>
+                            <input type="email" id="email" class="text-field" name="customerEmail" placeholder="Email" required>
+                        </div>
+                        <div class="u-s-m-b-30">
+                            <label for="password">Password
+                                <span class="astk">*</span>
+                            </label>
+                            <input type="password" id="password" class="text-field" name="customerPassword" placeholder="Password" required>
+                        </div>
+                        
+                        <div class="u-s-m-b-45">
+                            <button type="submit" class="button button-primary w-100">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Register /- -->
+        </div>
+    </div>
+</div>
+
+@endsection

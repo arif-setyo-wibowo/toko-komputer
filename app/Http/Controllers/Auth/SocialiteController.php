@@ -33,7 +33,7 @@ class SocialiteController extends Controller
             session(['login.customer' => true]);
             session(['email.customer' => $user->customerEmail]);
             session(['nama.customer' => $user->customerName]);
-            return redirect('/paymentgateway');
+            return redirect('/administrator/paymentgateway');
         }else{
             // redirect register with data
             // session temp flash
