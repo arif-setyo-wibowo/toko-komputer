@@ -3,6 +3,14 @@ const asset_url = window.location.origin + "/uploads/gambar/psu/";
 
 $(document).ready(function() {
 
+    function formatRupiah(amount) {
+        const formatter = new Intl.NumberFormat('id-ID', {
+          style: 'currency',
+          currency: 'IDR'
+        });
+        return formatter.format(amount);
+      }
+
     // Auto Load Image Insert
     $("#psuImage").change(function() {
         if (this.files && this.files[0]) {
@@ -59,7 +67,7 @@ $(document).ready(function() {
                 connector.textContent = response[0]['psuConnector'];
                 garansi.textContent = response[0]['psuWarranty'];
                 stok.textContent = response[0]['psuStock'];
-                harga.textContent = "Rp. " + response[0]['psuPrice'];
+                harga.textContent = formatRupiah(response[0]['psuPrice']);
                 $("#detail").modal("show");
             }
         });

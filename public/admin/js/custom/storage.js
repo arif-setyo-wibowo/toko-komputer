@@ -3,6 +3,14 @@ const asset_url = window.location.origin + "/uploads/gambar/storage/";
 
 $(document).ready(function () {
 
+    function formatRupiah(amount) {
+        const formatter = new Intl.NumberFormat('id-ID', {
+          style: 'currency',
+          currency: 'IDR'
+        });
+        return formatter.format(amount);
+      }
+
     // Auto Load Image Insert
     $("#storageImage").change(function () {
         if (this.files && this.files[0]) {
@@ -59,7 +67,7 @@ $(document).ready(function () {
                 dimension.textContent = response[0]['storageDimension'];
                 garansi.textContent = response[0]['storageWarranty'];
                 stok.textContent = response[0]['storageStock'];
-                harga.textContent = "Rp. " + response[0]['storagePrice'];
+                harga.textContent = formatRupiah(response[0]['storagePrice']);
                 $("#detail").modal("show");
             }
         });

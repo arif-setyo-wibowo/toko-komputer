@@ -3,6 +3,14 @@ const asset_url = window.location.origin + "/uploads/gambar/casing/";
 
 $(document).ready(function () {
 
+    function formatRupiah(amount) {
+        const formatter = new Intl.NumberFormat('id-ID', {
+          style: 'currency',
+          currency: 'IDR'
+        });
+        return formatter.format(amount);
+      }
+
     // Auto Load Image Insert
     $("#caseImage").change(function () {
         if (this.files && this.files[0]) {
@@ -53,7 +61,7 @@ $(document).ready(function () {
                 caseFanSlot.textContent = response[0]['caseFanSlot'];
                 caseDescription.textContent = response[0]['caseDescription'];
                 caseWarranty.textContent = response[0]['caseWarranty'];
-                casePrice.textContent = response[0]['casePrice'];
+                casePrice.textContent = formatRupiah(response[0]['casePrice']);
                 caseStock.textContent = response[0]['caseStock'];
                 $("#detail").modal("show");
             }
@@ -82,9 +90,6 @@ $(document).ready(function () {
                 $('#garansiUpdate').val(response[0]['caseWarranty']);
                 $('#deskripsiUpdate').val(response[0]['caseDescription']);
                 $('#brandUpdate').val(response[0]['brand']['brandId']);
-
-
-
             }
         });
     });

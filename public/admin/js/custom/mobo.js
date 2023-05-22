@@ -3,6 +3,14 @@ const asset_url = window.location.origin + "/uploads/gambar/mobo/";
 
 $(document).ready(function () {
 
+    function formatRupiah(amount) {
+        const formatter = new Intl.NumberFormat('id-ID', {
+          style: 'currency',
+          currency: 'IDR'
+        });
+        return formatter.format(amount);
+      }
+
     // Auto Load Image Insert
     $("#moboImage").change(function () {
         if (this.files && this.files[0]) {
@@ -64,7 +72,7 @@ $(document).ready(function () {
                 garansi.textContent = response[0]['moboWarranty'];
                 stok.textContent = response[0]['moboStock'];
                 deskripsi.textContent = response[0]['moboDescription'];
-                harga.textContent = "Rp. " + response[0]['moboPrice'];
+                harga.textContent = formatRupiah(response[0]['moboPrice']);
 
                 // moboPort
                 var portdetail = response[0]['moboPort'].split(', ');

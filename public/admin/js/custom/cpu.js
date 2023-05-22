@@ -3,6 +3,14 @@ const asset_url = window.location.origin + "/uploads/gambar/cpu/";
 
 $(document).ready(function() {
 
+    function formatRupiah(amount) {
+        const formatter = new Intl.NumberFormat('id-ID', {
+          style: 'currency',
+          currency: 'IDR'
+        });
+        return formatter.format(amount);
+      }
+
     // Auto Load Image Insert
     $("#processorImage").change(function() {
         if (this.files && this.files[0]) {
@@ -67,8 +75,7 @@ $(document).ready(function() {
                 heatsink.textContent = response[0]['processorHeatsink'];
                 garansi.textContent = response[0]['processorWarranty'];
                 stok.textContent = response[0]['processorStock'];
-                harga.textContent = "Rp. " + response[0]['processorPrice'];
-
+                harga.textContent = formatRupiah(response[0]['processorPrice']);
                 $("#detail").modal("show");
 
 

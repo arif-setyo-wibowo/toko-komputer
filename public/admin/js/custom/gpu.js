@@ -3,6 +3,14 @@ const asset_url = window.location.origin + "/uploads/gambar/gpu/";
 
 $(document).ready(function() {
 
+    function formatRupiah(amount) {
+        const formatter = new Intl.NumberFormat('id-ID', {
+          style: 'currency',
+          currency: 'IDR'
+        });
+        return formatter.format(amount);
+      }
+
     // Auto Load Image Insert
     $("#gpuImage").change(function() {
         if (this.files && this.files[0]) {
@@ -67,7 +75,7 @@ $(document).ready(function() {
                 casesupport.textContent = response[0]['gpuCaseSupport'];
                 garansi.textContent = response[0]['gpuWarranty'];
                 stok.textContent = response[0]['gpuStock'];
-                harga.textContent = "Rp. " + response[0]['gpuPrice'];
+                harga.textContent = formatRupiah(response[0]['gpuPrice']);
                 $("#detail").modal("show");
             }
         });

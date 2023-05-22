@@ -3,6 +3,14 @@ const asset_url = window.location.origin + "/uploads/gambar/ram/";
 
 $(document).ready(function () {
 
+    function formatRupiah(amount) {
+        const formatter = new Intl.NumberFormat('id-ID', {
+          style: 'currency',
+          currency: 'IDR'
+        });
+        return formatter.format(amount);
+      }
+
     // Auto Load Image Insert
     $("#memoryImage").change(function () {
         if (this.files && this.files[0]) {
@@ -57,7 +65,7 @@ $(document).ready(function () {
                 volt.textContent = response[0]['memoryVoltage'];
                 garansi.textContent = response[0]['memoryWarranty'];
                 stok.textContent = response[0]['memoryStock'];
-                harga.textContent = "Rp. " + response[0]['memoryPrice'];
+                harga.textContent = formatRupiah(response[0]['memoryPrice']);
                 $("#detail").modal("show");
             }
         });
