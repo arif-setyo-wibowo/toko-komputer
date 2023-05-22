@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Identity;
 
 class RakitPcController extends Controller
 {
@@ -13,7 +14,8 @@ class RakitPcController extends Controller
     public function index()
     {
         $data=[
-            'title' => "Rakit Pc"
+            'title' => "Rakit Pc",
+            'identitas' => Identity::all()
         ];
 
         return view('front/rakitPc',$data);

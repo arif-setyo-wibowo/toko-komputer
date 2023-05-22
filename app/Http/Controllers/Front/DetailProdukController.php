@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Identity;
 
 class DetailProdukController extends Controller
 {
@@ -13,7 +14,8 @@ class DetailProdukController extends Controller
     public function index()
     {
         $data=[
-            'title' => "Detail Produk"
+            'title' => "Detail Produk",
+            'identitas' => Identity::all()
         ];
 
         return view('front/detailproduk',$data);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Identity;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,8 @@ class HomeController extends Controller
     public function index()
     {
         $data=[
-            'title' => "home"
+            'title' => "home",
+            'identitas' => Identity::all()
         ];
 
         return view('front/home',$data);

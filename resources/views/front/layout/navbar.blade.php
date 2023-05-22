@@ -49,19 +49,21 @@
         <div class="full-layer-outer-header">
             <div class="container clearfix">
                 <nav>
-                    <ul class="primary-nav g-nav">
-                        <li>
-                            <a href="tel:+111444989">
-                                <i class="fas fa-phone u-c-brand u-s-m-r-9"></i>
-                                Telephone:+111-444-989</a>
-                        </li>
-                        <li>
-                            <a href="mailto:contact@domain.com">
-                                <i class="fas fa-envelope u-c-brand u-s-m-r-9"></i>
-                                E-mail: contact@domain.com
-                            </a>
-                        </li>
-                    </ul>
+                    @foreach ($identitas as $data)
+                        <ul class="primary-nav g-nav">
+                            <li>
+                                <a href="tel:{{ $data->shopPhoneNumber }}">
+                                    <i class="fas fa-phone u-c-brand u-s-m-r-9"></i>
+                                    {{ $data->shopPhoneNumber }}</a>
+                            </li>
+                            <li>
+                                <a href="mailto:{{ $data->shopEmail }}">
+                                    <i class="fas fa-envelope u-c-brand u-s-m-r-9"></i>
+                                    {{ $data->shopEmail }}
+                                </a>
+                            </li>
+                        </ul>
+                    @endforeach
                 </nav>
                 <nav>
                     <ul class="secondary-nav g-nav">
@@ -103,7 +105,7 @@
                 <div class="row clearfix align-items-center">
                     <div class="col-lg-3 col-md-9 col-sm-6">
                         <div class="brand-logo text-lg-center">
-                            <a href="/home">
+                            <a href="/">
                                 <img src="{{ asset('front/') }}/images/main-logo/groover-branding-1.png" alt="Groover Brand Logo" class="app-brand-logo">
                             </a>
                         </div>
@@ -144,7 +146,7 @@
                         <nav>
                             <ul class="mid-nav g-nav">
                                 <li class="u-d-none-lg">
-                                    <a href="/home">
+                                    <a href="/">
                                         <i class="ion ion-md-home u-c-brand"></i>
                                     </a>
                                 </li>
@@ -727,7 +729,7 @@
                                     <ul>
                                         <li class="menu-title">Home & Static Pages</li>
                                         <li>
-                                            <a href="/home" class="u-c-brand">Home</a>
+                                            <a href="/" class="u-c-brand">Home</a>
                                         </li>
                                         <li>
                                             <a href="about.html">About</a>
@@ -907,25 +909,26 @@
                     <div class="col-lg-3 col-md-3 col-sm-12">
                         <div class="footer-list">
                             <h6>Address</h6>
-                            <ul>
-                                <li>
-                                    <i class="fas fa-location-arrow u-s-m-r-9"></i>
-                                    <span>819 Sugar Camp Road, West Concord, MN 55985</span>
-                                </li>
-                                <li>
-                                    <a href="tel:+923086561801">
-                                        <i class="fas fa-phone u-s-m-r-9"></i>
-                                        <span>+111-444-989</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="mailto:contact@domain.com">
-                                        <i class="fas fa-envelope u-s-m-r-9"></i>
-                                        <span>
-                                            contact@domain.com</span>
-                                    </a>
-                                </li>
-                            </ul>
+                            @foreach ($identitas as $data)
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-location-arrow u-s-m-r-9"></i>
+                                        <span>{{ $data->shopAddress }}</span>
+                                    </li>
+                                    <li>
+                                        <a href="tel:{{ $data->shopPhoneNumber }}">
+                                            <i class="fas fa-phone u-s-m-r-9"></i>
+                                            <span>{{ $data->shopPhoneNumber }}</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:contact@domain.com">
+                                            <i class="fas fa-envelope u-s-m-r-9"></i>
+                                            <span>{{ $data->shopEmail }}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            @endforeach
                         </div>
                     </div>
                 </div>

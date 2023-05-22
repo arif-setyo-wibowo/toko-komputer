@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Identity;
 
 class CartController extends Controller
 {
@@ -13,7 +14,8 @@ class CartController extends Controller
     public function index()
     {
        $data=[
-            'title' => "Cart"
+            'title' => "Cart",
+            'identitas' => Identity::all()
         ];
 
         return view('front/cart',$data);
