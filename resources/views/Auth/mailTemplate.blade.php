@@ -18,24 +18,17 @@
             <tbody>
               <tr>
                 <td style="padding: 40px 0px 0px;">
-                  <div style="text-align: left;">
-                    <div style="padding-bottom: 20px;"><img src="https://i.ibb.co/Qbnj4mz/logo.png" alt="Company" style="width: 56px;"></div>
-                  </div>
                   <div style="padding: 20px; background-color: rgb(255, 255, 255);">
                     <div style="color: rgb(0, 0, 0); text-align: left;">
-                      <h1 style="margin: 1rem 0">Final step...</h1>
-                      <p style="padding-bottom: 16px">Follow this link to verify your email address. {{ $data['customerName']}}</p>
+                      <h1 style="margin: 1rem 0">Verifikasi</h1>
+                      <p style="padding-bottom: 16px">Hi, {{ $data['customerName']}}</p>
                       <p style="padding-bottom: 16px">
-                        <a href="" target="[[_blank]]"
+                        <a href="{{ $data['url'] }}"
                           style="padding: 12px 24px; border-radius: 4px; color: #FFF; background: #2B52F5;display: inline-block;margin: 0.5rem 0;">Confirm
                           now</a>
-                    </p>{{ $data['url'] }}
-                      <p style="padding-bottom: 16px">If you didn’t ask to verify this address, you can ignore this email.</p>
-                      <p style="padding-bottom: 16px">Thanks,<br>The Mailmeteor team</p>
+                      <p style="padding-bottom: 16px">Klik tombol diatas untuk verifikasi akunmu</p>
+                      <p style="padding-bottom: 16px">Terimas Kasih,<br>Toko-komputer</p>
                     </div>
-                  </div>
-                  <div style="padding-top: 20px; color: rgb(153, 153, 153); text-align: center;">
-                    <p style="padding-bottom: 16px">Made with ♥ in Paris</p>
                   </div>
                 </td>
               </tr>

@@ -63,6 +63,9 @@ Route::get('/logout', [CustomerController::class, 'logout'])->middleware('custom
 Route::get('/register', [CustomerController::class, 'signup'])->name('register');
 Route::post('/register', [CustomerController::class, 'signup_data']);
 Route::get('/register/verify/{verify_key}', [CustomerController::class, 'verify']);
+//Password
+Route::get('/reset', [CustomerController::class, 'reset'])->name('reset');
+Route::post('/reset', [CustomerController::class, 'reset_data']);
 
  //Socialite
 Route::get('/auth/login/{provider}', [SocialiteController::class, 'redirectToProvider'])->name('login.google');

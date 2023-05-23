@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class MailSend extends Mailable
+class ResetSend extends Mailable
 {
     use Queueable, SerializesModels;
     public $data;
@@ -24,6 +24,7 @@ class MailSend extends Mailable
 
     public function build()
     {
-        return $this->subject('verifikasi akun')->view('Auth/mailTemplate');
+        return $this->subject('reset password')->view('Auth/mailReset');
     }
+    
 }
