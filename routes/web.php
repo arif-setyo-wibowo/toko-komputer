@@ -34,9 +34,13 @@ use App\Http\Controllers\Front\RakitPcController;
 use App\Http\Controllers\Front\DetailProdukController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\ShopController;
-
+use App\Http\Controllers\MemoryController;
+use App\Http\Controllers\MotherboardController;
+use App\Http\Controllers\PowerSupplyController as ControllersPowerSupplyController;
+use App\Http\Controllers\ProcessorController as FrontProcessorController;
 // 
 use App\Http\Controllers\TestController;
+use App\Models\PowerSupply;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,9 +56,17 @@ use App\Http\Controllers\TestController;
 // FRONT
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/rakitpc', [RakitPcController::class, 'index']);
-Route::get('/detailproduk', [DetailProdukController::class, 'index']);
 Route::get('/cart', [CartController::class, 'index']);
 Route::get('/shop', [ShopController::class, 'index']);
+
+// DETAIL PRODUK
+// Route::get('/detailproduk', [DetailProdukController::class, 'index']);
+Route::get('/detailproduk/computer_cases/{id}', [ComputerCaseController::class, 'detail']);
+Route::get('/detailproduk/motherboards/{id}', [MotherboardController::class, 'detail']);
+Route::get('/detailproduk/graphic_cards/{id}', [GraphicCardController::class, 'detail']);
+Route::get('/detailproduk/memories/{id}', [MemoryController::class, 'detail']);
+Route::get('/detailproduk/power_supplies/{id}', [ControllersPowerSupplyController::class, 'detail']);
+Route::get('/detailproduk/processors/{id}', [FrontProcessorController::class, 'detail']);
 
 // Login
 Route::get('/login', [CustomerController::class, 'login'])->name('login');

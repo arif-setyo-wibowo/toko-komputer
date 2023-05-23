@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PowerSupply;
+use App\Models\Identity;
 use Illuminate\Http\Request;
 
 class PowerSupplyController extends Controller
@@ -12,11 +13,36 @@ class PowerSupplyController extends Controller
      */
     public function index()
     {
-        $data=[
-            'title' => "Power Supplay"
-        ];
+        
+    }
 
-        return view('admin/powersuplly',$data);
+    public function detail($id)
+    {
+        $get = PowerSupply::with("brand")->where('psuId', $id)->get();
+        $arr = [
+            "Id" => $get[0]["psuId"],
+            "Description" => $get[0]["psuDescription"],
+            "Image" => '/psu/' . $get[0]["psuImage"],
+            "Price" => $get[0]["psuPrice"],
+            "Name" => $get[0]["psuName"],
+            "Brand" => '/brand/' . $get[0]["brand"]["brandLogo"],
+            "Power" => $get[0]["psuPower"] . ' watts',
+            "Certification" => $get[0]["psuCertification"],
+            "Efficiency" => $get[0]["psuEfficiency"],
+            "Cooling" => $get[0]["psuCooling"],
+            "Modular" => $get[0]["psuModular"],
+            "Connector" => $get[0]["psuConnector"],
+            "Warranty" => $get[0]["psuWarranty"],
+            "Stock" => $get[0]["psuStock"],
+        ];
+        $data = [
+            'title' => "Detail Produk",
+            'itemType' => "Power Supply",
+            'identitas' => Identity::all(),
+            'item' => $arr
+        ];
+        // print("<pre>" . print_r($get, true) . "</pre>");
+        return view('front/detailproduk', $data);
     }
 
     /**
