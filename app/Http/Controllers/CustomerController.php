@@ -43,7 +43,7 @@ class CustomerController extends Controller
                     session(['login.customer' => true]);
                     session(['email.customer' => $user->customerEmail]);
                     session(['nama.customer' => $user->customerName]);                    
-                    return redirect('/paymentgateway');
+                    return redirect()->route('home');
                 } else {
                     return redirect()->route('login')->withErrors(['email' => 'Akun belum diverifikasi'])->withInput();
                 }
@@ -65,23 +65,19 @@ class CustomerController extends Controller
 
     public function signup()
     {
+        
+        $email = session()->get('email.auth');
         $data =[
             'title' => 'register',
+            'customerEmail' => $email,
             'identitas' => Identity::all()
         ];
 
-        $nama = session()->get('nama.auth');
-        $email = session()->get('email.auth');
-
-        if ($nama && $email) {
-            return view('Auth/register', [
-                'customerEmail' => $nama,
-                'customerPassword' => $email,
-                $data
-            ]);
-        } else {
-            //return redirect()->route('register');
+        if ($email) {
             return view('Auth/register',$data);
+        } else {
+           return redirect()->route('login');
+            //return view('Auth/register',$data);
         }
     }
     public function signup_data(Request $request)
@@ -109,20 +105,38 @@ class CustomerController extends Controller
 
         Mail::to($request->customerEmail)->send(new MailSend($data));
 
-        return redirect()->route('login')->with('succes','Silahkan login');
+        return redirect()->route('login')->with('succes','Silahkan Cek Email Untuk Verifikasi');
     }
 
     public function verify($verify_key)
     {       
+        $data = [
+            'identitas' => Identity::all()
+        ];
         $keycheck = User::select('customerVerifyKey')
                         ->where('customerVerifyKey',$verify_key)
                         ->exists();
         if ($keycheck) {
             $user = User::where('customerVerifyKey',$verify_key)->update(['customerVerifyAt' => date('Y-m-d H:i:s')]);
-                return "Verifikasi berhasil";
+                return view('Auth/verifikasi',$data);
             }else{
                 return "Verifikasi Gagal";
             }
     }
     
+    public function reset()
+    {
+        $data = [
+            'identitas' => Identity::all()
+        ];
+        return view('Auth/resetPassword',$data);
+    }
+    public function reset_data()
+    {
+        $data = [
+            'identitas' => Identity::all()
+        ];
+        return view('Auth/resetPassword',$data);
+    }
 }
+

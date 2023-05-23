@@ -1,23 +1,7 @@
 @extends('./front.layout.navbar')
 
 @section('content')
-<div class="page-style-a">
-    <div class="container">
-        <div class="page-intro">
-            <h2>Account</h2>
-            <ul class="bread-crumb">
-                <li class="has-separator">
-                    <i class="ion ion-md-home"></i>
-                    <a href="home.html">Home</a>
-                </li>
-                <li class="is-marked">
-                    <a href="account.html">Register</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-<!-- Page Introduction Wrapper /- -->
+
 <!-- Account-Page -->
 <div class="page-account u-s-p-t-80">
     <div class="container">
@@ -52,19 +36,19 @@
                             <label for="user-name">Nama
                                 <span class="astk">*</span>
                             </label>
-                            <input type="text" id="user-name" class="text-field" name="customerName" placeholder="Name" required>
+                            <input type="text" id="user-name" class="text-field"  name="customerName" placeholder="Name" required>
                         </div>
                         <div class="u-s-m-b-30">
                             <label for="telp">Telp
                                 <span class="astk">*</span>
                             </label>
-                            <input type="number" id="email" class="text-field"  name="customerPhoneNumber" placeholder="Email" required>
+                            <input type="number" id="email" class="text-field"  name="customerPhoneNumber" placeholder="Telp" required>
                         </div>
                         <div class="u-s-m-b-30">
                             <label for="email">Email
                                 <span class="astk">*</span>
                             </label>
-                            <input type="email" id="email" class="text-field" name="customerEmail" placeholder="Email" required>
+                            <input type="email" id="email" class="text-field" value="{{ $customerEmail }}" name="customerEmail" placeholder="Email" required>
                         </div>
                         <div class="u-s-m-b-30">
                             <label for="password">Password

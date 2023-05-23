@@ -8,7 +8,7 @@
         <div class="row">
             <!-- Login --> 
             <div class="col-lg-12">
-                @if ($message = session('message'))
+                @if ($message = session('succes'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <i class="bi bi-check-circle me-1"></i>
                     {{ $message }}
@@ -49,12 +49,12 @@
                             <label for="login-password">Password
                                 <span class="astk">*</span>
                             </label>
-                            <input type="text" id="login-password" class="text-field" name="Password"  placeholder="Password">
+                            <input type="text" id="login-password" class="text-field" name="customerPassword"  placeholder="Password">
                         </div>
                         <div class="group-inline u-s-m-b-30">
                             <div class="group-2 text-right">
                                 <div class="page-anchor">
-                                    <a href="lost-password.html">
+                                    <a href="{{ route('reset') }}">
                                         <i class="fas fa-circle-o-notch u-s-m-r-9"></i>Lost your password?</a>
                                 </div>
                             </div>
@@ -64,8 +64,8 @@
                         </div>
                     </form>
                     <div class="u-s-m-b-45 mt-1">
-                        <a href="{{ route('login.google',['provider'=>'google']) }}"><button class="button button-primary w-100">Daftar atau Login dengan Google </button></a>
-                        
+                        <a href="{{ route('login.google',['provider'=>'google']) }}"><button class="button button-primary w-100 mt-1"><img src="" alt=""> Daftar atau Login dengan Google </button></a>
+                        {{-- <a href="{{ route('register') }}"><button class="button button-primary mt-1 w-100">Daftar</button></a> --}}
                     </div>
                 </div>
             </div>

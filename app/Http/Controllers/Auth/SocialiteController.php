@@ -19,25 +19,21 @@ class SocialiteController extends Controller
     {
         try {
             $user = Socialite::driver($provider)->user();
-            return $this->createOrGetUser($user);
+            $finduser = User::where('customerEmail','=', $user->email)->first();
+            if($finduser){
+                // login
+                session(['login.customer' => true]);
+                session(['email.customer' => $finduser->customerEmail]);
+                session(['nama.customer' => $finduser->customerName]);
+                return redirect()->route('home');
+            }else{
+                // redirect register with data
+                return redirect()->route('register')->with(['email.auth' => $user->email]);
+            }
         }catch (Exception $e) {
             return redirect()->back();
         }
     }
 
-    public function createOrGetUser($user)
-    {
-        $user = User::find($user->customerEmail);
-        if($user){
-            // login
-            session(['login.customer' => true]);
-            session(['email.customer' => $user->customerEmail]);
-            session(['nama.customer' => $user->customerName]);
-            return redirect('/administrator/paymentgateway');
-        }else{
-            // redirect register with data
-            // session temp flash
-            return redirect()->route('user.register')->with(['email.auth' => $user->customerEmail, 'nama.auth' =>  $user->customerName]);
-        }
-    }
+    
 }

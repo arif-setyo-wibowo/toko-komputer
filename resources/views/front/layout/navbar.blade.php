@@ -87,13 +87,31 @@
                                         <i class="far fa-check-circle u-s-m-r-9"></i>
                                         Checkout</a>
                                 </li>
+                                
+                                @if(Session::get('login.customer'))
+                                <li>
+                                    <a href="/logout">
+                                        <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
+                                        Logout</a>
+                                </li>
+                                @else
                                 <li>
                                     <a href="/login">
                                         <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
                                         Login / Signup</a>
                                 </li>
+                                @endif
                             </ul>
                         </li>
+                        @if($message = Session::get('nama.customer'))
+                        <li>
+                            <a>{{$message}}
+                                <i class="fas u-s-m-l-9"></i>
+                            </a>
+                        </li>
+                        @else
+                        
+                        @endif    
                     </ul>
                 </nav>
             </div>
