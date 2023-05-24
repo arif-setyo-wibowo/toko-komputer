@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('mouseWarranty',255);
             $table->string('mousePrice', 255);
             $table->string('mouseStock',255);
+            $table->string('mouseImage', 255);
             $table->timestamps();
         });
     }

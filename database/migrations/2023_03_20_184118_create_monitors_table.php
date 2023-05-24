@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('monitorWarranty',255);
             $table->string('monitorPrice', 255);
             $table->string('monitorStock',255);
+            $table->string('monitorImage', 255);
             $table->timestamps();
         });
     }

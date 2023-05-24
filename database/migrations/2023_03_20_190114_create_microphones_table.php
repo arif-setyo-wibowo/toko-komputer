@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('micWarranty',255);
             $table->string('micPrice', 255);
             $table->string('micStock',255);
+            $table->string('micImage', 255);
             $table->timestamps();
         });
     }

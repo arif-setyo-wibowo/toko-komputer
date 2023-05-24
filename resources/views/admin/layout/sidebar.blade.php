@@ -155,6 +155,11 @@
             </a>
           </li>
           <li>
+            <a href="/administrator/cooler">
+              <i class="bi bi-circle"></i><span>Cooler</span>
+            </a>
+          </li>
+          <li>
             <a href="/administrator/earphone">
               <i class="bi bi-circle"></i><span>Earphone</span>
             </a>

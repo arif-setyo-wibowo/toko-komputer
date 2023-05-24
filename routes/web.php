@@ -175,6 +175,15 @@ Route::prefix('administrator')->group(function () {
         Route::post('/update', 'update');
         Route::get('/delete/{id}', 'destroy');
     });
+
+    // Cooler
+    Route::controller(CoolerController::class)->prefix('/cooler')->group(function () {
+        Route::get('/', 'index')->name('administrator.cooler');
+        Route::post('/', 'store');
+        Route::get('/find/{id}', 'edit');
+        Route::post('/update', 'update');
+        Route::get('/delete/{id}', 'destroy');
+    });
     
     // Casing
     Route::controller(CasingController::class)->prefix('/casing')->group(function () {

@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('earWarranty',255);
             $table->string('earPrice', 255);
             $table->string('earStock',255);
+            $table->string('earImage', 255);
             $table->timestamps();
         });
     }

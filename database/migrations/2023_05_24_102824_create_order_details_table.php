@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sliders', function (Blueprint $table) {
-            $table->uuid('sliderId')->primary();
-            $table->string('sliderName',255);
-            $table->string('sliderDateStart',255);
-            $table->string('sliderDateEnd',255);
-            $table->text('sliderDescription');
-            $table->string('sliderImage', 255);
+        Schema::create('order_details', function (Blueprint $table) {
+            $table->uuid('orderDetailId')->primary();
+            $table->foreignUuid('orderId')->references('orderId')->on('orders');
+            $table->string('orderDetailProductId',255);
+            $table->string('orderDetailProductPiece',255);
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sliders');
+        Schema::dropIfExists('order_details');
     }
 };
