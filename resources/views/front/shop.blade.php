@@ -1,6 +1,11 @@
 @extends('front.layout.navbar')
 
+
+
+
 @section('content')
+
+<!-- <link rel="stylesheet" href="{{ asset('front/') }}/css/adminlte.css">  -->
 
     
     <!-- Page Introduction Wrapper -->
@@ -77,104 +82,6 @@
                     </div>
                     <!-- Fetch-Categories-from-Root-Category  /- -->
                     <!-- Filters -->
-                    <!-- Filter-Size -->
-                    <div class="facet-filter-associates">
-                        <h3 class="title-name">Size</h3>
-                        <form class="facet-form" action="#" method="post">
-                            <div class="associate-wrapper">
-                                <input type="checkbox" class="check-box" id="cbs-01">
-                                <label class="label-text" for="cbs-01">Male 2XL
-                                    <span class="total-fetch-items">(2)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-02">
-                                <label class="label-text" for="cbs-02">Male 3XL
-                                    <span class="total-fetch-items">(2)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-03">
-                                <label class="label-text" for="cbs-03">Kids 4
-                                    <span class="total-fetch-items">(0)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-04">
-                                <label class="label-text" for="cbs-04">Kids 6
-                                    <span class="total-fetch-items">(0)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-05">
-                                <label class="label-text" for="cbs-05">Kids 8
-                                    <span class="total-fetch-items">(0)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-06">
-                                <label class="label-text" for="cbs-06">Kids 10
-                                    <span class="total-fetch-items">(2)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-07">
-                                <label class="label-text" for="cbs-07">Kids 12
-                                    <span class="total-fetch-items">(2)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-08">
-                                <label class="label-text" for="cbs-08">Female Small
-                                    <span class="total-fetch-items">(0)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-09">
-                                <label class="label-text" for="cbs-09">Male Small
-                                    <span class="total-fetch-items">(0)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-10">
-                                <label class="label-text" for="cbs-10">Female Medium
-                                    <span class="total-fetch-items">(0)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-11">
-                                <label class="label-text" for="cbs-11">Male Medium
-                                    <span class="total-fetch-items">(0)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-12">
-                                <label class="label-text" for="cbs-12">Female Large
-                                    <span class="total-fetch-items">(0)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-13">
-                                <label class="label-text" for="cbs-13">Male Large
-                                    <span class="total-fetch-items">(0)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-14">
-                                <label class="label-text" for="cbs-14">Female XL
-                                    <span class="total-fetch-items">(0)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-15">
-                                <label class="label-text" for="cbs-15">Male XL
-                                    <span class="total-fetch-items">(0)</span>
-                                </label>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- Filter-Size -->
-                    <!-- Filter-Color -->
-                    <div class="facet-filter-associates">
-                        <h3 class="title-name">Color</h3>
-                        <form class="facet-form" action="#" method="post">
-                            <div class="associate-wrapper">
-                                <input type="checkbox" class="check-box" id="cbs-16">
-                                <label class="label-text" for="cbs-16">Heather Grey
-                                    <span class="total-fetch-items">(1)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-17">
-                                <label class="label-text" for="cbs-17">Black
-                                    <span class="total-fetch-items">(1)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-18">
-                                <label class="label-text" for="cbs-18">White
-                                    <span class="total-fetch-items">(3)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-19">
-                                <label class="label-text" for="cbs-19">Mischka Plain
-                                    <span class="total-fetch-items">(1)</span>
-                                </label>
-                                <input type="checkbox" class="check-box" id="cbs-20">
-                                <label class="label-text" for="cbs-20">Black Bean
-                                    <span class="total-fetch-items">(1)</span>
-                                </label>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- Filter-Color /- -->
                     <!-- Filter-Brand -->
                     <div class="facet-filter-associates">
                         <h3 class="title-name">Brand</h3>
@@ -219,73 +126,7 @@
                             <button type="submit" class="button button-primary">Filter</button>
                         </form>
                     </div>
-                    <!-- Filter-Price /- -->
-                    <!-- Filter-Free-Shipping -->
-                    <div class="facet-filter-by-shipping">
-                        <h3 class="title-name">Shipping</h3>
-                        <form class="facet-form" action="#" method="post">
-                            <input type="checkbox" class="check-box" id="cb-free-ship">
-                            <label class="label-text" for="cb-free-ship">Free Shipping</label>
-                        </form>
-                    </div>
-                    <!-- Filter-Free-Shipping /- -->
-                    <!-- Filter-Rating -->
-                    <div class="facet-filter-by-rating">
-                        <h3 class="title-name">Rating</h3>
-                        <div class="facet-form">
-                            <!-- 5 Stars -->
-                            <div class="facet-link">
-                                <div class="item-stars">
-                                    <div class='star'>
-                                        <span style='width:76px'></span>
-                                    </div>
-                                </div>
-                                <span class="total-fetch-items">(0)</span>
-                            </div>
-                            <!-- 5 Stars /- -->
-                            <!-- 4 & Up Stars -->
-                            <div class="facet-link">
-                                <div class="item-stars">
-                                    <div class='star'>
-                                        <span style='width:60px'></span>
-                                    </div>
-                                </div>
-                                <span class="total-fetch-items">& Up (5)</span>
-                            </div>
-                            <!-- 4 & Up Stars /- -->
-                            <!-- 3 & Up Stars -->
-                            <div class="facet-link">
-                                <div class="item-stars">
-                                    <div class='star'>
-                                        <span style='width:45px'></span>
-                                    </div>
-                                </div>
-                                <span class="total-fetch-items">& Up (0)</span>
-                            </div>
-                            <!-- 3 & Up Stars /- -->
-                            <!-- 2 & Up Stars -->
-                            <div class="facet-link">
-                                <div class="item-stars">
-                                    <div class='star'>
-                                        <span style='width:30px'></span>
-                                    </div>
-                                </div>
-                                <span class="total-fetch-items">& Up (0)</span>
-                            </div>
-                            <!-- 2 & Up Stars /- -->
-                            <!-- 1 & Up Stars -->
-                            <div class="facet-link">
-                                <div class="item-stars">
-                                    <div class='star'>
-                                        <span style='width:15px'></span>
-                                    </div>
-                                </div>
-                                <span class="total-fetch-items">& Up (0)</span>
-                            </div>
-                            <!-- 1 & Up Stars /- -->
-                        </div>
-                    </div>
-                    <!-- Filter-Rating -->
+                    <!-- Filter-Price /- -->                    
                     <!-- Filters /- -->
                 </div>
                 <!-- Shop-Left-Side-Bar-Wrapper /- -->
@@ -335,48 +176,28 @@
                             <div class="item">
                                 <div class="image-container">
                                     <a class="item-img-wrapper-link" href="single-product.html">
-                                        <img class="img-fluid" src="images/product/product@3x.jpg" alt="Product">
+                                        <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
                                     </a>
-                                    <div class="item-action-behaviors">
-                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
-                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                        <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                        <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                    </div>
                                 </div>
                                 <div class="item-content">
                                     <div class="what-product-is">
-                                        <ul class="bread-crumb">
-                                            <li class="has-separator">
-                                                <a href="shop-v1-root-category.html">Men's</a>
-                                            </li>
-                                            <li class="has-separator">
-                                                <a href="shop-v2-sub-category.html">Tops</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-v3-sub-sub-category.html">Hoodies</a>
-                                            </li>
-                                        </ul>
-                                        <h6 class="item-title">
-                                            <a href="single-product.html">Casual Hoodie Full Cotton</a>
-                                        </h6>
+                                        <h4 class="">
+                                            <a href="single-product.html">iGame GeForce RTX 4090 24GB GDDR6X Vulcan</a>
+                                        </h4>
                                         <div class="item-description">
-                                            <p>This hoodie is full cotton. It includes a muff sewn onto the lower front, and (usually) a drawstring to adjust the hood opening. Throughout the U.S., it is common for middle-school, high-school, and college students to wear this sweatshirts—with or without hoods—that display their respective school names or mascots across the chest, either as part of a uniform or personal preference.
+                                            <p>This hoodie is full cotton. or middle-school, high-school, and college students to wear this sweatshirts—with or without hoods—that display their respective school names or mascots across the chest, either as part of a uniform or personal preference.
                                             </p>
-                                        </div>
-                                        <div class="item-stars">
-                                            <div class='star' title="4.5 out of 5 - based on 23 Reviews">
-                                                <span style='width:67px'></span>
-                                            </div>
-                                            <span>(23)</span>
                                         </div>
                                     </div>
                                     <div class="price-template">
                                         <div class="item-new-price">
-                                            $55.00
+                                            Rp.2.000.000
                                         </div>
-                                        <div class="item-old-price">
-                                            $60.00
+                                        <div class="item-old-price text-decoration-none">
+                                        <div class="item-action-behaviors">
+                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                                        <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
+                                    </div>
                                         </div>
                                     </div>
                                 </div>
@@ -384,160 +205,7 @@
                                     <span>NEW</span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                            <div class="item">
-                                <div class="image-container">
-                                    <a class="item-img-wrapper-link" href="single-product.html">
-                                        <img class="img-fluid" src="images/product/product@3x.jpg" alt="Product">
-                                    </a>
-                                    <div class="item-action-behaviors">
-                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
-                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                        <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                        <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                    </div>
-                                </div>
-                                <div class="item-content">
-                                    <div class="what-product-is">
-                                        <ul class="bread-crumb">
-                                            <li class="has-separator">
-                                                <a href="shop-v1-root-category.html">Men's</a>
-                                            </li>
-                                            <li class="has-separator">
-                                                <a href="shop-v2-sub-category.html">Tops</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-v3-sub-sub-category.html">T-Shirts</a>
-                                            </li>
-                                        </ul>
-                                        <h6 class="item-title">
-                                            <a href="single-product.html">Mischka Plain Men T-Shirt</a>
-                                        </h6>
-                                        <div class="item-description">
-                                            <p>T-shirts with bold slogans were popular in the UK in the 1980s. T-shirts were originally worn as undershirts, but are now worn frequently as the only piece of clothing on the top half of the body, other than possibly a brassiere or, rarely, a waistcoat (vest). T-shirts have also become a medium for self-expression and advertising, with any imaginable combination of words, art and photographs on display.</p>
-                                        </div>
-                                        <div class="item-stars">
-                                            <div class='star' title="4.5 out of 5 - based on 23 Reviews">
-                                                <span style='width:67px'></span>
-                                            </div>
-                                            <span>(23)</span>
-                                        </div>
-                                    </div>
-                                    <div class="price-template">
-                                        <div class="item-new-price">
-                                            $55.00
-                                        </div>
-                                        <div class="item-old-price">
-                                            $60.00
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                            <div class="item">
-                                <div class="image-container">
-                                    <a class="item-img-wrapper-link" href="single-product.html">
-                                        <img class="img-fluid" src="images/product/product@3x.jpg" alt="Product">
-                                    </a>
-                                    <div class="item-action-behaviors">
-                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
-                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                        <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                        <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                    </div>
-                                </div>
-                                <div class="item-content">
-                                    <div class="what-product-is">
-                                        <ul class="bread-crumb">
-                                            <li class="has-separator">
-                                                <a href="shop-v1-root-category.html">Men's</a>
-                                            </li>
-                                            <li class="has-separator">
-                                                <a href="shop-v2-sub-category.html">Tops</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-v4-filter-as-category.html">T-Shirts</a>
-                                            </li>
-                                        </ul>
-                                        <h6 class="item-title">
-                                            <a href="single-product.html">Black Bean Plain Men T-Shirt</a>
-                                        </h6>
-                                        <div class="item-description">
-                                            <p>T-shirts with bold slogans were popular in the UK in the 1980s. T-shirts were originally worn as undershirts, but are now worn frequently as the only piece of clothing on the top half of the body, other than possibly a brassiere or, rarely, a waistcoat (vest). T-shirts have also become a medium for self-expression and advertising, with any imaginable combination of words, art and photographs on display.</p>
-                                        </div>
-                                        <div class="item-stars">
-                                            <div class='star' title="4.5 out of 5 - based on 23 Reviews">
-                                                <span style='width:67px'></span>
-                                            </div>
-                                            <span>(23)</span>
-                                        </div>
-                                    </div>
-                                    <div class="price-template">
-                                        <div class="item-new-price">
-                                            $55.00
-                                        </div>
-                                        <div class="item-old-price">
-                                            $60.00
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                            <div class="item">
-                                <div class="image-container">
-                                    <a class="item-img-wrapper-link" href="single-product.html">
-                                        <img class="img-fluid" src="images/product/product@3x.jpg" alt="Product">
-                                    </a>
-                                    <div class="item-action-behaviors">
-                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
-                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                        <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                        <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                    </div>
-                                </div>
-                                <div class="item-content">
-                                    <div class="what-product-is">
-                                        <ul class="bread-crumb">
-                                            <li class="has-separator">
-                                                <a href="shop-v1-root-category.html">Men's</a>
-                                            </li>
-                                            <li class="has-separator">
-                                                <a href="shop-v2-sub-category.html">Tops</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-v3-sub-sub-category.html">Suits</a>
-                                            </li>
-                                        </ul>
-                                        <h6 class="item-title">
-                                            <a href="single-product.html">Black Maire Full Men Suit</a>
-                                        </h6>
-                                        <div class="item-description">
-                                            <p>British dandy Beau Brummell redefined and adapted this style, then popularised it, leading European men to wearing well-cut, tailored clothes, adorned with carefully knotted neckties. The simplicity of the new clothes and their sombre colours contrasted strongly with the extravagant, foppish styles just before. Brummell's influence introduced the modern era of men's clothing which now includes the modern suit and necktie.</p>
-                                        </div>
-                                        <div class="item-stars">
-                                            <div class='star' title="4.5 out of 5 - based on 23 Reviews">
-                                                <span style='width:67px'></span>
-                                            </div>
-                                            <span>(23)</span>
-                                        </div>
-                                    </div>
-                                    <div class="price-template">
-                                        <div class="item-new-price">
-                                            $55.00
-                                        </div>
-                                        <div class="item-old-price">
-                                            $60.00
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tag sale">
-                                    <span>SALE</span>
-                                </div>
-                            </div>
-                        </div>
+                        </div>  
                     </div>
                     <!-- Row-of-Product-Container /- -->
                 </div>
@@ -545,6 +213,6 @@
             </div>
         </div>
     </div>
-    <!-- Shop-Page /- -->
+    <!-- Shop-Page /- -
 
 @endsection

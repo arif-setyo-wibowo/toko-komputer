@@ -35,8 +35,18 @@
     <link rel="stylesheet" href="{{ asset('front/') }}/css/bundle.css">
     <link rel="stylesheet" href="{{ asset('front/') }}/css/select2.min.css">
     <link rel="stylesheet" href="{{ asset('front/') }}/css/select2-bootstrap4.min.css">
+<<<<<<< HEAD
+
+    
+    
+=======
     <link rel="stylesheet" href="{{ asset('front/') }}/css/adminlte.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="{{ asset('front/') }}/css/sweetalert2.min.css">
+=======
+
+>>>>>>> 11296c839532b81b20868baf04c87a54f863694e
+>>>>>>> a9400c4b8d16dc7766048f01628dc2ae0ad2d189
 </head>
 
 <body>
@@ -1428,4 +1438,8 @@
 
 </body>
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 11296c839532b81b20868baf04c87a54f863694e
 </html>
