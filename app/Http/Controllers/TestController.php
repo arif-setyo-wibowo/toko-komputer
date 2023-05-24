@@ -18,29 +18,27 @@ class TestController extends Controller
     public function index(Request $request)
     {
 
-        // $request->session()->put('idCustomer', '993856fb-f920-4dce-8c17-b7a67e7ae7c0');
-        // $request->session()->put('email', 'okkyfirman@gmail.com');
-        // $cart = $request->session()->get('cart', []);
-        // $subtotal = 0;
+        $request->session()->put('idCustomer', '993a8474-fdc5-4cfd-9054-cb11bac89502');
+        $request->session()->put('email', 'okkyfirman@gmail.com');
+        $cart = $request->session()->get('cart.items', []);
+        $subtotal = 0;
 
-        // foreach ($cart as $item) {
-        //     $subtotal += $item['product_price'] * $item['quantity'];
-        // }
+        foreach ($cart as $item) {
+            $subtotal += $item['product_price'] * $item['quantity'];
+        }
 
-        // //$request->session()->forget('cart');
-        // $data=[
-        //     'title' => "Payment Gateway",
-        //     'pelanggan' => User::all(),
-        //     'storage' => Storage::with("brand")->get(),
-        //     'memori' => Memory::with("brand")->get(),
-        //     'casing' => ComputerCase::with("brand")->get(),
-        //     'cart' => $cart,
-        //     'subtotal' => $subtotal
-        // ];
+        //$request->session()->forget('cart');
+        $data=[
+            'title' => "Payment Gateway",
+            'pelanggan' => User::all(),
+            'storage' => Storage::with("brand")->get(),
+            'memori' => Memory::with("brand")->get(),
+            'casing' => ComputerCase::with("brand")->get(),
+            'cart' => $cart,
+            'subtotal' => $subtotal
+        ];
 
-        // return view('admin/paymentgateway',$data);
-
-        echo "<h1>MAINTANCE</h1>";
+        return view('admin/paymentgateway',$data);
     }
 
     /**
@@ -54,7 +52,7 @@ class TestController extends Controller
         $product = DB::table('products')->where('productId', $productId)->first();
         print_r($product);
 
-        $cart = $request->session()->get('cart', []);
+        $cart = $request->session()->get('cart.items', []);
 
         if (isset($cart[$productId])) {
             // Produk sudah ada di dalam keranjang, tambahkan jumlahnya
@@ -69,7 +67,7 @@ class TestController extends Controller
             ];
         }
 
-        $request->session()->put('cart', $cart);
+        $request->session()->put('cart.items', $cart);
 
         return redirect()->route('paymentgateway.index')->with(['success' => 'Tambah Data Berhasil']);
     }
