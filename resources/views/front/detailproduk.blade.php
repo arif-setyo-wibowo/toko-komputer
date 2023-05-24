@@ -34,7 +34,7 @@
                         <div class="section-1-title-breadcrumb-rating">
                             <div class="product-title">
                                 <h1>
-                                    <a href="single-product.html">{{ $item['Name'] }}</a>
+                                    {{ $item['Name'] }}
                                 </h1>
                             </div>
                             {{-- <ul class="bread-crumb">
