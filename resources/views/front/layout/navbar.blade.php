@@ -35,7 +35,8 @@
 
     <link rel="stylesheet" href="{{ asset('front/') }}/css/select2.min.css">
     <link rel="stylesheet" href="{{ asset('front/') }}/css/select2-bootstrap4.min.css">
-    <link rel="stylesheet" href="{{ asset('front/') }}/css/adminlte.css">
+
+    
     
 </head>
 
@@ -1329,4 +1330,6 @@ ga('send', 'pageview')
     })
 </script>
 </body>
+
+
 </html>
