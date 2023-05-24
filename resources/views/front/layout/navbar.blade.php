@@ -33,11 +33,10 @@
     <link rel="stylesheet" href="{{ asset('front/') }}/css/utility.css">
     <!-- Main -->
     <link rel="stylesheet" href="{{ asset('front/') }}/css/bundle.css">
-
     <link rel="stylesheet" href="{{ asset('front/') }}/css/select2.min.css">
     <link rel="stylesheet" href="{{ asset('front/') }}/css/select2-bootstrap4.min.css">
     <link rel="stylesheet" href="{{ asset('front/') }}/css/adminlte.css">
-
+    <link rel="stylesheet" href="{{ asset('front/') }}/css/sweetalert2.min.css">
 </head>
 
 <body>
@@ -1416,6 +1415,7 @@
     <script type="text/javascript" src="{{ asset('front/') }}/js/app.js"></script>
 
     <script type="text/javascript" src="{{ asset('front/') }}/js/select2.full.min.js"></script>
+    <script type="text/javascript" src="{{ asset('front/') }}/js/sweetalert2.all.min.js"></script>
 
     <script>
         $(function() {
@@ -1425,6 +1425,7 @@
             })
         })
     </script>
+
 </body>
 
 </html>

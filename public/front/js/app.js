@@ -748,6 +748,14 @@ $(document).ready(function () {
     // TAMBAH KE KERANJANG
     const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
 
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 1700,
+        timerProgressBar: true,
+    })
+
     // Fungsi untuk menambahkan produk ke keranjang
     function addToCart(productId) {
         var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -761,16 +769,16 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (response) {
                 if (response.success) {
-                    alert('Item berhasil ditambahkan ke keranjang!');
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Dimasukkan ke Keranjang'
+                    })
                 } else {
-                    alert('Gagal menambahkan item ke keranjang.');
+                    Toast.fire({
+                        icon: 'error',
+                        title: 'Error!'
+                    })
                 }
-            },
-            error: function (xhr, status, error) {
-                console.log(xhr.responseText);
-                console.log(status);
-                console.log(error);
-                // Tindakan yang sesuai dengan kesalahan
             }
         });
     }
