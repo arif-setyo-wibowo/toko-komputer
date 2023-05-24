@@ -33,6 +33,7 @@ use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\RakitPcController;
 use App\Http\Controllers\Front\DetailProdukController;
 use App\Http\Controllers\Front\CartController;
+use App\Http\Controllers\Front\DetailController;
 use App\Http\Controllers\Front\ShopController;
 use App\Http\Controllers\MemoryController;
 use App\Http\Controllers\MotherboardController;
@@ -61,6 +62,7 @@ Route::get('/shop', [ShopController::class, 'index']);
 
 // DETAIL PRODUK
 // Route::get('/detailproduk', [DetailProdukController::class, 'index']);
+Route::get('/detailproduk/{id}', [DetailController::class, 'index']);
 Route::get('/detailproduk/computer_cases/{id}', [ComputerCaseController::class, 'detail']);
 Route::get('/detailproduk/motherboards/{id}', [MotherboardController::class, 'detail']);
 Route::get('/detailproduk/graphic_cards/{id}', [GraphicCardController::class, 'detail']);
