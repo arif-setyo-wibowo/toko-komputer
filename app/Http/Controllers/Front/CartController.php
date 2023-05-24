@@ -5,17 +5,27 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Identity;
+use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $cart = $request->session()->get('cart.items', []);
+        $subtotal = 0;
+
+        foreach ($cart as $item) {
+            $subtotal += $item['product_price'] * $item['quantity'];
+        }
+
        $data=[
             'title' => "Cart",
-            'identitas' => Identity::all()
+            'identitas' => Identity::all(),
+            'cart' => $cart,
+            'subtotal' => $subtotal
         ];
 
         return view('front/cart',$data);
@@ -24,15 +34,52 @@ class CartController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function addToCart(Request $request)
     {
-        //
+        $productId = $request->input('productId');
+        $quantity = 1;
+
+        // Dapatkan produk dari database berdasarkan $productId jika diperlukan
+        $product = DB::table('products')->where('productId', $productId)->first();
+    
+        // Buat item produk dengan data yang diperlukan
+        $item = [
+            'product_id' => $productId,
+            'product_name' => $product->productName,
+            'product_price' => $product->productPrice,
+            'quantity' => $quantity,
+        ];
+    
+        $cartItems = $request->session()->get('cart.items', []);
+    
+        // Periksa apakah ID produk sudah ada dalam keranjang
+        $itemIndex = -1;
+        foreach ($cartItems as $index => $cartItem) {
+            if ($cartItem['product_id'] == $productId) {
+                $itemIndex = $index;
+                break;
+            }
+        }
+    
+        // Jika ID produk sudah ada, tambahkan jumlah (quantity) saja
+        if ($itemIndex >= 0) {
+            $cartItems[$itemIndex]['quantity'] += 1;
+        } else {
+            // Jika ID produk belum ada, tambahkan item ke keranjang
+            $cartItems[] = $item;
+        }
+    
+        // Simpan item-item keranjang kembali ke session
+        $request->session()->put('cart.items', $cartItems);
+    
+        return response()->json(['success' => true]);
+
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store()
     {
         //
     }

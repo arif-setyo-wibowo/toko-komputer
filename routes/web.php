@@ -59,6 +59,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/rakitpc', [RakitPcController::class, 'index']);
 Route::get('/cart', [CartController::class, 'index']);
 Route::get('/shop', [ShopController::class, 'index']);
+Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add.cart');
 
 // DETAIL PRODUK
 // Route::get('/detailproduk', [DetailProdukController::class, 'index']);

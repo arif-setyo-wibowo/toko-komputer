@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Memory;
 use App\Models\User;
 use App\Models\Storage;
+use App\Models\ComputerCase;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Api\MidtransControllers;
 
@@ -17,26 +18,29 @@ class TestController extends Controller
     public function index(Request $request)
     {
 
-        $request->session()->put('idCustomer', '993856fb-f920-4dce-8c17-b7a67e7ae7c0');
-        $request->session()->put('email', 'okkyfirman@gmail.com');
-        $cart = $request->session()->get('cart', []);
-        $subtotal = 0;
+        // $request->session()->put('idCustomer', '993856fb-f920-4dce-8c17-b7a67e7ae7c0');
+        // $request->session()->put('email', 'okkyfirman@gmail.com');
+        // $cart = $request->session()->get('cart', []);
+        // $subtotal = 0;
 
-        foreach ($cart as $item) {
-            $subtotal += $item['product_price'] * $item['quantity'];
-        }
+        // foreach ($cart as $item) {
+        //     $subtotal += $item['product_price'] * $item['quantity'];
+        // }
 
-        //$request->session()->forget('cart');
-        $data=[
-            'title' => "Payment Gateway",
-            'pelanggan' => User::all(),
-            'storage' => Storage::with("brand")->get(),
-            'memori' => Memory::with("brand")->get(),
-            'cart' => $cart,
-            'subtotal' => $subtotal
-        ];
+        // //$request->session()->forget('cart');
+        // $data=[
+        //     'title' => "Payment Gateway",
+        //     'pelanggan' => User::all(),
+        //     'storage' => Storage::with("brand")->get(),
+        //     'memori' => Memory::with("brand")->get(),
+        //     'casing' => ComputerCase::with("brand")->get(),
+        //     'cart' => $cart,
+        //     'subtotal' => $subtotal
+        // ];
 
-        return view('admin/paymentgateway',$data);
+        // return view('admin/paymentgateway',$data);
+
+        echo "<h1>MAINTANCE</h1>";
     }
 
     /**

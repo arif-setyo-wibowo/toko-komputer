@@ -149,7 +149,7 @@ $(function () {
      */
     const MouseEnterFunctionForMegaMenu = function () {
         // I also Hope elements are appropriate assign
-        $vMenu.css({'z-index': settings.zIndexNumber});
+        $vMenu.css({ 'z-index': settings.zIndexNumber });
         // Show Back Drop
         showBackDrop($backDrop);
     };
@@ -158,7 +158,7 @@ $(function () {
      */
     const MouseLeaveFunctionForMegaMenu = function () {
         // I also Hope elements are appropriate assign
-        $vMenu.css({'z-index': ''});
+        $vMenu.css({ 'z-index': '' });
         // Remove Back Drop
         removeBackDrop($backDrop);
     };
@@ -197,12 +197,12 @@ $(function () {
                     $searchFormWrapper = $('.form-searchbox');
                     $searchFormElement.focus(function () {
                         // I Hope elements are appropriate assign
-                        $searchFormWrapper.css({'position': 'relative', 'z-index': settings.zIndexNumber});
+                        $searchFormWrapper.css({ 'position': 'relative', 'z-index': settings.zIndexNumber });
                         // Show Back Drop
                         showBackDrop($backDrop);
                     }).blur(function () {
                         // I Hope elements are appropriate assign
-                        $searchFormWrapper.css({'position': '', 'z-index': ''});
+                        $searchFormWrapper.css({ 'position': '', 'z-index': '' });
                         // Remove Back Drop
                         removeBackDrop($backDrop);
                     });
@@ -240,7 +240,7 @@ $(function () {
      * Attach Click Event on Quantity buttons
      */
     const attachClickQuantityButton = function () {
-        let $currentTextField,currentVal;
+        let $currentTextField, currentVal;
         $('.plus-a').each(function () {
             $(this).on('click', function () {
                 let $currentTextField = $(this).prev();
@@ -325,7 +325,7 @@ $(function () {
         attachClickOnMiniCart();
         // Attach Click Event on VMenu
         attachClickOnVMenu();
-       // Manually Restart Pace-js when we change any tab
+        // Manually Restart Pace-js when we change any tab
         manuallyRestartProgress();
         // Attach Click Event on Quantity buttons
         attachClickQuantityButton();
@@ -343,10 +343,10 @@ $(function () {
      * Shows Newsletter Modal After 5sec = 5000milliseconds
      */
     const showNewsletterModal = function () {
-            setTimeout(function () {
-                // Manually opens a modal
-                $('#newsletter-modal').modal('show');
-            }, 5000);
+        setTimeout(function () {
+            // Manually opens a modal
+            $('#newsletter-modal').modal('show');
+        }, 5000);
     };
     /**
      * Initialize Main Slider
@@ -356,7 +356,7 @@ $(function () {
         $owl.owlCarousel({
             items: 1,
             autoplay: true,
-			autoplayTimeout: 8000,
+            autoplayTimeout: 8000,
             loop: false,
             dots: false,
             rewind: true, // Go backwards when the boundary has reached
@@ -374,8 +374,8 @@ $(function () {
     const productSlider = function () {
         // Get Collection of all Product Slider
         let $productsSlider = $('.products-slider');
-        $productsSlider.on('initialize.owl.carousel',function () {
-           $(this).closest('.slider-fouc').removeAttr('class');
+        $productsSlider.on('initialize.owl.carousel', function () {
+            $(this).closest('.slider-fouc').removeAttr('class');
         }).each(function () {
             let thisInstance = $(this);
             let itemPerLine = thisInstance.data('item');
@@ -411,7 +411,7 @@ $(function () {
     const SpecificCategorySlider = function () {
         // Get Collection of all Product Slider
         let $specificCategorySlider = $('.specific-category-slider');
-        $specificCategorySlider.on('initialize.owl.carousel',function () {
+        $specificCategorySlider.on('initialize.owl.carousel', function () {
             $(this).closest('.slider-fouc').removeAttr('class');
         }).each(function () {
             let thisInstance = $(this);
@@ -433,7 +433,7 @@ $(function () {
                         items: 2,
                     },
                     991: {
-                        items: itemPerLine -1,
+                        items: itemPerLine - 1,
                     },
                     1200: {
                         items: itemPerLine,
@@ -466,7 +466,7 @@ $(function () {
         let itemPerLine = thisInstance.data('item');
         thisInstance.owlCarousel({
             autoplay: true,
-			autoplayTimeout: 8000,
+            autoplayTimeout: 8000,
             loop: false,
             dots: false,
             rewind: true,
@@ -504,9 +504,9 @@ $(function () {
     /**
      * Check everything including DOM elements and images loaded
      */
-    $(window).on('load',function () {
+    $(window).on('load', function () {
         showNewsletterModal();
-       $('.ph-item').removeClass('ph-item');
+        $('.ph-item').removeClass('ph-item');
     });
 
 })(jQuery, window, document);
@@ -544,7 +544,7 @@ $(function () {
 
     $(function () {
         // GoogleMap Init
-        if ($('#map').length !== 0 ) {
+        if ($('#map').length !== 0) {
             try {
                 google.maps.event.addDomListener(window, 'load', googleinitMap);
             } catch (e) {
@@ -578,9 +578,9 @@ $(function () {
         let comment;
         let currentVal;
         // On Every key type
-        $ratingField.on('keyup',function () {
+        $ratingField.on('keyup', function () {
             // Reset Star Width
-            $starWidth.css('width',0);
+            $starWidth.css('width', 0);
             // Reset Comment
             $starComment.text('');
             // Always remember when when you enter any number and immediately enter some strings then parseFloat
@@ -598,27 +598,27 @@ $(function () {
              * By default NaN (e.g. the result of 1/0) is false so its convert to true and expression
              * becomes true.
              */
-            if ( !currentVal || currentVal === '' || currentVal === 'NaN' || currentVal === 0) {
+            if (!currentVal || currentVal === '' || currentVal === 'NaN' || currentVal === 0) {
                 // if value is NaN
                 currentVal = 0;
-                $starWidth.css('width',0);
+                $starWidth.css('width', 0);
                 $starComment.text('');
             } else {
-                if ( (currentVal >=1) && (currentVal <= ratingthresholdNumber)) {
+                if ((currentVal >= 1) && (currentVal <= ratingthresholdNumber)) {
 
-                    if (currentVal === 1 ) {
+                    if (currentVal === 1) {
                         comment = 'I hate it.';
                     }
-                    else if(currentVal === 2 ) {
+                    else if (currentVal === 2) {
                         comment = "I don't like it.";
                     }
-                    else if(currentVal === 3 ) {
+                    else if (currentVal === 3) {
                         comment = "It's OK.";
                     }
-                    else if(currentVal === 4 ) {
+                    else if (currentVal === 4) {
                         comment = "I like it.";
                     }
-                    else if(currentVal === 5 ) {
+                    else if (currentVal === 5) {
                         comment = "It's Perfect.";
                     }
                     // Precise Float value to only one decimal. example: 2.454544 to 2.5
@@ -628,7 +628,7 @@ $(function () {
                     // Remove decimals from a variable, Convert float value to downward
                     newStarWidth = Math.floor(newStarWidth);
                     // Update Star Width
-                    $starWidth.css('width',newStarWidth);
+                    $starWidth.css('width', newStarWidth);
                     // Add Comment
                     $starComment.text(comment);
                 }
@@ -678,9 +678,9 @@ $(function () {
                 range: true,
                 min: queryMin,
                 max: queryMax,
-                values: [ defaultLow, defaultHigh ],
+                values: [defaultLow, defaultHigh],
                 slide: function (event, ui) {
-                    let result = '<div class="price-from">'+ currecyUnit + ui.values[ 0 ] + '</div>\n<div class="price-to">' + currecyUnit + ui.values[ 1 ] + '</div>\n';
+                    let result = '<div class="price-from">' + currecyUnit + ui.values[0] + '</div>\n<div class="price-to">' + currecyUnit + ui.values[1] + '</div>\n';
                     $instance.parent().find('.amount-result').html(result);
                 }
             });
@@ -692,13 +692,13 @@ $(function () {
      * Attach Click event to Grid & List
      */
     const attachClickGridAndList = function () {
-        $('#list-anchor').on('click',function () {
+        $('#list-anchor').on('click', function () {
             $(this).addClass('active');
             $(this).next().removeClass('active');
             $shopProductContainer.removeClass('grid-style');
             $shopProductContainer.addClass('list-style');
         });
-        $('#grid-anchor').on('click',function () {
+        $('#grid-anchor').on('click', function () {
             $(this).addClass('active');
             $(this).prev().removeClass('active');
             $shopProductContainer.removeClass('list-style');
@@ -709,9 +709,9 @@ $(function () {
      * All Categories Functionality
      */
     const searchFetchAllCategoriesFunctionality = function () {
-        $searchFetchAllbtn.on('click',function () {
+        $searchFetchAllbtn.on('click', function () {
             $(this).toggleClass('js-open');
-             $(this).next('ul').stop(true,true).slideToggle();
+            $(this).next('ul').stop(true, true).slideToggle();
         });
     };
     /**
@@ -721,9 +721,9 @@ $(function () {
         $('.associate-wrapper').each(function () {
             $(this).slimScroll({
                 height: 'auto',
-                railClass : 'grooverScrollRail',// default CSS class of the slimscroll rail
-                barClass : 'grooverScrollBar',// default CSS class of the slimscroll bar
-                wrapperClass : 'grooverScrollDiv',// default CSS class of the slimscroll wrapper
+                railClass: 'grooverScrollRail',// default CSS class of the slimscroll rail
+                barClass: 'grooverScrollBar',// default CSS class of the slimscroll bar
+                wrapperClass: 'grooverScrollDiv',// default CSS class of the slimscroll wrapper
             });
         });
     };
@@ -740,3 +740,74 @@ $(function () {
     });
 
 })(jQuery, window, document);
+
+
+// KERANJANG
+$(document).ready(function () {
+
+    // TAMBAH KE KERANJANG
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+    // Fungsi untuk menambahkan produk ke keranjang
+    function addToCart(productId) {
+        var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        $.ajax({
+            url: "/add-to-cart",
+            type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': csrfToken
+            },
+            data: { productId: productId },
+            dataType: 'json',
+            success: function (response) {
+                if (response.success) {
+                    alert('Item berhasil ditambahkan ke keranjang!');
+                } else {
+                    alert('Gagal menambahkan item ke keranjang.');
+                }
+            },
+            error: function (xhr, status, error) {
+                console.log(xhr.responseText);
+                console.log(status);
+                console.log(error);
+                // Tindakan yang sesuai dengan kesalahan
+            }
+        });
+    }
+
+    // Fungsi untuk memperbarui tampilan keranjang
+    function updateCartView() {
+        const cartItemsElement = document.getElementById('cart-items');
+
+        // Bersihkan isi keranjang sebelum memperbarui
+        cartItemsElement.innerHTML = '';
+
+        // Tampilkan setiap item di keranjang
+        cart.forEach(item => {
+            const product = getProductById(item.productId);
+
+            // Buat elemen li untuk setiap item
+            const li = document.createElement('li');
+            li.textContent = `${product.name} - Quantity: ${item.quantity}`;
+            cartItemsElement.appendChild(li);
+        });
+    }
+
+    // Fungsi untuk mendapatkan data produk berdasarkan ID
+    function getProductById(productId) {
+        // Ganti dengan logika Anda untuk mendapatkan data produk dari sumber data (misalnya, server)
+
+        // Contoh data produk
+        const products = [
+            { id: 1, name: 'Product 1', price: 10 },
+            { id: 2, name: 'Product 2', price: 15 },
+        ];
+
+        return products.find(product => product.id === productId);
+    }
+
+    addToCartButtons.forEach(button => {
+        const productId = button.getAttribute('data-product-id');
+        button.addEventListener('click', () => addToCart(productId));
+    });
+});
