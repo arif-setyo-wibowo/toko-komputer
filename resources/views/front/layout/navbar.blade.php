@@ -176,10 +176,10 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a id="mini-cart-trigger">
+                                        <a href="/cart">
                                             <i class="ion ion-md-basket"></i>
-                                            <span class="item-counter">4</span>
-                                            <span class="item-price">$220.00</span>
+                                            <span class="item-counter"
+                                                id="cart-item-count">{{ $countCart }}</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -197,7 +197,7 @@
                 <div class="fixed-responsive-wrapper">
                     <a href="wishlist.html">
                         <i class="far fa-heart"></i>
-                        <span class="fixed-item-counter">4</span>
+                        <span class="fixed-item-counter" id="cart-item-count">{{ $countCart }}</span>
                     </a>
                 </div>
             </div>
@@ -1103,7 +1103,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12 u-s-p-x-0">
                             <div class="newsletter-image">
                                 <a href="shop-v1-root-category.html" class="banner-hover effect-dark-opacity">
-                                    <img class="img-fluid" src="{{ asset('front/') }}/images/banners/newsletter-1.jpg" alt="Newsletter Image">
+                                    <img class="img-fluid" src="{ asset('front/') }}/images/banners/newsletter-1.jpg" alt="Newsletter Image">
                                 </a>
                             </div>
                         </div>
@@ -1143,35 +1143,37 @@
                                 <div class="zoom-area">
                                     <img id="zoom-pro-quick-view" class="img-fluid"
                                         src="{{ asset('front/') }}/images/product/product@4x.jpg"
-                                        data-zoom-image="images/product/product@4x.jpg" alt="Zoom Image">
+                                        data-zoom-image="{{ asset('front/') }}/images/product/product@4x.jpg"
+                                        alt="Zoom Image">
                                     <div id="gallery-quick-view" class="u-s-m-t-10">
-                                        <a class="active" data-image="images/product/product@4x.jpg"
-                                            data-zoom-image="images/product/product@4x.jpg">
+                                        <a class="active"
+                                            data-image="{{ asset('front/') }}/images/product/product@4x.jpg"
+                                            data-zoom-image="{{ asset('front/') }}/images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
-                                        <a data-image="images/product/product@4x.jpg"
-                                            data-zoom-image="images/product/product@4x.jpg">
+                                        <a data-image="{{ asset('front/') }}/images/product/product@4x.jpg"
+                                            data-zoom-image="{{ asset('front/') }}/images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
-                                        <a data-image="images/product/product@4x.jpg"
-                                            data-zoom-image="images/product/product@4x.jpg">
+                                        <a data-image="{{ asset('front/') }}/images/product/product@4x.jpg"
+                                            data-zoom-image="{{ asset('front/') }}/images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
-                                        <a data-image="images/product/product@4x.jpg"
-                                            data-zoom-image="images/product/product@4x.jpg">
+                                        <a data-image="{{ asset('front/') }}/images/product/product@4x.jpg"
+                                            data-zoom-image="{{ asset('front/') }}/images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
-                                        <a data-image="images/product/product@4x.jpg"
-                                            data-zoom-image="images/product/product@4x.jpg">
+                                        <a data-image="{{ asset('front/') }}/images/product/product@4x.jpg"
+                                            data-zoom-image="{{ asset('front/') }}/images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
-                                        <a data-image="images/product/product@4x.jpg"
-                                            data-zoom-image="images/product/product@4x.jpg">
+                                        <a data-image="{{ asset('front/') }}/images/product/product@4x.jpg"
+                                            data-zoom-image="{{ asset('front/') }}/images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
@@ -1383,7 +1385,6 @@
         ga('create', 'UA-XXXXX-Y', 'auto');
         ga('send', 'pageview')
     </script>
-    <script src="{{ asset('front/') }}/https://www.google-analytics.com/analytics.js" async defer></script>
     <!-- Modernizr-JS -->
     <script type="text/javascript" src="{{ asset('front/') }}/js/vendor/modernizr-custom.min.js"></script>
     <!-- NProgress -->

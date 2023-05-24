@@ -14,6 +14,7 @@ class CartController extends Controller
      */
     public function index(Request $request)
     {
+        //$request->session()->forget('cart');
         $cart = $request->session()->get('cart.items', []);
         $subtotal = 0;
 
@@ -22,10 +23,11 @@ class CartController extends Controller
         }
 
        $data=[
-            'title' => "Cart",
+            'title'     => "Cart",
             'identitas' => Identity::all(),
-            'cart' => $cart,
-            'subtotal' => $subtotal
+            'cart'      => $cart,
+            'countCart' => count($cart),
+            'subtotal'  => $subtotal
         ];
 
         return view('front/cart',$data);
@@ -71,17 +73,34 @@ class CartController extends Controller
     
         // Simpan item-item keranjang kembali ke session
         $request->session()->put('cart.items', $cartItems);
+        $cartItemCount = count($request->session()->get('cart.items', []));
     
-        return response()->json(['success' => true]);
+        return response()->json(['success' => true,'cartItemCount' => $cartItemCount]);
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store()
+    public function removeFromCart(Request $request)
     {
-        //
+        $productId = $request->input('productId');
+
+        $cartItems = $request->session()->get('cart.items', []);
+
+        $index = -1;
+        foreach ($cartItems as $key => $item) {
+            if ($item['product_id'] === $productId) {
+                $index = $key;
+                break;
+            }
+        }
+
+        if ($index !== -1) {
+            unset($cartItems[$index]);
+            $request->session()->put('cart.items', $cartItems);
+        }
+
+        $cartItemCount = count($cartItems);
+
+        return response()->json(['success' => true, 'cartItemCount' => $cartItemCount]);
     }
 
     /**

@@ -19,8 +19,9 @@ class DetailController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($productId)
+    public function index($productId,Request $request)
     {
+        $cart = $request->session()->get('cart.items', []);
         $product = DB::table('products')->where('productId', $productId)->first();
         if ($product->source_table == "computer_cases") {
             $data = $this->computer_case($productId);
@@ -38,6 +39,7 @@ class DetailController extends Controller
             $data = $this->storage($productId);
         }
 
+        $data['countCart'] = count($cart);
         return view('front/detailproduk', $data);
     }
 
