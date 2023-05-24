@@ -1,6 +1,7 @@
 @extends('front.layout.navbar')
 
 @section('content')
+ <!-- <link rel="stylesheet" href="{{ asset('front/') }}/css/adminlte.css">  -->
 
     
     <!-- Page Introduction Wrapper -->

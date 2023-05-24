@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="{{ asset('front/') }}/css/bundle.css">
     <link rel="stylesheet" href="{{ asset('front/') }}/css/select2.min.css">
     <link rel="stylesheet" href="{{ asset('front/') }}/css/select2-bootstrap4.min.css">
-    <link rel="stylesheet" href="{{ asset('front/') }}/css/adminlte.css">
+    <!-- <link rel="stylesheet" href="{{ asset('front/') }}/css/adminlte.css"> -->
     <link rel="stylesheet" href="{{ asset('front/') }}/css/sweetalert2.min.css">
 </head>
 
@@ -1143,37 +1143,35 @@
                                 <div class="zoom-area">
                                     <img id="zoom-pro-quick-view" class="img-fluid"
                                         src="{{ asset('front/') }}/images/product/product@4x.jpg"
-                                        data-zoom-image="{{ asset('front/') }}/images/product/product@4x.jpg"
-                                        alt="Zoom Image">
+                                        data-zoom-image="images/product/product@4x.jpg" alt="Zoom Image">
                                     <div id="gallery-quick-view" class="u-s-m-t-10">
-                                        <a class="active"
-                                            data-image="{{ asset('front/') }}/images/product/product@4x.jpg"
-                                            data-zoom-image="{{ asset('front/') }}/images/product/product@4x.jpg">
+                                        <a class="active" data-image="images/product/product@4x.jpg"
+                                            data-zoom-image="images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
-                                        <a data-image="{{ asset('front/') }}/images/product/product@4x.jpg"
-                                            data-zoom-image="{{ asset('front/') }}/images/product/product@4x.jpg">
+                                        <a data-image="images/product/product@4x.jpg"
+                                            data-zoom-image="images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
-                                        <a data-image="{{ asset('front/') }}/images/product/product@4x.jpg"
-                                            data-zoom-image="{{ asset('front/') }}/images/product/product@4x.jpg">
+                                        <a data-image="images/product/product@4x.jpg"
+                                            data-zoom-image="images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
-                                        <a data-image="{{ asset('front/') }}/images/product/product@4x.jpg"
-                                            data-zoom-image="{{ asset('front/') }}/images/product/product@4x.jpg">
+                                        <a data-image="images/product/product@4x.jpg"
+                                            data-zoom-image="images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
-                                        <a data-image="{{ asset('front/') }}/images/product/product@4x.jpg"
-                                            data-zoom-image="{{ asset('front/') }}/images/product/product@4x.jpg">
+                                        <a data-image="images/product/product@4x.jpg"
+                                            data-zoom-image="images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
-                                        <a data-image="{{ asset('front/') }}/images/product/product@4x.jpg"
-                                            data-zoom-image="{{ asset('front/') }}/images/product/product@4x.jpg">
+                                        <a data-image="images/product/product@4x.jpg"
+                                            data-zoom-image="images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
