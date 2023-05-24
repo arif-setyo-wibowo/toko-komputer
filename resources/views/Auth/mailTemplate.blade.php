@@ -26,6 +26,7 @@
                         <a href="{{ $data['url'] }}"
                           style="padding: 12px 24px; border-radius: 4px; color: #FFF; background: #2B52F5;display: inline-block;margin: 0.5rem 0;">Confirm
                           now</a>
+                      <p>{{ $data['url'] }}</p>
                       <p style="padding-bottom: 16px">Klik tombol diatas untuk verifikasi akunmu</p>
                       <p style="padding-bottom: 16px">Terimas Kasih,<br>Toko-komputer</p>
                     </div>
