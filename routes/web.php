@@ -31,7 +31,6 @@ use App\Http\Controllers\MonitorController;
 //FRONT
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\RakitPcController;
-use App\Http\Controllers\Front\DetailProdukController;
 use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\DetailController;
 use App\Http\Controllers\Front\ShopController;
@@ -64,12 +63,6 @@ Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add.car
 // DETAIL PRODUK
 // Route::get('/detailproduk', [DetailProdukController::class, 'index']);
 Route::get('/detailproduk/{id}', [DetailController::class, 'index']);
-Route::get('/detailproduk/computer_cases/{id}', [ComputerCaseController::class, 'detail']);
-Route::get('/detailproduk/motherboards/{id}', [MotherboardController::class, 'detail']);
-Route::get('/detailproduk/graphic_cards/{id}', [GraphicCardController::class, 'detail']);
-Route::get('/detailproduk/memories/{id}', [MemoryController::class, 'detail']);
-Route::get('/detailproduk/power_supplies/{id}', [ControllersPowerSupplyController::class, 'detail']);
-Route::get('/detailproduk/processors/{id}', [FrontProcessorController::class, 'detail']);
 
 // Login
 Route::get('/login', [CustomerController::class, 'login'])->name('login');
