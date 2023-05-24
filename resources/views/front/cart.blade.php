@@ -1,8 +1,6 @@
 @extends('front.layout.navbar')
 
 @section('content')
-
-    
     <!-- Page Introduction Wrapper -->
     <div class="page-style-a">
         <div class="container">
@@ -39,76 +37,45 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="cart-anchor-image">
-                                                <a href="single-product.html">
-                                                    <img src="{{ asset('front/') }}/images/product/product@1x.jpg" alt="Product">
-                                                    <h6>Casual Hoodie Full Cotton</h6>
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="cart-price">
-                                                $55.00
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="cart-quantity">
-                                                <div class="quantity">
-                                                    <input type="text" class="quantity-text-field" value="1">
-                                                    <a class="plus-a" data-max="1000">&#43;</a>
-                                                    <a class="minus-a" data-min="1">&#45;</a>
+                                    @foreach ($cart as $item)
+                                        <tr>
+                                            <td>
+                                                <div class="cart-anchor-image">
+                                                    <a href="single-product.html">
+                                                        <img src="{{ asset('front/') }}/images/product/product@1x.jpg"
+                                                            alt="Product">
+                                                        <h6>{{ substr($item['product_name'], 0, 35) }} ....</h6>
+                                                    </a>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="cart-price">
-                                                $200.00
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="action-wrapper">
-                                                <button class="button button-outline-secondary fas fa-sync"></button>
-                                                <button class="button button-outline-secondary fas fa-trash"></button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="cart-anchor-image">
-                                                <a href="single-product.html">
-                                                    <img src="{{ asset('front/') }}/images/product/product@1x.jpg" alt="Product">
-                                                    <h6>Casual Hoodie Full Cotton</h6>
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="cart-price">
-                                                $55.00
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="cart-quantity">
-                                                <div class="quantity">
-                                                    <input type="text" class="quantity-text-field" value="1">
-                                                    <a class="plus-a" data-max="1000">&#43;</a>
-                                                    <a class="minus-a" data-min="1">&#45;</a>
+                                            </td>
+                                            <td>
+                                                <div class="cart-price">
+                                                    Rp. {{ number_format($item['product_price'], 0, ',00', '.') }}
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="cart-price">
-                                                $200.00
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="action-wrapper">
-                                                <button class="button button-outline-secondary fas fa-sync"></button>
-                                                <button class="button button-outline-secondary fas fa-trash"></button>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                            <td>
+                                                <div class="cart-quantity">
+                                                    <div class="quantity">
+                                                        <input type="text" class="quantity-text-field"
+                                                            value="{{ $item['quantity'] }}">
+                                                        <a class="plus-a" data-max="1000">&#43;</a>
+                                                        <a class="minus-a" data-min="1">&#45;</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="cart-price">
+                                                    Rp.
+                                                    {{ number_format($item['product_price'] * $item['quantity'], 0, ',00', '.') }}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="action-wrapper">
+                                                    <button class="button button-outline-secondary fas fa-trash"></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -153,7 +120,8 @@
                                             <h3 class="calc-h3 u-s-m-b-8">Shipping</h3>
                                             <div class="calc-choice-text u-s-m-b-4">Flat Rate: Not Available</div>
                                             <div class="calc-choice-text u-s-m-b-4">Free Shipping: Not Available</div>
-                                            <a data-toggle="collapse" href="#shipping-calculation" class="calc-anchor u-s-m-b-4">Calculate Shipping
+                                            <a data-toggle="collapse" href="#shipping-calculation"
+                                                class="calc-anchor u-s-m-b-4">Calculate Shipping
                                             </a>
                                             <div class="collapse" id="shipping-calculation">
                                                 <form>
@@ -162,7 +130,8 @@
                                                             <label class="sr-only" for="select-country">Choose your country
                                                             </label>
                                                             <select class="select-box" id="select-country">
-                                                                <option selected="selected" value="">Choose your country...
+                                                                <option selected="selected" value="">Choose your
+                                                                    country...
                                                                 </option>
                                                                 <option value="">United Kingdom (UK)</option>
                                                                 <option value="">United States (US)</option>
@@ -175,7 +144,8 @@
                                                             <label class="sr-only" for="select-state">Choose your state
                                                             </label>
                                                             <select class="select-box" id="select-state">
-                                                                <option selected="selected" value="">Choose your state...
+                                                                <option selected="selected" value="">Choose your
+                                                                    state...
                                                                 </option>
                                                                 <option value="">Alabama</option>
                                                                 <option value="">Alaska</option>
@@ -185,14 +155,17 @@
                                                     </div>
                                                     <div class="town-city-div u-s-m-b-8">
                                                         <label class="sr-only" for="town-city"></label>
-                                                        <input type="text" id="town-city" class="text-field" placeholder="Town / City">
+                                                        <input type="text" id="town-city" class="text-field"
+                                                            placeholder="Town / City">
                                                     </div>
                                                     <div class="postal-code-div u-s-m-b-8">
                                                         <label class="sr-only" for="postal-code"></label>
-                                                        <input type="text" id="postal-code" class="text-field" placeholder="Postcode / Zip">
+                                                        <input type="text" id="postal-code" class="text-field"
+                                                            placeholder="Postcode / Zip">
                                                     </div>
                                                     <div class="update-totals-div u-s-m-b-8">
-                                                        <button class="button button-outline-platinum">Update Totals</button>
+                                                        <button class="button button-outline-platinum">Update
+                                                            Totals</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -227,8 +200,7 @@
         </div>
     </div>
     <!-- Cart-Page /- -->
-            
+
     </div>
     <!-- Single-Product-Full-Width-Page /- -->
-
 @endsection

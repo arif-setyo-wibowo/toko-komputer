@@ -1,7 +1,6 @@
 @extends('front.layout.navbar')
 
 @section('content')
-
     <!-- Main-Slider -->
     <div class="default-height ph-item">
         <div class="slider-main owl-carousel">
@@ -29,13 +28,14 @@
         </div>
     </div>
     <!-- Main-Slider /- -->
-    
+
     <!-- Banner-Layer -->
     <div class="banner-layer">
         <div class="container">
             <div class="image-banner">
                 <a href="shop-v1-root-category.html" class="mx-auto banner-hover effect-dark-opacity">
-                    <img class="img-fluid" src="{{ asset('front/') }}/images/banners/bannerlayer-1.jpg" alt="Winter Season Banner">
+                    <img class="img-fluid" src="{{ asset('front/') }}/images/banners/bannerlayer-1.jpg"
+                        alt="Winter Season Banner">
                 </a>
             </div>
         </div>
@@ -94,14 +94,14 @@
                         <a class="nav-link active" data-toggle="tab" href="#men-latest-products">Latest Products</a>
                     </li>
                     <!-- <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#men-best-selling-products">Best Selling</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#men-top-rating-products">Top Rating</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#men-featured-products">Featured Products</a>
-                    </li> -->
+                            <a class="nav-link" data-toggle="tab" href="#men-best-selling-products">Best Selling</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#men-top-rating-products">Top Rating</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#men-featured-products">Featured Products</a>
+                        </li> -->
                 </ul>
             </div>
             <div class="wrapper-content">
@@ -112,10 +112,13 @@
                                 <div class="products-slider owl-carousel" data-item="4">
                                     <div class="item">
                                         <div class="image-container">
-                                            <a class="item-img-wrapper-link" href="/detailproduk">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                            <a class="item-img-wrapper-link"
+                                                href="/detailproduk/dbbf28aa-1527-43ad-a70a-10b4e4895702">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
-                                           
+
                                         </div>
                                         <div class="item-content">
                                             <div class="what-product-is">
@@ -147,10 +150,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -193,10 +199,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -239,10 +248,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -288,10 +300,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -337,10 +352,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -383,10 +401,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -430,10 +451,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -454,7 +478,8 @@
                                                     </li>
                                                 </ul>
                                                 <h6 class="item-title">
-                                                    <a href="single-product.html">Zambezi Carved Leather Business Casual Shoes
+                                                    <a href="single-product.html">Zambezi Carved Leather Business Casual
+                                                        Shoes
                                                     </a>
                                                 </h6>
                                                 <div class="item-stars">
@@ -496,10 +521,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -545,10 +573,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -591,10 +622,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -637,10 +671,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -661,7 +698,8 @@
                                                     </li>
                                                 </ul>
                                                 <h6 class="item-title">
-                                                    <a href="single-product.html">Zambezi Carved Leather Business Casual Shoes
+                                                    <a href="single-product.html">Zambezi Carved Leather Business Casual
+                                                        Shoes
                                                     </a>
                                                 </h6>
                                                 <div class="item-stars">
@@ -745,7 +783,8 @@
                     <div class="item">
                         <div class="image-container">
                             <a class="item-img-wrapper-link" href="single-product.html">
-                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                    alt="Product">
                             </a>
                             <div class="item-action-behaviors">
                                 <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
@@ -793,7 +832,8 @@
                     <div class="item">
                         <div class="image-container">
                             <a class="item-img-wrapper-link" href="single-product.html">
-                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                    alt="Product">
                             </a>
                             <div class="item-action-behaviors">
                                 <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
@@ -841,7 +881,8 @@
                     <div class="item">
                         <div class="image-container">
                             <a class="item-img-wrapper-link" href="single-product.html">
-                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                    alt="Product">
                             </a>
                             <div class="item-action-behaviors">
                                 <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
@@ -889,7 +930,8 @@
                     <div class="item">
                         <div class="image-container">
                             <a class="item-img-wrapper-link" href="single-product.html">
-                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                    alt="Product">
                             </a>
                             <div class="item-action-behaviors">
                                 <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
@@ -986,10 +1028,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -1036,10 +1081,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -1060,7 +1108,8 @@
                                                     </li>
                                                 </ul>
                                                 <h6 class="item-title">
-                                                    <a href="single-product.html">Black Rock Dress with High Jewelery Necklace
+                                                    <a href="single-product.html">Black Rock Dress with High Jewelery
+                                                        Necklace
                                                     </a>
                                                 </h6>
                                                 <div class="item-stars">
@@ -1083,10 +1132,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -1129,10 +1181,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -1153,7 +1208,8 @@
                                                     </li>
                                                 </ul>
                                                 <h6 class="item-title">
-                                                    <a href="single-product.html">Black & White Wrap Dress with High Jewelery Necklace</a>
+                                                    <a href="single-product.html">Black & White Wrap Dress with High
+                                                        Jewelery Necklace</a>
                                                 </h6>
                                                 <div class="item-stars">
                                                     <div class='star' title="0 out of 5 - based on 0 Reviews">
@@ -1178,10 +1234,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -1227,10 +1286,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -1274,10 +1336,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -1321,10 +1386,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -1387,10 +1455,13 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
@@ -1436,13 +1507,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -1460,7 +1535,8 @@
                                                     </li>
                                                 </ul>
                                                 <h6 class="item-title">
-                                                    <a href="single-product.html">Red Carmine Winter Special Occasion Dress
+                                                    <a href="single-product.html">Red Carmine Winter Special Occasion
+                                                        Dress
                                                     </a>
                                                 </h6>
                                                 <div class="item-stars">
@@ -1483,13 +1559,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -1529,13 +1609,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -1628,13 +1712,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -1677,13 +1765,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -1723,13 +1815,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -1769,13 +1865,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -1818,13 +1918,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -1868,13 +1972,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -1915,13 +2023,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -1962,13 +2074,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -2028,13 +2144,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -2078,13 +2198,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -2125,13 +2249,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -2171,13 +2299,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -2248,7 +2380,8 @@
                 <h3 class="sec-maker-h3">Mobiles & Tablets</h3>
                 <ul class="nav tab-nav-style-1-a justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#mobiles-latest-products">Latest Products</a>
+                        <a class="nav-link active" data-toggle="tab" href="#mobiles-latest-products">Latest
+                            Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#mobiles-best-selling-products">Best Selling</a>
@@ -2270,7 +2403,8 @@
                                 <div class="col-lg-1 col-md-12">
                                     <ul class="nav tab-nav-style-2-a">
                                         <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#smart-phones" title="Smart Phones">
+                                            <a class="nav-link active" data-toggle="tab" href="#smart-phones"
+                                                title="Smart Phones">
                                                 <i class="ion ion-ios-phone-portrait"></i>
                                             </a>
                                         </li>
@@ -2280,17 +2414,20 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#smart-watches" title="Smart Watches">
+                                            <a class="nav-link" data-toggle="tab" href="#smart-watches"
+                                                title="Smart Watches">
                                                 <i class="ion ion-md-watch"></i>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#device-accessories" title="Device Accessories">
+                                            <a class="nav-link" data-toggle="tab" href="#device-accessories"
+                                                title="Device Accessories">
                                                 <i class="ion ion-md-settings"></i>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#power-banks" title="Power Banks">
+                                            <a class="nav-link" data-toggle="tab" href="#power-banks"
+                                                title="Power Banks">
                                                 <i class="ion ion-md-battery-charging"></i>
                                             </a>
                                         </li>
@@ -2304,14 +2441,19 @@
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                                <img class="img-fluid"
+                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    alt="Product">
                                                             </a>
                                                             <div class="item-action-behaviors">
-                                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                                                                <a class="item-quick-look" data-toggle="modal"
+                                                                    href="#quick-view">Quick Look</a>
                                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist
+                                                                <a class="item-addwishlist"
+                                                                    href="javascript:void(0)">Add to Wishlist
                                                                 </a>
-                                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart
+                                                                <a class="item-addCart" href="javascript:void(0)">Add to
+                                                                    Cart
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -2319,19 +2461,23 @@
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
                                                                     <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Mobiles & Tablets
+                                                                        <a href="shop-v1-root-category.html">Mobiles &
+                                                                            Tablets
                                                                         </a>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="shop-v2-sub-category.html">Smartphones</a>
+                                                                        <a
+                                                                            href="shop-v2-sub-category.html">Smartphones</a>
                                                                     </li>
                                                                 </ul>
                                                                 <h6 class="item-title">
-                                                                    <a href="single-product.html">Xiaomi Note 2 Black Color
+                                                                    <a href="single-product.html">Xiaomi Note 2 Black
+                                                                        Color
                                                                     </a>
                                                                 </h6>
                                                                 <div class="item-stars">
-                                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
+                                                                    <div class='star'
+                                                                        title="0 out of 5 - based on 0 Reviews">
                                                                         <span style='width:0'></span>
                                                                     </div>
                                                                     <span>(0)</span>
@@ -2353,14 +2499,19 @@
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                                <img class="img-fluid"
+                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    alt="Product">
                                                             </a>
                                                             <div class="item-action-behaviors">
-                                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                                                                <a class="item-quick-look" data-toggle="modal"
+                                                                    href="#quick-view">Quick Look</a>
                                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist
+                                                                <a class="item-addwishlist"
+                                                                    href="javascript:void(0)">Add to Wishlist
                                                                 </a>
-                                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart
+                                                                <a class="item-addCart" href="javascript:void(0)">Add to
+                                                                    Cart
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -2368,18 +2519,22 @@
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
                                                                     <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Mobiles & Tablets
+                                                                        <a href="shop-v1-root-category.html">Mobiles &
+                                                                            Tablets
                                                                         </a>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="shop-v2-sub-category.html">Smartphones</a>
+                                                                        <a
+                                                                            href="shop-v2-sub-category.html">Smartphones</a>
                                                                     </li>
                                                                 </ul>
                                                                 <h6 class="item-title">
-                                                                    <a href="single-product.html">Iphone X Silver Color</a>
+                                                                    <a href="single-product.html">Iphone X Silver
+                                                                        Color</a>
                                                                 </h6>
                                                                 <div class="item-stars">
-                                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
+                                                                    <div class='star'
+                                                                        title="0 out of 5 - based on 0 Reviews">
                                                                         <span style='width:0'></span>
                                                                     </div>
                                                                     <span>(0)</span>
@@ -2398,14 +2553,19 @@
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                                <img class="img-fluid"
+                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    alt="Product">
                                                             </a>
                                                             <div class="item-action-behaviors">
-                                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                                                                <a class="item-quick-look" data-toggle="modal"
+                                                                    href="#quick-view">Quick Look</a>
                                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist
+                                                                <a class="item-addwishlist"
+                                                                    href="javascript:void(0)">Add to Wishlist
                                                                 </a>
-                                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart
+                                                                <a class="item-addCart" href="javascript:void(0)">Add to
+                                                                    Cart
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -2413,19 +2573,23 @@
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
                                                                     <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Mobiles & Tablets
+                                                                        <a href="shop-v1-root-category.html">Mobiles &
+                                                                            Tablets
                                                                         </a>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="shop-v2-sub-category.html">Smartphones</a>
+                                                                        <a
+                                                                            href="shop-v2-sub-category.html">Smartphones</a>
                                                                     </li>
                                                                 </ul>
                                                                 <h6 class="item-title">
-                                                                    <a href="single-product.html">Samsung S7 Green Metallic Color
+                                                                    <a href="single-product.html">Samsung S7 Green
+                                                                        Metallic Color
                                                                     </a>
                                                                 </h6>
                                                                 <div class="item-stars">
-                                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
+                                                                    <div class='star'
+                                                                        title="0 out of 5 - based on 0 Reviews">
                                                                         <span style='width:0'></span>
                                                                     </div>
                                                                     <span>(0)</span>
@@ -2447,14 +2611,19 @@
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                                <img class="img-fluid"
+                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    alt="Product">
                                                             </a>
                                                             <div class="item-action-behaviors">
-                                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                                                                <a class="item-quick-look" data-toggle="modal"
+                                                                    href="#quick-view">Quick Look</a>
                                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist
+                                                                <a class="item-addwishlist"
+                                                                    href="javascript:void(0)">Add to Wishlist
                                                                 </a>
-                                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart
+                                                                <a class="item-addCart" href="javascript:void(0)">Add to
+                                                                    Cart
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -2462,19 +2631,23 @@
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
                                                                     <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Mobiles & Tablets
+                                                                        <a href="shop-v1-root-category.html">Mobiles &
+                                                                            Tablets
                                                                         </a>
                                                                     </li>
                                                                     <li>
-                                                                        <a href="shop-v2-sub-category.html">Smartphones</a>
+                                                                        <a
+                                                                            href="shop-v2-sub-category.html">Smartphones</a>
                                                                     </li>
                                                                 </ul>
                                                                 <h6 class="item-title">
-                                                                    <a href="single-product.html">Sony Xperia 3 Black Color
+                                                                    <a href="single-product.html">Sony Xperia 3 Black
+                                                                        Color
                                                                     </a>
                                                                 </h6>
                                                                 <div class="item-stars">
-                                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
+                                                                    <div class='star'
+                                                                        title="0 out of 5 - based on 0 Reviews">
                                                                         <span style='width:0'></span>
                                                                     </div>
                                                                     <span>(0)</span>
@@ -2512,14 +2685,19 @@
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                                <img class="img-fluid"
+                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    alt="Product">
                                                             </a>
                                                             <div class="item-action-behaviors">
-                                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                                                                <a class="item-quick-look" data-toggle="modal"
+                                                                    href="#quick-view">Quick Look</a>
                                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist
+                                                                <a class="item-addwishlist"
+                                                                    href="javascript:void(0)">Add to Wishlist
                                                                 </a>
-                                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart
+                                                                <a class="item-addCart" href="javascript:void(0)">Add to
+                                                                    Cart
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -2527,7 +2705,8 @@
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
                                                                     <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Mobiles & Tablets
+                                                                        <a href="shop-v1-root-category.html">Mobiles &
+                                                                            Tablets
                                                                         </a>
                                                                     </li>
                                                                     <li>
@@ -2540,7 +2719,8 @@
                                                                     </a>
                                                                 </h6>
                                                                 <div class="item-stars">
-                                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
+                                                                    <div class='star'
+                                                                        title="0 out of 5 - based on 0 Reviews">
                                                                         <span style='width:0'></span>
                                                                     </div>
                                                                     <span>(0)</span>
@@ -2562,14 +2742,19 @@
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                                <img class="img-fluid"
+                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    alt="Product">
                                                             </a>
                                                             <div class="item-action-behaviors">
-                                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                                                                <a class="item-quick-look" data-toggle="modal"
+                                                                    href="#quick-view">Quick Look</a>
                                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist
+                                                                <a class="item-addwishlist"
+                                                                    href="javascript:void(0)">Add to Wishlist
                                                                 </a>
-                                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart
+                                                                <a class="item-addCart" href="javascript:void(0)">Add to
+                                                                    Cart
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -2577,7 +2762,8 @@
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
                                                                     <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Mobiles & Tablets
+                                                                        <a href="shop-v1-root-category.html">Mobiles &
+                                                                            Tablets
                                                                         </a>
                                                                     </li>
                                                                     <li>
@@ -2586,11 +2772,13 @@
                                                                     </li>
                                                                 </ul>
                                                                 <h6 class="item-title">
-                                                                    <a href="single-product.html">Mombo Full Wrist Smartwatch
+                                                                    <a href="single-product.html">Mombo Full Wrist
+                                                                        Smartwatch
                                                                     </a>
                                                                 </h6>
                                                                 <div class="item-stars">
-                                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
+                                                                    <div class='star'
+                                                                        title="0 out of 5 - based on 0 Reviews">
                                                                         <span style='width:0'></span>
                                                                     </div>
                                                                     <span>(0)</span>
@@ -2609,14 +2797,19 @@
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                                <img class="img-fluid"
+                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    alt="Product">
                                                             </a>
                                                             <div class="item-action-behaviors">
-                                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                                                                <a class="item-quick-look" data-toggle="modal"
+                                                                    href="#quick-view">Quick Look</a>
                                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist
+                                                                <a class="item-addwishlist"
+                                                                    href="javascript:void(0)">Add to Wishlist
                                                                 </a>
-                                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart
+                                                                <a class="item-addCart" href="javascript:void(0)">Add to
+                                                                    Cart
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -2624,7 +2817,8 @@
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
                                                                     <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Mobiles & Tablets
+                                                                        <a href="shop-v1-root-category.html">Mobiles &
+                                                                            Tablets
                                                                         </a>
                                                                     </li>
                                                                     <li>
@@ -2633,11 +2827,13 @@
                                                                     </li>
                                                                 </ul>
                                                                 <h6 class="item-title">
-                                                                    <a href="single-product.html">Apollo Sport Think Smartwatch
+                                                                    <a href="single-product.html">Apollo Sport Think
+                                                                        Smartwatch
                                                                     </a>
                                                                 </h6>
                                                                 <div class="item-stars">
-                                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
+                                                                    <div class='star'
+                                                                        title="0 out of 5 - based on 0 Reviews">
                                                                         <span style='width:0'></span>
                                                                     </div>
                                                                     <span>(0)</span>
@@ -2659,14 +2855,19 @@
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                                <img class="img-fluid"
+                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    alt="Product">
                                                             </a>
                                                             <div class="item-action-behaviors">
-                                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                                                                <a class="item-quick-look" data-toggle="modal"
+                                                                    href="#quick-view">Quick Look</a>
                                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist
+                                                                <a class="item-addwishlist"
+                                                                    href="javascript:void(0)">Add to Wishlist
                                                                 </a>
-                                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart
+                                                                <a class="item-addCart" href="javascript:void(0)">Add to
+                                                                    Cart
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -2674,7 +2875,8 @@
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
                                                                     <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Mobiles & Tablets
+                                                                        <a href="shop-v1-root-category.html">Mobiles &
+                                                                            Tablets
                                                                         </a>
                                                                     </li>
                                                                     <li>
@@ -2687,7 +2889,8 @@
                                                                     </a>
                                                                 </h6>
                                                                 <div class="item-stars">
-                                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
+                                                                    <div class='star'
+                                                                        title="0 out of 5 - based on 0 Reviews">
                                                                         <span style='width:0'></span>
                                                                     </div>
                                                                     <span>(0)</span>
@@ -2804,12 +3007,14 @@
                                 <div class="col-lg-1 col-md-12">
                                     <ul class="nav tab-nav-style-2-a">
                                         <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#laptops" title="Laptops">
+                                            <a class="nav-link active" data-toggle="tab" href="#laptops"
+                                                title="Laptops">
                                                 <i class="ion ion-md-laptop"></i>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#pc-and-accessories" title="PC & Accessories">
+                                            <a class="nav-link" data-toggle="tab" href="#pc-and-accessories"
+                                                title="PC & Accessories">
                                                 <i class="ion ion-ios-settings"></i>
                                             </a>
                                         </li>
@@ -2819,12 +3024,14 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#cam-corder" title="Camera & Camcorders">
+                                            <a class="nav-link" data-toggle="tab" href="#cam-corder"
+                                                title="Camera & Camcorders">
                                                 <i class="ion ion-md-camera"></i>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#audio-amplifiers" title="Audio & Amplifiers">
+                                            <a class="nav-link" data-toggle="tab" href="#audio-amplifiers"
+                                                title="Audio & Amplifiers">
                                                 <i class="ion ion-md-microphone"></i>
                                             </a>
                                         </li>
@@ -2838,14 +3045,19 @@
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                                <img class="img-fluid"
+                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    alt="Product">
                                                             </a>
                                                             <div class="item-action-behaviors">
-                                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                                                                <a class="item-quick-look" data-toggle="modal"
+                                                                    href="#quick-view">Quick Look</a>
                                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist
+                                                                <a class="item-addwishlist"
+                                                                    href="javascript:void(0)">Add to Wishlist
                                                                 </a>
-                                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart
+                                                                <a class="item-addCart" href="javascript:void(0)">Add to
+                                                                    Cart
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -2853,7 +3065,8 @@
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
                                                                     <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Consumer Electronics
+                                                                        <a href="shop-v1-root-category.html">Consumer
+                                                                            Electronics
                                                                         </a>
                                                                     </li>
                                                                     <li>
@@ -2865,7 +3078,8 @@
                                                                     </a>
                                                                 </h6>
                                                                 <div class="item-stars">
-                                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
+                                                                    <div class='star'
+                                                                        title="0 out of 5 - based on 0 Reviews">
                                                                         <span style='width:0'></span>
                                                                     </div>
                                                                     <span>(0)</span>
@@ -2887,14 +3101,19 @@
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                                <img class="img-fluid"
+                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    alt="Product">
                                                             </a>
                                                             <div class="item-action-behaviors">
-                                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                                                                <a class="item-quick-look" data-toggle="modal"
+                                                                    href="#quick-view">Quick Look</a>
                                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist
+                                                                <a class="item-addwishlist"
+                                                                    href="javascript:void(0)">Add to Wishlist
                                                                 </a>
-                                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart
+                                                                <a class="item-addCart" href="javascript:void(0)">Add to
+                                                                    Cart
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -2902,7 +3121,8 @@
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
                                                                     <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Consumer Electronics
+                                                                        <a href="shop-v1-root-category.html">Consumer
+                                                                            Electronics
                                                                         </a>
                                                                     </li>
                                                                     <li>
@@ -2910,10 +3130,12 @@
                                                                     </li>
                                                                 </ul>
                                                                 <h6 class="item-title">
-                                                                    <a href="single-product.html">Apple Macbook Pro 2017</a>
+                                                                    <a href="single-product.html">Apple Macbook Pro
+                                                                        2017</a>
                                                                 </h6>
                                                                 <div class="item-stars">
-                                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
+                                                                    <div class='star'
+                                                                        title="0 out of 5 - based on 0 Reviews">
                                                                         <span style='width:0'></span>
                                                                     </div>
                                                                     <span>(0)</span>
@@ -2932,14 +3154,19 @@
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                                <img class="img-fluid"
+                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    alt="Product">
                                                             </a>
                                                             <div class="item-action-behaviors">
-                                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                                                                <a class="item-quick-look" data-toggle="modal"
+                                                                    href="#quick-view">Quick Look</a>
                                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist
+                                                                <a class="item-addwishlist"
+                                                                    href="javascript:void(0)">Add to Wishlist
                                                                 </a>
-                                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart
+                                                                <a class="item-addCart" href="javascript:void(0)">Add to
+                                                                    Cart
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -2947,7 +3174,8 @@
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
                                                                     <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Consumer Electronics
+                                                                        <a href="shop-v1-root-category.html">Consumer
+                                                                            Electronics
                                                                         </a>
                                                                     </li>
                                                                     <li>
@@ -2958,7 +3186,8 @@
                                                                     <a href="single-product.html">Dell Inspiron 15</a>
                                                                 </h6>
                                                                 <div class="item-stars">
-                                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
+                                                                    <div class='star'
+                                                                        title="0 out of 5 - based on 0 Reviews">
                                                                         <span style='width:0'></span>
                                                                     </div>
                                                                     <span>(0)</span>
@@ -2980,14 +3209,19 @@
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                                <img class="img-fluid"
+                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    alt="Product">
                                                             </a>
                                                             <div class="item-action-behaviors">
-                                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                                                                <a class="item-quick-look" data-toggle="modal"
+                                                                    href="#quick-view">Quick Look</a>
                                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist
+                                                                <a class="item-addwishlist"
+                                                                    href="javascript:void(0)">Add to Wishlist
                                                                 </a>
-                                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart
+                                                                <a class="item-addCart" href="javascript:void(0)">Add to
+                                                                    Cart
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -2995,7 +3229,8 @@
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
                                                                     <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Consumer Electronics
+                                                                        <a href="shop-v1-root-category.html">Consumer
+                                                                            Electronics
                                                                         </a>
                                                                     </li>
                                                                     <li>
@@ -3006,7 +3241,8 @@
                                                                     <a href="single-product.html">Dell Inspiron 1525</a>
                                                                 </h6>
                                                                 <div class="item-stars">
-                                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
+                                                                    <div class='star'
+                                                                        title="0 out of 5 - based on 0 Reviews">
                                                                         <span style='width:0'></span>
                                                                     </div>
                                                                     <span>(0)</span>
@@ -3044,14 +3280,19 @@
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                                <img class="img-fluid"
+                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    alt="Product">
                                                             </a>
                                                             <div class="item-action-behaviors">
-                                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                                                                <a class="item-quick-look" data-toggle="modal"
+                                                                    href="#quick-view">Quick Look</a>
                                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist
+                                                                <a class="item-addwishlist"
+                                                                    href="javascript:void(0)">Add to Wishlist
                                                                 </a>
-                                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart
+                                                                <a class="item-addCart" href="javascript:void(0)">Add to
+                                                                    Cart
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -3059,7 +3300,8 @@
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
                                                                     <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Consumer Electronics
+                                                                        <a href="shop-v1-root-category.html">Consumer
+                                                                            Electronics
                                                                         </a>
                                                                     </li>
                                                                     <li>
@@ -3071,7 +3313,8 @@
                                                                     <a href="single-product.html">Hisense 4k LED TV</a>
                                                                 </h6>
                                                                 <div class="item-stars">
-                                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
+                                                                    <div class='star'
+                                                                        title="0 out of 5 - based on 0 Reviews">
                                                                         <span style='width:0'></span>
                                                                     </div>
                                                                     <span>(0)</span>
@@ -3093,14 +3336,19 @@
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                                <img class="img-fluid"
+                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    alt="Product">
                                                             </a>
                                                             <div class="item-action-behaviors">
-                                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                                                                <a class="item-quick-look" data-toggle="modal"
+                                                                    href="#quick-view">Quick Look</a>
                                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist
+                                                                <a class="item-addwishlist"
+                                                                    href="javascript:void(0)">Add to Wishlist
                                                                 </a>
-                                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart
+                                                                <a class="item-addCart" href="javascript:void(0)">Add to
+                                                                    Cart
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -3108,7 +3356,8 @@
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
                                                                     <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Consumer Electronics
+                                                                        <a href="shop-v1-root-category.html">Consumer
+                                                                            Electronics
                                                                         </a>
                                                                     </li>
                                                                     <li>
@@ -3120,7 +3369,8 @@
                                                                     <a href="single-product.html">TCL 4k LED TV</a>
                                                                 </h6>
                                                                 <div class="item-stars">
-                                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
+                                                                    <div class='star'
+                                                                        title="0 out of 5 - based on 0 Reviews">
                                                                         <span style='width:0'></span>
                                                                     </div>
                                                                     <span>(0)</span>
@@ -3139,14 +3389,19 @@
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                                <img class="img-fluid"
+                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    alt="Product">
                                                             </a>
                                                             <div class="item-action-behaviors">
-                                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                                                                <a class="item-quick-look" data-toggle="modal"
+                                                                    href="#quick-view">Quick Look</a>
                                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist
+                                                                <a class="item-addwishlist"
+                                                                    href="javascript:void(0)">Add to Wishlist
                                                                 </a>
-                                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart
+                                                                <a class="item-addCart" href="javascript:void(0)">Add to
+                                                                    Cart
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -3154,7 +3409,8 @@
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
                                                                     <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Consumer Electronics
+                                                                        <a href="shop-v1-root-category.html">Consumer
+                                                                            Electronics
                                                                         </a>
                                                                     </li>
                                                                     <li>
@@ -3167,7 +3423,8 @@
                                                                     </a>
                                                                 </h6>
                                                                 <div class="item-stars">
-                                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
+                                                                    <div class='star'
+                                                                        title="0 out of 5 - based on 0 Reviews">
                                                                         <span style='width:0'></span>
                                                                     </div>
                                                                     <span>(0)</span>
@@ -3189,14 +3446,19 @@
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                                <img class="img-fluid"
+                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    alt="Product">
                                                             </a>
                                                             <div class="item-action-behaviors">
-                                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
+                                                                <a class="item-quick-look" data-toggle="modal"
+                                                                    href="#quick-view">Quick Look</a>
                                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist
+                                                                <a class="item-addwishlist"
+                                                                    href="javascript:void(0)">Add to Wishlist
                                                                 </a>
-                                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart
+                                                                <a class="item-addCart" href="javascript:void(0)">Add to
+                                                                    Cart
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -3204,7 +3466,8 @@
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
                                                                     <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Consumer Electronics
+                                                                        <a href="shop-v1-root-category.html">Consumer
+                                                                            Electronics
                                                                         </a>
                                                                     </li>
                                                                     <li>
@@ -3213,10 +3476,12 @@
                                                                     </li>
                                                                 </ul>
                                                                 <h6 class="item-title">
-                                                                    <a href="single-product.html">China Petrei 4k LED TV</a>
+                                                                    <a href="single-product.html">China Petrei 4k LED
+                                                                        TV</a>
                                                                 </h6>
                                                                 <div class="item-stars">
-                                                                    <div class='star' title="0 out of 5 - based on 0 Reviews">
+                                                                    <div class='star'
+                                                                        title="0 out of 5 - based on 0 Reviews">
                                                                         <span style='width:0'></span>
                                                                     </div>
                                                                     <span>(0)</span>
@@ -3332,13 +3597,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -3350,7 +3619,8 @@
                                                     </li>
                                                 </ul>
                                                 <h6 class="item-title">
-                                                    <a href="single-product.html">JavaScript The Definitive Guide by David Flanagan
+                                                    <a href="single-product.html">JavaScript The Definitive Guide by David
+                                                        Flanagan
                                                     </a>
                                                 </h6>
                                                 <div class="item-stars">
@@ -3376,13 +3646,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -3417,13 +3691,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -3435,7 +3713,8 @@
                                                     </li>
                                                 </ul>
                                                 <h6 class="item-title">
-                                                    <a href="single-product.html">Secret of the JavaScript Ninja by Bear Bibeault & John Resig
+                                                    <a href="single-product.html">Secret of the JavaScript Ninja by Bear
+                                                        Bibeault & John Resig
                                                     </a>
                                                 </h6>
                                                 <div class="item-stars">
@@ -3458,13 +3737,17 @@
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="single-product.html">
-                                                <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    alt="Product">
                                             </a>
                                             <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
+                                                <a class="item-quick-look" data-toggle="modal"
+                                                    href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                                <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
+                                                <a class="item-addwishlist" href="javascript:void(0)">Add to
+                                                    Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
                                             </div>
                                         </div>
@@ -3476,7 +3759,8 @@
                                                     </li>
                                                 </ul>
                                                 <h6 class="item-title">
-                                                    <a href="single-product.html">JavaScript The Good Parts by Douglas Crockford
+                                                    <a href="single-product.html">JavaScript The Good Parts by Douglas
+                                                        Crockford
                                                     </a>
                                                 </h6>
                                                 <div class="item-stars">
@@ -3604,5 +3888,4 @@
         </div>
     </section>
     <!-- Site-Priorities /- -->
-
 @endsection
