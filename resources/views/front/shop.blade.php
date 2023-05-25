@@ -1,12 +1,6 @@
 @extends('front.layout.navbar')
 
-
-
-
 @section('content')
-
-
-    
     <!-- Page Introduction Wrapper -->
     <div class="page-style-a">
         <div class="container">
@@ -120,12 +114,13 @@
                             <div class="price-filter"></div>
                             <!-- Range-Slider /- -->
                             <!-- Range-Manipulator -->
-                            <div class="price-slider-range" data-min="0" data-max="5000" data-default-low="0" data-default-high="3000" data-currency="$"></div>
+                            <div class="price-slider-range" data-min="0" data-max="5000" data-default-low="0"
+                                data-default-high="3000" data-currency="$"></div>
                             <!-- Range-Manipulator /- -->
                             <button type="submit" class="button button-primary">Filter</button>
                         </form>
                     </div>
-                    <!-- Filter-Price /- -->                    
+                    <!-- Filter-Price /- -->
                     <!-- Filters /- -->
                 </div>
                 <!-- Shop-Left-Side-Bar-Wrapper /- -->
@@ -175,7 +170,8 @@
                             <div class="item">
                                 <div class="image-container">
                                     <a class="item-img-wrapper-link" href="single-product.html">
-                                        <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg" alt="Product">
+                                        <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                            alt="Product">
                                     </a>
                                 </div>
                                 <div class="item-content">
@@ -184,7 +180,10 @@
                                             <a href="single-product.html">iGame GeForce RTX 4090 24GB GDDR6X Vulcan</a>
                                         </h4>
                                         <div class="item-description">
-                                            <p>This hoodie is full cotton. or middle-school, high-school, and college students to wear this sweatshirts—with or without hoods—that display their respective school names or mascots across the chest, either as part of a uniform or personal preference.
+                                            <p>This hoodie is full cotton. or middle-school, high-school, and college
+                                                students to wear this sweatshirts—with or without hoods—that display their
+                                                respective school names or mascots across the chest, either as part of a
+                                                uniform or personal preference.
                                             </p>
                                         </div>
                                     </div>
@@ -193,10 +192,11 @@
                                             Rp.2.000.000
                                         </div>
                                         <div class="item-old-price text-decoration-none">
-                                        <div class="item-action-behaviors">
-                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
-                                        <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                    </div>
+                                            <div class="item-action-behaviors">
+                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                    Look</a>
+                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -204,7 +204,7 @@
                                     <span>NEW</span>
                                 </div>
                             </div>
-                        </div>  
+                        </div>
                     </div>
                     <!-- Row-of-Product-Container /- -->
                 </div>
@@ -227,125 +227,140 @@
                                         <!-- Product-zoom-area /- -->
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                        <!-- Product-details -->
-                                        <div class="all-information-wrapper">
-                                            <div class="section-1-title-breadcrumb-rating">
-                                                <div class="product-title">
-                                                    <h1>
-                                                        <a href="">iGame GeForce RTX 4090 24GB GDDR6X Vulcan</a>
-                                                    </h1>
-                                                </div>
-                                                <ul class="bread-crumb">
-                                                </ul> 
-                                            </div>
-                                            <div class="section-3-price-original-discount u-s-p-y-14">
-                                                <div class="float-right mr-2">
-                                                    <form action="#" class="post-form">
-                                                        <div class="quantity-wrapper u-s-m-b-">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <!-- Product-details -->
+                                                <div class="all-information-wrapper">
+                                                    <div class="section-1-title-breadcrumb-rating">
+                                                        <div class="product-title">
+                                                            <h1>
+                                                                <a href="">iGame GeForce RTX 4090 24GB GDDR6X
+                                                                    Vulcan</a>
+                                                            </h1>
                                                         </div>
-                                                    </form>
-                                                    <div>
-                                                        <button class="ml-5 btn-success button button-outline-secondary add-to-cart-btn"
-                                                            data-product-id="">Add
-                                                            to cart</button>
+                                                        <ul class="bread-crumb">
+                                                        </ul>
                                                     </div>
-                                                </div>
-                                                <div class="price">
-                                                    <h4>Rp. 2.000.00</h4>
-                                                </div>
-                                            </div>
-                                            <!-- <div class="section-4-sku-information u-s-p-y-14">
-                                                                    </div> -->
-                                            <div class="section-6-social-media-quantity-actions u-s-p-y-14">
-                                                <div class="row">
-                                                    <div class="col-lg-12 col-md-12 col-sm-12">
-                                                        <div class="detail-tabs-wrapper ">
-                                                            <div class="detail-nav-wrapper ">
-                                                                <ul class="nav single-product-nav justify-content-center">
-                                                                    <li class="nav-item">
-                                                                        <a class="nav-link active" data-toggle="tab"
-                                                                            href="#specification">Specifications</a>
-                                                                    </li>
-                                                                    <li class="nav-item">
-                                                                        <a class="nav-link " data-toggle="tab"
-                                                                            href="#description">Description</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                            <div class="tab-content">
-                                                                <!-- Specifications-Tab -->
-                                                                <div class="tab-pane active show fade" id="specification">
-                                                                    <div class="specification-whole-container">
-                                                                        <div class="spec-table u-s-m-b-10">
-                                                                            <h4 class="spec-heading">General Information</h4>
-                                                                            <table>
-                                                                                <tr>
-                                                                                    <td>Product Code</td>
-                                                                                    <td>1</td>
-                                                                                </tr>
-                                                                            </table>
-                                                                        </div>
-                                                                        <div class="spec-table u-s-m-b-20">
-                                                                            <h4 class="spec-heading">Product Information</h4>
-                                                                            <table>
-                                                                                <tr>
-                                                                                    <td>Brand</td>
-                                                                                    <td><img style="width: 70px" src=""alt="Brand"></td>
-                                                                                </tr>
-                                                                            <tr>
-                                                                                    <td>as</td>
-                                                                                    <td>as</td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>as</td>
-                                                                                    <td>as</td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>as</td>
-                                                                                    <td>as</td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td>as</td>
-                                                                                    <td>as</td>
-                                                                                </tr>
-                                                                                
-                                                                            </table>
-                                                                        </div>
-                                                                    </div>
+                                                    <div class="section-3-price-original-discount u-s-p-y-14">
+                                                        <div class="float-right mr-2">
+                                                            <form action="#" class="post-form">
+                                                                <div class="quantity-wrapper u-s-m-b-">
                                                                 </div>
-                                                                <!-- Specifications-Tab /- -->
-                                                                <!-- Description-Tab -->
-                                                            
-                                                                <div class="tab-pane fade  show" id="description">
-                                                                    <div class="description-whole-container">
-                                                                        <p class="desc-p u-s-m-b-26">This hoodie is full cotton. or middle-school, high-school, and college students to wear this sweatshirts—with or without hoods—that display their respective school names or mascots across the chest, either as part of a uniform or personal preference.
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                            
-                                                                <!-- Description-Tab /- -->
+                                                            </form>
+                                                            <div>
+                                                                <button
+                                                                    class="ml-5 btn-success button button-outline-secondary add-to-cart-btn"
+                                                                    data-product-id="">Add
+                                                                    to cart</button>
                                                             </div>
                                                         </div>
+                                                        <div class="price">
+                                                            <h4>Rp. 2.000.00</h4>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="section-4-sku-information u-s-p-y-14">
+                                                                        </div> -->
+                                                    <div class="section-6-social-media-quantity-actions u-s-p-y-14">
+                                                        <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                                <div class="detail-tabs-wrapper ">
+                                                                    <div class="detail-nav-wrapper ">
+                                                                        <ul
+                                                                            class="nav single-product-nav justify-content-center">
+                                                                            <li class="nav-item">
+                                                                                <a class="nav-link active"
+                                                                                    data-toggle="tab"
+                                                                                    href="#specification">Specifications</a>
+                                                                            </li>
+                                                                            <li class="nav-item">
+                                                                                <a class="nav-link " data-toggle="tab"
+                                                                                    href="#description">Description</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="tab-content">
+                                                                        <!-- Specifications-Tab -->
+                                                                        <div class="tab-pane active show fade"
+                                                                            id="specification">
+                                                                            <div class="specification-whole-container">
+                                                                                <div class="spec-table u-s-m-b-10">
+                                                                                    <h4 class="spec-heading">General
+                                                                                        Information</h4>
+                                                                                    <table>
+                                                                                        <tr>
+                                                                                            <td>Product Code</td>
+                                                                                            <td>1</td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </div>
+                                                                                <div class="spec-table u-s-m-b-20">
+                                                                                    <h4 class="spec-heading">Product
+                                                                                        Information</h4>
+                                                                                    <table>
+                                                                                        <tr>
+                                                                                            <td>Brand</td>
+                                                                                            <td><img style="width: 70px"
+                                                                                                    src=""alt="Brand">
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td>as</td>
+                                                                                            <td>as</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td>as</td>
+                                                                                            <td>as</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td>as</td>
+                                                                                            <td>as</td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td>as</td>
+                                                                                            <td>as</td>
+                                                                                        </tr>
+
+                                                                                    </table>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- Specifications-Tab /- -->
+                                                                        <!-- Description-Tab -->
+
+                                                                        <div class="tab-pane fade  show" id="description">
+                                                                            <div class="description-whole-container">
+                                                                                <p class="desc-p u-s-m-b-26">This hoodie is
+                                                                                    full cotton. or middle-school,
+                                                                                    high-school, and college students to
+                                                                                    wear this sweatshirts—with or without
+                                                                                    hoods—that display their respective
+                                                                                    school names or mascots across the
+                                                                                    chest, either as part of a uniform or
+                                                                                    personal preference.
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <!-- Description-Tab /- -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Detail-Tabs /- -->
                                                     </div>
                                                 </div>
-                                                <!-- Detail-Tabs /- -->
                                             </div>
+                                            <!-- Product-details /- -->
                                         </div>
-                                    </div>
-                                    <!-- Product-details /- -->
-                                </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-        <!-- Quick-view-Modal /- -->
+                <!-- Quick-view-Modal /- -->
             </div>
         </div>
     </div>
     <!-- Shop-Page /- -
-
 @endsection

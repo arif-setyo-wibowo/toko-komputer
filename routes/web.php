@@ -63,6 +63,8 @@ Route::get('/cart', [CartController::class, 'index']);
 Route::get('/shop', [ShopController::class, 'index']);
 Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add.cart');
 Route::post('/remove-from-cart', [CartController::class, 'removeFromCart'])->name('remove.cart');
+Route::post('/decrease-quantity', [CartController::class, 'updateCartQuantity'])->name('min.cart');
+Route::get('/emptycart', [CartController::class, 'empty'])->name('empty.cart');
 Route::get('/checkout', [OrdersController::class, 'index'])->name('checkout');
 
 // DETAIL PRODUK

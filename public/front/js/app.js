@@ -745,7 +745,7 @@ $(function () {
 // KERANJANG
 $(document).ready(function () {
 
-    // TAMBAH KE KERANJANG
+    // Deklarasi
     const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
     const removeButtons = document.querySelectorAll('.btn-remove-from-cart');
     var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -757,6 +757,7 @@ $(document).ready(function () {
         timer: 1700,
         timerProgressBar: true,
     })
+    // End Deklarasi
 
     // Fungsi untuk menambahkan produk ke keranjang
     function addToCart(productId) {
@@ -785,6 +786,7 @@ $(document).ready(function () {
         });
     }
 
+    // Fungsi untuk menghapus produk dari keranjang
     function removeFromCart(productId) {
         Swal.fire({
             title: 'Yakin ingin menghapus?',
@@ -807,14 +809,10 @@ $(document).ready(function () {
                     dataType: 'json',
                     success: function (response) {
                         if (response.success) {
-                            Toast.fire({
-                                icon: 'success',
-                                title: 'Item Berhasil Di Hapus'
-                            });
                             updateCartItemCount(response.cartItemCount);
                             removeCartItem(productId);
                             if (response.cartItemCount === 0) {
-                                displayEmptyCartMessage();
+                                location.assign('/emptycart');
                             }
                         } else {
                             Toast.fire({
@@ -829,6 +827,7 @@ $(document).ready(function () {
 
     }
 
+    // Fungsi untuk mengupdate produk dari keranjang
     function updateCartItemCount(count) {
         const cartItemCountElement = document.getElementById('cart-item-count');
 
@@ -844,6 +843,7 @@ $(document).ready(function () {
         }
     }
 
+    // Button klik hapus
     function removeCartItem(productId) {
         const cartItemElement = document.querySelector(`tr[data-product-id="${productId}"]`);
         if (cartItemElement) {
@@ -851,43 +851,96 @@ $(document).ready(function () {
         }
     }
 
-    function displayEmptyCartMessage() {
-        const cartContainer = document.getElementById('cart-container');
-        const emptyCartMessage = document.createElement('h2');
-        emptyCartMessage.textContent = 'Keranjang Kosong';
-        cartContainer.innerHTML = '';
-        cartContainer.appendChild(emptyCartMessage);
-    }
-
-    // Fungsi untuk memperbarui tampilan keranjang
-    function updateCartView() {
-        const cartItemsElement = document.getElementById('cart-items');
-
-        // Bersihkan isi keranjang sebelum memperbarui
-        cartItemsElement.innerHTML = '';
-
-        // Tampilkan setiap item di keranjang
-        cart.forEach(item => {
-            const product = getProductById(item.productId);
-
-            // Buat elemen li untuk setiap item
-            const li = document.createElement('li');
-            li.textContent = `${product.name} - Quantity: ${item.quantity}`;
-            cartItemsElement.appendChild(li);
+    // Update Cart
+    function updateCartQuantity(productId, quantity) {
+        $.ajax({
+            url: "/decrease-quantity",
+            type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': csrfToken
+            },
+            data: { productId: productId, quantity: quantity },
+            dataType: 'json',
+            success: function (response) {
+                if (response.success) {
+                    updateCartItemCount(response.cartItemCount);
+                } else {
+                    alert('Gagal memperbarui jumlah barang.');
+                }
+            },
+            error: function () {
+                alert('Terjadi kesalahan.');
+            }
         });
     }
 
-    // Fungsi untuk mendapatkan data produk berdasarkan ID
-    function getProductById(productId) {
-        // Ganti dengan logika Anda untuk mendapatkan data produk dari sumber data (misalnya, server)
 
-        // Contoh data produk
-        const products = [
-            { id: 1, name: 'Product 1', price: 10 },
-            { id: 2, name: 'Product 2', price: 15 },
-        ];
+    function increaseQuantity(productId) {
+        $.ajax({
+            url: "/add-to-cart",
+            type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': csrfToken
+            },
+            data: { productId: productId },
+            dataType: 'json',
+            success: function (response) {
+                if (response.success) {
+                    updateCartItemCount(response.cartItemCount);
+                    const quantityElement = document.getElementById('qty2_' + productId);
+                    const quantityElement2 = document.getElementById('qty_' + productId);
+                    let quantity = parseInt(quantityElement.value);
+                    quantity++;
+                    quantityElement.value = quantity;
+                    quantityElement2.value = quantity;
+                    updateSubtotal(productId);
+                } else {
+                    Toast.fire({
+                        icon: 'error',
+                        title: 'Error!'
+                    })
+                }
+            }
+        });
+    }
 
-        return products.find(product => product.id === productId);
+    function decreaseQuantity(productId) {
+        const quantityElement = document.getElementById('qty2_' + productId);
+        const quantityElement2 = document.getElementById('qty_' + productId);
+        let quantity = parseInt(quantityElement.value);
+        quantity--;
+        if (quantity >= 1) {
+            quantityElement.value = quantity;
+            quantityElement2.value = quantity;
+            updateSubtotal(productId);
+            updateCartQuantity(productId, quantity);
+        } else {
+            removeFromCart(productId);
+        }
+    }
+
+    function updateSubtotal(productId) {
+        const productPrice = parseInt(document.getElementById('cart-price_' + productId).value);
+        const quantity = parseInt(document.getElementById('qty2_' + productId).value);
+        const subtotal = productPrice * quantity;
+        const viewSubtotal = document.getElementById('viewsubtotal_' + productId);
+        viewSubtotal.innerHTML = subtotal.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+
+
+    if (window.location.pathname === '/cart') {
+        const myElement = $("#cart-items").get(0);
+
+        myElement.addEventListener("click", function (event) {
+            const target = event.target;
+            const productId = $(target).closest("tr").attr("data-product-id");
+
+            if ($(target).hasClass("btn-increase-quantity")) {
+                increaseQuantity(productId);
+            } else if ($(target).hasClass("btn-decrease-quantity")) {
+                decreaseQuantity(productId);
+            }
+        });
     }
 
     addToCartButtons.forEach(button => {

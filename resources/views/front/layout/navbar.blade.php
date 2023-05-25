@@ -920,7 +920,7 @@
                                 </li>
                                 <li>
                                     <a href="/history">History pembelian
-                                        
+
                                     </a>
                                 </li>
                             </ul>
@@ -1143,35 +1143,37 @@
                                 <div class="zoom-area">
                                     <img id="zoom-pro-quick-view" class="img-fluid"
                                         src="{{ asset('front/') }}/images/product/product@4x.jpg"
-                                        data-zoom-image="images/product/product@4x.jpg" alt="Zoom Image">
+                                        data-zoom-image="{{ asset('front') }}/images/product/product@4x.jpg"
+                                        alt="Zoom Image">
                                     <div id="gallery-quick-view" class="u-s-m-t-10">
-                                        <a class="active" data-image="images/product/product@4x.jpg"
-                                            data-zoom-image="images/product/product@4x.jpg">
+                                        <a class="active"
+                                            data-image="{{ asset('front') }}/images/product/product@4x.jpg"
+                                            data-zoom-image="{{ asset('front') }}/images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
-                                        <a data-image="images/product/product@4x.jpg"
-                                            data-zoom-image="images/product/product@4x.jpg">
+                                        <a data-image="{{ asset('front') }}/images/product/product@4x.jpg"
+                                            data-zoom-image="{{ asset('front') }}/images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
-                                        <a data-image="images/product/product@4x.jpg"
-                                            data-zoom-image="images/product/product@4x.jpg">
+                                        <a data-image="{{ asset('front') }}/images/product/product@4x.jpg"
+                                            data-zoom-image="{{ asset('front') }}/images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
-                                        <a data-image="images/product/product@4x.jpg"
-                                            data-zoom-image="images/product/product@4x.jpg">
+                                        <a data-image="{{ asset('front') }}/images/product/product@4x.jpg"
+                                            data-zoom-image="{{ asset('front') }}/images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
-                                        <a data-image="images/product/product@4x.jpg"
-                                            data-zoom-image="images/product/product@4x.jpg">
+                                        <a data-image="{{ asset('front') }}/images/product/product@4x.jpg"
+                                            data-zoom-image="{{ asset('front') }}/images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
-                                        <a data-image="images/product/product@4x.jpg"
-                                            data-zoom-image="images/product/product@4x.jpg">
+                                        <a data-image="{{ asset('front') }}/images/product/product@4x.jpg"
+                                            data-zoom-image="{{ asset('front') }}/images/product/product@4x.jpg">
                                             <img src="{{ asset('front/') }}/images/product/product@2x.jpg"
                                                 alt="Product">
                                         </a>
@@ -1426,7 +1428,5 @@
     </script>
 
 </body>
-
-<<<<<<< HEAD=======>>>>>>> 11296c839532b81b20868baf04c87a54f863694e
 
 </html>
