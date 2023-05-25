@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignUuid('brandId')->references('brandId')->on('brands');
             $table->string('coolerType',255);
             $table->string('coolerCaseType',255);
+            $table->string('coolerSocket',255);
             $table->string('coolerName',255);
             $table->string('coolerRpm',255);
             $table->string('coolerPrice',255);
