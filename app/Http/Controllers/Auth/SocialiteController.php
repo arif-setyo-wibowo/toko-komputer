@@ -33,7 +33,5 @@ class SocialiteController extends Controller
         }catch (Exception $e) {
             return redirect()->back();
         }
-    }
-
-    
+    }    
 }
