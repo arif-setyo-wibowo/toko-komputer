@@ -27,6 +27,7 @@ use App\Http\Controllers\CustomxamerController;
 use App\Http\Controllers\EarphoneController;
 use App\Http\Controllers\KeyboardController;
 use App\Http\Controllers\MonitorController;
+use App\Http\Controllers\CoolerController;
 
 //FRONT
 use App\Http\Controllers\Front\HomeController;
@@ -210,6 +211,9 @@ Route::prefix('administrator')->group(function () {
     
     // Monitor
     Route::get('/monitor', [MonitorController::class, 'index']);
+
+     // Cooler
+    Route::get('/cooler', [CoolerController::class, 'index']);
 
     // Order
     Route::controller(OrderController::class)->prefix('/order')->group(function () {
