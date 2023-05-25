@@ -15,11 +15,14 @@ use App\Models\Identity;
 class CustomerController extends Controller
 {
     
-    public function login()
+    public function login(Request $request)
     {
+        
+        $cart = $request->session()->get('cart.items', []);
         $data=[
             'title' => "Login",
-            'identitas' => Identity::all()
+            'identitas' => Identity::all(),
+            'countCart' => count($cart)
         ];
         if (Auth::check()) {
             return redirect('front/home');
@@ -66,11 +69,13 @@ class CustomerController extends Controller
     public function signup()
     {
         
+        $cart = session()->get('cart.items', []);
         $email = session()->get('email.auth');
         $data =[
             'title' => 'register',
             'customerEmail' => $email,
-            'identitas' => Identity::all()
+            'identitas' => Identity::all(),
+            'countCart' => count($cart)
         ];
 
         if ($email) {
@@ -110,8 +115,11 @@ class CustomerController extends Controller
 
     public function verify($verify_key)
     {       
+        
+        $cart = session()->get('cart.items', []);
         $data = [
-            'identitas' => Identity::all()
+            'identitas' => Identity::all(),
+            'countCart' => count($cart)
         ];
         $keycheck = User::select('customerVerifyKey')
                         ->where('customerVerifyKey',$verify_key)
@@ -127,14 +135,16 @@ class CustomerController extends Controller
     public function reset()
     {
         $data = [
-            'identitas' => Identity::all()
+            'identitas' => Identity::all(),
+            // 'countCart' => count($cart)
         ];
         return view('Auth/resetPassword',$data);
     }
     public function reset_data()
     {
         $data = [
-            'identitas' => Identity::all()
+            'identitas' => Identity::all(),
+            // 'countCart' => count($cart)
         ];
         return view('Auth/resetPassword',$data);
     }

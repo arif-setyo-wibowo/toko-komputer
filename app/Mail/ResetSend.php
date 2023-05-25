@@ -21,6 +21,15 @@ class ResetSend extends Mailable
     {
         $this->data = $data;
     }
+    /**
+     * Get the attachments for the message.
+     *
+     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
+     */
+    public function attachments(): array
+    {
+        return [];
+    }
 
     public function build()
     {

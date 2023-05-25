@@ -37,12 +37,15 @@ class CoolerController extends Controller
             $cooler->coolerImage = $coolerGambarName;
         }
 
-        $cooler->brandId = $request->brand;
-        $cooler->coolerName = $request->nama;
-        $cooler->coolerType = $request->type;
-        $cooler->coolerCaseType = $request->caseType;
-        $cooler->coolerPrice = $request->harga;
-        $cooler->coolerStock = $request->stok;
+        $cooler->brandId = $request->brandCooler;
+        $cooler->coolerName = $request->coolerName;
+        $cooler->coolerType = $request->coolerType;
+        $cooler->coolerCaseType = $request->coolerCaseType;
+        $cooler->coolerPrice = $request->coolerPrice;
+        $cooler->coolerStock = $request->coolerStock;
+        $cooler->coolerSocket = $request->coolerSocket;
+        $cooler->coolerPrice = $request->coolerPrice;
+        $cooler->coolerRpm = $request->coolerRpm;
         $cooler->save();
         
         return redirect()->route('administrator.cooler')->with(['success' => 'Tambah Data Berhasil']);

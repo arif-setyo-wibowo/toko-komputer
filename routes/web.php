@@ -24,9 +24,9 @@ use App\Http\Controllers\GraphicCardController;
 use App\Http\Controllers\ComputerCaseController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CustomxamerController;
-use App\Http\Controllers\EarphoneController;
-use App\Http\Controllers\KeyboardController;
-use App\Http\Controllers\MonitorController;
+use App\Http\Controllers\Admin\EarphoneController;
+use App\Http\Controllers\Admin\KeyboardController;
+use App\Http\Controllers\Admin\MonitorController;
 
 //FRONT
 use App\Http\Controllers\Front\HomeController;
@@ -209,7 +209,13 @@ Route::prefix('administrator')->group(function () {
     Route::get('/earphone', [EarphoneController::class, 'index']);
     
     // Keyboard
-    Route::get('/keyboard', [KeyboardController::class, 'index']);
+    Route::controller(KeyboardController::class)->prefix('/keyboard')->group(function () {
+        Route::get('/', 'index')->name('administrator.keyboard');
+        Route::post('/', 'store');
+        Route::get('/find/{id}', 'edit');
+        Route::post('/update', 'update');
+        Route::get('/delete/{id}', 'destroy');
+    });
     
     // Monitor
     Route::get('/monitor', [MonitorController::class, 'index']);

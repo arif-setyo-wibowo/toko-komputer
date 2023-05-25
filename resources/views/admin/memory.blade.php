@@ -80,8 +80,6 @@
                                 <button type="button" class="btn btn-outline-success button-detail"
                                   id="{{ $data->memoryId }}"><i class="bi bi-info"></i></button>
                               </li>
-                              <li></li>
-                              <li></li>
                             </ul>
                             <!-- End Notification Dropdown Items -->
                           </li>

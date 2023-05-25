@@ -59,13 +59,13 @@
                     </tr>
                   </thead>
                   <tbody>
-                    
+                    @foreach ($keyboard as $data)
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Asus ROG Strix Scope PBT RX Red</td>
-                        <td>Optical Mechanical Gaming Keyboard</td>
-                        <td>Asus ROG</td>
-                        <td>8</td>
+                        <th scope="row">{{ $loop->iteration }}</th>
+                        <td>{{ $data->keyboardName }}</td>
+                        <td>{{ $data->keyboardType }}</td>
+                        <td>{{ $data->brand->brandName }}</td>
+                        <td>{{ $data->keyboardStock }}</td>
                         <td class="text-center">
                           <li class="nav-item dropdown" style="list-style-type: none;">
                             <a style="font-size:150%; color:#4154f1;" class="nav-link nav-icon" href="#"
@@ -74,29 +74,28 @@
                             </a><!-- End Notification Icon -->
                             <ul class="p-2 dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
                               <li style="font-size:20px;">
-                                <button type="button" class=" btn btn-outline-primary "
-                                  data-bs-target="#update" data-bs-toggle="modal"><i class="bi bi-pen"></i></button>
-                                <button type="button" class="btn btn-outline-danger "
-                                  id=""><i class="bi  bi-trash"></i></button>
-                                <button type="button" class="btn btn-outline-success "
-                                 data-bs-target="#detail" data-bs-toggle="modal"><i class="bi bi-info"></i></button>
+                                <button type="button" class=" btn btn-outline-primary buttonupdate"
+                                  id="{{ $data->keyboardId }}"><i class="bi bi-pen"></i></button>
+                                <button type="button" class="btn btn-outline-danger buttonHapus"
+                                  id="{{ $data->keyboardId }}"><i class="bi  bi-trash"></i></button>
+                                <button type="button" class="btn btn-outline-success button-detail"
+                                  id="{{ $data->keyboardId }}"><i class="bi bi-info"></i></button>
                               </li>
-                              <li></li>
-                              <li></li>
                             </ul>
                             <!-- End Notification Dropdown Items -->
                           </li>
                           <!-- End Notification Nav -->
                         </td>
                       </tr>
-                  
+                      @endforeach
                   </tbody>
                 </table>
               </div>
-              <!-- Tambah Memory -->
+              <!-- Tambah keyboard -->
               <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
                 <h5 class="card-title">Tambah Keyboard </h5>
                 <form action="{{ url()->current() }}" method="POST" enctype="multipart/form-data">
+                  @csrf
                   <div class="row">
                     <div class="row mb-3">
                       <div class="col-md-8 col-lg-9">
@@ -104,7 +103,7 @@
                           alt="">
                         <div class="pt-2 col-md-4 text-center">
                           <label style="width:100px;">
-                            <input type="file" name="memoryImage" id="memoryImage" style="display:none;" required>
+                            <input type="file" name="keyboardImage" id="keyboardImage" style="display:none;" required>
                             <a class="btn btn-primary " style="width: 100px;"><i class="bi bi-upload"></i></a>
                           </label>
                         </div>
@@ -115,13 +114,13 @@
                     <div class="row col">
                       <label for="inputText" class="col-md-3 col-form-label">Nama Keyborad</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" name="nama" required>
+                        <input type="text" class="form-control" name="keyboardName" required>
                       </div>
                     </div>
                     <div class="row col">
                       <label for="inputText" class="col-md-3 col-form-label">Tipe Keyboard</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" name="nama" placeholder="Mechanical/Membran/Office" required>
+                        <input type="text" class="form-control" name="keyboardType" placeholder="Mechanical/Membran/Office" required>
                       </div>
                     </div>
                   </div>
@@ -129,38 +128,59 @@
                     <div class="row col">
                         <label for="inputText" class="col-md-3 col-form-label">Size Keyboard</label>
                         <div class="col-sm-8">
-                          <select class="form-select" aria-label="Default select example" name="brandId" required>
+                          <select class="form-select" aria-label="Default select example" name="keyboardSize" required>
                             <option selected>Pilih Size</option>
-                              <option value="">TKL </option>
-                              <option value="">Full Size </option>
-                              <option value="">60 </option>
-                              <option value="">64 </option>
+                              <option value="TKL">TKL</option>
+                              <option value="Full Size">Full Size</option>
+                              <option value="60">60</option>
+                              <option value="64">64</option>
                           </select>
                         </div>
                       </div>
                     <div class="row col">
                      <label for="inputText" class="col-md-3 col-form-label">Switch Keyboard</label>
                         <div class="col-sm-8">
-                          <select class="form-select" aria-label="Default select example" name="brandId" required>
-                            <option selected>Pilih Switch</option>
-                              <option value="">Red </option>
-                              <option value="">Blue</option>
-                              <option value="">Yellow </option>
-                              <option value="">Black </option>
+                          <select class="form-select" aria-label="Default select example" name="keyboardSwitch" required>
+                            <option disabled selected value="">Pilih Switch</option>
+                              <option value="Red">Red </option>
+                              <option value="Blue">Blue</option>
+                              <option value="Yellow">Yellow </option>
+                              <option value="Black">Black </option>
                           </select>
                         </div>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="row col">
+                        <label for="inputText" class="col-md-3 col-form-label">Brand Keyboard</label>
+                        <div class="col-sm-8">
+                          <select class="form-select" aria-label="Default select example" name="brandkeyboard" required>
+                            <option disabled selected value="">Pilih Brand</option>
+                            @foreach ($merk as $item)
+                              <option value="{{ $item->brandId }}">{{ $item->brandName }}</option>
+                            @endforeach
+                          </select>
+                        </div>
+                      </div>
+                      
+                    <div class="row col">
+                      <label for="inputText" class="col-md-3 col-form-label">Feature</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" name="keyboardFeature" required>
+                      </div>
+                    </div>
                   </div>
                   <div class="row mt-4">
                     <div class="row col">
                       <label for="inputText" class="col-md-3 col-form-label">Keyborad Layout</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" name="volt" required>
+                        <input type="text" class="form-control" name="keyboardLayout" required>
                       </div>
                     </div>
                     <div class="row col">
                       <label for="inputText" class="col-md-3 col-form-label">Connection</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" name="stok" placeholder="USB/Wireless/Bluthod" required>
+                        <input type="text" class="form-control" name="keyboardConnection" placeholder="USB/Wireless/Bluthod" required>
                       </div>
                     </div>
                   </div>
@@ -168,24 +188,31 @@
                     <div class="row col">
                       <label for="inputText" class="col-md-3 col-form-label">Harga</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" name="volt" required>
+                        <input type="text" class="form-control" name="keyboardPrice" required>
                       </div>
                     </div>
                     <div class="row col">
                       <label for="inputText" class="col-md-3 col-form-label">Stock</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" name="stok" required>
+                        <input type="text" class="form-control" name="keyboardStock" required>
                       </div>
                     </div>
                   </div>
-                   <div class="row mt-4">
-                        <div class="row col-md-6">
-                          <label for="inputPassword" class="col-sm-3 col-form-label">Description</label>
-                          <div class="col-sm-9">
-                            <textarea class="form-control" style="height: 100px" name="moboDescription" required></textarea>
-                          </div>
-                        </div>
-                     </div>
+                  <div class="row mt-4">
+                    <div class="row col">
+                      <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" name="keyboardWarranty" required>
+                      </div>
+                    </div>
+                    <div class="row col">
+                      <label for="inputPassword" class="col-sm-3 col-form-label">Description</label>
+                      <div class="col-sm-9">
+                        <textarea class="form-control" style="height: 100px" name="keyboardDescription" required></textarea>
+                      </div>
+                    </div>
+                  </div>
+                
                   <div class="row mt-4">
                     <label class="col-sm-3 col-form-label"></label>
                     <div class="col-sm-10">
@@ -199,27 +226,28 @@
 
             <!-- Modal -->
             <!-- update -->
-            <div class="modal fade modal-lg" id="update" tabindex="-1">
+            <div class="modal fade modal-lg" id="updateKeyboard" tabindex="-1">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <form action="{{ url()->current() }}/update" method="POST" enctype="multipart/form-data">
-                 
+                    @csrf
                     <div class="modal-header">
-                      <h5 class="modal-title">Update Memory</h5>
+                      <h5 class="modal-title">Update keyboard</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body p-3">
                       <div class="row">
                     <div class="row mb-3">
                       <div class="col-md-8 col-lg-9">
-                        <img src="{{ asset('admin/') }}/img/card.jpg" id="gambarTambah" style="height: 220px;"
-                          alt="">
-                        <div class="pt-2 col-md-4 text-center">
-                          <label style="width:100px;">
-                            <input type="file" name="memoryImage" id="memoryImage" style="display:none;" required>
-                            <a class="btn btn-primary " style="width: 100px;"><i class="bi bi-upload"></i></a>
-                          </label>
-                        </div>
+                        <img src="" style="height: 220px;" id="UpdateGambar">
+                          <div class="pt-2 col-md-4 text-center">
+                            <label style="width:100px;">
+                              <input type="hidden" name="idUpdate" id="idUpdate" required>
+                              <input type="hidden" name="imageAwal" id="imageAwal" required>
+                              <input type="file" name="imageUpdate" id="imageUpdate" style="display:none;">
+                              <a class="btn btn-primary " style="width: 100px;"><i class="bi bi-upload"></i></a>
+                            </label>
+                          </div>
                       </div>
                     </div>
                   </div>
@@ -227,13 +255,13 @@
                     <div class="row col">
                       <label for="inputText" class="col-md-3 col-form-label">Nama Keyborad</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" name="nama" required>
+                        <input type="text" class="form-control" name="updateName" id="namaUpdate" required>
                       </div>
                     </div>
                     <div class="row col">
                       <label for="inputText" class="col-md-3 col-form-label">Tipe Keyboard</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" name="nama" placeholder="Mechanical/Membran/Office" required>
+                        <input type="text" class="form-control" name="updateType" id="typeUpdate" placeholder="Mechanical/Membran/Office" required>
                       </div>
                     </div>
                   </div>
@@ -241,38 +269,57 @@
                     <div class="row col">
                         <label for="inputText" class="col-md-3 col-form-label">Size Keyboard</label>
                         <div class="col-sm-8">
-                          <select class="form-select" aria-label="Default select example" name="brandId" required>
-                            <option selected>Pilih Size</option>
-                              <option value="">TKL </option>
-                              <option value="">Full Size </option>
-                              <option value="">60 </option>
-                              <option value="">64 </option>
+                          <select class="form-select" aria-label="Default select example" name="updateSize" id="sizeUpdate" required>
+                            <option selected disabled value="">Pilih Size</option>
+                              <option value="TKL">TKL </option>
+                              <option value="Full Size">Full Size </option>
+                              <option value="60">60 </option>
+                              <option value="64">64 </option>
                           </select>
                         </div>
                       </div>
                     <div class="row col">
                      <label for="inputText" class="col-md-3 col-form-label">Switch Keyboard</label>
                         <div class="col-sm-8">
-                          <select class="form-select" aria-label="Default select example" name="brandId" required>
-                            <option selected>Pilih Switch</option>
-                              <option value="">Red </option>
-                              <option value="">Blue</option>
-                              <option value="">Yellow </option>
-                              <option value="">Black </option>
+                          <select class="form-select" aria-label="Default select example" name="updateSwitch" id="switchUpdate" required>
+                            <option selected disabled value="">Pilih Switch</option>
+                              <option value="Red">Red </option>
+                              <option value="Blue">Blue</option>
+                              <option value="Yellow">Yellow </option>
+                              <option value="Black">Black </option>
                           </select>
                         </div>
                   </div>
                   <div class="row mt-4">
                     <div class="row col">
+                    <label for="inputText" class="col-md-3 col-form-label">Brand Keyboard</label>
+                    <div class="col-sm-8">
+                      <select class="form-select" aria-label="Default select example" name="updateBrand" id="brandUpdate" required>
+                        <option disabled selected value="">Pilih Brand</option>
+                        @foreach ($merk as $item)
+                          <option value="{{ $item->brandId }}">{{ $item->brandName }}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                    </div>
+                    <div class="row col">
+                      <label for="inputText" class="col-md-3 col-form-label">Feature</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" name="updateFeature" id="featureUpdate" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-4">
+                    <div class="row col">
                       <label for="inputText" class="col-md-3 col-form-label">Keyborad Layout</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" name="volt" required>
+                        <input type="text" class="form-control" name="updateLayout" id="layoutUpdate" required>
                       </div>
                     </div>
                     <div class="row col">
                       <label for="inputText" class="col-md-3 col-form-label">Connection</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" name="stok" placeholder="USB/Wireless/Bluthod" required>
+                        <input type="text" class="form-control" name="updateConnection" id="connectionUpdate" placeholder="USB/Wireless/Bluthod" required>
                       </div>
                     </div>
                   </div>
@@ -280,21 +327,27 @@
                     <div class="row col">
                       <label for="inputText" class="col-md-3 col-form-label">Harga</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" name="volt" required>
+                        <input type="text" class="form-control" name="updatePrice" id="hargaUpdate" required>
                       </div>
                     </div>
                     <div class="row col">
                       <label for="inputText" class="col-md-3 col-form-label">Stock</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" name="stok" required>
+                        <input type="text" class="form-control" name="updateStock" id="stokUpdate" required>
                       </div>
                     </div>
                   </div>
                    <div class="row mt-4">
+                    <div class="row col">
+                      <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" name="updateWarranty" id="garansiUpdate" required>
+                      </div>
+                    </div>
                         <div class="row col-md-6">
                           <label for="inputPassword" class="col-sm-3 col-form-label">Description</label>
                           <div class="col-sm-9">
-                            <textarea class="form-control" style="height: 100px" name="moboDescription" required></textarea>
+                            <textarea class="form-control" style="height: 100px" name="updateDescription" id="descriptionUpdate" required></textarea>
                           </div>
                         </div>
                      </div>
@@ -326,12 +379,11 @@
                             <!-- Bordered Tabs -->
                             <div class="tab-content row ">
                               <div class="card-body col-md-5 pt-4 d-flex flex-column align-items-center">
-                                <img src="{{ asset('admin/') }}/img/card.jpg" id="gambarTambah" style="height: 220px;"
-                          alt="">
+                                <img src="" id="gambar" style="height: 220px;" alt="">
                               </div>
                               <div class="col-md-7 tab-pane fade show active profile-overview modal-dialog-scrollable"
                                 id="profile-overview">
-                                <h5 class="card-title" id="">Asus ROG Strix Scope PBT RX Red</h5>
+                                <h5 class="card-title" id="nama"></h5>
                                 <table class="table table-hover">
                                   <thead>
                                     <tr>
@@ -341,43 +393,45 @@
                                   </thead>
                                   <tbody>
                                     <tr>
+                                      <td>Merk</td>
+                                      <td id="merk"></td>
+                                    </tr>
+                                    <tr>
                                       <td>Tipe</td>
-                                      <td id="merk">ptical Mechanical Gaming Keyboard</td>
+                                      <td id="type"></td>
                                     </tr>
                                     <tr>
                                       <td>Keyborad Size</td>
-                                      <td id="capacity">TKL</td>
+                                      <td id="size"></td>
                                     </tr>
                                     <tr>
                                       <td>Switch</td>
-                                      <td id="type">Blue</td>
+                                      <td id="switc"></td>
                                     </tr>
                                     <tr>
                                       <td>Layout</td>
-                                      <td id="speed">Full Layout</td>
+                                      <td id="layout"></td>
                                     </tr>
                                     <tr>
                                       <td>Connection</td>
-                                      <td id="latency">USB</td>
+                                      <td id="connection"></td>
                                     </tr>
                                     <tr>
                                       <td>Stok</td>
-                                      <td id="stok">12</td>
+                                      <td id="stok"></td>
                                     </tr>
                                     <tr>
                                       <td>Garansi</td>
-                                      <td id="garansi">3 year</td>
+                                      <td id="garansi"></td>
                                     </tr>
                                     <tr>
                                       <td>Harga</td>
-                                      <td id="harga">2,000,000</td>
+                                      <td id="harga"></td>
                                     </tr>
                                   </tbody>
                                 </table>
                                 <h4 class="card-title">Deskripsi</h4>
-                                <p class="small ">Sunt est soluta temporibus accusantium neque nam maiores cumque
-                                  temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae
-                                  quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
+                                <p class="small" id="deskripsi"></p>
                               </div>
                             </div>
                           </div>
@@ -411,5 +465,5 @@
   </section>
 @endsection
 @section('javascript')
-  <script src="{{ asset('admin/') }}/js/custom/memory.js"></script>
+  <script src="{{ asset('admin/') }}/js/custom/keyboard.js"></script>
 @endsection

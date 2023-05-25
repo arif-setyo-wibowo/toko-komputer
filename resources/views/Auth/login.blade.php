@@ -49,7 +49,7 @@
                             <label for="login-password">Password
                                 <span class="astk">*</span>
                             </label>
-                            <input type="text" id="login-password" class="text-field" name="customerPassword"  placeholder="Password">
+                            <input type="password" id="login-password" class="text-field" name="customerPassword"  placeholder="Password">
                         </div>
                         <div class="group-inline u-s-m-b-30">
                             <div class="group-2 text-right">
