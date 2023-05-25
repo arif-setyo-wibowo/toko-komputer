@@ -41,6 +41,8 @@ use App\Http\Controllers\MemoryController;
 use App\Http\Controllers\MotherboardController;
 use App\Http\Controllers\PowerSupplyController as ControllersPowerSupplyController;
 use App\Http\Controllers\ProcessorController as FrontProcessorController;
+use App\Http\Controllers\Front\HistoryController;
+use App\Http\Controllers\Front\DetailHistoryController;
 // 
 use App\Http\Controllers\TestController;
 use App\Models\PowerSupply;
@@ -64,6 +66,8 @@ Route::get('/shop', [ShopController::class, 'index']);
 Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add.cart');
 Route::post('/remove-from-cart', [CartController::class, 'removeFromCart'])->name('remove.cart');
 Route::get('/checkout', [OrdersController::class, 'index'])->name('checkout');
+Route::get('/history', [HistoryController::class, 'index']);
+Route::get('/detailhistory', [DetailHistoryController::class, 'index']);
 
 // DETAIL PRODUK
 // Route::get('/detailproduk', [DetailProdukController::class, 'index']);
