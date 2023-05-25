@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Mouse;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class MouseController extends Controller
@@ -12,7 +12,7 @@ class MouseController extends Controller
      */
     public function index()
     {
-        $data=[
+         $data=[
             'title' => "Mouse"
         ];
 
@@ -38,7 +38,7 @@ class MouseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Mouse $mouse)
+    public function show(string $id)
     {
         //
     }
@@ -46,7 +46,7 @@ class MouseController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Mouse $mouse)
+    public function edit(string $id)
     {
         //
     }
@@ -54,7 +54,7 @@ class MouseController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Mouse $mouse)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -62,7 +62,7 @@ class MouseController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Mouse $mouse)
+    public function destroy(string $id)
     {
         //
     }

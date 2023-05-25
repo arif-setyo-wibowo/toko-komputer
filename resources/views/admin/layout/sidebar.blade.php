@@ -170,6 +170,11 @@
             </a>
           </li>
           <li>
+            <a href="/administrator/mouse">
+              <i class="bi bi-circle"></i><span>Mouse</span>
+            </a>
+          </li>
+          <li>
             <a href="/administrator/monitor">
               <i class="bi bi-circle"></i><span>Monitor</span>
             </a>

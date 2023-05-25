@@ -919,8 +919,8 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="custom-deal-page.html">Super Sale
-                                        <span class="superscript-label-discount">-15%</span>
+                                    <a href="/history">History pembelian
+                                        
                                     </a>
                                 </li>
                             </ul>

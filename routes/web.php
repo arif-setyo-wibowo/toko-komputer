@@ -28,6 +28,7 @@ use App\Http\Controllers\EarphoneController;
 use App\Http\Controllers\KeyboardController;
 use App\Http\Controllers\MonitorController;
 use App\Http\Controllers\CoolerController;
+use App\Http\Controllers\MouseController;
 
 //FRONT
 use App\Http\Controllers\Front\HomeController;
@@ -217,6 +218,9 @@ Route::prefix('administrator')->group(function () {
 
      // Cooler
     Route::get('/cooler', [CoolerController::class, 'index']);
+
+     // Mouse
+    Route::get('/mouse', [MouseController::class, 'index']);
 
     // Order
     Route::controller(OrderController::class)->prefix('/order')->group(function () {
