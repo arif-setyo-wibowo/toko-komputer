@@ -11,11 +11,13 @@ class RakitPcController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $cart = $request->session()->get('cart.items', []);
         $data=[
             'title' => "Rakit Pc",
-            'identitas' => Identity::all()
+            'identitas' => Identity::all(),
+            'countCart' => count($cart)
         ];
 
         return view('front/rakitPc',$data);

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Identity;
 
-class HomeController extends Controller
+class OrdersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,14 +14,25 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $cart = $request->session()->get('cart.items', []);
+        $subtotal = 0;
 
-        $data=[
-            'title' => "home",
+        foreach ($cart as $item) {
+            $subtotal += $item['product_price'] * $item['quantity'];
+        }
+
+       $data=[
+            'title'     => "Cart",
             'identitas' => Identity::all(),
-            'countCart' => count($cart)
+            'cart'      => $cart,
+            'countCart' => count($cart),
+            'subtotal'  => $subtotal
         ];
 
-        return view('front/home',$data);
+        if (count($cart) == 0) {
+            return redirect()->route('home');
+        }else{
+            return view('front/checkout',$data);
+        }
     }
 
     /**

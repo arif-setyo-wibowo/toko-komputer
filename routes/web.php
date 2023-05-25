@@ -33,6 +33,7 @@ use App\Http\Controllers\CoolerController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\RakitPcController;
 use App\Http\Controllers\Front\CartController;
+use App\Http\Controllers\Front\OrdersController;
 use App\Http\Controllers\Front\DetailController;
 use App\Http\Controllers\Front\ShopController;
 use App\Http\Controllers\MemoryController;
@@ -60,6 +61,8 @@ Route::get('/rakitpc', [RakitPcController::class, 'index']);
 Route::get('/cart', [CartController::class, 'index']);
 Route::get('/shop', [ShopController::class, 'index']);
 Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add.cart');
+Route::post('/remove-from-cart', [CartController::class, 'removeFromCart'])->name('remove.cart');
+Route::get('/checkout', [OrdersController::class, 'index'])->name('checkout');
 
 // DETAIL PRODUK
 // Route::get('/detailproduk', [DetailProdukController::class, 'index']);

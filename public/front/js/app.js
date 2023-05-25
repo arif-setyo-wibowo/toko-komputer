@@ -126,13 +126,13 @@ $(function () {
         //  let $href = $('#mini-cart-trigger'.attr('href');
         //   window.location.href = $href; //causes the browser to refresh and
         // load the requested url
-        $('#mini-cart-trigger').on('click', function () {
-            $('.mini-cart-wrapper').addClass('mini-cart-open');
-        });
+        // $('#mini-cart-trigger').on('click', function () {
+        //     $('.mini-cart-wrapper').addClass('mini-cart-open');
+        // });
 
-        $('#mini-cart-close').on('click', function () {
-            $('.mini-cart-wrapper').removeClass('mini-cart-open');
-        });
+        // $('#mini-cart-close').on('click', function () {
+        //     $('.mini-cart-wrapper').removeClass('mini-cart-open');
+        // });
     };
 
     /**
@@ -747,6 +747,8 @@ $(document).ready(function () {
 
     // TAMBAH KE KERANJANG
     const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+    const removeButtons = document.querySelectorAll('.btn-remove-from-cart');
+    var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
     const Toast = Swal.mixin({
         toast: true,
@@ -758,7 +760,6 @@ $(document).ready(function () {
 
     // Fungsi untuk menambahkan produk ke keranjang
     function addToCart(productId) {
-        var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
         $.ajax({
             url: "/add-to-cart",
             type: 'POST',
@@ -769,10 +770,11 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (response) {
                 if (response.success) {
+                    updateCartItemCount(response.cartItemCount);
                     Toast.fire({
                         icon: 'success',
                         title: 'Dimasukkan ke Keranjang'
-                    })
+                    });
                 } else {
                     Toast.fire({
                         icon: 'error',
@@ -781,6 +783,80 @@ $(document).ready(function () {
                 }
             }
         });
+    }
+
+    function removeFromCart(productId) {
+        Swal.fire({
+            title: 'Yakin ingin menghapus?',
+
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            cancelButtonText: 'Batal',
+            confirmButtonText: 'Ya Hapus'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: "/remove-from-cart",
+                    type: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    data: { productId: productId },
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.success) {
+                            Toast.fire({
+                                icon: 'success',
+                                title: 'Item Berhasil Di Hapus'
+                            });
+                            updateCartItemCount(response.cartItemCount);
+                            removeCartItem(productId);
+                            if (response.cartItemCount === 0) {
+                                displayEmptyCartMessage();
+                            }
+                        } else {
+                            Toast.fire({
+                                icon: 'error',
+                                title: 'Error!'
+                            })
+                        }
+                    }
+                });
+            }
+        })
+
+    }
+
+    function updateCartItemCount(count) {
+        const cartItemCountElement = document.getElementById('cart-item-count');
+
+        if (cartItemCountElement) {
+            cartItemCountElement.innerText = count;
+        } else {
+            const newElement = document.createElement('span');
+            newElement.id = 'cart-item-count';
+            newElement.innerText = count;
+
+            const parentElement = document.querySelector('p');
+            parentElement.appendChild(newElement);
+        }
+    }
+
+    function removeCartItem(productId) {
+        const cartItemElement = document.querySelector(`tr[data-product-id="${productId}"]`);
+        if (cartItemElement) {
+            cartItemElement.remove();
+        }
+    }
+
+    function displayEmptyCartMessage() {
+        const cartContainer = document.getElementById('cart-container');
+        const emptyCartMessage = document.createElement('h2');
+        emptyCartMessage.textContent = 'Keranjang Kosong';
+        cartContainer.innerHTML = '';
+        cartContainer.appendChild(emptyCartMessage);
     }
 
     // Fungsi untuk memperbarui tampilan keranjang
@@ -818,4 +894,15 @@ $(document).ready(function () {
         const productId = button.getAttribute('data-product-id');
         button.addEventListener('click', () => addToCart(productId));
     });
+
+    // Menambahkan event listener ke setiap tombol "Hapus"
+    removeButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault(); // Mencegah tindakan default formulir
+
+            const productId = button.getAttribute('data-product-id');
+            removeFromCart(productId);
+        });
+    });
+
 });
