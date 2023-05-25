@@ -24,9 +24,9 @@ use App\Http\Controllers\GraphicCardController;
 use App\Http\Controllers\ComputerCaseController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CustomxamerController;
-use App\Http\Controllers\EarphoneController;
-use App\Http\Controllers\KeyboardController;
-use App\Http\Controllers\MonitorController;
+use App\Http\Controllers\Admin\EarphoneController;
+use App\Http\Controllers\Admin\KeyboardController;
+use App\Http\ControllersAdmin\MonitorController;
 
 //FRONT
 use App\Http\Controllers\Front\HomeController;
