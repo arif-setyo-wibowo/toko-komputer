@@ -63,7 +63,7 @@
                                             <tr>
                                                 <th scope="row">{{ $loop->iteration }}</th>
                                                 <td><img src="{{ asset('uploads/' . $data->brandLogo) }}"
-                                                        style="width:150px;"></td>
+                                                        style="width:120px;"></td>
                                                 <td>{{ $data->brandName }}</td>
                                                 <td>
                                                     <li class="nav-item dropdown" style="list-style-type: none;">

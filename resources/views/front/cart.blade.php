@@ -43,8 +43,8 @@
                                         <tr data-product-id="{{ $item['product_id'] }}">
                                             <td>
                                                 <div class="cart-anchor-image">
-                                                    <a href="single-product.html">
-                                                        <img src="{{ asset('front/') }}/images/product/product@1x.jpg"
+                                                    <a href="/detailproduk/{{ $item['product_id'] }}">
+                                                        <img src="{{ asset('uploads') }}/{{ $item['product_images'] }}"
                                                             alt="Product">
                                                         <h6>{{ substr($item['product_name'], 0, 35) }} ....</h6>
                                                     </a>

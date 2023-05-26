@@ -44,7 +44,7 @@
                                                 <td>
                                                     <div class="cart-anchor-image">
                                                         <a href="/detailproduk/{{ $item->orderDetailProductId }}">
-                                                            <img src="{{ asset('front/') }}/images/product/product@1x.jpg"
+                                                            <img src="{{ asset('uploads') }}/{{ $item->productImage }}"
                                                                 alt="Product">
                                                             <h6>{{ $item->productName }}</h6>
                                                         </a>

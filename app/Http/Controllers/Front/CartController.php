@@ -50,10 +50,11 @@ class CartController extends Controller
     
         // Buat item produk dengan data yang diperlukan
         $item = [
-            'product_id' => $productId,
-            'product_name' => $product->productName,
+            'product_id'    => $productId,
+            'product_name'  => $product->productName,
             'product_price' => $product->productPrice,
-            'quantity' => $quantity,
+            'quantity'      => $quantity,
+            'product_images'=> $product->productImage
         ];
     
         $cartItems = $request->session()->get('cart.items', []);
