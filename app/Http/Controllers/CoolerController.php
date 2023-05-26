@@ -12,11 +12,7 @@ class CoolerController extends Controller
      */
     public function index()
     {
-        $data=[
-            'title' => "Cooler"
-        ];
-
-        return view('admin/cooler',$data);
+        
     }
 
     /**

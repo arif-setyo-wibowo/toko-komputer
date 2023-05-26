@@ -68,7 +68,6 @@ $(document).ready(function() {
                 garansi2.textContent = response[0]['keyboardWarranty'];
                 stok3.textContent = response[0]['keyboardStock'];
                 harga4.textContent = formatRupiah(response[0]['keyboardPrice']);
-                console.log(response[0]);
                 $("#detail").modal("show");
             }
         });

@@ -25,6 +25,7 @@ class CoolerController extends Controller
 
     public function store(Request $request)
     {
+
         $request->validate([
             'coolerImage' => 'image|mimes:png,jpg,jpeg',
         ]);
@@ -46,6 +47,8 @@ class CoolerController extends Controller
         $cooler->coolerSocket = $request->coolerSocket;
         $cooler->coolerPrice = $request->coolerPrice;
         $cooler->coolerRpm = $request->coolerRpm;
+        $cooler->coolerWarranty = $request->coolerWarranty;
+        $cooler->coolerDescription = $request->coolerDescription;
         $cooler->save();
         
         return redirect()->route('administrator.cooler')->with(['success' => 'Tambah Data Berhasil']);
@@ -65,9 +68,9 @@ class CoolerController extends Controller
 
         $cooler = Cooler::find($request->idUpdate);
         
-        if ($request->file('coolerImage')) {
+        if ($request->file('imageUpdate')) {
             File::delete('uploads/gambar/cooler/'.$cooler->coolerImage);
-            $gambar = $request->file('coolerImage');
+            $gambar = $request->file('imageUpdate');
             $coolerGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
             $gambar->move(public_path('uploads/gambar/cooler'), $coolerGambarName);
             $cooler->coolerImage = $coolerGambarName;
@@ -75,12 +78,17 @@ class CoolerController extends Controller
             $cooler->coolerImage = $request->imageAwal;
         }
 
-        $cooler->brandId = $request->brand;
-        $cooler->coolerName = $request->nama;
-        $cooler->coolerType = $request->type;
-        $cooler->coolerCaseType = $request->caseType;
-        $cooler->coolerPrice = $request->harga;
-        $cooler->coolerStock = $request->stok;
+        $cooler->brandId = $request->updateBrand;
+        $cooler->coolerName = $request->updateName;
+        $cooler->coolerType = $request->updateType;
+        $cooler->coolerCaseType = $request->updateCaseType;
+        $cooler->coolerPrice = $request->updatePrice;
+        $cooler->coolerStock = $request->updateStock;
+        $cooler->coolerSocket = $request->updateSocket;
+        $cooler->coolerPrice = $request->updatePrice;
+        $cooler->coolerRpm = $request->updateRpm;
+        $cooler->coolerWarranty = $request->updateWarranty;
+        $cooler->coolerDescription = $request->updateDescription;
         $cooler->save();
 
         return redirect()->route('administrator.cooler')->with(['success' => 'Edit Data Berhasil']);

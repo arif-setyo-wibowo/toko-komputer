@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('coolerRpm',255);
             $table->string('coolerPrice',255);
             $table->string('coolerStock',255);
+            $table->string('coolerDescription',255);
+            $table->string('coolerWarranty',255);
             $table->string('coolerImage', 255);
             $table->timestamps();
         });

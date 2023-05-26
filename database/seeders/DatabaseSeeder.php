@@ -28,6 +28,8 @@ class DatabaseSeeder extends Seeder
             GraphicCardSeeder::class,
             ProcessorSeeder::class,
             ViewBarangSeeder::class,
+            KeyboardSeeder::class,
+            CoolerSeeder::class
         ]);
     }
 }
