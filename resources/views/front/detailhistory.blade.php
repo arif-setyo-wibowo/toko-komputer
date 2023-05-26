@@ -24,26 +24,28 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
-                        <div class="row">
-                            <!-- Billing-&-Shipping-Details -->
-                            <div class="col-lg-8">
-                                <h4 class="section-h4">Product Detail</h4>
-                                <div class="table-wrapper u-s-m-b-60">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>Product</th>
-                                                <th>Harga</th>
-                                                <th>Jumlah</th>
-                                                <th>Subtotal</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                    <div class="row">
+                        <!-- Billing-&-Shipping-Details -->
+                        <div class="col-lg-8">
+                            <h4 class="section-h4">Product Detail</h4>
+                            <div class="table-wrapper u-s-m-b-60">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Harga</th>
+                                            <th>Jumlah</th>
+                                            <th>Subtotal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($orderDetail as $item)
                                             <tr>
                                                 <td>
                                                     <div class="cart-anchor-image">
                                                         <a href="single-product.html">
-                                                            <img src="{{ asset('front/') }}/images/product/product@1x.jpg" alt="Product">
+                                                            <img src="{{ asset('front/') }}/images/product/product@1x.jpg"
+                                                                alt="Product">
                                                             <h6>Casual Hoodie Full Cotton</h6>
                                                         </a>
                                                     </div>
@@ -64,83 +66,59 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="cart-anchor-image">
-                                                        <a href="single-product.html">
-                                                            <img src="{{ asset('front/') }}/images/product/product@1x.jpg" alt="Product">
-                                                            <h6>Casual Hoodie Full Cotton</h6>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="cart-price">
-                                                        Rp.100.000
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="cart-price text-center">
-                                                        2
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="cart-price">
-                                                        Rp.200.000
-                                                    </div>
-                                                </td>
-                                            </tr>   
-                                        </tbody>
-                                    </table>
-                                </div> 
-                                <div class="collapse" id="showdifferent">                                   
-                                </div>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                             </div>
-                            <!-- Billing-&-Shipping-Details /- -->
-                            <!-- Checkout -->
-                            <div class="col-lg-4">
-                                <h4 class="section-h4">Your Order</h4>
-                                <div class="order-table">
-                                    <table class="u-s-m-b-13">
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <h3 class="order-h3">Subtotal</h3>
-                                                </td>
-                                                <td>
-                                                    <h3 class="order-h3">Rp.220.00</h3>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h3 class="order-h3">Shipping</h3>
-                                                </td>
-                                                <td>
-                                                    <h3 class="order-h3">Rp.0.00</h3>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h3 class="order-h3">Tax</h3>
-                                                </td>
-                                                <td>
-                                                    <h3 class="order-h3">Rp.0.00</h3>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <h3 class="order-h3">Total</h3>
-                                                </td>
-                                                <td>
-                                                    <h3 class="order-h3">Rp.220.00</h3>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <a href="/history"><button  class="button button-outline-secondary">kembali</button></a>
-                                </div>
+                            <div class="collapse" id="showdifferent">
                             </div>
-                            <!-- Checkout /- -->
                         </div>
+                        <!-- Billing-&-Shipping-Details /- -->
+                        <!-- Checkout -->
+                        <div class="col-lg-4">
+                            <h4 class="section-h4">Your Order</h4>
+                            <div class="order-table">
+                                <table class="u-s-m-b-13">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <h3 class="order-h3">Subtotal</h3>
+                                            </td>
+                                            <td>
+                                                <h3 class="order-h3">Rp.220.00</h3>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h3 class="order-h3">Shipping</h3>
+                                            </td>
+                                            <td>
+                                                <h3 class="order-h3">Rp.0.00</h3>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h3 class="order-h3">Tax</h3>
+                                            </td>
+                                            <td>
+                                                <h3 class="order-h3">Rp.0.00</h3>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h3 class="order-h3">Total</h3>
+                                            </td>
+                                            <td>
+                                                <h3 class="order-h3">Rp.220.00</h3>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <a href="/history"><button class="button button-outline-secondary">kembali</button></a>
+                            </div>
+                        </div>
+                        <!-- Checkout /- -->
+                    </div>
                 </div>
             </div>
         </div>

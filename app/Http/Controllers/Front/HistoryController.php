@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Identity;
+use Illuminate\Support\Facades\DB;
 
 class HistoryController extends Controller
 {
@@ -13,11 +14,14 @@ class HistoryController extends Controller
      */
     public function index(Request $request)
     {
-         $cart = $request->session()->get('cart.items', []);
+        $cart = $request->session()->get('cart.items', []);
+        $custId = session()->get('id.customer');
+        $order = DB::table('orders')->where('customerId', '=', $custId)->get();
 
         $data=[
             'title' => "History",
             'identitas' => Identity::all(),
+            'order' => $order,
             'countCart' => count($cart)
         ];
 

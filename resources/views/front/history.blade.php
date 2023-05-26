@@ -26,70 +26,69 @@
                 <div class="col-lg-12">
                     <form>
                         <!-- Products-List-Wrapper -->
-                        <div class="table-wrapper u-s-m-b-60">
+                        <div class="table-wrapper u-s-m-b-60 text-center">
                             <table>
                                 <thead>
                                     <tr>
                                         <th>Id Order</th>
-                                        <th>Product</th>
-                                        <th>Status</th>
                                         <th>Tanggal</th>
                                         <th>Total</th>
+                                        <th>Status Pembayaran</th>
+                                        <th>Status Pengiriman</th>
                                         <th>Detail</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="cart-anchor-image">
-                                                #12
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="cart-anchor-image">
-                                                <a href="single-product.html">
-                                                    <img src="{{ asset('front/') }}/images/product/product@1x.jpg" alt="Product">
-                                                    <h6>Casual Hoodie Full Cotton</h6>
-                                                </a>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            Selesai  
-                                        </td>
-                                        <td>
-                                            <div class="cart-quantity">
-                                                <div class="quantity">
-                                                    12/12/2003
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                             <div class="cart-price">
-                                                Rp.13.000.000
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="action-wrapper">
-                                                <a href="/detailhistory">Lihat Detail</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    
+                                    @if ($order->isEmpty())
+                                        <tr>
+                                            <td colspan="6">Tidak Ada Data</td>
+                                        </tr>
+                                    @else
+                                        @foreach ($order as $item)
+                                            <tr>
+                                                <td>
+                                                    <div class="">
+                                                        {{ $item->orderId }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="cart-quantity">
+                                                        <div class="quantity">
+                                                            {{ \Carbon\Carbon::createFromFormat('Y-m-d', $item->orderDate)->format('d-m-Y') }}
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="cart-price">
+                                                        Rp. {{ number_format($item->orderTotalPrice, 0, ',', '.') }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    @if ($item->orderStatus == 'Unpaid')
+                                                        Belum Dibayar
+                                                    @else
+                                                        Selesai
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    @if (empty($item->orderResi))
+                                                        Sedang Dikemas
+                                                    @else
+                                                        Selesai
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <div class="action-wrapper">
+                                                        <a href="/detailhistory/{{ $item->orderId }}">Lihat Detail</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    @endif
                                 </tbody>
                             </table>
                         </div>
                         <!-- Products-List-Wrapper /- -->
-                        <!-- Coupon -->
-                        <div class="coupon-continue-checkout u-s-m-b-60">
-                            <div class="coupon-area">
-                                
-                            </div>
-                            <div class="button-area">
-                                <a href="shop-v1-root-category.html" class="continue">Continue Shopping</a>
-                                <!-- <a href="checkout.html" class="checkout">Proceed to Checkout</a> -->
-                            </div>
-                        </div>
-                        <!-- Coupon /- -->
                     </form>
                 </div>
             </div>

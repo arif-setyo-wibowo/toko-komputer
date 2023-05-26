@@ -5,21 +5,23 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Identity;
-
+use Illuminate\Support\Facades\DB;
 
 class DetailHistoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index($idOrder,Request $request)
     {
-         $cart = $request->session()->get('cart.items', []);
+        $cart = $request->session()->get('cart.items', []);
+        $orderDetail = DB::table('order_details')->where('orderId', '=', $idOrder)->get();
 
         $data=[
             'title' => "Detail History",
             'identitas' => Identity::all(),
-            'countCart' => count($cart)
+            'countCart' => count($cart),
+            'orderDetail' => $orderDetail
         ];
 
         return view('front/detailhistory',$data);
