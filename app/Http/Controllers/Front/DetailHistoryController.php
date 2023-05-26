@@ -15,13 +15,21 @@ class DetailHistoryController extends Controller
     public function index($idOrder,Request $request)
     {
         $cart = $request->session()->get('cart.items', []);
-        $orderDetail = DB::table('order_details')->where('orderId', '=', $idOrder)->get();
+        $orderDetail = DB::table('order_details')->join('products', 'order_details.orderDetailProductId', '=', 'products.productId')->select('order_details.*', 'products.productName')->get();
+        $order = DB::table('orders')->where('orderId', '=', $idOrder)->get();
+        $subtotal = 0;
+
+        foreach ($orderDetail as $key => $value) {
+            $subtotal += $value->orderDetailProductPrice * $value->orderDetailProductQty;
+        }
 
         $data=[
-            'title' => "Detail History",
-            'identitas' => Identity::all(),
-            'countCart' => count($cart),
-            'orderDetail' => $orderDetail
+            'title'         => "Detail History",
+            'identitas'     => Identity::all(),
+            'countCart'     => count($cart),
+            'orderDetail'   => $orderDetail,
+            'order'         => $order[0],
+            'subtotal'      => $subtotal
         ];
 
         return view('front/detailhistory',$data);
