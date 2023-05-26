@@ -1,15 +1,15 @@
 const base_url = document.URL;
-const asset_url = window.location.origin + "/uploads/gambar/casing/";
+const asset_url = window.location.origin + "/uploads/";
 
 $(document).ready(function () {
 
     function formatRupiah(amount) {
         const formatter = new Intl.NumberFormat('id-ID', {
-          style: 'currency',
-          currency: 'IDR'
+            style: 'currency',
+            currency: 'IDR'
         });
         return formatter.format(amount);
-      }
+    }
 
     // Auto Load Image Insert
     $("#caseImage").change(function () {

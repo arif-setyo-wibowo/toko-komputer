@@ -1,21 +1,21 @@
 const base_url = document.URL;
-const asset_url = window.location.origin + "/uploads/gambar/gpu/";
+const asset_url = window.location.origin + "/uploads/";
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     function formatRupiah(amount) {
         const formatter = new Intl.NumberFormat('id-ID', {
-          style: 'currency',
-          currency: 'IDR'
+            style: 'currency',
+            currency: 'IDR'
         });
         return formatter.format(amount);
-      }
+    }
 
     // Auto Load Image Insert
-    $("#gpuImage").change(function() {
+    $("#gpuImage").change(function () {
         if (this.files && this.files[0]) {
             var reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 $('#gambarTambah').attr('src', e.target.result);
                 console.log(e.target.result);
             }
@@ -24,10 +24,10 @@ $(document).ready(function() {
     });
 
     // Auto Load Image Update
-    $("#gpuImageUpdate").change(function() {
+    $("#gpuImageUpdate").change(function () {
         if (this.files && this.files[0]) {
             var reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 $('#updateGambar').attr('src', e.target.result);
                 console.log(e.target.result);
             }
@@ -36,7 +36,7 @@ $(document).ready(function() {
     });
 
     // Detail Data
-    $(document).on('click', '.button-detail', function() {
+    $(document).on('click', '.button-detail', function () {
         var id = $(this).attr('id');
         var gpuGambar = document.getElementById('gpuImageDetail');
         var namaDetail = document.getElementById('gpuNameDetail');
@@ -59,7 +59,7 @@ $(document).ready(function() {
             method: "GET",
             url: base_url + "/find/" + id,
             dataType: "json",
-            success: function(response) {
+            success: function (response) {
                 gpuGambar.src = asset_url + response[0]['gpuImage'];
                 namaDetail.textContent = response[0]['gpuName'];
                 merk.textContent = response[0]['brand']['brandName'];
@@ -82,7 +82,7 @@ $(document).ready(function() {
     });
 
     // Update Data
-    $(document).on('click', '.button-update', function() {
+    $(document).on('click', '.button-update', function () {
         var id = $(this).attr('id');
         var updateGambar = document.getElementById('updateGambar');
 
@@ -90,7 +90,7 @@ $(document).ready(function() {
             method: "GET",
             url: base_url + "/find/" + id,
             dataType: "json",
-            success: function(response) {
+            success: function (response) {
                 updateGambar.src = asset_url + response[0]['gpuImage'];
                 $('#idUpdate').val(response[0]['gpuId']);
                 $('#imageAwal').val(response[0]['gpuImage']);
@@ -117,11 +117,11 @@ $(document).ready(function() {
     });
 
     // Modal Hapus
-    $(document).on('click', '.button-delete', function() {
+    $(document).on('click', '.button-delete', function () {
         var id = $(this).attr("id");
         $("#hapusData").modal("show");
 
-        $(document).on('click', '.buttonAksiHapus', function() {
+        $(document).on('click', '.buttonAksiHapus', function () {
             window.location.replace(base_url + "/delete/" + id);
         })
     });

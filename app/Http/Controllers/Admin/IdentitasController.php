@@ -45,7 +45,7 @@ class IdentitasController extends Controller
         if ($request->file('shopLogo')) {
             $logo = $request->file('shopLogo');
             $shopLogoName = Str::random(20) . '.' . $logo->getClientOriginalExtension();
-            $logo->move(public_path('uploads/gambar/identitas'), $shopLogoName);
+            $logo->move(public_path('uploads'), $shopLogoName);
             $identitas->shopLogo = $shopLogoName;
         }
 
@@ -85,10 +85,10 @@ class IdentitasController extends Controller
 
         $identitas = Identity::first();
         if ($request->file('shopLogo')) {
-            File::delete('uploads/gambar/identitas/'.$identitas->shopLogo);
+            File::delete('uploads/'.$identitas->shopLogo);
             $logo = $request->file('shopLogo');
             $shopLogoName = Str::random(20) . '.' . $logo->getClientOriginalExtension();
-            $logo->move(public_path('uploads/gambar/identitas'), $shopLogoName);
+            $logo->move(public_path('uploads'), $shopLogoName);
             $identitas->shopLogo = $shopLogoName;
         }
 

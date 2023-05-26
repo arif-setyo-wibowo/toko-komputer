@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+// Admin
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\IdentitasController;
 use App\Http\Controllers\Admin\SlidersController;
@@ -19,14 +21,10 @@ use App\Http\Controllers\Admin\PowerSupplyController;
 use App\Http\Controllers\Admin\GpuController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\ProcessorController;
-use App\Http\Controllers\Auth\SocialiteController;
-use App\Http\Controllers\GraphicCardController;
-use App\Http\Controllers\ComputerCaseController;
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\CustomxamerController;
 use App\Http\Controllers\Admin\EarphoneController;
 use App\Http\Controllers\Admin\KeyboardController;
 use App\Http\Controllers\Admin\MonitorController;
+use App\Http\Controllers\Admin\MouseController;
 use App\Http\Controllers\Admin\CoolerController;
 
 //FRONT
@@ -36,15 +34,18 @@ use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\OrdersController;
 use App\Http\Controllers\Front\DetailController;
 use App\Http\Controllers\Front\ShopController;
-use App\Http\Controllers\MemoryController;
-use App\Http\Controllers\MotherboardController;
-use App\Http\Controllers\PowerSupplyController as ControllersPowerSupplyController;
-use App\Http\Controllers\ProcessorController as FrontProcessorController;
 use App\Http\Controllers\Front\HistoryController;
 use App\Http\Controllers\Front\DetailHistoryController;
+
+use App\Http\Controllers\MemoryController;
+use App\Http\Controllers\MotherboardController;
+use App\Http\Controllers\GraphicCardController;
+use App\Http\Controllers\ComputerCaseController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CustomxamerController;
 // 
 use App\Http\Controllers\TestController;
-use App\Models\PowerSupply;
+use App\Http\Controllers\Auth\SocialiteController;
 
 // API
 use App\Http\Controllers\Api\RajaOngkirController;
@@ -237,6 +238,9 @@ Route::prefix('administrator')->group(function () {
     
     // Monitor
     Route::get('/monitor', [MonitorController::class, 'index']);
+
+    // Mouse
+    Route::get('/mouse', [MouseController::class, 'index']);
 
      // Cooler
     Route::get('/cooler', [CoolerController::class, 'index']);
