@@ -68,7 +68,6 @@ class CustomerController extends Controller
 
     public function signup()
     {
-        
         $cart = session()->get('cart.items', []);
         $email = session()->get('email.auth');
         $data =[
@@ -115,7 +114,6 @@ class CustomerController extends Controller
 
     public function verify($verify_key)
     {       
-        
         $cart = session()->get('cart.items', []);
         $data = [
             'identitas' => Identity::all(),
@@ -149,4 +147,3 @@ class CustomerController extends Controller
         return view('Auth/resetPassword',$data);
     }
 }
-

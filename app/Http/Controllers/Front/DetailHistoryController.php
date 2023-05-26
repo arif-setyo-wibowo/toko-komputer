@@ -1,22 +1,28 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Front;
 
-use App\Models\Mouse;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Identity;
 
-class MouseController extends Controller
+
+class DetailHistoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+         $cart = $request->session()->get('cart.items', []);
+
         $data=[
-            'title' => "Mouse"
+            'title' => "Detail History",
+            'identitas' => Identity::all(),
+            'countCart' => count($cart)
         ];
 
-        return view('admin/mouse',$data);
+        return view('front/detailhistory',$data);
     }
 
     /**
@@ -38,7 +44,7 @@ class MouseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Mouse $mouse)
+    public function show(string $id)
     {
         //
     }
@@ -46,7 +52,7 @@ class MouseController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Mouse $mouse)
+    public function edit(string $id)
     {
         //
     }
@@ -54,7 +60,7 @@ class MouseController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Mouse $mouse)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -62,7 +68,7 @@ class MouseController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Mouse $mouse)
+    public function destroy(string $id)
     {
         //
     }

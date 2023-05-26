@@ -28,7 +28,7 @@
                     @else
                         <!-- Products-List-Wrapper -->
                         <div class="table-wrapper u-s-m-b-60">
-                            <table>
+                            <table id="cart-items">
                                 <thead>
                                     <tr>
                                         <th>Product</th>
@@ -52,23 +52,33 @@
                                             </td>
                                             <td>
                                                 <div class="cart-price">
-                                                    Rp. {{ number_format($item['product_price'], 0, ',00', '.') }}
+                                                    Rp. {{ number_format($item['product_price'], 0, ',', '.') }}
+                                                    <input type="hidden" id="cart-price_{{ $item['product_id'] }}"
+                                                        value="{{ $item['product_price'] }}">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="cart-quantity">
                                                     <div class="quantity">
                                                         <input type="text" class="quantity-text-field"
+                                                            id="qty_{{ $item['product_id'] }}"
+                                                            value="{{ $item['quantity'] }}" disabled>
+                                                        <input type="hidden" class="quantity-text-field"
+                                                            id="qty2_{{ $item['product_id'] }}"
                                                             value="{{ $item['quantity'] }}">
-                                                        <a class="plus-a" data-max="1000">&#43;</a>
-                                                        <a class="minus-a" data-min="1">&#45;</a>
+                                                        <a class="plus-a btn-increase-quantity"
+                                                            data-product-id="{{ $item['product_id'] }}">&#43;</a>
+                                                        <a class="minus-a btn-decrease-quantity"
+                                                            data-product-id="{{ $item['product_id'] }}">&#45;</a>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="cart-price">
-                                                    Rp.
-                                                    {{ number_format($item['product_price'] * $item['quantity'], 0, ',00', '.') }}
+                                                    Rp. <span
+                                                        id="viewsubtotal_{{ $item['product_id'] }}">{{ number_format($item['product_price'] * $item['quantity'], 0, ',', '.') }}</span>
+                                                    <input type="hidden" id="subtotal_{{ $item['product_id'] }}"
+                                                        value="{{ $item['product_price'] * $item['quantity'] }}">
                                                 </div>
                                             </td>
                                             <td>
@@ -92,8 +102,6 @@
                         </div>
                         <!-- Coupon /- -->
                     @endif
-
-
                 </div>
             </div>
         </div>

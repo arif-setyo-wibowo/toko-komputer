@@ -28,7 +28,7 @@ class OrdersController extends Controller
             'subtotal'  => $subtotal
         ];
 
-        if (count($cart) == 0) {
+        if (count($cart) == 0 || session()->get('login.customer')  == false) {
             return redirect()->route('home');
         }else{
             return view('front/checkout',$data);

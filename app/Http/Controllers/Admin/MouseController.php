@@ -12,7 +12,11 @@ class MouseController extends Controller
      */
     public function index()
     {
-        //
+         $data=[
+            'title' => "Mouse"
+        ];
+
+        return view('admin/mouse',$data);
     }
 
     /**
