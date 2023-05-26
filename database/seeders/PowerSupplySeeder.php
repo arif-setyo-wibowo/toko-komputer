@@ -24,7 +24,7 @@ class PowerSupplySeeder extends Seeder
             'psuModular' => 'No Modular',
             'psuConnector' =>'20+4-Pin 1x (8/4 pins) CPU +12V 2x 4Pin Molex 4x (8/6 pins) PCI-E Power 6x SATA Power',
             'psuWarranty' =>'3 Year(s)',
-            'psuPrice'=>'706.000',
+            'psuPrice'=>'706000',
             'psuStock'=>'15',
             'psuImage'=>'lT4sBzjEVTW41rGmweZl.png',
             'created_at'=> date('Y-m-d H:i:s'),

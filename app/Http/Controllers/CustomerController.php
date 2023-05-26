@@ -44,8 +44,10 @@ class CustomerController extends Controller
             if (password_verify($request->customerPassword, $user->customerPassword)) {
                 if (!empty($user->customerVerifyAt)) { 
                     session(['login.customer' => true]);
+                    session(['id.customer' => $user->customerId]);
                     session(['email.customer' => $user->customerEmail]);
                     session(['nama.customer' => $user->customerName]);                    
+                    session(['telp.customer' => $user->customerPhoneNumber]);                    
                     return redirect()->route('home');
                 } else {
                     return redirect()->route('login')->withErrors(['email' => 'Akun belum diverifikasi'])->withInput();
@@ -61,8 +63,10 @@ class CustomerController extends Controller
     public function logout()
     {
         session()->forget('login.customer');
+        session()->forget('id.customer');
         session()->forget('email.customer');
         session()->forget('nama.customer'); 
+        session()->forget('telp.customer'); 
         return redirect()->route('login');
     }
 
@@ -99,8 +103,10 @@ class CustomerController extends Controller
         $customer->customerVerifyKey = $str;
         $customer->save();
         session(['login.customer' => true]);
+        session(['id.customer' => $customer->customerId]);
         session(['email.customer' => $customer->customerEmail]);
-        session(['nama.customer' => $customer->customerName]);
+        session(['nama.customer' => $customer->customerName]);                    
+        session(['telp.customer' => $customer->customerPhoneNumber]);  
         
         $data=[
             'customerName' => $request->customerName,

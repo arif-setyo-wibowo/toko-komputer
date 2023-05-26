@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignUuid('customerId')->references('customerId')->on('users');
             $table->date('orderDate',255);
             $table->string('orderTotalPrice',255);
-            $table->string('orderResi',255);
-            $table->string('orderStatus',255);
+            $table->string('orderResi',255)->nullable();
+            $table->string('orderStatus',255)->nullable()->default("Unpaid");;
             $table->timestamps();
         });
     }

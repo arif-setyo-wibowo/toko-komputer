@@ -15,7 +15,8 @@ return new class extends Migration
             $table->uuid('orderDetailId')->primary();
             $table->foreignUuid('orderId')->references('orderId')->on('orders');
             $table->string('orderDetailProductId',255);
-            $table->string('orderDetailProductPiece',255);
+            $table->string('orderDetailProductPrice',255);
+            $table->string('orderDetailProductQty',255);
             $table->timestamps();
         });
     }

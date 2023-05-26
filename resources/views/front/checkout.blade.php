@@ -24,7 +24,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
-                    <form>
+                    <form action="{{ url()->current() }}" method="POST">
+                        @csrf
                         <div class="row">
                             <!-- Billing-&-Shipping-Details -->
                             <div class="col-lg-6">
@@ -36,35 +37,49 @@
                                             <span class="astk">*</span>
                                         </label>
                                         <input type="text" id="first-name" name="nama" class="text-field"
-                                            placeholder="Nama Lengkap">
+                                            placeholder="Nama Lengkap" value="{{ Session::get('nama.customer') }}" required>
                                     </div>
                                 </div>
                                 <div class="u-s-m-b-13">
                                     <label for="phone">No Telepon
                                         <span class="astk">*</span>
                                     </label>
-                                    <input type="text" id="phone" name="telp" class="text-field"
-                                        placeholder="Nomor Telepon">
+                                    <input type="number" id="phone" name="telp" class="text-field"
+                                        placeholder="Nomor Telepon" value="{{ Session::get('telp.customer') }}" required>
                                 </div>
                                 <div class="street-address u-s-m-b-13">
-                                    <label for="req-st-address">Alamat
+                                    <label for="req-st-address">Alamat Lengkap
                                         <span class="astk">*</span>
                                     </label>
-                                    <textarea class="text-area" id="order-notes" name="alamat" placeholder="Alamat Lengkap"></textarea>
+                                    <textarea class="text-area" id="order-notes" name="alamat" placeholder="Alamat Lengkap" required></textarea>
                                 </div>
                                 <div class="u-s-m-b-13">
-                                    <label for="town-city">Kota
+                                    <label for="provinceSelect">Provinsi
                                         <span class="astk">*</span>
                                     </label>
-                                    <input type="text" id="town-city" name="city" class="text-field"
-                                        placeholder="Kota / Kabupaten">
+                                    <div class="select-box-wrapper">
+                                        <select class="select-box" id="provinceSelect" required>
+                                            <option selected="selected" value="" disabled>Pilih Provinsi...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="u-s-m-b-13">
+                                    <label for="citySelect">Kota
+                                        <span class="astk">*</span>
+                                    </label>
+                                    <div class="select-box-wrapper">
+                                        <select class="select-box" id="citySelect" required>
+                                            <option selected="selected" value="" disabled>Pilih kota...</option>
+                                        </select>
+                                    </div>
+                                    <input type="hidden" name="kota" id="kota" value="">
                                 </div>
                                 <div class="u-s-m-b-13">
                                     <label for="postcode">Kode Pos
                                         <span class="astk">*</span>
                                     </label>
-                                    <input type="text" id="postcode" name="pos" class="text-field" class="Kode Pos"
-                                        placeholder="Kode Pos">
+                                    <input type="text" id="postcode" name="kodepos" class="text-field" class="Kode Pos"
+                                        placeholder="Kode Pos" required>
                                 </div>
                                 <div class="group-inline u-s-m-b-13">
                                     <div class="group-1 u-s-p-r-16">
@@ -72,7 +87,8 @@
                                             <span class="astk">*</span>
                                         </label>
                                         <input type="text" id="email" class="text-field" class="Email Address"
-                                            placeholder="Email Address">
+                                            placeholder="Email Address" value="{{ Session::get('email.customer') }}"
+                                            required>
                                     </div>
                                 </div>
                             </div>
@@ -109,8 +125,10 @@
                                                     <h3 class="order-h3">Subtotal</h3>
                                                 </td>
                                                 <td>
-                                                    <h3 class="order-h3">Rp. {{ number_format($subtotal, 0, ',00', '.') }}
+                                                    <h3 class="order-h3">Rp.
+                                                        {{ number_format($subtotal, 0, ',00', '.') }}
                                                     </h3>
+                                                    <input type="hidden" id="subtotal" value="{{ $subtotal }}">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -118,7 +136,8 @@
                                                     <h3 class="order-h3">Shipping</h3>
                                                 </td>
                                                 <td>
-                                                    <h3 class="order-h3">Rp. {{ number_format(100000, 0, ',00', '.') }}
+                                                    <h3 class="order-h3" id="ongkir">Rp.
+                                                        {{ number_format(0, 0, ',00', '.') }}
                                                     </h3>
                                                 </td>
                                             </tr>
@@ -127,8 +146,8 @@
                                                     <h3 class="order-h3">Total</h3>
                                                 </td>
                                                 <td>
-                                                    <h3 class="order-h3">Rp.
-                                                        {{ number_format($subtotal + 100000, 0, ',00', '.') }}</h3>
+                                                    <h3 class="order-h3" id="total">Rp.
+                                                        {{ number_format($subtotal, 0, ',00', '.') }}</h3>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -144,4 +163,8 @@
         </div>
     </div>
     <!-- Checkout-Page /- -->
+@endsection
+
+@section('javascript')
+    <script type="text/javascript" src="{{ asset('front/') }}/js/checkout.js"></script>
 @endsection

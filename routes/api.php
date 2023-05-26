@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\Front\OrdersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +18,4 @@ use App\Http\Controllers\TestController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('/midtrans-callback', [TestController::class, 'callback']);
+Route::post('/midtrans-callback', [OrdersController::class, 'callback']);

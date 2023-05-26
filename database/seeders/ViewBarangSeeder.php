@@ -51,9 +51,6 @@ class ViewBarangSeeder extends Seeder
         UNION ALL
         SELECT 'processors' AS source_table, processorId AS productId, processorName AS productName, processorPrice AS productPrice
         FROM processors
-        UNION ALL
-        SELECT 'storages' AS source_table, storageId AS productId, storageName AS productName, storagePrice AS productPrice
-        FROM storages
         ";
 
         DB::statement('DROP VIEW IF EXISTS products');

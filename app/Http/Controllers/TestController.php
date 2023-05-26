@@ -165,17 +165,6 @@ class TestController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function callback(Request $request)
-    {
-        $serverKey = "SB-Mid-server-_WEHTFfYgN0J0ssrU2yJfInV";
-        $hashed = hash("sha512",$request->order_id.$request->status_code.$request->gross_amount.$serverKey);
-        if ($hashed == $request->signature_key) {
-            if ($request->transaction_status == "capture" || $request->transaction_status == "settlement") {
-                $query = "UPDATE tblorder SET status = 'Paid' WHERE orderId = '$request->order_id'";
-                DB::statement($query);
-            }
-        }
-    }
 
     /**
      * Remove the specified resource from storage.

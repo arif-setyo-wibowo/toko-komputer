@@ -46,6 +46,9 @@ use App\Http\Controllers\Front\DetailHistoryController;
 use App\Http\Controllers\TestController;
 use App\Models\PowerSupply;
 
+// API
+use App\Http\Controllers\Api\RajaOngkirController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -67,6 +70,7 @@ Route::post('/remove-from-cart', [CartController::class, 'removeFromCart'])->nam
 Route::post('/decrease-quantity', [CartController::class, 'updateCartQuantity'])->name('min.cart');
 Route::get('/emptycart', [CartController::class, 'empty'])->name('empty.cart');
 Route::get('/checkout', [OrdersController::class, 'index'])->name('checkout');
+Route::post('/checkout', [OrdersController::class, 'store']);
 Route::get('/history', [HistoryController::class, 'index']);
 Route::get('/detailhistory', [DetailHistoryController::class, 'index']);
 
@@ -88,6 +92,13 @@ Route::post('/reset', [CustomerController::class, 'reset_data']);
  //Socialite
 Route::get('/auth/login/{provider}', [SocialiteController::class, 'redirectToProvider'])->name('login.google');
 Route::get('/auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback']);
+
+// API
+Route::get('/provinces', [RajaOngkirController::class, 'getProvinces'])->name('provinces');
+Route::get('/cities', [RajaOngkirController::class, 'getCities'])->name('cities');
+Route::get('/cities-info', [RajaOngkirController::class, 'getInfoCities'])->name('info.cities');
+Route::post('/cost', [RajaOngkirController::class, 'getCost'])->name('cost');
+
 
 
 // ADMIN
