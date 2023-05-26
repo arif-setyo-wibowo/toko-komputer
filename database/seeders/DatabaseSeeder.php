@@ -29,7 +29,8 @@ class DatabaseSeeder extends Seeder
             ProcessorSeeder::class,
             ViewBarangSeeder::class,
             KeyboardSeeder::class,
-            CoolerSeeder::class
+            CoolerSeeder::class,
+            UserSeeder::class
         ]);
     }
 }
