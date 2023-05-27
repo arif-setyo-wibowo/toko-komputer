@@ -33,7 +33,7 @@ class CasingController extends Controller
         if ($request->file('caseImage')) {
             $gambar = $request->file('caseImage');
             $CasingGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
-            $gambar->move(public_path('uploads/gambar/casing'), $CasingGambarName);
+            $gambar->move(public_path('uploads'), $CasingGambarName);
             $casing->caseImage = $CasingGambarName;
         }
 
@@ -59,16 +59,16 @@ class CasingController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-             'caseImage' => 'image|mimes:png,jpg,jpeg',
+            'caseImage' => 'image|mimes:png,jpg,jpeg',
         ]);
 
         $casing = ComputerCase::find($request->idUpdate);
         
         if ($request->file('caseImage')) {
-            File::delete('uploads/gambar/casing/'.$casing->caseImage);
+            File::delete('uploads/'.$casing->caseImage);
             $gambar = $request->file('caseImage');
             $CasingGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
-            $gambar->move(public_path('uploads/gambar/casing'), $CasingGambarName);
+            $gambar->move(public_path('uploads'), $CasingGambarName);
             $casing->caseImage = $CasingGambarName;
         }else{
             $casing->caseImage = $request->imageAwal;
@@ -90,7 +90,7 @@ class CasingController extends Controller
     public function destroy(string $id)
     {
         $ComputerCase = ComputerCase::find($id);
-        File::delete('uploads/gambar/casing/'.$ComputerCase->caseImage);
+        File::delete('uploads/'.$ComputerCase->caseImage);
         ComputerCase::destroy($id);
         return redirect()->route('administrator.case')->with(['success' => 'Hapus Data Berhasil']);
     }

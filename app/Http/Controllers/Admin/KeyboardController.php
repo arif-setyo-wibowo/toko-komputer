@@ -47,7 +47,7 @@ class KeyboardController extends Controller
         if ($request->file('keyboardImage')) {
             $gambar = $request->file('keyboardImage');
             $keyboardGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
-            $gambar->move(public_path('uploads/gambar/keyboard'), $keyboardGambarName);
+            $gambar->move(public_path('uploads'), $keyboardGambarName);
             $keyboard->keyboardImage = $keyboardGambarName;
         }
 
@@ -92,19 +92,19 @@ class KeyboardController extends Controller
     {
         $request->validate([
             'imageUpdate' => 'image|mimes:png,jpg,jpeg',
-       ]);
-       
-       $keyboard = Keyboard::find($request->idUpdate);
+        ]);
+        
+        $keyboard = Keyboard::find($request->idUpdate);
 
-       if ($request->file('imageUpdate')) {
-           File::delete('uploads/gambar/keyboard/'.$keyboard->keyboardImage);
-           $gambar = $request->file('imageUpdate');
-           $keyboardGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
-           $gambar->move(public_path('uploads/gambar/keyboard'), $keyboardGambarName);
-           $keyboard->keyboardImage = $keyboardGambarName;
-       }else{
-           $keyboard->keyboardImage = $request->imageAwal;
-       }
+        if ($request->file('imageUpdate')) {
+            File::delete('uploads/'.$keyboard->keyboardImage);
+            $gambar = $request->file('imageUpdate');
+            $keyboardGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
+            $gambar->move(public_path('uploads'), $keyboardGambarName);
+            $keyboard->keyboardImage = $keyboardGambarName;
+        }else{
+            $keyboard->keyboardImage = $request->imageAwal;
+        }
 
         $keyboard->brandId = $request->updateBrand;
         $keyboard->keyboardName = $request->updateName;
@@ -129,7 +129,7 @@ class KeyboardController extends Controller
     public function destroy(string $id)
     {
         $keyboard = Keyboard::find($id);
-        File::delete('uploads/gambar/keyboard/'.$keyboard->keyboardImage);
+        File::delete('uploads/'.$keyboard->keyboardImage);
         $keyboard::destroy($id);
         return redirect()->route('administrator.keyboard')->with(['success' => 'Hapus Data Berhasil']);
     }

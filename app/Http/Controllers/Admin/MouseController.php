@@ -12,7 +12,7 @@ class MouseController extends Controller
      */
     public function index()
     {
-         $data=[
+        $data=[
             'title' => "Mouse"
         ];
 

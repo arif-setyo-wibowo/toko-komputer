@@ -49,7 +49,7 @@ class MemoriController extends Controller
         if ($request->file('memoryImage')) {
             $gambar = $request->file('memoryImage');
             $RamGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
-            $gambar->move(public_path('uploads/gambar/ram'), $RamGambarName);
+            $gambar->move(public_path('uploads'), $RamGambarName);
             $memory->memoryImage = $RamGambarName;
         }
 
@@ -91,16 +91,16 @@ class MemoriController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-             'imageUpdate' => 'image|mimes:png,jpg,jpeg',
+            'imageUpdate' => 'image|mimes:png,jpg,jpeg',
         ]);
         
         $memory = Memory::find($request->idUpdate);
 
         if ($request->file('imageUpdate')) {
-            File::delete('uploads/gambar/ram/'.$memory->memoryImage);
+            File::delete('uploads/'.$memory->memoryImage);
             $gambar = $request->file('imageUpdate');
             $RamGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
-            $gambar->move(public_path('uploads/gambar/ram'), $RamGambarName);
+            $gambar->move(public_path('uploads'), $RamGambarName);
             $memory->memoryImage = $RamGambarName;
         }else{
             $memory->memoryImage = $request->imageAwal;
@@ -128,7 +128,7 @@ class MemoriController extends Controller
     public function destroy(string $id)
     {
         $memory = Memory::find($id);
-        File::delete('uploads/gambar/ram/'.$memory->memoryImage);
+        File::delete('uploads/'.$memory->memoryImage);
         Memory::destroy($id);
         return redirect()->route('administrator.memory')->with(['success' => 'Hapus Data Berhasil']);
     }
