@@ -16,13 +16,13 @@ class DatabaseSeeder extends Seeder
         $this->call([
             IdentitiesSeeder::class,
             MediaSeeder::class,
-            // CustomerSeeder::class,
+            BrandSeeder::class,
             // EmployeeSeeder::class,
-            // BrandSeeder::class,
+            
             // MemorySeeder::class,
-            // SocketSeeder::class,
+            SocketSeeder::class,
             // CaseSeeder::class,
-            // MotherboardSeeder::class,
+            MotherboardSeeder::class,
             // StorageSeeder::class,
             // PowerSupplySeeder::class,
             // GraphicCardSeeder::class,
