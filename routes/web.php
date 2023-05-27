@@ -65,7 +65,6 @@ use App\Http\Controllers\Api\RajaOngkirController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/rakitpc', [RakitPcController::class, 'index']);
 Route::get('/cart', [CartController::class, 'index']);
-Route::get('/shop', [ShopController::class, 'index']);
 Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add.cart');
 Route::post('/remove-from-cart', [CartController::class, 'removeFromCart'])->name('remove.cart');
 Route::post('/decrease-quantity', [CartController::class, 'updateCartQuantity'])->name('min.cart');
@@ -75,9 +74,9 @@ Route::post('/checkout', [OrdersController::class, 'store']);
 Route::get('/history', [HistoryController::class, 'index']);
 Route::get('/detailhistory/{id}', [DetailHistoryController::class, 'index']);
 
-// DETAIL PRODUK
-// Route::get('/detailproduk', [DetailProdukController::class, 'index']);
+// FRONT PRODUK
 Route::get('/detailproduk/{id}', [DetailController::class, 'index']);
+Route::get('/shop/{categories}', [ShopController::class, 'index']);
 
 // Login
 Route::get('/login', [CustomerController::class, 'login'])->name('login');
