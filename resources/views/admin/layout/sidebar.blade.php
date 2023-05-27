@@ -55,11 +55,17 @@
         <li class="nav-item dropdown pe-3">
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="{{ asset('admin/') }}/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+            @if (Session::get('role.manager'))
+              <span class="d-none d-md-block dropdown-toggle ps-2">Manager</span>
+            @endif
+            @if ((Session::get('role.karyawan')))
+                <span class="d-none d-md-block dropdown-toggle ps-2">Karyawan</span>
+            @endif
+
           </a><!-- End Profile Iamge Icon -->
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="logout.html">
+              <a class="dropdown-item d-flex align-items-center" href="/logoutEmployee">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -73,6 +79,21 @@
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
+      @if (Session::get('role.manager'))  
+      <li class="nav-item">
+        <a class="nav-link {{ $title != 'Dashboard' ? 'collapsed' : '' }}" href="/manager">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link {{ $title != 'Karyawan' ? 'collapsed' : '' }}" href="/manager/karyawan">
+          <i class="bi bi-person"></i>
+          <span>Karyawan</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+      @endif
+      @if ((Session::get('role.karyawan')))
       <li class="nav-item">
         <a class="nav-link {{ $title != 'Dashboard' ? 'collapsed' : '' }}" href="/administrator">
           <i class="bi bi-grid"></i>
@@ -187,22 +208,11 @@
           <span>Transaksi</span>
         </a>
       </li><!-- End Transaksi Page Nav -->
-      <li class="nav-item">
-        <a class="nav-link {{ $title != 'Karyawan' ? 'collapsed' : '' }}" href="/administrator/karyawan">
-          <i class="bi bi-person"></i>
-          <span>Karyawan</span>
-        </a>
-      </li><!-- End Profile Page Nav -->
+      @endif
       <li class="nav-item">
         <a class="nav-link {{ $title != 'Payment Gateway' ? 'collapsed' : '' }}" href="/administrator/paymentgateway">
           <i class="bi bi-person"></i>
           <span>TEST</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link {{ $title != 'Test Login' ? 'collapsed' : '' }}" href="/administrator/logintest">
-          <i class="bi bi-person"></i>
-          <span>Login</span>
         </a>
       </li>
     </ul>

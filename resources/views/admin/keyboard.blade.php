@@ -23,14 +23,14 @@
           <i class="bi bi-check-circle me-1"></i>
           {{ $message }}
           </div>
-      @endif
-      @if ($errors->any())
-          <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          @foreach ($errors->all() as $error)
-              <i class="bi bi-exclamation-octagon me-1"> {{ $error }} </i><br>
-          @endforeach
-          </div>
-      @endif
+          @endif
+          @if ($errors->any())
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              @foreach ($errors->all() as $error)
+                  <i class="bi bi-exclamation-octagon me-1"> {{ $error }} </i><br>
+              @endforeach
+              </div>
+          @endif
           <div class="card recent-sales overflow-auto p-3 ">
             <!-- Bordered Tabs -->
             <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">

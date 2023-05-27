@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Employee;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -12,18 +13,29 @@ class DashboardController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function manager()
     {
-        $product = 
-    
         $data=[
-            'title' => "Dashboard",
+            'title' => "Dashboard Manager",
+            'pelanggan' => User::all()->count(),
+            'barang' => DB::table('products')->count(),
+            'karyawan' => Employee::all()->count()
+        ];
+
+        return view('admin/dashboardManager',$data);
+    }
+
+    public function karyawan()
+    {
+        $data=[
+            'title' => "Dashboard Karyawan",
             'pelanggan' => User::all()->count(),
             'barang' => DB::table('products')->count()
         ];
 
         return view('admin/dashboard',$data);
     }
+
 
     /**
      * Show the form for creating a new resource.
