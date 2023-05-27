@@ -680,19 +680,13 @@
 
                                             <div class="row mt-4">
                                                 <div class="row col">
-                                                    <label for="inputPassword"
-                                                        class="col-sm-4 col-form-label">Description</label>
-                                                    <div class="col-sm-11">
-                                                        <textarea class="form-control" style="height: 100px" name="moboDescription" required></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="row col">
                                                     <label for="number" class="col-md-3 col-form-label">Harga</label>
                                                     <div class="col-sm-8">
                                                         <input type="number" class="form-control" name="moboPrice"
                                                             required>
                                                     </div>
-
+                                                </div>
+                                                <div class="row col">
                                                     <label for="number"
                                                         class="col-md-3 mt-3 col-form-label">Stok</label>
                                                     <div class="col-sm-8 mt-3">
@@ -700,14 +694,21 @@
                                                             required>
                                                     </div>
                                                 </div>
-
                                             </div>
-
-                                            <div class="row col">
-                                                <div class="col-12 mt-5" style="text-align:right;">
-                                                    <button type="sumbit" class="btn btn-primary">Simpan</button>
+                                            <div class="row mt-4">
+                                                <label for="inputPassword"
+                                                    class="col-sm-4 col-form-label">Description</label>
+                                                <div class="col-sm-11">
+                                                    <textarea class="form-control" style="height: 100px" name="moboDescription" required></textarea>
                                                 </div>
                                             </div>
+                                        </div>
+
+                                        <div class="row col">
+                                            <div class="col-12 mt-5" style="text-align:right;">
+                                                <button type="sumbit" class="btn btn-primary">Simpan</button>
+                                            </div>
+                                        </div>
                                     </form>
                                 </div>
 
@@ -1375,19 +1376,14 @@
 
                                                 <div class="row mt-4">
                                                     <div class="row col">
-                                                        <label for="inputPassword"
-                                                            class="col-sm-6 col-form-label">Description</label>
-                                                        <div class="col-sm-12">
-                                                            <textarea class="form-control" style="height: 100px" name="descUpdate" id="descUpdate" required></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row col">
                                                         <label for="number"
                                                             class="col-md-4 col-form-label">Harga</label>
                                                         <div class="col-sm-8">
                                                             <input type="text" class="form-control"
                                                                 name="hargaUpdate" id="hargaUpdate" required>
                                                         </div>
+                                                    </div>
+                                                    <div class="row col">
                                                         <label for="number"
                                                             class="col-md-4 col-form-label">Stok</label>
                                                         <div class="col-sm-8">
@@ -1396,136 +1392,147 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                                <div class="row mt-4">
+                                                    <div class="row col">
+                                                        <label for="inputPassword"
+                                                            class="col-sm-6 col-form-label">Description</label>
+                                                        <div class="col-sm-12">
+                                                            <textarea class="form-control" style="height: 100px" name="descUpdate" id="descUpdate" required></textarea>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </form>
                                         </div>
 
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Simpan</button>
+                                        </div>
+                                        </form>
                                     </div>
-                                    <!-- End Vertically centered Modal-->
-                                </div>
-                            </div>
 
-                            <!-- detail Modal-->
-                            <div class="modal fade" id="detail" tabindex="-1">
-                                <div class="modal-dialog modal-lg modal-dialog-scrollable">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Detail Motherboard</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body center">
+                                </div>
+                                <!-- End Vertically centered Modal-->
+                            </div>
+                        </div>
+
+                        <!-- detail Modal-->
+                        <div class="modal fade" id="detail" tabindex="-1">
+                            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Detail Motherboard</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body center">
+                                        <div class="col-xl-12">
                                             <div class="col-xl-12">
-                                                <div class="col-xl-12">
+                                                <div class="">
                                                     <div class="">
-                                                        <div class="">
-                                                            <!-- Bordered Tabs -->
-                                                            <div class="tab-content row ">
-                                                                <div
-                                                                    class="card-body col-md-5 pt-4 d-flex flex-column align-items-center">
-                                                                    <img id="moboGambar" alt="Profile"
-                                                                        class="rounded mb-3 img-fluid">
-                                                                </div>
-                                                                <div class="col-md-7 tab-pane fade show active profile-overview modal-dialog-scrollable"
-                                                                    id="profile-overview">
-                                                                    <h5 class="card-title" id="nama"></h5>
-                                                                    <table class="table table-hover">
-                                                                        <thead>
-                                                                            <tr>
-                                                                                <th scope="col">Spesifikasi</th>
-                                                                                <th scope="col">Info</th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td>Merk</td>
-                                                                                <td id="merk"></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>Chipset</td>
-                                                                                <td id="chipset"></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>Socket</td>
-                                                                                <td id="socket"></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>Port</td>
-                                                                                <td id="port"></td>
-                                                                            </tr>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>Storage SATA</td>
-                                                                                <td id="storageSata"></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>Storage M2</td>
-                                                                                <td id="storageM2"></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>Form Factor</td>
-                                                                                <td id="formFactor"></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>Tipe Memory</td>
-                                                                                <td id="typeMemory"></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>Max Memory</td>
-                                                                                <td id="maxMemory"></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>Garansi</td>
-                                                                                <td id="garansi"></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>Stok</td>
-                                                                                <td id="stok"></td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>Harga</td>
-                                                                                <td id="harga"></td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                    <h4 class="card-title">Deskripsi</h4>
-                                                                    <p class="small" id="deskripsi"></p>
-                                                                </div>
+                                                        <!-- Bordered Tabs -->
+                                                        <div class="tab-content row ">
+                                                            <div
+                                                                class="card-body col-md-5 pt-4 d-flex flex-column align-items-center">
+                                                                <img id="moboGambar" alt="Profile"
+                                                                    class="rounded mb-3 img-fluid">
+                                                            </div>
+                                                            <div class="col-md-7 tab-pane fade show active profile-overview modal-dialog-scrollable"
+                                                                id="profile-overview">
+                                                                <h5 class="card-title" id="nama"></h5>
+                                                                <table class="table table-hover">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th scope="col">Spesifikasi</th>
+                                                                            <th scope="col">Info</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>Merk</td>
+                                                                            <td id="merk"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Chipset</td>
+                                                                            <td id="chipset"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Socket</td>
+                                                                            <td id="socket"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Port</td>
+                                                                            <td id="port"></td>
+                                                                        </tr>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Storage SATA</td>
+                                                                            <td id="storageSata"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Storage M2</td>
+                                                                            <td id="storageM2"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Form Factor</td>
+                                                                            <td id="formFactor"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Tipe Memory</td>
+                                                                            <td id="typeMemory"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Max Memory</td>
+                                                                            <td id="maxMemory"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Garansi</td>
+                                                                            <td id="garansi"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Stok</td>
+                                                                            <td id="stok"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Harga</td>
+                                                                            <td id="harga"></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                <h4 class="card-title">Deskripsi</h4>
+                                                                <p class="small" id="deskripsi"></p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- End Extra Large Modal-->
                                         </div>
+                                        <!-- End Extra Large Modal-->
                                     </div>
                                 </div>
                             </div>
-                            <!-- end detail Modal-->
-                            {{-- Modal Hapus --}}
-                            <div class="modal fade" id="hapusData" tabindex="-1">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            Apakah Yakin Menghapus Data ?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-sm btn-secondary"
-                                                data-bs-dismiss="modal">Batal</button>
-                                            <button type="button"
-                                                class="btn btn-sm btn-primary buttonAksiHapus">Hapus</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- End Modal Hapus --}}
                         </div>
+                        <!-- end detail Modal-->
+                        {{-- Modal Hapus --}}
+                        <div class="modal fade" id="hapusData" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        Apakah Yakin Menghapus Data ?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-sm btn-secondary"
+                                            data-bs-dismiss="modal">Batal</button>
+                                        <button type="button"
+                                            class="btn btn-sm btn-primary buttonAksiHapus">Hapus</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- End Modal Hapus --}}
                 </div>
             </div>
+        </div>
         </div>
     </section>
 @endsection
