@@ -19,7 +19,6 @@
                     <div class="card recent-sales overflow-auto">
 
                         <!-- Bordered Tabs -->
-
                         <!-- ISI -->
                         <div class="tab-content p-2" id="borderedTabContent">
                             <div class="tab-pane fade show active" id="bordered-home" role="tabpanel"
@@ -37,60 +36,42 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row"><a href="#">#2457</a></th>
-                                            <td><i class="bi bi-person-fill "></i> Burhan Adi J</td>
-                                            <td><i class="bi  bi-envelope-fill " style="color:#4154f1;"></i>
-                                                Burhan@gmail.com</td>
-                                            <td><i class="bi  bi-calendar-week-fill" style="color:#198754;"></i> 12-12-2023
-                                            </td>
-                                            <td>
-                                                <button
-                                                    style="font-size :12px; width:100px; background-color:#CDF5E9; border:none ; "
-                                                    type="button" class="btn  btn-primary  rounded-pill">
-                                                    <div style="color:#038E86;"> Selesai
-                                                </button>
-                                            </td>
-                                            <td>
-                                                <a href="{{ url()->current() }}/invoice">lihat invoice</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><a href="#">#2457</a></th>
-                                            <td><i class="bi bi-person-fill "></i> Burhan Adi J</td>
-                                            <td><i class="bi  bi-envelope-fill " style="color:#4154f1;"></i>
-                                                Burhan@gmail.com</td>
-                                            <td><i class="bi  bi-calendar-week-fill" style="color:#198754;"></i> 12-12-2023
-                                            </td>
-                                            <td>
-                                                <button
-                                                    style="font-size :12px; width:100px; background-color:#CAC9FB; border:none ; "
-                                                    type="button" class="btn  btn-primary  rounded-pill">
-                                                    <div style="color:#3A36DB;"> Pending
-                                                </button>
-                                            </td>
-                                            <td>
-                                                <a href="{{ url()->current() }}/invoice">lihat invoice</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><a href="#">#2457</a></th>
-                                            <td><i class="bi bi-person-fill "></i> Burhan Adi J</td>
-                                            <td><i class="bi  bi-envelope-fill " style="color:#4154f1;"></i>
-                                                Burhan@gmail.com</td>
-                                            <td><i class="bi  bi-calendar-week-fill" style="color:#198754;"></i> 12-12-2023
-                                            </td>
-                                            <td>
-                                                <button
-                                                    style="font-size :12px; width:100px; background-color:#F5CDD9; border:none ; "
-                                                    type="button" class="btn  btn-primary  rounded-pill">
-                                                    <div style="color:#FF5368;"> Batal
-                                                </button>
-                                            </td>
-                                            <td>
-                                                <a href="{{ url()->current() }}/invoice">lihat invoice</a>
-                                            </td>
-                                        </tr>
+                                        @foreach ($order as $item)
+                                            <tr>
+                                                <th scope="row"><a href="#">#{{ $item->orderId }}</a></th>
+                                                <td><i class="bi bi-person-fill "></i> {{ $item->customerName }}</td>
+                                                <td><i class="bi  bi-envelope-fill " style="color:#4154f1;"></i>
+                                                    {{ $item->customerEmail }}</td>
+                                                <td><i class="bi  bi-calendar-week-fill" style="color:#198754;"></i>
+                                                    {{ \Carbon\Carbon::createFromFormat('Y-m-d', $item->orderDate)->format('d-m-Y') }}
+                                                </td>
+                                                <td>
+                                                    @if (empty($item->orderResi) && $item->orderStatus == 'Unpaid')
+                                                        <button
+                                                            style="font-size :12px; width:100px; background-color:#F5CDD9; border:none ; "
+                                                            type="button" class="btn  btn-primary  rounded-pill">
+                                                            <div style="color:#FF5368;"> Belum Dibayar
+                                                        </button>
+                                                    @elseif (empty($item->orderResi) && $item->orderStatus == 'Paid')
+                                                        <button
+                                                            style="font-size :12px; width:100px; background-color:#CAC9FB; border:none ; "
+                                                            type="button" class="btn  btn-primary  rounded-pill">
+                                                            <div style="color:#3A36DB;"> Input Resi
+                                                        </button>
+                                                    @else
+                                                        <button
+                                                            style="font-size :12px; width:100px; background-color:#CDF5E9; border:none ; "
+                                                            type="button" class="btn  btn-primary  rounded-pill">
+                                                            <div style="color:#038E86;"> Selesai
+                                                        </button>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <a href="{{ url()->current() }}/invoice/{{ $item->orderId }}">lihat
+                                                        invoice</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
 

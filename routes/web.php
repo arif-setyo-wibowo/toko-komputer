@@ -247,7 +247,7 @@ Route::prefix('administrator')->group(function () {
     // Order
     Route::controller(OrderController::class)->prefix('/order')->group(function () {
         Route::get('/', 'index');
-        Route::get('/invoice', 'detail');
+        Route::get('/invoice/{id}', 'detail');
     });
 
     // Karyawan
