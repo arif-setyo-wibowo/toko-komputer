@@ -69,25 +69,6 @@ class CustomerController extends Controller
         session()->forget('telp.customer'); 
         return redirect()->route('login');
     }
-
-    public function signup()
-    {
-        $cart = session()->get('cart.items', []);
-        $email = session()->get('email.auth');
-        $data =[
-            'title' => 'register',
-            'customerEmail' => $email,
-            'identitas' => Identity::all(),
-            'countCart' => count($cart)
-        ];
-
-        if ($email) {
-            return view('Auth/register',$data);
-        } else {
-           return redirect()->route('login');
-            //return view('Auth/register',$data);
-        }
-    }
     public function signup_data(Request $request)
     {
         $request->validate([

@@ -81,9 +81,9 @@ Route::get('/shop/{categories}', [ShopController::class, 'index']);
 Route::get('/login', [CustomerController::class, 'login'])->name('login');
 Route::post('/login', [CustomerController::class, 'login_data']);
 Route::get('/logout', [CustomerController::class, 'logout'])->middleware('customer');
-Route::get('/register', [CustomerController::class, 'signup'])->name('register');
-Route::post('/register', [CustomerController::class, 'signup_data']);
+Route::post('/register', [CustomerController::class, 'signup_data'])->name('register');
 Route::get('/register/verify/{verify_key}', [CustomerController::class, 'verify']);
+
 //Password
 Route::get('/reset', [CustomerController::class, 'reset'])->name('reset');
 Route::post('/reset', [CustomerController::class, 'reset_data']);
