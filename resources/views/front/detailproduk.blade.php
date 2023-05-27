@@ -17,12 +17,12 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <!-- Product-zoom-area -->
                     <div class="zoom-area">
-                        <img id="zoom-pro" class="img-fluid" src="{{ asset('uploads/gambar') . $item['Image'] }}"
-                            data-zoom-image="{{ asset('uploads/gambar') . $item['Image'] }}" alt="Zoom Image">
+                        <img id="zoom-pro" class="img-fluid" src="{{ asset('uploads/') . $item['Image'] }}"
+                            data-zoom-image="{{ asset('uploads/') . $item['Image'] }}" alt="Zoom Image">
                         <div id="gallery" class="u-s-m-t-10">
-                            <a class="active" data-image="{{ asset('uploads/gambar') . $item['Image'] }}"
-                                data-zoom-image="{{ asset('uploads/gambar') . $item['Image'] }}">
-                                <img src="{{ asset('uploads/gambar') . $item['Image'] }}" alt="Product">
+                            <a class="active" data-image="{{ asset('uploads/') . $item['Image'] }}"
+                                data-zoom-image="{{ asset('uploads/') . $item['Image'] }}">
+                                <img src="{{ asset('uploads/') . $item['Image'] }}" alt="Product">
                             </a>
                         </div>
                     </div>
@@ -58,11 +58,11 @@
                                 <form action="#" class="post-form">
                                     <div class="quantity-wrapper u-s-m-b-">
                                         <!-- <span>Quantity:</span>
-                                                            <div class="quantity">
-                                                                <input type="text" class="quantity-text-field" value="1">
-                                                                <a class="plus-a" data-max="1000">&#43;</a>
-                                                                <a class="minus-a" data-min="1">&#45;</a>
-                                                            </div> -->
+                                                                        <div class="quantity">
+                                                                            <input type="text" class="quantity-text-field" value="1">
+                                                                            <a class="plus-a" data-max="1000">&#43;</a>
+                                                                            <a class="minus-a" data-min="1">&#45;</a>
+                                                                        </div> -->
                                     </div>
                                 </form>
                                 <div>
@@ -77,7 +77,7 @@
                         </div>
 
                         <!-- <div class="section-4-sku-information u-s-p-y-14">
-                                                </div> -->
+                                                            </div> -->
                         <div class="section-6-social-media-quantity-actions u-s-p-y-14">
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12">
@@ -115,7 +115,7 @@
                                                             <tr>
                                                                 <td>Brand</td>
                                                                 <td><img style="width: 70px"
-                                                                        src="{{ asset('uploads/gambar') . $item['Brand'] }}"
+                                                                        src="{{ asset('uploads/') . $item['Brand'] }}"
                                                                         alt="Brand"></td>
                                                             </tr>
                                                             <?php foreach ($item as $key => $value) {

@@ -94,14 +94,14 @@
                         <a class="nav-link active" data-toggle="tab" href="#men-latest-products">Latest Products</a>
                     </li>
                     <!-- <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#men-best-selling-products">Best Selling</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#men-top-rating-products">Top Rating</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#men-featured-products">Featured Products</a>
-                        </li> -->
+                                <a class="nav-link" data-toggle="tab" href="#men-best-selling-products">Best Selling</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#men-top-rating-products">Top Rating</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#men-featured-products">Featured Products</a>
+                            </li> -->
                 </ul>
             </div>
             <div class="wrapper-content">
@@ -149,7 +149,8 @@
                                     </div>
                                     <div class="item">
                                         <div class="image-container">
-                                            <a class="item-img-wrapper-link" href="single-product.html">
+                                            <a class="item-img-wrapper-link"
+                                                href="/detailproduk/32871309-0d5b-4c44-b804-99216d7ffd5a">
                                                 <img class="img-fluid"
                                                     src="{{ asset('front/') }}/images/product/product@3x.jpg"
                                                     alt="Product">
@@ -198,7 +199,8 @@
                                     </div>
                                     <div class="item">
                                         <div class="image-container">
-                                            <a class="item-img-wrapper-link" href="single-product.html">
+                                            <a class="item-img-wrapper-link"
+                                                href="/detailproduk/98b743c8-95dc-4e88-b0b7-17f04987d896">
                                                 <img class="img-fluid"
                                                     src="{{ asset('front/') }}/images/product/product@3x.jpg"
                                                     alt="Product">

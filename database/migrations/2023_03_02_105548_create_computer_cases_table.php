@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('computer_cases', function (Blueprint $table) {
             $table->uuid('caseId',255)->primary();
-            $table->foreignUuid('brandId')->references('brandId')->on('brands');
+            $table->foreignUuid('brandId')->references('brandId')->on('brands')->onDelete('cascade');
             $table->string('caseName',255);
             $table->string('caseType',255);
             $table->string('caseFanSlot',255);

@@ -30,7 +30,7 @@ class BrandController extends Controller
         if ($request->file('brandLogo')) {
             $logo = $request->file('brandLogo');
             $brandLogoName = Str::random(20) . '.' . $logo->getClientOriginalExtension();
-            $logo->move(public_path('uploads/gambar/brand'), $brandLogoName);
+            $logo->move(public_path('uploads'), $brandLogoName);
             $brand->brandLogo = $brandLogoName;
         }
         $brand->brandName = $request->brandName;
@@ -54,10 +54,10 @@ class BrandController extends Controller
         $brand = Brand::find($request->brandIdUpdate);
 
         if ($request->file('brandLogoUpdate')) {
-            File::delete('uploads/gambar/brand/'.$brand->brandLogo);
+            File::delete('uploads/'.$brand->brandLogo);
             $gambar = $request->file('brandLogoUpdate');
             $brandGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
-            $gambar->move(public_path('uploads/gambar/brand'), $brandGambarName);
+            $gambar->move(public_path('uploads'), $brandGambarName);
             $brand->brandLogo = $brandGambarName;
         }else{
             $brand->brandLogo = $request->imageAwal;
@@ -72,7 +72,7 @@ class BrandController extends Controller
     public function destroy(string $id)
     {
         $brand = Brand::find($id);
-        File::delete('uploads/gambar/brand/'.$brand->brandLogo);
+        File::delete('uploads/'.$brand->brandLogo);
         Brand::destroy($id);
         return redirect()->route('administrator.brand')->with(['success' => 'Hapus Data Berhasil']);
     }

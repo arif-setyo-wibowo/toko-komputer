@@ -165,47 +165,45 @@
                     </div>
                     <!-- Page-Bar /- -->
                     <!-- Row-of-Product-Container -->
-                    <div class="row product-container list-style">
-                        <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                            <div class="item">
-                                <div class="image-container">
-                                    <a class="item-img-wrapper-link" href="single-product.html">
-                                        <img class="img-fluid" src="{{ asset('front/') }}/images/product/product@3x.jpg"
-                                            alt="Product">
-                                    </a>
-                                </div>
-                                <div class="item-content">
-                                    <div class="what-product-is">
-                                        <h4 class="">
-                                            <a href="single-product.html">iGame GeForce RTX 4090 24GB GDDR6X Vulcan</a>
-                                        </h4>
-                                        <div class="item-description">
-                                            <p>This hoodie is full cotton. or middle-school, high-school, and college
-                                                students to wear this sweatshirts—with or without hoods—that display their
-                                                respective school names or mascots across the chest, either as part of a
-                                                uniform or personal preference.
-                                            </p>
-                                        </div>
+                    <?php foreach ($item as $key => $value) { ?>
+                        <div class="row product-container list-style">
+                            <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                                <div class="item">
+                                    <div class="image-container">
+                                        <a class="item-img-wrapper-link" href="/detailproduk/<?= $item[$key]["Id"] ?>">
+                                            <img class="img-fluid" src="{{ asset('uploads/') . $item[$key]['Image'] }}"
+                                                alt="Product">
+                                        </a>
                                     </div>
-                                    <div class="price-template">
-                                        <div class="item-new-price">
-                                            Rp.2.000.000
+                                    <div class="item-content">
+                                        <div class="what-product-is">
+                                            <h4 class="">
+                                                <a href="/detailproduk/<?= $item[$key]["Id"] ?>"><?= $item[$key]['Name'] ?></a>
+                                            </h4>
+                                            <div class="item-description">
+                                                <p><?= $item[$key]["Description"] ?></p>
+                                            </div>
                                         </div>
-                                        <div class="item-old-price text-decoration-none">
-                                            <div class="item-action-behaviors">
-                                                <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
-                                                    Look</a>
-                                                <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
+                                        <div class="price-template">
+                                            <div class="item-new-price">
+                                                Rp. <?= number_format($item[$key]["Price"]) ?>
+                                            </div>
+                                            <div class="item-old-price text-decoration-none">
+                                                <div class="item-action-behaviors">
+                                                    <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
+                                                        Look</a>
+                                                    <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="tag new">
-                                    <span>NEW</span>
+                                    {{-- <div class="tag new">
+                                        <span>NEW</span>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php } ?>
                     <!-- Row-of-Product-Container /- -->
                 </div>
                 <!-- Shop-Right-Wrapper /- -->

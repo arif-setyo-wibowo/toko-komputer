@@ -48,7 +48,7 @@ class MoboController extends Controller
         if ($request->file('moboImage')) {
             $image = $request->file('moboImage');
             $moboLogoName = Str::random(20) . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/gambar/mobo'), $moboLogoName);
+            $image->move(public_path('uploads'), $moboLogoName);
             $mobo->moboImage = $moboLogoName;
         }
 
@@ -106,10 +106,10 @@ class MoboController extends Controller
 
         $mobo = Motherboard::find($request->idUpdate);
         if ($request->file('imageUpdate')) {
-            File::delete('uploads/gambar/mobo/'.$mobo->moboImage);
+            File::delete('uploads/'.$mobo->moboImage);
             $image = $request->file('imageUpdate');
             $moboLogoName = Str::random(20) . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads/gambar/mobo'), $moboLogoName);
+            $image->move(public_path('uploads'), $moboLogoName);
             $mobo->moboImage = $moboLogoName;
         }else{
             $mobo->moboImage = $request->imageAwal;
@@ -147,7 +147,7 @@ class MoboController extends Controller
     public function destroy(string $id)
     {
         $mobo = Motherboard::find($id);
-        File::delete('uploads/gambar/mobo/'.$mobo->moboImage);
+        File::delete('uploads/'.$mobo->moboImage);
         Motherboard::destroy($id);
         return redirect()->route('administrator.mobo')->with(['success' => 'Hapus Data Berhasil']);
     }

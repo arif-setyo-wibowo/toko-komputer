@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('power_supplies', function (Blueprint $table) {
             $table->uuid('psuId')->primary();
-            $table->foreignUuid('brandId')->references('brandId')->on('brands');
+            $table->foreignUuid('brandId')->references('brandId')->on('brands')->onDelete('cascade');
             $table->string('psuName',255);
             $table->string('psuPower',255);
             $table->string('psuCertification',255);

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('processors', function (Blueprint $table) {
             $table->uuid('processorId')->primary();
-            $table->foreignUuid('processorSocketId')->references('processorSocketId')->on('processor_sockets');
-            $table->foreignUuid('brandId')->references('brandId')->on('brands');
+            $table->foreignUuid('processorSocketId')->references('processorSocketId')->on('processor_sockets')->onDelete('cascade');
+            $table->foreignUuid('brandId')->references('brandId')->on('brands')->onDelete('cascade');
             $table->string('processorName',255);
             $table->string('processorGen',255);
             $table->string('processorCore',255);

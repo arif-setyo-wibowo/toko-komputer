@@ -46,7 +46,7 @@ class StorageController extends Controller
         if ($request->file('storageImage')) {
             $gambar = $request->file('storageImage');
             $StorageGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
-            $gambar->move(public_path('uploads/gambar/storage'), $StorageGambarName);
+            $gambar->move(public_path('uploads'), $StorageGambarName);
             $storage->storageImage = $StorageGambarName;
         }
 
@@ -95,10 +95,10 @@ class StorageController extends Controller
         $storage = Storage::find($request->idUpdate);
 
         if ($request->file('imageUpdate')) {
-            File::delete('uploads/gambar/storage/'.$storage->storageImage);
+            File::delete('uploads/'.$storage->storageImage);
             $gambar = $request->file('imageUpdate');
             $StorageGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
-            $gambar->move(public_path('uploads/gambar/storage'), $StorageGambarName);
+            $gambar->move(public_path('uploads'), $StorageGambarName);
             $storage->storageImage = $StorageGambarName;
         }else{
             $storage->storageImage = $request->imageAwal;
@@ -126,7 +126,7 @@ class StorageController extends Controller
     public function destroy(string $id)
     {
         $storage = Storage::find($id);
-        File::delete('uploads/gambar/storage/'.$storage->storageImage);
+        File::delete('uploads/'.$storage->storageImage);
         Storage::destroy($id);
         return redirect()->route('administrator.storage')->with(['success' => 'Hapus Data Berhasil']);
     }

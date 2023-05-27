@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('motherboards', function (Blueprint $table) {
             $table->uuid('moboId')->primary();
-            $table->foreignUuid('processorSocketId')->references('processorSocketId')->on('processor_sockets');
-            $table->foreignUuid('brandId')->references('brandId')->on('brands');
+            $table->foreignUuid('processorSocketId')->references('processorSocketId')->on('processor_sockets')->onDelete('cascade');
+            $table->foreignUuid('brandId')->references('brandId')->on('brands')->onDelete('cascade');
             $table->string('moboName',255);
             $table->string('moboChipset',255);
             $table->string('moboPort',255);

@@ -67,49 +67,30 @@
                     </nav>
                     <nav>
                         <ul class="secondary-nav g-nav">
-                            <li>
-                                <a>My Account
-                                    <i class="fas fa-chevron-down u-s-m-l-9"></i>
-                                </a>
-                                <ul class="g-dropdown" style="width:200px">
-                                    <li>
-                                        <a href="/cart">
-                                            <i class="fas fa-cog u-s-m-r-9"></i>
-                                            My Cart</a>
-                                    </li>
-                                    <li>
-                                        <a href="wishlist.html">
-                                            <i class="far fa-heart u-s-m-r-9"></i>
-                                            My Wishlist</a>
-                                    </li>
-                                    <li>
-                                        <a href="checkout.html">
-                                            <i class="far fa-check-circle u-s-m-r-9"></i>
-                                            Checkout</a>
-                                    </li>
-
-                                    @if (Session::get('login.customer'))
+                            @if (Session::get('login.customer'))
+                                <li>
+                                    <a><i class="fas fa-user u-s-m-r-9"></i>{{ Session::get('nama.customer') }}
+                                        <i class="fas fa-chevron-down u-s-m-l-9"></i>
+                                    </a>
+                                    <ul class="g-dropdown" style="width:200px">
+                                        <li>
+                                            <a href="/history">
+                                                <i class="fas fa-history u-s-m-r-9"></i>
+                                                History Pembelian</a>
+                                        </li>
                                         <li>
                                             <a href="/logout">
                                                 <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
                                                 Logout</a>
                                         </li>
-                                    @else
-                                        <li>
-                                            <a href="/login">
-                                                <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
-                                                Login / Signup</a>
-                                        </li>
-                                    @endif
-                                </ul>
-                            </li>
-                            @if ($message = Session::get('nama.customer'))
-                                <li>
-                                    <a>{{ $message }}
-                                        <i class="fas u-s-m-l-9"></i>
-                                    </a>
+                                    </ul>
                                 </li>
                             @else
+                                <li>
+                                    <a href="/login">
+                                        <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
+                                        Login / Signup</a>
+                                </li>
                             @endif
                         </ul>
                     </nav>
@@ -917,11 +898,6 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </li>
-                                <li>
-                                    <a href="/history">History pembelian
-
-                                    </a>
                                 </li>
                             </ul>
                         </div>

@@ -15,22 +15,22 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             IdentitiesSeeder::class,
-            CustomerSeeder::class,
             MediaSeeder::class,
-            EmployeeSeeder::class,
             BrandSeeder::class,
-            MemorySeeder::class,
+            // EmployeeSeeder::class,
+            
+            // MemorySeeder::class,
             SocketSeeder::class,
-            CaseSeeder::class,
+            // CaseSeeder::class,
             MotherboardSeeder::class,
-            StorageSeeder::class,
-            PowerSupplySeeder::class,
-            GraphicCardSeeder::class,
-            ProcessorSeeder::class,
-            ViewBarangSeeder::class,
-            KeyboardSeeder::class,
-            CoolerSeeder::class,
-            UserSeeder::class
+            // StorageSeeder::class,
+            // PowerSupplySeeder::class,
+            // GraphicCardSeeder::class,
+            // ProcessorSeeder::class,
+            // KeyboardSeeder::class,
+            // CoolerSeeder::class,
+            // UserSeeder::class,
+            ViewBarangSeeder::class
         ]);
     }
 }

@@ -33,7 +33,7 @@ class ProcessorController extends Controller
         if ($request->file('processorImage')) {
             $gambar = $request->file('processorImage');
             $cpuGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
-            $gambar->move(public_path('uploads/gambar/cpu'), $cpuGambarName);
+            $gambar->move(public_path('uploads'), $cpuGambarName);
             $cpu->processorImage = $cpuGambarName;
         }
         $cpu->processorName = $request->processorName;
@@ -70,10 +70,10 @@ class ProcessorController extends Controller
         ]);
         $cpu = Processor::find($request->idUpdate);
         if ($request->file('processorImageUpdate')) {
-            File::delete('uploads/gambar/cpu/'.$cpu->processorImage);
+            File::delete('uploads/'.$cpu->processorImage);
             $gambar = $request->file('processorImageUpdate');
             $cpuGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
-            $gambar->move(public_path('uploads/gambar/cpu'), $cpuGambarName);
+            $gambar->move(public_path('uploads'), $cpuGambarName);
             $cpu->processorImage = $cpuGambarName;
         }else{
             $cpu->processorImage = $request->imageAwal;
@@ -102,7 +102,7 @@ class ProcessorController extends Controller
     public function destroy(string $id)
     {
         $cpu = Processor::find($id);
-        File::delete('uploads/gambar/cpu/'.$cpu->processorImage);
+        File::delete('uploads/'.$cpu->processorImage);
         Processor::destroy($id);
         return redirect()->route('administrator.processor')->with(['success' => 'Hapus Data Berhasil']);
     }

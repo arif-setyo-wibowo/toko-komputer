@@ -34,7 +34,7 @@ class CoolerController extends Controller
         if ($request->file('coolerImage')) {
             $gambar = $request->file('coolerImage');
             $coolerGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
-            $gambar->move(public_path('uploads/gambar/cooler'), $coolerGambarName);
+            $gambar->move(public_path('uploads'), $coolerGambarName);
             $cooler->coolerImage = $coolerGambarName;
         }
 
@@ -63,16 +63,16 @@ class CoolerController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-             'coolerImage' => 'image|mimes:png,jpg,jpeg',
+            'coolerImage' => 'image|mimes:png,jpg,jpeg',
         ]);
 
         $cooler = Cooler::find($request->idUpdate);
         
         if ($request->file('imageUpdate')) {
-            File::delete('uploads/gambar/cooler/'.$cooler->coolerImage);
+            File::delete('uploads/'.$cooler->coolerImage);
             $gambar = $request->file('imageUpdate');
             $coolerGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
-            $gambar->move(public_path('uploads/gambar/cooler'), $coolerGambarName);
+            $gambar->move(public_path('uploads'), $coolerGambarName);
             $cooler->coolerImage = $coolerGambarName;
         }else{
             $cooler->coolerImage = $request->imageAwal;
@@ -97,7 +97,7 @@ class CoolerController extends Controller
     public function destroy(string $id)
     {
         $Cooler = Cooler::find($id);
-        File::delete('uploads/gambar/cooler/'.$Cooler->coolerImage);
+        File::delete('uploads/'.$Cooler->coolerImage);
         Cooler::destroy($id);
         return redirect()->route('administrator.cooler')->with(['success' => 'Hapus Data Berhasil']);
     }

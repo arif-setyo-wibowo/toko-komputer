@@ -13,28 +13,14 @@ class BrandSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('brands')->insert(
-            [
-                [
-                    'brandId' => '98a3b6dd-1320-44f6-9cca-44b0b2675e36',
-                    'brandName' => 'Team Elite',
-                    'brandLogo' => 'dIDG1DgTp0RyVvmkk3NX.jpg',
-                    'created_at' => date('Y-m-d H:i:s'),
-                    'updated_at' => date('Y-m-d H:i:s'),
-                ],[
-                    'brandId' => '98a3b707-5259-454c-a105-301228011ee5',
-                    'brandName' => 'Asus',
-                    'brandLogo' => 'wQoLTFTuqNsni2mAlnaa.png',
-                    'created_at' => date('Y-m-d H:i:s'),
-                    'updated_at' => date('Y-m-d H:i:s'),
-                ],[
-                    'brandId' => '98a3b718-bcb2-4778-897d-f7caa4f4f1d6',
-                    'brandName' => 'Seagate',
-                    'brandLogo' => 'lYcDFJCpZ3I9hBZjg0VI.png',
-                    'created_at' => date('Y-m-d H:i:s'),
-                    'updated_at' => date('Y-m-d H:i:s'),
-                ]  
-            ]
-        );
+        $query = "INSERT INTO `brands` (`brandId`, `brandName`, `brandLogo`, `created_at`, `updated_at`) VALUES
+                ('9943b548-0331-4189-84a7-25e1da6e7417', 'Team Elite', 'FfdhJ9ZWKiZ8Zk1DrHrq.png', '2023-05-27 04:40:45', '2023-05-27 04:40:45'),
+                ('9943b578-014c-4ae0-b3d9-ba1b05b99f7d', 'Asus', 'vU9JIXHnRMIGylX6p9uP.png', '2023-05-27 04:40:45', '2023-05-27 04:40:45'),
+                ('9943b588-e5d3-4264-9b0a-74b2717455a7', 'Seagate', 'w6E3JrCMAGFjye5rovU3.png', '2023-05-27 04:40:45', '2023-05-27 04:40:45'),
+                ('9943b59f-0ac2-48ea-aac9-054cf2d52185', 'Steelseries', 'gqaZdLtrmwuXUfXa6ApP.png', '2023-05-27 04:40:45', '2023-05-27 04:40:45'),
+                ('9943b639-9eac-4992-b7e0-b633c9395c69', 'Lenovo', 'xOVsRFFS0g699YIIlE9V.png', '2023-05-27 04:40:45', '2023-05-27 04:40:45'),
+                ('9943b6f1-4f6d-4d8a-b289-8ef29405a07c', 'Toshiba', 'O8BJEpZCMI1M0rwst8gD.png', '2023-05-27 04:40:45', '2023-05-27 04:40:45'),
+                ('9943b872-41a3-482e-9f32-76a4b5830595', 'Samsung', 'iZpRl9ruailCNGm8ziVh.png', '2023-05-27 04:40:45', '2023-05-27 04:40:45')";
+        DB::statement($query);
     }
 }

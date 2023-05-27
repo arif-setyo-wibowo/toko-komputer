@@ -1,7 +1,7 @@
 const base_url = document.URL;
-const asset_url = window.location.origin + "/uploads/gambar/keyboard/";
+const asset_url = window.location.origin + "/uploads/";
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     function formatRupiah(amount) {
         const formatter = new Intl.NumberFormat('id-ID', {
@@ -12,10 +12,10 @@ $(document).ready(function() {
     }
 
     // Auto Load Image Insert
-    $("#keyboardImage").change(function() {
+    $("#keyboardImage").change(function () {
         if (this.files && this.files[0]) {
             var reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 $('#gambarTambah').attr('src', e.target.result);
                 console.log(e.target.result);
             }
@@ -24,10 +24,10 @@ $(document).ready(function() {
     });
 
     // Auto Load Image Update
-    $("#imageUpdate").change(function() {
+    $("#imageUpdate").change(function () {
         if (this.files && this.files[0]) {
             var reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 $('#UpdateGambar').attr('src', e.target.result);
                 console.log(e.target.result);
             }
@@ -36,7 +36,7 @@ $(document).ready(function() {
     });
 
     // Detail Data
-    $(document).on('click', '.button-detail', function() {
+    $(document).on('click', '.button-detail', function () {
         var id = $(this).attr("id");
         var gambar1 = document.getElementById('gambar');
         var nama2 = document.getElementById('nama');
@@ -55,7 +55,7 @@ $(document).ready(function() {
             method: "GET",
             url: base_url + "/find/" + id,
             dataType: "json",
-            success: function(response) {
+            success: function (response) {
                 gambar1.src = asset_url + response[0]['keyboardImage'];
                 nama2.textContent = response[0]['keyboardName'];
                 merk4.textContent = response[0]['brand']['brandName'];
@@ -74,7 +74,7 @@ $(document).ready(function() {
     });
 
     // Update Data
-    $(document).on('click', '.buttonupdate', function() {
+    $(document).on('click', '.buttonupdate', function () {
         var id = $(this).attr("id");
         var UpdateGambar = document.getElementById('UpdateGambar');
 
@@ -82,7 +82,7 @@ $(document).ready(function() {
             method: "GET",
             url: base_url + "/find/" + id,
             dataType: "json",
-            success: function(response) {
+            success: function (response) {
                 UpdateGambar.src = asset_url + response[0]['keyboardImage'];
                 $('#idUpdate').val(response[0]['keyboardId']);
                 $('#imageAwal').val(response[0]['keyboardImage']);
@@ -106,11 +106,11 @@ $(document).ready(function() {
     });
 
     // Modal Hapus
-    $(document).on('click', '.buttonHapus', function() {
+    $(document).on('click', '.buttonHapus', function () {
         var id = $(this).attr("id");
         $("#hapusData").modal("show");
 
-        $(document).on('click', '.buttonAksiHapus', function() {
+        $(document).on('click', '.buttonAksiHapus', function () {
             window.location.replace(base_url + "/delete/" + id);
         })
     });

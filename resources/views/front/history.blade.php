@@ -71,7 +71,9 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    @if (empty($item->orderResi))
+                                                    @if (empty($item->orderResi) && $item->orderStatus == 'Unpaid')
+                                                        -
+                                                    @elseif(empty($item->orderResi) && $item->orderStatus == 'Paid')
                                                         Sedang Dikemas
                                                     @else
                                                         Selesai

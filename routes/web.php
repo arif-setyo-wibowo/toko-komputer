@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\Auth\LoginController as AuthLoginController;
 use Illuminate\Support\Facades\Route;
+
+// Admin
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\IdentitasController;
 use App\Http\Controllers\Admin\SlidersController;
@@ -18,11 +20,10 @@ use App\Http\Controllers\Admin\KaryawanController;
 use App\Http\Controllers\Admin\PowerSupplyController;
 use App\Http\Controllers\Admin\GpuController;
 use App\Http\Controllers\Admin\ProcessorController;
-use App\Http\Controllers\Auth\SocialiteController;
-use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Admin\EarphoneController;
 use App\Http\Controllers\Admin\KeyboardController;
 use App\Http\Controllers\Admin\MonitorController;
+use App\Http\Controllers\Admin\MouseController;
 use App\Http\Controllers\Admin\CoolerController;
 
 //FRONT
@@ -34,8 +35,16 @@ use App\Http\Controllers\Front\DetailController;
 use App\Http\Controllers\Front\ShopController;
 use App\Http\Controllers\Front\HistoryController;
 use App\Http\Controllers\Front\DetailHistoryController;
+
+use App\Http\Controllers\MemoryController;
+use App\Http\Controllers\MotherboardController;
+use App\Http\Controllers\GraphicCardController;
+use App\Http\Controllers\ComputerCaseController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CustomxamerController;
 // 
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\Auth\SocialiteController;
 
 // API
 use App\Http\Controllers\Api\RajaOngkirController;
@@ -55,7 +64,6 @@ use App\Http\Controllers\Api\RajaOngkirController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/rakitpc', [RakitPcController::class, 'index']);
 Route::get('/cart', [CartController::class, 'index']);
-Route::get('/shop', [ShopController::class, 'index']);
 Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add.cart');
 Route::post('/remove-from-cart', [CartController::class, 'removeFromCart'])->name('remove.cart');
 Route::post('/decrease-quantity', [CartController::class, 'updateCartQuantity'])->name('min.cart');
@@ -65,9 +73,9 @@ Route::post('/checkout', [OrdersController::class, 'store']);
 Route::get('/history', [HistoryController::class, 'index']);
 Route::get('/detailhistory/{id}', [DetailHistoryController::class, 'index']);
 
-// DETAIL PRODUK
-// Route::get('/detailproduk', [DetailProdukController::class, 'index']);
+// FRONT PRODUK
 Route::get('/detailproduk/{id}', [DetailController::class, 'index']);
+Route::get('/shop/{categories}', [ShopController::class, 'index']);
 
 // Login
 Route::get('/login', [CustomerController::class, 'login'])->name('login');

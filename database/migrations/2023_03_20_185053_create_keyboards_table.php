@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('keyboards', function (Blueprint $table) {
             $table->uuid('keyboardId')->primary();
-            $table->foreignUuid('brandId')->references('brandId')->on('brands');
+            $table->foreignUuid('brandId')->references('brandId')->on('brands')->onDelete('cascade');
             $table->string('keyboardName',255);
             $table->string('keyboardType',255);
             $table->string('keyboardSize',255);

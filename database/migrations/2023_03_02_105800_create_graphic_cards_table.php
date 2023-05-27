@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('graphic_cards', function (Blueprint $table) {
             $table->uuid('gpuId')->primary();
-            $table->foreignUuid('brandId')->references('brandId')->on('brands');
+            $table->foreignUuid('brandId')->references('brandId')->on('brands')->onDelete('cascade');
             $table->string('gpuName',255);
             $table->string('gpuInterface',255);
             $table->string('gpuBaseClock',255);

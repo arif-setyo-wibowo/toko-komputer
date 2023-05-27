@@ -46,7 +46,7 @@ class GpuController extends Controller
         if ($request->file('gpuImage')) {
             $gambar = $request->file('gpuImage');
             $gpuLogoName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
-            $gambar->move(public_path('uploads/gambar/gpu'), $gpuLogoName);
+            $gambar->move(public_path('uploads'), $gpuLogoName);
             $gpu->gpuImage = $gpuLogoName;
         }
         
@@ -100,10 +100,10 @@ class GpuController extends Controller
 
         $gpu = GraphicCard::find($request->idUpdate);
         if ($request->file('gpuImageUpdate')) {
-            File::delete('uploads/gambar/gpu/'.$gpu->gpuImage);
+            File::delete('uploads/'.$gpu->gpuImage);
             $gambar = $request->file('gpuImageUpdate');
             $gpuLogoName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
-            $gambar->move(public_path('uploads/gambar/gpu'), $gpuLogoName);
+            $gambar->move(public_path('uploads'), $gpuLogoName);
             $gpu->gpuImage = $gpuLogoName;
         }else{
             $gpu->gpuImage = $request->imageAwal;
@@ -136,7 +136,7 @@ class GpuController extends Controller
     public function destroy(string $id)
     {
         $gpu = GraphicCard::find($id);
-        File::delete('uploads/gambar/gpu/'.$gpu->gpuImage);
+        File::delete('uploads/'.$gpu->gpuImage);
         GraphicCard::destroy($id);
         return redirect()->route('administrator.gpu')->with(['success' => 'Hapus Data Berhasil']);
     }

@@ -30,7 +30,8 @@ class DashboardController extends Controller
         $data=[
             'title' => "Dashboard Karyawan",
             'pelanggan' => User::all()->count(),
-            'barang' => DB::table('products')->count()
+            'barang' => DB::table('products')->count(),
+            'order' => DB::table('orders')->count(),
         ];
 
         return view('admin/dashboard',$data);
