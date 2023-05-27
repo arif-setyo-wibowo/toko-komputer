@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('monitors', function (Blueprint $table) {
             $table->uuid('monitorId')->primary();
-            $table->foreignUuid('brandId')->references('brandId')->on('brands');
+            $table->foreignUuid('brandId')->references('brandId')->on('brands')->onDelete('cascade');
             $table->string('monitorName',255);
             $table->string('monitorResolution',255);
             $table->string('monitorSize',255);

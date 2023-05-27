@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('mouse', function (Blueprint $table) {
             $table->uuid('mouseId')->primary();
-            $table->foreignUuid('brandId')->references('brandId')->on('brands');
+            $table->foreignUuid('brandId')->references('brandId')->on('brands')->onDelete('cascade');
             $table->string('mouseName',255);
             $table->string('mouseSensor',255);
             $table->string('mouseSwitch',255);

@@ -126,7 +126,8 @@
                         <div class="modal fade modal-lg" id="updateBrand" tabindex="-1">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
-                                    <form action="{{ url()->current() }}/update" method="post">
+                                    <form action="{{ url()->current() }}/update" method="post"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         <div class="modal-header">
                                             <h5 class="modal-title">Update Sosial Media</h5>

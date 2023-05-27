@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('microphones', function (Blueprint $table) {
             $table->uuid('micId')->primary();
-            $table->foreignUuid('brandId')->references('brandId')->on('brands');
+            $table->foreignUuid('brandId')->references('brandId')->on('brands')->onDelete('cascade');
             $table->string('micName',255);
             $table->string('micType',255);
             $table->string('micSensitivity',255);

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('earphones', function (Blueprint $table) {
             $table->uuid('earphoneId')->primary();
-            $table->foreignUuid('brandId')->references('brandId')->on('brands');
+            $table->foreignUuid('brandId')->references('brandId')->on('brands')->onDelete('cascade');
             $table->string('earphoneName',255);
             $table->string('earphoneType',255);
             $table->string('earphoneSensitivity',255);

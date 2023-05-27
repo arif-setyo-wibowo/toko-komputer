@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('memories', function (Blueprint $table) {
             $table->uuid('memoryId')->primary();
-            $table->foreignUuid('brandId')->references('brandId')->on('brands');
+            $table->foreignUuid('brandId')->references('brandId')->on('brands')->onDelete('cascade');
             $table->string('memoryName',255);
             $table->string('memoryType',255);
             $table->string('memorySpeed',255);

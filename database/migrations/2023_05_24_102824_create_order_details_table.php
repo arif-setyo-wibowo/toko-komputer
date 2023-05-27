@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->uuid('orderDetailId')->primary();
-            $table->foreignUuid('orderId')->references('orderId')->on('orders');
+            $table->foreignUuid('orderId')->references('orderId')->on('orders')->onDelete('cascade');
             $table->string('orderDetailProductId',255);
             $table->string('orderDetailProductPrice',255);
             $table->string('orderDetailProductQty',255);

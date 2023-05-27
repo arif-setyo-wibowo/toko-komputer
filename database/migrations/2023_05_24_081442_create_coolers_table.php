@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('coolers', function (Blueprint $table) {
             $table->uuid('coolerId')->primary();
-            $table->foreignUuid('brandId')->references('brandId')->on('brands');
+            $table->foreignUuid('brandId')->references('brandId')->on('brands')->onDelete('cascade');
             $table->string('coolerType',255);
             $table->string('coolerCaseType',255);
             $table->string('coolerSocket',255);

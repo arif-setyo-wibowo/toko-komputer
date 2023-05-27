@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->uuid('orderId')->primary();
-            $table->foreignUuid('customerId')->references('customerId')->on('users');
+            $table->foreignUuid('customerId')->references('customerId')->on('users')->onDelete('cascade');
             $table->date('orderDate',255);
             $table->string('orderTotalPrice',255);
             $table->string('orderResi',255)->nullable();
