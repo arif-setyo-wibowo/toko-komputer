@@ -13,42 +13,9 @@ class StorageSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('storages')->insert(
-            [
-                [
-                    'storageId' => '580da2d5-aa70-4764-ae2a-44908ace8716',
-                    'brandId' => '98a3b707-5259-454c-a105-301228011ee5',
-                    'storageName' => 'KLEVV SSD CRAS C920',
-                    'storageType' => 'SSD',
-                    'storageSize' => '1 TB',
-                    'storageReadSpeed' => '20',
-                    'storageWriteSpeed' => '30',
-                    'storageRpm' => '40',
-                    'storageDimension' => 'M.2',
-                    'storageWarranty' => '2 Tahun',
-                    'storagePrice' => '240000',
-                    'storageStock' => '10',
-                    'storageImage' => 'default.jpeg',
-                    'created_at' => date('Y-m-d H:i:s'),
-                    'updated_at' => date('Y-m-d H:i:s'),
-                ],[
-                    'storageId' => '32871309-0d5b-4c44-b804-99216d7ffd5a',
-                    'brandId' => '98a3b718-bcb2-4778-897d-f7caa4f4f1d6',
-                    'storageName' => 'VGen Hardisk 128GB',
-                    'storageType' => 'Harddisk',
-                    'storageSize' => '128 GB',
-                    'storageReadSpeed' => '90',
-                    'storageWriteSpeed' => '95',
-                    'storageRpm' => '100',
-                    'storageDimension' => 'M.2',
-                    'storageWarranty' => '3 Tahun',
-                    'storagePrice' => '450000',
-                    'storageStock' => '11',
-                    'storageImage' => 'default.jpeg',
-                    'created_at' => date('Y-m-d H:i:s'),
-                    'updated_at' => date('Y-m-d H:i:s'),
-                ]
-            ]
-        );
+        $query = "INSERT INTO `storages` (`storageId`, `brandId`, `storageName`, `storageType`, `storageSize`, `storageReadSpeed`, `storageWriteSpeed`, `storageRpm`, `storageDimension`, `storageWarranty`, `storagePrice`, `storageStock`, `storageImage`, `created_at`, `updated_at`) VALUES
+        ('99441faf-18f4-419b-991a-c02e3e4818a9', '9943b588-e5d3-4264-9b0a-74b2717455a7', 'SSD Seagate 128GB RESMI 3 TAHUN', 'SSD', '128 GB', '550', '570', '200', '2.5inch', '3 Tahun', '118000', '100', '9At0DEiziyK7xqMMPG7H.png', '2023-05-27 09:11:23', '2023-05-27 09:11:23')";
+    
+        DB::statement($query);
     }
 }

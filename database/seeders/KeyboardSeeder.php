@@ -13,25 +13,8 @@ class KeyboardSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('keyboards')->insert(
-            [
-                ['keyboardId' => '9941edda-3e30-46ed-9645-2914eb69ad80',
-                'brandId' => '98a3b707-5259-454c-a105-301228011ee5',
-                'keyboardName' => 'Keyboard',
-                'keyboardType' => 'Mechanical',
-                'keyboardSize' => '60',
-                'keyboardSwitch' => 'Red',
-                'keyboardLayout' => '-',
-                'keyboardConnection' => 'Wireless',
-                'keyboardFeature' => 'Fitur Pilihan',
-                'keyboardWarranty' => '3 Tahun',
-                'keyboardPrice' => '750000',
-                'keyboardStock' => '10',
-                'keyboardImage' => 'Sh5ULIp1DPde1CgwxJmy.jpg',
-                'keyboardDescription' => 'Keyboard Baik',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
-                ]
-            ]);
+        $query = "INSERT INTO `keyboards` (`keyboardId`, `brandId`, `keyboardName`, `keyboardType`, `keyboardSize`, `keyboardSwitch`, `keyboardLayout`, `keyboardConnection`, `keyboardFeature`, `keyboardWarranty`, `keyboardPrice`, `keyboardStock`, `keyboardImage`, `keyboardDescription`, `created_at`, `updated_at`) VALUES
+        ('99442a34-f846-4178-83fd-12fbf1386a01', '9943b578-014c-4ae0-b3d9-ba1b05b99f7d', 'ORIGINAL GRNS 3 Bln Keyboard ASUS A45 A45L A45VJ A45VM A45VS Series', 'Office', 'Full Size', 'Red', 'Full', 'USB', 'Any', '5 Hari', '150000', '100', 'lhUzqTQ8GiTfvT2EviLa.png', 'adalah sebuah keyboard yang dirancang khusus untuk digunakan pada laptop ASUS seri A45, termasuk model A45L, A45VJ, A45VM, dan A45VS. Keyboard ini merupakan keyboard asli yang diproduksi oleh ASUS, sehingga menjamin kualitas dan kompatibilitas yang optimal dengan laptop ASUS seri tersebut.', '2023-05-27 09:40:49', '2023-05-27 09:40:49')";
+        DB::statement($query);
     }
 }

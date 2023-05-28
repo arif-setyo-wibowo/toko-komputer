@@ -13,22 +13,9 @@ class PowerSupplySeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('power_supplies')->insert([
-            'psuId'=>'98b743c8-95dc-4e88-b0b7-17f04987d896',
-            'brandId' => '98a3b707-5259-454c-a105-301228011ee5',
-            'psuName' => 'SYSTEM POWER U9',
-            'psuPower' => '400',
-            'psuCertification' => '80 PLUS Bronze',
-            'psuEfficiency' => 'Up to 89%',
-            'psucooling' => 'Fan',
-            'psuModular' => 'No Modular',
-            'psuConnector' =>'20+4-Pin 1x (8/4 pins) CPU +12V 2x 4Pin Molex 4x (8/6 pins) PCI-E Power 6x SATA Power',
-            'psuWarranty' =>'3 Year(s)',
-            'psuPrice'=>'706000',
-            'psuStock'=>'15',
-            'psuImage'=>'lT4sBzjEVTW41rGmweZl.png',
-            'created_at'=> date('Y-m-d H:i:s'),
-            'updated_at'=> date('Y-m-d H:i:s')
-        ]);
+        $query = "INSERT INTO `power_supplies` (`psuId`, `brandId`, `psuName`, `psuPower`, `psuCertification`, `psuEfficiency`, `psuCooling`, `psuModular`, `psuConnector`, `psuWarranty`, `psuPrice`, `psuStock`, `psuImage`, `created_at`, `updated_at`) VALUES
+        ('99442235-69b4-404a-b27f-17f2d2bc99a8', '9943b59f-0ac2-48ea-aac9-054cf2d52185', 'Power Supply Varro 500 W', '500', '80 PLUS Bronze', 'Hemat Daya', '1', 'Corsair RMx Series', 'ATX 24-Pin', '1 Bulan', '500000', '100', 'OoMxngEetguJR4qQa61Y.png', '2023-05-27 09:18:27', '2023-05-27 09:18:27')";
+        
+        DB::statement($query);
     }
 }

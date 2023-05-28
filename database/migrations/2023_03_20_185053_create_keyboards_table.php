@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('keyboardPrice', 255);
             $table->string('keyboardStock',255);
             $table->string('keyboardImage', 255);
-            $table->string('keyboardDescription', 255);
+            $table->text('keyboardDescription');
             $table->timestamps();
         });
     }

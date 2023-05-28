@@ -13,27 +13,8 @@ class ProcessorSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('processors')->insert([
-            'processorId' => '98c1f48b-0a6a-4b32-b609-a07be9b2d909',
-            'processorSocketId' =>  'd1da8b40-fd42-420b-9e80-3eeabb004ddd',
-            'brandId' => '98a3b707-5259-454c-a105-301228011ee5', 
-            'processorName' => 'Intel Core i7',
-            'processorGen' => '13 th gen',
-            'processorCore' => '16 Cores',
-            'processorThread' => '24 Threads',
-            'processorBaseSpeed' =>  '3.4 GHz',
-            'processorBoostSpeed' =>  '5.3 GHz',
-            'processorCache' => '30 MB',
-            'processorArch' => '10 nm',
-            'processorIgpu' => 'Intel UHD Graphics 770',
-            'processorPower' => '125',
-            'processorHeatsink' => '-',
-            'processorWarranty' =>  '3 Year(s)',
-            'processorPrice' => '7340000',
-            'processorStock' => '15',
-            'processorImage' => 'gHFJoeXCuYliRWnSndPF.png',
-            'created_at'=> date('Y-m-d H:i:s'),
-            'updated_at'=> date('Y-m-d H:i:s')
-        ]);
+        $query = "INSERT INTO `processors` (`processorId`, `processorSocketId`, `brandId`, `processorName`, `processorGen`, `processorCore`, `processorThread`, `processorBaseSpeed`, `processorBoostSpeed`, `processorCache`, `processorArch`, `processorIgpu`, `processorPower`, `processorHeatsink`, `processorWarranty`, `processorPrice`, `processorStock`, `processorImage`, `created_at`, `updated_at`) VALUES
+        ('9943cf7c-07f0-4269-b948-53a3f1e5b6bf', '9943bb7c-f868-4d6f-bed4-0d5eb8ba234d', '9943b578-014c-4ae0-b3d9-ba1b05b99f7d', 'Processor Intel Core I5 12400 Box Alder Lake Socket', '12', '8', '6', '1500', '4.40', '16 MB SmartCache', 'Intel', 'Intel', '25', '1', '1 Tahun', '2885000', '100', 'Sc8NEP0OPnkqAGLDlO5u.png', '2023-05-27 05:27:08', '2023-05-27 05:28:58')";
+        DB::statement($query);
     }
 }
