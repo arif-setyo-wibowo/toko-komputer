@@ -2,37 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="X-CSRF-TOKEN" content="{{ csrf_token() }}">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title }} - Admin</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+  <title>{{ $title }} - Admin</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-    <!-- Favicons -->
-    <link href="{{ asset('admin/') }}/img/favicon.png" rel="icon">
-    <link href="{{ asset('admin/') }}/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Favicons -->
+  <link href="{{ asset('admin/') }}/img/favicon.png" rel="icon">
+  <link href="{{ asset('admin/') }}/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
-    <link href="{{ asset('admin/') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ asset('admin/') }}/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="{{ asset('admin/') }}/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="{{ asset('admin/') }}/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="{{ asset('admin/') }}/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="{{ asset('admin/') }}/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="{{ asset('admin/') }}/vendor/simple-datatables/style.css" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="{{ asset('admin/') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ asset('admin/') }}/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="{{ asset('admin/') }}/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="{{ asset('admin/') }}/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="{{ asset('admin/') }}/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="{{ asset('admin/') }}/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="{{ asset('admin/') }}/vendor/simple-datatables/style.css" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
-    <link href="{{ asset('admin/') }}/css/style.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="{{ asset('admin/') }}/css/style.css" rel="stylesheet">
 
-    <!-- =======================================================
+  <!-- =======================================================
     * Template Name: NiceAdmin - v2.5.0
     * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
     * Author: BootstrapMade.com
@@ -56,10 +54,10 @@
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="{{ asset('admin/') }}/img/profile-img.jpg" alt="Profile" class="rounded-circle">
             @if (Session::get('role.manager'))
-              <span class="d-none d-md-block dropdown-toggle ps-2">Manager</span>
+            <span class="d-none d-md-block dropdown-toggle ps-2">Manager</span>
             @endif
             @if ((Session::get('role.karyawan')))
-                <span class="d-none d-md-block dropdown-toggle ps-2">Karyawan</span>
+            <span class="d-none d-md-block dropdown-toggle ps-2">Karyawan</span>
             @endif
 
           </a><!-- End Profile Iamge Icon -->
@@ -79,7 +77,7 @@
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
-      @if (Session::get('role.manager'))  
+      @if (Session::get('role.manager'))
       <li class="nav-item">
         <a class="nav-link {{ $title != 'Dashboard' ? 'collapsed' : '' }}" href="/manager">
           <i class="bi bi-grid"></i>
@@ -218,53 +216,52 @@
     </ul>
   </aside><!-- End Sidebar-->
 
-    <main id="main" class="main">
-        <section class="section dashboard">
-            <div class="row">
-                <section class="content">
-                    @yield('content')
-                </section>
-            </div>
+  <main id="main" class="main">
+    <section class="section dashboard">
+      <div class="row">
+        <section class="content">
+          @yield('content')
         </section>
-    </main><!-- End #main -->
+      </div>
+    </section>
+  </main><!-- End #main -->
 
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer" style="bottom:0px;right:0px;left:0px;">
-        <div class="copyright">
-            &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-    </footer><!-- End Footer  -->
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
-    <!-- Vendor JS Files -->
-    <script src="{{ asset('admin/') }}/js/jquery-3.6.1.js"></script>
-    <script src="{{ asset('admin/') }}/vendor/apexcharts/apexcharts.min.js"></script>
-    <script src="{{ asset('admin/') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('admin/') }}/vendor/chart.js/chart.umd.js"></script>
-    <script src="{{ asset('admin/') }}/vendor/echarts/echarts.min.js"></script>
-    <script src="{{ asset('admin/') }}/vendor/quill/quill.min.js"></script>
-    <script src="{{ asset('admin/') }}/vendor/simple-datatables/simple-datatables.js"></script>
-    <script src="{{ asset('admin/') }}/vendor/tinymce/tinymce.min.js"></script>
-    <script src="{{ asset('admin/') }}/vendor/php-email-form/validate.js"></script>
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer" style="bottom:0px;right:0px;left:0px;">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer  -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Vendor JS Files -->
+  <script src="{{ asset('admin/') }}/js/jquery-3.6.1.js"></script>
+  <script src="{{ asset('admin/') }}/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="{{ asset('admin/') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ asset('admin/') }}/vendor/chart.js/chart.umd.js"></script>
+  <script src="{{ asset('admin/') }}/vendor/echarts/echarts.min.js"></script>
+  <script src="{{ asset('admin/') }}/vendor/quill/quill.min.js"></script>
+  <script src="{{ asset('admin/') }}/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="{{ asset('admin/') }}/vendor/tinymce/tinymce.min.js"></script>
+  <script src="{{ asset('admin/') }}/vendor/php-email-form/validate.js"></script>
 
-    <!-- Template Main JS File -->
-    <script src="{{ asset('admin/') }}/js/main.js"></script>
-    <script type="text/javascript">
-        $(".alert-success").delay(1000).slideUp(200, function() {
-            $(this).alert('close');
-        });
-        $(".alert-danger").delay(4000).slideUp(200, function() {
-            $(this).alert('close');
-        });
-    </script>
-    @yield('javascript')
+  <!-- Template Main JS File -->
+  <script src="{{ asset('admin/') }}/js/main.js"></script>
+  <script type="text/javascript">
+    $(".alert-success").delay(1000).slideUp(200, function() {
+      $(this).alert('close');
+    });
+    $(".alert-danger").delay(4000).slideUp(200, function() {
+      $(this).alert('close');
+    });
+  </script>
+  @yield('javascript')
 
 </body>
 

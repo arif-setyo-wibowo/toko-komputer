@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Identity;
+use App\Models\Order;
 use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
@@ -14,18 +15,18 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $order = DB::table('orders')->join('users', 'orders.customerId', '=', 'users.customerId')->select('orders.*', 'users.customerName','users.customerEmail')->get();
-        $data=[
+        $order = DB::table('orders')->join('users', 'orders.customerId', '=', 'users.customerId')->select('orders.*', 'users.customerName', 'users.customerEmail')->get();
+        $data = [
             'title' => "Order",
             'order' => $order
         ];
 
-        return view('admin/order',$data);
+        return view('admin/order', $data);
     }
 
     public function detail($idOrder)
     {
-        $orderDetail = DB::table('order_details')->where('orderId', '=', $idOrder)->join('products', 'order_details.orderDetailProductId', '=', 'products.productId')->select('order_details.*', 'products.productName','products.productImage','products.Categories')->get();
+        $orderDetail = DB::table('order_details')->where('orderId', '=', $idOrder)->join('products', 'order_details.orderDetailProductId', '=', 'products.productId')->select('order_details.*', 'products.productName', 'products.productImage', 'products.Categories')->get();
         $order = DB::table('orders')->where('orderId', '=', $idOrder)->get();
         $pelanggan = DB::table('users')->where('customerId', '=', $order[0]->customerId)->get();
         $subtotal = 0;
@@ -33,8 +34,8 @@ class OrderController extends Controller
         foreach ($orderDetail as $key => $value) {
             $subtotal += $value->orderDetailProductPrice * $value->orderDetailProductQty;
         }
-        
-        $data=[
+
+        $data = [
             'title'         => "Invoice",
             'identitas'     => Identity::all()->first(),
             'pelanggan'     => $pelanggan[0],
@@ -42,7 +43,7 @@ class OrderController extends Controller
             'order'         => $order[0],
             'subtotal'      => $subtotal
         ];
-        return view('admin/orderInvoice',$data);
+        return view('admin/orderInvoice', $data);
     }
 
     /**
@@ -58,7 +59,11 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $resi = $request->resi;
+        $order = Order::find($request->orderId);
+        $order->orderResi = $resi;
+        $order->save();
+        return redirect('/administrator/order')->with(['success' => 'Input Resi Berhasil']);
     }
 
     /**
