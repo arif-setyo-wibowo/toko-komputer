@@ -37,6 +37,8 @@
     <link rel="stylesheet" href="{{ asset('front/') }}/css/select2-bootstrap4.min.css">
     <!-- <link rel="stylesheet" href="{{ asset('front/') }}/css/adminlte.css"> -->
     <link rel="stylesheet" href="{{ asset('front/') }}/css/sweetalert2.min.css">
+
+    @yield('css')
 </head>
 
 <body>

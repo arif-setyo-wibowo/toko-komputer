@@ -165,8 +165,9 @@
                     </div>
                     <!-- Page-Bar /- -->
                     <!-- Row-of-Product-Container -->
-                    <?php foreach ($item as $key => $value) { ?>
+                    
                         <div class="row product-container list-style">
+                            <?php foreach ($item as $key => $value) { ?>
                             <div class="product-item col-lg-4 col-md-6 col-sm-6">
                                 <div class="item">
                                     <div class="image-container">
@@ -177,9 +178,9 @@
                                     </div>
                                     <div class="item-content">
                                         <div class="what-product-is">
-                                            <h4 class="">
+                                            <h2 class="item-title">
                                                 <a href="/detailproduk/<?= $item[$key]["Id"] ?>"><?= $item[$key]['Name'] ?></a>
-                                            </h4>
+                                            </h2>
                                             <div class="item-description">
                                                 <p><?= $item[$key]["Description"] ?></p>
                                             </div>
@@ -202,8 +203,8 @@
                                     </div> --}}
                                 </div>
                             </div>
+                            <?php } ?>
                         </div>
-                    <?php } ?>
                     <!-- Row-of-Product-Container /- -->
                 </div>
                 <!-- Shop-Right-Wrapper /- -->
@@ -360,5 +361,5 @@
             </div>
         </div>
     </div>
-    <!-- Shop-Page /- -
+    <!-- Shop-Page /-->
 @endsection
