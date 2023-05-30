@@ -36,14 +36,8 @@ use App\Http\Controllers\Front\ShopController;
 use App\Http\Controllers\Front\HistoryController;
 use App\Http\Controllers\Front\DetailHistoryController;
 
-use App\Http\Controllers\MemoryController;
-use App\Http\Controllers\MotherboardController;
-use App\Http\Controllers\GraphicCardController;
-use App\Http\Controllers\ComputerCaseController;
 use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\CustomxamerController;
 // 
-use App\Http\Controllers\TestController;
 use App\Http\Controllers\Auth\SocialiteController;
 
 // API
@@ -223,7 +217,13 @@ Route::prefix('administrator')->middleware('karyawan')->group(function () {
     });
 
     // Earphone
-    Route::get('/earphone', [EarphoneController::class, 'index'])->middleware('karyawan:anager');
+    Route::controller(EarphoneController::class)->prefix('/earphone')->group(function () {
+        Route::get('/', 'index')->name('administrator.earphone');
+        Route::post('/', 'store');
+        Route::get('/find/{id}', 'edit');
+        Route::post('/update', 'update');
+        Route::get('/delete/{id}', 'destroy');
+    });
 
     // Keyboard
     Route::controller(KeyboardController::class)->prefix('/keyboard')->group(function () {
@@ -234,8 +234,23 @@ Route::prefix('administrator')->middleware('karyawan')->group(function () {
         Route::get('/delete/{id}', 'destroy');
     });
 
-    // Monitor
-    Route::get('/monitor', [MonitorController::class, 'index']);
+    // Monitor 
+    Route::controller(MonitorController::class)->prefix('/monitor')->group(function () {
+        Route::get('/', 'index')->name('administrator.monitor');
+        Route::post('/', 'store');
+        Route::get('/find/{id}', 'edit');
+        Route::post('/update', 'update');
+        Route::get('/delete/{id}', 'destroy');
+    });
+
+    // mouse
+    Route::controller(MouseController::class)->prefix('/mouse')->group(function () {
+        Route::get('/', 'index')->name('administrator.mouse');
+        Route::post('/', 'store');
+        Route::get('/find/{id}', 'edit');
+        Route::post('/update', 'update');
+        Route::get('/delete/{id}', 'destroy');
+    });
 
     // Order
     Route::controller(OrderController::class)->prefix('/order')->group(function () {

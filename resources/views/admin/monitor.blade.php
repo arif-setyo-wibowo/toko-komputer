@@ -64,13 +64,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                    @foreach ($monitor as $data)
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>Acer 27" K273 FHD IPS 75Hz Monitor</td>
-                                            <td>4K</td>
-                                            <td>Acer </td>
-                                            <td>3</td>
+                                            <th scope="row">{{ $loop->iteration}}</th>
+                                            <td>{{ $data->monitorName}}</td>
+                                            <td>{{ $data->monitorResolution}}</td>
+                                            <td>{{ $data->brand->brandName}}</td>
+                                            <td>{{ $data->monitorStock }}</td>
                                             <td class="text-center">
                                                 <li class="nav-item dropdown" style="list-style-type: none;">
                                                     <a style="font-size:150%; color:#4154f1;" class="nav-link nav-icon"
@@ -80,14 +80,18 @@
                                                     <ul
                                                         class="p-2 dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
                                                         <li style="font-size:20px;">
-                                                            <button type="button" class=" btn btn-outline-primary "
-                                                                data-bs-target="#update" data-bs-toggle="modal"><i
-                                                                    class="bi bi-pen"></i></button>
-                                                            <button type="button" class="btn btn-outline-danger "
-                                                                id=""><i class="bi  bi-trash"></i></button>
-                                                            <button type="button" class="btn btn-outline-success "
-                                                                data-bs-target="#detail" data-bs-toggle="modal"><i
-                                                                    class="bi bi-info"></i></button>
+                                                            <button type="button"
+                                                            class=" btn btn-outline-primary buttonupdate"
+                                                            id="{{ $data->monitorId }}"><i
+                                                                class="bi bi-pen"></i></button>
+                                                        <button type="button"
+                                                            class="btn btn-outline-danger buttonHapus"
+                                                            id="{{ $data->monitorId }}"><i
+                                                                class="bi  bi-trash"></i></button>
+                                                        <button type="button"
+                                                            class="btn btn-outline-success button-detail"
+                                                            id="{{ $data->monitorId }}"><i
+                                                                class="bi bi-info"></i></button>
                                                         </li>
                                                         <li></li>
                                                         <li></li>
@@ -97,7 +101,7 @@
                                                 <!-- End Notification Nav -->
                                             </td>
                                         </tr>
-
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -105,6 +109,7 @@
                             <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <h5 class="card-title">Tambah Monitor </h5>
                                 <form action="{{ url()->current() }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
                                     <div class="row">
                                         <div class="row mb-3">
                                             <div class="col-md-8 col-lg-9">
@@ -112,7 +117,7 @@
                                                     style="height: 220px;" alt="">
                                                 <div class="pt-2 col-md-4 text-center">
                                                     <label style="width:100px;">
-                                                        <input type="file" name="memoryImage" id="memoryImage"
+                                                        <input type="file" name="monitorImage" id="monitorImage"
                                                             style="display:none;" required>
                                                         <a class="btn btn-primary " style="width: 100px;"><i
                                                                 class="bi bi-upload"></i></a>
@@ -125,7 +130,7 @@
                                         <div class="row col">
                                             <label for="inputText" class="col-md-3 col-form-label">Nama Monitor</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="volt" required>
+                                                <input type="text" class="form-control" name="monitorName" required>
                                             </div>
                                         </div>
                                         <div class="row col">
@@ -133,106 +138,125 @@
                                                 <label for="inputText" class="col-md-3 col-form-label">Brand</label>
                                                 <div class="col-sm-9">
                                                     <select class="form-select" aria-label="Default select example"
-                                                        name="brandId" required>
-                                                        <option selected>Pilih Brand</option>
-                                                        <option value="">Acer </option>
-                                                        <option value="">ROG</option>
-                                                        <option value="">SAMSUNG </option>
+                                                        name="brandMonitor" required>
+                                                        <option selected value disabled>Pilih Brand</option>
+                                                        @foreach ($merk as $data)
+                                                            <option value="{{ $data->brandId }}">{{ $data->brandName }}
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row mt-4">
-                                            <div class="row col">
-                                                <label for="inputText" class="col-md-3 col-form-label">Size
-                                                    Monitor</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" class="form-control" required>
-                                                </div>
-                                            </div>
-                                            <div class="row col">
-                                                <label for="inputText" class="col-md-3 col-form-label">Monitor
-                                                    Panel</label>
-                                                <div class="col-sm-9">
-                                                    <select class="form-select" aria-label="Default select example"
-                                                        name="brandId" required>
-                                                        <option selected>Pilih Panel</option>
-                                                        <option value="">IPS </option>
-                                                        <option value="">VA</option>
-                                                        <option value="">TN </option>
-                                                        <option value="">PLS </option>
-                                                        <option value="">AHVA </option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-4">
-                                                <div class="row col">
-                                                    <label for="inputText" class="col-md-3 col-form-label">Refresh
-                                                        Rate</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="text" class="form-control" name="volt"
-                                                            required>
-                                                    </div>
-                                                </div>
-                                                <div class="row col">
-                                                    <label for="inputText" class="col-md-3 col-form-label">Response
-                                                        Rate</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="text" class="form-control" name="stok"
-                                                            required>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-4">
-                                                <div class="row col">
-                                                    <label for="inputText" class="col-md-3 col-form-label">Monitor
-                                                        Gamut</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="text" class="form-control" name="volt"
-                                                            required>
-                                                    </div>
-                                                </div>
-                                                <div class="row col">
-                                                    <label for="inputText" class="col-md-3 col-form-label">Monitor
-                                                        Port</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="text" class="form-control" name="stok"
-                                                            required>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-4">
-                                                <div class="row col">
-                                                    <label for="inputText" class="col-md-3 col-form-label">Harga</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="text" class="form-control" name="volt"
-                                                            required>
-                                                    </div>
-                                                </div>
-                                                <div class="row col">
-                                                    <label for="inputText" class="col-md-3 col-form-label">Stock</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="text" class="form-control" name="stok"
-                                                            required>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-4">
-                                                <div class="row col-md-6">
-                                                    <label for="inputPassword"
-                                                        class="col-sm-3 col-form-label">Description</label>
-                                                    <div class="col-sm-9">
-                                                        <textarea class="form-control" style="height: 100px" name="moboDescription" required></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-4">
-                                                <label class="col-sm-3 col-form-label"></label>
-                                                <div class="col-sm-9" style="text-align: right">
-                                                    <button type="submit" class="btn btn-primary">Simpan Data</button>
-                                                </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="row col">
+                                            <label for="inputText" class="col-md-3 col-form-label">Size
+                                                Monitor</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="monitorSize" required>
                                             </div>
                                         </div>
+                                        <div class="row col">
+                                            <label for="inputText" class="col-md-3 col-form-label">Monitor
+                                                Panel</label>
+                                            <div class="col-sm-9">
+                                                <select class="form-select" aria-label="Default select example"
+                                                    name="monitorPanel" required>
+                                                    <option selected>Pilih Panel</option>
+                                                    <option value="IPS">IPS </option>
+                                                    <option value="VA">VA</option>
+                                                    <option value="TN">TN </option>
+                                                    <option value="PLS">PLS </option>
+                                                    <option value="AHVA">AHVA </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="row col">
+                                            <label for="inputText" class="col-md-3 col-form-label">Refresh
+                                                Rate</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="monitorRefreshRate"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="row col">
+                                            <label for="inputText" class="col-md-3 col-form-label">Response
+                                                Time</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="monitorResponseTime"
+                                                    required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="row col">
+                                            <label for="inputText" class="col-md-3 col-form-label">Monitor
+                                                Gamut</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="monitorGamut"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="row col">
+                                            <label for="inputText" class="col-md-3 col-form-label">Monitor
+                                                Port</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="monitorPort"
+                                                    required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="row col">
+                                            <label for="inputText" class="col-md-3 col-form-label">Resolusi</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="monitorResolution"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="row col">
+                                            <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="monitorWarranty"
+                                                    required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="row col">
+                                            <label for="inputText" class="col-md-3 col-form-label">Harga</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="monitorPrice"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="row col">
+                                            <label for="inputText" class="col-md-3 col-form-label">Stock</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="monitorStock"
+                                                    required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="row col-md-6">
+                                            <label for="inputPassword"
+                                                class="col-sm-3 col-form-label">Description</label>
+                                            <div class="col-sm-9">
+                                                <textarea class="form-control" style="height: 100px" name="monitorDescription" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <label class="col-sm-3 col-form-label"></label>
+                                        <div class="col-sm-9" style="text-align: right">
+                                            <button type="submit" class="btn btn-primary">Simpan Data</button>
+                                        </div>
+                                    </div>
+                                </div>
                                 </form>
                             </div>
                         </div>
@@ -240,12 +264,12 @@
 
                         <!-- Modal -->
                         <!-- update -->
-                        <div class="modal fade modal-lg" id="update" tabindex="-1">
+                        <div class="modal fade modal-lg" id="updateMonitor" tabindex="-1">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <form action="{{ url()->current() }}/update" method="POST"
                                         enctype="multipart/form-data">
-
+                                    @csrf
                                         <div class="modal-header">
                                             <h5 class="modal-title">Update Monitor</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -255,12 +279,14 @@
                                             <div class="row">
                                                 <div class="row mb-3">
                                                     <div class="col-md-8 col-lg-9">
-                                                        <img src="{{ asset('admin/') }}/img/card.jpg" id="gambarTambah"
+                                                        <img src="" id="UpdateGambar"
                                                             style="height: 220px;" alt="">
                                                         <div class="pt-2 col-md-4 text-center">
                                                             <label style="width:100px;">
-                                                                <input type="file" name="memoryImage" id="memoryImage"
-                                                                    style="display:none;" required>
+                                                                <input type="hidden" name="idUpdate" id="idUpdate" required>
+                                                                <input type="hidden" name="imageAwal" id="imageAwal" required>
+                                                                <input type="file" name="imageUpdate" id="imageUpdate"
+                                                                    style="display:none;">
                                                                 <a class="btn btn-primary " style="width: 100px;"><i
                                                                         class="bi bi-upload"></i></a>
                                                             </label>
@@ -270,115 +296,125 @@
                                             </div>
                                             <div class="row mt-4">
                                                 <div class="row col">
-                                                    <label for="inputText" class="col-md-4 col-form-label">Nama
-                                                        Monitor</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" name="volt"
-                                                            required>
+                                                    <label for="inputText" class="col-md-3 col-form-label">Nama Monitor</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updateName" id="namaUpdate" required>
                                                     </div>
                                                 </div>
                                                 <div class="row col">
                                                     <div class="row col">
-                                                        <label for="inputText"
-                                                            class="col-md-4 col-form-label">Brand</label>
-                                                        <div class="col-sm-8">
-                                                            <select class="form-select"
-                                                                aria-label="Default select example" name="brandId"
-                                                                required>
-                                                                <option selected>Pilih Brand</option>
-                                                                <option value="">Acer </option>
-                                                                <option value="">ROG</option>
-                                                                <option value="">SAMSUNG </option>
+                                                        <label for="inputText" class="col-md-3 col-form-label">Brand</label>
+                                                        <div class="col-sm-9">
+                                                            <select class="form-select" aria-label="Default select example"
+                                                                name="updateBrand" id="brandUpdate" required>
+                                                                <option selected value disabled>Pilih Brand</option>
+                                                                @foreach ($merk as $data)
+                                                                    <option value="{{ $data->brandId }}">{{ $data->brandName }}
+                                                                    </option>
+                                                                @endforeach
                                                             </select>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row mt-4">
-                                                    <div class="row col">
-                                                        <label for="inputText" class="col-md-4 col-form-label">Size
-                                                            Monitor</label>
-                                                        <div class="col-sm-8">
-                                                            <input type="text" class="form-control" required>
-                                                        </div>
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="row col">
+                                                    <label for="inputText" class="col-md-3 col-form-label">Size
+                                                        Monitor</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updateSize" id="sizeUpdate" required>
                                                     </div>
-                                                    <div class="row col">
-                                                        <label for="inputText" class="col-md-4 col-form-label">Monitor
-                                                            Panel</label>
-                                                        <div class="col-sm-8">
-                                                            <select class="form-select"
-                                                                aria-label="Default select example" name="brandId"
-                                                                required>
-                                                                <option selected>Pilih Panel</option>
-                                                                <option value="">IPS </option>
-                                                                <option value="">VA</option>
-                                                                <option value="">TN </option>
-                                                                <option value="">PLS </option>
-                                                                <option value="">AHVA </option>
-                                                            </select>
-                                                        </div>
+                                                </div>
+                                                <div class="row col">
+                                                    <label for="inputText" class="col-md-3 col-form-label">Monitor
+                                                        Panel</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-select" aria-label="Default select example"
+                                                            name="updatePanel" id="panelUpdate" required>
+                                                            <option selected disabled value="">Pilih Panel</option>
+                                                            <option value="IPS">IPS </option>
+                                                            <option value="VA">VA</option>
+                                                            <option value="TN">TN </option>
+                                                            <option value="PLS">PLS </option>
+                                                            <option value="AHVA">AHVA </option>
+                                                        </select>
                                                     </div>
-                                                    <div class="row mt-4">
-                                                        <div class="row col">
-                                                            <label for="inputText" class="col-md-4 col-form-label">Refresh
-                                                                Rate</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="volt"
-                                                                    required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row col">
-                                                            <label for="inputText"
-                                                                class="col-md-4 col-form-label">Response Rate</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="stok"
-                                                                    required>
-                                                            </div>
-                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="row col">
+                                                    <label for="inputText" class="col-md-3 col-form-label">Refresh
+                                                        Rate</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updateRefreshRate"
+                                                           id="refreshUpdate" required>
                                                     </div>
-                                                    <div class="row mt-4">
-                                                        <div class="row col">
-                                                            <label for="inputText" class="col-md-4 col-form-label">Monitor
-                                                                Gamut</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="volt"
-                                                                    required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row col">
-                                                            <label for="inputText" class="col-md-4 col-form-label">Monitor
-                                                                Port</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="stok"
-                                                                    required>
-                                                            </div>
-                                                        </div>
+                                                </div>
+                                                <div class="row col">
+                                                    <label for="inputText" class="col-md-3 col-form-label">Response
+                                                        Time</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updateResponseTime"
+                                                           id="responseUpdate" required>
                                                     </div>
-                                                    <div class="row mt-4">
-                                                        <div class="row col">
-                                                            <label for="inputText"
-                                                                class="col-md-4 col-form-label">Harga</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="volt"
-                                                                    required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row col">
-                                                            <label for="inputText"
-                                                                class="col-md-4 col-form-label">Stock</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="stok"
-                                                                    required>
-                                                            </div>
-                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="row col">
+                                                    <label for="inputText" class="col-md-3 col-form-label">Monitor
+                                                        Gamut</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updateGamut"
+                                                          id="gamutUpdate"  required>
                                                     </div>
-                                                    <div class="row mt-4 mb-2">
-                                                        <div class="row col-12">
-                                                            <label for="inputPassword"
-                                                                class="col-sm-2 col-form-label">Description</label>
-                                                            <div class="col-sm-10">
-                                                                <textarea class="form-control" style="height: 100px" name="moboDescription" required></textarea>
-                                                            </div>
-                                                        </div>
+                                                </div>
+                                                <div class="row col">
+                                                    <label for="inputText" class="col-md-3 col-form-label">Monitor
+                                                        Port</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updatePort"
+                                                          id="portUpdate"  required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="row col">
+                                                    <label for="inputText" class="col-md-3 col-form-label">Resolusi</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updateResolution"
+                                                          id="resolutionUpdate"  required>
+                                                    </div>
+                                                </div>
+                                                <div class="row col">
+                                                    <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updateWarranty"
+                                                          id="garansiUpdate"  required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="row col">
+                                                    <label for="inputText" class="col-md-3 col-form-label">Harga</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updatePrice"
+                                                           id="hargaUpdate" required>
+                                                    </div>
+                                                </div>
+                                                <div class="row col">
+                                                    <label for="inputText" class="col-md-3 col-form-label">Stock</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updateStock"
+                                                           id="stokUpdate" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="row col-md-6">
+                                                    <label for="inputPassword"
+                                                        class="col-sm-3 col-form-label">Description</label>
+                                                    <div class="col-sm-9">
+                                                        <textarea class="form-control" style="height: 100px" name="updateDescription" id="deskripsiUpdate" required></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -413,14 +449,12 @@
                                                         <div class="tab-content row ">
                                                             <div
                                                                 class="card-body col-md-5 pt-4 d-flex flex-column align-items-center">
-                                                                <img src="{{ asset('admin/') }}/img/card.jpg"
-                                                                    id="gambarTambah" style="height: 220px;"
+                                                                <img src="" id="gambar" style="height: 220px;"
                                                                     alt="">
                                                             </div>
                                                             <div class="col-md-7 tab-pane fade show active profile-overview modal-dialog-scrollable"
                                                                 id="profile-overview">
-                                                                <h5 class="card-title" id="">Acer 27" K273 FHD
-                                                                    IPS 75Hz Monitor</h5>
+                                                                <h5 class="card-title" id="nama"></h5>
                                                                 <table class="table table-hover">
                                                                     <thead>
                                                                         <tr>
@@ -430,50 +464,53 @@
                                                                     </thead>
                                                                     <tbody>
                                                                         <tr>
-                                                                            <td>Resolusi</td>
-                                                                            <td id="merk">4K</td>
+                                                                            <td>Merk</td>
+                                                                            <td id="merk"></td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td>monitor Size</td>
-                                                                            <td id="capacity">24 inch</td>
+                                                                            <td>Resolusi</td>
+                                                                            <td id="resolusi"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Monitor Size</td>
+                                                                            <td id="size"></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Monitor Panel</td>
-                                                                            <td id="type">IPS</td>
+                                                                            <td id="panel"></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Refresh Rate</td>
-                                                                            <td id="speed">74Hz</td>
+                                                                            <td id="refresh"></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Response Time</td>
-                                                                            <td id="latency">20ms</td>
+                                                                            <td id="response"></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Monitor Port</td>
-                                                                            <td id="latency">HDMI</td>
+                                                                            <td id="port"></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Monitor Gamut</td>
-                                                                            <td id="stok">RGGB 99%</td>
+                                                                            <td id="gamut"></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Garansi</td>
-                                                                            <td id="garansi">3 year</td>
+                                                                            <td id="garansi"></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Harga</td>
-                                                                            <td id="harga">2,000,000</td>
+                                                                            <td id="harga"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Stok</td>
+                                                                            <td id="stok"></td>
                                                                         </tr>
                                                                     </tbody>
                                                                 </table>
                                                                 <h4 class="card-title">Deskripsi</h4>
-                                                                <p class="small ">Sunt est soluta temporibus accusantium
-                                                                    neque nam maiores cumque
-                                                                    temporibus. Tempora libero non est unde veniam est qui
-                                                                    dolor. Ut sunt iure rerum quae
-                                                                    quisquam autem eveniet perspiciatis odit. Fuga sequi sed
-                                                                    ea saepe at unde.</p>
+                                                                <p class="small" id="deskripsi"></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -507,5 +544,5 @@
     </section>
 @endsection
 @section('javascript')
-    <script src="{{ asset('admin/') }}/js/custom/memory.js"></script>
+    <script src="{{ asset('admin/') }}/js/custom/monitor.js"></script>
 @endsection

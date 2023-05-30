@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Brand;
+use App\Models\Earphone;
 use Illuminate\Http\Request;
 
 class EarphoneController extends Controller
@@ -13,7 +15,9 @@ class EarphoneController extends Controller
     public function index()
     {
         $data=[
-            'title' => "Earphone"
+            'title' => "Earphone",
+            'merk' => Brand::all(),
+            'earphone' => Earphone::with("brand")->get()
         ];
 
         return view('admin/earphone',$data);
