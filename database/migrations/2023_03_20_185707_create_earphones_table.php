@@ -21,12 +21,12 @@ return new class extends Migration
             $table->string('earphoneDriver',255);
             $table->string('earphoneConnection', 255);
             $table->string('earphoneSoundSig',255);
-            $table->boolean('earphoneHaveMic');
+            $table->string('earphoneHaveMic', 255);
             $table->string('earphoneDescription',255);
-            $table->string('earWarranty',255);
-            $table->string('earPrice', 255);
-            $table->string('earStock',255);
-            $table->string('earImage', 255);
+            $table->string('earphoneWarranty',255);
+            $table->string('earphonePrice', 255);
+            $table->string('earphoneStock',255);
+            $table->string('earphoneImage', 255);
             $table->timestamps();
         });
     }

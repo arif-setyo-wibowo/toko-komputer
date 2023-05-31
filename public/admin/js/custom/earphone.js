@@ -12,7 +12,7 @@ $(document).ready(function() {
     }
 
     // Auto Load Image Insert
-    $("#monitorImage").change(function() {
+    $("#earphoneImage").change(function() {
         if (this.files && this.files[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
@@ -41,13 +41,14 @@ $(document).ready(function() {
         var gambar = document.getElementById('gambar');
         var nama = document.getElementById('nama');
         var merk = document.getElementById('merk');
-        var refresh = document.getElementById('refresh');
-        var port = document.getElementById('port');
-        var respons = document.getElementById('response');
-        var gamut = document.getElementById('gamut');
-        var panel = document.getElementById('panel');
-        var size = document.getElementById('size');
-        var resolusi = document.getElementById('resolusi');
+
+        var type = document.getElementById('type');
+        var sensitivity = document.getElementById('sensitivity');
+        var impedance = document.getElementById('impedance');
+        var driver = document.getElementById('driver');
+        var connection = document.getElementById('connection');
+        var sounsig = document.getElementById('soundsig');
+
         var garansi = document.getElementById('garansi');
         var stok = document.getElementById('stok');
         var harga = document.getElementById('harga');
@@ -58,22 +59,21 @@ $(document).ready(function() {
             url: base_url + "/find/" + id,
             dataType: "json",
             success: function(response) {
-                gambar.src = asset_url + response[0]['monitorImage'];
-                nama.textContent = response[0]['monitorName'];
+                gambar.src = asset_url + response[0]['earphoneImage'];
+                nama.textContent = response[0]['earphoneName'];
                 merk.textContent = response[0]['brand']['brandName'];
 
-                refresh.textContent = response[0]['monitorRefreshRate'];
-                port.textContent = response[0]['monitorPort'];
-                respons.textContent = response[0]['monitorResponseTime'];
-                gamut.textContent = response[0]['monitorGamut'];
-                panel.textContent = response[0]['monitorPanel'];
-                size.textContent = response[0]['monitorSize'];
-                resolusi.textContent = response[0]['monitorResolution'];
+                type.textContent = response[0]['earphoneType'];
+                sensitivity.textContent = response[0]['earphoneSensitivity'];
+                impedance.textContent = response[0]['earphoneImpedance'];
+                driver.textContent = response[0]['earphoneDriver'];
+                connection.textContent = response[0]['earphoneConnection'];
+                sounsig.textContent = response[0]['earphoneSoundSig'];
 
-                garansi.textContent = response[0]['monitorWarranty'];
-                stok.textContent = response[0]['monitorStock'];
-                deskripsi.textContent = response[0]['monitorDescription'];
-                harga.textContent = formatRupiah(response[0]['monitorPrice']);
+                garansi.textContent = response[0]['earphoneWarranty'];
+                stok.textContent = response[0]['earphoneStock'];
+                deskripsi.textContent = response[0]['earphoneDescription'];
+                harga.textContent = formatRupiah(response[0]['earphonePrice']);
                 $("#detail").modal("show");
             }
         });
@@ -89,26 +89,26 @@ $(document).ready(function() {
             url: base_url + "/find/" + id,
             dataType: "json",
             success: function(response) {
-                UpdateGambar.src = asset_url + response[0]['monitorImage'];
-                $('#idUpdate').val(response[0]['monitorId']);
-                $('#imageAwal').val(response[0]['monitorImage']);
-                $('#namaUpdate').val(response[0]['monitorName']);
+                UpdateGambar.src = asset_url + response[0]['earphoneImage'];
+                $('#idUpdate').val(response[0]['earphoneId']);
+                $('#imageAwal').val(response[0]['earphoneImage']);
+                $('#namaUpdate').val(response[0]['earphoneName']);
                 $('#brandUpdate').val(response[0]['brand']['brandId']);
 
-                $('#responseUpdate').val(response[0]['monitorResponseTime']);
-                $('#refreshUpdate').val(response[0]['monitorRefreshRate']);
-                $('#portUpdate').val(response[0]['monitorPort']);
-                $('#panelUpdate').val(response[0]['monitorPanel']);
-                $('#sizeUpdate').val(response[0]['monitorSize']);
-                $('#resolutionUpdate').val(response[0]['monitorResolution']);
-                $('#gamutUpdate').val(response[0]['monitorGamut']);
+                $('#typeUpdate').val(response[0]['earphoneType']);
+                $('#sensitivityUpdate').val(response[0]['earphoneSensitivity']);
+                $('#impedanceUpdate').val(response[0]['earphoneImpedance']);
+                $('#driverUpdate').val(response[0]['earphoneDriver']);
+                $('#connectionUpdate').val(response[0]['earphoneConnection']);
+                $('#soundUpdate').val(response[0]['earphoneSoundSig']);
+                $('#micUpdate').val(response[0]['earphoneHaveMic']);
 
-                $('#stokUpdate').val(response[0]['monitorStock']);
-                $('#hargaUpdate').val(response[0]['monitorPrice']);
-                $('#garansiUpdate').val(response[0]['monitorWarranty']);
-                $('#deskripsiUpdate').val(response[0]['monitorDescription']);
+                $('#stokUpdate').val(response[0]['earphoneStock']);
+                $('#hargaUpdate').val(response[0]['earphonePrice']);
+                $('#garansiUpdate').val(response[0]['earphoneWarranty']);
+                $('#deskripsiUpdate').val(response[0]['earphoneDescription']);
 
-                $("#updateMonitor").modal("show");
+                $("#updateEarphone").modal("show");
 
             }
         });

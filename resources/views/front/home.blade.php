@@ -88,7 +88,7 @@
     <section class="section-maker">
         <div class="container">
             <div class="sec-maker-header text-center">
-                <h3 class="sec-maker-h3">VGA</h3>
+                <h3 class="sec-maker-h3">Motherboard</h3>
                 <ul class="nav tab-nav-style-1-a justify-content-center">
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#men-latest-products">Latest Products</a>
@@ -102,36 +102,28 @@
                             <div class="slider-fouc">
                                 <div class="products-slider owl-carousel" data-item="4">
                                     <!-- Item -->
+                                    @foreach ($mobo as $data)
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link"
-                                                href="/detailproduk/dbbf28aa-1527-43ad-a70a-10b4e4895702">
+                                                href="/detailproduk/{{$data->moboId}}">
                                                 <img class="img-fluid"
-                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    src="{{ asset('uploads/') }}/{{ $data->moboImage }}"
                                                     alt="Product">
                                             </a>
-
                                         </div>
                                         <div class="item-content">
                                             <div class="what-product-is">
                                                 <ul class="bread-crumb">
-                                                    <li class="has-separator">
-                                                        <a href="shop-v1-root-category.html">Men's</a>
-                                                    </li>
-                                                    <li class="has-separator">
-                                                        <a href="shop-v2-sub-category.html">Tops</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-v3-sub-sub-category.html">Hoodies</a>
-                                                    </li>
+                                                    &nbsp;
                                                 </ul>
                                                 <h4 class="item-title">
-                                                    <a href="/detailproduk">iGame GeForce RTX 4090 24GB GDDR6X Vulcan</a>
+                                                    <a href="/detailproduk/{{$data->moboId}}">{{$data->moboName}}</a>
                                                 </h4>
                                             </div>
                                             <div class="price-template">
                                                 <div class="item-new-price">
-                                                    Rp.2.000.000
+                                                    @currency($data->moboPrice)
                                                 </div>
                                             </div>
                                         </div>
@@ -139,8 +131,7 @@
                                             <span>NEW</span>
                                         </div>
                                     </div>
-                                    
-                                    
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -237,36 +228,29 @@
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="smart-phones">
                                             <div class="slider-fouc">
-                                                <div class="specific-category-slider owl-carousel" data-item="3">                                                    
+                                                <div class="specific-category-slider owl-carousel" data-item="3">   
+                                                    @foreach ($mouse as $data)                                             
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link"
-                                                                href="/detailproduk/dbbf28aa-1527-43ad-a70a-10b4e4895702">
+                                                                href="/detailproduk/{{ $data->mouseId }}">
                                                                 <img class="img-fluid"
-                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    src="{{ asset('uploads/') }}/{{$data->mouseImage}}"
                                                                     alt="Product">
                                                             </a>
                                                         </div>
                                                         <div class="item-content">
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
-                                                                    <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Men's</a>
-                                                                    </li>
-                                                                    <li class="has-separator">
-                                                                        <a href="shop-v2-sub-category.html">Tops</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="shop-v3-sub-sub-category.html">Hoodies</a>
-                                                                    </li>
+                                                                    &nbsp;
                                                                 </ul>
                                                                 <h4 class="item-title">
-                                                                    <a href="/detailproduk">iGame GeForce RTX 4090 24GB GDDR6X Vulcan</a>
+                                                                    <a href="/detailproduk/{{ $data->mouseId }}">{{ $data->mouseName}}</a>
                                                                 </h4>
                                                             </div>
                                                             <div class="price-template">
                                                                 <div class="item-new-price">
-                                                                    Rp.2.000.000
+                                                                    @currency($data->mousePrice)
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -274,77 +258,35 @@
                                                             <span>NEW</span>
                                                         </div>
                                                     </div>
-                                                    <div class="item">
-                                                        <div class="image-container">
-                                                            <a class="item-img-wrapper-link"
-                                                                href="/detailproduk/dbbf28aa-1527-43ad-a70a-10b4e4895702">
-                                                                <img class="img-fluid"
-                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
-                                                                    alt="Product">
-                                                            </a>
-                                                        </div>
-                                                        <div class="item-content">
-                                                            <div class="what-product-is">
-                                                                <ul class="bread-crumb">
-                                                                    <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Men's</a>
-                                                                    </li>
-                                                                    <li class="has-separator">
-                                                                        <a href="shop-v2-sub-category.html">Tops</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="shop-v3-sub-sub-category.html">Hoodies</a>
-                                                                    </li>
-                                                                </ul>
-                                                                <h4 class="item-title">
-                                                                    <a href="/detailproduk">iGame GeForce RTX 4090 24GB GDDR6X Vulcan</a>
-                                                                </h4>
-                                                            </div>
-                                                            <div class="price-template">
-                                                                <div class="item-new-price">
-                                                                    Rp.2.000.000
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="tag new">
-                                                            <span>NEW</span>
-                                                        </div>
-                                                    </div>                                                     
+                                                    @endforeach                                                     
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="tablets">
                                             <div class="slider-fouc">
                                                 <div class="specific-category-slider owl-carousel" data-item="3"> 
+                                                    @foreach ($keyboard as $data)
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link"
-                                                                href="/detailproduk/dbbf28aa-1527-43ad-a70a-10b4e4895702">
+                                                                href="/detailproduk/{{ $data->keyboardId}}">
                                                                 <img class="img-fluid"
-                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    src="{{ asset('uploads/') }}/{{$data->keyboardImage}}"
                                                                     alt="Product">
                                                             </a>
                                                         </div>
                                                         <div class="item-content">
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
-                                                                    <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Men's</a>
-                                                                    </li>
-                                                                    <li class="has-separator">
-                                                                        <a href="shop-v2-sub-category.html">Tops</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="shop-v3-sub-sub-category.html">Hoodies</a>
-                                                                    </li>
+                                                                    &nbsp;
                                                                 </ul>
                                                                 <h4 class="item-title">
-                                                                    <a href="/detailproduk">iGame GeForce RTX 4090 24GB GDDR6X Vulcan</a>
+                                                                    <a href="/detailproduk/{{ $data->keyboardId}}">{{ $data->keyboardName}}</a>
                                                                 </h4>
                                                             </div>
                                                             <div class="price-template">
                                                                 <div class="item-new-price">
-                                                                    Rp.2.000.000
+                                                                    @currency($data->keyboardPrice)
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -352,113 +294,35 @@
                                                             <span>NEW</span>
                                                         </div>
                                                     </div> 
-                                                    <div class="item">
-                                                        <div class="image-container">
-                                                            <a class="item-img-wrapper-link"
-                                                                href="/detailproduk/dbbf28aa-1527-43ad-a70a-10b4e4895702">
-                                                                <img class="img-fluid"
-                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
-                                                                    alt="Product">
-                                                            </a>
-                                                        </div>
-                                                        <div class="item-content">
-                                                            <div class="what-product-is">
-                                                                <ul class="bread-crumb">
-                                                                    <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Men's</a>
-                                                                    </li>
-                                                                    <li class="has-separator">
-                                                                        <a href="shop-v2-sub-category.html">Tops</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="shop-v3-sub-sub-category.html">Hoodies</a>
-                                                                    </li>
-                                                                </ul>
-                                                                <h4 class="item-title">
-                                                                    <a href="/detailproduk">iGame GeForce RTX 4090 24GB GDDR6X Vulcan</a>
-                                                                </h4>
-                                                            </div>
-                                                            <div class="price-template">
-                                                                <div class="item-new-price">
-                                                                    Rp.2.000.000
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="tag new">
-                                                            <span>NEW</span>
-                                                        </div>
-                                                    </div> 
-                                                    <div class="item">
-                                                        <div class="image-container">
-                                                            <a class="item-img-wrapper-link"
-                                                                href="/detailproduk/dbbf28aa-1527-43ad-a70a-10b4e4895702">
-                                                                <img class="img-fluid"
-                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
-                                                                    alt="Product">
-                                                            </a>
-                                                        </div>
-                                                        <div class="item-content">
-                                                            <div class="what-product-is">
-                                                                <ul class="bread-crumb">
-                                                                    <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Men's</a>
-                                                                    </li>
-                                                                    <li class="has-separator">
-                                                                        <a href="shop-v2-sub-category.html">Tops</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="shop-v3-sub-sub-category.html">Hoodies</a>
-                                                                    </li>
-                                                                </ul>
-                                                                <h4 class="item-title">
-                                                                    <a href="/detailproduk">iGame GeForce RTX 4090 24GB GDDR6X Vulcan</a>
-                                                                </h4>
-                                                            </div>
-                                                            <div class="price-template">
-                                                                <div class="item-new-price">
-                                                                    Rp.2.000.000
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="tag new">
-                                                            <span>NEW</span>
-                                                        </div>
-                                                    </div> 
+                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="smart-watches">
                                             <div class="slider-fouc">
                                                 <div class="specific-category-slider owl-carousel" data-item="3">
+                                                    @foreach ($earphone as $data)
                                                     <div class="item">
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link"
-                                                                href="/detailproduk/dbbf28aa-1527-43ad-a70a-10b4e4895702">
+                                                                href="/detailproduk/{{ $data->earphoneId}}">
                                                                 <img class="img-fluid"
-                                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                                    src="{{ asset('uploads/') }}/{{ $data->earphoneImage}}"
                                                                     alt="Product">
                                                             </a>
                                                         </div>
                                                         <div class="item-content">
                                                             <div class="what-product-is">
                                                                 <ul class="bread-crumb">
-                                                                    <li class="has-separator">
-                                                                        <a href="shop-v1-root-category.html">Men's</a>
-                                                                    </li>
-                                                                    <li class="has-separator">
-                                                                        <a href="shop-v2-sub-category.html">Tops</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="shop-v3-sub-sub-category.html">Hoodies</a>
-                                                                    </li>
+                                                                    &nbsp;
                                                                 </ul>
                                                                 <h4 class="item-title">
-                                                                    <a href="/detailproduk">iGame GeForce RTX 4090 24GB GDDR6X Vulcan</a>
+                                                                    <a href="/detailproduk/{{ $data->earphoneId}}">{{$data->earphoneName}}</a>
                                                                 </h4>
                                                             </div>
                                                             <div class="price-template">
                                                                 <div class="item-new-price">
-                                                                    Rp.2.000.000
+                                                                    @currency($data->earphonePrice)
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -466,6 +330,7 @@
                                                             <span>NEW</span>
                                                         </div>
                                                     </div> 
+                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>
@@ -540,36 +405,28 @@
                         <div class="tab-pane active show fade" id="women-latest-products">
                             <div class="slider-fouc">
                                 <div class="products-slider owl-carousel" data-item="4">
+                                    @foreach ($monitor as $data)
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link"
-                                                href="/detailproduk/dbbf28aa-1527-43ad-a70a-10b4e4895702">
+                                                href="/detailproduk/{{$data->monitorId}}">
                                                 <img class="img-fluid"
-                                                    src="{{ asset('front/') }}/images/product/product@3x.jpg"
+                                                    src="{{ asset('uploads/') }}/{{$data->monitorImage}}"
                                                     alt="Product">
                                             </a>
-
                                         </div>
                                         <div class="item-content">
                                             <div class="what-product-is">
                                                 <ul class="bread-crumb">
-                                                    <li class="has-separator">
-                                                        <a href="shop-v1-root-category.html">Men's</a>
-                                                    </li>
-                                                    <li class="has-separator">
-                                                        <a href="shop-v2-sub-category.html">Tops</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-v3-sub-sub-category.html">Hoodies</a>
-                                                    </li>
+                                                    &nbsp;
                                                 </ul>
                                                 <h4 class="item-title">
-                                                    <a href="/detailproduk">iGame GeForce RTX 4090 24GB GDDR6X Vulcan</a>
+                                                    <a href="/detailproduk/{{$data->monitorId}}">{{ $data->monitorName}}</a>
                                                 </h4>
                                             </div>
                                             <div class="price-template">
                                                 <div class="item-new-price">
-                                                    Rp.2.000.000
+                                                    @currency($data->monitorPrice)
                                                 </div>
                                             </div>
                                         </div>
@@ -577,6 +434,7 @@
                                             <span>NEW</span>
                                         </div>
                                     </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -631,40 +489,17 @@
     <!-- Brand-Slider -->
     <div class="brand-slider u-s-p-b-80">
         <div class="container">
-            <div class="text-center mb-2">
+            <div class="text-center mb-5">
                 <h3 class="sec-maker-h3">BRAND</h3>
             </div>
             <div class="brand-slider-content owl-carousel" data-item="5">
+                @foreach ($merk as $data)
                 <div class="brand-pic">
                     <a href="/shop">
-                        <img src="{{ asset('front/') }}/images/brand-logos/logo.png" alt="Brand Logo 1">
+                        <img src="{{ asset('uploads/') }}/{{$data->brandLogo}}">
                     </a>
                 </div>
-                <div class="brand-pic">
-                    <a href="#">
-                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 2">
-                    </a>
-                </div>
-                <div class="brand-pic">
-                    <a href="#">
-                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 3">
-                    </a>
-                </div>
-                <div class="brand-pic">
-                    <a href="#">
-                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 5">
-                    </a>
-                </div>
-                <div class="brand-pic">
-                    <a href="#">
-                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 6">
-                    </a>
-                </div>
-                <div class="brand-pic">
-                    <a href="#">
-                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 7">
-                    </a>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
