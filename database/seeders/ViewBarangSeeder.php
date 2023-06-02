@@ -144,17 +144,7 @@ class ViewBarangSeeder extends Seeder
             coolerPrice AS productPrice,
             coolerImage AS productImage 
             FROM 
-            coolers
-            UNION ALL 
-            SELECT 
-            'monitors' AS source_table, 
-            'Monitor' AS Categories,
-            monitorId AS productId, 
-            monitorName AS productName, 
-            monitorPrice AS productPrice,
-            monitorImage AS productImage 
-            FROM 
-            monitors";
+            coolers";
 
         DB::statement('DROP VIEW IF EXISTS products');
         DB::statement($query);
