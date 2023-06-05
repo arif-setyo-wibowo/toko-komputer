@@ -646,12 +646,18 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="row col">
-                                                    <label for="inputText" class="col-md-3 col-form-label">Max
-                                                        Memory</label>
+                                                <div class="row col ">
+                                                    <label for="inputText" class="col-md-3 col-form-label">Max Memory</label>
                                                     <div class="col-sm-8">
-                                                        <input type="text" class="form-control" name="moboMemoryCap"
-                                                            required>
+                                                        <div class="input-group ">
+                                                            <input type="number" class="form-control"
+                                                                aria-label="Recipient's username"
+                                                                aria-describedby="basic-addon2" name="moboMemoryCap"
+                                                                required>
+                                                            <span class="input-group-text" id="basic-addon2">
+                                                                GB
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -669,11 +675,18 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="row col">
+                                                <div class="row col ">
                                                     <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
                                                     <div class="col-sm-8">
-                                                        <input type="text" class="form-control" name="moboWarranty"
-                                                            required>
+                                                        <div class="input-group ">
+                                                            <input type="number" class="form-control"
+                                                                aria-label="Recipient's username"
+                                                                aria-describedby="basic-addon2" name="moboWarranty"
+                                                                required>
+                                                            <span class="input-group-text" id="basic-addon2">
+                                                                Tahun
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
