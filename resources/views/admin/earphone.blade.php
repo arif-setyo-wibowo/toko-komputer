@@ -62,13 +62,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        @foreach ($earphone as $data)
                                         <tr>
-                                            <th scope="row"></th>
-                                            <td>GALAX XANOVA Ocala / XH200 Gaming Headset</td>
-                                            <td>Headset</td>
-                                            <td>GALAX</td>
-                                            <td>12</td>
+                                            <th scope="row">{{ $loop->iteration}}</th>
+                                            <td>{{ $data->earphoneName }}</td>
+                                            <td>{{ $data->earphoneType }}</td>
+                                            <td>{{ $data->brand->brandName }}</td>
+                                            <td>{{ $data->earphoneStock }}</td>
                                             <td class="text-center">
                                                 <li class="nav-item dropdown" style="list-style-type: none;">
                                                     <a style="font-size:150%; color:#4154f1;" class="nav-link nav-icon"
@@ -78,14 +78,18 @@
                                                     <ul
                                                         class="p-2 dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
                                                         <li style="font-size:20px;">
-                                                            <button type="button" class=" btn btn-outline-primary "
-                                                                data-bs-target="#update" data-bs-toggle="modal"><i
-                                                                    class="bi bi-pen"></i></button>
-                                                            <button type="button" class="btn btn-outline-danger "
-                                                                id=""><i class="bi  bi-trash"></i></button>
-                                                            <button type="button" class="btn btn-outline-success "
-                                                                data-bs-target="#detail" data-bs-toggle="modal"><i
-                                                                    class="bi bi-info"></i></button>
+                                                            <button type="button"
+                                                                    class=" btn btn-outline-primary buttonupdate"
+                                                                    id="{{ $data->earphoneId }}"><i
+                                                                        class="bi bi-pen"></i></button>
+                                                                <button type="button"
+                                                                    class="btn btn-outline-danger buttonHapus"
+                                                                    id="{{ $data->earphoneId }}"><i
+                                                                        class="bi  bi-trash"></i></button>
+                                                                <button type="button"
+                                                                    class="btn btn-outline-success button-detail"
+                                                                    id="{{ $data->earphoneId }}"><i
+                                                                        class="bi bi-info"></i></button>
                                                         </li>
                                                         <li></li>
                                                         <li></li>
@@ -95,7 +99,7 @@
                                                 <!-- End Notification Nav -->
                                             </td>
                                         </tr>
-
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -103,6 +107,7 @@
                             <div class="tab-pane fade" id="bordered-profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <h5 class="card-title">Tambah Earphone </h5>
                                 <form action="{{ url()->current() }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
                                     <div class="row">
                                         <div class="row mb-3">
                                             <div class="col-md-8 col-lg-9">
@@ -110,7 +115,7 @@
                                                     style="height: 220px;" alt="">
                                                 <div class="pt-2 col-md-4 text-center">
                                                     <label style="width:100px;">
-                                                        <input type="file" name="memoryImage" id="memoryImage"
+                                                        <input type="file" name="earphoneImage" id="earphoneImage"
                                                             style="display:none;" required>
                                                         <a class="btn btn-primary " style="width: 100px;"><i
                                                                 class="bi bi-upload"></i></a>
@@ -123,13 +128,13 @@
                                         <div class="row col">
                                             <label for="inputText" class="col-md-3 col-form-label">Nama Earphone</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="nama" required>
+                                                <input type="text" class="form-control" name="earphoneName" required>
                                             </div>
                                         </div>
                                         <div class="row col">
                                             <label for="inputText" class="col-md-3 col-form-label">Tipe Earphone</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="nama"
+                                                <input type="text" class="form-control" name="earphoneType"
                                                     placeholder="Headset/Earphone/TWS" required>
                                             </div>
                                         </div>
@@ -138,13 +143,13 @@
                                         <div class="row col">
                                             <label for="inputText" class="col-md-3 col-form-label">Sensitivity</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="speed" required>
+                                                <input type="text" class="form-control" name="earphoneSensitivity" required>
                                             </div>
                                         </div>
                                         <div class="row col">
                                             <label for="inputText" class="col-md-3 col-form-label">Impedance</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="latency" required>
+                                                <input type="text" class="form-control" name="earphoneImpedance" required>
                                             </div>
                                         </div>
                                     </div>
@@ -152,13 +157,13 @@
                                         <div class="row col">
                                             <label for="inputText" class="col-md-3 col-form-label">Driver</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="volt" required>
+                                                <input type="text" class="form-control" name="earphoneDriver" required>
                                             </div>
                                         </div>
                                         <div class="row col">
                                             <label for="inputText" class="col-md-3 col-form-label">Connection</label>
                                             <div class="col-sm-9">
-                                                <input type="number" class="form-control" name="stok"
+                                                <input type="text" class="form-control" name="earphoneConnection"
                                                     placeholder="USB/Wireless/Bluthod" required>
                                             </div>
                                         </div>
@@ -167,43 +172,65 @@
                                         <div class="row col">
                                             <label for="inputText" class="col-md-3 col-form-label">SoundSig</label>
                                             <div class="col-sm-9">
-                                                <input type="number" class="form-control" name="harga" required>
+                                                <input type="text" class="form-control" name="earphoneSoundSig" required>
                                             </div>
                                         </div>
                                         <div class="row col">
                                             <label class="col-sm-3 col-form-label">Microphone</label>
                                             <div class="col-sm-9">
-                                                <div class="form-check form-switch">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        id="flexSwitchCheckDefault">
-                                                    <label class="form-check-label" for="flexSwitchCheckDefault">pilih
-                                                        jika ada Mic</label>
-                                                </div>
+                                                <select class="form-select" aria-label="Default select example"
+                                                    name="earphoneHaveMic" required>
+                                                    <option disabled selected value="">Pilih jika ada Mic</option>
+                                                    <option value="Ya">Ya </option>
+                                                    <option value="Tidak">Tidak</option>
+                                                </select>
                                             </div>
                                         </div>
-                                        <div class="row mt-4">
-                                            <div class="row col">
-                                                <label for="inputText" class="col-md-3 col-form-label">Harga</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" class="form-control" name="volt" required>
-                                                </div>
-                                            </div>
-                                            <div class="row col">
-                                                <label for="inputText" class="col-md-3 col-form-label">Stock</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" class="form-control" name="stok" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-4">
-                                            <div class="row col-md-6">
-                                                <label for="inputPassword"
-                                                    class="col-sm-3 col-form-label">Description</label>
-                                                <div class="col-sm-9">
-                                                    <textarea class="form-control" style="height: 100px" name="moboDescription" required></textarea>
-                                                </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="row col">
+                                            <label for="inputText" class="col-md-3 col-form-label">Merk</label>
+                                            <div class="col-sm-9">
+                                                <select class="form-select" aria-label="Default select example"
+                                                name="brandearphone" required>
+                                                <option disabled selected value="">Pilih Brand</option>
+                                                @foreach ($merk as $item)
+                                                    <option value="{{ $item->brandId }}">{{ $item->brandName }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
                                             </div>
                                         </div>
+                                        <div class="row col">
+                                            <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" class="form-control" name="earphoneWarranty" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="row col">
+                                            <label for="inputText" class="col-md-3 col-form-label">Harga</label>
+                                            <div class="col-sm-9">
+                                                <input type="number" class="form-control" name="earphonePrice" required>
+                                            </div>
+                                        </div>
+                                        <div class="row col">
+                                            <label for="inputText" class="col-md-3 col-form-label">Stock</label>
+                                            <div class="col-sm-9">
+                                                <input type="number" class="form-control" name="earphoneStock" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="row col-md-6">
+                                            <label for="inputPassword"
+                                                class="col-sm-3 col-form-label">Description</label>
+                                            <div class="col-sm-9">
+                                                <textarea class="form-control" style="height: 100px" name="earphoneDescription" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
                                         <div class="row mt-4">
                                             <label class="col-sm-3 col-form-label"></label>
                                             <div class="col-sm-9" style="text-align: right">
@@ -217,12 +244,12 @@
 
                         <!-- Modal -->
                         <!-- update -->
-                        <div class="modal fade modal-lg" id="update" tabindex="-1">
+                        <div class="modal fade modal-lg" id="updateEarphone" tabindex="-1">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <form action="{{ url()->current() }}/update" method="POST"
                                         enctype="multipart/form-data">
-
+                                        @csrf
                                         <div class="modal-header">
                                             <h5 class="modal-title">Update Earphone</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -232,12 +259,16 @@
                                             <div class="row">
                                                 <div class="row mb-3">
                                                     <div class="col-md-8 col-lg-9">
-                                                        <img src="{{ asset('admin/') }}/img/card.jpg" id="gambarTambah"
+                                                        <img src="" id="UpdateGambar"
                                                             style="height: 220px;" alt="">
                                                         <div class="pt-2 col-md-4 text-center">
                                                             <label style="width:100px;">
-                                                                <input type="file" name="memoryImage" id="memoryImage"
-                                                                    style="display:none;" required>
+                                                                <input type="hidden" name="idUpdate" id="idUpdate"
+                                                                    required>
+                                                                <input type="hidden" name="imageAwal" id="imageAwal"
+                                                                    required>
+                                                                <input type="file" name="updateImage" id="updateImage"
+                                                                    style="display:none;">
                                                                 <a class="btn btn-primary " style="width: 100px;"><i
                                                                         class="bi bi-upload"></i></a>
                                                             </label>
@@ -247,102 +278,108 @@
                                             </div>
                                             <div class="row mt-4">
                                                 <div class="row col">
-                                                    <label for="inputText" class="col-md-4 col-form-label">Nama
-                                                        Earphone</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" name="nama"
-                                                            required>
+                                                    <label for="inputText" class="col-md-3 col-form-label">Nama Earphone</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updateName" id="namaUpdate" required>
                                                     </div>
                                                 </div>
                                                 <div class="row col">
-                                                    <label for="inputText" class="col-md-4 col-form-label">Tipe
-                                                        Earphone</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" name="nama"
-                                                            required>
+                                                    <label for="inputText" class="col-md-3 col-form-label">Tipe Earphone</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updateType"
+                                                            placeholder="Headset/Earphone/TWS" id="typeUpdate" required>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row mt-4">
                                                 <div class="row col">
-                                                    <label for="inputText"
-                                                        class="col-md-4 col-form-label">Sensitivity</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" name="speed"
-                                                            required>
+                                                    <label for="inputText" class="col-md-3 col-form-label">Sensitivity</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updateSensitivity" id="sensitivityUpdate" required>
                                                     </div>
                                                 </div>
                                                 <div class="row col">
-                                                    <label for="inputText"
-                                                        class="col-md-4 col-form-label">Impedance</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" name="latency"
-                                                            required>
+                                                    <label for="inputText" class="col-md-3 col-form-label">Impedance</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updateImpedance" id="impedanceUpdate" required>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row mt-4">
                                                 <div class="row col">
-                                                    <label for="inputText" class="col-md-4 col-form-label">Driver</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="text" class="form-control" name="volt"
-                                                            required>
+                                                    <label for="inputText" class="col-md-3 col-form-label">Driver</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updateDriver" id="driverUpdate" required>
                                                     </div>
                                                 </div>
                                                 <div class="row col">
-                                                    <label for="inputText"
-                                                        class="col-md-4 col-form-label">Connection</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="number" class="form-control" name="stok"
-                                                            required>
+                                                    <label for="inputText" class="col-md-3 col-form-label">Connection</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updateConnection"
+                                                            placeholder="USB/Wireless/Bluthod" id="connectionUpdate" required>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row mt-4">
                                                 <div class="row col">
-                                                    <label for="inputText"
-                                                        class="col-md-4 col-form-label">SoundSig</label>
-                                                    <div class="col-sm-8">
-                                                        <input type="number" class="form-control" name="harga"
-                                                            required>
+                                                    <label for="inputText" class="col-md-3 col-form-label">SoundSig</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updateSoundSig" id="soundUpdate" required>
                                                     </div>
                                                 </div>
                                                 <div class="row col">
-                                                    <label class="col-sm-4 col-form-label">Microphone</label>
-                                                    <div class="col-sm-8">
-                                                        <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="flexSwitchCheckDefault">
-                                                            <label class="form-check-label"
-                                                                for="flexSwitchCheckDefault">pilih jika ada Mic</label>
-                                                        </div>
+                                                    <label class="col-sm-3 col-form-label">Microphone</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-select" aria-label="Default select example"
+                                                            name="updateHaveMic" id="micUpdate" required>
+                                                            <option disabled selected value="">Pilih jika ada Mic</option>
+                                                            <option value="Ya">Ya </option>
+                                                            <option value="Tidak">Tidak</option>
+                                                        </select>
                                                     </div>
                                                 </div>
-                                                <div class="row mt-4">
-                                                    <div class="row col">
-                                                        <label for="inputText"
-                                                            class="col-md-4 col-form-label">Harga</label>
-                                                        <div class="col-sm-8">
-                                                            <input type="text" class="form-control" name="volt"
-                                                                required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row col">
-                                                        <label for="inputText"
-                                                            class="col-md-4 col-form-label">Stock</label>
-                                                        <div class="col-sm-8">
-                                                            <input type="text" class="form-control" name="stok"
-                                                                required>
-                                                        </div>
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="row col">
+                                                    <label for="inputText" class="col-md-3 col-form-label">Merk</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-select" aria-label="Default select example"
+                                                        name="updateBrand" id="brandUpdate" required>
+                                                        <option disabled selected value="">Pilih Brand</option>
+                                                        @foreach ($merk as $item)
+                                                            <option value="{{ $item->brandId }}">{{ $item->brandName }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
                                                     </div>
                                                 </div>
-                                                <div class="row mt-4">
-                                                    <div class="row col-md-6">
-                                                        <label for="inputPassword"
-                                                            class="col-sm-4 col-form-label">Description</label>
-                                                        <div class="col-sm-8">
-                                                            <textarea class="form-control" style="height: 100px" name="moboDescription" required></textarea>
-                                                        </div>
+                                                <div class="row col">
+                                                    <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" name="updateWarranty" id="garansiUpdate" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="row col">
+                                                    <label for="inputText" class="col-md-3 col-form-label">Harga</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="number" class="form-control" name="updatePrice" id="hargaUpdate" required>
+                                                    </div>
+                                                </div>
+                                                <div class="row col">
+                                                    <label for="inputText" class="col-md-3 col-form-label">Stock</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="number" class="form-control" name="updateStock" id="stokUpdate" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="row col-md-6">
+                                                    <label for="inputPassword"
+                                                        class="col-sm-3 col-form-label">Description</label>
+                                                    <div class="col-sm-9">
+                                                        <textarea class="form-control" style="height: 100px" name="updateDescription" id="deskripsiUpdate" required></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -377,14 +414,12 @@
                                                         <div class="tab-content row ">
                                                             <div
                                                                 class="card-body col-md-5 pt-4 d-flex flex-column align-items-center">
-                                                                <img src="{{ asset('admin/') }}/img/card.jpg"
-                                                                    id="gambarTambah" style="height: 220px;"
+                                                                <img src="" id="gambar" style="height: 220px;"
                                                                     alt="">
                                                             </div>
                                                             <div class="col-md-7 tab-pane fade show active profile-overview modal-dialog-scrollable"
                                                                 id="profile-overview">
-                                                                <h5 class="card-title" id="">GALAX XANOVA Ocala /
-                                                                    XH200 Gaming Headset</h5>
+                                                                <h5 class="card-title" id="nama"></h5>
                                                                 <table class="table table-hover">
                                                                     <thead>
                                                                         <tr>
@@ -394,50 +429,49 @@
                                                                     </thead>
                                                                     <tbody>
                                                                         <tr>
+                                                                            <td>Merk</td>
+                                                                            <td id="merk"></td>
+                                                                        </tr>
+                                                                        <tr>
                                                                             <td>Tipe</td>
-                                                                            <td id="merk">Headset</td>
+                                                                            <td id="type"></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Sensitivity</td>
-                                                                            <td id="capacity">15 dB</td>
+                                                                            <td id="sensitivity"></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Impedance</td>
-                                                                            <td id="type">66 Ohm</td>
+                                                                            <td id="impedance"></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Driver</td>
-                                                                            <td id="speed">2 Dynamic Driver</td>
+                                                                            <td id="driver"></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Connection</td>
-                                                                            <td id="latency">USB 3.0</td>
+                                                                            <td id="connection"></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Sound Signature</td>
-                                                                            <td id="volt">Bass Boosted (BB)</td>
+                                                                            <td id="soundsig"></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Stok</td>
-                                                                            <td id="stok">12</td>
+                                                                            <td id="stok"></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Garansi</td>
-                                                                            <td id="garansi">3 year</td>
+                                                                            <td id="garansi"></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Harga</td>
-                                                                            <td id="harga">2,000,000</td>
+                                                                            <td id="harga"></td>
                                                                         </tr>
                                                                     </tbody>
                                                                 </table>
                                                                 <h4 class="card-title">Deskripsi</h4>
-                                                                <p class="small ">Sunt est soluta temporibus accusantium
-                                                                    neque nam maiores cumque
-                                                                    temporibus. Tempora libero non est unde veniam est qui
-                                                                    dolor. Ut sunt iure rerum quae
-                                                                    quisquam autem eveniet perspiciatis odit. Fuga sequi sed
-                                                                    ea saepe at unde.</p>
+                                                                <p class="small" id="deskripsi">.</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -471,5 +505,5 @@
     </section>
 @endsection
 @section('javascript')
-    <script src="{{ asset('admin/') }}/js/custom/memory.js"></script>
+    <script src="{{ asset('admin/') }}/js/custom/earphone.js"></script>
 @endsection

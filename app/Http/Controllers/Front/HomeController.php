@@ -3,8 +3,14 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Brand;
+use App\Models\Earphone;
 use Illuminate\Http\Request;
 use App\Models\Identity;
+use App\Models\Keyboard;
+use App\Models\Monitor;
+use App\Models\Motherboard;
+use App\Models\Mouse;
 
 class HomeController extends Controller
 {
@@ -18,7 +24,13 @@ class HomeController extends Controller
         $data=[
             'title' => "home",
             'identitas' => Identity::all(),
-            'countCart' => count($cart)
+            'countCart' => count($cart),
+            'earphone'  => Earphone::all(),
+            'keyboard'  => Keyboard::all(),
+            'mouse' => Mouse::all(),
+            'mobo' => Motherboard::all(),
+            'monitor' => Monitor::all(),
+            'merk' => Brand::all()
         ];
 
         return view('front/home',$data);

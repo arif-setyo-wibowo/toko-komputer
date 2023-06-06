@@ -107,7 +107,7 @@
                                             <img src="{{ asset('admin/') }}/img/card.jpg" id="gambarTambah" style="height: 220px;" alt="">
                                             <div class="pt-2 col-md-4 text-center">
                                                 <label style="width:100px;">
-                                                    <input type="file" name="updateImage" id="updateImage" style="display:none;">
+                                                    <input type="file" name="mouseImage" id="mouseImage" style="display:none;">
                                                     <a class="btn btn-primary " style="width: 100px;"><i class="bi bi-upload"></i></a>
                                                 </label>
                                             </div>
@@ -250,7 +250,7 @@
                                                         <label style="width:100px;">
                                                             <input type="hidden" name="idUpdate" id="idUpdate" required>
                                                             <input type="hidden" name="imageAwal" id="imageAwal" required>
-                                                            <input type="file" name="imageUpdate" id="updateImage" style="display:none;" required>
+                                                            <input type="file" name="imageUpdate" id="updateImage" style="display:none;">
                                                             <a class="btn btn-primary " style="width: 100px;"><i class="bi bi-upload"></i></a>
                                                         </label>
                                                     </div>

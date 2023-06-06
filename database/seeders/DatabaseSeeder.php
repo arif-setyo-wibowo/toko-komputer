@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Customer;
+use App\Models\Earphone;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -30,7 +31,10 @@ class DatabaseSeeder extends Seeder
             CoolerSeeder::class,
             UserSeeder::class,
             ViewBarangSeeder::class,
-            MonitorSeeder::class
+            MonitorSeeder::class,
+            MouseSeeder::class,
+            EarphoneSeeder::class
+            
         ]);
     }
 }

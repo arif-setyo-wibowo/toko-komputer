@@ -154,7 +154,7 @@
 
                                         <div class="row mt-4">
                                             <div class="row col ">
-                                                <label for="inputText" class="col-md-3 col-form-label">Processors</label>
+                                                <label for="inputText" class="col-md-3 col-form-label">Nama</label>
                                                 <div class="col-sm-9">
                                                     <input type="text" class="form-control" name="processorName"
                                                         required>
@@ -171,18 +171,32 @@
 
                                         <div class="row mt-4">
                                             <div class="row col ">
-                                                <label for="inputText" class="col-md-3 col-form-label">Core</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" class="form-control" name="processorCore"
-                                                        required>
-                                                </div>
+                                                    <label for="inputText" class="col-md-3 col-form-label">Core</label>
+                                                    <div class="col-sm-9">
+                                                        <div class="input-group ">
+                                                            <input type="number" class="form-control"
+                                                                aria-label="Recipient's username"
+                                                                aria-describedby="basic-addon2" name="processorCore"
+                                                                required>
+                                                            <span class="input-group-text" id="basic-addon2">
+                                                                Core
+                                                            </span>
+                                                        </div>
+                                                    </div>
                                             </div>
                                             <div class="row col ">
-                                                <label for="inputText" class="col-md-3 col-form-label">Threads</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" class="form-control" name="processorThread"
-                                                        required>
-                                                </div>
+                                                    <label for="inputText" class="col-md-3 col-form-label">Threads</label>
+                                                    <div class="col-sm-9">
+                                                        <div class="input-group ">
+                                                            <input type="number" class="form-control"
+                                                                aria-label="Recipient's username"
+                                                                aria-describedby="basic-addon2" name="processorThread"
+                                                                required>
+                                                            <span class="input-group-text" id="basic-addon2">
+                                                                Thread
+                                                            </span>
+                                                        </div>
+                                                    </div>
                                             </div>
                                         </div>
 
@@ -190,15 +204,29 @@
                                             <div class="row col ">
                                                 <label for="inputText" class="col-md-3 col-form-label">Base Speed</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" name="processorBaseSpeed"
-                                                        required>
+                                                    <div class="input-group ">
+                                                        <input type="number" class="form-control"
+                                                            aria-label="Recipient's username"
+                                                            aria-describedby="basic-addon2" name="processorBaseSpeed"
+                                                            required>
+                                                        <span class="input-group-text" id="basic-addon2">
+                                                            GHz
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="row col ">
                                                 <label for="inputText" class="col-md-3 col-form-label">Boost Speed</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" name="processorBoostSpeed"
-                                                        required>
+                                                    <div class="input-group ">
+                                                        <input type="number" class="form-control"
+                                                            aria-label="Recipient's username"
+                                                            aria-describedby="basic-addon2" name="processorBoostSpeed"
+                                                            required>
+                                                        <span class="input-group-text" id="basic-addon2">
+                                                            GHz
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -207,26 +235,43 @@
                                             <div class="row col ">
                                                 <label for="inputText" class="col-md-3 col-form-label">Cache</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" name="processorCache"
-                                                        required>
+                                                    <div class="input-group ">
+                                                        <input type="number" class="form-control"
+                                                            aria-label="Recipient's username"
+                                                            aria-describedby="basic-addon2" name="processorCache"
+                                                            required>
+                                                        <span class="input-group-text" id="basic-addon2">
+                                                            KB
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="row col ">
                                                 <label for="inputText" class="col-md-3 col-form-label">Arsitektur</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" name="processorArch"
-                                                        required>
+                                                    <div class="input-group ">
+                                                        <input type="number" class="form-control"
+                                                            aria-label="Recipient's username"
+                                                            aria-describedby="basic-addon2" name="processorArch"
+                                                            required>
+                                                        <span class="input-group-text" id="basic-addon2">
+                                                            nm
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="row mt-4">
-                                            <div class="row col ">
-                                                <label for="inputText" class="col-md-3 col-form-label">Integrated
-                                                    Graphics</label>
+                                            <div class="row col">
+                                                <label for="inputText" class="col-md-3 col-form-label">IGP (Included?)</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" name="processorIgpu"
-                                                        required>
+                                                    <select class="form-select" aria-label="Default select example"
+                                                        name="processorIgpu" required>
+                                                        <option selected value disabled>Ya, jika ada igp</option>
+                                                            <option value="yes">Ya</option>
+                                                            <option value="no">Tidak</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="row col ">
@@ -246,11 +291,15 @@
                                         </div>
 
                                         <div class="row mt-4">
-                                            <div class="row col ">
-                                                <label for="inputText" class="col-md-3 col-form-label">Heatsink</label>
+                                            <div class="row col">
+                                                <label for="inputText" class="col-md-3 col-form-label">Heatsink (Included?)</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" name="processorHeatsink"
-                                                        required>
+                                                    <select class="form-select" aria-label="Default select example"
+                                                        name="processorHeatsink" required>
+                                                        <option selected value disabled>Ya, jika dapat heatsink bawaan</option>
+                                                            <option value="yes">Ya</option>
+                                                            <option value="no">Tidak</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="row col ">
@@ -263,11 +312,18 @@
                                         </div>
 
                                         <div class="row mt-4">
-                                            <div class="row col">
+                                            <div class="row col ">
                                                 <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" name="processorWarranty"
-                                                        required>
+                                                    <div class="input-group ">
+                                                        <input type="number" class="form-control"
+                                                            aria-label="Recipient's username"
+                                                            aria-describedby="basic-addon2" name="processorWarranty"
+                                                            required>
+                                                        <span class="input-group-text" id="basic-addon2">
+                                                            Tahun
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="row col">
