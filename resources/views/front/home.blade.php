@@ -409,6 +409,18 @@
         </div>
     </section>
     <!-- Mobiles-&-Tablets /- -->
+    <!-- Banner-Layer -->
+    <div class="banner-layer">
+        <div class="container">
+            <div class="image-banner">
+                <a href="shop-v1-root-category.html" class="mx-auto banner-hover effect-dark-opacity">
+                    <img class="img-fluid" src="{{ asset('front/') }}/images/brand-logos/baner1.png"
+                        alt="Winter Season Banner">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Banner-Layer /- -->
     <!-- Women-Clothing -->
     <section class="section-maker">
         <div class="container">
