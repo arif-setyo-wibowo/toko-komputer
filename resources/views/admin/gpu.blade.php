@@ -157,41 +157,78 @@
                                         <div class="row col ">
                                             <label for="inputText" class="col-md-4 col-form-label">Base Clock</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" name="gpuBaseClock" required>
+                                                <div class="input-group ">
+                                                    <input type="number" class="form-control"
+                                                        aria-label="Recipient's username"
+                                                        aria-describedby="basic-addon2" name="gpuBaseClock"
+                                                        required>
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        MHz
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row mt-4">
                                         <div class="row col ">
-                                            <label for="inputText" class="col-md-4 col-form-label">Boot Clock</label>
+                                            <label for="inputText" class="col-md-4 col-form-label">Boost Clock</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" name="gpuBoostClock" required>
+                                                <div class="input-group ">
+                                                    <input type="number" class="form-control"
+                                                        aria-label="Recipient's username"
+                                                        aria-describedby="basic-addon2" name="gpuBoostClock"
+                                                        required>
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        MHz
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row col ">
                                             <label for="inputText" class="col-md-4 col-form-label">Memory Clock
                                                 Speed</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" name="gpuMemoryClockSpeed"
-                                                    required>
+                                                <div class="input-group ">
+                                                    <input type="number" class="form-control"
+                                                        aria-label="Recipient's username"
+                                                        aria-describedby="basic-addon2" name="gpuMemoryClockSpeed"
+                                                        required>
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        MHz
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row mt-4">
                                         <div class="row col ">
-                                            <label for="inputText" class="col-md-4 col-form-label">Memory
-                                                Interface</label>
+                                            <label for="inputText" class="col-md-4 col-form-label">Memory Interface</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" name="gpuMemoryInterface"
-                                                    required>
+                                                <div class="input-group ">
+                                                    <input type="number" class="form-control"
+                                                        aria-label="Recipient's username"
+                                                        aria-describedby="basic-addon2" name="gpuMemoryInterface"
+                                                        required>
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        Bit
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row col ">
                                             <label for="inputText" class="col-md-4 col-form-label">Memory Size</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" name="gpuMemorySize" required>
+                                                <div class="input-group ">
+                                                    <input type="number" class="form-control"
+                                                        aria-label="Recipient's username"
+                                                        aria-describedby="basic-addon2" name="gpuMemorySize"
+                                                        required>
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        GB
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -247,10 +284,18 @@
                                                 <input type="number" class="form-control" name="gpuPrice" required>
                                             </div>
                                         </div>
-                                        <div class="row col">
+                                        <div class="row col ">
                                             <label for="inputText" class="col-md-4 col-form-label">Garansi</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" name="gpuWarranty" required>
+                                                <div class="input-group ">
+                                                    <input type="number" class="form-control"
+                                                        aria-label="Recipient's username"
+                                                        aria-describedby="basic-addon2" name="gpuWarranty"
+                                                        required>
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        Tahun
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row col">

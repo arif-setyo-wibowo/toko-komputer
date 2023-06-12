@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="{{ asset('front/') }}/css/bootstrap.min.css">
     <!-- Font Awesome 5 -->
     <link rel="stylesheet" href="{{ asset('front/') }}/css/fontawesome.min.css">
+        <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="{{ asset('front/') }}/css/fontawesome2.css">
     <!-- Ion-Icons 4 -->
     <link rel="stylesheet" href="{{ asset('front/') }}/css/ionicons.min.css">
     <!-- Animate CSS -->
@@ -37,6 +39,7 @@
     <link rel="stylesheet" href="{{ asset('front/') }}/css/select2-bootstrap4.min.css">
     <!-- <link rel="stylesheet" href="{{ asset('front/') }}/css/adminlte.css"> -->
     <link rel="stylesheet" href="{{ asset('front/') }}/css/sweetalert2.min.css">
+
 
     @yield('css')
 </head>
@@ -123,20 +126,18 @@
                                             <option selected="selected" value="">
                                                 All
                                             </option>
-                                            <option value="">Men's Clothing</option>
-                                            <option value="">Women's Clothing
+                                            <option value="">Gaming Gear</option>
+                                            <option value="">Motherboard
                                             </option>
-                                            <option value="">Toys Hobbies & Robots
+                                            <option value="">Monitor
                                             </option>
-                                            <option value="">Mobiles & Tablets
+                                            <option value="">Power Supplay
                                             </option>
-                                            <option value="">Consumer Electronics
+                                            <option value="">Graphic Card
                                             </option>
-                                            <option value="">Books & Audible
+                                            <option value="">Memory
                                             </option>
-                                            <option value="">Beauty & Health
-                                            </option>
-                                            <option value="">Furniture Home & Office
+                                            <option value="">Casing
                                             </option>
                                         </select>
                                     </div>
@@ -285,8 +286,8 @@
                                         <ul class="v-list animated fadeIn">
                                             <li class="js-backdrop">
                                                 <a href="shop-v1-root-category.html">
-                                                    <i class="ion ion-md-shirt"></i>
-                                                    Men's Clothing
+                                                    <i class="fa-solid fa-computer"></i>
+                                                   Komponent Pc
                                                     <i class="ion ion-ios-arrow-forward"></i>
                                                 </a>
                                                 <button class="v-button ion ion-md-add"></button>
@@ -295,24 +296,19 @@
                                                         <div class="col-lg-4">
                                                             <ul class="v-level-2">
                                                                 <li>
-                                                                    <a href="shop-v2-sub-category.html">Tops</a>
+                                                                    <a href="shop-v2-sub-category.html">Motherboard</a>
                                                                     <ul>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">T-Shirts</a>
+                                                                                href="shop-v3-sub-sub-category.html">MSI</a>
                                                                         </li>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">Hoodies</a>
+                                                                                href="shop-v3-sub-sub-category.html">ROG</a>
                                                                         </li>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">Suits</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-v4-filter-as-category.html">Black
-                                                                                Bean T-Shirt
-                                                                            </a>
+                                                                                href="shop-v3-sub-sub-category.html">Gigabyte</a>
                                                                         </li>
                                                                     </ul>
                                                                 </li>
@@ -321,23 +317,15 @@
                                                         <div class="col-lg-4">
                                                             <ul class="v-level-2">
                                                                 <li>
-                                                                    <a href="shop-v2-sub-category.html">Outwear</a>
+                                                                    <a href="shop-v2-sub-category.html">Prosessor</a>
                                                                     <ul>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">Jackets</a>
+                                                                                href="shop-v3-sub-sub-category.html">AMD</a>
                                                                         </li>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">Trench</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Parkas</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Sweaters</a>
+                                                                                href="shop-v3-sub-sub-category.html">INTEL</a>
                                                                         </li>
                                                                     </ul>
                                                                 </li>
@@ -347,23 +335,15 @@
                                                             <ul class="v-level-2">
                                                                 <li>
                                                                     <a
-                                                                        href="shop-v1-root-category.html">Accessories</a>
+                                                                        href="shop-v1-root-category.html">Graphic Card</a>
                                                                     <ul>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">Watches</a>
+                                                                                href="shop-v3-sub-sub-category.html">Nvidia</a>
                                                                         </li>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">Ties</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Scarves</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Belts</a>
+                                                                                href="shop-v3-sub-sub-category.html">Radeon</a>
                                                                         </li>
                                                                     </ul>
                                                                 </li>
@@ -374,24 +354,49 @@
                                                         <div class="col-lg-4">
                                                             <ul class="v-level-2">
                                                                 <li>
-                                                                    <a href="shop-v2-sub-category.html">Bottoms</a>
+                                                                    <a href="shop-v2-sub-category.html">Power Supplay</a>
                                                                     <ul>
                                                                         <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Casual
-                                                                                Pants
+                                                                            <a href="shop-v3-sub-sub-category.html">80 broze
+                                                                                
                                                                             </a>
                                                                         </li>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">Shoes</a>
+                                                                                href="shop-v3-sub-sub-category.html">80 Platinum</a>
                                                                         </li>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">Jeans</a>
+                                                                                href="shop-v3-sub-sub-category.html">80 Gold</a>
                                                                         </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </div>  
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="js-backdrop">
+                                                <a href="shop-v1-root-category.html">
+                                                    <i class="ion ion-ios-save"></i>
+                                                    Memory & Storage
+                                                    <i class="ion ion-ios-arrow-forward"></i>
+                                                </a>
+                                                <button class="v-button ion ion-md-add"></button>
+                                                <div class="v-drop-right" style="width: 700px;">
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <ul class="v-level-2">
+                                                                <li>
+                                                                    <a href="shop-v2-sub-category.html">RAM</a>
+                                                                    <ul>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">Shorts</a>
+                                                                                href="shop-v3-sub-sub-category.html">DDR 4</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="shop-v3-sub-sub-category.html">DDR 5
+                                                                            </a>
                                                                         </li>
                                                                     </ul>
                                                                 </li>
@@ -400,23 +405,15 @@
                                                         <div class="col-lg-4">
                                                             <ul class="v-level-2">
                                                                 <li>
-                                                                    <a href="shop-v2-sub-category.html">Underwear</a>
+                                                                    <a href="shop-v2-sub-category.html">SSD</a>
                                                                     <ul>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">Boxers</a>
+                                                                                href="shop-v3-sub-sub-category.html">SATA</a>
                                                                         </li>
                                                                         <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Briefs</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Robes</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Socks</a>
+                                                                            <a href="shop-v3-sub-sub-category.html">NVME
+                                                                            </a>
                                                                         </li>
                                                                     </ul>
                                                                 </li>
@@ -425,23 +422,20 @@
                                                         <div class="col-lg-4">
                                                             <ul class="v-level-2">
                                                                 <li>
-                                                                    <a href="shop-v2-sub-category.html">Sunglasses</a>
+                                                                    <a href="shop-v2-sub-category.html">Harddisk
+                                                                    </a>
                                                                     <ul>
                                                                         <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Pilot</a>
+                                                                            <a href="shop-v3-sub-sub-category.html">WD Blue
+                                                                            </a>
                                                                         </li>
                                                                         <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Wayfarer</a>
+                                                                            <a href="shop-v2-sub-category.html">Samsung
+                                                                            </a>
                                                                         </li>
                                                                         <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Square</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Round</a>
+                                                                            <a href="shop-v2-sub-category.html">Seagate
+                                                                            </a>
                                                                         </li>
                                                                     </ul>
                                                                 </li>
@@ -452,8 +446,8 @@
                                             </li>
                                             <li class="js-backdrop">
                                                 <a href="shop-v1-root-category.html">
-                                                    <i class="ion ion-ios-shirt"></i>
-                                                    Women's Clothing
+                                                    <i class="fa fa-gamepad"></i>
+                                                        Gaming Gear
                                                     <i class="ion ion-ios-arrow-forward"></i>
                                                 </a>
                                                 <button class="v-button ion ion-md-add"></button>
@@ -462,24 +456,19 @@
                                                         <div class="col-lg-4">
                                                             <ul class="v-level-2">
                                                                 <li>
-                                                                    <a href="shop-v2-sub-category.html">Tops</a>
+                                                                    <a href="shop-v2-sub-category.html">Mouse</a>
                                                                     <ul>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">Dresses</a>
+                                                                                href="shop-v3-sub-sub-category.html">Optical</a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Blouses
-                                                                                & Shirts
+                                                                            <a href="shop-v3-sub-sub-category.html">Laser Gaming
                                                                             </a>
                                                                         </li>
                                                                         <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">T-shirts</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Sweater</a>
+                                                                            <a href="shop-v3-sub-sub-category.html">Macro
+                                                                            </a>
                                                                         </li>
                                                                     </ul>
                                                                 </li>
@@ -488,25 +477,19 @@
                                                         <div class="col-lg-4">
                                                             <ul class="v-level-2">
                                                                 <li>
-                                                                    <a href="shop-v2-sub-category.html">Intimates</a>
+                                                                    <a href="shop-v2-sub-category.html">Keyboard</a>
                                                                     <ul>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">Bras</a>
+                                                                                href="shop-v3-sub-sub-category.html">TKL</a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Brief
-                                                                                Sets
+                                                                            <a href="shop-v3-sub-sub-category.html">Full Size
                                                                             </a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Bustiers
-                                                                                & Corsets
+                                                                            <a href="shop-v3-sub-sub-category.html">Mini
                                                                             </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Panties</a>
                                                                         </li>
                                                                     </ul>
                                                                 </li>
@@ -515,111 +498,24 @@
                                                         <div class="col-lg-4">
                                                             <ul class="v-level-2">
                                                                 <li>
-                                                                    <a href="shop-v2-sub-category.html">Wedding &
-                                                                        Events
+                                                                    <a href="shop-v2-sub-category.html">Headset
                                                                     </a>
                                                                     <ul>
                                                                         <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Wedding
-                                                                                Dresses
+                                                                            <a href="shop-v3-sub-sub-category.html">ROG
                                                                             </a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="shop-v2-sub-category.html">Evening
-                                                                                Dresses
+                                                                            <a href="shop-v2-sub-category.html">MSI
                                                                             </a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Prom
-                                                                                Dresses
+                                                                            <a href="shop-v2-sub-category.html">Steel Series
                                                                             </a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Flower
-                                                                                Dresses
+                                                                            <a href="shop-v2-sub-category.html">Hyper X
                                                                             </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-4">
-                                                            <ul class="v-level-2">
-                                                                <li>
-                                                                    <a href="shop-v2-sub-category.html">Bottoms</a>
-                                                                    <ul>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Skirts</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Shoes</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Leggings</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Jeans</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <ul class="v-level-2">
-                                                                <li>
-                                                                    <a href="shop-v2-sub-category.html">Outwear &
-                                                                        Jackets
-                                                                    </a>
-                                                                    <ul>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Blazers</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Basics
-                                                                                Jackets
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Trench</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Leather
-                                                                                & Suede
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <ul class="v-level-2">
-                                                                <li>
-                                                                    <a href="shop-v2-sub-category.html">Accessories</a>
-                                                                    <ul>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Sunglasses</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Headwear</a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Baseball
-                                                                                Caps
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a
-                                                                                href="shop-v3-sub-sub-category.html">Belts</a>
                                                                         </li>
                                                                     </ul>
                                                                 </li>
@@ -628,280 +524,28 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li class="js-backdrop">
-                                                <a href="shop-v1-root-category.html">
-                                                    <i class="ion ion-md-rocket"></i>
-                                                    Toys Hobbies & Robots
-                                                    <i class="ion ion-ios-arrow-forward"></i>
-                                                </a>
-                                                <button class="v-button ion ion-md-add"></button>
-                                                <div class="v-drop-right" style="width: 700px;">
-                                                    <div class="row">
-                                                        <div class="col-lg-4">
-                                                            <ul class="v-level-2">
-                                                                <li>
-                                                                    <a href="shop-v2-sub-category.html">RC Toys &
-                                                                        Hobbies
-                                                                    </a>
-                                                                    <ul>
-                                                                        <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">RC
-                                                                                Helicopter
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">RC
-                                                                                Lego Robots
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">RC
-                                                                                Drone
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">RC
-                                                                                Car
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">RC
-                                                                                Boat
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">RC
-                                                                                Robot
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Multi
-                                                                                Rotor Parts
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">FPV
-                                                                                System
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Radios
-                                                                                & Receiver
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Battery
-                                                                                & Charger
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <ul class="v-level-2">
-                                                                <li>
-                                                                    <a href="shop-v2-sub-category.html">Solar Energy
-                                                                    </a>
-                                                                    <ul>
-                                                                        <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Solar
-                                                                                Powered Toy
-                                                                            </a>
-                                                                        </li>
-                                                                        <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Solar
-                                                                                Powered System
-                                                                            </a>
-                                                                        </li>
-                                                                        <li class="view-more-flag">
-                                                                            <a href="store-directory.html">View More
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <!-- Remember layer image should be place on empty space and its not overlap your list items because user could not read your list items. -->
-                                                    <div class="v-image" style="bottom: 0;right: -25px">
-                                                        <a href="#" class="d-block">
-                                                            <img src="{{ asset('front/') }}/images/banners/mega-3.png"
-                                                                class="img-fluid" alt="Product">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </li>
                                             <li>
                                                 <a href="shop-v1-root-category.html">
-                                                    <i class="ion ion-md-phone-portrait"></i>
-                                                    Mobiles & Tablets
+                                                    <i class="fa fa-desktop"></i>
+                                                    Monitor
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="shop-v1-root-category.html">
-                                                    <i class="ion ion-md-tv"></i>
-                                                    Consumer Electronics
+                                                    <i class="fa-solid fa-toilet-portable"></i>
+                                                    Casing
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="shop-v1-root-category.html">
-                                                    <i class="ion ion-ios-book"></i>
-                                                    Books & Audible
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-v1-root-category.html">
-                                                    <i class="ion ion-md-heart"></i>
-                                                    Beauty & Health
-                                                </a>
-                                            </li>
-                                            <li class="v-none" style="display: none">
-                                                <a href="shop-v1-root-category.html">
-                                                    <i class="ion ion-md-easel"></i>
-                                                    Furniture Home & Office
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a class="v-more">
-                                                    <i class="ion ion-md-add"></i>
-                                                    <span>View More</span>
+                                                    <i class="fa fa-fan"></i>
+                                                   Cooler
                                                 </a>
                                             </li>
                                         </ul>
                                     </div>
                                 </nav>
                             </div>
-                        </div>
-                        <div class="col-lg-9">
-                            <ul class="bottom-nav g-nav u-d-none-lg">
-                                <li>
-                                    <a href="custom-deal-page.html">New Arrivals
-                                        <span class="superscript-label-new">NEW</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="custom-deal-page.html">Exclusive Deals
-                                        <span class="superscript-label-hot">HOT</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="custom-deal-page.html">Flash Deals
-                                    </a>
-                                </li>
-                                <li class="mega-position">
-                                    <a>Pages
-                                        <i class="fas fa-chevron-down u-s-m-l-9"></i>
-                                    </a>
-                                    <div class="mega-menu mega-3-colm">
-                                        <ul>
-                                            <li class="menu-title">Home & Static Pages</li>
-                                            <li>
-                                                <a href="/" class="u-c-brand">Home</a>
-                                            </li>
-                                            <li>
-                                                <a href="about.html">About</a>
-                                            </li>
-                                            <li>
-                                                <a href="contact.html">Contact</a>
-                                            </li>
-                                            <li>
-                                                <a href="faq.html">FAQ</a>
-                                            </li>
-                                            <li>
-                                                <a href="store-directory.html">Store Directory</a>
-                                            </li>
-                                            <li>
-                                                <a href="terms-and-conditions.html">Terms & Conditions</a>
-                                            </li>
-                                            <li>
-                                                <a href="404.html">404</a>
-                                            </li>
-                                            <li class="menu-title">Single Product Page</li>
-                                            <li>
-                                                <a href="single-product.html">Single Product Fullwidth</a>
-                                            </li>
-                                            <li class="menu-title">Blog</li>
-                                            <li>
-                                                <a href="blog.html">Blog Page</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-detail.html">Blog Details</a>
-                                            </li>
-                                        </ul>
-                                        <ul>
-                                            <li class="menu-title">Ecommerce Pages</li>
-                                            <li>
-                                                <a href="shop-v2-sub-category.html">Shop</a>
-                                            </li>
-                                            <li>
-                                                <a href="cart.html">Cart</a>
-                                            </li>
-                                            <li>
-                                                <a href="checkout.html">Checkout</a>
-                                            </li>
-                                            <li>
-                                                <a href="account.html">My Account</a>
-                                            </li>
-                                            <li>
-                                                <a href="wishlist.html">Wishlist</a>
-                                            </li>
-                                            <li>
-                                                <a href="track-order.html">Track your Order</a>
-                                            </li>
-                                            <li class="menu-title">Cart Variations</li>
-                                            <li>
-                                                <a href="cart-empty.html">Cart Ver 1 Empty</a>
-                                            </li>
-                                            <li>
-                                                <a href="cart.html">Cart Ver 2 Full</a>
-                                            </li>
-                                            <li class="menu-title">Wishlist Variations</li>
-                                            <li>
-                                                <a href="wishlist-empty.html">Wishlist Ver 1 Empty</a>
-                                            </li>
-                                            <li>
-                                                <a href="wishlist.html">Wishlist Ver 2 Full</a>
-                                            </li>
-                                        </ul>
-                                        <ul>
-                                            <li class="menu-title">Shop Variations</li>
-                                            <li>
-                                                <a href="shop-v1-root-category.html">Shop Ver 1 Root Category</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-v2-sub-category.html">Shop Ver 2 Sub Category</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-v3-sub-sub-category.html">Shop Ver 3 Sub Sub Category</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-v4-filter-as-category.html">Shop Ver 4 Filter as
-                                                    Category</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-v5-product-not-found.html">Shop Ver 5 Product Not
-                                                    Found</a>
-                                            </li>
-                                            <li>
-                                                <a href="shop-v6-search-results.html">Shop Ver 6 Search Results</a>
-                                            </li>
-                                            <li class="menu-title">My Account Variation</li>
-                                            <li>
-                                                <a href="lost-password.html">Lost Your Password ?</a>
-                                            </li>
-                                            <li class="menu-title">Checkout Variation</li>
-                                            <li>
-                                                <a href="confirmation.html">Checkout Confirmation</a>
-                                            </li>
-                                            <li class="menu-title">Custom Deals Page</li>
-                                            <li>
-                                                <a href="custom-deal-page.html">Custom Deal Page</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -1392,6 +1036,7 @@
     <script type="text/javascript" src="{{ asset('front/') }}/js/owl.carousel.min.js"></script>
     <!-- Main -->
     <script type="text/javascript" src="{{ asset('front/') }}/js/app.js"></script>
+    <script type="text/javascript" src="{{ asset('front/') }}/js/font.js"></script>
 
     <script type="text/javascript" src="{{ asset('front/') }}/js/select2.full.min.js"></script>
     <script type="text/javascript" src="{{ asset('front/') }}/js/sweetalert2.all.min.js"></script>

@@ -45,26 +45,26 @@
                     <form action="{{ url()->current() }}" method="POST">
                         @csrf
                         <div class="u-s-m-b-30">
+                            <label for="user-name-email"> Email
+                                <span class="astk">*</span>
+                            </label>
                             @error('email')
                                 <small class="text-danger mt-2">
                                     {{ $message }}
                                 </small>
                             @enderror
-                            <label for="user-name-email"> Email
-                                <span class="astk">*</span>
-                            </label>
                             <input type="text" id="user-name-email" class="text-field" name="customerEmail" placeholder="Email">
                         </div>
                         <div class="u-s-m-b-30">
+                            <label for="login-password">Password
+                                <span class="astk">*</span>
+                            </label>
                             @error('password')
-                                    <small class="text-danger mt-2">
-                                        {{ $message }}
-                                    </small>
-                                @enderror
-                                <label for="login-password">Password
-                                    <span class="astk">*</span>
-                                </label>
-                                <input type="password" id="login-password" class="text-field" name="customerPassword" placeholder="Password">
+                                <small class="text-danger mt-2">
+                                    {{ $message }}
+                                </small>
+                            @enderror
+                            <input type="password" id="login-password" class="text-field" name="customerPassword" placeholder="Password">
                         </div>
                         <div class="group-inline u-s-m-b-30">
                             <div class="group-2 text-right">

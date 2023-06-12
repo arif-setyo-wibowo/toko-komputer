@@ -80,7 +80,9 @@ Route::get('/register/verify/{verify_key}', [CustomerController::class, 'verify'
 
 //Password
 Route::get('/reset', [CustomerController::class, 'reset'])->name('reset');
-Route::post('/reset', [CustomerController::class, 'reset_data']);
+Route::post('/reset', [CustomerController::class, 'reset_req'])->name('reset_req');
+Route::get('/reset/{token}', [CustomerController::class, 'resetPassword'])->name('customer.reset');
+Route::post('/reset_password', [CustomerController::class, 'resetPasswordPost'])->name('customer.reset.post');
 
 //Socialite
 Route::get('/auth/login/{provider}', [SocialiteController::class, 'redirectToProvider'])->name('login.google');

@@ -19,7 +19,7 @@ class CustomerMiddleware
         if(session()->has('login.customer')){
             return $next($request);
         }
-        
+
         return redirect()->route('login');
     }
 }
