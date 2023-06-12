@@ -12,15 +12,15 @@
             </div>
             <div class="bg-image two">
                 <div class="slide-content-2 slide-animation">
-                    <h2 class="slide-2-h2-a">Hiking</h2>
-                    <h2 class="slide-2-h2-b">Collection</h2>
-                    <h1>2018</h1>
+                    <h2 class="slide-2-h2-a">Grand</h2>
+                    <h2 class="slide-2-h2-b">Opening</h2>
+                    <h1>2023</h1>
                 </div>
             </div>
             <div class="bg-image three">
                 <div class="slide-content slide-animation">
                     <h1>Tech
-                        <span style="color:#333">Deals</span>
+                        <span style="color:#38B6FF">Deals</span>
                     </h1>
                     <h2 style="color:#333"># shopping</h2>
                 </div>
@@ -34,7 +34,7 @@
         <div class="container">
             <div class="image-banner">
                 <a href="shop-v1-root-category.html" class="mx-auto banner-hover effect-dark-opacity">
-                    <img class="img-fluid" src="{{ asset('front/') }}/images/banners/bannerlayer-1.jpg"
+                    <img class="img-fluid" src="{{ asset('front/') }}/images/brand-logos/baner1.png"
                         alt="Winter Season Banner">
                 </a>
             </div>
@@ -43,40 +43,70 @@
     <!-- Banner-Layer /- -->
 
     <!-- Brand-Slider -->
-    <div class="brand-slider u-s-p-b-80">
-        <div class="container">
+    <div class="brand-slider u-s-p-b-80 ">
+        <div class="container ">
             <div class="text-center mb-2">
                 <h3 class="sec-maker-h3">Kategori</h3>
             </div>
             <div class="brand-slider-content owl-carousel" data-item="5">
                 <div class="brand-pic">
                     <a href="/shop">
-                        <img src="{{ asset('front/') }}/images/brand-logos/logo.png" alt="Brand Logo 1">
+                        <img src="{{ asset('front/') }}/images/brand-logos/prosesor.png" alt="Brand Logo 1">
                     </a>
                 </div>
                 <div class="brand-pic">
                     <a href="#">
-                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 2">
+                        <img src="{{ asset('front/') }}/images/brand-logos/mobo.png" alt="Brand Logo 2">
                     </a>
                 </div>
                 <div class="brand-pic">
                     <a href="#">
-                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 3">
+                        <img src="{{ asset('front/') }}/images/brand-logos/vga.png" alt="Brand Logo 3">
                     </a>
                 </div>
                 <div class="brand-pic">
                     <a href="#">
-                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 5">
+                        <img src="{{ asset('front/') }}/images/brand-logos/ram.png" alt="Brand Logo 5">
                     </a>
                 </div>
                 <div class="brand-pic">
                     <a href="#">
-                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 6">
+                        <img src="{{ asset('front/') }}/images/brand-logos/storage.png" alt="Brand Logo 6">
                     </a>
                 </div>
                 <div class="brand-pic">
                     <a href="#">
-                        <img src="{{ asset('front/') }}/images/brand-logos/b1.png" alt="Brand Logo 7">
+                        <img src="{{ asset('front/') }}/images/brand-logos/psu.png" alt="Brand Logo 7">
+                    </a>
+                </div>
+                <div class="brand-pic">
+                    <a href="#">
+                        <img src="{{ asset('front/') }}/images/brand-logos/case.png" alt="Brand Logo 7">
+                    </a>
+                </div>
+                <div class="brand-pic">
+                    <a href="#">
+                        <img src="{{ asset('front/') }}/images/brand-logos/cooler.png" alt="Brand Logo 7">
+                    </a>
+                </div>
+                <div class="brand-pic">
+                    <a href="#">
+                        <img src="{{ asset('front/') }}/images/brand-logos/headset.png" alt="Brand Logo 7">
+                    </a>
+                </div>
+                <div class="brand-pic">
+                    <a href="#">
+                        <img src="{{ asset('front/') }}/images/brand-logos/keyboard.png" alt="Brand Logo 7">
+                    </a>
+                </div>
+                <div class="brand-pic">
+                    <a href="#">
+                        <img src="{{ asset('front/') }}/images/brand-logos/mouse.png" alt="Brand Logo 7">
+                    </a>
+                </div>
+                <div class="brand-pic">
+                    <a href="#">
+                        <img src="{{ asset('front/') }}/images/brand-logos/monitor.png" alt="Brand Logo 7">
                     </a>
                 </div>
             </div>
@@ -85,7 +115,7 @@
     <!-- Brand-Slider /- -->
 
     <!-- Men-Clothing -->
-    <section class="section-maker">
+    <section class="section-maker ">
         <div class="container">
             <div class="sec-maker-header text-center">
                 <h3 class="sec-maker-h3">Motherboard</h3>
@@ -151,7 +181,7 @@
         <div class="container">
             <div class="image-banner u-s-m-y-40">
                 <a href="shop-v1-root-category.html" class="mx-auto banner-hover effect-dark-opacity">
-                    <img class="img-fluid" src="{{ asset('front/') }}/images/banners/ban-men.jpg" alt="Banner Image">
+                    <img class="img-fluid" src="{{ asset('front/') }}/images/brand-logos/baner1.png" alt="Banner Image">
                 </a>
             </div>
             <!-- <div class="redirect-link-wrapper text-center u-s-p-t-25 u-s-p-b-80">
@@ -379,6 +409,18 @@
         </div>
     </section>
     <!-- Mobiles-&-Tablets /- -->
+    <!-- Banner-Layer -->
+    <div class="banner-layer">
+        <div class="container">
+            <div class="image-banner">
+                <a href="shop-v1-root-category.html" class="mx-auto banner-hover effect-dark-opacity">
+                    <img class="img-fluid" src="{{ asset('front/') }}/images/brand-logos/baner1.png"
+                        alt="Winter Season Banner">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Banner-Layer /- -->
     <!-- Women-Clothing -->
     <section class="section-maker">
         <div class="container">

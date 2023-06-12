@@ -169,7 +169,7 @@
                         <div class="row product-container list-style">
                             <?php foreach ($item as $key => $value) { ?>
                             <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                                <div class="item">
+                                <div class="item col-md-12">
                                     <div class="image-container">
                                         <a class="item-img-wrapper-link" href="/detailproduk/<?= $item[$key]["Id"] ?>">
                                             <img class="img-fluid" src="{{ asset('uploads/') . $item[$key]['Image'] }}"
@@ -191,9 +191,9 @@
                                             </div>
                                             <div class="item-old-price text-decoration-none">
                                                 <div class="item-action-behaviors">
-                                                    <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick
-                                                        Look</a>
-                                                    <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
+                                                    <button class="ml-5 btn-success button button-outline-secondary add-to-cart-btn">
+                                                        Add to cart
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
