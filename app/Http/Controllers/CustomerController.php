@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use App\Mail\MailSend;
+use App\Mail\ResetSend;
 use App\Models\Identity;
+use App\Models\Token;
 
 class CustomerController extends Controller
 {
@@ -119,18 +121,64 @@ class CustomerController extends Controller
     
     public function reset()
     {
+        $cart = session()->get('cart.items', []);
         $data = [
             'identitas' => Identity::all(),
-            // 'countCart' => count($cart)
+             'countCart' => count($cart)
         ];
         return view('Auth/resetPassword',$data);
     }
-    public function reset_data()
+
+    public function reset_req(Request $request)
     {
-        $data = [
-            'identitas' => Identity::all(),
-            // 'countCart' => count($cart)
+        $request->validate([
+            'customerEmail' => 'required|email',
+        ]);
+        
+        $token = Token::requestTokenResetPassword($request->customerEmail);
+
+        $email = $request->customerEmail;
+        $nama = User::where('customerEmail', $email)->first()->customerName;
+        $url = route('customer.reset', ['token' => $token->token]);
+        $data=[
+            'customerName' => $nama,
+            'url' => $url
         ];
-        return view('Auth/resetPassword',$data);
+        Mail::to($email)->send(new ResetSend($data));
+
+        return redirect()->route('reset')->with('success','Silahkan Cek Email Untuk Verifikasi');
+    }
+
+    public function resetPassword($token)
+    {
+        $cart = session()->get('cart.items', []);
+        $token = Token::where('token', $token)->first();
+        if ($token) {
+            return view('Auth/passwordChange', [
+                'token' => $token->token,
+                'identitas' => Identity::all(),
+                'countCart' => count($cart)
+            ]);
+        } else {
+            return redirect()->route('login')->with('error', 'Token tidak ditemukan');
+        }
+    }
+
+    public function resetPasswordPost(Request $request)
+    {
+        $request->validate([
+            'customerPassword' => 'required|min:6',
+        ]);
+
+        $token = Token::where('token', $request->token)->first();
+        if ($token) {
+            $customer = User::where('customerEmail', $token->email)->first();
+            $customer->customerPassword = bcrypt($request->customerPassword);
+            $customer->save();
+            $token->delete();
+            return redirect()->route('login')->with('succes', 'Berhasil mereset password');
+        } else {
+            return redirect()->route('login')->with('error', 'Token tidak ditemukan');
+        }
     }
 }
