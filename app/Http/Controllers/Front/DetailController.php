@@ -13,6 +13,12 @@ use App\Models\PowerSupply;
 use App\Models\Processor;
 use App\Models\Storage;
 use App\Models\Identity;
+use App\Models\Cooler;
+use App\Models\Keyboard;
+use App\Models\Microphone;
+use App\Models\Monitor;
+use App\Models\Mouse;
+use App\Models\Earphone;
 
 class DetailController extends Controller
 {
@@ -37,8 +43,20 @@ class DetailController extends Controller
             $data = $this->processor($productId);
         } elseif ($product->source_table == "storages") {
             $data = $this->storage($productId);
+        } elseif ($product->source_table == "coolers") {
+            $data = $this->cooler($productId);
+        } elseif ($product->source_table == "keyboards") {
+            $data = $this->keyboard($productId);
+        } elseif ($product->source_table == "microphones") {
+            $data = $this->mic($productId);
+        } elseif ($product->source_table == "monitors") {
+            $data = $this->monitor($productId);
+        } elseif ($product->source_table == "mouse") {
+            $data = $this->mouse($productId);
+        } elseif ($product->source_table == "earphones") {
+            $data = $this->earphone($productId);
         }
-
+ 
         $data['countCart'] = count($cart);
         return view('front/detailproduk', $data);
     }
@@ -246,6 +264,187 @@ class DetailController extends Controller
             "Dimension" => $get[0]["storageDimension"],
             "Warranty" => $get[0]["storageWarranty"],
             "Stock" => $get[0]["storageStock"],
+        ];
+        $data = [
+            'title' => "Detail Produk",
+            'itemType' => "Storage",
+            'identitas' => Identity::all(),
+            'item' => $arr
+        ];
+        //print("<pre>" . print_r($get, true) . "</pre>");
+        
+        return $data;
+    }
+    
+    public function cooler($id)
+    {
+        $get = Cooler::with("brand")->where('coolerId', $id)->get();
+        $arr = [
+            "Id" => $get[0]["coolerId"],
+            "Description" => $get[0]["coolerDescription"],
+            "Image" => '/' . $get[0]["coolerImage"],
+            "Price" => $get[0]["coolerPrice"],
+            "Name" => $get[0]["coolerName"],
+            "Brand" => '/' . $get[0]["brand"]["brandLogo"],
+            "Type" => $get[0]["coolerType"],
+            "Casing support" => $get[0]["coolerCaseType"],
+            "Socket" => $get[0]["coolerSocket"],
+            "RPM" => $get[0]["coolerRpm"] . ' RPM',
+            "Warranty" => $get[0]["coolerWarranty"],
+            "Stock" => $get[0]["coolerStock"],
+        ];
+        $data = [
+            'title' => "Detail Produk",
+            'itemType' => "Storage",
+            'identitas' => Identity::all(),
+            'item' => $arr
+        ];
+        //print("<pre>" . print_r($get, true) . "</pre>");
+        
+        return $data;
+    }
+    
+    public function keyboard($id)
+    {
+        $get = Keyboard::with("brand")->where('keyboardId', $id)->get();
+        $arr = [
+            "Id" => $get[0]["keyboardId"],
+            "Description" => $get[0]["keyboardDescription"],
+            "Image" => '/' . $get[0]["keyboardImage"],
+            "Price" => $get[0]["keyboardPrice"],
+            "Name" => $get[0]["keyboardName"],
+            "Brand" => '/' . $get[0]["brand"]["brandLogo"],
+            "Type" => $get[0]["keyboardType"],
+            "Size" => $get[0]["keyboardSize"],
+            "Switch" => $get[0]["keyboardSwitch"],
+            "Layout" => $get[0]["keyboardLayout"],
+            "Connection" => $get[0]["keyboardConnection"],
+            "Feature" => $get[0]["keyboardFeature"],
+            "Warranty" => $get[0]["keyboardWarranty"],
+            "Stock" => $get[0]["keyboardStock"],
+        ];
+        $data = [
+            'title' => "Detail Produk",
+            'itemType' => "Storage",
+            'identitas' => Identity::all(),
+            'item' => $arr
+        ];
+        //print("<pre>" . print_r($get, true) . "</pre>");
+        
+        return $data;
+    }
+    
+    public function mic($id)
+    {
+        $get = Microphone::with("brand")->where('micId', $id)->get();
+        $arr = [
+            "Id" => $get[0]["micId"],
+            "Description" => $get[0]["micDescription"],
+            "Image" => '/' . $get[0]["micImage"],
+            "Price" => $get[0]["micPrice"],
+            "Name" => $get[0]["micName"],
+            "Brand" => '/' . $get[0]["brand"]["brandLogo"],
+            "Type" => $get[0]["micType"],
+            "Sensitivity" => $get[0]["micSize"],
+            "Impendance" => $get[0]["micImpendance"],
+            "Frequency Response" => $get[0]["micFreqResponse"],
+            "Connection" => $get[0]["micConnection"],
+            "Feature" => $get[0]["micFeature"],
+            "Warranty" => $get[0]["micWarranty"],
+            "Stock" => $get[0]["micStock"],
+        ];
+        $data = [
+            'title' => "Detail Produk",
+            'itemType' => "Storage",
+            'identitas' => Identity::all(),
+            'item' => $arr
+        ];
+        //print("<pre>" . print_r($get, true) . "</pre>");
+        
+        return $data;
+    }
+    
+    public function monitor($id)
+    {
+        $get = Monitor::with("brand")->where('monitorId', $id)->get();
+        $arr = [
+            "Id" => $get[0]["monitorId"],
+            "Description" => $get[0]["monitorDescription"],
+            "Image" => '/' . $get[0]["monitorImage"],
+            "Price" => $get[0]["monitorPrice"],
+            "Name" => $get[0]["monitorName"],
+            "Brand" => '/' . $get[0]["brand"]["brandLogo"],
+            "Resolution" => $get[0]["monitorResolution"],
+            "Size" => $get[0]["monitorSize"],
+            "Panel" => $get[0]["monitorPanel"],
+            "Refresh rate" => $get[0]["monitorRefreshRate"],
+            "Response time" => $get[0]["monitorResponseTime"],
+            "Gamut" => $get[0]["monitorGamut"],
+            "Port" => $get[0]["monitorPort"],
+            "Warranty" => $get[0]["monitorWarranty"],
+            "Stock" => $get[0]["monitorStock"],
+        ];
+        $data = [
+            'title' => "Detail Produk",
+            'itemType' => "Storage",
+            'identitas' => Identity::all(),
+            'item' => $arr
+        ];
+        //print("<pre>" . print_r($get, true) . "</pre>");
+        
+        return $data;
+    }
+    
+    public function mouse($id)
+    {
+        $get = Mouse::with("brand")->where('mouseId', $id)->get();
+        $arr = [
+            "Id" => $get[0]["mouseId"],
+            "Description" => $get[0]["mouseDescription"],
+            "Image" => '/' . $get[0]["mouseImage"],
+            "Price" => $get[0]["mousePrice"],
+            "Name" => $get[0]["mouseName"],
+            "Brand" => '/' . $get[0]["brand"]["brandLogo"],
+            "Sensor" => $get[0]["mouseSensor"],
+            "Switch" => $get[0]["mouseSwitch"],
+            "Dpi" => $get[0]["mouseDpi"],
+            "Speed" => $get[0]["mouseSpeed"],
+            "Polling rate" => $get[0]["mousePollRate"],
+            "Connection" => $get[0]["mouseConnection"],
+            "Grip" => $get[0]["mouseGrip"],
+            "Warranty" => $get[0]["mouseWarranty"],
+            "Stock" => $get[0]["mouseStock"],
+        ];
+        $data = [
+            'title' => "Detail Produk",
+            'itemType' => "Storage",
+            'identitas' => Identity::all(),
+            'item' => $arr
+        ];
+        //print("<pre>" . print_r($get, true) . "</pre>");
+        
+        return $data;
+    }
+    
+    public function earphone($id)
+    {
+        $get = Earphone::with("brand")->where('earphoneId', $id)->get();
+        $arr = [
+            "Id" => $get[0]["earphoneId"],
+            "Description" => $get[0]["earphoneDescription"],
+            "Image" => '/' . $get[0]["earphoneImage"],
+            "Price" => $get[0]["earphonePrice"],
+            "Name" => $get[0]["earphoneName"],
+            "Brand" => '/' . $get[0]["brand"]["brandLogo"],
+            "Type" => $get[0]["earphoneType"],
+            "Sensitivity" => $get[0]["earphoneSensitivity"],
+            "Impedance" => $get[0]["earphoneImpedance"],
+            "Driver" => $get[0]["earphoneDriver"],
+            "Connection" => $get[0]["earphoneConnection"],
+            "Sound signature" => $get[0]["earphoneSoundSig"],
+            "Include mic?" => $get[0]["earphoneHaveMic"],
+            "Warranty" => $get[0]["earphoneWarranty"],
+            "Stock" => $get[0]["earphoneStock"],
         ];
         $data = [
             'title' => "Detail Produk",

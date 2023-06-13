@@ -12,6 +12,11 @@ use App\Models\PowerSupply;
 use App\Models\Processor;
 use App\Models\Storage;
 use App\Models\Cooler;
+use App\Models\Earphone;
+use App\Models\Keyboard;
+use App\Models\Microphone;
+use App\Models\Monitor;
+use App\Models\Mouse;
 use App\Models\Identity;
 
 class ShopController extends Controller
@@ -41,8 +46,20 @@ class ShopController extends Controller
             $data["item"] = $this->processor();
         } elseif ($categories == "storages") {
             $data["item"] = $this->storage();
+        } elseif ($categories == "coolers") {
+            $data["item"] = $this->cooler();
+        } elseif ($categories == "keyboards") {
+            $data["item"] = $this->keyboard();
+        } elseif ($categories == "microphones") {
+            $data["item"] = $this->mic();
+        } elseif ($categories == "monitors") {
+            $data["item"] = $this->monitor();
+        } elseif ($categories == "mouse") {
+            $data["item"] = $this->mouse();
+        } elseif ($categories == "earphones") {
+            $data["item"] = $this->earphone();
         }
-
+   
         return view('front/shop',$data);
     }
 
@@ -165,6 +182,114 @@ class ShopController extends Controller
                 "Image" => '/' . $get[$i]["storageImage"],
                 "Price" => $get[$i]["storagePrice"],
                 "Name" => $get[$i]["storageName"],
+                "Brand" => '/' . $get[$i]["brand"]["brandLogo"],
+            ]];
+        }
+
+        return $arr;
+    }
+    
+    public function cooler()
+    {
+        $get = Cooler::with("brand")->get();
+        $arr = [];
+        for ($i = 0; $i < sizeof($get); $i++) {
+            $arr += [$i => [
+                "Id" => $get[$i]["coolerId"],
+                "Description" => $get[$i]["coolerDescription"],
+                "Image" => '/' . $get[$i]["coolerImage"],
+                "Price" => $get[$i]["coolerPrice"],
+                "Name" => $get[$i]["coolerName"],
+                "Brand" => '/' . $get[$i]["brand"]["brandLogo"],
+            ]];
+        }
+
+        return $arr;
+    }
+    
+    public function keyboard()
+    {
+        $get = Keyboard::with("brand")->get();
+        $arr = [];
+        for ($i = 0; $i < sizeof($get); $i++) {
+            $arr += [$i => [
+                "Id" => $get[$i]["keyboardId"],
+                "Description" => $get[$i]["keyboardDescription"],
+                "Image" => '/' . $get[$i]["keyboardImage"],
+                "Price" => $get[$i]["keyboardPrice"],
+                "Name" => $get[$i]["keyboardName"],
+                "Brand" => '/' . $get[$i]["brand"]["brandLogo"],
+            ]];
+        }
+
+        return $arr;
+    }
+    
+    public function mic()
+    {
+        $get = Microphone::with("brand")->get();
+        $arr = [];
+        for ($i = 0; $i < sizeof($get); $i++) {
+            $arr += [$i => [
+                "Id" => $get[$i]["micId"],
+                "Description" => $get[$i]["micDescription"],
+                "Image" => '/' . $get[$i]["micImage"],
+                "Price" => $get[$i]["micPrice"],
+                "Name" => $get[$i]["micName"],
+                "Brand" => '/' . $get[$i]["brand"]["brandLogo"],
+            ]];
+        }
+
+        return $arr;
+    }
+    
+    public function monitor()
+    {
+        $get = Monitor::with("brand")->get();
+        $arr = [];
+        for ($i = 0; $i < sizeof($get); $i++) {
+            $arr += [$i => [
+                "Id" => $get[$i]["monitorId"],
+                "Description" => $get[$i]["monitorDescription"],
+                "Image" => '/' . $get[$i]["monitorImage"],
+                "Price" => $get[$i]["monitorPrice"],
+                "Name" => $get[$i]["monitorName"],
+                "Brand" => '/' . $get[$i]["brand"]["brandLogo"],
+            ]];
+        }
+
+        return $arr;
+    }
+    
+    public function mouse()
+    {
+        $get = Mouse::with("brand")->get();
+        $arr = [];
+        for ($i = 0; $i < sizeof($get); $i++) {
+            $arr += [$i => [
+                "Id" => $get[$i]["mouseId"],
+                "Description" => $get[$i]["mouseDescription"],
+                "Image" => '/' . $get[$i]["mouseImage"],
+                "Price" => $get[$i]["mousePrice"],
+                "Name" => $get[$i]["mouseName"],
+                "Brand" => '/' . $get[$i]["brand"]["brandLogo"],
+            ]];
+        }
+
+        return $arr;
+    }
+    
+    public function earphone()
+    {
+        $get = Earphone::with("brand")->get();
+        $arr = [];
+        for ($i = 0; $i < sizeof($get); $i++) {
+            $arr += [$i => [
+                "Id" => $get[$i]["earphoneId"],
+                "Description" => $get[$i]["earphoneDescription"],
+                "Image" => '/' . $get[$i]["earphoneImage"],
+                "Price" => $get[$i]["earphonePrice"],
+                "Name" => $get[$i]["earphoneName"],
                 "Brand" => '/' . $get[$i]["brand"]["brandLogo"],
             ]];
         }
