@@ -12,7 +12,7 @@
                         <a href="/">Home</a>
                     </li>
                     <li class="is-marked">
-                        <a href="/history">History</a>
+                        <a>History</a>
                     </li>
                 </ul>
             </div>

@@ -9,10 +9,10 @@
                 <ul class="bread-crumb">
                     <li class="has-separator">
                         <i class="ion ion-md-home"></i>
-                        <a href="home.html">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li class="is-marked">
-                        <a href="shop-v2-sub-category.html">Shop</a>
+                        <a>Shop</a>
                     </li>
                 </ul>
             </div>

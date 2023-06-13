@@ -5,7 +5,19 @@
     <div class="page-style-a">
         <div class="container">
             <div class="page-intro">
+
+            </div>
+            <div class="page-intro">
                 <h2>Detail {{ $itemType }}</h2>
+                <ul class="bread-crumb">
+                    <li class="has-separator">
+                        <i class="ion ion-md-home"></i>
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="is-marked">
+                        <a>Detail {{ $itemType }}</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -58,11 +70,11 @@
                                 <form action="#" class="post-form">
                                     <div class="quantity-wrapper u-s-m-b-">
                                         <!-- <span>Quantity:</span>
-                                                                        <div class="quantity">
-                                                                            <input type="text" class="quantity-text-field" value="1">
-                                                                            <a class="plus-a" data-max="1000">&#43;</a>
-                                                                            <a class="minus-a" data-min="1">&#45;</a>
-                                                                        </div> -->
+                                                                                        <div class="quantity">
+                                                                                            <input type="text" class="quantity-text-field" value="1">
+                                                                                            <a class="plus-a" data-max="1000">&#43;</a>
+                                                                                            <a class="minus-a" data-min="1">&#45;</a>
+                                                                                        </div> -->
                                     </div>
                                 </form>
                                 <div>
@@ -77,7 +89,7 @@
                         </div>
 
                         <!-- <div class="section-4-sku-information u-s-p-y-14">
-                                                            </div> -->
+                                                                            </div> -->
                         <div class="section-6-social-media-quantity-actions u-s-p-y-14">
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-sm-12">
