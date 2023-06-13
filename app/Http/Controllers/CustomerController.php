@@ -21,9 +21,11 @@ class CustomerController extends Controller
     {
         
         $cart = $request->session()->get('cart.items', []);
+        $identitas = Identity::all();
+        
         $data=[
             'title' => "Login",
-            'identitas' => Identity::all(),
+            'identitas' => $identitas[0],
             'countCart' => count($cart)
         ];
         if (Auth::check()) {
@@ -104,8 +106,9 @@ class CustomerController extends Controller
     public function verify($verify_key)
     {       
         $cart = session()->get('cart.items', []);
+        $identitas = Identity::all();
         $data = [
-            'identitas' => Identity::all(),
+            'identitas' => $identitas[0],
             'countCart' => count($cart)
         ];
         $keycheck = User::select('customerVerifyKey')
@@ -122,9 +125,10 @@ class CustomerController extends Controller
     public function reset()
     {
         $cart = session()->get('cart.items', []);
+        $identitas = Identity::all();
         $data = [
-            'identitas' => Identity::all(),
-             'countCart' => count($cart)
+            'identitas' => $identitas[0],
+            'countCart' => count($cart)
         ];
         return view('Auth/resetPassword',$data);
     }
@@ -153,10 +157,11 @@ class CustomerController extends Controller
     {
         $cart = session()->get('cart.items', []);
         $token = Token::where('token', $token)->first();
+        $identitas = Identity::all();
         if ($token) {
             return view('Auth/passwordChange', [
                 'token' => $token->token,
-                'identitas' => Identity::all(),
+                'identitas' => $identitas[0],
                 'countCart' => count($cart)
             ]);
         } else {
