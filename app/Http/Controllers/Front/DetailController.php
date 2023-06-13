@@ -56,7 +56,7 @@ class DetailController extends Controller
         } elseif ($product->source_table == "earphones") {
             $data = $this->earphone($productId);
         }
-
+ 
         $data['countCart'] = count($cart);
         return view('front/detailproduk', $data);
     }

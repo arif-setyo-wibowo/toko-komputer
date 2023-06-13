@@ -59,7 +59,7 @@ class ShopController extends Controller
         } elseif ($categories == "earphones") {
             $data["item"] = $this->earphone();
         }
-  
+   
         return view('front/shop',$data);
     }
 
