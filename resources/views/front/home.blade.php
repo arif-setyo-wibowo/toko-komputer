@@ -346,10 +346,10 @@
                 </a>
             </div>
             <!-- <div class="redirect-link-wrapper text-center u-s-p-t-25 u-s-p-b-80">
-                                                                    <a class="redirect-link" href="store-directory.html">
-                                                                        <span>View more on this category</span>
-                                                                    </a>
-                                                                </div> -->
+                                                                                    <a class="redirect-link" href="store-directory.html">
+                                                                                        <span>View more on this category</span>
+                                                                                    </a>
+                                                                                </div> -->
         </div>
     </div>
     <!-- Banner-Image & View-more /- -->
@@ -362,18 +362,18 @@
                 <h3 class="sec-maker-h3">Gaming Gear</h3>
                 <ul class="nav tab-nav-style-1-a justify-content-center">
                     <!-- <li class="nav-item">
-                                                                            <a class="nav-link active" data-toggle="tab" href="#mobiles-latest-products">Latest
-                                                                                Products</a>
-                                                                        </li>
-                                                                        <li class="nav-item">
-                                                                            <a class="nav-link" data-toggle="tab" href="#mobiles-best-selling-products">Best Selling</a>
-                                                                        </li>
-                                                                        <li class="nav-item">
-                                                                            <a class="nav-link" data-toggle="tab" href="#mobiles-top-rating-products">Top Rating</a>
-                                                                        </li>
-                                                                        <li class="nav-item">
-                                                                            <a class="nav-link" data-toggle="tab" href="#mobiles-featured-products">Featured Products</a>
-                                                                        </li> -->
+                                                                                            <a class="nav-link active" data-toggle="tab" href="#mobiles-latest-products">Latest
+                                                                                                Products</a>
+                                                                                        </li>
+                                                                                        <li class="nav-item">
+                                                                                            <a class="nav-link" data-toggle="tab" href="#mobiles-best-selling-products">Best Selling</a>
+                                                                                        </li>
+                                                                                        <li class="nav-item">
+                                                                                            <a class="nav-link" data-toggle="tab" href="#mobiles-top-rating-products">Top Rating</a>
+                                                                                        </li>
+                                                                                        <li class="nav-item">
+                                                                                            <a class="nav-link" data-toggle="tab" href="#mobiles-featured-products">Featured Products</a>
+                                                                                        </li> -->
                 </ul>
             </div>
             <div class="wrapper-content">
@@ -384,44 +384,42 @@
                                 <div class="col-lg-1 col-md-12">
                                     <ul class="nav tab-nav-style-2-a">
                                         <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#smart-phones"
-                                                title="Smart Phones">
+                                            <a class="nav-link active" data-toggle="tab" href="#mouse" title="Mouse">
                                                 <i class="fa-solid fa-computer-mouse"></i>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#tablets" title="Tablets">
+                                            <a class="nav-link" data-toggle="tab" href="#keyboard" title="Keyboard">
                                                 <i class="fa-regular fa-keyboard"></i>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#smart-watches"
-                                                title="Smart Watches">
+                                            <a class="nav-link" data-toggle="tab" href="#earphone" title="Earphone">
                                                 <i class="fa-solid fa-headphones-simple"></i>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#monitor" title="monitor">
+                                            <a class="nav-link" data-toggle="tab" href="#monitor" title="Monitor">
                                                 <i class="fa-solid fa-desktop"></i>
                                             </a>
                                         </li>
                                         <!-- <li class="nav-item">
-                                                                                                <a class="nav-link" data-toggle="tab" href="#device-accessories"
-                                                                                                    title="Device Accessories">
-                                                                                                    <i class="ion ion-md-settings"></i>
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li class="nav-item">
-                                                                                                <a class="nav-link" data-toggle="tab" href="#power-banks"
-                                                                                                    title="Power Banks">
-                                                                                                    <i class="ion ion-md-battery-charging"></i>
-                                                                                                </a>
-                                                                                            </li> -->
+                                                                                                                <a class="nav-link" data-toggle="tab" href="#device-accessories"
+                                                                                                                    title="Device Accessories">
+                                                                                                                    <i class="ion ion-md-settings"></i>
+                                                                                                                </a>
+                                                                                                            </li>
+                                                                                                            <li class="nav-item">
+                                                                                                                <a class="nav-link" data-toggle="tab" href="#power-banks"
+                                                                                                                    title="Power Banks">
+                                                                                                                    <i class="ion ion-md-battery-charging"></i>
+                                                                                                                </a>
+                                                                                                            </li> -->
                                     </ul>
                                 </div>
                                 <div class="col-lg-11 col-md-12">
                                     <div class="tab-content">
-                                        <div class="tab-pane fade show active" id="smart-phones">
+                                        <div class="tab-pane fade show active" id="mouse">
                                             <div class="slider-fouc">
                                                 <div class="specific-category-slider owl-carousel" data-item="3">
                                                     @foreach ($mouse as $data)
@@ -458,7 +456,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="tablets">
+                                        <div class="tab-pane fade" id="keyboard">
                                             <div class="slider-fouc">
                                                 <div class="specific-category-slider owl-carousel" data-item="3">
                                                     @foreach ($keyboard as $data)
@@ -495,7 +493,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="smart-watches">
+                                        <div class="tab-pane fade" id="earphone">
                                             <div class="slider-fouc">
                                                 <div class="specific-category-slider owl-carousel" data-item="3">
                                                     @foreach ($earphone as $data)
@@ -532,7 +530,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade show " id="monitor">
+                                        <div class="tab-pane fade show" id="monitor">
                                             <div class="slider-fouc">
                                                 <div class="specific-category-slider owl-carousel" data-item="3">
                                                     @foreach ($monitor as $data)
