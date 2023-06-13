@@ -23,7 +23,7 @@
     <div class="page-shop u-s-p-t-80">
         <div class="container">
             <!-- Shop-Intro -->
-            
+
             <!-- Shop-Intro /- -->
             <div class="row">
                 <!-- Shop-Left-Side-Bar-Wrapper -->
@@ -39,37 +39,37 @@
                         <ul>
                             <li>
                                 <a href="/shop/motherboards">Motherboard
-                                    <span class="total-fetch-items">({{$mobo}})</span>
+                                    <span class="total-fetch-items">({{ $mobo }})</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="/shop/processors">Prossesor
-                                    <span class="total-fetch-items">({{$pros}})</span>
+                                    <span class="total-fetch-items">({{ $pros }})</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="/shop/graphic_cards">VGA
-                                    <span class="total-fetch-items">({{$vga}})</span>
+                                    <span class="total-fetch-items">({{ $vga }})</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="/shop/memories">Memory
-                                    <span class="total-fetch-items">({{$ram}})</span>
+                                    <span class="total-fetch-items">({{ $ram }})</span>
                                 </a>
                             </li>
-                             <li>
+                            <li>
                                 <a href="/shop/storages">Storage
-                                    <span class="total-fetch-items">({{$ssd}})</span>
+                                    <span class="total-fetch-items">({{ $ssd }})</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="/shop/power_supplies">PSU
-                                    <span class="total-fetch-items">({{$psu}})</span>
+                                    <span class="total-fetch-items">({{ $psu }})</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="/shop/coolers">Cooler
-                                    <span class="total-fetch-items">({{$fan}})</span>
+                                    <span class="total-fetch-items">({{ $fan }})</span>
                                 </a>
                             </li>
                         </ul>
@@ -81,29 +81,29 @@
                         <ul>
                             <li>
                                 <a href="/shop/keyboards">Keyboard
-                                    <span class="total-fetch-items">({{$kibot}})</span>
+                                    <span class="total-fetch-items">({{ $kibot }})</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="/shop/mouse">Mouse
-                                    <span class="total-fetch-items">({{$mos}})</span>
+                                    <span class="total-fetch-items">({{ $mos }})</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="/shop/monitors">Monitor
-                                    <span class="total-fetch-items">({{$mntr}})</span>
+                                    <span class="total-fetch-items">({{ $mntr }})</span>
                                 </a>
                             </li>
-                               <a href="/shop/earphone">Headset
-                                    <span class="total-fetch-items">({{$hetset}})</span>
-                                </a>
-                            </li> 
+                            <a href="/shop/earphone">Headset
+                                <span class="total-fetch-items">({{ $hetset }})</span>
+                            </a>
+                            </li>
                         </ul>
                     </div>
                     <!-- Fetch-Categories-from-Root-Category  /- -->
                     <!-- Filters -->
                     <!-- Filter-Brand -->
-                    <div class="facet-filter-associates">
+                    {{-- <div class="facet-filter-associates">
                         <h3 class="title-name">Brand</h3>
                         <form class="facet-form" action="#" method="post">
                             <div class="associate-wrapper">
@@ -125,9 +125,9 @@
                                 </label>
                             </div>
                         </form>
-                    </div>
+                    </div> --}}
                     <!-- Filter-Brand /- -->
-                    
+
                     <!-- Filters /- -->
                 </div>
                 <!-- Shop-Left-Side-Bar-Wrapper /- -->
@@ -144,7 +144,7 @@
                             </a>
                         </div>
                         <!-- Toolbar Sorter 1  -->
-                        <div class="toolbar-sorter">
+                        {{-- <div class="toolbar-sorter">
                             <div class="select-box-wrapper">
                                 <label class="sr-only" for="sort-by">Sort By</label>
                                 <select class="select-box" id="sort-by">
@@ -155,10 +155,10 @@
                                     <option value="">Sort By: Best Rating</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- //end Toolbar Sorter 1  -->
                         <!-- Toolbar Sorter 2  -->
-                        <div class="toolbar-sorter-2">
+                        {{-- <div class="toolbar-sorter-2">
                             <div class="select-box-wrapper">
                                 <label class="sr-only" for="show-records">Show Records Per Page</label>
                                 <select class="select-box" id="show-records">
@@ -167,51 +167,54 @@
                                     <option value="">Show: 28</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- //end Toolbar Sorter 2  -->
                     </div>
                     <!-- Page-Bar /- -->
                     <!-- Row-of-Product-Container -->
-                    
-                        <div class="row product-container list-style">
-                            <?php foreach ($item as $key => $value) { ?>
-                            <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                                <div class="item col-md-12">
-                                    <div class="image-container">
-                                        <a class="item-img-wrapper-link" href="/detailproduk/<?= $item[$key]["Id"] ?>">
-                                            <img class="img-fluid mt-2"style="max-height:223.21px; "  src="{{ asset('uploads/') . $item[$key]['Image'] }}"
-                                                alt="Product">
-                                        </a>
-                                    </div>
-                                    <div class="item-content">
-                                        <div class="what-product-is" >
-                                            <h2 class="item-title">
-                                                <a href="/detailproduk/<?= $item[$key]["Id"] ?>"><?= $item[$key]['Name'] ?></a>
-                                            </h2>
-                                            <div class="item-description ">
-                                                <p>{{ substr($item[$key]['Description'], 0, 200) }}<a class="text-primary font-weight-bold" href="/detailproduk/<?= $item[$key]["Id"] ?>"> see more...</a></p>
-                                            </div>
-                                        </div>
-                                        <div class="price-template">
-                                            <div class="item-new-price">
-                                                Rp. <?= number_format($item[$key]["Price"]) ?>
-                                            </div>
-                                            <div class="item-old-price text-decoration-none">
-                                                <div class="item-action-behaviors">
-                                                    <button class="ml-5 btn-success button button-outline-secondary add-to-cart-btn">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                            </div>
+
+                    <div class="row product-container list-style">
+                        <?php foreach ($item as $key => $value) { ?>
+                        <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                            <div class="item col-md-12">
+                                <div class="image-container">
+                                    <a class="item-img-wrapper-link" href="/detailproduk/<?= $item[$key]['Id'] ?>">
+                                        <img class="img-fluid mt-2"style="max-height:223.21px; "
+                                            src="{{ asset('uploads/') . $item[$key]['Image'] }}" alt="Product">
+                                    </a>
+                                </div>
+                                <div class="item-content">
+                                    <div class="what-product-is">
+                                        <h2 class="item-title">
+                                            <a href="/detailproduk/<?= $item[$key]['Id'] ?>"><?= $item[$key]['Name'] ?></a>
+                                        </h2>
+                                        <div class="item-description ">
+                                            <p>{{ substr($item[$key]['Description'], 0, 200) }}<a
+                                                    class="text-primary font-weight-bold"
+                                                    href="/detailproduk/<?= $item[$key]['Id'] ?>"> see more...</a></p>
                                         </div>
                                     </div>
-                                    {{-- <div class="tag new">
+                                    <div class="price-template">
+                                        <div class="item-new-price">
+                                            Rp. <?= number_format($item[$key]['Price']) ?>
+                                        </div>
+                                        <div class="item-old-price text-decoration-none">
+                                            <div class="item-action-behaviors">
+                                                <button
+                                                    class="ml-5 btn-success button button-outline-secondary add-to-cart-btn">
+                                                    Add to cart
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- <div class="tag new">
                                         <span>NEW</span>
                                     </div> --}}
-                                </div>
                             </div>
-                            <?php } ?>
                         </div>
+                        <?php } ?>
+                    </div>
 
                     <!-- Row-of-Product-Container /- -->
                 </div>
@@ -221,20 +224,19 @@
     </div>
 
     <script>
-        window.addEventListener('DOMContentLoaded', function() {   
+        window.addEventListener('DOMContentLoaded', function() {
 
-        var paragraf = document.getElementById('paragraf');
-        var maxKata = 20;
+            var paragraf = document.getElementById('paragraf');
+            var maxKata = 20;
 
-        for (let i = 0; i < paragraf.length; i++) {
-            var kataParagraf = paragraf[i].innerHTML.split(' ');
-            console.log(paragraf[i])
-            if (kataParagraf.length > maxKata) {
-                paragraf[i].innerHTML = kataParagraf.slice(0, maxKata).join(' ') + '...';
-            }            
-        }
+            for (let i = 0; i < paragraf.length; i++) {
+                var kataParagraf = paragraf[i].innerHTML.split(' ');
+                console.log(paragraf[i])
+                if (kataParagraf.length > maxKata) {
+                    paragraf[i].innerHTML = kataParagraf.slice(0, maxKata).join(' ') + '...';
+                }
+            }
         });
-
     </script>
     <!-- Shop-Page /-->
 @endsection

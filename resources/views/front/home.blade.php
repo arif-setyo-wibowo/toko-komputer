@@ -115,7 +115,7 @@
     <!-- Brand-Slider /- -->
 
     <!-- Men-Clothing -->
-    
+
     <section class="section-maker">
         <div class="container">
             <div class="sec-maker-header text-center">
@@ -136,7 +136,7 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#komponen-storage">Storage</a>
                     </li>
-                    
+
                 </ul>
             </div>
             <div class="wrapper-content">
@@ -146,34 +146,35 @@
                             <div class="slider-fouc">
                                 <div class="products-slider owl-carousel" data-item="4">
                                     @foreach ($mobo as $data)
-                                    <div class="item">
-                                        <div class="image-container">
-                                            <a class="item-img-wrapper-link"
-                                                href="/detailproduk/{{$data->moboId}}">
-                                                <img class="img-fluid"
-                                                    src="{{ asset('uploads/') }}/{{$data->moboImage}}"
-                                                    alt="Product">
-                                            </a>
-                                        </div>
-                                        <div class="item-content">
-                                            <div class="what-product-is">
-                                                <ul class="bread-crumb">
-                                                    &nbsp;
-                                                </ul>
-                                                <h4 class="item-title">
-                                                    <a href="/detailproduk/{{$data->moboId}}">{{ $data->moboName}}</a>
-                                                </h4>
+                                        <div class="item">
+                                            <div class="image-container">
+                                                <a class="item-img-wrapper-link"
+                                                    href="/detailproduk/{{ $data->moboId }}">
+                                                    <img class="img-fluid"
+                                                        src="{{ asset('uploads/') }}/{{ $data->moboImage }}"
+                                                        alt="Product">
+                                                </a>
                                             </div>
-                                            <div class="price-template">
-                                                <div class="item-new-price">
-                                                    @currency($data->moboPrice)
+                                            <div class="item-content">
+                                                <div class="what-product-is">
+                                                    <ul class="bread-crumb">
+                                                        &nbsp;
+                                                    </ul>
+                                                    <h4 class="item-title">
+                                                        <a
+                                                            href="/detailproduk/{{ $data->moboId }}">{{ $data->moboName }}</a>
+                                                    </h4>
+                                                </div>
+                                                <div class="price-template">
+                                                    <div class="item-new-price">
+                                                        @currency($data->moboPrice)
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <div class="tag new">
+                                                <span>NEW</span>
+                                            </div>
                                         </div>
-                                        <div class="tag new">
-                                            <span>NEW</span>
-                                        </div>
-                                    </div>
                                     @endforeach
                                 </div>
                             </div>
@@ -182,34 +183,35 @@
                             <div class="slider-fouc">
                                 <div class="products-slider owl-carousel" data-item="4">
                                     @foreach ($processor as $data)
-                                    <div class="item">
-                                        <div class="image-container">
-                                            <a class="item-img-wrapper-link"
-                                                href="/detailproduk/{{$data->processorId}}">
-                                                <img class="img-fluid"
-                                                    src="{{ asset('uploads/') }}/{{$data->processorImage}}"
-                                                    alt="Product">
-                                            </a>
-                                        </div>
-                                        <div class="item-content">
-                                            <div class="what-product-is">
-                                                <ul class="bread-crumb">
-                                                    &nbsp;
-                                                </ul>
-                                                <h4 class="item-title">
-                                                    <a href="/detailproduk/{{$data->processorId}}">{{ $data->processorName}}</a>
-                                                </h4>
+                                        <div class="item">
+                                            <div class="image-container">
+                                                <a class="item-img-wrapper-link"
+                                                    href="/detailproduk/{{ $data->processorId }}">
+                                                    <img class="img-fluid"
+                                                        src="{{ asset('uploads/') }}/{{ $data->processorImage }}"
+                                                        alt="Product">
+                                                </a>
                                             </div>
-                                            <div class="price-template">
-                                                <div class="item-new-price">
-                                                    @currency($data->processorPrice)
+                                            <div class="item-content">
+                                                <div class="what-product-is">
+                                                    <ul class="bread-crumb">
+                                                        &nbsp;
+                                                    </ul>
+                                                    <h4 class="item-title">
+                                                        <a
+                                                            href="/detailproduk/{{ $data->processorId }}">{{ $data->processorName }}</a>
+                                                    </h4>
+                                                </div>
+                                                <div class="price-template">
+                                                    <div class="item-new-price">
+                                                        @currency($data->processorPrice)
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <div class="tag new">
+                                                <span>NEW</span>
+                                            </div>
                                         </div>
-                                        <div class="tag new">
-                                            <span>NEW</span>
-                                        </div>
-                                    </div>
                                     @endforeach
                                 </div>
                             </div>
@@ -218,34 +220,35 @@
                             <div class="slider-fouc">
                                 <div class="products-slider owl-carousel" data-item="4">
                                     @foreach ($gpu as $data)
-                                    <div class="item">
-                                        <div class="image-container">
-                                            <a class="item-img-wrapper-link"
-                                                href="/detailproduk/{{$data->gpuId}}">
-                                                <img class="img-fluid"
-                                                    src="{{ asset('uploads/') }}/{{$data->gpuImage}}"
-                                                    alt="Product">
-                                            </a>
-                                        </div>
-                                        <div class="item-content">
-                                            <div class="what-product-is">
-                                                <ul class="bread-crumb">
-                                                    &nbsp;
-                                                </ul>
-                                                <h4 class="item-title">
-                                                    <a href="/detailproduk/{{$data->gpuId}}">{{ $data->gpuName}}</a>
-                                                </h4>
+                                        <div class="item">
+                                            <div class="image-container">
+                                                <a class="item-img-wrapper-link"
+                                                    href="/detailproduk/{{ $data->gpuId }}">
+                                                    <img class="img-fluid"
+                                                        src="{{ asset('uploads/') }}/{{ $data->gpuImage }}"
+                                                        alt="Product">
+                                                </a>
                                             </div>
-                                            <div class="price-template">
-                                                <div class="item-new-price">
-                                                    @currency($data->gpuPrice)
+                                            <div class="item-content">
+                                                <div class="what-product-is">
+                                                    <ul class="bread-crumb">
+                                                        &nbsp;
+                                                    </ul>
+                                                    <h4 class="item-title">
+                                                        <a
+                                                            href="/detailproduk/{{ $data->gpuId }}">{{ $data->gpuName }}</a>
+                                                    </h4>
+                                                </div>
+                                                <div class="price-template">
+                                                    <div class="item-new-price">
+                                                        @currency($data->gpuPrice)
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <div class="tag new">
+                                                <span>NEW</span>
+                                            </div>
                                         </div>
-                                        <div class="tag new">
-                                            <span>NEW</span>
-                                        </div>
-                                    </div>
                                     @endforeach
                                 </div>
                             </div>
@@ -254,70 +257,72 @@
                             <div class="slider-fouc">
                                 <div class="products-slider owl-carousel" data-item="4">
                                     @foreach ($memory as $data)
-                                    <div class="item">
-                                        <div class="image-container">
-                                            <a class="item-img-wrapper-link"
-                                                href="/detailproduk/{{$data->memoryId}}">
-                                                <img class="img-fluid gbr" 
-                                                    src="{{ asset('uploads/') }}/{{$data->memoryImage}}"
-                                                    alt="Product">
-                                            </a>
-                                        </div>
-                                        <div class="item-content ">
-                                            <div class="what-product-is float-bottom">
-                                                <ul class="bread-crumb">
-                                                    &nbsp;
-                                                </ul>
-                                                <h4 class="item-title">
-                                                    <a href="/detailproduk/{{$data->memoryId}}">{{ $data->memoryName}}</a>
-                                                </h4>
+                                        <div class="item">
+                                            <div class="image-container">
+                                                <a class="item-img-wrapper-link"
+                                                    href="/detailproduk/{{ $data->memoryId }}">
+                                                    <img class="img-fluid gbr"
+                                                        src="{{ asset('uploads/') }}/{{ $data->memoryImage }}"
+                                                        alt="Product">
+                                                </a>
                                             </div>
-                                            <div class="price-template">
-                                                <div class="item-new-price ">
-                                                    @currency($data->memoryPrice)
+                                            <div class="item-content ">
+                                                <div class="what-product-is float-bottom">
+                                                    <ul class="bread-crumb">
+                                                        &nbsp;
+                                                    </ul>
+                                                    <h4 class="item-title">
+                                                        <a
+                                                            href="/detailproduk/{{ $data->memoryId }}">{{ $data->memoryName }}</a>
+                                                    </h4>
+                                                </div>
+                                                <div class="price-template">
+                                                    <div class="item-new-price ">
+                                                        @currency($data->memoryPrice)
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <div class="tag new">
+                                                <span>NEW</span>
+                                            </div>
                                         </div>
-                                        <div class="tag new">
-                                            <span>NEW</span>
-                                        </div>
-                                    </div>
                                     @endforeach
                                 </div>
                             </div>
                         </div>
-                         <div class="tab-pane  show fade" id="komponen-storage">
+                        <div class="tab-pane  show fade" id="komponen-storage">
                             <div class="slider-fouc">
                                 <div class="products-slider owl-carousel" data-item="4">
                                     @foreach ($storage as $data)
-                                    <div class="item">
-                                        <div class="image-container">
-                                            <a class="item-img-wrapper-link"
-                                                href="/detailproduk/{{$data->storageId}}">
-                                                <img class="img-fluid gbr" 
-                                                    src="{{ asset('uploads/') }}/{{$data->storageImage}}"
-                                                    alt="Product">
-                                            </a>
-                                        </div>
-                                        <div class="item-content ">
-                                            <div class="what-product-is float-bottom">
-                                                <ul class="bread-crumb">
-                                                    &nbsp;
-                                                </ul>
-                                                <h4 class="item-title">
-                                                    <a href="/detailproduk/{{$data->storageId}}">{{ $data->storageName}}</a>
-                                                </h4>
+                                        <div class="item">
+                                            <div class="image-container">
+                                                <a class="item-img-wrapper-link"
+                                                    href="/detailproduk/{{ $data->storageId }}">
+                                                    <img class="img-fluid gbr"
+                                                        src="{{ asset('uploads/') }}/{{ $data->storageImage }}"
+                                                        alt="Product">
+                                                </a>
                                             </div>
-                                            <div class="price-template">
-                                                <div class="item-new-price ">
-                                                    @currency($data->storagePrice)
+                                            <div class="item-content ">
+                                                <div class="what-product-is float-bottom">
+                                                    <ul class="bread-crumb">
+                                                        &nbsp;
+                                                    </ul>
+                                                    <h4 class="item-title">
+                                                        <a
+                                                            href="/detailproduk/{{ $data->storageId }}">{{ $data->storageName }}</a>
+                                                    </h4>
+                                                </div>
+                                                <div class="price-template">
+                                                    <div class="item-new-price ">
+                                                        @currency($data->storagePrice)
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <div class="tag new">
+                                                <span>NEW</span>
+                                            </div>
                                         </div>
-                                        <div class="tag new">
-                                            <span>NEW</span>
-                                        </div>
-                                    </div>
                                     @endforeach
                                 </div>
                             </div>
@@ -341,10 +346,10 @@
                 </a>
             </div>
             <!-- <div class="redirect-link-wrapper text-center u-s-p-t-25 u-s-p-b-80">
-                <a class="redirect-link" href="store-directory.html">
-                    <span>View more on this category</span>
-                </a>
-            </div> -->
+                                                <a class="redirect-link" href="store-directory.html">
+                                                    <span>View more on this category</span>
+                                                </a>
+                                            </div> -->
         </div>
     </div>
     <!-- Banner-Image & View-more /- -->
@@ -357,18 +362,18 @@
                 <h3 class="sec-maker-h3">Gaming Gear</h3>
                 <ul class="nav tab-nav-style-1-a justify-content-center">
                     <!-- <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#mobiles-latest-products">Latest
-                            Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#mobiles-best-selling-products">Best Selling</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#mobiles-top-rating-products">Top Rating</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#mobiles-featured-products">Featured Products</a>
-                    </li> -->
+                                                        <a class="nav-link active" data-toggle="tab" href="#mobiles-latest-products">Latest
+                                                            Products</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" data-toggle="tab" href="#mobiles-best-selling-products">Best Selling</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" data-toggle="tab" href="#mobiles-top-rating-products">Top Rating</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" data-toggle="tab" href="#mobiles-featured-products">Featured Products</a>
+                                                    </li> -->
                 </ul>
                 <span class="sec-maker-span-text u-s-m-b-8 d-block">Select products in specific category</span>
             </div>
@@ -382,7 +387,7 @@
                                         <li class="nav-item">
                                             <a class="nav-link active" data-toggle="tab" href="#smart-phones"
                                                 title="Smart Phones">
-                                               <i class="fa-solid fa-computer-mouse"></i>
+                                                <i class="fa-solid fa-computer-mouse"></i>
                                             </a>
                                         </li>
                                         <li class="nav-item">
@@ -397,95 +402,96 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#monitor"
-                                                title="monitor">
+                                            <a class="nav-link" data-toggle="tab" href="#monitor" title="monitor">
                                                 <i class="fa-solid fa-desktop"></i>
                                             </a>
                                         </li>
                                         <!-- <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#device-accessories"
-                                                title="Device Accessories">
-                                                <i class="ion ion-md-settings"></i>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#power-banks"
-                                                title="Power Banks">
-                                                <i class="ion ion-md-battery-charging"></i>
-                                            </a>
-                                        </li> -->
+                                                                            <a class="nav-link" data-toggle="tab" href="#device-accessories"
+                                                                                title="Device Accessories">
+                                                                                <i class="ion ion-md-settings"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="nav-item">
+                                                                            <a class="nav-link" data-toggle="tab" href="#power-banks"
+                                                                                title="Power Banks">
+                                                                                <i class="ion ion-md-battery-charging"></i>
+                                                                            </a>
+                                                                        </li> -->
                                     </ul>
                                 </div>
                                 <div class="col-lg-11 col-md-12">
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="smart-phones">
                                             <div class="slider-fouc">
-                                                <div class="specific-category-slider owl-carousel" data-item="3">   
-                                                    @foreach ($mouse as $data)                                             
-                                                    <div class="item">
-                                                        <div class="image-container">
-                                                            <a class="item-img-wrapper-link"
-                                                                href="/detailproduk/{{ $data->mouseId }}">
-                                                                <img class="img-fluid gbr"
-                                                                    src="{{ asset('uploads/') }}/{{$data->mouseImage}}"
-                                                                    alt="Product">
-                                                            </a>
-                                                        </div>
-                                                        <div class="item-content">
-                                                            <div class="what-product-is">
-                                                                <ul class="bread-crumb">
-                                                                    &nbsp;
-                                                                </ul>
-                                                                <h4 class="item-title">
-                                                                    <a href="/detailproduk/{{ $data->mouseId }}">{{ $data->mouseName}}</a>
-                                                                </h4>
+                                                <div class="specific-category-slider owl-carousel" data-item="3">
+                                                    @foreach ($mouse as $data)
+                                                        <div class="item">
+                                                            <div class="image-container">
+                                                                <a class="item-img-wrapper-link"
+                                                                    href="/detailproduk/{{ $data->mouseId }}">
+                                                                    <img class="img-fluid gbr"
+                                                                        src="{{ asset('uploads/') }}/{{ $data->mouseImage }}"
+                                                                        alt="Product">
+                                                                </a>
                                                             </div>
-                                                            <div class="price-template">
-                                                                <div class="item-new-price">
-                                                                    @currency($data->mousePrice)
+                                                            <div class="item-content">
+                                                                <div class="what-product-is">
+                                                                    <ul class="bread-crumb">
+                                                                        &nbsp;
+                                                                    </ul>
+                                                                    <h4 class="item-title">
+                                                                        <a
+                                                                            href="/detailproduk/{{ $data->mouseId }}">{{ $data->mouseName }}</a>
+                                                                    </h4>
+                                                                </div>
+                                                                <div class="price-template">
+                                                                    <div class="item-new-price">
+                                                                        @currency($data->mousePrice)
+                                                                    </div>
                                                                 </div>
                                                             </div>
+                                                            <div class="tag new">
+                                                                <span>NEW</span>
+                                                            </div>
                                                         </div>
-                                                        <div class="tag new">
-                                                            <span>NEW</span>
-                                                        </div>
-                                                    </div>
-                                                    @endforeach                                                     
+                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="tablets">
                                             <div class="slider-fouc">
-                                                <div class="specific-category-slider owl-carousel" data-item="3"> 
+                                                <div class="specific-category-slider owl-carousel" data-item="3">
                                                     @foreach ($keyboard as $data)
-                                                    <div class="item">
-                                                        <div class="image-container">
-                                                            <a class="item-img-wrapper-link"
-                                                                href="/detailproduk/{{ $data->keyboardId}}">
-                                                                <img class="img-fluid gbr"
-                                                                    src="{{ asset('uploads/') }}/{{$data->keyboardImage}}"
-                                                                    alt="Product">
-                                                            </a>
-                                                        </div>
-                                                        <div class="item-content">
-                                                            <div class="what-product-is">
-                                                                <ul class="bread-crumb">
-                                                                    &nbsp;
-                                                                </ul>
-                                                                <h4 class="item-title">
-                                                                    <a href="/detailproduk/{{ $data->keyboardId}}">{{ $data->keyboardName}}</a>
-                                                                </h4>
+                                                        <div class="item">
+                                                            <div class="image-container">
+                                                                <a class="item-img-wrapper-link"
+                                                                    href="/detailproduk/{{ $data->keyboardId }}">
+                                                                    <img class="img-fluid gbr"
+                                                                        src="{{ asset('uploads/') }}/{{ $data->keyboardImage }}"
+                                                                        alt="Product">
+                                                                </a>
                                                             </div>
-                                                            <div class="price-template">
-                                                                <div class="item-new-price">
-                                                                    @currency($data->keyboardPrice)
+                                                            <div class="item-content">
+                                                                <div class="what-product-is">
+                                                                    <ul class="bread-crumb">
+                                                                        &nbsp;
+                                                                    </ul>
+                                                                    <h4 class="item-title">
+                                                                        <a
+                                                                            href="/detailproduk/{{ $data->keyboardId }}">{{ $data->keyboardName }}</a>
+                                                                    </h4>
+                                                                </div>
+                                                                <div class="price-template">
+                                                                    <div class="item-new-price">
+                                                                        @currency($data->keyboardPrice)
+                                                                    </div>
                                                                 </div>
                                                             </div>
+                                                            <div class="tag new">
+                                                                <span>NEW</span>
+                                                            </div>
                                                         </div>
-                                                        <div class="tag new">
-                                                            <span>NEW</span>
-                                                        </div>
-                                                    </div> 
                                                     @endforeach
                                                 </div>
                                             </div>
@@ -494,71 +500,73 @@
                                             <div class="slider-fouc">
                                                 <div class="specific-category-slider owl-carousel" data-item="3">
                                                     @foreach ($earphone as $data)
-                                                    <div class="item">
-                                                        <div class="image-container">
-                                                            <a class="item-img-wrapper-link"
-                                                                href="/detailproduk/{{ $data->earphoneId}}">
-                                                                <img class="img-fluid gbr"
-                                                                    src="{{ asset('uploads/') }}/{{ $data->earphoneImage}}"
-                                                                    alt="Product">
-                                                            </a>
-                                                        </div>
-                                                        <div class="item-content">
-                                                            <div class="what-product-is">
-                                                                <ul class="bread-crumb">
-                                                                    &nbsp;
-                                                                </ul>
-                                                                <h4 class="item-title">
-                                                                    <a href="/detailproduk/{{ $data->earphoneId}}">{{$data->earphoneName}}</a>
-                                                                </h4>
+                                                        <div class="item">
+                                                            <div class="image-container">
+                                                                <a class="item-img-wrapper-link"
+                                                                    href="/detailproduk/{{ $data->earphoneId }}">
+                                                                    <img class="img-fluid gbr"
+                                                                        src="{{ asset('uploads/') }}/{{ $data->earphoneImage }}"
+                                                                        alt="Product">
+                                                                </a>
                                                             </div>
-                                                            <div class="price-template">
-                                                                <div class="item-new-price">
-                                                                    @currency($data->earphonePrice)
+                                                            <div class="item-content">
+                                                                <div class="what-product-is">
+                                                                    <ul class="bread-crumb">
+                                                                        &nbsp;
+                                                                    </ul>
+                                                                    <h4 class="item-title">
+                                                                        <a
+                                                                            href="/detailproduk/{{ $data->earphoneId }}">{{ $data->earphoneName }}</a>
+                                                                    </h4>
+                                                                </div>
+                                                                <div class="price-template">
+                                                                    <div class="item-new-price">
+                                                                        @currency($data->earphonePrice)
+                                                                    </div>
                                                                 </div>
                                                             </div>
+                                                            <div class="tag new">
+                                                                <span>NEW</span>
+                                                            </div>
                                                         </div>
-                                                        <div class="tag new">
-                                                            <span>NEW</span>
-                                                        </div>
-                                                    </div> 
                                                     @endforeach
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="tab-pane fade show " id="monitor">
                                             <div class="slider-fouc">
-                                                <div class="specific-category-slider owl-carousel" data-item="3">   
-                                                    @foreach ($monitor as $data)                                             
-                                                    <div class="item">
-                                                        <div class="image-container">
-                                                            <a class="item-img-wrapper-link"
-                                                                href="/detailproduk/{{ $data->monitorId }}">
-                                                                <img class="img-fluid gbr"
-                                                                    src="{{ asset('uploads/') }}/{{$data->monitorImage}}"
-                                                                    alt="Product">
-                                                            </a>
-                                                        </div>
-                                                        <div class="item-content">
-                                                            <div class="what-product-is">
-                                                                <ul class="bread-crumb">
-                                                                    &nbsp;
-                                                                </ul>
-                                                                <h4 class="item-title">
-                                                                    <a href="/detailproduk/{{ $data->monitorId }}">{{ $data->monitorName}}</a>
-                                                                </h4>
+                                                <div class="specific-category-slider owl-carousel" data-item="3">
+                                                    @foreach ($monitor as $data)
+                                                        <div class="item">
+                                                            <div class="image-container">
+                                                                <a class="item-img-wrapper-link"
+                                                                    href="/detailproduk/{{ $data->monitorId }}">
+                                                                    <img class="img-fluid gbr"
+                                                                        src="{{ asset('uploads/') }}/{{ $data->monitorImage }}"
+                                                                        alt="Product">
+                                                                </a>
                                                             </div>
-                                                            <div class="price-template">
-                                                                <div class="item-new-price">
-                                                                    @currency($data->monitorPrice)
+                                                            <div class="item-content">
+                                                                <div class="what-product-is">
+                                                                    <ul class="bread-crumb">
+                                                                        &nbsp;
+                                                                    </ul>
+                                                                    <h4 class="item-title">
+                                                                        <a
+                                                                            href="/detailproduk/{{ $data->monitorId }}">{{ $data->monitorName }}</a>
+                                                                    </h4>
+                                                                </div>
+                                                                <div class="price-template">
+                                                                    <div class="item-new-price">
+                                                                        @currency($data->monitorPrice)
+                                                                    </div>
                                                                 </div>
                                                             </div>
+                                                            <div class="tag new">
+                                                                <span>NEW</span>
+                                                            </div>
                                                         </div>
-                                                        <div class="tag new">
-                                                            <span>NEW</span>
-                                                        </div>
-                                                    </div>
-                                                    @endforeach                                                     
+                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>
@@ -606,34 +614,35 @@
                                 <div class="products-slider owl-carousel" data-item="4">
                                     <!-- Item -->
                                     @foreach ($case as $data)
-                                    <div class="item">
-                                        <div class="image-container">
-                                            <a class="item-img-wrapper-link"
-                                                href="/detailproduk/{{$data->caseId}}">
-                                                <img class="img-fluid gbr"
-                                                    src="{{ asset('uploads/') }}/{{ $data->caseImage }}"
-                                                    alt="Product">
-                                            </a>
-                                        </div>
-                                        <div class="item-content">
-                                            <div class="what-product-is">
-                                                <ul class="bread-crumb">
-                                                    &nbsp;
-                                                </ul>
-                                                <h4 class="item-title">
-                                                    <a href="/detailproduk/{{$data->caseId}}">{{$data->caseName}}</a>
-                                                </h4>
+                                        <div class="item">
+                                            <div class="image-container">
+                                                <a class="item-img-wrapper-link"
+                                                    href="/detailproduk/{{ $data->caseId }}">
+                                                    <img class="img-fluid gbr"
+                                                        src="{{ asset('uploads/') }}/{{ $data->caseImage }}"
+                                                        alt="Product">
+                                                </a>
                                             </div>
-                                            <div class="price-template">
-                                                <div class="item-new-price">
-                                                    @currency($data->casePrice)
+                                            <div class="item-content">
+                                                <div class="what-product-is">
+                                                    <ul class="bread-crumb">
+                                                        &nbsp;
+                                                    </ul>
+                                                    <h4 class="item-title">
+                                                        <a
+                                                            href="/detailproduk/{{ $data->caseId }}">{{ $data->caseName }}</a>
+                                                    </h4>
+                                                </div>
+                                                <div class="price-template">
+                                                    <div class="item-new-price">
+                                                        @currency($data->casePrice)
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <div class="tag new">
+                                                <span>NEW</span>
+                                            </div>
                                         </div>
-                                        <div class="tag new">
-                                            <span>NEW</span>
-                                        </div>
-                                    </div>
                                     @endforeach
                                 </div>
                             </div>
@@ -643,21 +652,9 @@
             </div>
         </div>
         <div class="redirect-link-wrapper text-center u-s-p-t-25 u-s-p-b-80">
-                <a class="redirect-link" href="store-directory.html">
-                    <span>View more on this category</span>
-                </a>
-            </div>
+            <a class="redirect-link"></a>
+        </div>
     </section>
-    <!-- Women-Clothing -->
-    
-    <!-- Women-Clothing /- -->
-    <!-- Continue-Link -->
-    <div class="continue-link-wrapper u-s-p-b-80">
-        <a class="continue-link" href="store-directory.html" title="View all products on site">
-            <i class="ion ion-ios-more"></i>
-        </a>
-    </div>
-    <!-- Continue-Link /- -->
     <!-- Brand-Slider -->
     <div class="brand-slider u-s-p-b-80">
         <div class="container">
@@ -666,68 +663,14 @@
             </div>
             <div class="brand-slider-content owl-carousel" data-item="5">
                 @foreach ($merk as $data)
-                <div class="brand-pic">
-                    <a href="/shop">
-                        <img src="{{ asset('uploads/') }}/{{$data->brandLogo}}">
-                    </a>
-                </div>
+                    <div class="brand-pic">
+                        <a>
+                            <img src="{{ asset('uploads/') }}/{{ $data->brandLogo }}">
+                        </a>
+                    </div>
                 @endforeach
             </div>
         </div>
     </div>
     <!-- Brand-Slider /- -->
-    <!-- Site-Priorities -->
-    <section class="app-priority">
-        <div class="container">
-            <div class="priority-wrapper u-s-p-b-80">
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-3">
-                        <div class="single-item-wrapper">
-                            <div class="single-item-icon">
-                                <i class="ion ion-md-star"></i>
-                            </div>
-                            <h2>
-                                Great Value
-                            </h2>
-                            <p>We offer competitive prices on our 100 million plus product range</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3">
-                        <div class="single-item-wrapper">
-                            <div class="single-item-icon">
-                                <i class="ion ion-md-cash"></i>
-                            </div>
-                            <h2>
-                                Shop with Confidence
-                            </h2>
-                            <p>Our Protection covers your purchase from click to delivery</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3">
-                        <div class="single-item-wrapper">
-                            <div class="single-item-icon">
-                                <i class="ion ion-ios-card"></i>
-                            </div>
-                            <h2>
-                                Safe Payment
-                            </h2>
-                            <p>Pay with the world’s most popular and secure payment methods</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3">
-                        <div class="single-item-wrapper">
-                            <div class="single-item-icon">
-                                <i class="ion ion-md-contacts"></i>
-                            </div>
-                            <h2>
-                                24/7 Help Center
-                            </h2>
-                            <p>Round-the-clock assistance for a smooth shopping experience</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Site-Priorities /- -->
 @endsection
