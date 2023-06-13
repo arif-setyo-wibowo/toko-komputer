@@ -50,12 +50,12 @@
             </div>
             <div class="brand-slider-content owl-carousel" data-item="5">
                 <div class="brand-pic">
-                    <a href="/shop">
+                    <a href="/shop/processors">
                         <img src="{{ asset('front/') }}/images/brand-logos/prosesor.png" alt="Brand Logo 1">
                     </a>
                 </div>
                 <div class="brand-pic">
-                    <a href="#">
+                    <a href="/shop/motherboards">
                         <img src="{{ asset('front/') }}/images/brand-logos/mobo.png" alt="Brand Logo 2">
                     </a>
                 </div>

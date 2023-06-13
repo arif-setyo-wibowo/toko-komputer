@@ -177,11 +177,11 @@
                                         </a>
                                     </div>
                                     <div class="item-content">
-                                        <div class="what-product-is">
+                                        <div class="what-product-is" >
                                             <h2 class="item-title">
                                                 <a href="/detailproduk/<?= $item[$key]["Id"] ?>"><?= $item[$key]['Name'] ?></a>
                                             </h2>
-                                            <div class="item-description">
+                                            <div class="item-description ">
                                                 <p><?= $item[$key]["Description"] ?></p>
                                             </div>
                                         </div>

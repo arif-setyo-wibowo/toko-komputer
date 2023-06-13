@@ -4,6 +4,14 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\ComputerCase;
+use App\Models\GraphicCard;
+use App\Models\Memory;
+use App\Models\Motherboard;
+use App\Models\PowerSupply;
+use App\Models\Processor;
+use App\Models\Storage;
+use App\Models\Cooler;
 use App\Models\Identity;
 
 class RakitPcController extends Controller
@@ -14,60 +22,31 @@ class RakitPcController extends Controller
     public function index(Request $request)
     {
         $cart = $request->session()->get('cart.items', []);
+        $case=ComputerCase::all();
+        $gpu=GraphicCard::all();
+        $memory=Memory::all();
+        $mobo=Motherboard::all();
+        $psu=PowerSupply::all();
+        $cpu=Processor::all();
+        $storage=Storage::all();
+        $cooler=Cooler::where('coolerType','Fan')->get();
+
         $data=[
             'title' => "Rakit Pc",
             'identitas' => Identity::all(),
-            'countCart' => count($cart)
+            'countCart' => count($cart),
+            'case' => $case,
+            'gpu' => $gpu,
+            'memory' => $memory,
+            'mobo' => $mobo,
+            'psu' => $psu,
+            'cpu' => $cpu,
+            'storage' => $storage,
+            'cooler' => $cooler,
         ];
 
         return view('front/rakitPc',$data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+    
 }
