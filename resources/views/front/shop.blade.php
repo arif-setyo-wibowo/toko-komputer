@@ -23,19 +23,7 @@
     <div class="page-shop u-s-p-t-80">
         <div class="container">
             <!-- Shop-Intro -->
-            <div class="shop-intro">
-                <ul class="bread-crumb">
-                    <li class="has-separator">
-                        <a href="home.html">Home</a>
-                    </li>
-                    <li class="has-separator">
-                        <a href="shop-v1-root-category.html">Men's Clothing</a>
-                    </li>
-                    <li class="is-marked">
-                        <a href="shop-v3-sub-sub-category.html">Tops</a>
-                    </li>
-                </ul>
-            </div>
+            
             <!-- Shop-Intro /- -->
             <div class="row">
                 <!-- Shop-Left-Side-Bar-Wrapper -->
@@ -44,34 +32,73 @@
                     <div class="fetch-categories">
                         <h3 class="title-name">Browse Categories</h3>
                         <h3 class="fetch-mark-category">
-                            <a href="shop-v2-sub-category.html">Tops
-                                <span class="total-fetch-items">(5)</span>
+                            <a href="shop-v2-sub-category.html">Component PC
                             </a>
                         </h3>
                         <!-- Level 3 -->
                         <ul>
                             <li>
-                                <a href="shop-v3-sub-sub-category.html">T-Shirts
-                                    <span class="total-fetch-items">(2)</span>
+                                <a href="/shop/motherboards">Motherboard
+                                    <span class="total-fetch-items">({{$mobo}})</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="shop-v2-sub-category.html">Hoodies
-                                    <span class="total-fetch-items">(1)</span>
+                                <a href="/shop/processors">Prossesor
+                                    <span class="total-fetch-items">({{$pros}})</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="shop-v3-sub-sub-category.html">Suits
-                                    <span class="total-fetch-items">(1)</span>
+                                <a href="/shop/graphic_cards">VGA
+                                    <span class="total-fetch-items">({{$vga}})</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="shop-v4-filter-as-category.html">Black Bean T-Shirt
-                                    <span class="total-fetch-items">(1)</span>
+                                <a href="/shop/memories">Memory
+                                    <span class="total-fetch-items">({{$ram}})</span>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="/shop/storages">Storage
+                                    <span class="total-fetch-items">({{$ssd}})</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/shop/power_supplies">PSU
+                                    <span class="total-fetch-items">({{$psu}})</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/shop/coolers">Cooler
+                                    <span class="total-fetch-items">({{$fan}})</span>
                                 </a>
                             </li>
                         </ul>
                         <!-- //end Level 3 -->
+                        <h3 class="fetch-mark-category">
+                            <a href="shop-v2-sub-category.html">Gaming Gear
+                            </a>
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="/shop/keyboards">Keyboard
+                                    <span class="total-fetch-items">({{$kibot}})</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/shop/mouse">Mouse
+                                    <span class="total-fetch-items">({{$mos}})</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/shop/monitors">Monitor
+                                    <span class="total-fetch-items">({{$mntr}})</span>
+                                </a>
+                            </li>
+                               <a href="/shop/earphone">Headset
+                                    <span class="total-fetch-items">({{$hetset}})</span>
+                                </a>
+                            </li> 
+                        </ul>
                     </div>
                     <!-- Fetch-Categories-from-Root-Category  /- -->
                     <!-- Filters -->
@@ -100,27 +127,7 @@
                         </form>
                     </div>
                     <!-- Filter-Brand /- -->
-                    <!-- Filter-Price -->
-                    <div class="facet-filter-by-price">
-                        <h3 class="title-name">Price</h3>
-                        <form class="facet-form" action="#" method="post">
-                            <!-- Final-Result -->
-                            <div class="amount-result clearfix">
-                                <div class="price-from">$0</div>
-                                <div class="price-to">$3000</div>
-                            </div>
-                            <!-- Final-Result /- -->
-                            <!-- Range-Slider  -->
-                            <div class="price-filter"></div>
-                            <!-- Range-Slider /- -->
-                            <!-- Range-Manipulator -->
-                            <div class="price-slider-range" data-min="0" data-max="5000" data-default-low="0"
-                                data-default-high="3000" data-currency="$"></div>
-                            <!-- Range-Manipulator /- -->
-                            <button type="submit" class="button button-primary">Filter</button>
-                        </form>
-                    </div>
-                    <!-- Filter-Price /- -->
+                    
                     <!-- Filters /- -->
                 </div>
                 <!-- Shop-Left-Side-Bar-Wrapper /- -->
@@ -172,7 +179,7 @@
                                 <div class="item col-md-12">
                                     <div class="image-container">
                                         <a class="item-img-wrapper-link" href="/detailproduk/<?= $item[$key]["Id"] ?>">
-                                            <img class="img-fluid" src="{{ asset('uploads/') . $item[$key]['Image'] }}"
+                                            <img class="img-fluid mt-2"style="max-height:223.21px; "  src="{{ asset('uploads/') . $item[$key]['Image'] }}"
                                                 alt="Product">
                                         </a>
                                     </div>
@@ -182,7 +189,7 @@
                                                 <a href="/detailproduk/<?= $item[$key]["Id"] ?>"><?= $item[$key]['Name'] ?></a>
                                             </h2>
                                             <div class="item-description ">
-                                                <p><?= $item[$key]["Description"] ?></p>
+                                                <p>{{ substr($item[$key]['Description'], 0, 200) }}<a class="text-primary font-weight-bold" href="/detailproduk/<?= $item[$key]["Id"] ?>"> see more...</a></p>
                                             </div>
                                         </div>
                                         <div class="price-template">
@@ -205,161 +212,29 @@
                             </div>
                             <?php } ?>
                         </div>
+
                     <!-- Row-of-Product-Container /- -->
                 </div>
                 <!-- Shop-Right-Wrapper /- -->
-
-                <!-- Quick-view-Modal -->
-                <div id="quick-view" class="modal fade">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <button type="button" class="button dismiss-button ion ion-ios-close"
-                                data-dismiss="modal"></button>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
-                                        <!-- Product-zoom-area -->
-                                        <div class="zoom-area">
-                                            <img id="zoom-pro-quick-view" class="img-fluid"
-                                                src="{{ asset('front/') }}/images/product/product@4x.jpg">
-                                        </div>
-                                        <!-- Product-zoom-area /- -->
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                                <!-- Product-details -->
-                                                <div class="all-information-wrapper">
-                                                    <div class="section-1-title-breadcrumb-rating">
-                                                        <div class="product-title">
-                                                            <h1>
-                                                                <a href="">iGame GeForce RTX 4090 24GB GDDR6X
-                                                                    Vulcan</a>
-                                                            </h1>
-                                                        </div>
-                                                        <ul class="bread-crumb">
-                                                        </ul>
-                                                    </div>
-                                                    <div class="section-3-price-original-discount u-s-p-y-14">
-                                                        <div class="float-right mr-2">
-                                                            <form action="#" class="post-form">
-                                                                <div class="quantity-wrapper u-s-m-b-">
-                                                                </div>
-                                                            </form>
-                                                            <div>
-                                                                <button
-                                                                    class="ml-5 btn-success button button-outline-secondary add-to-cart-btn"
-                                                                    data-product-id="">Add
-                                                                    to cart</button>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price">
-                                                            <h4>Rp. 2.000.00</h4>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="section-4-sku-information u-s-p-y-14">
-                                                                        </div> -->
-                                                    <div class="section-6-social-media-quantity-actions u-s-p-y-14">
-                                                        <div class="row">
-                                                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                                                <div class="detail-tabs-wrapper ">
-                                                                    <div class="detail-nav-wrapper ">
-                                                                        <ul
-                                                                            class="nav single-product-nav justify-content-center">
-                                                                            <li class="nav-item">
-                                                                                <a class="nav-link active"
-                                                                                    data-toggle="tab"
-                                                                                    href="#specification">Specifications</a>
-                                                                            </li>
-                                                                            <li class="nav-item">
-                                                                                <a class="nav-link " data-toggle="tab"
-                                                                                    href="#description">Description</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div class="tab-content">
-                                                                        <!-- Specifications-Tab -->
-                                                                        <div class="tab-pane active show fade"
-                                                                            id="specification">
-                                                                            <div class="specification-whole-container">
-                                                                                <div class="spec-table u-s-m-b-10">
-                                                                                    <h4 class="spec-heading">General
-                                                                                        Information</h4>
-                                                                                    <table>
-                                                                                        <tr>
-                                                                                            <td>Product Code</td>
-                                                                                            <td>1</td>
-                                                                                        </tr>
-                                                                                    </table>
-                                                                                </div>
-                                                                                <div class="spec-table u-s-m-b-20">
-                                                                                    <h4 class="spec-heading">Product
-                                                                                        Information</h4>
-                                                                                    <table>
-                                                                                        <tr>
-                                                                                            <td>Brand</td>
-                                                                                            <td><img style="width: 70px"
-                                                                                                    src=""alt="Brand">
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>as</td>
-                                                                                            <td>as</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>as</td>
-                                                                                            <td>as</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>as</td>
-                                                                                            <td>as</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>as</td>
-                                                                                            <td>as</td>
-                                                                                        </tr>
-
-                                                                                    </table>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- Specifications-Tab /- -->
-                                                                        <!-- Description-Tab -->
-
-                                                                        <div class="tab-pane fade  show" id="description">
-                                                                            <div class="description-whole-container">
-                                                                                <p class="desc-p u-s-m-b-26">This hoodie is
-                                                                                    full cotton. or middle-school,
-                                                                                    high-school, and college students to
-                                                                                    wear this sweatshirts—with or without
-                                                                                    hoods—that display their respective
-                                                                                    school names or mascots across the
-                                                                                    chest, either as part of a uniform or
-                                                                                    personal preference.
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-
-                                                                        <!-- Description-Tab /- -->
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- Detail-Tabs /- -->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Product-details /- -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Quick-view-Modal /- -->
             </div>
         </div>
     </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {   
+
+        var paragraf = document.getElementById('paragraf');
+        var maxKata = 20;
+
+        for (let i = 0; i < paragraf.length; i++) {
+            var kataParagraf = paragraf[i].innerHTML.split(' ');
+            console.log(paragraf[i])
+            if (kataParagraf.length > maxKata) {
+                paragraf[i].innerHTML = kataParagraf.slice(0, maxKata).join(' ') + '...';
+            }            
+        }
+        });
+
+    </script>
     <!-- Shop-Page /-->
 @endsection

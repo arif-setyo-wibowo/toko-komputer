@@ -60,52 +60,52 @@
                     </a>
                 </div>
                 <div class="brand-pic">
-                    <a href="#">
+                    <a href="/shop/graphic_cards">
                         <img src="{{ asset('front/') }}/images/brand-logos/vga.png" alt="Brand Logo 3">
                     </a>
                 </div>
                 <div class="brand-pic">
-                    <a href="#">
+                    <a href="/shop/memories">
                         <img src="{{ asset('front/') }}/images/brand-logos/ram.png" alt="Brand Logo 5">
                     </a>
                 </div>
                 <div class="brand-pic">
-                    <a href="#">
+                    <a href="/shop/storages">
                         <img src="{{ asset('front/') }}/images/brand-logos/storage.png" alt="Brand Logo 6">
                     </a>
                 </div>
                 <div class="brand-pic">
-                    <a href="#">
+                    <a href="/shop/power_supplies">
                         <img src="{{ asset('front/') }}/images/brand-logos/psu.png" alt="Brand Logo 7">
                     </a>
                 </div>
                 <div class="brand-pic">
-                    <a href="#">
+                    <a href="/shop/computer_cases">
                         <img src="{{ asset('front/') }}/images/brand-logos/case.png" alt="Brand Logo 7">
                     </a>
                 </div>
                 <div class="brand-pic">
-                    <a href="#">
+                    <a href="/shop/coolers">
                         <img src="{{ asset('front/') }}/images/brand-logos/cooler.png" alt="Brand Logo 7">
                     </a>
                 </div>
                 <div class="brand-pic">
-                    <a href="#">
+                    <a href="/shop/earphones">
                         <img src="{{ asset('front/') }}/images/brand-logos/headset.png" alt="Brand Logo 7">
                     </a>
                 </div>
                 <div class="brand-pic">
-                    <a href="#">
+                    <a href="/shop/keyboards">
                         <img src="{{ asset('front/') }}/images/brand-logos/keyboard.png" alt="Brand Logo 7">
                     </a>
                 </div>
                 <div class="brand-pic">
-                    <a href="#">
+                    <a href="/shop/mouse">
                         <img src="{{ asset('front/') }}/images/brand-logos/mouse.png" alt="Brand Logo 7">
                     </a>
                 </div>
                 <div class="brand-pic">
-                    <a href="#">
+                    <a href="/shop/monitors">
                         <img src="{{ asset('front/') }}/images/brand-logos/monitor.png" alt="Brand Logo 7">
                     </a>
                 </div>
@@ -115,30 +115,43 @@
     <!-- Brand-Slider /- -->
 
     <!-- Men-Clothing -->
-    <section class="section-maker ">
+    
+    <section class="section-maker">
         <div class="container">
             <div class="sec-maker-header text-center">
-                <h3 class="sec-maker-h3">Motherboard</h3>
+                <h3 class="sec-maker-h3">Komponen PC</h3>
                 <ul class="nav tab-nav-style-1-a justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#men-latest-products">Latest Products</a>
+                        <a class="nav-link active" data-toggle="tab" href="#komponen-mobo">Motherboard</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#komponen-pros">Processor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#komponen-vga">VGA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#komponen-memory">Memory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#komponen-storage">Storage</a>
+                    </li>
+                    
                 </ul>
             </div>
             <div class="wrapper-content">
                 <div class="outer-area-tab">
                     <div class="tab-content">
-                        <div class="tab-pane active show fade" id="men-latest-products">
+                        <div class="tab-pane active show fade" id="komponen-mobo">
                             <div class="slider-fouc">
                                 <div class="products-slider owl-carousel" data-item="4">
-                                    <!-- Item -->
                                     @foreach ($mobo as $data)
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link"
                                                 href="/detailproduk/{{$data->moboId}}">
                                                 <img class="img-fluid"
-                                                    src="{{ asset('uploads/') }}/{{ $data->moboImage }}"
+                                                    src="{{ asset('uploads/') }}/{{$data->moboImage}}"
                                                     alt="Product">
                                             </a>
                                         </div>
@@ -148,7 +161,7 @@
                                                     &nbsp;
                                                 </ul>
                                                 <h4 class="item-title">
-                                                    <a href="/detailproduk/{{$data->moboId}}">{{$data->moboName}}</a>
+                                                    <a href="/detailproduk/{{$data->moboId}}">{{ $data->moboName}}</a>
                                                 </h4>
                                             </div>
                                             <div class="price-template">
@@ -165,17 +178,160 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="tab-pane  show fade" id="komponen-pros">
+                            <div class="slider-fouc">
+                                <div class="products-slider owl-carousel" data-item="4">
+                                    @foreach ($processor as $data)
+                                    <div class="item">
+                                        <div class="image-container">
+                                            <a class="item-img-wrapper-link"
+                                                href="/detailproduk/{{$data->processorId}}">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('uploads/') }}/{{$data->processorImage}}"
+                                                    alt="Product">
+                                            </a>
+                                        </div>
+                                        <div class="item-content">
+                                            <div class="what-product-is">
+                                                <ul class="bread-crumb">
+                                                    &nbsp;
+                                                </ul>
+                                                <h4 class="item-title">
+                                                    <a href="/detailproduk/{{$data->processorId}}">{{ $data->processorName}}</a>
+                                                </h4>
+                                            </div>
+                                            <div class="price-template">
+                                                <div class="item-new-price">
+                                                    @currency($data->processorPrice)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tag new">
+                                            <span>NEW</span>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane  show fade" id="komponen-vga">
+                            <div class="slider-fouc">
+                                <div class="products-slider owl-carousel" data-item="4">
+                                    @foreach ($gpu as $data)
+                                    <div class="item">
+                                        <div class="image-container">
+                                            <a class="item-img-wrapper-link"
+                                                href="/detailproduk/{{$data->gpuId}}">
+                                                <img class="img-fluid"
+                                                    src="{{ asset('uploads/') }}/{{$data->gpuImage}}"
+                                                    alt="Product">
+                                            </a>
+                                        </div>
+                                        <div class="item-content">
+                                            <div class="what-product-is">
+                                                <ul class="bread-crumb">
+                                                    &nbsp;
+                                                </ul>
+                                                <h4 class="item-title">
+                                                    <a href="/detailproduk/{{$data->gpuId}}">{{ $data->gpuName}}</a>
+                                                </h4>
+                                            </div>
+                                            <div class="price-template">
+                                                <div class="item-new-price">
+                                                    @currency($data->gpuPrice)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tag new">
+                                            <span>NEW</span>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane  show fade" id="komponen-memory">
+                            <div class="slider-fouc">
+                                <div class="products-slider owl-carousel" data-item="4">
+                                    @foreach ($memory as $data)
+                                    <div class="item">
+                                        <div class="image-container">
+                                            <a class="item-img-wrapper-link"
+                                                href="/detailproduk/{{$data->memoryId}}">
+                                                <img class="img-fluid gbr" 
+                                                    src="{{ asset('uploads/') }}/{{$data->memoryImage}}"
+                                                    alt="Product">
+                                            </a>
+                                        </div>
+                                        <div class="item-content ">
+                                            <div class="what-product-is float-bottom">
+                                                <ul class="bread-crumb">
+                                                    &nbsp;
+                                                </ul>
+                                                <h4 class="item-title">
+                                                    <a href="/detailproduk/{{$data->memoryId}}">{{ $data->memoryName}}</a>
+                                                </h4>
+                                            </div>
+                                            <div class="price-template">
+                                                <div class="item-new-price ">
+                                                    @currency($data->memoryPrice)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tag new">
+                                            <span>NEW</span>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                         <div class="tab-pane  show fade" id="komponen-storage">
+                            <div class="slider-fouc">
+                                <div class="products-slider owl-carousel" data-item="4">
+                                    @foreach ($storage as $data)
+                                    <div class="item">
+                                        <div class="image-container">
+                                            <a class="item-img-wrapper-link"
+                                                href="/detailproduk/{{$data->storageId}}">
+                                                <img class="img-fluid gbr" 
+                                                    src="{{ asset('uploads/') }}/{{$data->storageImage}}"
+                                                    alt="Product">
+                                            </a>
+                                        </div>
+                                        <div class="item-content ">
+                                            <div class="what-product-is float-bottom">
+                                                <ul class="bread-crumb">
+                                                    &nbsp;
+                                                </ul>
+                                                <h4 class="item-title">
+                                                    <a href="/detailproduk/{{$data->storageId}}">{{ $data->storageName}}</a>
+                                                </h4>
+                                            </div>
+                                            <div class="price-template">
+                                                <div class="item-new-price ">
+                                                    @currency($data->storagePrice)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tag new">
+                                            <span>NEW</span>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="redirect-link-wrapper text-center u-s-p-t-25 u-s-p-b-80">
-                <a class="redirect-link" href="store-directory.html">
+            <div class="redirect-link-wrapper text-center u-s-p-t-25 u-s-p-b-80">
+                <a class="redirect-link" href="/shop/motherboards">
                     <span>View more on this category</span>
                 </a>
             </div>
+        </div>
     </section>
-    
     <!-- Banner-Image & View-more -->
     <div class="banner-image-view-more">
         <div class="container">
@@ -226,18 +382,24 @@
                                         <li class="nav-item">
                                             <a class="nav-link active" data-toggle="tab" href="#smart-phones"
                                                 title="Smart Phones">
-                                                <i class="ion ion-ios-phone-portrait"></i>
+                                               <i class="fa-solid fa-computer-mouse"></i>
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" data-toggle="tab" href="#tablets" title="Tablets">
-                                                <i class="ion ion-md-phone-landscape"></i>
+                                                <i class="fa-regular fa-keyboard"></i>
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" data-toggle="tab" href="#smart-watches"
                                                 title="Smart Watches">
-                                                <i class="ion ion-md-watch"></i>
+                                                <i class="fa-solid fa-headphones-simple"></i>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#monitor"
+                                                title="monitor">
+                                                <i class="fa-solid fa-desktop"></i>
                                             </a>
                                         </li>
                                         <!-- <li class="nav-item">
@@ -264,7 +426,7 @@
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link"
                                                                 href="/detailproduk/{{ $data->mouseId }}">
-                                                                <img class="img-fluid"
+                                                                <img class="img-fluid gbr"
                                                                     src="{{ asset('uploads/') }}/{{$data->mouseImage}}"
                                                                     alt="Product">
                                                             </a>
@@ -300,7 +462,7 @@
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link"
                                                                 href="/detailproduk/{{ $data->keyboardId}}">
-                                                                <img class="img-fluid"
+                                                                <img class="img-fluid gbr"
                                                                     src="{{ asset('uploads/') }}/{{$data->keyboardImage}}"
                                                                     alt="Product">
                                                             </a>
@@ -336,7 +498,7 @@
                                                         <div class="image-container">
                                                             <a class="item-img-wrapper-link"
                                                                 href="/detailproduk/{{ $data->earphoneId}}">
-                                                                <img class="img-fluid"
+                                                                <img class="img-fluid gbr"
                                                                     src="{{ asset('uploads/') }}/{{ $data->earphoneImage}}"
                                                                     alt="Product">
                                                             </a>
@@ -364,46 +526,51 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="tab-pane fade show " id="monitor">
+                                            <div class="slider-fouc">
+                                                <div class="specific-category-slider owl-carousel" data-item="3">   
+                                                    @foreach ($monitor as $data)                                             
+                                                    <div class="item">
+                                                        <div class="image-container">
+                                                            <a class="item-img-wrapper-link"
+                                                                href="/detailproduk/{{ $data->monitorId }}">
+                                                                <img class="img-fluid gbr"
+                                                                    src="{{ asset('uploads/') }}/{{$data->monitorImage}}"
+                                                                    alt="Product">
+                                                            </a>
+                                                        </div>
+                                                        <div class="item-content">
+                                                            <div class="what-product-is">
+                                                                <ul class="bread-crumb">
+                                                                    &nbsp;
+                                                                </ul>
+                                                                <h4 class="item-title">
+                                                                    <a href="/detailproduk/{{ $data->monitorId }}">{{ $data->monitorName}}</a>
+                                                                </h4>
+                                                            </div>
+                                                            <div class="price-template">
+                                                                <div class="item-new-price">
+                                                                    @currency($data->monitorPrice)
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tag new">
+                                                            <span>NEW</span>
+                                                        </div>
+                                                    </div>
+                                                    @endforeach                                                     
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="mobiles-best-selling-products">
-                            <!-- Product Not Found -->
-                            <div class="product-not-found">
-                                <div class="not-found">
-                                    <h2>SORRY!</h2>
-                                    <h6>There is not any product in specific catalogue.</h6>
-                                </div>
-                            </div>
-                            <!-- Product Not Found /- -->
-                        </div>
-                        <div class="tab-pane fade" id="mobiles-top-rating-products">
-                            <!-- Product Not Found -->
-                            <div class="product-not-found">
-                                <div class="not-found">
-                                    <h2>SORRY!</h2>
-                                    <h6>There is not any product in specific catalogue.</h6>
-                                </div>
-                            </div>
-                            <!-- Product Not Found /- -->
-                        </div>
-                        <div class="tab-pane fade" id="mobiles-featured-products">
-                            <!-- Product Not Found -->
-                            <div class="product-not-found">
-                                <div class="not-found">
-                                    <h2>SORRY!</h2>
-                                    <h6>There is not any product in specific catalogue.</h6>
-                                </div>
-                            </div>
-                            <!-- Product Not Found /- -->
                         </div>
                     </div>
                 </div>
             </div>
             <div class="redirect-link-wrapper text-center u-s-p-t-25 u-s-p-b-80">
                 <a class="redirect-link" href="store-directory.html">
-                    <span>View more on this category</span>
                 </a>
             </div>
         </div>
@@ -421,39 +588,30 @@
         </div>
     </div>
     <!-- Banner-Layer /- -->
-    <!-- Women-Clothing -->
-    <section class="section-maker">
+    <section class="section-maker ">
         <div class="container">
             <div class="sec-maker-header text-center">
-                <h3 class="sec-maker-h3">Monitor</h3>
+                <h3 class="sec-maker-h3">Casing Gaming</h3>
                 <ul class="nav tab-nav-style-1-a justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#women-latest-products">Latest Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#women-best-selling-products">Best Selling</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#women-top-rating-products">Top Rating</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#women-featured-products">Featured Products</a>
+                        <a class="nav-link active" data-toggle="tab" href="#men-latest-products">Casing Terbaru</a>
                     </li>
                 </ul>
             </div>
             <div class="wrapper-content">
                 <div class="outer-area-tab">
                     <div class="tab-content">
-                        <div class="tab-pane active show fade" id="women-latest-products">
+                        <div class="tab-pane active show fade" id="men-latest-products">
                             <div class="slider-fouc">
                                 <div class="products-slider owl-carousel" data-item="4">
-                                    @foreach ($monitor as $data)
+                                    <!-- Item -->
+                                    @foreach ($case as $data)
                                     <div class="item">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link"
-                                                href="/detailproduk/{{$data->monitorId}}">
-                                                <img class="img-fluid"
-                                                    src="{{ asset('uploads/') }}/{{$data->monitorImage}}"
+                                                href="/detailproduk/{{$data->caseId}}">
+                                                <img class="img-fluid gbr"
+                                                    src="{{ asset('uploads/') }}/{{ $data->caseImage }}"
                                                     alt="Product">
                                             </a>
                                         </div>
@@ -463,12 +621,12 @@
                                                     &nbsp;
                                                 </ul>
                                                 <h4 class="item-title">
-                                                    <a href="/detailproduk/{{$data->monitorId}}">{{ $data->monitorName}}</a>
+                                                    <a href="/detailproduk/{{$data->caseId}}">{{$data->caseName}}</a>
                                                 </h4>
                                             </div>
                                             <div class="price-template">
                                                 <div class="item-new-price">
-                                                    @currency($data->monitorPrice)
+                                                    @currency($data->casePrice)
                                                 </div>
                                             </div>
                                         </div>
@@ -480,46 +638,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="women-best-selling-products">
-                            <!-- Product Not Found -->
-                            <div class="product-not-found">
-                                <div class="not-found">
-                                    <h2>SORRY!</h2>
-                                    <h6>There is not any product in specific catalogue.</h6>
-                                </div>
-                            </div>
-                            <!-- Product Not Found /- -->
-                        </div>
-                        <div class="tab-pane fade" id="women-top-rating-products">
-                            <!-- Product Not Found -->
-                            <div class="product-not-found">
-                                <div class="not-found">
-                                    <h2>SORRY!</h2>
-                                    <h6>There is not any product in specific catalogue.</h6>
-                                </div>
-                            </div>
-                            <!-- Product Not Found /- -->
-                        </div>
-                        <div class="tab-pane fade" id="women-featured-products">
-                            <!-- Product Not Found -->
-                            <div class="product-not-found">
-                                <div class="not-found">
-                                    <h2>SORRY!</h2>
-                                    <h6>There is not any product in specific catalogue.</h6>
-                                </div>
-                            </div>
-                            <!-- Product Not Found /- -->
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="redirect-link-wrapper text-center u-s-p-t-25 u-s-p-b-80">
+        </div>
+        <div class="redirect-link-wrapper text-center u-s-p-t-25 u-s-p-b-80">
                 <a class="redirect-link" href="store-directory.html">
                     <span>View more on this category</span>
                 </a>
             </div>
-        </div>
     </section>
+    <!-- Women-Clothing -->
+    
     <!-- Women-Clothing /- -->
     <!-- Continue-Link -->
     <div class="continue-link-wrapper u-s-p-b-80">

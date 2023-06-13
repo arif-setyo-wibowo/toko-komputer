@@ -30,7 +30,18 @@ class ShopController extends Controller
         $data=[
             'title' => "Shop",
             'identitas' => Identity::all(),
-            'countCart' => count($cart)
+            'countCart' => count($cart),
+            'mobo' => Motherboard::all()->count(),
+            'pros' => Processor::all()->count(),
+            'vga' => GraphicCard::all()->count(),
+            'ram' => Memory::all()->count(),
+            'ssd' => Storage::all()->count(),
+            'psu' => PowerSupply::all()->count(),
+            'fan' => Cooler::all()->count(),
+            'kibot' => Keyboard::all()->count(),
+            'mntr' => Monitor::all()->count(),
+            'mos' => Mouse::all()->count(),
+            'hetset' => Earphone::all()->count(),
         ];
         if ($categories == "computer_cases") {
             $data["item"] = $this->computer_case();
@@ -56,9 +67,11 @@ class ShopController extends Controller
             $data["item"] = $this->monitor();
         } elseif ($categories == "mouse") {
             $data["item"] = $this->mouse();
-        } elseif ($categories == "earphones") {
+        } elseif ($categories == "earphone") {
             $data["item"] = $this->earphone();
-        }
+        };
+
+        
    
         return view('front/shop',$data);
     }

@@ -6,11 +6,19 @@ use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Earphone;
 use Illuminate\Http\Request;
-use App\Models\Identity;
-use App\Models\Keyboard;
-use App\Models\Monitor;
+use App\Models\ComputerCase;
+use App\Models\GraphicCard;
+use App\Models\Memory;
 use App\Models\Motherboard;
+use App\Models\PowerSupply;
+use App\Models\Processor;
+use App\Models\Storage;
+use App\Models\Cooler;
+use App\Models\Keyboard;
+use App\Models\Microphone;
+use App\Models\Monitor;
 use App\Models\Mouse;
+use App\Models\Identity;
 
 class HomeController extends Controller
 {
@@ -30,7 +38,13 @@ class HomeController extends Controller
             'mouse' => Mouse::all(),
             'mobo' => Motherboard::all(),
             'monitor' => Monitor::all(),
-            'merk' => Brand::all()
+            'merk' => Brand::all(),
+            'case' => ComputerCase::all(),
+            'processor' => Processor::all(),
+            'gpu' => GraphicCard::all(),
+            'memory' => Memory::all(),
+            'storage' => Storage::all(),
+
         ];
 
         return view('front/home',$data);
