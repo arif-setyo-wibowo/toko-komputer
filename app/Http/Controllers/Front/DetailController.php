@@ -57,7 +57,6 @@ class DetailController extends Controller
             $data = $this->earphone($productId);
         }
 
-        
         $data['countCart'] = count($cart);
         return view('front/detailproduk', $data);
     }
