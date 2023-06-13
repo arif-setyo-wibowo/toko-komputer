@@ -109,8 +109,10 @@
                         <div class="col-lg-3 col-md-9 col-sm-6">
                             <div class="brand-logo text-lg-center">
                                 <a href="/">
-                                    <img src="{{ asset('front/') }}/images/main-logo/groover-branding-1.png"
-                                        alt="Groover Brand Logo" class="app-brand-logo">
+                                    @foreach ($identitas as $data)
+                                        <img src="{{ asset('uploads/') }}/{{ $data->shopLogo }}" alt="Logo"
+                                            class="app-brand-logo">
+                                    @endforeach
                                 </a>
                             </div>
                         </div>
