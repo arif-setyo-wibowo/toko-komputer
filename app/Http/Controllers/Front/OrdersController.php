@@ -109,10 +109,6 @@ class OrdersController extends Controller
             'gross_amount'  => $amount
         );
 
-        $callbacks = array(
-            'finish' => "http://127.0.0.1:8000/"
-        );
-
         // Input Order
         $order = new Order;
         $order->orderId = $idorder;
@@ -121,7 +117,7 @@ class OrdersController extends Controller
         $order->orderTotalPrice = $amount;
 
         
-        $transaksi = $midtrans->CreatePayment($customer_details,$midtransItems,$transaction_details,$callbacks);
+        $transaksi = $midtrans->CreatePayment($customer_details,$midtransItems,$transaction_details);
         if ($transaksi) {
             $order->save();
             OrderDetail::insert($detailItems);

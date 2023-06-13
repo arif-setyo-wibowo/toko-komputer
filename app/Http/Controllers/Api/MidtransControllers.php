@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class MidtransControllers extends Controller
 {
-    public function CreatePayment($customer_details,$items,$transaction_details,$callbacks)
+    public function CreatePayment($customer_details,$items,$transaction_details)
     {
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = 'SB-Mid-server-_WEHTFfYgN0J0ssrU2yJfInV';
@@ -22,7 +22,6 @@ class MidtransControllers extends Controller
             'transaction_details' => $transaction_details,
             'customer_details' => $customer_details,
             'item_details' => $items,
-            'callbacks' => $callbacks
         );
 
         $snapToken = \Midtrans\Snap::getSnapToken($params);

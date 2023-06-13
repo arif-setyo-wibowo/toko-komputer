@@ -94,6 +94,9 @@ Route::get('/cities', [RajaOngkirController::class, 'getCities'])->name('cities'
 Route::get('/cities-info', [RajaOngkirController::class, 'getInfoCities'])->name('info.cities');
 Route::post('/cost', [RajaOngkirController::class, 'getCost'])->name('cost');
 
+// Blank
+Route::get('/blank', [HomeController::class, 'blank'])->name('blank');
+
 // Login Admin
 Route::get('/loginEmployee', [AuthLoginController::class, 'index'])->name('login.admin');
 Route::post('/loginEmployee', [AuthLoginController::class, 'login']);
