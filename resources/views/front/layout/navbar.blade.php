@@ -296,19 +296,19 @@
                                                         <div class="col-lg-4">
                                                             <ul class="v-level-2">
                                                                 <li>
-                                                                    <a href="shop-v2-sub-category.html">Motherboard</a>
+                                                                    <a href="/shop/motherboards">Motherboard</a>
                                                                     <ul>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">MSI</a>
+                                                                                href="/shop/motherboards">MSI</a>
                                                                         </li>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">ROG</a>
+                                                                                href="/shop/motherboards">ROG</a>
                                                                         </li>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">Gigabyte</a>
+                                                                                href="/shop/motherboards">Gigabyte</a>
                                                                         </li>
                                                                     </ul>
                                                                 </li>
@@ -317,15 +317,15 @@
                                                         <div class="col-lg-4">
                                                             <ul class="v-level-2">
                                                                 <li>
-                                                                    <a href="shop-v2-sub-category.html">Prosessor</a>
+                                                                    <a href="/shop/processors">Prosessor</a>
                                                                     <ul>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">AMD</a>
+                                                                                href="/shop/processors">AMD</a>
                                                                         </li>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">INTEL</a>
+                                                                                href="/shop/processors">INTEL</a>
                                                                         </li>
                                                                     </ul>
                                                                 </li>
@@ -335,15 +335,15 @@
                                                             <ul class="v-level-2">
                                                                 <li>
                                                                     <a
-                                                                        href="shop-v1-root-category.html">Graphic Card</a>
+                                                                        href="/shop/graphic_cards">Graphic Card</a>
                                                                     <ul>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">Nvidia</a>
+                                                                                href="/shop/graphic_cards">Nvidia</a>
                                                                         </li>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">Radeon</a>
+                                                                                href="/shop/graphic_cards">Radeon</a>
                                                                         </li>
                                                                     </ul>
                                                                 </li>
@@ -354,20 +354,20 @@
                                                         <div class="col-lg-4">
                                                             <ul class="v-level-2">
                                                                 <li>
-                                                                    <a href="shop-v2-sub-category.html">Power Supplay</a>
+                                                                    <a href="/shop/power_supplies">Power Supplay</a>
                                                                     <ul>
                                                                         <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">80 broze
+                                                                            <a href="/shop/power_supplies">80 broze
                                                                                 
                                                                             </a>
                                                                         </li>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">80 Platinum</a>
+                                                                                href="/shop/power_supplies">80 Platinum</a>
                                                                         </li>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">80 Gold</a>
+                                                                                href="/shop/power_supplies">80 Gold</a>
                                                                         </li>
                                                                     </ul>
                                                                 </li>
@@ -377,7 +377,7 @@
                                                 </div>
                                             </li>
                                             <li class="js-backdrop">
-                                                <a href="shop-v1-root-category.html">
+                                                <a href="/shop/memories">
                                                     <i class="ion ion-ios-save"></i>
                                                     Memory & Storage
                                                     <i class="ion ion-ios-arrow-forward"></i>
@@ -388,14 +388,14 @@
                                                         <div class="col-lg-4">
                                                             <ul class="v-level-2">
                                                                 <li>
-                                                                    <a href="shop-v2-sub-category.html">RAM</a>
+                                                                    <a href="/shop/memories">RAM</a>
                                                                     <ul>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">DDR 4</a>
+                                                                                href="/shop/memories">DDR 4</a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">DDR 5
+                                                                            <a href="/shop/memories">DDR 5
                                                                             </a>
                                                                         </li>
                                                                     </ul>
@@ -405,14 +405,14 @@
                                                         <div class="col-lg-4">
                                                             <ul class="v-level-2">
                                                                 <li>
-                                                                    <a href="shop-v2-sub-category.html">SSD</a>
+                                                                    <a href="/shop/stoirages">SSD</a>
                                                                     <ul>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">SATA</a>
+                                                                                href="/shop/stoirages">SATA</a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">NVME
+                                                                            <a href="/shop/stoirages">NVME
                                                                             </a>
                                                                         </li>
                                                                     </ul>
@@ -422,19 +422,19 @@
                                                         <div class="col-lg-4">
                                                             <ul class="v-level-2">
                                                                 <li>
-                                                                    <a href="shop-v2-sub-category.html">Harddisk
+                                                                    <a href="/shop/storages">Harddisk
                                                                     </a>
                                                                     <ul>
                                                                         <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">WD Blue
+                                                                            <a href="/shop/storages">WD Blue
                                                                             </a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="shop-v2-sub-category.html">Samsung
+                                                                            <a href="/shop/storages">Samsung
                                                                             </a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="shop-v2-sub-category.html">Seagate
+                                                                            <a href="/shop/storages">Seagate
                                                                             </a>
                                                                         </li>
                                                                     </ul>
@@ -445,7 +445,7 @@
                                                 </div>
                                             </li>
                                             <li class="js-backdrop">
-                                                <a href="shop-v1-root-category.html">
+                                                <a href="#">
                                                     <i class="fa fa-gamepad"></i>
                                                         Gaming Gear
                                                     <i class="ion ion-ios-arrow-forward"></i>
@@ -456,18 +456,18 @@
                                                         <div class="col-lg-4">
                                                             <ul class="v-level-2">
                                                                 <li>
-                                                                    <a href="shop-v2-sub-category.html">Mouse</a>
+                                                                    <a href="/shop/mouse">Mouse</a>
                                                                     <ul>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">Optical</a>
+                                                                                href="/shop/mouse">Optical</a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Laser Gaming
+                                                                            <a href="/shop/mouse">Laser Gaming
                                                                             </a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Macro
+                                                                            <a href="/shop/mouse">Macro
                                                                             </a>
                                                                         </li>
                                                                     </ul>
@@ -477,18 +477,18 @@
                                                         <div class="col-lg-4">
                                                             <ul class="v-level-2">
                                                                 <li>
-                                                                    <a href="shop-v2-sub-category.html">Keyboard</a>
+                                                                    <a href="/shop/keyboards">Keyboard</a>
                                                                     <ul>
                                                                         <li>
                                                                             <a
-                                                                                href="shop-v3-sub-sub-category.html">TKL</a>
+                                                                                href="/shop/keyboards">TKL</a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Full Size
+                                                                            <a href="/shop/keyboards">Full Size
                                                                             </a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">Mini
+                                                                            <a href="/shop/keyboards">Mini
                                                                             </a>
                                                                         </li>
                                                                     </ul>
@@ -498,23 +498,23 @@
                                                         <div class="col-lg-4">
                                                             <ul class="v-level-2">
                                                                 <li>
-                                                                    <a href="shop-v2-sub-category.html">Headset
+                                                                    <a href="/shop/earphone">Headset
                                                                     </a>
                                                                     <ul>
                                                                         <li>
-                                                                            <a href="shop-v3-sub-sub-category.html">ROG
+                                                                            <a href="/shop/earphone">ROG
                                                                             </a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="shop-v2-sub-category.html">MSI
+                                                                            <a href="/shop/earphone">MSI
                                                                             </a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="shop-v2-sub-category.html">Steel Series
+                                                                            <a href="/shop/earphone">Steel Series
                                                                             </a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="shop-v2-sub-category.html">Hyper X
+                                                                            <a href="/shop/earphone">Hyper X
                                                                             </a>
                                                                         </li>
                                                                     </ul>
@@ -525,19 +525,19 @@
                                                 </div>
                                             </li>
                                             <li>
-                                                <a href="shop-v1-root-category.html">
+                                                <a href="/shop/monitors">
                                                     <i class="fa fa-desktop"></i>
                                                     Monitor
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="shop-v1-root-category.html">
+                                                <a href="/shop/computer_cases">
                                                     <i class="fa-solid fa-toilet-portable"></i>
                                                     Casing
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="shop-v1-root-category.html">
+                                                <a href="/shop/coolers">
                                                     <i class="fa fa-fan"></i>
                                                    Cooler
                                                 </a>
@@ -1050,6 +1050,8 @@
             })
         })
     </script>
+
+    
 
 </body>
 
