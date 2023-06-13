@@ -17,6 +17,7 @@ return new class extends Migration
             $table->date('orderDate',255);
             $table->string('orderTotalPrice',255);
             $table->string('orderResi',255)->nullable();
+            $table->string('paymentId',255);
             $table->string('orderStatus',255)->nullable()->default("Unpaid");;
             $table->timestamps();
         });

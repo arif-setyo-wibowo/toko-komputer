@@ -115,10 +115,10 @@ class OrdersController extends Controller
         $order->customerId = $request->session()->get('id.customer');
         $order->orderDate = date('Y-m-d', strtotime($date));
         $order->orderTotalPrice = $amount;
-
         
         $transaksi = $midtrans->CreatePayment($customer_details,$midtransItems,$transaction_details);
         if ($transaksi) {
+            $order->paymentId = $transaksi;
             $order->save();
             OrderDetail::insert($detailItems);
             $request->session()->forget('cart.items');
@@ -131,7 +131,11 @@ class OrdersController extends Controller
         $serverKey = "SB-Mid-server-_WEHTFfYgN0J0ssrU2yJfInV";
         $hashed = hash("sha512",$request->order_id.$request->status_code.$request->gross_amount.$serverKey);
         if ($hashed == $request->signature_key) {
-            if ($request->transaction_status == "capture" || $request->transaction_status == "settlement") {
+            if ($request->transaction_status == "expire") {
+                $order = Order::find($request->order_id);
+                $order->orderStatus = "Cancelled";
+                $order->save();
+            }else if ($request->transaction_status == "capture" || $request->transaction_status == "settlement") {
                 $order = Order::find($request->order_id);
                 $order->orderStatus = "Paid";
                 $order->save();
