@@ -24,67 +24,19 @@
         <div class="container">
 
             <div style="margin-bottom:30px;">
-                <h3 class="sec-maker-h3">Pengecekan Kompabilitas</h3>
+                <h3 class="sec-maker-h3">Cek Kompabilitas Motherboard</h3>
                 <hr>
             </div>
             <div class="row "style="margin-top:15px;">
-                <div class="col-md-9" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Pilih Processor</label>
-                        <select class=" col-md-9 form-control select2 ">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                            <option>Intel Core i5-12600K 3.7GHz Up To 4.9GHz - Cache 20MB [Box] Socket LGA 1700 - Alder Lake
-                                Series</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-1" style="margin-top:-10px;">
-                    <div class="form-group">
-                        <input type="number" class="form-control" value="1">
-                    </div>
-                </div>
-                <div class="col-md-2" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    Rp.
-                                </span>
-                            </div>
-                            <input type="text" disabled class="form-control" value="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row "style="margin-top:15px;">
-                <div class="col-md-9" style="margin-top:-10px;">
+                <div class="col-md-9 pl-3 pr-3" style="margin-top:-10px;">
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">Pilih Motherboard</label>
-                        <select class=" col-md-9 form-control select2 ">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                            <option>Intel Core i5-12600K 3.7GHz Up To 4.9GHz - Cache 20MB [Box] Socket LGA 1700 - Alder Lake
-                                Series</option>
+                        <select class=" col-md-9 form-control select2" id="selMobo">
                         </select>
                     </div>
                 </div>
-                <div class="col-md-1" style="margin-top:-10px;">
-                    <div class="form-group">
-                        <input type="number" class="form-control" value="1">
-                    </div>
-                </div>
-                <div class="col-md-2" style="margin-top:-10px;">
+                
+                <div class="col-md-3 pl-3 pr-3" style="margin-top:-10px;">
                     <div class="form-group row">
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -92,34 +44,21 @@
                                     Rp.
                                 </span>
                             </div>
-                            <input type="text" disabled class="form-control" value="">
+                            <input type="text" disabled class="form-control" id="moboPrice" value="">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row "style="margin-top:15px;">
-                <div class="col-md-9" style="margin-top:-10px;">
+                <div class="col-md-9 pl-3 pr-3" style="margin-top:-10px;">
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Pilih RAM</label>
-                        <select class=" col-md-9 form-control select2 ">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                            <option>Intel Core i5-12600K 3.7GHz Up To 4.9GHz - Cache 20MB [Box] Socket LGA 1700 - Alder Lake
-                                Series</option>
+                        <label class="col-md-3 col-form-label">Pilih Processor</label>
+                        <select disabled class=" col-md-9 form-control select2" id="selProce">    
                         </select>
                     </div>
                 </div>
-                <div class="col-md-1" style="margin-top:-10px;">
-                    <div class="form-group">
-                        <input type="number" class="form-control" value="1">
-                    </div>
-                </div>
-                <div class="col-md-2" style="margin-top:-10px;">
+                
+                <div class="col-md-3 pl-3 pr-3" style="margin-top:-10px;">
                     <div class="form-group row">
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -127,40 +66,93 @@
                                     Rp.
                                 </span>
                             </div>
-                            <input type="text" disabled class="form-control" value="">
+                            <input type="text" disabled class="form-control" id="processorPrice" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row "style="margin-top:15px;">
+                <div class="col-md-9 pl-3 pr-3" style="margin-top:-10px;">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">Pilih RAM</label>
+                        <select disabled class=" col-md-9 form-control select2" id="selRam">
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 pl-3 pr-3" style="margin-top:-10px;">
+                    <div class="form-group row">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    Rp.
+                                </span>
+                            </div>
+                            <input type="text" disabled class="form-control" id="memoryPrice" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row "style="margin-top:15px;">
+                <div class="col-md-9 pl-3 pr-3" style="margin-top:-10px;">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">Pilih SSD</label>
+                        <select disabled class=" col-md-9 form-control select2" id="selSsd">
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 pl-3 pr-3" style="margin-top:-10px;">
+                    <div class="form-group row">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    Rp.
+                                </span>
+                            </div>
+                            <input type="text" disabled class="form-control" id="ssdPrice" value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row "style="margin-top:15px;">
+                <div class="col-md-9 pl-3 pr-3" style="margin-top:-10px;">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">Pilih Harddisk</label>
+                        <select disabled class=" col-md-9 form-control select2" id="selHdd">
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 pl-3 pr-3" style="margin-top:-10px;">
+                    <div class="form-group row">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    Rp.
+                                </span>
+                            </div>
+                            <input type="text" disabled class="form-control" id="hddPrice" value="">
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Main Componen -->
             <div style="margin-bottom:30px; margin-top:35px;">
-                <h3 class="sec-maker-h3">MAIN COMPONENTS FOR DESKTOP</h3>
+                <h3 class="sec-maker-h3">Cek Kompabilitas Casing</h3>
                 <hr>
             </div>
 
             <div class="row "style="margin-top:15px;">
-                <div class="col-md-9" style="margin-top:-10px;">
+                <div class="col-md-9 pl-3 pr-3" style="margin-top:-10px;">
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">Pilih Casing</label>
-                        <select class=" col-md-9 form-control select2 ">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                            <option>Intel Core i5-12600K 3.7GHz Up To 4.9GHz - Cache 20MB [Box] Socket LGA 1700 - Alder Lake
-                                Series</option>
+                        <select disabled class=" col-md-9 form-control select2" id="selCase">
                         </select>
                     </div>
                 </div>
-                <div class="col-md-1" style="margin-top:-10px;">
-                    <div class="form-group">
-                        <input type="number" class="form-control" value="1">
-                    </div>
-                </div>
-                <div class="col-md-2" style="margin-top:-10px;">
+                
+                <div class="col-md-3 pl-3 pr-3" style="margin-top:-10px;">
                     <div class="form-group row">
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -168,34 +160,21 @@
                                     Rp.
                                 </span>
                             </div>
-                            <input type="text" disabled class="form-control" value="">
+                            <input type="text" disabled class="form-control" id="casePrice" value="">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row "style="margin-top:15px;">
-                <div class="col-md-9" style="margin-top:-10px;">
+                <div class="col-md-9 pl-3 pr-3" style="margin-top:-10px;">
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Pilih SSD</label>
-                        <select class=" col-md-9 form-control select2 ">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                            <option>Intel Core i5-12600K 3.7GHz Up To 4.9GHz - Cache 20MB [Box] Socket LGA 1700 - Alder Lake
-                                Series</option>
+                        <label class="col-md-3 col-form-label">Pilih Cooler</label>
+                        <select disabled class=" col-md-9 form-control select2" id="selCooler">
                         </select>
                     </div>
                 </div>
-                <div class="col-md-1" style="margin-top:-10px;">
-                    <div class="form-group">
-                        <input type="number" class="form-control" value="1">
-                    </div>
-                </div>
-                <div class="col-md-2" style="margin-top:-10px;">
+                
+                <div class="col-md-3 pl-3 pr-3" style="margin-top:-10px;">
                     <div class="form-group row">
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -203,139 +182,21 @@
                                     Rp.
                                 </span>
                             </div>
-                            <input type="text" disabled class="form-control" value="">
+                            <input type="text" disabled class="form-control" id="coolerPrice" value="">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row "style="margin-top:15px;">
-                <div class="col-md-9" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Pilih SSD2</label>
-                        <select class=" col-md-9 form-control select2 ">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                            <option>Intel Core i5-12600K 3.7GHz Up To 4.9GHz - Cache 20MB [Box] Socket LGA 1700 - Alder Lake
-                                Series</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-1" style="margin-top:-10px;">
-                    <div class="form-group">
-                        <input type="number" class="form-control" value="1">
-                    </div>
-                </div>
-                <div class="col-md-2" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    Rp.
-                                </span>
-                            </div>
-                            <input type="text" disabled class="form-control" value="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row "style="margin-top:15px;">
-                <div class="col-md-9" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Pilih Harddisk</label>
-                        <select class=" col-md-9 form-control select2 ">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                            <option>Intel Core i5-12600K 3.7GHz Up To 4.9GHz - Cache 20MB [Box] Socket LGA 1700 - Alder Lake
-                                Series</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-1" style="margin-top:-10px;">
-                    <div class="form-group">
-                        <input type="number" class="form-control" value="1">
-                    </div>
-                </div>
-                <div class="col-md-2" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    Rp.
-                                </span>
-                            </div>
-                            <input type="text" disabled class="form-control" value="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row "style="margin-top:15px;">
-                <div class="col-md-9" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Pilih Harddisk 2</label>
-                        <select class=" col-md-9 form-control select2 ">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                            <option>Intel Core i5-12600K 3.7GHz Up To 4.9GHz - Cache 20MB [Box] Socket LGA 1700 - Alder Lake
-                                Series</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-1" style="margin-top:-10px;">
-                    <div class="form-group">
-                        <input type="number" class="form-control" value="1">
-                    </div>
-                </div>
-                <div class="col-md-2" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    Rp.
-                                </span>
-                            </div>
-                            <input type="text" disabled class="form-control" value="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row "style="margin-top:15px;">
-                <div class="col-md-9" style="margin-top:-10px;">
+                <div class="col-md-9 pl-3 pr-3" style="margin-top:-10px;">
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">Pilih VGA</label>
-                        <select class=" col-md-9 form-control select2 ">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                            <option>Intel Core i5-12600K 3.7GHz Up To 4.9GHz - Cache 20MB [Box] Socket LGA 1700 - Alder Lake
-                                Series</option>
+                        <select disabled class=" col-md-9 form-control select2" id="selVga">
                         </select>
                     </div>
                 </div>
-                <div class="col-md-1" style="margin-top:-10px;">
-                    <div class="form-group">
-                        <input type="number" class="form-control" value="1">
-                    </div>
-                </div>
-                <div class="col-md-2" style="margin-top:-10px;">
+                
+                <div class="col-md-3 pl-3 pr-3" style="margin-top:-10px;">
                     <div class="form-group row">
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -343,34 +204,21 @@
                                     Rp.
                                 </span>
                             </div>
-                            <input type="text" disabled class="form-control" value="">
+                            <input type="text" disabled class="form-control" id="gpuPrice" value="">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row "style="margin-top:15px;">
-                <div class="col-md-9" style="margin-top:-10px;">
+                <div class="col-md-9 pl-3 pr-3" style="margin-top:-10px;">
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">Pilih PSU</label>
-                        <select class=" col-md-9 form-control select2 ">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                            <option>Intel Core i5-12600K 3.7GHz Up To 4.9GHz - Cache 20MB [Box] Socket LGA 1700 - Alder Lake
-                                Series</option>
+                        <select disabled class=" col-md-9 form-control select2" id="selPsu">
                         </select>
                     </div>
                 </div>
-                <div class="col-md-1" style="margin-top:-10px;">
-                    <div class="form-group">
-                        <input type="number" class="form-control" value="1">
-                    </div>
-                </div>
-                <div class="col-md-2" style="margin-top:-10px;">
+                
+                <div class="col-md-3 pl-3 pr-3" style="margin-top:-10px;">
                     <div class="form-group row">
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -378,221 +226,12 @@
                                     Rp.
                                 </span>
                             </div>
-                            <input type="text" disabled class="form-control" value="">
+                            <input type="text" disabled class="form-control" id="psuPrice" value="">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row "style="margin-top:15px;">
-                <div class="col-md-9" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Pilih Cooler Fan</label>
-                        <select class=" col-md-9 form-control select2 ">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                            <option>Intel Core i5-12600K 3.7GHz Up To 4.9GHz - Cache 20MB [Box] Socket LGA 1700 - Alder Lake
-                                Series</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-1" style="margin-top:-10px;">
-                    <div class="form-group">
-                        <input type="number" class="form-control" value="1">
-                    </div>
-                </div>
-                <div class="col-md-2" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    Rp.
-                                </span>
-                            </div>
-                            <input type="text" disabled class="form-control" value="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row "style="margin-top:15px;">
-                <div class="col-md-9" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Pilih FAN</label>
-                        <select class=" col-md-9 form-control select2 ">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                            <option>Intel Core i5-12600K 3.7GHz Up To 4.9GHz - Cache 20MB [Box] Socket LGA 1700 - Alder Lake
-                                Series</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-1" style="margin-top:-10px;">
-                    <div class="form-group">
-                        <input type="number" class="form-control" value="1">
-                    </div>
-                </div>
-                <div class="col-md-2" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    Rp.
-                                </span>
-                            </div>
-                            <input type="text" disabled class="form-control" value="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row "style="margin-top:15px;">
-                <div class="col-md-9" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Pilih Mouespad</label>
-                        <select class=" col-md-9 form-control select2 ">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                            <option>Intel Core i5-12600K 3.7GHz Up To 4.9GHz - Cache 20MB [Box] Socket LGA 1700 - Alder Lake
-                                Series</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-1" style="margin-top:-10px;">
-                    <div class="form-group">
-                        <input type="number" class="form-control" value="1">
-                    </div>
-                </div>
-                <div class="col-md-2" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    Rp.
-                                </span>
-                            </div>
-                            <input type="text" disabled class="form-control" value="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row "style="margin-top:15px;">
-                <div class="col-md-9" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Pilih Mouse</label>
-                        <select class=" col-md-9 form-control select2 ">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                            <option>Intel Core i5-12600K 3.7GHz Up To 4.9GHz - Cache 20MB [Box] Socket LGA 1700 - Alder Lake
-                                Series</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-1" style="margin-top:-10px;">
-                    <div class="form-group">
-                        <input type="number" class="form-control" value="1">
-                    </div>
-                </div>
-                <div class="col-md-2" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    Rp.
-                                </span>
-                            </div>
-                            <input type="text" disabled class="form-control" value="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row "style="margin-top:15px;">
-                <div class="col-md-9" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Pilih Keyboard</label>
-                        <select class=" col-md-9 form-control select2 ">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                            <option>Intel Core i5-12600K 3.7GHz Up To 4.9GHz - Cache 20MB [Box] Socket LGA 1700 - Alder Lake
-                                Series</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-1" style="margin-top:-10px;">
-                    <div class="form-group">
-                        <input type="number" class="form-control" value="1">
-                    </div>
-                </div>
-                <div class="col-md-2" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    Rp.
-                                </span>
-                            </div>
-                            <input type="text" disabled class="form-control" value="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row "style="margin-top:15px;">
-                <div class="col-md-9" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label">Pilih Monitor</label>
-                        <select class=" col-md-9 form-control select2 ">
-                            <option selected="selected">Alabama</option>
-                            <option>Alaska</option>
-                            <option>California</option>
-                            <option>Delaware</option>
-                            <option>Tennessee</option>
-                            <option>Texas</option>
-                            <option>Washington</option>
-                            <option>Intel Core i5-12600K 3.7GHz Up To 4.9GHz - Cache 20MB [Box] Socket LGA 1700 - Alder Lake
-                                Series</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-1" style="margin-top:-10px;">
-                    <div class="form-group">
-                        <input type="number" class="form-control" value="1">
-                    </div>
-                </div>
-                <div class="col-md-2" style="margin-top:-10px;">
-                    <div class="form-group row">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">
-                                    Rp.
-                                </span>
-                            </div>
-                            <input type="text" disabled class="form-control" value="">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <hr>
             <!-- Total Harga -->
             <div class="row "style="margin-top:15px;">
@@ -617,14 +256,13 @@
             </div>
             <div class="row "style="margin-top:15px; float:right;">
                 <div class="m-1">
-                    <button type="button" class="btn btn-success btn-block "><i class="fa fa-save"></i> Preview
-                    </button>
+                    <button type="button" class="btn btn-success btn-block "><i class="fa fa-save"></i> Preview</button>
                 </div>
                 <div class="m-1">
                     <button type="button" class="btn btn-danger btn-block"><i class="fa fa-trash"></i> Reset</button>
                 </div>
                 <div class=" m-1">
-                    <button type="button" class="btn btn-primary btn-block "><i class="fa fa-save"></i> Export </button>
+                    <button type="button" class="btn btn-primary btn-block "><i class="fa fa-save"></i> Export</button>
                 </div>
             </div>
 
@@ -637,4 +275,242 @@
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('front/') }}/css/adminlte.css">
+@endsection
+@section('javascript')
+    <script>
+        let casing = [].concat(@json($case));
+        let gpu = [].concat(@json($gpu));
+        let memory = [].concat(@json($memory));
+        let mobo = [].concat(@json($mobo));
+        let psu = [].concat(@json($psu));
+        let cpu = [].concat(@json($cpu));
+        let storage = [].concat(@json($storage));
+        let cooler = [].concat(@json($cooler));
+
+        let loopOpt = (cond,arr,selid,id,name,state,stateif,stateval) =>{
+            if (state = 1) {
+                $(`${selid} option`).remove()
+                $(selid).append(`<option selected disabled hidden>Pilih Barang</option>`);
+                for (let i = 0; i < arr.length; i++) {
+                    if (cond == "=") {
+                        if (arr[i][stateif] == stateval) {
+                            $(selid).append(`<option value="${arr[i][id]}">${arr[i][name]}</option>`);
+                        }
+                    } else {
+                        if (Number(arr[i][stateif]) > Number(stateval)) {
+                            $(selid).append(`<option value="${arr[i][id]}">${arr[i][name]}</option>`);
+                        }
+                    }
+                }
+            } else {
+                for (let i = 0; i < arr.length; i++) {
+                    $(selid).append(`<option value="${arr[i][id]}">${arr[i][name]}</option>`);
+                }
+            }
+        }
+        arrFilter = (cond,varAny,selec,arr) => {
+            let result
+            if (cond == "=") {
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i][selec] == varAny) {
+                        result = arr[i]
+                    }
+                }
+            } else {
+                for (let i = 0; i < arr.length; i++) {
+                    if (Number(arr[i][selec]) > Number(varAny)) {
+                        result = arr[i]
+                    }
+                }
+            }
+            return result
+        }
+
+        loopOpt("=",mobo,'#selMobo',"moboId","moboName")
+        let lastProce = ""; let lastRam = ""; let lastHdd = false; let lastSsd = false; let lastCase = ""; let lastVga = ""; let lastPsu = ""; let lastCooler = "";
+        
+        $('#selMobo').on( "change", function() {
+            let temp = arrFilter("=",$(this).val(),"moboId",mobo)
+            let moboPrice = Number(temp.moboPrice)
+            let socket = temp.processorSocketId
+            let memoType = temp.moboMemoryType
+            let sata = temp.moboStorageSata.split(" ")
+            let m2 = temp.moboStorageM2.split(" ")
+            let ff = temp.moboFormFactor
+            $('#moboPrice').val(moboPrice.toLocaleString("id-ID"))
+            let cpuTemp = arrFilter("=",socket,"processorSocketId",cpu)
+            let memTemp = arrFilter("=",memoType,"memoryType",memory)
+            let caseTemp = arrFilter("=",ff,"caseType",casing)
+            
+            if (cpuTemp == undefined) {
+                $('#selProce').attr("disabled",true)
+                $('#selProce option').remove()
+                $('#selProce').append(`<option selected disabled hidden>Tidak ada processor yang cocok dengan motherboard.</option>`);
+                $('#processorPrice').val("")
+            } else {
+                if (lastProce != socket) {
+                    $('#selProce').removeAttr("disabled")
+                    $('#processorPrice').val("")
+                    loopOpt("=",cpu,'#selProce',"processorId","processorName",1,"processorSocketId",socket)
+                    lastProce = ""
+                }
+            }
+            if (memTemp == undefined) {
+                $('#selRam').attr("disabled",true)
+                $('#selRam option').remove()
+                $('#selRam').append(`<option selected disabled hidden>Tidak ada memory yang cocok dengan motherboard.</option>`);
+                $('#memoryPrice').val("")
+            } else {
+                if (lastRam != memoType) {
+                    $('#selRam').removeAttr("disabled")
+                    $('#memoryPrice').val("")
+                    loopOpt("=",memory,'#selRam',"memoryId","memoryName",1,"memoryType",memoType)
+                    lastRam = ""
+                } 
+            }
+            if (caseTemp == undefined) {
+                $('#selCase').attr("disabled",true)
+                $('#selCase option').remove()
+                $('#selCase').append(`<option selected disabled hidden>Tidak ada casing yang cocokc dengan motherboard.</option>`);
+                $('#casePrice').val("")
+            } else {
+                if (lastCase != ff) {
+                    $('#selCase').removeAttr("disabled")
+                    $('#casePrice').val("")
+                    loopOpt("=",casing,'#selCase',"caseId","caseName",1,"caseType",ff)
+                    lastCase = ""
+                }
+            }
+            if (Number(sata[2]) == 0) {
+                $('#selHdd').attr("disabled",true)
+                $('#selHdd option').remove()
+                $('#selHdd').append(`<option selected disabled hidden>Motherboard tidak memiliki slot sata</option>`);
+                $('#hddPrice').val("")
+                lastHdd = false
+            } else {
+                if (lastHdd == false) {
+                    $('#selHdd').removeAttr("disabled")
+                    $('#hddPrice').val("")
+                    loopOpt("=",storage,'#selHdd',"storageId","storageName",1,"storageType","Harddisk")
+                }
+            }
+            if (Number(m2[2]) == 0) {
+                $('#selSsd').attr("disabled",true)
+                $('#selSsd option').remove()
+                $('#selSsd').append(`<option selected disabled hidden>Motherboard tidak memiliki slot M.2</option>`);
+                $('#ssdPrice').val("")
+                lastSsd = false
+            } else {
+                if (lastSsd == false) {
+                    $('#selSsd').removeAttr("disabled")
+                    $('#ssdPrice').val("")
+                    loopOpt("=",storage,'#selSsd',"storageId","storageName",1,"storageType","SSD")
+                }
+            }
+            if (lastCase != ff) {
+                $('#selVga').attr("disabled",true)
+                $('#gpuPrice').val("")
+                $('#selVga option').remove()
+                $('#selCooler').attr("disabled",true)
+                $('#coolerPrice').val("")
+                $('#selCooler option').remove()
+                $('#selPsu').attr("disabled",true)
+                $('#psuPrice').val("")
+                $('#selPsu option').remove()
+            }
+        });
+        $('#selProce').on( "change", function() {
+            let temp = arrFilter("=",$(this).val(),"processorId",cpu)
+            let processorPrice = Number(temp.processorPrice)
+            $('#processorPrice').val(processorPrice.toLocaleString("id-ID"))
+            lastProce = temp.processorSocketId
+        });
+        $('#selRam').on( "change", function() {
+            let temp = arrFilter("=",$(this).val(),"memoryId",memory)
+            let memoryPrice = Number(temp.memoryPrice)
+            $('#memoryPrice').val(memoryPrice.toLocaleString("id-ID"))
+            lastRam = temp.memoryType
+        });
+        $('#selHdd').on( "change", function() {
+            let temp = arrFilter("=",$(this).val(),"storageId",storage)
+            let storagePrice = Number(temp.storagePrice)
+            $('#hddPrice').val(storagePrice.toLocaleString("id-ID"))
+            lastHdd = true
+        });
+        $('#selSsd').on( "change", function() {
+            let temp = arrFilter("=",$(this).val(),"storageId",storage)
+            let storagePrice = Number(temp.storagePrice)
+            $('#ssdPrice').val(storagePrice.toLocaleString("id-ID"))
+            lastSsd = true
+        });
+        $('#selCase').on( "change", function() {
+            let temp = arrFilter("=",$(this).val(),"caseId",casing)
+            let casePrice = Number(temp.casePrice)
+            $('#casePrice').val(casePrice.toLocaleString("id-ID"))
+            lastCase = temp.caseType
+            let gpuTemp = arrFilter("=",lastCase,"gpuCaseSupport",gpu)
+            let coolTemp = arrFilter("=",lastCase,"coolerCaseType",cooler)
+
+            if (gpuTemp == undefined) {
+                $('#selVga').attr("disabled",true)
+                $('#selVga option').remove()
+                $('#selVga').append(`<option selected disabled hidden>Tidak ada VGA yang cocok dengan casing.</option>`);
+                $('#gpuPrice').val("")
+            } else {
+                if (lastVga != lastCase) {
+                    $('#selVga').removeAttr("disabled")
+                    $('#gpuPrice').val("")
+                    loopOpt("=",gpu,'#selVga',"gpuId","gpuName",1,"gpuCaseSupport",lastCase)
+                    lastVga = ""
+                }
+            }
+            if (coolTemp == undefined) {
+                $('#selCooler').attr("disabled",true)
+                $('#selCooler option').remove()
+                $('#selCooler').append(`<option selected disabled hidden>Tidak ada Cooler yang cocok dengan casing.</option>`);
+                $('#coolerPrice').val("")
+            } else {
+                if (lastCooler != lastCase) {
+                    $('#selCooler').removeAttr("disabled")
+                    $('#coolerPrice').val("")
+                    loopOpt("=",cooler,'#selCooler',"coolerId","coolerName",1,"coolerCaseType",lastCase)
+                    lastVga = ""
+                }
+            }
+        });
+        $('#selCooler').on( "change", function() {
+            let temp = arrFilter("=",$(this).val(),"coolerId",cooler)
+            let coolerPrice = Number(temp.coolerPrice)
+            $('#coolerPrice').val(coolerPrice.toLocaleString("id-ID"))
+            lastPsu = true
+        });
+        $('#selVga').on( "change", function() {
+            let temp = arrFilter("=",$(this).val(),"gpuId",gpu)
+            let gpuPrice = Number(temp.gpuPrice)
+            $('#gpuPrice').val(gpuPrice.toLocaleString("id-ID"))
+            lastVga = true
+            let power = temp.gpuPowerReq
+            let psuTemp = arrFilter(">",power,"psuPower",psu)
+
+            if (psuTemp == undefined) {
+                $('#selPsu').attr("disabled",true)
+                $('#selPsu option').remove()
+                $('#selPsu').append(`<option selected disabled hidden>Tidak ada PSU yang cocok dengan GPU.</option>`);
+                $('#psuPrice').val("")
+            } else {
+                if (lastVga != power) {
+                    $('#selPsu').removeAttr("disabled")
+                    $('#psuPrice').val("")
+                    loopOpt(">",psu,'#selPsu',"psuId","psuName",1,"psuPower",power)
+                    lastVga = ""
+                }
+            }
+        });
+        $('#selPsu').on( "change", function() {
+            let temp = arrFilter("=",$(this).val(),"psuId",psu)
+            let psuPrice = Number(temp.psuPrice)
+            $('#psuPrice').val(psuPrice.toLocaleString("id-ID"))
+            lastPsu = true
+        });
+        </script>
 @endsection
