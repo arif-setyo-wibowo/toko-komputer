@@ -200,10 +200,11 @@
                                         </div>
                                         <div class="item-old-price text-decoration-none">
                                             <div class="item-action-behaviors">
-                                                {{-- <button
-                                                    class="ml-5 btn-success button button-outline-secondary add-to-cart-btn">
+                                                <button
+                                                    class="ml-5 btn-success button button-outline-secondary add-to-cart-btn"
+                                                    data-product-id="<?= $item[$key]['Id'] ?>">
                                                     Add to cart
-                                                </button> --}}
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -222,21 +223,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        window.addEventListener('DOMContentLoaded', function() {
-
-            var paragraf = document.getElementById('paragraf');
-            var maxKata = 20;
-
-            for (let i = 0; i < paragraf.length; i++) {
-                var kataParagraf = paragraf[i].innerHTML.split(' ');
-                console.log(paragraf[i])
-                if (kataParagraf.length > maxKata) {
-                    paragraf[i].innerHTML = kataParagraf.slice(0, maxKata).join(' ') + '...';
-                }
-            }
-        });
-    </script>
-    <!-- Shop-Page /-->
 @endsection
