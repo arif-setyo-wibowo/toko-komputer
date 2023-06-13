@@ -27,9 +27,10 @@ class ShopController extends Controller
     public function index($categories,Request $request)
     {
         $cart = $request->session()->get('cart.items', []);
+        $identitas = Identity::all();
         $data=[
             'title' => "Shop",
-            'identitas' => Identity::all(),
+            'identitas'  => $identitas[0],
             'countCart' => count($cart),
             'mobo' => Motherboard::all()->count(),
             'pros' => Processor::all()->count(),
@@ -72,7 +73,7 @@ class ShopController extends Controller
         };
 
         
-   
+        
         return view('front/shop',$data);
     }
 

@@ -33,10 +33,9 @@
     <div class="banner-layer">
         <div class="container">
             <div class="image-banner">
-                <a href="shop-v1-root-category.html" class="mx-auto banner-hover effect-dark-opacity">
-                    @foreach ($identitas as $data)
-                        <img class="img-fluid" src="{{ asset('uploads/') }}/{{ $data->shopLogo }}" alt="Logo">
-                    @endforeach
+                <a href="/" class="mx-auto banner-hover effect-dark-opacity">
+                    <img class="img-fluid" src="{{ asset('front/') }}/images/brand-logos/baner1.png"
+                        alt="Winter Season Banner">
                 </a>
             </div>
         </div>
@@ -342,7 +341,7 @@
     <div class="banner-image-view-more">
         <div class="container">
             <div class="image-banner u-s-m-y-40">
-                <a href="shop-v1-root-category.html" class="mx-auto banner-hover effect-dark-opacity">
+                <a href="/" class="mx-auto banner-hover effect-dark-opacity">
                     <img class="img-fluid" src="{{ asset('front/') }}/images/brand-logos/baner1.png" alt="Banner Image">
                 </a>
             </div>
@@ -376,7 +375,6 @@
                                                                             <a class="nav-link" data-toggle="tab" href="#mobiles-featured-products">Featured Products</a>
                                                                         </li> -->
                 </ul>
-                <span class="sec-maker-span-text u-s-m-b-8 d-block">Select products in specific category</span>
             </div>
             <div class="wrapper-content">
                 <div class="outer-area-tab">
@@ -589,7 +587,7 @@
     <div class="banner-layer">
         <div class="container">
             <div class="image-banner">
-                <a href="shop-v1-root-category.html" class="mx-auto banner-hover effect-dark-opacity">
+                <a href="/" class="mx-auto banner-hover effect-dark-opacity">
                     <img class="img-fluid" src="{{ asset('front/') }}/images/brand-logos/baner1.png"
                         alt="Winter Season Banner">
                 </a>
@@ -602,9 +600,9 @@
             <div class="sec-maker-header text-center">
                 <h3 class="sec-maker-h3">Casing Gaming</h3>
                 <ul class="nav tab-nav-style-1-a justify-content-center">
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#men-latest-products">Casing Terbaru</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
             <div class="wrapper-content">

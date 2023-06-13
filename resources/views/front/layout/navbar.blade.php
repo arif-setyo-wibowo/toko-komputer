@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Groover - Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more</title>
+    <title>{{ $identitas->shopName }}</title>
     <!-- Standard Favicon -->
     <link href="{{ asset('front/') }}/images/favicon.ico" rel="shortcut icon">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -37,10 +37,8 @@
     <link rel="stylesheet" href="{{ asset('front/') }}/css/bundle.css">
     <link rel="stylesheet" href="{{ asset('front/') }}/css/select2.min.css">
     <link rel="stylesheet" href="{{ asset('front/') }}/css/select2-bootstrap4.min.css">
-    <!-- <link rel="stylesheet" href="{{ asset('front/') }}/css/adminlte.css"> -->
+    <!-- <link rel="stylesheet" href="asset('front/') }}/css/adminlte.css"> -->
     <link rel="stylesheet" href="{{ asset('front/') }}/css/sweetalert2.min.css">
-
-
     @yield('css')
 </head>
 
@@ -54,21 +52,19 @@
             <div class="full-layer-outer-header">
                 <div class="container clearfix">
                     <nav>
-                        @foreach ($identitas as $data)
-                            <ul class="primary-nav g-nav">
-                                <li>
-                                    <a href="tel:{{ $data->shopPhoneNumber }}">
-                                        <i class="fas fa-phone u-c-brand u-s-m-r-9"></i>
-                                        {{ $data->shopPhoneNumber }}</a>
-                                </li>
-                                <li>
-                                    <a href="mailto:{{ $data->shopEmail }}">
-                                        <i class="fas fa-envelope u-c-brand u-s-m-r-9"></i>
-                                        {{ $data->shopEmail }}
-                                    </a>
-                                </li>
-                            </ul>
-                        @endforeach
+                        <ul class="primary-nav g-nav">
+                            <li>
+                                <a href="tel:{{ $identitas->shopPhoneNumber }}">
+                                    <i class="fas fa-phone u-c-brand u-s-m-r-9"></i>
+                                    {{ $identitas->shopPhoneNumber }}</a>
+                            </li>
+                            <li>
+                                <a href="mailto:{{ $identitas->shopEmail }}">
+                                    <i class="fas fa-envelope u-c-brand u-s-m-r-9"></i>
+                                    {{ $identitas->shopEmail }}
+                                </a>
+                            </li>
+                        </ul>
                     </nav>
                     <nav>
                         <ul class="secondary-nav g-nav">
@@ -109,10 +105,8 @@
                         <div class="col-lg-3 col-md-9 col-sm-6">
                             <div class="brand-logo text-lg-center">
                                 <a href="/">
-                                    @foreach ($identitas as $data)
-                                        <img src="{{ asset('uploads/') }}/{{ $data->shopLogo }}" alt="Logo"
-                                            class="app-brand-logo">
-                                    @endforeach
+                                    <img src="{{ asset('uploads/') }}/{{ $identitas->shopLogo }}" alt="Logo"
+                                        class="app-brand-logo" height="40" width="160">
                                 </a>
                             </div>
                         </div>
@@ -612,77 +606,56 @@
                 <!-- Mid-Footer -->
                 <div class="mid-footer-wrapper u-s-p-b-80">
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-12">
-                            <div class="footer-list">
-                                <h6>CUSTOMER SERVICE</h6>
-                                <ul>
-                                    <li>
-                                        <a href="faq.html">FAQs</a>
-                                    </li>
-                                    <li>
-                                        <a href="track-order.html">Track Order</a>
-                                    </li>
-                                    <li>
-                                        <a href="terms-and-conditions.html">Terms & Conditions</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
                             <div class="footer-list">
                                 <h6>COMPANY</h6>
                                 <ul>
                                     <li>
-                                        <a href="home.html">Home</a>
+                                        <a href="/">Home</a>
                                     </li>
                                     <li>
-                                        <a href="about.html">About</a>
+                                        <a href="/">About</a>
                                     </li>
                                     <li>
-                                        <a href="contact.html">Contact</a>
+                                        <a href="/">Contact</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
                             <div class="footer-list">
                                 <h6>INFORMATION</h6>
                                 <ul>
                                     <li>
-                                        <a href="store-directory.html">Categories Directory</a>
+                                        <a href="/cart">Keranjang</a>
                                     </li>
                                     <li>
-                                        <a href="wishlist.html">My Wishlist</a>
-                                    </li>
-                                    <li>
-                                        <a href="cart.html">My Cart</a>
+                                        <a href="/history">History</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-12">
+                        <div class="col-lg-4 col-md-4 col-sm-12">
                             <div class="footer-list">
                                 <h6>Address</h6>
-                                @foreach ($identitas as $data)
-                                    <ul>
-                                        <li>
-                                            <i class="fas fa-location-arrow u-s-m-r-9"></i>
-                                            <span>{{ $data->shopAddress }}</span>
-                                        </li>
-                                        <li>
-                                            <a href="tel:{{ $data->shopPhoneNumber }}">
-                                                <i class="fas fa-phone u-s-m-r-9"></i>
-                                                <span>{{ $data->shopPhoneNumber }}</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="mailto:contact@domain.com">
-                                                <i class="fas fa-envelope u-s-m-r-9"></i>
-                                                <span>{{ $data->shopEmail }}</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                @endforeach
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-location-arrow u-s-m-r-9"></i>
+                                        <span>{{ $identitas->shopAddress }}</span>
+                                    </li>
+                                    <li>
+                                        <a href="tel:{{ $identitas->shopPhoneNumber }}">
+                                            <i class="fas fa-phone u-s-m-r-9"></i>
+                                            <span>{{ $identitas->shopPhoneNumber }}</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:contact@domain.com">
+                                            <i class="fas fa-envelope u-s-m-r-9"></i>
+                                            <span>{{ $identitas->shopEmail }}</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -690,8 +663,8 @@
                 <!-- Mid-Footer /- -->
                 <!-- Bottom-Footer -->
                 <div class="bottom-footer-wrapper mt-4">
-                    <p class="copyright-text">Copyright &copy; 2018
-                        <a href="home.html">Groover</a> All Right Reserved
+                    <p class="copyright-text">Copyright &copy; 2023
+                        <a href="/">{{ $identitas->shopName }}</a> All Right Reserved <br>Template By Groover
                     </p>
                 </div>
             </div>
@@ -1017,8 +990,6 @@
             })
         })
     </script>
-
-
 
 </body>
 

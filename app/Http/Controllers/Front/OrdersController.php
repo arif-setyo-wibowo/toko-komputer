@@ -19,14 +19,15 @@ class OrdersController extends Controller
     {
         $cart = $request->session()->get('cart.items', []);
         $subtotal = 0;
+        $identitas = Identity::all();
 
         foreach ($cart as $item) {
             $subtotal += $item['product_price'] * $item['quantity'];
         }
 
-       $data=[
+        $data=[
             'title'     => "Cart",
-            'identitas' => Identity::all(),
+            'identitas' => $identitas[0],
             'cart'      => $cart,
             'countCart' => count($cart),
             'subtotal'  => $subtotal

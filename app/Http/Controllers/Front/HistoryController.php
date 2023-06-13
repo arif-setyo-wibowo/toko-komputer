@@ -17,10 +17,11 @@ class HistoryController extends Controller
         $cart = $request->session()->get('cart.items', []);
         $custId = session()->get('id.customer');
         $order = DB::table('orders')->where('customerId', '=', $custId)->get();
+        $identitas = Identity::all();
 
         $data=[
             'title' => "History",
-            'identitas' => Identity::all(),
+            'identitas'     => $identitas[0],
             'order' => $order,
             'countCart' => count($cart)
         ];

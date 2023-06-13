@@ -28,10 +28,11 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $cart = $request->session()->get('cart.items', []);
+        $identitas = Identity::all();
 
         $data=[
             'title' => "home",
-            'identitas' => Identity::all(),
+            'identitas' => $identitas[0],
             'countCart' => count($cart),
             'earphone'  => Earphone::all(),
             'keyboard'  => Keyboard::all(),

@@ -200,10 +200,10 @@
                                         </div>
                                         <div class="item-old-price text-decoration-none">
                                             <div class="item-action-behaviors">
-                                                <button
+                                                {{-- <button
                                                     class="ml-5 btn-success button button-outline-secondary add-to-cart-btn">
                                                     Add to cart
-                                                </button>
+                                                </button> --}}
                                             </div>
                                         </div>
                                     </div>

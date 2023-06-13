@@ -29,6 +29,8 @@ class DetailController extends Controller
     {
         $cart = $request->session()->get('cart.items', []);
         $product = DB::table('products')->where('productId', $productId)->first();
+        $identitas = Identity::all();
+        
         if ($product->source_table == "computer_cases") {
             $data = $this->computer_case($productId);
         } elseif ($product->source_table == "graphic_cards") {
@@ -56,7 +58,8 @@ class DetailController extends Controller
         } elseif ($product->source_table == "earphones") {
             $data = $this->earphone($productId);
         }
- 
+
+        $data['identitas'] = $identitas[0];
         $data['countCart'] = count($cart);
         return view('front/detailproduk', $data);
     }

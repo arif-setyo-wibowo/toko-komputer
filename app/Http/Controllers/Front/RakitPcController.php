@@ -30,10 +30,11 @@ class RakitPcController extends Controller
         $cpu=Processor::all();
         $storage=Storage::all();
         $cooler=Cooler::where('coolerType','Fan')->get();
+        $identitas = Identity::all();
 
         $data=[
             'title' => "Rakit Pc",
-            'identitas' => Identity::all(),
+            'identitas'  => $identitas[0],
             'countCart' => count($cart),
             'case' => $case,
             'gpu' => $gpu,

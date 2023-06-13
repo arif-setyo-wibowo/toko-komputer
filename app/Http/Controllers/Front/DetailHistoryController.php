@@ -18,6 +18,7 @@ class DetailHistoryController extends Controller
         $orderDetail = DB::table('order_details')->where('orderId', '=', $idOrder)->join('products', 'order_details.orderDetailProductId', '=', 'products.productId')->select('order_details.*', 'products.productName','products.productImage')->get();
         $order = DB::table('orders')->where('orderId', '=', $idOrder)->get();
         $subtotal = 0;
+        $identitas = Identity::all();
 
         foreach ($orderDetail as $key => $value) {
             $subtotal += $value->orderDetailProductPrice * $value->orderDetailProductQty;
@@ -25,7 +26,7 @@ class DetailHistoryController extends Controller
 
         $data=[
             'title'         => "Detail History",
-            'identitas'     => Identity::all(),
+            'identitas'     => $identitas[0],
             'countCart'     => count($cart),
             'orderDetail'   => $orderDetail,
             'order'         => $order[0],

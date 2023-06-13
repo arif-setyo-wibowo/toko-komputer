@@ -17,6 +17,7 @@ class CartController extends Controller
         //$request->session()->forget('cart');
         $cart = session()->get('cart.items', []);
         $subtotal = 0;
+        $identitas = Identity::all();
 
         foreach ($cart as $item) {
             $subtotal += $item['product_price'] * $item['quantity'];
@@ -24,7 +25,7 @@ class CartController extends Controller
 
         $data=[
             'title'     => "Cart",
-            'identitas' => Identity::all(),
+            'identitas' => $identitas[0],
             'cart'      => $cart,
             'countCart' => count($cart),
             'subtotal'  => $subtotal
