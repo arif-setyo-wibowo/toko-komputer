@@ -64,7 +64,7 @@ Route::post('/decrease-quantity', [CartController::class, 'updateCartQuantity'])
 Route::get('/emptycart', [CartController::class, 'empty'])->name('empty.cart');
 Route::get('/checkout', [OrdersController::class, 'index'])->name('checkout');
 Route::post('/checkout', [OrdersController::class, 'store']);
-Route::get('/history', [HistoryController::class, 'index']);
+Route::get('/history', [HistoryController::class, 'index'])->name('history');
 Route::get('/detailhistory/{id}', [DetailHistoryController::class, 'index']);
 
 // FRONT PRODUK

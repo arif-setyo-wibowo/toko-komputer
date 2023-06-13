@@ -41,7 +41,7 @@ class HomeController extends Controller
      */
     public function blank()
     {
-        return redirect()->route('home');
+        return redirect()->route('history');
     }
 
     /**
