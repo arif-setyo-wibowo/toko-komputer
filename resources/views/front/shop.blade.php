@@ -197,7 +197,7 @@
                                     </div>
                                     <div class="price-template ">
                                         <div class="item-new-price ">
-                                            Rp. <?= number_format($item[$key]['Price']) ?>
+                                            Rp. {{ number_format($item[$key]['Price'], 0, ',00', '.') }}
                                         </div>
                                         <div class="item-old-price text-decoration-none">
                                             <div class="item-action-behaviors">
