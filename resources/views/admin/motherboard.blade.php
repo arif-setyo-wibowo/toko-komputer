@@ -120,20 +120,6 @@
                         </div>
                         @endif
                         @if ((Session::get('role.karyawan')))
-                        <div class="card recent-sales overflow-auto p-3 ">
-                            <!-- Bordered Tabs -->
-                            <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
-                                        data-bs-target="#bordered-home" type="button" role="tab" aria-controls="home"
-                                        aria-selected="true">Daftar</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                                        data-bs-target="#bordered-profile" type="button" role="tab"
-                                        aria-controls="profile" aria-selected="false">Tambah Data</button>
-                                </li>
-                            </ul>
                             <!-- ISI -->
                             <div class="tab-content p-2" id="borderedTabContent">
                                 <div class="tab-pane fade show active" id="bordered-home" role="tabpanel"
