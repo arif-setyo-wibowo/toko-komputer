@@ -30,8 +30,6 @@ class SocialiteController extends Controller
                     session(['email.customer' => $finduser->customerEmail]);
                     session(['nama.customer' => $finduser->customerName]);                        
                     return redirect()->route('home');
-                } else {
-                    return redirect()->route('login')->withErrors(['email' => 'Akun belum diverifikasi'])->withInput();
                 }
             }else{
                 // redirect register with data
