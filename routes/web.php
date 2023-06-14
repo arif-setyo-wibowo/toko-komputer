@@ -62,16 +62,15 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/rakitpc', [RakitPcController::class, 'index']);
 Route::get('/detailproduk/{id}', [DetailController::class, 'index']);
 Route::get('/shop/{categories}', [ShopController::class, 'index']);
-
 Route::get('/search', [SearchController::class, 'index']);
+Route::get('/cart', [CartController::class, 'index']);
+Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add.cart');
+Route::post('/add-to-cart-rakit', [CartController::class, 'addToCartRakit']);
+Route::post('/remove-from-cart', [CartController::class, 'removeFromCart'])->name('remove.cart');
+Route::post('/decrease-quantity', [CartController::class, 'updateCartQuantity'])->name('min.cart');
 
 // FRONT PRODUK
 Route::middleware('customer')->group(function () {
-    Route::get('/cart', [CartController::class, 'index']);
-    Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add.cart');
-    Route::post('/add-to-cart-rakit', [CartController::class, 'addToCartRakit']);
-    Route::post('/remove-from-cart', [CartController::class, 'removeFromCart'])->name('remove.cart');
-    Route::post('/decrease-quantity', [CartController::class, 'updateCartQuantity'])->name('min.cart');
     Route::get('/checkout', [OrdersController::class, 'index']);
     Route::post('/checkout', [OrdersController::class, 'store']);
     Route::get('/history', [HistoryController::class, 'index'])->name('history');
@@ -86,7 +85,6 @@ Route::middleware('customer')->group(function () {
     Route::post('/cost', [RajaOngkirController::class, 'getCost'])->name('cost');
     // Blank
     Route::get('/blank', [HomeController::class, 'blank'])->name('blank');
-
     Route::get('/logout', [CustomerController::class, 'logout']);
 });
 

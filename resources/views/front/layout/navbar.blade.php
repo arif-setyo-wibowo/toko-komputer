@@ -79,7 +79,7 @@
                                                 <i class="fas fa-history u-s-m-r-9"></i>
                                                 History Pembelian</a>
                                         </li>
-                                         <li>
+                                        <li>
                                             <a href="/profile">
                                                 <i class="fas fa-user u-s-m-r-9"></i>
                                                 Profile</a>
@@ -116,33 +116,10 @@
                             </div>
                         </div>
                         <div class="col-lg-6 u-d-none-lg">
-                            <form class="form-searchbox">
+                            <form class="form-searchbox" action="/search" method="GET">
                                 <label class="sr-only" for="search-landscape">Search</label>
-                                <input id="search-landscape" type="text" class="text-field"
-                                    placeholder="Search everything">
-                                <div class="select-box-position">
-                                    <div class="select-box-wrapper select-hide">
-                                        <label class="sr-only" for="select-category">Choose category for search</label>
-                                        <select class="select-box" id="select-category">
-                                            <option selected="selected" value="">
-                                                All
-                                            </option>
-                                            <option value="">Gaming Gear</option>
-                                            <option value="">Motherboard
-                                            </option>
-                                            <option value="">Monitor
-                                            </option>
-                                            <option value="">Power Supplay
-                                            </option>
-                                            <option value="">Graphic Card
-                                            </option>
-                                            <option value="">Memory
-                                            </option>
-                                            <option value="">Casing
-                                            </option>
-                                        </select>
-                                    </div>
-                                </div>
+                                <input id="search-landscape" type="text" class="text-field" name="query"
+                                    placeholder="Cari Produk ...">
                                 <button id="btn-search" type="submit"
                                     class="button button-primary fas fa-search"></button>
                             </form>
@@ -174,19 +151,6 @@
                 </div>
             </div>
             <!-- Mid-Header /- -->
-            <!-- Responsive-Buttons -->
-            <div class="fixed-responsive-container">
-                <div class="fixed-responsive-wrapper">
-                    <button type="button" class="button fas fa-search" id="responsive-search"></button>
-                </div>
-                <div class="fixed-responsive-wrapper">
-                    <a href="wishlist.html">
-                        <i class="far fa-heart"></i>
-                        <span class="fixed-item-counter" id="cart-item-count">{{ $countCart }}</span>
-                    </a>
-                </div>
-            </div>
-            <!-- Responsive-Buttons /- -->
             <!-- Mini Cart -->
             <div class="mini-cart-wrapper">
                 <div class="mini-cart">

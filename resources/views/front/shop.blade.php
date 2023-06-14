@@ -185,9 +185,10 @@
                             <div class="item col-md-12">
                                 <div class="image-container">
                                     <a class="item-img-wrapper-link" href="/detailproduk/<?= $item[$key]['Id'] ?>">
-                                        <img class="img-fluid mt-2"style="max-height:223.21px; "
+                                        <img class="img-fluid mt-2" style="height: 200px; width:200px;"
                                             src="{{ asset('uploads/') . $item[$key]['Image'] }}" alt="Product">
                                     </a>
+                                    <hr>
                                 </div>
                                 <div class="item-content">
                                     <div class="what-product-is">
@@ -202,7 +203,7 @@
                                     </div>
                                     <div class="price-template ">
                                         <div class="item-new-price ">
-                                            Rp. <?= number_format($item[$key]['Price']) ?>
+                                            Rp. {{ number_format($item[$key]['Price'], 0, ',00', '.') }}
                                         </div>
                                         <div class="item-old-price text-decoration-none">
                                             <div class="item-action-behaviors">
