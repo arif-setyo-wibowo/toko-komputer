@@ -43,6 +43,7 @@ class ShopController extends Controller
             'mntr' => Monitor::all()->count(),
             'mos' => Mouse::all()->count(),
             'hetset' => Earphone::all()->count(),
+            'casing' => ComputerCase::all()->count(),
         ];
         if ($categories == "computer_cases") {
             $data["item"] = $this->computer_case();

@@ -72,6 +72,11 @@
                                     <span class="total-fetch-items">({{ $fan }})</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="/shop/computer_cases">Casing
+                                    <span class="total-fetch-items">({{ $casing }})</span>
+                                </a>
+                            </li>
                         </ul>
                         <!-- //end Level 3 -->
                         <h3 class="fetch-mark-category">
