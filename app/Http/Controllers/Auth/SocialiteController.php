@@ -24,7 +24,7 @@ class SocialiteController extends Controller
             $user = Socialite::driver($provider)->user();
             $finduser = User::where('customerEmail','=', $user->email)->first();
             if($finduser){
-                if (!empty($user->customerVerifyAt)) { 
+                if (!empty($finduser->customerVerifyAt)) { 
                     // login
                     session(['login.customer' => true]);
                     session(['email.customer' => $finduser->customerEmail]);
