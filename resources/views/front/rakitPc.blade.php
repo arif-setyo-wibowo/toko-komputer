@@ -235,13 +235,13 @@
             <hr>
             <!-- Total Harga -->
             <div class="row "style="margin-top:15px;">
-                <div class="col-md-9" style="margin-top:-10px;">
+                <div class="col-md-9 p-3" style="margin-top:-10px;">
                     <div class="form-group">
                         <label class="col-md-7"></label>
                         <label class="col-md-2 float-right  col-form-label">Grand Total</label>
                     </div>
                 </div>
-                <div class="col-md-3" style="margin-top:-10px;">
+                <div class="col-md-3 p-3" style="margin-top:-10px;">
                     <div class="form-group row">
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -249,20 +249,17 @@
                                     Rp.
                                 </span>
                             </div>
-                            <input type="text" disabled class="form-control" value="">
+                            <input type="text" disabled class="form-control" id="grandTotal" value="">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row "style="margin-top:15px; float:right;">
                 <div class="m-1">
-                    <button type="button" class="btn btn-success btn-block "><i class="fa fa-save"></i> Preview</button>
+                    <button type="button" id="btnReset" class="btn btn-danger btn-block"><i class="fa fa-trash"></i> Reset</button>
                 </div>
                 <div class="m-1">
-                    <button type="button" class="btn btn-danger btn-block"><i class="fa fa-trash"></i> Reset</button>
-                </div>
-                <div class=" m-1">
-                    <button type="button" class="btn btn-primary btn-block "><i class="fa fa-save"></i> Export</button>
+                    <button type="button" class="btn btn-success btn-block "><i class="ion ion-md-basket"></i> Add to cart</button>
                 </div>
             </div>
 
@@ -325,6 +322,42 @@
             }
             return result
         }
+        let moboTotal = 0, cpuTotal = 0, memTotal = 0, ssdTotal = 0, hddTotal = 0, caseTotal = 0, coolerTotal = 0, gpuTotal = 0, psuTotal = 0
+        countTotal = () => {
+            let total = moboTotal + cpuTotal + memTotal + ssdTotal + hddTotal + caseTotal + coolerTotal + gpuTotal + psuTotal
+            $('#grandTotal').val(total.toLocaleString("id-ID"))
+        }
+
+        $('#btnReset').on( "click", function() {
+            $('#selProce option').remove()
+            $('#selProce').attr("disabled",true)
+            $('#processorPrice').val("")
+            $('#selRam option').remove()
+            $('#selRam').attr("disabled",true)
+            $('#memoryPrice').val("")
+            $('#selSsd option').remove()
+            $('#selSsd').attr("disabled",true)
+            $('#ssdPrice').val("")
+            $('#selHdd option').remove()
+            $('#selHdd').attr("disabled",true)
+            $('#hddPrice').val("")
+            $('#selCase option').remove()
+            $('#selCase').attr("disabled",true)
+            $('#casePrice').val("")
+            $('#selCooler option').remove()
+            $('#selCooler').attr("disabled",true)
+            $('#coolerPrice').val("")
+            $('#selVga option').remove()
+            $('#selVga').attr("disabled",true)
+            $('#gpuPrice').val("")
+            $('#selPsu option').remove()
+            $('#selPsu').attr("disabled",true)
+            $('#psuPrice').val("")
+            moboTotal = 0, cpuTotal = 0, memTotal = 0, ssdTotal = 0, hddTotal = 0, caseTotal = 0, coolerTotal = 0, gpuTotal = 0, psuTotal = 0
+            $('#grandTotal').val("")
+            $('#moboPrice').val("")
+            loopOpt("=",mobo,'#selMobo',"moboId","moboName")
+        });
 
         loopOpt("=",mobo,'#selMobo',"moboId","moboName")
         let lastProce = ""; let lastRam = ""; let lastHdd = false; let lastSsd = false; let lastCase = ""; let lastVga = ""; let lastPsu = ""; let lastCooler = "";
@@ -332,6 +365,7 @@
         $('#selMobo').on( "change", function() {
             let temp = arrFilter("=",$(this).val(),"moboId",mobo)
             let moboPrice = Number(temp.moboPrice)
+            moboTotal = moboPrice
             let socket = temp.processorSocketId
             let memoType = temp.moboMemoryType
             let sata = temp.moboStorageSata.split(" ")
@@ -418,34 +452,44 @@
                 $('#psuPrice').val("")
                 $('#selPsu option').remove()
             }
+            countTotal()
         });
         $('#selProce').on( "change", function() {
             let temp = arrFilter("=",$(this).val(),"processorId",cpu)
             let processorPrice = Number(temp.processorPrice)
+            cpuTotal = processorPrice
             $('#processorPrice').val(processorPrice.toLocaleString("id-ID"))
             lastProce = temp.processorSocketId
+            countTotal()
         });
         $('#selRam').on( "change", function() {
             let temp = arrFilter("=",$(this).val(),"memoryId",memory)
             let memoryPrice = Number(temp.memoryPrice)
+            memTotal = memoryPrice
             $('#memoryPrice').val(memoryPrice.toLocaleString("id-ID"))
             lastRam = temp.memoryType
+            countTotal()
         });
         $('#selHdd').on( "change", function() {
             let temp = arrFilter("=",$(this).val(),"storageId",storage)
             let storagePrice = Number(temp.storagePrice)
+            hddTotal = storagePrice
             $('#hddPrice').val(storagePrice.toLocaleString("id-ID"))
             lastHdd = true
+            countTotal()
         });
         $('#selSsd').on( "change", function() {
             let temp = arrFilter("=",$(this).val(),"storageId",storage)
             let storagePrice = Number(temp.storagePrice)
+            ssdTotal = storagePrice
             $('#ssdPrice').val(storagePrice.toLocaleString("id-ID"))
             lastSsd = true
+            countTotal()
         });
         $('#selCase').on( "change", function() {
             let temp = arrFilter("=",$(this).val(),"caseId",casing)
             let casePrice = Number(temp.casePrice)
+            caseTotal = casePrice
             $('#casePrice').val(casePrice.toLocaleString("id-ID"))
             lastCase = temp.caseType
             let gpuTemp = arrFilter("=",lastCase,"gpuCaseSupport",gpu)
@@ -474,19 +518,23 @@
                     $('#selCooler').removeAttr("disabled")
                     $('#coolerPrice').val("")
                     loopOpt("=",cooler,'#selCooler',"coolerId","coolerName",1,"coolerCaseType",lastCase)
-                    lastVga = ""
+                    lastCooler = ""
                 }
             }
+            countTotal()
         });
         $('#selCooler').on( "change", function() {
             let temp = arrFilter("=",$(this).val(),"coolerId",cooler)
             let coolerPrice = Number(temp.coolerPrice)
+            coolerTotal = coolerPrice
             $('#coolerPrice').val(coolerPrice.toLocaleString("id-ID"))
-            lastPsu = true
+            lastCooler = true
+            countTotal()
         });
         $('#selVga').on( "change", function() {
             let temp = arrFilter("=",$(this).val(),"gpuId",gpu)
             let gpuPrice = Number(temp.gpuPrice)
+            gpuTotal = gpuPrice
             $('#gpuPrice').val(gpuPrice.toLocaleString("id-ID"))
             lastVga = true
             let power = temp.gpuPowerReq
@@ -502,15 +550,18 @@
                     $('#selPsu').removeAttr("disabled")
                     $('#psuPrice').val("")
                     loopOpt(">",psu,'#selPsu',"psuId","psuName",1,"psuPower",power)
-                    lastVga = ""
+                    lastPsu = ""
                 }
             }
+            countTotal()
         });
         $('#selPsu').on( "change", function() {
             let temp = arrFilter("=",$(this).val(),"psuId",psu)
             let psuPrice = Number(temp.psuPrice)
+            psuTotal = psuPrice
             $('#psuPrice').val(psuPrice.toLocaleString("id-ID"))
             lastPsu = true
+            countTotal()
         });
         </script>
 @endsection
