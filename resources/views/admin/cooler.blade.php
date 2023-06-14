@@ -198,14 +198,28 @@
                                         <div class="row col">
                                             <label for="inputText" class="col-md-3 col-form-label">Socket</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="coolerSocket" required>
+                                                <select class="form-select" aria-label="Default select example"
+                                                    name="coolerSocket" required>
+                                                    <option selected value="" disabled>Pilih Socket</option>
+                                                    @foreach ($socket as $data)
+                                                        <option value="{{ $data->processorSocketName }}">{{ $data->processorSocketName }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
-                                        <div class="row col">
+                                        <div class="row col ">
                                             <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="coolerWarranty"
-                                                    required>
+                                                <div class="input-group ">
+                                                    <input type="number" class="form-control"
+                                                        aria-label="Recipient's username"
+                                                        aria-describedby="basic-addon2" name="coolerWarranty"
+                                                        required>
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        Tahun
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

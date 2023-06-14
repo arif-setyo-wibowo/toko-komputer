@@ -220,11 +220,18 @@
                                                     <input type="number" class="form-control" name="psuPrice" required>
                                                 </div>
                                             </div>
-                                            <div class="row col">
+                                            <div class="row col ">
                                                 <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control" name="psuWarranty"
-                                                        required>
+                                                    <div class="input-group ">
+                                                        <input type="number" class="form-control"
+                                                            aria-label="Recipient's username"
+                                                            aria-describedby="basic-addon2" name="psuWarranty"
+                                                            required>
+                                                        <span class="input-group-text" id="basic-addon2">
+                                                            Tahun
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="row col">

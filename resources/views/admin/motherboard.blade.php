@@ -577,7 +577,7 @@
                                                             <select class="form-select"
                                                                 aria-label="Default select example" name="moboStorageSata"
                                                                 required>
-                                                                <option value="" disabled selected>0</option>
+                                                                <option value="SATA x 0" selected>0</option>
                                                                 <option value="SATA x 1">1</option>
                                                                 <option value="SATA x 2">2</option>
                                                                 <option value="SATA x 3">3</option>
@@ -600,7 +600,7 @@
                                                             <select class="form-select"
                                                                 aria-label="Default select example" name="moboStorageM2"
                                                                 required>
-                                                                <option value="" disabled selected>0</option>
+                                                                <option value="M.2 x 0" selected>0</option>
                                                                 <option value="M.2 x 1">1</option>
                                                                 <option value="M.2 x 2">2</option>
                                                                 <option value="M.2 x 3">3</option>
