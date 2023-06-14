@@ -36,6 +36,8 @@ use App\Http\Controllers\Front\ShopController;
 use App\Http\Controllers\Front\HistoryController;
 use App\Http\Controllers\Front\DetailHistoryController;
 use App\Http\Controllers\Front\ProfileController;
+use App\Http\Controllers\Front\SearchController;
+
 
 use App\Http\Controllers\CustomerController;
 // 
@@ -61,6 +63,7 @@ Route::get('/rakitpc', [RakitPcController::class, 'index']);
 Route::get('/detailproduk/{id}', [DetailController::class, 'index']);
 Route::get('/shop/{categories}', [ShopController::class, 'index']);
 
+Route::get('/search', [SearchController::class, 'index']);
 
 // FRONT PRODUK
 Route::middleware('customer')->group(function () {
