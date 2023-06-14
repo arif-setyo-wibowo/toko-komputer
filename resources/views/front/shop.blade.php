@@ -204,7 +204,6 @@
                                                 <button
                                                     class=" item-addCart btn-success button button-outline-secondary add-to-cart-btn"
                                                     data-product-id="<?= $item[$key]['Id'] ?>">
-                                                    Add to cart
                                                 </button>
                                             </div>
                                         </div>
