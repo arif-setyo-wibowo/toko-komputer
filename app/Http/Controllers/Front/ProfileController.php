@@ -77,7 +77,7 @@ class ProfileController extends Controller
         ];
         Mail::to($email)->send(new ResetSend($data));
 
-        return redirect()->route('profile')->with('success','Silahkan Cek Email Untuk Verifikasi');
+        return redirect()->route('profile')->with('succes','Silahkan Cek Email Untuk Verifikasi');
     }
 
     /**

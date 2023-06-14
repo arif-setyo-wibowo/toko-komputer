@@ -25,7 +25,7 @@
             <!-- Profile -->
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
-                @if ($message = Session::get('success'))
+                @if ($message = Session::get('succes'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <i class="bi bi-check-circle me-1"></i>
                             {{ $message }}
