@@ -75,4 +75,14 @@
             });
         </script>
     @endif
+    @if (session('succes'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: '{{ session('succes') }}',
+                showConfirmButton: true, // Tampilkan tombol OK
+                timer: 2000
+            });
+        </script>
+    @endif
 @endsection

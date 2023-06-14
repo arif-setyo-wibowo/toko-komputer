@@ -23,12 +23,12 @@
     <div class="page-account u-s-p-t-80">
         <div class="container">
             <!-- Login -->
-            @if ($message = session('succes'))
+            {{-- @if ($message = session('succes'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <i class="bi bi-check-circle me-1"></i>
                     {{ $message }}
                 </div>
-            @endif
+            @endif --}}
             {{-- @if ($errors->any())
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     @foreach ($errors->all() as $error)
@@ -138,6 +138,16 @@
                 icon: 'error',
                 title: 'Oops...',
                 text: '{{ $errors->first() }}'
+            });
+        </script>
+    @endif
+    @if (session('succes'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: '{{ session('succes') }}',
+                showConfirmButton: true, // Tampilkan tombol OK
+                timer: 2000
             });
         </script>
     @endif
