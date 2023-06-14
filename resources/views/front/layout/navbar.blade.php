@@ -79,6 +79,11 @@
                                                 <i class="fas fa-history u-s-m-r-9"></i>
                                                 History Pembelian</a>
                                         </li>
+                                         <li>
+                                            <a href="/profile">
+                                                <i class="fas fa-user u-s-m-r-9"></i>
+                                                Profile</a>
+                                        </li>
                                         <li>
                                             <a href="/logout">
                                                 <i class="fas fa-sign-in-alt u-s-m-r-9"></i>

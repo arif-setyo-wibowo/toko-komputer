@@ -35,6 +35,7 @@ use App\Http\Controllers\Front\DetailController;
 use App\Http\Controllers\Front\ShopController;
 use App\Http\Controllers\Front\HistoryController;
 use App\Http\Controllers\Front\DetailHistoryController;
+use App\Http\Controllers\Front\ProfileController;
 
 use App\Http\Controllers\CustomerController;
 // 
@@ -66,6 +67,7 @@ Route::get('/checkout', [OrdersController::class, 'index'])->name('checkout');
 Route::post('/checkout', [OrdersController::class, 'store']);
 Route::get('/history', [HistoryController::class, 'index'])->name('history');
 Route::get('/detailhistory/{id}', [DetailHistoryController::class, 'index']);
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
 // FRONT PRODUK
 Route::get('/detailproduk/{id}', [DetailController::class, 'index']);
