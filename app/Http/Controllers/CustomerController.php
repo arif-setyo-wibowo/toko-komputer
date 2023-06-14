@@ -161,7 +161,7 @@ class CustomerController extends Controller
         ];
         Mail::to($email)->send(new ResetSend($data));
 
-        return redirect()->route('reset')->with('success','Silahkan Cek Email Untuk Verifikasi');
+        return redirect()->route('reset')->with('succes','Silahkan Cek Email Untuk Verifikasi');
     }
 
     

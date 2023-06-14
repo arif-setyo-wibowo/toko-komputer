@@ -25,13 +25,13 @@
             <!-- Profile -->
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
-                {{-- @if ($message = Session::get('succes'))
+                @if ($message = Session::get('succes'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         <i class="bi bi-check-circle me-1"></i>
                         {{ $message }}
                     </div>
                 @endif
-                @if ($errors->any())
+                {{-- @if ($errors->any())
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         @foreach ($errors->all() as $error)
                             <i class="bi bi-exclamation-octagon me-1"> {{ $error }} </i><br>
