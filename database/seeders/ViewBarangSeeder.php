@@ -77,16 +77,6 @@ class ViewBarangSeeder extends Seeder
                 memories 
             UNION ALL 
             SELECT 
-                'microphones' AS source_table, 
-                'Microphone' AS Categories,
-                micId AS productId, 
-                micName AS productName, 
-                micPrice AS productPrice, 
-                micImage AS productImage 
-            FROM 
-                microphones 
-            UNION ALL 
-            SELECT 
                 'monitors' AS source_table, 
                 'Monitor' AS Categories,
                 monitorId AS productId, 
