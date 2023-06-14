@@ -37,7 +37,7 @@
                         </li>
                         <li class="list-group-item">
                             <b>Password</b> <a class="float-right">********</a><br>
-                            <a class="float-right" style="font-size:13px;" href="">Reset Password</a>
+                            <a class="float-right" style="font-size:13px;" href="/reset">Reset Password</a>
                         </li>
                     </ul>
                     <a href="#" data-toggle="modal" data-target="#modal-default"
