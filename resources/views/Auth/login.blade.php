@@ -69,10 +69,10 @@
                                 <button class="button button-outline-secondary w-100">Login</button>
                             </div>
                         </form>
-                        {{-- <a href="{{ route('login.google', ['provider' => 'google']) }}">
+                        <a href="{{ route('login.google', ['provider' => 'google']) }}">
                             <button class="button button-primary w-100 mt-1"><img src="" alt="">Login dengan
                                 Google </button>
-                        </a> --}}
+                        </a>
                     </div>
                 </div>
                 <!-- Login /- -->

@@ -44,7 +44,7 @@ class SocialiteController extends Controller
                 session(['login.customer' => true]);
                 session(['email.customer' => $customer->customerEmail]);
                 session(['nama.customer' => $customer->customerName]);      
-
+                session(['id.customer' => $customer->customerId]);
                 return redirect()->route('home');       
             }
         }
