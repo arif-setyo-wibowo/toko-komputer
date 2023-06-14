@@ -40,6 +40,11 @@ class CustomerController extends Controller
         $request->validate([
             'customerEmail' => 'required|email',
             'customerPassword' => 'required|min:6',
+        ],[
+            'customerEmail.required' => 'Email pelanggan harus diisi.',
+            'customerEmail.email' => 'Email pelanggan tidak valid.',
+            'customerPassword.required' => 'Kata sandi pelanggan harus diisi.',
+            'customerPassword.min' => 'Kata sandi pelanggan minimal harus terdiri dari 6 karakter.',
         ]);
 
         $user = User::where('customerEmail', $request->customerEmail)->first();
@@ -82,6 +87,12 @@ class CustomerController extends Controller
         $request->validate([
             'customerEmail' => 'required|email|unique:users',
             'customerPassword' => 'required|min:6'
+        ],[
+            'customerEmail.required' => 'Email pelanggan harus diisi.',
+            'customerEmail.email' => 'Email pelanggan tidak valid.',
+            'customerEmail.unique' => 'Email pelanggan sudah digunakan.',
+            'customerPassword.required' => 'Password pelanggan harus diisi.',
+            'customerPassword.min' => 'Password pelanggan harus minimal 6 karakter.'
         ]);
         $str = Str::random(100);
         $customer = new User;
