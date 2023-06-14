@@ -82,6 +82,7 @@ class CustomerController extends Controller
         session()->forget('telp.customer'); 
         return redirect()->route('login');
     }
+    
     public function signup_data(Request $request)
     {
         $request->validate([
