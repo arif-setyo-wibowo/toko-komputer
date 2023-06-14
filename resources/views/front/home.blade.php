@@ -202,9 +202,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="tag new">
-                                                <span>NEW</span>
-                                            </div>
                                         </div>
                                     @endforeach
                                 </div>
@@ -236,9 +233,6 @@
                                                         @currency($data->gpuPrice)
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="tag new">
-                                                <span>NEW</span>
                                             </div>
                                         </div>
                                     @endforeach
@@ -272,9 +266,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="tag new">
-                                                <span>NEW</span>
-                                            </div>
                                         </div>
                                     @endforeach
                                 </div>
@@ -307,9 +298,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="tag new">
-                                                <span>NEW</span>
-                                            </div>
                                         </div>
                                     @endforeach
                                 </div>
@@ -335,10 +323,10 @@
                 @endforeach
             </div>
             <!-- <div class="redirect-link-wrapper text-center u-s-p-t-25 u-s-p-b-80">
-                                                                            <a class="redirect-link" href="store-directory.html">
-                                                                                <span>View more on this category</span>
-                                                                            </a>
-                                                                        </div> -->
+                                                                                                    <a class="redirect-link" href="store-directory.html">
+                                                                                                        <span>View more on this category</span>
+                                                                                                    </a>
+                                                                                                </div> -->
         </div>
     </div>
     <!-- Banner-Image & View-more /- -->
@@ -396,6 +384,7 @@
                                                                         src="{{ asset('uploads/') }}/{{ $data->mouseImage }}"
                                                                         alt="Product">
                                                                 </a>
+                                                                <hr>
                                                             </div>
                                                             <div class="item-content" style="padding-top: 0">
                                                                 <div class="what-product-is">
@@ -413,9 +402,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="tag new">
-                                                                <span>NEW</span>
-                                                            </div>
+
                                                         </div>
                                                     @endforeach
                                                 </div>
@@ -434,6 +421,7 @@
                                                                         src="{{ asset('uploads/') }}/{{ $data->keyboardImage }}"
                                                                         alt="Product">
                                                                 </a>
+                                                                <hr>
                                                             </div>
                                                             <div class="item-content" style="padding-top: 0">
                                                                 <div class="what-product-is">
@@ -451,9 +439,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="tag new">
-                                                                <span>NEW</span>
-                                                            </div>
+
                                                         </div>
                                                     @endforeach
                                                 </div>
@@ -472,6 +458,7 @@
                                                                         src="{{ asset('uploads/') }}/{{ $data->earphoneImage }}"
                                                                         alt="Product">
                                                                 </a>
+                                                                <hr>
                                                             </div>
                                                             <div class="item-content" style="padding-top: 0">
                                                                 <div class="what-product-is">
@@ -489,9 +476,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="tag new">
-                                                                <span>NEW</span>
-                                                            </div>
+
                                                         </div>
                                                     @endforeach
                                                 </div>
@@ -510,6 +495,7 @@
                                                                         src="{{ asset('uploads/') }}/{{ $data->monitorImage }}"
                                                                         alt="Product">
                                                                 </a>
+                                                                <hr>
                                                             </div>
                                                             <div class="item-content" style="padding-top: 0">
                                                                 <div class="what-product-is">
@@ -527,9 +513,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="tag new">
-                                                                <span>NEW</span>
-                                                            </div>
+
                                                         </div>
                                                     @endforeach
                                                 </div>
@@ -601,9 +585,6 @@
                                                         @currency($data->casePrice)
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="tag new">
-                                                <span>NEW</span>
                                             </div>
                                         </div>
                                     @endforeach
