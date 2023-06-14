@@ -24,11 +24,15 @@ class SocialiteController extends Controller
             $user = Socialite::driver($provider)->user();
             $finduser = User::where('customerEmail','=', $user->email)->first();
             if($finduser){
-                // login
-                session(['login.customer' => true]);
-                session(['email.customer' => $finduser->customerEmail]);
-                session(['nama.customer' => $finduser->customerName]);
-                return redirect()->route('home');
+                if (!empty($user->customerVerifyAt)) { 
+                    // login
+                    session(['login.customer' => true]);
+                    session(['email.customer' => $finduser->customerEmail]);
+                    session(['nama.customer' => $finduser->customerName]);                        
+                    return redirect()->route('home');
+                } else {
+                    return redirect()->route('login')->withErrors(['email' => 'Akun belum diverifikasi'])->withInput();
+                }
             }else{
                 // redirect register with data
                 $str = Str::random(100);

@@ -128,6 +128,9 @@ Route::prefix('administrator')->middleware('karyawan')->group(function () {
     // Sliders
     Route::controller(SlidersController::class)->group(function () {
         Route::get('/slider', 'index')->name('administrator.slider');
+        Route::post('/slider', 'store');
+        Route::get('/slider/find/{id}', 'edit');
+        Route::post('/slider/update', 'update');
     });
 
     // Brand

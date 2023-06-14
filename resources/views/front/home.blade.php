@@ -33,10 +33,10 @@
     <div class="banner-layer">
         <div class="container">
             <div class="image-banner">
-                <a href="/" class="mx-auto banner-hover effect-dark-opacity">
-                    <img class="img-fluid" src="{{ asset('front/') }}/images/brand-logos/baner1.png"
-                        alt="Winter Season Banner">
-                </a>
+                @foreach ($banner1 as $data)
+                     <img class="img-fluid" src="{{ asset('uploads/') }}/{{ $data->sliderImage }}"
+                    alt="Winter Season Banner">
+                @endforeach
             </div>
         </div>
     </div>
@@ -341,15 +341,16 @@
     <div class="banner-image-view-more">
         <div class="container">
             <div class="image-banner u-s-m-y-40">
-                <a href="/" class="mx-auto banner-hover effect-dark-opacity">
-                    <img class="img-fluid" src="{{ asset('front/') }}/images/brand-logos/baner1.png" alt="Banner Image">
-                </a>
+                @foreach ($banner2 as $data)
+                     <img class="img-fluid" src="{{ asset('uploads/') }}/{{ $data->sliderImage }}"
+                    alt="Winter Season Banner">
+                @endforeach
             </div>
             <!-- <div class="redirect-link-wrapper text-center u-s-p-t-25 u-s-p-b-80">
-                                                                                        <a class="redirect-link" href="store-directory.html">
-                                                                                            <span>View more on this category</span>
-                                                                                        </a>
-                                                                                    </div> -->
+                <a class="redirect-link" href="store-directory.html">
+                    <span>View more on this category</span>
+                </a>
+            </div> -->
         </div>
     </div>
     <!-- Banner-Image & View-more /- -->
@@ -362,18 +363,18 @@
                 <h3 class="sec-maker-h3">Gaming Gear</h3>
                 <ul class="nav tab-nav-style-1-a justify-content-center">
                     <!-- <li class="nav-item">
-                                                                                                <a class="nav-link active" data-toggle="tab" href="#mobiles-latest-products">Latest
-                                                                                                    Products</a>
-                                                                                            </li>
-                                                                                            <li class="nav-item">
-                                                                                                <a class="nav-link" data-toggle="tab" href="#mobiles-best-selling-products">Best Selling</a>
-                                                                                            </li>
-                                                                                            <li class="nav-item">
-                                                                                                <a class="nav-link" data-toggle="tab" href="#mobiles-top-rating-products">Top Rating</a>
-                                                                                            </li>
-                                                                                            <li class="nav-item">
-                                                                                                <a class="nav-link" data-toggle="tab" href="#mobiles-featured-products">Featured Products</a>
-                                                                                            </li> -->
+                        <a class="nav-link active" data-toggle="tab" href="#mobiles-latest-products">Latest
+                            Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#mobiles-best-selling-products">Best Selling</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#mobiles-top-rating-products">Top Rating</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#mobiles-featured-products">Featured Products</a>
+                    </li> -->
                 </ul>
             </div>
             <div class="wrapper-content">
@@ -585,10 +586,10 @@
     <div class="banner-layer">
         <div class="container">
             <div class="image-banner">
-                <a href="/" class="mx-auto banner-hover effect-dark-opacity">
-                    <img class="img-fluid" src="{{ asset('front/') }}/images/brand-logos/baner1.png"
-                        alt="Winter Season Banner">
-                </a>
+                @foreach ($banner3 as $data)
+                     <img class="img-fluid" src="{{ asset('uploads/') }}/{{ $data->sliderImage }}"
+                    alt="Winter Season Banner">
+                @endforeach
             </div>
         </div>
     </div>

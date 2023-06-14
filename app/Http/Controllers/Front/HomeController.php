@@ -19,6 +19,7 @@ use App\Models\Microphone;
 use App\Models\Monitor;
 use App\Models\Mouse;
 use App\Models\Identity;
+use App\Models\Slider;
 
 class HomeController extends Controller
 {
@@ -45,6 +46,9 @@ class HomeController extends Controller
             'gpu' => GraphicCard::all(),
             'memory' => Memory::all(),
             'storage' => Storage::all(),
+            'banner1' => Slider::where('sliderId', '9967ce81-4d48-4756-a478-bd09283672ef')->get(),
+            'banner2' => Slider::where('sliderId', '9967ce8e-3590-4a2f-b74a-ae561bb0d326')->get(),
+            'banner3' => Slider::where('sliderId', '9967ce96-8428-4c34-93f9-e9fb5876da52')->get()
 
         ];
 
