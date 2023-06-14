@@ -193,7 +193,7 @@ class CustomerController extends Controller
             $customer->customerPassword = bcrypt($request->customerPassword);
             $customer->save();
             $token->delete();
-            return redirect()->route('profile')->with('succes', 'Berhasil mereset password');
+            return redirect()->route('profile')->with('success', 'Berhasil mereset password');
         } else {
             return redirect()->route('profile')->with('error', 'Token tidak ditemukan');
         }
