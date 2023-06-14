@@ -874,7 +874,6 @@ $(document).ready(function () {
         });
     }
 
-
     function increaseQuantity(productId) {
         $.ajax({
             url: "/add-to-cart",
@@ -927,7 +926,6 @@ $(document).ready(function () {
         viewSubtotal.innerHTML = subtotal.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     }
 
-
     if (window.location.pathname === '/cart') {
         const myElement = $("#cart-items").get(0);
 
@@ -956,6 +954,59 @@ $(document).ready(function () {
             const productId = button.getAttribute('data-product-id');
             removeFromCart(productId);
         });
+    });
+
+
+    // Cek uuid
+    function isUUID(uuid) {
+        var pattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+        return pattern.test(uuid);
+    }
+    // Add to cart Rakit PC
+    $('#btn-addtocart-rakit').on("click", function () {
+        var mobo = document.getElementById('selMobo').value;
+        var processor = document.getElementById('selProce').value;
+        var ram = document.getElementById('selRam').value;
+        var ssd = document.getElementById('selSsd').value;
+        var hardisk = document.getElementById('selHdd').value;
+        var casing = document.getElementById('selCase').value;
+        var cooler = document.getElementById('selCooler').value;
+        var vga = document.getElementById('selVga').value;
+        var psu = document.getElementById('selPsu').value;
+
+        var listData = [mobo, processor, ram, ssd, hardisk, casing, cooler, vga, psu];
+        var dataArray = [];
+        for (let index = 0; index < listData.length; index++) {
+            if (isUUID(listData[index])) {
+                dataArray.push(listData[index]);
+            }
+        }
+        $.ajax({
+            url: "/add-to-cart-rakit",
+            type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': csrfToken
+            },
+            data: { dataArray: dataArray },
+            dataType: 'json',
+            success: function (response) {
+                if (response.success) {
+                    updateCartItemCount(response.cartItemCount);
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Dimasukkan ke Keranjang'
+                    });
+                } else {
+                    Toast.fire({
+                        icon: 'error',
+                        title: 'Error!'
+                    })
+                }
+            }, error: function (xhr, status, error) {
+                console.log(xhr.responseText); // Menampilkan pesan kesalahan ke konsol
+            }
+        });
+
     });
 
 });

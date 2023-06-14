@@ -60,6 +60,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/rakitpc', [RakitPcController::class, 'index']);
 Route::get('/cart', [CartController::class, 'index']);
 Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add.cart');
+Route::post('/add-to-cart-rakit', [CartController::class, 'addToCartRakit']);
 Route::post('/remove-from-cart', [CartController::class, 'removeFromCart'])->name('remove.cart');
 Route::post('/decrease-quantity', [CartController::class, 'updateCartQuantity'])->name('min.cart');
 Route::get('/emptycart', [CartController::class, 'empty'])->name('empty.cart');

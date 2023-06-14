@@ -82,7 +82,6 @@ class CartController extends Controller
         $cartItemCount = count($request->session()->get('cart.items', []));
     
         return response()->json(['success' => true,'cartItemCount' => $cartItemCount]);
-
     }
 
     public function removeFromCart(Request $request)
@@ -158,8 +157,49 @@ class CartController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function addToCartRakit(Request $request)
     {
-        //
+        $dataArray = $request->input('dataArray');
+        $quantity = 1;
+
+        $cartItems = $request->session()->get('cart.items', []);
+
+        foreach ($dataArray as $productId) {
+            // Dapatkan produk dari database berdasarkan $productId jika diperlukan
+            $product = DB::table('products')->where('productId', $productId)->first();
+
+            // Buat item produk dengan data yang diperlukan
+            $item = [
+                'product_id'    => $productId,
+                'product_name'  => $product->productName,
+                'product_price' => $product->productPrice,
+                'quantity'      => $quantity,
+                'product_images'=> $product->productImage
+            ];
+
+            // Periksa apakah ID produk sudah ada dalam keranjang
+            $itemIndex = -1;
+            foreach ($cartItems as $index => $cartItem) {
+                if ($cartItem['product_id'] == $productId) {
+                    $itemIndex = $index;
+                    break;
+                }
+            }
+
+            // Jika ID produk sudah ada, tambahkan jumlah (quantity) saja
+            if ($itemIndex >= 0) {
+                $cartItems[$itemIndex]['quantity'] += 1;
+            } else {
+                // Jika ID produk belum ada, tambahkan item ke keranjang
+                $cartItems[] = $item;
+            }
+        }
+
+        // Simpan item-item keranjang kembali ke session
+        $request->session()->put('cart.items', $cartItems);
+        $cartItemCount = count($request->session()->get('cart.items', []));
+
+        return response()->json(['success' => true, 'cartItemCount' => $cartItemCount]);
+
     }
 }

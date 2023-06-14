@@ -12,6 +12,7 @@
     <title>Groover - Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more</title>
     <!-- Standard Favicon -->
     <link href="favicon.ico" rel="shortcut icon">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Base Google Font for Web-app -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <!-- Google Fonts for Banners only -->
@@ -32,6 +33,7 @@
     <link rel="stylesheet" href="{{ asset('front') }}/css/utility.css">
     <!-- Main -->
     <link rel="stylesheet" href="{{ asset('front') }}/css/bundle.css">
+    <link rel="stylesheet" href="{{ asset('front/') }}/css/sweetalert2.min.css">
 </head>
 
 <body>
@@ -123,6 +125,7 @@
     <script type="text/javascript" src="{{ asset('front') }}/js/jquery.custom-countdown.min.js"></script>
     <!-- Owl Carousel -->
     <script type="text/javascript" src="{{ asset('front') }}/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="{{ asset('front/') }}/js/sweetalert2.all.min.js"></script>
     <!-- Main -->
     <script type="text/javascript" src="{{ asset('front') }}/js/app.js"></script>
 </body>
