@@ -40,16 +40,14 @@ class SocialiteController extends Controller
                 $customer->customerPhoneNumber = '-';
                 $customer->customerPassword = '';
                 $customer->customerVerifyKey = $str;
+                $customer->customerVerifyAt = date('Y-m-d H:i:s');
+                $customer->customerGoogle = $str;
                 $customer->save();
-                
-                $data=[
-                    'customerName' => $user->name,
-                    'url' => request()->getHttpHost(). '/register/verify/'.$str
-                ];
+                session(['login.customer' => true]);
+                session(['email.customer' => $customer->customerEmail]);
+                session(['nama.customer' => $customer->customerName]);      
 
-                Mail::to($user->email)->send(new MailSend($data));
-
-                return redirect()->route('login')->with('succes','Silahkan Cek Email Untuk Verifikasi');       
+                return redirect()->route('home');       
             }
         }
     }    

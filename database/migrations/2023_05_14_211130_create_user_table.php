@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('customerPhoneNumber',32);
             $table->string('customerPassword',255);
             $table->string('customerVerifyKey',255);
+            $table->string('customerGoogle',255)->nullable();
             $table->timestamp('customerVerifyAt')->nullable();
             $table->timestamps();
         });

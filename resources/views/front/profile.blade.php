@@ -25,6 +25,19 @@
             <!-- Profile -->
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
+                @if ($message = Session::get('succes'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <i class="bi bi-check-circle me-1"></i>
+                            {{ $message }}
+                        </div>
+                    @endif
+                    @if ($errors->any())
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            @foreach ($errors->all() as $error)
+                                <i class="bi bi-exclamation-octagon me-1"> {{ $error }} </i><br>
+                            @endforeach
+                        </div>
+                    @endif
                 <div class="card-body box-profile">
                     <div class="text-center">
                         <i class="fa-regular fa-user" style="font-size:60px;"></i>
@@ -37,11 +50,14 @@
                         </li>
                         <li class="list-group-item">
                             <b>Password</b> <a class="float-right">********</a><br>
-                            <a class="float-right" style="font-size:13px;" href="/reset">Reset Password</a>
                         </li>
                     </ul>
                     <a href="#" data-toggle="modal" data-target="#modal-default"
                         class="btn btn-primary btn-block"><b>Edit Profile</b></a>
+                    <form action="{{ route('reset_pw')}}" method="post">
+                        @csrf
+                        <button type="submit" class="btn btn-primary btn-block mt-1"><b>Reset Password</b></button>
+                    </form>   
                 </div>
             </div>
             <div class="col-lg-3"></div>
@@ -73,7 +89,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Email</label>
                                         <input type="email" class="form-control" id="exampleInputEmail1"
-                                            placeholder="Enter Enamil" name="email" value="{{ $user->customerEmail }}">
+                                            placeholder="Enter Enamil" name="email" disabled value="{{ $user->customerEmail }}">
                                         <input type="hidden" name="id" value="{{ $user->customerId }}">
                                     </div>
                                 </div>

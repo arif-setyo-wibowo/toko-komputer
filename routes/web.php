@@ -70,6 +70,7 @@ Route::get('/detailhistory/{id}', [DetailHistoryController::class, 'index']);
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
+Route::post('/profile/reset', [ProfileController::class, 'reset_pw'])->name('reset_pw');
 
 // FRONT PRODUK
 Route::get('/detailproduk/{id}', [DetailController::class, 'index']);

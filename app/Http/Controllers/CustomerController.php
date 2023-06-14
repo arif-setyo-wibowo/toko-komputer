@@ -45,19 +45,23 @@ class CustomerController extends Controller
         $user = User::where('customerEmail', $request->customerEmail)->first();
 
         if ($user) {
-            if (password_verify($request->customerPassword, $user->customerPassword)) {
-                if (!empty($user->customerVerifyAt)) { 
-                    session(['login.customer' => true]);
-                    session(['id.customer' => $user->customerId]);
-                    session(['email.customer' => $user->customerEmail]);
-                    session(['nama.customer' => $user->customerName]);                    
-                    session(['telp.customer' => $user->customerPhoneNumber]);                    
-                    return redirect()->route('home');
+            if (!empty($user->customerGoogle)) {
+                return redirect()->route('login')->withErrors(['succes' => 'Login Melalui Google'])->withInput();
+            }else{
+                if (password_verify($request->customerPassword, $user->customerPassword)) {
+                    if (!empty($user->customerVerifyAt)) { 
+                        session(['login.customer' => true]);
+                        session(['id.customer' => $user->customerId]);
+                        session(['email.customer' => $user->customerEmail]);
+                        session(['nama.customer' => $user->customerName]);                    
+                        session(['telp.customer' => $user->customerPhoneNumber]);                    
+                        return redirect()->route('home');
+                    } else {
+                        return redirect()->route('login')->withErrors(['email' => 'Akun belum diverifikasi'])->withInput();
+                    }
                 } else {
-                    return redirect()->route('login')->withErrors(['email' => 'Akun belum diverifikasi'])->withInput();
+                    return redirect()->route('login')->withErrors(['password' => 'Password salah'])->withInput();
                 }
-            } else {
-                return redirect()->route('login')->withErrors(['password' => 'Password salah'])->withInput();
             }
         } else {
             return redirect()->route('login')->withErrors(['email' => 'Email tidak ditemukan'])->withInput();
@@ -148,6 +152,7 @@ class CustomerController extends Controller
         return redirect()->route('reset')->with('success','Silahkan Cek Email Untuk Verifikasi');
     }
 
+    
     public function resetPassword($token)
     {
         $cart = session()->get('cart.items', []);
@@ -181,4 +186,6 @@ class CustomerController extends Controller
             return redirect()->route('login')->with('error', 'Token tidak ditemukan');
         }
     }
+
+    
 }
