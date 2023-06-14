@@ -87,11 +87,6 @@ class CustomerController extends Controller
         $customer->customerPassword = Hash::make($request->customerPassword);
         $customer->customerVerifyKey = $str;
         $customer->save();
-        session(['login.customer' => true]);
-        session(['id.customer' => $customer->customerId]);
-        session(['email.customer' => $customer->customerEmail]);
-        session(['nama.customer' => $customer->customerName]);                    
-        session(['telp.customer' => $customer->customerPhoneNumber]);  
         
         $data=[
             'customerName' => $request->customerName,
