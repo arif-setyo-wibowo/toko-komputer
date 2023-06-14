@@ -195,14 +195,14 @@
                                                     href="/detailproduk/<?= $item[$key]['Id'] ?>"> see more...</a></p>
                                         </div>
                                     </div>
-                                    <div class="price-template">
-                                        <div class="item-new-price">
+                                    <div class="price-template ">
+                                        <div class="item-new-price ">
                                             Rp. <?= number_format($item[$key]['Price']) ?>
                                         </div>
                                         <div class="item-old-price text-decoration-none">
                                             <div class="item-action-behaviors">
                                                 <button
-                                                    class="ml-5 btn-success button button-outline-secondary add-to-cart-btn"
+                                                    class=" item-addCart btn-success button button-outline-secondary add-to-cart-btn"
                                                     data-product-id="<?= $item[$key]['Id'] ?>">
                                                     Add to cart
                                                 </button>
