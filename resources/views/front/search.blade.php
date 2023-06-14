@@ -151,43 +151,50 @@
                     <!-- Row-of-Product-Container -->
 
                     <div class="row product-container grid-style">
-                        @foreach ($barang as $data)
-                            <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                                <div class="item col-md-12">
-                                    <div class="image-container">
-                                        <a class="item-img-wrapper-link" href="/detailproduk/">
-                                            <img class="img-fluid mt-2"style="max-height:223.21px;"
-                                                src="{{ asset('uploads/') . '/' . $data->productImage }}" alt="Product">
-                                        </a>
-                                    </div>
-                                    <div class="item-content">
-                                        <div class="what-product-is">
-                                            <h2 class="item-title">
-                                                <a href="/detailproduk/">{{ $data->productName }}</a>
-                                            </h2>
-                                            <div class="item-description ">
-                                                <p>ini deskripsi<a class="text-primary font-weight-bold" href=""> see
-                                                        more...</a></p>
-                                            </div>
+                        @if (count($barang) == 0)
+                            <h3 class="text-center"> Hasil Tidak Ditemukan </h3>
+                        @else
+                            @foreach ($barang as $data)
+                                <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                                    <div class="item col-md-12">
+                                        <div class="image-container">
+                                            <a class="item-img-wrapper-link" href="/detailproduk/">
+                                                <img class="img-fluid mt-2"style="max-height:223.21px;"
+                                                    src="{{ asset('uploads/') . '/' . $data->productImage }}"
+                                                    alt="Product">
+                                            </a>
                                         </div>
-                                        <div class="price-template ">
-                                            <div class="item-new-price ">
-                                                Rp.
-                                                {{ number_format($data->productPrice, 0, ',00', '.') }}
+                                        <div class="item-content">
+                                            <div class="what-product-is">
+                                                <h2 class="item-title">
+                                                    <a href="/detailproduk/">{{ $data->productName }}</a>
+                                                </h2>
+                                                <div class="item-description ">
+                                                    <p>ini deskripsi<a class="text-primary font-weight-bold" href="">
+                                                            see
+                                                            more...</a></p>
+                                                </div>
                                             </div>
-                                            <div class="item-old-price text-decoration-none">
-                                                <div class="item-action-behaviors">
-                                                    <button
-                                                        class=" item-addCart btn-success button button-outline-secondary add-to-cart-btn"
-                                                        data-product-id="<?= $data->productId ?>">
-                                                    </button>
+                                            <div class="price-template ">
+                                                <div class="item-new-price ">
+                                                    Rp.
+                                                    {{ number_format($data->productPrice, 0, ',00', '.') }}
+                                                </div>
+                                                <div class="item-old-price text-decoration-none">
+                                                    <div class="item-action-behaviors">
+                                                        <button
+                                                            class=" item-addCart btn-success button button-outline-secondary add-to-cart-btn"
+                                                            data-product-id="<?= $data->productId ?>">
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        @endif
+
                     </div>
                     <!-- Row-of-Product-Container /- -->
                 </div>
