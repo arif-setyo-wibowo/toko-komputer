@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Identity;
-
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
@@ -16,13 +17,14 @@ class ProfileController extends Controller
     {
         $cart = $request->session()->get('cart.items', []);
         $identitas = Identity::all();
+        $user = DB::table('users')->where('customerId', session()->get('id.customer'))->first();;
         
         $data=[
-            'title' => "Profile",
+            'title'     => "Profile",
             'identitas' => $identitas[0],
-            'countCart' => count($cart)
+            'countCart' => count($cart),
+            'user'      => $user
         ];
-         
 
         return view('front/profile',$data);
     }
@@ -62,9 +64,16 @@ class ProfileController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $user = User::find($request->id);
+
+        $user->customerName = $request->nama;
+        $user->customerEmail = $request->email;
+        $user->customerPhoneNumber = $request->telp;
+
+        $user->save();
+        return redirect()->route('profile')->with(['success' => 'Edit Profil Berhasil']);
     }
 
     /**

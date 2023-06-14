@@ -63,12 +63,13 @@ Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add.car
 Route::post('/add-to-cart-rakit', [CartController::class, 'addToCartRakit']);
 Route::post('/remove-from-cart', [CartController::class, 'removeFromCart'])->name('remove.cart');
 Route::post('/decrease-quantity', [CartController::class, 'updateCartQuantity'])->name('min.cart');
-Route::get('/emptycart', [CartController::class, 'empty'])->name('empty.cart');
 Route::get('/checkout', [OrdersController::class, 'index'])->name('checkout');
 Route::post('/checkout', [OrdersController::class, 'store']);
 Route::get('/history', [HistoryController::class, 'index'])->name('history');
 Route::get('/detailhistory/{id}', [DetailHistoryController::class, 'index']);
+
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
 // FRONT PRODUK
 Route::get('/detailproduk/{id}', [DetailController::class, 'index']);

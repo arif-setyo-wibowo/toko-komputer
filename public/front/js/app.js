@@ -812,7 +812,12 @@ $(document).ready(function () {
                             updateCartItemCount(response.cartItemCount);
                             removeCartItem(productId);
                             if (response.cartItemCount === 0) {
-                                location.assign('/emptycart');
+                                var tbody = document.getElementById('tbodyId');
+                                var row = '<tr class="text-center">';
+                                row += '<td colspan="5">Tidak Ada Data</td>';
+                                row += '</tr>';
+                                tbody.innerHTML += row;
+                                $('.coupon-continue-checkout').empty();
                             }
                         } else {
                             Toast.fire({

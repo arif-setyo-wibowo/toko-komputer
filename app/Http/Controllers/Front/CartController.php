@@ -31,10 +31,6 @@ class CartController extends Controller
             'subtotal'  => $subtotal
         ];
 
-        if (count($cart) == 0) {
-            return redirect()->route('empty.cart');
-        }
-
         return view('front/cart',$data);
     }
 
@@ -106,14 +102,6 @@ class CartController extends Controller
         $cartItemCount = count($cartItems);
 
         return response()->json(['success' => true, 'cartItemCount' => $cartItemCount]);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function empty()
-    {
-        return view('front/cartempty');
     }
 
     public function updateCartQuantity(Request $request){

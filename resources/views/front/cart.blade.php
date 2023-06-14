@@ -23,22 +23,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12" id="cart-container">
-                    @if (empty($cart))
-                        <h2>Keranjang Kosong</h2>
-                    @else
-                        <!-- Products-List-Wrapper -->
-                        <div class="table-wrapper u-s-m-b-60">
-                            <table id="cart-items">
-                                <thead>
-                                    <tr>
-                                        <th>Product</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                        <th>Subtotal</th>
-                                        <th>Action</th>
+                    <!-- Products-List-Wrapper -->
+                    <div class="table-wrapper u-s-m-b-60">
+                        <table id="cart-items">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Subtotal</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyId">
+                                @if (empty($cart))
+                                    <tr class="text-center">
+                                        <td colspan="5">Tidak Ada Data</td>
                                     </tr>
-                                </thead>
-                                <tbody>
+                                @else
                                     @foreach ($cart as $item)
                                         <tr data-product-id="{{ $item['product_id'] }}">
                                             <td>
@@ -90,18 +92,23 @@
                                             </td>
                                         </tr>
                                     @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- Products-List-Wrapper /- -->
-                        <div class="coupon-continue-checkout u-s-m-b-60">
+                                @endif
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Products-List-Wrapper /- -->
+
+                    <div class="coupon-continue-checkout u-s-m-b-60">
+                        @if (!empty($cart))
                             <div class="button-area">
                                 <a href="/" class="continue">Continue Shopping</a>
                                 <a href="/checkout" class="checkout">Proceed to Checkout</a>
                             </div>
-                        </div>
-                        <!-- Coupon /- -->
-                    @endif
+                        @endif
+                    </div>
+
+                    <!-- Coupon /- -->
+
                 </div>
             </div>
         </div>

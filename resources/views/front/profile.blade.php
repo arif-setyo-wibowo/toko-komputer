@@ -3,7 +3,7 @@
 @section('content')
     <!-- Page Introduction Wrapper -->
     <div class="page-style-a">
-        <div class="container"> 
+        <div class="container">
             <div class="page-intro">
                 <h2>Profile</h2>
                 <ul class="bread-crumb">
@@ -20,80 +20,94 @@
     </div>
     <!-- Page Introduction Wrapper /- -->
     <!-- Account-Page -->
-<div class="page-account u-s-p-t-80">
-    <div class="container row">
+    <div class="page-account u-s-p-t-80 mb-5 pb-5">
+        <div class="container row mx-auto">
             <!-- Profile -->
-            <div class="col md 6"></div>
+            <div class="col-lg-3"></div>
             <div class="col-lg-6">
                 <div class="card-body box-profile">
                     <div class="text-center">
-                    <i class="fa-regular fa-user" style="font-size:60px;"></i>
+                        <i class="fa-regular fa-user" style="font-size:60px;"></i>
                     </div>
-                    <h3 class="profile-username text-center mt-3">Egiofani Reendio</h3>
-                    <p class="text-muted text-center">08988499383</p>
+                    <h3 class="profile-username text-center mt-3">{{ $user->customerName }}</h3>
+                    <p class="text-muted text-center">{{ $user->customerPhoneNumber }}</p>
                     <ul class="list-group list-group-unbordered mb-3">
-                    <li class="list-group-item">
-                    <b>Email</b> <a class="float-right">Egiofani@gmail.com</a>
-                    </li>
-                    <li class="list-group-item">
-                    <b>Password</b> <a class="float-right">******</a><br>
-                    <a class="float-right" style="font-size:13px;" href="">reset password</a>
-                    </li>
-                    
+                        <li class="list-group-item">
+                            <b>Email</b> <a class="float-right">{{ $user->customerEmail }}</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Password</b> <a class="float-right">********</a><br>
+                            <a class="float-right" style="font-size:13px;" href="">Reset Password</a>
+                        </li>
                     </ul>
-                    
-                    <a href="#" data-toggle="modal" data-target="#modal-default" class="btn btn-primary btn-block"><b>Edit Profile</b></a>
-                    </div>
+                    <a href="#" data-toggle="modal" data-target="#modal-default"
+                        class="btn btn-primary btn-block"><b>Edit Profile</b></a>
+                </div>
             </div>
+            <div class="col-lg-3"></div>
             <!-- Register /- -->
             <div class="modal fade" id="modal-default">
                 <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Edit Profile</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                        <div class="modal-body">
-                            <form>
+                    <form action="{{ url()->current() }}" method="POST">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Edit Profile</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                @csrf
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nama</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" value="Egiofani">
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            placeholder="Enter name" name="nama" value="{{ $user->customerName }}">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Telp</label>
-                                        <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter no" value="08399387474">
+                                        <input type="number" class="form-control" id="exampleInputEmail1"
+                                            placeholder="Enter no" name="telp" value="{{ $user->customerPhoneNumber }}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Telp</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Enamil" value="Egio@gmail.com">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">Password</label>
-                                        <input type="password" disabled class="form-control " id="exampleInputPassword1" placeholder="Password" value="******">
-                                        <a class="ml-2" style="font-size:13px;" href="">reset password</a>
+                                        <label for="exampleInputEmail1">Email</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1"
+                                            placeholder="Enter Enamil" name="email" value="{{ $user->customerEmail }}">
+                                        <input type="hidden" name="id" value="{{ $user->customerId }}">
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                    <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="sumbit" class="btn btn-primary">Save changes</button>
+                            </div>
+                    </form>
                 </div>
                 <!-- /.modal-content -->
-                </div>
-                <!-- /.modal-dialog -->
             </div>
-            <!-- /.modal -->
+            <!-- /.modal-dialog -->
         </div>
+        <!-- /.modal -->
     </div>
-</div>
-<!-- Account-Page /- -->
-    
+    </div>
+    </div>
+    <!-- Account-Page /- -->
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('front/') }}/css/adminlte.css">
+@endsection
+@section('javascript')
+    @if (session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: '{{ session('success') }}',
+                    showConfirmButton: true, // Tampilkan tombol OK
+                    timer: 2000
+                });
+            });
+        </script>
+    @endif
 @endsection
