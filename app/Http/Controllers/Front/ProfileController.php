@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ResetSend;
 use Illuminate\Http\Request;
 use App\Models\Identity;
+use App\Models\Token;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class ProfileController extends Controller
 {
@@ -17,7 +20,7 @@ class ProfileController extends Controller
     {
         $cart = $request->session()->get('cart.items', []);
         $identitas = Identity::all();
-        $user = DB::table('users')->where('customerId', session()->get('id.customer'))->first();;
+        $user = User::where('customerEmail', session()->get('email.customer'))->first();;
         
         $data=[
             'title'     => "Profile",
@@ -60,6 +63,22 @@ class ProfileController extends Controller
     {
         //
     }
+    public function reset_pw()
+    {
+        
+        $token = Token::requestTokenResetPassword(session()->get('email.customer'));
+
+        $email = session()->get('email.customer');
+        $nama = User::where('customerEmail', $email)->first()->customerName;
+        $url = route('customer.reset', ['token' => $token->token]);
+        $data=[
+            'customerName' => $nama,
+            'url' => $url
+        ];
+        Mail::to($email)->send(new ResetSend($data));
+
+        return redirect()->route('profile')->with('success','Silahkan Cek Email Untuk Verifikasi');
+    }
 
     /**
      * Update the specified resource in storage.
@@ -69,7 +88,6 @@ class ProfileController extends Controller
         $user = User::find($request->id);
 
         $user->customerName = $request->nama;
-        $user->customerEmail = $request->email;
         $user->customerPhoneNumber = $request->telp;
 
         $user->save();
