@@ -35,6 +35,16 @@
                     <div class="card recent-sales overflow-auto p-3 ">
 
                         <!-- Bordered Tabs -->
+                        @if ((Session::get('role.manager')))
+                        <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                    data-bs-target="#bordered-home" type="button" role="tab" aria-controls="home"
+                                    aria-selected="true">Daftar</button>
+                            </li>
+                        </ul>
+                        @endif
+                        @if ((Session::get('role.karyawan')))
                         <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
@@ -43,16 +53,49 @@
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                                    data-bs-target="#bordered-profile" type="button" role="tab" aria-controls="profile"
-                                    aria-selected="false">Tambah Data</button>
+                                    data-bs-target="#bordered-profile" type="button" role="tab"
+                                    aria-controls="profile" aria-selected="false">Tambah Data</button>
                             </li>
                         </ul>
+                        @endif
                         <!-- ISI -->
+                        @if ((Session::get('role.manager')))
                         <div class="tab-content p-2" id="borderedTabContent">
                             <div class="tab-pane fade show active" id="bordered-home" role="tabpanel"
                                 aria-labelledby="home-tab">
                                 <h5 class="card-title">Daftar List Storage</h5>
-                                <table class="table table-hover datatable">
+                                <button class="btn btn-primary btn-sm btn-success mb-4" id="btnExcel">Export</button>
+                                <table class="table table-hover datatable" id="tblData">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Merk</th>
+                                            <th scope="col">Nama</th>
+                                            <th scope="col">Size</th>
+                                            <th scope="col">Tipe</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($storage as $data)
+                                            <tr>
+                                                <th scope="row">{{ $loop->iteration }}</th>
+                                                <td>{{ $data->brand->brandName }}</td>
+                                                <td>{{ $data->storageName }}</td>
+                                                <td>{{ $data->storageSize }}</td>
+                                                <td>{{ $data->storageType }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        @endif
+                        @if ((Session::get('role.karyawan')))
+                        <div class="tab-content p-2" id="borderedTabContent">
+                            <div class="tab-pane fade show active" id="bordered-home" role="tabpanel"
+                                aria-labelledby="home-tab">
+                                <h5 class="card-title">Daftar List Storage</h5>
+                                <table class="table table-hover datatable" id="tblData">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
@@ -265,10 +308,6 @@
                                 </form>
                             </div>
                         </div>
-                        <!-- End Bordered Tabs -->
-
-                        <!-- Modal -->
-
                         <!-- update -->
                         <div class="modal fade modal-lg" id="updateStorage" tabindex="-1">
                             <div class="modal-dialog modal-dialog-centered">
@@ -436,7 +475,6 @@
                                 <!-- End Vertically centered Modal-->
                             </div>
                         </div>
-
                         <!-- detail Modal-->
                         <div class="modal fade" id="detail" tabindex="-1">
                             <div class="modal-dialog modal-lg modal-dialog-scrollable">
@@ -525,6 +563,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -549,4 +588,13 @@
 @endsection
 @section('javascript')
     <script src="{{ asset('admin/') }}/js/custom/storage.js"></script>
+    <script>
+        $(function() {
+            $("#btnExcel").click(function() {
+                $("#tblData").table2excel({
+                    filename: "storage.xls"
+                })
+            })
+        })
+    </script>
 @endsection

@@ -25,6 +25,7 @@ class SocialiteController extends Controller
             if($finduser){
                 if (!empty($finduser->customerVerifyAt)) { 
                     session(['login.customer' => true]);
+                    session(['id.customer' => $finduser->customerId]);
                     session(['email.customer' => $finduser->customerEmail]);
                     session(['nama.customer' => $finduser->customerName]);                           
                     return redirect()->route('home');

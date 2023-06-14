@@ -63,7 +63,7 @@ class OrderController extends Controller
         $order = Order::find($request->orderId);
         $order->orderResi = $resi;
         $order->save();
-        return redirect('/administrator/order')->with(['success' => 'Input Resi Berhasil']);
+        return redirect()->route('administrator.order')->with(['success' => 'Input Resi Berhasil']);
     }
 
     /**

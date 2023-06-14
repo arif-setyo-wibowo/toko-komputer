@@ -68,9 +68,9 @@ Route::post('/checkout', [OrdersController::class, 'store']);
 Route::get('/history', [HistoryController::class, 'index'])->name('history');
 Route::get('/detailhistory/{id}', [DetailHistoryController::class, 'index']);
 
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
-Route::post('/profile/reset', [ProfileController::class, 'reset_pw'])->name('reset_pw');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('customer');
+Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update')->middleware('customer');
+Route::post('/profile/reset', [ProfileController::class, 'reset_pw'])->name('reset_pw')->middleware('customer');
 
 // FRONT PRODUK
 Route::get('/detailproduk/{id}', [DetailController::class, 'index']);
@@ -255,6 +255,9 @@ Route::prefix('administrator')->middleware('karyawan')->group(function () {
         Route::post('/update', 'update');
         Route::get('/delete/{id}', 'destroy');
     });
+    
+    
+
 
     // mouse
     Route::controller(MouseController::class)->prefix('/mouse')->group(function () {
@@ -265,12 +268,7 @@ Route::prefix('administrator')->middleware('karyawan')->group(function () {
         Route::get('/delete/{id}', 'destroy');
     });
 
-    // Order
-    Route::controller(OrderController::class)->prefix('/order')->group(function () {
-        Route::get('/', 'index');
-        Route::post('/input-resi', 'store');
-        Route::get('/invoice', 'detail');
-    });
+    
 });
 
 //Manager
@@ -280,9 +278,9 @@ Route::prefix('manager')->middleware('manager')->group(function () {
 
     // Order
     Route::controller(OrderController::class)->prefix('/order')->group(function () {
-        Route::get('/', 'index');
+        Route::get('/', 'index')->name('administrator.order');
         Route::post('/input-resi', 'store');
-        Route::get('/invoice', 'detail');
+        Route::get('/invoice/{id}', 'detail');
     });
 
     // Karyawan
@@ -293,4 +291,71 @@ Route::prefix('manager')->middleware('manager')->group(function () {
         Route::post('/update', 'update');
         Route::get('/delete/{id}', 'destroy');
     });
+
+    // Socket
+    Route::controller(SocketController::class)->prefix('/socket')->group(function () {
+        Route::get('/', 'index')->name('administrator.socket');
+        Route::get('/export', 'export')->name('socket.export');
+    });
+
+    // Motherboard
+    Route::controller(MoboController::class)->prefix('/motherboard')->group(function () {
+        Route::get('/', 'index')->name('administrator.mobo');
+    });
+
+    // Processor
+    Route::controller(ProcessorController::class)->prefix('/processor')->group(function () {
+        Route::get('/', 'index')->name('administrator.processor');
+    });
+
+    // Grapic Card
+    Route::controller(GpuController::class)->prefix('/gpu')->group(function () {
+        Route::get('/', 'index')->name('administrator.gpu');
+    });
+
+    // Memory
+    Route::controller(MemoriController::class)->prefix('/memory')->group(function () {
+        Route::get('/', 'index')->name('administrator.memory');
+    });
+
+    // Storage
+    Route::controller(StorageController::class)->prefix('/storage')->group(function () {
+        Route::get('/', 'index')->name('administrator.storage');
+    });
+
+    // Power Supply
+    Route::controller(PowerSupplyController::class)->prefix('/powersupply')->group(function () {
+        Route::get('/', 'index')->name('administrator.powersupply');
+    });
+
+    // Cooler
+    Route::controller(CoolerController::class)->prefix('/cooler')->group(function () {
+        Route::get('/', 'index')->name('administrator.cooler');
+    });
+
+    // Casing
+    Route::controller(CasingController::class)->prefix('/casing')->group(function () {
+        Route::get('/', 'index')->name('administrator.case');
+    });
+
+    // Earphone
+    Route::controller(EarphoneController::class)->prefix('/earphone')->group(function () {
+        Route::get('/', 'index')->name('administrator.earphone');
+    });
+
+    // Keyboard
+    Route::controller(KeyboardController::class)->prefix('/keyboard')->group(function () {
+        Route::get('/', 'index')->name('administrator.keyboard');
+    });
+
+    // Monitor 
+    Route::controller(MonitorController::class)->prefix('/monitor')->group(function () {
+        Route::get('/', 'index')->name('administrator.monitor');
+    });
+
+    // mouse
+    Route::controller(MouseController::class)->prefix('/mouse')->group(function () {
+        Route::get('/', 'index')->name('administrator.mouse');
+    });
+
 });

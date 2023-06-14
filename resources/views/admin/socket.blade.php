@@ -33,6 +33,16 @@
                     @endif
                     <div class="card recent-sales overflow-auto p-3 ">
                         <!-- Bordered Tabs -->
+                        @if ((Session::get('role.manager')))
+                        <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                    data-bs-target="#bordered-home" type="button" role="tab" aria-controls="home"
+                                    aria-selected="true">Daftar</button>
+                            </li>
+                        </ul>
+                        @endif
+                        @if ((Session::get('role.karyawan')))
                         <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
@@ -41,10 +51,40 @@
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                                    data-bs-target="#bordered-profile" type="button" role="tab" aria-controls="profile"
-                                    aria-selected="false">Tambah Data</button>
+                                    data-bs-target="#bordered-profile" type="button" role="tab"
+                                    aria-controls="profile" aria-selected="false">Tambah Data</button>
                             </li>
                         </ul>
+                        @endif
+                        @if ((Session::get('role.manager')))
+                        <div class="tab-content p-2" id="borderedTabContent">
+                            <div class="tab-pane fade show active" id="bordered-home" role="tabpanel"
+                                aria-labelledby="home-tab">
+                                <h5 class="card-title">Daftar List Socket</h5>
+                                <button class="btn btn-primary btn-sm btn-success mb-4" id="btnExcel">Export</button>
+                                <table class="table table-hover datatable" id="tblData">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Nama Socket</th>
+                                        </tr>
+
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($socket as $item)
+                                            <tr>
+                                                <th scope="row">{{ $loop->iteration }}</th>
+                                                <td>{{ $item->processorSocketName }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+
+                                <!-- Tambah Socket -->
+                            </div>
+                        </div>
+                        @endif
+                        @if ((Session::get('role.karyawan')))
                         <!-- ISI -->
                         <div class="tab-content p-2" id="borderedTabContent">
                             <div class="tab-pane fade show active" id="bordered-home" role="tabpanel"
@@ -151,6 +191,7 @@
                             </div>
                         </div><!-- End Recent Sales -->
                         <!-- End Default Table Example -->
+                        @endif
                     </div>
                 </div>
 
@@ -175,4 +216,13 @@
 @endsection
 @section('javascript')
     <script src="{{ asset('admin/') }}/js/custom/socket.js"></script>
+    <script>
+        $(function () {
+            $("#btnExcel").click(function () {
+                $("#tblData").table2excel({
+                    filename: "socket.xls"
+                })
+            })
+        })
+    </script>
 @endsection

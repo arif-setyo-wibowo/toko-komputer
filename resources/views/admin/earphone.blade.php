@@ -33,6 +33,16 @@
                     @endif
                     <div class="card recent-sales overflow-auto p-3 ">
                         <!-- Bordered Tabs -->
+                        @if ((Session::get('role.manager')))
+                        <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                    data-bs-target="#bordered-home" type="button" role="tab" aria-controls="home"
+                                    aria-selected="true">Daftar</button>
+                            </li>
+                        </ul>
+                        @endif
+                        @if ((Session::get('role.karyawan')))
                         <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
@@ -41,16 +51,50 @@
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
-                                    data-bs-target="#bordered-profile" type="button" role="tab" aria-controls="profile"
-                                    aria-selected="false">Tambah Data</button>
+                                    data-bs-target="#bordered-profile" type="button" role="tab"
+                                    aria-controls="profile" aria-selected="false">Tambah Data</button>
                             </li>
                         </ul>
+                        @endif
                         <!-- ISI -->
+                        @if ((Session::get('role.manager')))
                         <div class="tab-content p-2" id="borderedTabContent">
                             <div class="tab-pane fade show active" id="bordered-home" role="tabpanel"
                                 aria-labelledby="home-tab">
                                 <h5 class="card-title">Daftar List Earphone</h5>
-                                <table class="table table-hover datatable">
+                                <button class="btn btn-primary btn-sm btn-success mb-4" id="btnExcel">Export</button>
+                                <table class="table table-hover datatable" id="tblData">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Nama Earphone</th>
+                                            <th scope="col">Tipe Earphone</th>
+                                            <th scope="col">Merk</th>
+                                            <th scope="col">Stock</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($earphone as $data)
+                                        <tr>
+                                            <th scope="row">{{ $loop->iteration}}</th>
+                                            <td>{{ $data->earphoneName }}</td>
+                                            <td>{{ $data->earphoneType }}</td>
+                                            <td>{{ $data->brand->brandName }}</td>
+                                            <td>{{ $data->earphoneStock }}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- End Bordered Tabs -->
+                        @endif
+                        @if ((Session::get('role.karyawan')))
+                        <div class="tab-content p-2" id="borderedTabContent">
+                            <div class="tab-pane fade show active" id="bordered-home" role="tabpanel"
+                                aria-labelledby="home-tab">
+                                <h5 class="card-title">Daftar List Earphone</h5>
+                                <table class="table table-hover datatable" id="tblData">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
@@ -483,6 +527,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -506,4 +551,13 @@
 @endsection
 @section('javascript')
     <script src="{{ asset('admin/') }}/js/custom/earphone.js"></script>
+    <script>
+        $(function () {
+            $("#btnExcel").click(function () {
+                $("#tblData").table2excel({
+                    filename: "earphone.xls"
+                })
+            })
+        })
+    </script>
 @endsection

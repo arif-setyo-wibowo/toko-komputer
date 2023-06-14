@@ -28,6 +28,98 @@
                                 @endforeach
                             </div>
                         @endif
+                        
+                        <div class="card recent-sales overflow-auto p-3 ">
+                            <!-- Bordered Tabs -->
+                            @if ((Session::get('role.manager')))
+                            <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                        data-bs-target="#bordered-home" type="button" role="tab" aria-controls="home"
+                                        aria-selected="true">Daftar</button>
+                                </li>
+                            </ul>
+                            @endif
+                            @if ((Session::get('role.karyawan')))
+                            <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                        data-bs-target="#bordered-home" type="button" role="tab" aria-controls="home"
+                                        aria-selected="true">Daftar</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                        data-bs-target="#bordered-profile" type="button" role="tab"
+                                        aria-controls="profile" aria-selected="false">Tambah Data</button>
+                                </li>
+                            </ul>
+                            @endif
+                            <!-- ISI -->
+                        @if ((Session::get('role.manager')))
+                            <div class="tab-content p-2" id="borderedTabContent">
+                                <div class="tab-pane fade show active" id="bordered-home" role="tabpanel"
+                                    aria-labelledby="home-tab">
+                                    <h5 class="card-title">Daftar List Motherboard</h5>
+                                    <button class="btn btn-primary btn-sm btn-success mb-4" id="btnExcel">Export</button>
+                                    <table class="table table-hover datatable" id="tblData">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Motherboard</th>
+                                                <th scope="col">Socket</th>
+                                                <th scope="col">Merk</th>
+                                                <th class="text-center" scope="col">Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($mobo as $data)
+                                                <tr>
+                                                    <th scope="row">{{ $loop->iteration }}</th>
+                                                    <td>{{ $data->moboName }}</td>
+                                                    <td>{{ $data->socket->processorSocketName }}</td>
+                                                    <td>{{ $data->brand->brandName }}</td>
+                                                    <td class="text-center">
+                                                        <li class="nav-item dropdown" style="list-style-type: none;">
+                                                            <a style="font-size:150%; color:#4154f1;"
+                                                                class="nav-link nav-icon" href="#"
+                                                                data-bs-toggle="dropdown">
+                                                                <i class="bi bi-gear"></i>
+                                                            </a>
+                                                            <!-- End Notification Icon -->
+                                                            <ul
+                                                                class="p-2 dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                                                                <li style="font-size:20px;">
+                                                                    <button type="button"
+                                                                        class=" btn btn-outline-primary button-update"
+                                                                        id="{{ $data->moboId }}"><i
+                                                                            class="bi bi-pen"></i></button>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-danger button-hapus"
+                                                                        id="{{ $data->moboId }}"><i
+                                                                            class="bi  bi-trash"></i></button>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success button-detail"
+                                                                        id="{{ $data->moboId }}"><i
+                                                                            class="bi  bi-info"></i></button>
+                                                                </li>
+                                                                <li></li>
+                                                                <li></li>
+                                                            </ul>
+                                                            <!-- End Notification Dropdown Items -->
+                                                        </li>
+                                                        <!-- End Notification Nav -->
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+
+                                    <!-- Tambah Motherboard -->
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+                        @if ((Session::get('role.karyawan')))
                         <div class="card recent-sales overflow-auto p-3 ">
                             <!-- Bordered Tabs -->
                             <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
@@ -1544,6 +1636,7 @@
                             </div>
                         </div>
                         {{-- End Modal Hapus --}}
+                        @endif
                 </div>
             </div>
         </div>

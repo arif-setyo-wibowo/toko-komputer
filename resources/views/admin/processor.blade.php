@@ -30,6 +30,16 @@
                                 </div>
                             @endif
                             <!-- Bordered Tabs -->
+                            @if ((Session::get('role.manager')))
+                            <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                        data-bs-target="#bordered-home" type="button" role="tab" aria-controls="home"
+                                        aria-selected="true">Daftar</button>
+                                </li>
+                            </ul>
+                            @endif
+                            @if ((Session::get('role.karyawan')))
                             <ul class="nav nav-tabs nav-tabs-bordered" id="borderedTab" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
@@ -42,12 +52,47 @@
                                         aria-controls="profile" aria-selected="false">Tambah Data</button>
                                 </li>
                             </ul>
+                            @endif
+                            @if ((Session::get('role.manager')))
                             <!-- ISI -->
                             <div class="tab-content p-2" id="borderedTabContent">
                                 <div class="tab-pane fade show active" id="bordered-home" role="tabpanel"
                                     aria-labelledby="home-tab">
                                     <h5 class="card-title">Daftar List Processor</h5>
-                                    <table class="table table-hover datatable">
+                                    <button class="btn btn-primary btn-sm btn-success mb-4" id="btnExcel">Export</button>
+                                    <table class="table table-hover datatable" id="tblData">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Processor</th>
+                                                <th scope="col">Socket</th>
+                                                <th scope="col">Merk</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($cpu as $data)
+                                                <tr>
+                                                    <th scope="row">{{ $loop->iteration }}</th>
+                                                    <td>{{ $data->processorName }}</td>
+                                                    <td>{{ $data->socket->processorSocketName }}</td>
+                                                    <td>{{ $data->brand->brandName }}</td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+
+                                    <!-- Tambah Brand -->
+                                </div>
+                            </div>
+                            @endif
+
+                            @if ((Session::get('role.karyawan')))
+                            <!-- ISI -->
+                            <div class="tab-content p-2" id="borderedTabContent">
+                                <div class="tab-pane fade show active" id="bordered-home" role="tabpanel"
+                                    aria-labelledby="home-tab">
+                                    <h5 class="card-title">Daftar List Processor</h5>
+                                    <table class="table table-hover datatable" id="tblData">
                                         <thead>
                                             <tr>
                                                 <th scope="col">ID</th>
@@ -343,10 +388,6 @@
                                     </form>
                                 </div>
                             </div>
-                            <!-- End Bordered Tabs -->
-
-                            <!-- Modal -->
-
                             <!-- update -->
                             <div class="modal fade modal-lg" id="updateCPU" tabindex="-1">
                                 <div class="modal-dialog modal-dialog-centered">
@@ -694,6 +735,7 @@
                                 </div>
                             </div>
                             {{-- End Modal Hapus --}}
+                            @endif
                     </div>
                 </div>
             </div>
@@ -702,4 +744,13 @@
 @endsection
 @section('javascript')
     <script src="{{ asset('admin/') }}/js/custom/cpu.js"></script>
+    <script>
+        $(function () {
+            $("#btnExcel").click(function () {
+                $("#tblData").table2excel({
+                    filename: "processor.xls"
+                })
+            })
+        })
+    </script>
 @endsection

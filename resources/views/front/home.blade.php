@@ -90,7 +90,7 @@
                     </a>
                 </div>
                 <div class="brand-pic">
-                    <a href="/shop/earphones">
+                    <a href="/shop/earphone">
                         <img src="{{ asset('front/') }}/images/brand-logos/headset.png" alt="Brand Logo 7">
                     </a>
                 </div>

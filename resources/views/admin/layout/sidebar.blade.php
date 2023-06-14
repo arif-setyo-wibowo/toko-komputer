@@ -90,6 +90,84 @@
           <span>Karyawan</span>
         </a>
       </li><!-- End Profile Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Barang</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="/manager/socket">
+              <i class="bi bi-circle"></i><span>Socket</span>
+            </a>
+          </li>
+          <li>
+            <a href="/manager/motherboard">
+              <i class="bi bi-circle"></i><span>Motherboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="/manager/processor">
+              <i class="bi bi-circle"></i><span>Processor</span>
+            </a>
+          </li>
+          <li>
+            <a href="/manager/gpu">
+              <i class="bi bi-circle"></i><span>Graphic Card</span>
+            </a>
+          </li>
+          <li>
+            <a href="/manager/memory">
+              <i class="bi bi-circle"></i><span>Memory</span>
+            </a>
+          </li>
+          <li>
+            <a href="/manager/storage">
+              <i class="bi bi-circle"></i><span>Storage</span>
+            </a>
+          </li>
+          <li>
+            <a href="/manager/powersupply">
+              <i class="bi bi-circle"></i><span>Power Supplay</span>
+            </a>
+          </li>
+          <li>
+            <a href="/manager/casing">
+              <i class="bi bi-circle"></i><span>Casing</span>
+            </a>
+          </li>
+          <li>
+            <a href="/manager/cooler">
+              <i class="bi bi-circle"></i><span>Cooler</span>
+            </a>
+          </li>
+          <li>
+            <a href="/manager/earphone">
+              <i class="bi bi-circle"></i><span>Earphone</span>
+            </a>
+          </li>
+          <li>
+            <a href="/manager/keyboard">
+              <i class="bi bi-circle"></i><span>Keyboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="/manager/mouse">
+              <i class="bi bi-circle"></i><span>Mouse</span>
+            </a>
+          </li>
+          <li>
+            <a href="/manager/monitor">
+              <i class="bi bi-circle"></i><span>Monitor</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+      <li class="nav-item">
+        <a class="nav-link {{ $title != 'Order' ? 'collapsed' : '' }}" href="/manager/order">
+          <i class="bi-cash-coin" style="font-size: 18px;"></i>
+          <span>Transaksi</span>
+        </a>
+      </li><!-- End Transaksi Page Nav -->
       @endif
       @if ((Session::get('role.karyawan')))
       <li class="nav-item">
@@ -200,12 +278,6 @@
           </li>
         </ul>
       </li><!-- End Components Nav -->
-      <li class="nav-item">
-        <a class="nav-link {{ $title != 'Order' ? 'collapsed' : '' }}" href="/administrator/order">
-          <i class="bi-cash-coin" style="font-size: 18px;"></i>
-          <span>Transaksi</span>
-        </a>
-      </li><!-- End Transaksi Page Nav -->
       @endif
     </ul>
   </aside><!-- End Sidebar-->
