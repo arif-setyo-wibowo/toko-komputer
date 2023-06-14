@@ -13,10 +13,6 @@ return new class extends Migration
     {
         Schema::create('sliders', function (Blueprint $table) {
             $table->uuid('sliderId')->primary();
-            $table->string('sliderName',255);
-            $table->string('sliderDateStart',255);
-            $table->string('sliderDateEnd',255);
-            $table->text('sliderDescription');
             $table->string('sliderImage', 255);
             $table->timestamps();
         });

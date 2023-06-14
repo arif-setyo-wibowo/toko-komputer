@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('earphoneConnection', 255);
             $table->string('earphoneSoundSig',255);
             $table->string('earphoneHaveMic', 255);
-            $table->string('earphoneDescription',255);
+            $table->text('earphoneDescription');
             $table->string('earphoneWarranty',255);
             $table->string('earphonePrice', 255);
             $table->string('earphoneStock',255);

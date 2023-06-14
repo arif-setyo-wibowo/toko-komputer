@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Brand;
+use App\Models\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class SlidersController extends Controller
 {
@@ -14,6 +18,7 @@ class SlidersController extends Controller
     {
         $data=[
             'title' => "Slider",
+            'slider' => Slider::all()
         ];
 
         return view('admin/slider',$data);
@@ -27,13 +32,11 @@ class SlidersController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        
     }
+
 
     /**
      * Display the specified resource.
@@ -43,21 +46,34 @@ class SlidersController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
-        //
+        $data = Slider::where('sliderId', $id)->get();
+        return $data->toJson();
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'sliderImageUpdate' => 'dimensions:min_width=1110,min_height=236|image|mimes:png,jpg,jpeg',
+        ]);
+
+        $slider = Slider::find($request->IdUpdate);
+
+        if ($request->file('sliderImageUpdate')) {
+            File::delete('uploads/'.$slider->sliderImage);
+            $gambar = $request->file('sliderImageUpdate');
+            $sliderGambarName = Str::random(20) . '.' . $gambar->getClientOriginalExtension();
+            $gambar->move(public_path('uploads'), $sliderGambarName);
+            $slider->sliderImage = $sliderGambarName;
+        }else{
+            $slider->sliderImage = $request->imageAwal;
+        }
+        $slider->save();
+
+        return redirect()->route('administrator.slider')->with(['success' => 'Edit Data Berhasil']);
     }
+
 
     /**
      * Remove the specified resource from storage.

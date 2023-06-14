@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('mousePollRate', 255);
             $table->string('mouseConnection',255);
             $table->string('mouseGrip',255);
-            $table->string('mouseDescription',255);
+            $table->text('mouseDescription');
             $table->string('mouseWarranty',255);
             $table->string('mousePrice', 255);
             $table->string('mouseStock',255);

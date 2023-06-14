@@ -33,7 +33,8 @@ class DatabaseSeeder extends Seeder
             ViewBarangSeeder::class,
             MonitorSeeder::class,
             MouseSeeder::class,
-            EarphoneSeeder::class
+            EarphoneSeeder::class,
+            BannerSeeder::class
             
         ]);
     }
