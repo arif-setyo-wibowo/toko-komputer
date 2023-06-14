@@ -25,7 +25,7 @@
             <!-- Profile -->
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
-                @if ($message = Session::get('succes'))
+                {{-- @if ($message = Session::get('succes'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         <i class="bi bi-check-circle me-1"></i>
                         {{ $message }}
@@ -37,7 +37,7 @@
                             <i class="bi bi-exclamation-octagon me-1"> {{ $error }} </i><br>
                         @endforeach
                     </div>
-                @endif
+                @endif --}}
                 <div class="card-body box-profile">
                     <div class="text-center">
                         <i class="fa-regular fa-user" style="font-size:60px;"></i>
