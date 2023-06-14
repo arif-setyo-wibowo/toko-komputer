@@ -58,28 +58,38 @@ use App\Http\Controllers\Api\RajaOngkirController;
 // FRONT
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/rakitpc', [RakitPcController::class, 'index']);
-Route::get('/cart', [CartController::class, 'index']);
-Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add.cart');
-Route::post('/add-to-cart-rakit', [CartController::class, 'addToCartRakit']);
-Route::post('/remove-from-cart', [CartController::class, 'removeFromCart'])->name('remove.cart');
-Route::post('/decrease-quantity', [CartController::class, 'updateCartQuantity'])->name('min.cart');
-Route::get('/checkout', [OrdersController::class, 'index'])->name('checkout');
-Route::post('/checkout', [OrdersController::class, 'store']);
-Route::get('/history', [HistoryController::class, 'index'])->name('history');
-Route::get('/detailhistory/{id}', [DetailHistoryController::class, 'index']);
-
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('customer');
-Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update')->middleware('customer');
-Route::post('/profile/reset', [ProfileController::class, 'reset_pw'])->name('reset_pw')->middleware('customer');
-
-// FRONT PRODUK
 Route::get('/detailproduk/{id}', [DetailController::class, 'index']);
 Route::get('/shop/{categories}', [ShopController::class, 'index']);
+
+
+// FRONT PRODUK
+Route::middleware('customer')->group(function () {
+    Route::get('/cart', [CartController::class, 'index']);
+    Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add.cart');
+    Route::post('/add-to-cart-rakit', [CartController::class, 'addToCartRakit']);
+    Route::post('/remove-from-cart', [CartController::class, 'removeFromCart'])->name('remove.cart');
+    Route::post('/decrease-quantity', [CartController::class, 'updateCartQuantity'])->name('min.cart');
+    Route::get('/checkout', [OrdersController::class, 'index']);
+    Route::post('/checkout', [OrdersController::class, 'store']);
+    Route::get('/history', [HistoryController::class, 'index'])->name('history');
+    Route::get('/detailhistory/{id}', [DetailHistoryController::class, 'index']);
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::post('/profile/reset', [ProfileController::class, 'reset_pw'])->name('reset_pw');
+    // API
+    Route::get('/provinces', [RajaOngkirController::class, 'getProvinces'])->name('provinces');
+    Route::get('/cities', [RajaOngkirController::class, 'getCities'])->name('cities');
+    Route::get('/cities-info', [RajaOngkirController::class, 'getInfoCities'])->name('info.cities');
+    Route::post('/cost', [RajaOngkirController::class, 'getCost'])->name('cost');
+    // Blank
+    Route::get('/blank', [HomeController::class, 'blank'])->name('blank');
+
+    Route::get('/logout', [CustomerController::class, 'logout']);
+});
 
 // Login
 Route::get('/login', [CustomerController::class, 'login'])->name('login');
 Route::post('/login', [CustomerController::class, 'login_data']);
-Route::get('/logout', [CustomerController::class, 'logout'])->middleware('customer');
 Route::post('/register', [CustomerController::class, 'signup_data'])->name('register');
 Route::get('/register/verify/{verify_key}', [CustomerController::class, 'verify']);
 
@@ -93,14 +103,6 @@ Route::post('/reset_password', [CustomerController::class, 'resetPasswordPost'])
 Route::get('/auth/login/{provider}', [SocialiteController::class, 'redirectToProvider'])->name('login.google');
 Route::get('/auth/{provider}/callback', [SocialiteController::class, 'handleProvideCallback']);
 
-// API
-Route::get('/provinces', [RajaOngkirController::class, 'getProvinces'])->name('provinces');
-Route::get('/cities', [RajaOngkirController::class, 'getCities'])->name('cities');
-Route::get('/cities-info', [RajaOngkirController::class, 'getInfoCities'])->name('info.cities');
-Route::post('/cost', [RajaOngkirController::class, 'getCost'])->name('cost');
-
-// Blank
-Route::get('/blank', [HomeController::class, 'blank'])->name('blank');
 
 // Login Admin
 Route::get('/loginEmployee', [AuthLoginController::class, 'index'])->name('login.admin');
