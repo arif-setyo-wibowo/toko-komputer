@@ -94,9 +94,10 @@
                                     <span class="total-fetch-items">({{ $mntr }})</span>
                                 </a>
                             </li>
-                            <a href="/shop/earphone">Headset
-                                <span class="total-fetch-items">({{ $hetset }})</span>
-                            </a>
+                            <li>
+                                <a href="/shop/earphone">Headset
+                                    <span class="total-fetch-items">({{ $hetset }})</span>
+                                </a>
                             </li>
                         </ul>
                     </div>
