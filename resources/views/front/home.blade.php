@@ -154,12 +154,11 @@
                                                         src="{{ asset('uploads/') }}/{{ $data->moboImage }}"
                                                         alt="Product">
                                                 </a>
+                                                <hr>
                                             </div>
-                                            <div class="item-content">
+
+                                            <div class="item-content" style="padding-top: 0">
                                                 <div class="what-product-is">
-                                                    <ul class="bread-crumb">
-                                                        &nbsp;
-                                                    </ul>
                                                     <h4 class="item-title">
                                                         <a
                                                             href="/detailproduk/{{ $data->moboId }}">{{ $data->moboName }}</a>
@@ -170,9 +169,6 @@
                                                         @currency($data->moboPrice)
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="tag new">
-                                                <span>NEW</span>
                                             </div>
                                         </div>
                                     @endforeach
@@ -187,16 +183,14 @@
                                             <div class="image-container">
                                                 <a class="item-img-wrapper-link"
                                                     href="/detailproduk/{{ $data->processorId }}">
-                                                    <img class="img-fluid"
+                                                    <img class="img-fluid" style="height: 500px; width:500px;"
                                                         src="{{ asset('uploads/') }}/{{ $data->processorImage }}"
                                                         alt="Product">
                                                 </a>
+                                                <hr>
                                             </div>
-                                            <div class="item-content">
+                                            <div class="item-content" style="padding-top: 0">
                                                 <div class="what-product-is">
-                                                    <ul class="bread-crumb">
-                                                        &nbsp;
-                                                    </ul>
                                                     <h4 class="item-title">
                                                         <a
                                                             href="/detailproduk/{{ $data->processorId }}">{{ $data->processorName }}</a>
@@ -224,16 +218,14 @@
                                             <div class="image-container">
                                                 <a class="item-img-wrapper-link"
                                                     href="/detailproduk/{{ $data->gpuId }}">
-                                                    <img class="img-fluid"
+                                                    <img class="img-fluid" style="height: 500px; width:500px;"
                                                         src="{{ asset('uploads/') }}/{{ $data->gpuImage }}"
                                                         alt="Product">
                                                 </a>
+                                                <hr>
                                             </div>
-                                            <div class="item-content">
+                                            <div class="item-content" style="padding-top: 0px">
                                                 <div class="what-product-is">
-                                                    <ul class="bread-crumb">
-                                                        &nbsp;
-                                                    </ul>
                                                     <h4 class="item-title">
                                                         <a
                                                             href="/detailproduk/{{ $data->gpuId }}">{{ $data->gpuName }}</a>
@@ -261,16 +253,14 @@
                                             <div class="image-container">
                                                 <a class="item-img-wrapper-link"
                                                     href="/detailproduk/{{ $data->memoryId }}">
-                                                    <img class="img-fluid gbr"
+                                                    <img class="img-fluid" style="height: 500px; width:500px;"
                                                         src="{{ asset('uploads/') }}/{{ $data->memoryImage }}"
                                                         alt="Product">
                                                 </a>
+                                                <hr>
                                             </div>
                                             <div class="item-content ">
                                                 <div class="what-product-is float-bottom">
-                                                    <ul class="bread-crumb">
-                                                        &nbsp;
-                                                    </ul>
                                                     <h4 class="item-title">
                                                         <a
                                                             href="/detailproduk/{{ $data->memoryId }}">{{ $data->memoryName }}</a>
@@ -298,16 +288,14 @@
                                             <div class="image-container">
                                                 <a class="item-img-wrapper-link"
                                                     href="/detailproduk/{{ $data->storageId }}">
-                                                    <img class="img-fluid gbr"
+                                                    <img class="img-fluid" style="height: 500px; width:500px;"
                                                         src="{{ asset('uploads/') }}/{{ $data->storageImage }}"
                                                         alt="Product">
                                                 </a>
+                                                <hr>
                                             </div>
-                                            <div class="item-content ">
+                                            <div class="item-content" style="padding-top: 0">
                                                 <div class="what-product-is float-bottom">
-                                                    <ul class="bread-crumb">
-                                                        &nbsp;
-                                                    </ul>
                                                     <h4 class="item-title">
                                                         <a
                                                             href="/detailproduk/{{ $data->storageId }}">{{ $data->storageName }}</a>
@@ -347,10 +335,10 @@
                 @endforeach
             </div>
             <!-- <div class="redirect-link-wrapper text-center u-s-p-t-25 u-s-p-b-80">
-                    <a class="redirect-link" href="store-directory.html">
-                        <span>View more on this category</span>
-                    </a>
-                </div> -->
+                                                                            <a class="redirect-link" href="store-directory.html">
+                                                                                <span>View more on this category</span>
+                                                                            </a>
+                                                                        </div> -->
         </div>
     </div>
     <!-- Banner-Image & View-more /- -->
@@ -362,19 +350,6 @@
             <div class="sec-maker-header text-center">
                 <h3 class="sec-maker-h3">Gaming Gear</h3>
                 <ul class="nav tab-nav-style-1-a justify-content-center">
-                    <!-- <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#mobiles-latest-products">Latest
-                                Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#mobiles-best-selling-products">Best Selling</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#mobiles-top-rating-products">Top Rating</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#mobiles-featured-products">Featured Products</a>
-                        </li> -->
                 </ul>
             </div>
             <div class="wrapper-content">
@@ -404,18 +379,6 @@
                                                 <i class="fa-solid fa-desktop"></i>
                                             </a>
                                         </li>
-                                        <!-- <li class="nav-item">
-                                                                                                                        <a class="nav-link" data-toggle="tab" href="#device-accessories"
-                                                                                                                            title="Device Accessories">
-                                                                                                                            <i class="ion ion-md-settings"></i>
-                                                                                                                        </a>
-                                                                                                                    </li>
-                                                                                                                    <li class="nav-item">
-                                                                                                                        <a class="nav-link" data-toggle="tab" href="#power-banks"
-                                                                                                                            title="Power Banks">
-                                                                                                                            <i class="ion ion-md-battery-charging"></i>
-                                                                                                                        </a>
-                                                                                                                    </li> -->
                                     </ul>
                                 </div>
                                 <div class="col-lg-11 col-md-12">
@@ -428,12 +391,13 @@
                                                             <div class="image-container">
                                                                 <a class="item-img-wrapper-link"
                                                                     href="/detailproduk/{{ $data->mouseId }}">
-                                                                    <img class="img-fluid gbr"
+                                                                    <img class="img-fluid"
+                                                                        style="height: 500px; width:500px;"
                                                                         src="{{ asset('uploads/') }}/{{ $data->mouseImage }}"
                                                                         alt="Product">
                                                                 </a>
                                                             </div>
-                                                            <div class="item-content">
+                                                            <div class="item-content" style="padding-top: 0">
                                                                 <div class="what-product-is">
                                                                     <ul class="bread-crumb">
                                                                         &nbsp;
@@ -466,11 +430,12 @@
                                                                 <a class="item-img-wrapper-link"
                                                                     href="/detailproduk/{{ $data->keyboardId }}">
                                                                     <img class="img-fluid gbr"
+                                                                        style="height: 500px; width:500px;"
                                                                         src="{{ asset('uploads/') }}/{{ $data->keyboardImage }}"
                                                                         alt="Product">
                                                                 </a>
                                                             </div>
-                                                            <div class="item-content">
+                                                            <div class="item-content" style="padding-top: 0">
                                                                 <div class="what-product-is">
                                                                     <ul class="bread-crumb">
                                                                         &nbsp;
@@ -503,11 +468,12 @@
                                                                 <a class="item-img-wrapper-link"
                                                                     href="/detailproduk/{{ $data->earphoneId }}">
                                                                     <img class="img-fluid gbr"
+                                                                        style="height: 500px; width:500px;"
                                                                         src="{{ asset('uploads/') }}/{{ $data->earphoneImage }}"
                                                                         alt="Product">
                                                                 </a>
                                                             </div>
-                                                            <div class="item-content">
+                                                            <div class="item-content" style="padding-top: 0">
                                                                 <div class="what-product-is">
                                                                     <ul class="bread-crumb">
                                                                         &nbsp;
@@ -540,11 +506,12 @@
                                                                 <a class="item-img-wrapper-link"
                                                                     href="/detailproduk/{{ $data->monitorId }}">
                                                                     <img class="img-fluid gbr"
+                                                                        style="height: 500px; width:500px;"
                                                                         src="{{ asset('uploads/') }}/{{ $data->monitorImage }}"
                                                                         alt="Product">
                                                                 </a>
                                                             </div>
-                                                            <div class="item-content">
+                                                            <div class="item-content" style="padding-top: 0">
                                                                 <div class="what-product-is">
                                                                     <ul class="bread-crumb">
                                                                         &nbsp;
@@ -616,16 +583,14 @@
                                             <div class="image-container">
                                                 <a class="item-img-wrapper-link"
                                                     href="/detailproduk/{{ $data->caseId }}">
-                                                    <img class="img-fluid gbr"
+                                                    <img class="img-fluid gbr" style="height: 500px; width:500px;"
                                                         src="{{ asset('uploads/') }}/{{ $data->caseImage }}"
                                                         alt="Product">
                                                 </a>
+                                                <hr>
                                             </div>
-                                            <div class="item-content">
+                                            <div class="item-content" style="padding-top: 0">
                                                 <div class="what-product-is">
-                                                    <ul class="bread-crumb">
-                                                        &nbsp;
-                                                    </ul>
                                                     <h4 class="item-title">
                                                         <a
                                                             href="/detailproduk/{{ $data->caseId }}">{{ $data->caseName }}</a>

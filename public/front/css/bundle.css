@@ -1599,9 +1599,7 @@ body {
   transition: all 0.3s;
 }
 
-.item-action-behaviors {
-
-}
+.item-action-behaviors {}
 
 .item-quick-look,
 .item-mail,
@@ -1657,7 +1655,6 @@ body {
 
 .what-product-is {
   margin-bottom: 18px;
-  border-bottom: 1px solid #DCDCDD;
 }
 
 .item .bread-crumb>li {

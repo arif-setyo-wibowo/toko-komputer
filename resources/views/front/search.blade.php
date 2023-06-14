@@ -159,10 +159,11 @@
                                     <div class="item col-md-12">
                                         <div class="image-container">
                                             <a class="item-img-wrapper-link" href="/detailproduk/">
-                                                <img class="img-fluid mt-2"style="max-height:223.21px;"
+                                                <img class="img-fluid mt-2" style="height: 200px; width:200px;"
                                                     src="{{ asset('uploads/') . '/' . $data->productImage }}"
                                                     alt="Product">
                                             </a>
+                                            <hr>
                                         </div>
                                         <div class="item-content">
                                             <div class="what-product-is">
