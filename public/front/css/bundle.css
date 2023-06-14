@@ -1594,7 +1594,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: ;
+
   opacity: 0;
   transition: all 0.3s;
 }
@@ -1609,7 +1609,6 @@ body {
 .item-addCart {
   font-family: 'Ionicons';
   font-size: 0;
-  margin: ;
   padding: 0;
   width: 30px;
   height: 30px;
