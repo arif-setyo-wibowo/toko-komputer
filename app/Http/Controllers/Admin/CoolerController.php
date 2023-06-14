@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Cooler;
 use App\Models\Brand;
+use App\Models\ProcessorSocket;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -17,7 +18,8 @@ class CoolerController extends Controller
         $data=[
             'title' => "Cooler",
             'cooler' => Cooler::with("brand")->get(),
-            'merk' => Brand::all()
+            'merk' => Brand::all(),
+            'socket' => ProcessorSocket::all()
         ];
 
         return view('admin/cooler',$data);

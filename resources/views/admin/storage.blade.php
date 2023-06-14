@@ -213,18 +213,32 @@
                                         </div>
                                     </div>
                                     <div class="row mt-5">
-                                        <div class="row col mt-3">
+                                        <div class="row col ">
                                             <label for="inputText" class="col-md-3 col-form-label">Ukuran</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="storageDimension"
-                                                    required>
+                                                <div class="input-group ">
+                                                    <input type="number" class="form-control"
+                                                        aria-label="Recipient's username"
+                                                        aria-describedby="basic-addon2" name="storageDimension"
+                                                        required>
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        Inch
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="row col mt-3">
+                                        <div class="row col ">
                                             <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="storageWarranty"
-                                                    required>
+                                                <div class="input-group ">
+                                                    <input type="number" class="form-control"
+                                                        aria-label="Recipient's username"
+                                                        aria-describedby="basic-addon2" name="storageWarranty"
+                                                        required>
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        Tahun
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

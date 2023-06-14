@@ -20,16 +20,16 @@ class SocialiteController extends Controller
     
     public function handleProvideCallback($provider)
     {
-        try {
             $user = Socialite::driver($provider)->user();
             $finduser = User::where('customerEmail','=', $user->email)->first();
             if($finduser){
                 if (!empty($finduser->customerVerifyAt)) { 
-                    // login
                     session(['login.customer' => true]);
                     session(['email.customer' => $finduser->customerEmail]);
-                    session(['nama.customer' => $finduser->customerName]);                        
+                    session(['nama.customer' => $finduser->customerName]);                           
                     return redirect()->route('home');
+                } else {
+                    return redirect()->route('login')->withErrors(['email' => 'Akun belum diverifikasi'])->withInput();
                 }
             }else{
                 // redirect register with data
@@ -41,11 +41,6 @@ class SocialiteController extends Controller
                 $customer->customerPassword = '';
                 $customer->customerVerifyKey = $str;
                 $customer->save();
-                session(['login.customer' => true]);
-                session(['id.customer' => $customer->customerId]);
-                session(['email.customer' => $customer->customerEmail]);
-                session(['nama.customer' => $customer->customerName]);                    
-                session(['telp.customer' => $customer->customerPhoneNumber]);  
                 
                 $data=[
                     'customerName' => $user->name,
@@ -56,8 +51,5 @@ class SocialiteController extends Controller
 
                 return redirect()->route('login')->with('succes','Silahkan Cek Email Untuk Verifikasi');       
             }
-        }catch (Exception $e) {
-            return redirect()->back();
         }
     }    
-}

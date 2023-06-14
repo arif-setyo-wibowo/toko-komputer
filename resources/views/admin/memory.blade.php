@@ -177,10 +177,18 @@
                                         </div>
                                     </div>
                                     <div class="row mt-4">
-                                        <div class="row col">
+                                        <div class="row col ">
                                             <label for="inputText" class="col-md-3 col-form-label">Speed</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="speed" required>
+                                                <div class="input-group ">
+                                                    <input type="number" class="form-control"
+                                                        aria-label="Recipient's username"
+                                                        aria-describedby="basic-addon2" name="speed"
+                                                        required>
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        MHz
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row col">
@@ -191,10 +199,18 @@
                                         </div>
                                     </div>
                                     <div class="row mt-4">
-                                        <div class="row col">
+                                        <div class="row col ">
                                             <label for="inputText" class="col-md-3 col-form-label">Voltage</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="volt" required>
+                                                <div class="input-group ">
+                                                    <input type="number" class="form-control"
+                                                        aria-label="Recipient's username"
+                                                        aria-describedby="basic-addon2" name="volt"
+                                                        required>
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        V
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row col">
@@ -211,10 +227,18 @@
                                                 <input type="number" class="form-control" name="harga" required>
                                             </div>
                                         </div>
-                                        <div class="row col">
+                                        <div class="row col ">
                                             <label for="inputText" class="col-md-3 col-form-label">Garansi</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="garansi" required>
+                                                <div class="input-group ">
+                                                    <input type="number" class="form-control"
+                                                        aria-label="Recipient's username"
+                                                        aria-describedby="basic-addon2" name="garansi"
+                                                        required>
+                                                    <span class="input-group-text" id="basic-addon2">
+                                                        Tahun
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
