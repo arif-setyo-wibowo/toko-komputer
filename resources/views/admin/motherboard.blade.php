@@ -47,7 +47,8 @@
                                 <div class="tab-pane fade show active" id="bordered-home" role="tabpanel"
                                     aria-labelledby="home-tab">
                                     <h5 class="card-title">Daftar List Motherboard</h5>
-                                    <table class="table table-hover datatable">
+                                    <button class="btn btn-primary btn-sm btn-success mb-4" id="btnExcel">Export</button>
+                                    <table class="table table-hover datatable" id="tblData">
                                         <thead>
                                             <tr>
                                                 <th scope="col">ID</th>
@@ -1551,4 +1552,13 @@
 @endsection
 @section('javascript')
     <script src="{{ asset('admin/') }}/js/custom/mobo.js"></script>
+    <script>
+        $(function () {
+            $("#btnExcel").click(function () {
+                $("#tblData").table2excel({
+                    filename: "motherboard.xls"
+                })
+            })
+        })
+    </script>
 @endsection
