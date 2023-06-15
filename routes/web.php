@@ -287,7 +287,7 @@ Route::prefix('manager')->middleware('manager')->group(function () {
 
     // Order
     Route::controller(OrderController::class)->prefix('/order')->group(function () {
-        Route::get('/', 'index')->name('administrator.order');
+        Route::get('/', 'index');
         Route::post('/input-resi', 'store');
         Route::get('/invoice/{id}', 'detail');
     });
@@ -303,68 +303,67 @@ Route::prefix('manager')->middleware('manager')->group(function () {
 
     // Socket
     Route::controller(SocketController::class)->prefix('/socket')->group(function () {
-        Route::get('/', 'index')->name('administrator.socket');
-        Route::get('/export', 'export')->name('socket.export');
+        Route::get('/', 'index');
     });
 
     // Motherboard
     Route::controller(MoboController::class)->prefix('/motherboard')->group(function () {
-        Route::get('/', 'index')->name('administrator.mobo');
+        Route::get('/', 'index');
     });
 
     // Processor
     Route::controller(ProcessorController::class)->prefix('/processor')->group(function () {
-        Route::get('/', 'index')->name('administrator.processor');
+        Route::get('/', 'index');
     });
 
     // Grapic Card
     Route::controller(GpuController::class)->prefix('/gpu')->group(function () {
-        Route::get('/', 'index')->name('administrator.gpu');
+        Route::get('/', 'index');
     });
 
     // Memory
     Route::controller(MemoriController::class)->prefix('/memory')->group(function () {
-        Route::get('/', 'index')->name('administrator.memory');
+        Route::get('/', 'index');
     });
 
     // Storage
     Route::controller(StorageController::class)->prefix('/storage')->group(function () {
-        Route::get('/', 'index')->name('administrator.storage');
+        Route::get('/', 'index');
     });
 
     // Power Supply
     Route::controller(PowerSupplyController::class)->prefix('/powersupply')->group(function () {
-        Route::get('/', 'index')->name('administrator.powersupply');
+        Route::get('/', 'index');
     });
 
     // Cooler
     Route::controller(CoolerController::class)->prefix('/cooler')->group(function () {
-        Route::get('/', 'index')->name('administrator.cooler');
+        Route::get('/', 'index');
     });
 
     // Casing
     Route::controller(CasingController::class)->prefix('/casing')->group(function () {
-        Route::get('/', 'index')->name('administrator.case');
+        Route::get('/', 'index');
     });
 
     // Earphone
     Route::controller(EarphoneController::class)->prefix('/earphone')->group(function () {
-        Route::get('/', 'index')->name('administrator.earphone');
+        Route::get('/', 'index');
     });
 
     // Keyboard
     Route::controller(KeyboardController::class)->prefix('/keyboard')->group(function () {
-        Route::get('/', 'index')->name('administrator.keyboard');
+        Route::get('/', 'index');
     });
 
     // Monitor 
     Route::controller(MonitorController::class)->prefix('/monitor')->group(function () {
-        Route::get('/', 'index')->name('administrator.monitor');
+        Route::get('/', 'index');
     });
 
     // mouse
     Route::controller(MouseController::class)->prefix('/mouse')->group(function () {
-        Route::get('/', 'index')->name('administrator.mouse');
+        Route::get('/', 'index');
     });
 
 });
