@@ -278,6 +278,12 @@
           </li>
         </ul>
       </li><!-- End Components Nav -->
+      <li class="nav-item">
+        <a class="nav-link {{ $title != 'Order' ? 'collapsed' : '' }}" href="/administrator/order">
+          <i class="bi-cash-coin" style="font-size: 18px;"></i>
+          <span>Transaksi</span>
+        </a>
+      </li><!-- End Transaksi Page Nav -->
       @endif
     </ul>
   </aside><!-- End Sidebar-->

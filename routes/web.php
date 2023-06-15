@@ -271,6 +271,12 @@ Route::prefix('administrator')->middleware('karyawan')->group(function () {
         Route::get('/delete/{id}', 'destroy');
     });
 
+    // Order
+    Route::controller(OrderController::class)->prefix('/order')->group(function () {
+        Route::get('/', 'index')->name('administrator.order');
+        Route::post('/input-resi', 'store');
+        Route::get('/invoice/{id}', 'detail');
+    });
     
 });
 
