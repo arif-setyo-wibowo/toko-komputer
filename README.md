@@ -5,9 +5,9 @@ Laravel is aaa web application framework with expressive, elegant syntax. We bel
 
 ## Installation
 
--git clone https://github.com/Polixyner/toko-komputer
+-git clone https://github.com/Polixyner/toko-komputer <br>
 
-Run terminal
--composer update
--php artisan migrate:fresh --seed
+Run terminal <br>
+-composer update <br>
+-php artisan migrate:fresh --seed <br>
 
